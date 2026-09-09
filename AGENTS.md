@@ -69,6 +69,9 @@ AICtrack1/
 ├─ tests/                      # 快速单元测试与小数据冒烟测试
 ├─ experiments/               # 已完成实验的轻量记录，不放大模型
 ├─ reports/                   # 技术报告、表格、图表和引用
+├─ references/
+│  ├─ README.md               # 上游参考代码使用边界
+│  └─ upstream/               # 本地只读快照；整体忽略，不进入主仓库
 ├─ submissions/               # 最终 CSV/ZIP 及其校验清单
 ├─ data/                       # 官方数据；禁止提交到 Git
 └─ artifacts/                 # checkpoint、缓存和大日志；禁止提交到 Git
@@ -212,6 +215,7 @@ Agent 在每次任务中应遵循：
 - 许可证不明确的仓库只能研究思想，不得复制代码；实际复制或改写代码时创建/更新 `THIRD_PARTY_NOTICES.md` 并保留文件级来源说明。
 - 双网络、集成、外部数据、非 OpenAI 权重或规则含义不明确的部分默认排除；如确有价值，先写入 `docs/compliance_questions.md` 并等待组委会确认。
 - 每项候选必须绑定实验 ID、结果目录和继续/停止决定。没有实验记录的论文成绩不得成为最终选型依据。
+- 上游源码只允许由 `scripts/manage_upstream_references.py` 按注册表 SHA 同步到 `references/upstream/`。该目录不得进入主仓库、不得加入 `PYTHONPATH`，不得直接运行其中脚本、安装其依赖、初始化子模块或下载其数据/权重。
 
 ## 10. 默认技术路线
 
