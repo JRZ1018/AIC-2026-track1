@@ -29,7 +29,14 @@ dataset:
     workers: 4
     near_duplicate_hamming: 3
     near_duplicate_max_bucket: 500
+    fail_on_bad_files: false
+    fail_on_label_conflicts: true
   split:
     validation_fraction: 0.2
     seed: 42
     min_train_per_class: 2
+  transforms:
+    image_size: 64
+    resize_size: 64
+    train_crop_scale_min: 0.8
+    train_horizontal_flip_probability: 0.5

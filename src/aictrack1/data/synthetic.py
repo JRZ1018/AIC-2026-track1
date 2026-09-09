@@ -123,7 +123,9 @@ def _render_image(config: SyntheticConfig, class_index: int, sample_index: int, 
     return image.rotate(angle, resample=Image.Resampling.BICUBIC, fillcolor=(225, 225, 225))
 
 
-def _alternate_label(config: SyntheticConfig, clean: int, difficulty: float, rng: np.random.Generator) -> int:
+def sample_alternate_label(
+    config: SyntheticConfig, clean: int, difficulty: float, rng: np.random.Generator
+) -> int:
     if config.noise_mode == "symmetric":
         value = int(rng.integers(0, config.num_classes - 1))
         return value + int(value >= clean)
@@ -136,7 +138,7 @@ def _alternate_label(config: SyntheticConfig, clean: int, difficulty: float, rng
     return (clean + 1) % config.num_classes
 
 
-def _flip_probability(config: SyntheticConfig, clean: int, difficulty: float) -> float:
+def noise_probability(config: SyntheticConfig, clean: int, difficulty: float) -> float:
     if config.noise_mode == "instance":
         return min(1.0, config.noise_rate * (0.25 + 1.5 * difficulty))
     if config.noise_mode == "class_dependent":
@@ -167,8 +169,8 @@ def generate_synthetic_dataset(config: SyntheticConfig) -> dict[str, Any]:
     for clean, count in enumerate(counts):
         for sample_index in range(count):
             difficulty = float(rng.beta(2.0, 2.0))
-            flip = bool(rng.random() < _flip_probability(config, clean, difficulty))
-            observed = _alternate_label(config, clean, difficulty, rng) if flip else clean
+            flip = bool(rng.random() < noise_probability(config, clean, difficulty))
+            observed = sample_alternate_label(config, clean, difficulty, rng) if flip else clean
             filename = f"class_{clean:04d}/sample_{sample_index:05d}.png"
             path = images / filename
             path.parent.mkdir(parents=True, exist_ok=True)

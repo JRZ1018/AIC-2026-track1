@@ -3,10 +3,17 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
+import numpy as np
 import pytest
 
 from aictrack1.data.manifest import sha256_file
-from aictrack1.data.synthetic import SyntheticConfig, class_counts, generate_synthetic_dataset
+from aictrack1.data.synthetic import (
+    SyntheticConfig,
+    class_counts,
+    generate_synthetic_dataset,
+    noise_probability,
+    sample_alternate_label,
+)
 
 
 def _file_hashes(root: Path) -> dict[str, str]:
@@ -44,3 +51,20 @@ def test_all_noise_modes_produce_valid_labels(tmp_path: Path, noise_mode: str) -
     assert any(row["is_noisy"] == "1" for row in rows)
     assert all(0 <= int(row["observed_label"]) < config.num_classes for row in rows)
     assert all((row["observed_label"] != row["clean_label"]) == (row["is_noisy"] == "1") for row in rows)
+
+
+def test_noise_mode_semantics() -> None:
+    rng = np.random.default_rng(5)
+    base = dict(output_root=Path("unused"), num_classes=6, classes_per_family=3)
+    pair = SyntheticConfig(**base, noise_mode="pairflip")
+    assert sample_alternate_label(pair, 2, 0.5, rng) == 3
+    family = SyntheticConfig(**base, noise_mode="family")
+    assert sample_alternate_label(family, 1, 0.5, rng) in {0, 2}
+    assert sample_alternate_label(family, 4, 0.5, rng) in {3, 5}
+    symmetric = SyntheticConfig(**base, noise_mode="symmetric")
+    assert all(sample_alternate_label(symmetric, 3, 0.5, rng) != 3 for _ in range(20))
+
+    instance = SyntheticConfig(**base, noise_mode="instance", noise_rate=0.5)
+    assert noise_probability(instance, 0, 0.9) > noise_probability(instance, 0, 0.1)
+    class_dependent = SyntheticConfig(**base, noise_mode="class_dependent", noise_rate=0.5)
+    assert noise_probability(class_dependent, 5, 0.5) > noise_probability(class_dependent, 0, 0.5)

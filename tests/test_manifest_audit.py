@@ -2,6 +2,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import csv
+import pytest
+
 from aictrack1.data.audit import audit_records, write_audit_report
 from aictrack1.data.contracts import load_dataset_config
 from aictrack1.data.manifest import SampleRecord, build_manifest, read_manifest, sha256_file, write_manifest
@@ -37,3 +40,21 @@ def test_same_content_conflicting_labels_are_reported() -> None:
     _, summary, conflicts = audit_records(records)
     assert summary["same_content_label_conflicts"] == 1
     assert conflicts[0]["labels"] == "0000;0001"
+
+
+def test_unknown_manifest_label_fails_explicitly(
+    synthetic_dataset: tuple[Path, Path],
+) -> None:
+    root, config_path = synthetic_dataset
+    manifest = root / "metadata" / "samples.csv"
+    with manifest.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        rows = list(reader)
+        fieldnames = list(reader.fieldnames or [])
+    rows[0]["observed_label"] = "9999"
+    with manifest.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    with pytest.raises(KeyError, match="unknown official class ID"):
+        build_manifest(load_dataset_config(config_path), "train")

@@ -50,8 +50,16 @@ def synthetic_dataset(tmp_path: Path) -> tuple[Path, Path]:
                         "workers": 2,
                         "near_duplicate_hamming": 3,
                         "near_duplicate_max_bucket": 100,
+                        "fail_on_bad_files": False,
+                        "fail_on_label_conflicts": True,
                     },
                     "split": {"validation_fraction": 0.25, "seed": 7, "min_train_per_class": 2},
+                    "transforms": {
+                        "image_size": 40,
+                        "resize_size": 40,
+                        "train_crop_scale_min": 0.8,
+                        "train_horizontal_flip_probability": 0.5,
+                    },
                 }
             },
             sort_keys=False,

@@ -17,10 +17,17 @@ dataset:
     workers: 4
     near_duplicate_hamming: 3
     near_duplicate_max_bucket: 500
+    fail_on_bad_files: true
+    fail_on_label_conflicts: true
   split:
     validation_fraction: 0.2
     seed: 42
     min_train_per_class: 1
+  transforms:
+    image_size: 224
+    resize_size: 224
+    train_crop_scale_min: 0.8
+    train_horizontal_flip_probability: 0.5
 
 # This is a contract template, not a claim about the official archive layout.
 # Fill every path from official files after data access; do not adapt the archive

@@ -1,0 +1,14 @@
+p2_benchmark:
+  seed: 20260909
+  num_classes: 6
+  samples_per_class: 24
+  feature_dim: 16
+  feature_noise: 0.12
+  noise_rate: 0.3
+  steps: 30
+  learning_rate: 0.25
+  momentum: 0.9
+  logit_tau: 1.0
+  elr_beta: 0.7
+  elr_lambda: 0.5
+  min_keep_per_class: 2
