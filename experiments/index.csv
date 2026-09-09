@@ -1,0 +1,1 @@
+run_id,stage,method,upstream_candidates,seed,data_hash,split_hash,config_hash,environment_hash,git_commit,status,top1,macro_accuracy,head_accuracy,mid_accuracy,tail_accuracy,peak_vram_mib,duration_seconds,best_checkpoint_sha256,last_checkpoint_sha256,result_dir,started_at,finished_at,decision,notes

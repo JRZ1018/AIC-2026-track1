@@ -1,0 +1,74 @@
+# Official competition data and derived caches
+data/**
+!data/.gitkeep
+artifacts/**
+.cache/
+cache/
+
+# Model weights and large binary outputs
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.bin
+*.pkl
+*.joblib
+
+# Competition predictions and submission archives
+submissions/*.csv
+!submissions/ledger.csv
+submissions/*.zip
+submissions/*.7z
+submissions/*.tar
+submissions/*.gz
+
+# Per-run experiment artifacts; keep the lightweight reproducibility record
+experiments/**
+!experiments/index.csv
+!experiments/*/
+!experiments/*/config.yaml
+!experiments/*/command.txt
+!experiments/*/environment.txt
+!experiments/*/git_state.txt
+!experiments/*/metrics.json
+!experiments/*/summary.md
+!experiments/*/artifacts_manifest.json
+
+# Temporary files and caches
+tmp/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+wandb/
+runs/
+lightning_logs/
+
+# Local environments and secrets
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+.secrets/
+credentials*.json
+service-account*.json
+auth-token*.json
+access-token*.json
+*.pem
+*.key
+
+# Local logs and editor files
+*.log
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
