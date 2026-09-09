@@ -33,11 +33,12 @@
 
 - 已选定赛题并整理官方通知、赛题规则 Markdown。
 - 已将项目级工程与合规规范迁移至根目录：`AGENTS.md`。
-- 已初始化 Git 主分支并建立防泄漏 `.gitignore`，当前尚无 Git 提交。
+- 已初始化 Git 主分支并建立防泄漏 `.gitignore`；当前治理、上游快照和 P1 数据基础设施提交依次为 `e5fe5bc`、`fd45b8a`、`b1d5e6d`。
 - 已建立最小目录骨架、实验索引和提交台账。
 - 已将无数据阶段计划升级为获奖导向路线，并建立合规问题与规则变更日志。
 - 已完成 P0/P0.5 治理落地：上游方案固定版本登记、许可证边界、强制触发阶段、最小复用规格和 Git 防泄漏检查器均已建立。
 - 已将 11 个上游参考仓库按锁定 SHA 同步到 `references/upstream/`；源码由主项目 Git 忽略，使用 `scripts/manage_upstream_references.py check` 可离线核验。
+- 已完成 P1 数据契约/只读审计/重复簇隔离划分和 P2 程序化噪声基准；26 项 CPU/CUDA 测试通过，正式 CLIP 效果实验尚未开始。
 - 已安装 Python 训练环境，且真实 CUDA 运算验证通过。
 - 已安装本地提供的 OpenAI CLIP 源码。
 - 已下载 OpenAI 官方 ViT-B/32 权重：`artifacts/weights/ViT-B-32.pt`（约 337.6 MiB）。
@@ -79,7 +80,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-在没有官方数据的情况下：队长继续处理报名缴费、数据权限和组委会规则确认；工程实现从 P1 数据契约与 P2 可控噪声合成基准开始。每次只完成一个可测试的小工作包。开始 P3 或 M1-M5 前必须运行 `scripts/check_governance.py` 并回查上游登记。
+在没有官方数据的情况下：队长继续处理报名缴费、数据权限和组委会规则确认；工程实现下一步进入 P3 计算经济型 CLIP 基线，只能做加载、吞吐、恢复和合成夹具验证，不能宣称真实比赛效果。开始 P3 或 M1-M5 前必须运行 `scripts/check_governance.py` 并回查上游登记。
 
 在用户提供官方数据后：先停止开发新算法，执行只读数据审计并确认阶段、类别映射、文件格式和提交规则；之后跑线性分类头 CE 基线。基线可复现前不实施复杂噪声学习。
 
@@ -90,6 +91,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 - 机器可检查的版本和触发点：`docs/upstream_registry.yaml`
 - P0/P0.5 完成证据：`docs/07_P0_P0.5_验收报告.md`
 - 上游本地快照验收：`docs/08_上游本地快照验收.md`
+- P1/P2 实施验收：`docs/09_P1_P2_实施验收报告.md`
 - 实际复制或改写第三方代码后才创建：`THIRD_PARTY_NOTICES.md`
 
 上游候选不能只列为参考：到达强制触发阶段后必须形成最小实现/正式对照实验或有证据的排除结论。
@@ -98,5 +100,5 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 - `pytorch-install.stdout.log` / `pytorch-install.stderr.log`：本次 PyTorch 安装过程日志，可保留用于排错；不是训练实验记录。
 - `docs/技术报告.docx`：项目现有文档，尚未进行内容审查或修改；若后续需要编辑 `.docx`，应遵守文档渲染与校验流程。
-- 尚未创建正式训练代码、实验配置或算法自动化测试，也尚无 Git 提交；新对话不得假设它们存在。
+- 尚未创建正式 CLIP 训练引擎、模型封装或提交生成器；新对话不得假设它们存在。P1/P2 数据和损失基础设施已经存在并有测试。
 - P0/P0.5 已完成治理建设；报名、数据权限和组委会答复仍是外部待办，不应被误报为已完成。
