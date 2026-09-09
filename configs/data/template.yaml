@@ -1,0 +1,27 @@
+dataset:
+  stage: preliminary
+  dataset_root: ../../data/preliminary/raw
+  class_mapping: metadata/classes.csv
+  extensions: [.jpg, .jpeg, .png, .bmp, .webp]
+  allow_truncated_images: false
+  sources:
+    train:
+      root: train
+      label_source: manifest
+      manifest: metadata/train.csv
+    test:
+      root: test
+      label_source: none
+  audit:
+    output_root: ../../artifacts/audits/preliminary
+    workers: 4
+    near_duplicate_hamming: 3
+    near_duplicate_max_bucket: 500
+  split:
+    validation_fraction: 0.2
+    seed: 42
+    min_train_per_class: 1
+
+# This is a contract template, not a claim about the official archive layout.
+# Fill every path from official files after data access; do not adapt the archive
+# to this example or infer labels from ordering.
