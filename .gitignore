@@ -1,6 +1,8 @@
 # Official competition data and derived caches
 data/**
 !data/.gitkeep
+/DataSetStage1/
+/dataset/
 artifacts/**
 .cache/
 cache/
