@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from aictrack1.data.contracts import load_dataset_config
+from aictrack1.data.contracts import ensure_output_path_is_safe, load_dataset_config
 from aictrack1.data.manifest import build_manifest, write_manifest
 
 
@@ -21,8 +21,9 @@ def main() -> int:
     args = parser.parse_args()
     config = load_dataset_config(args.config)
     records = build_manifest(config, args.source)
-    digest = write_manifest(records, args.output)
-    print(f"samples={len(records)} sha256={digest} output={args.output.resolve()}")
+    output = ensure_output_path_is_safe(config, args.output)
+    digest = write_manifest(records, output)
+    print(f"samples={len(records)} sha256={digest} output={output}")
     return 0
 
 

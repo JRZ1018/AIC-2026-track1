@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from .class_mapping import ClassMapping
-from .contracts import DatasetConfig
+from .contracts import DatasetConfig, ensure_output_path_is_safe
 from .duplicates import assign_duplicate_groups
 from .manifest import SampleRecord, build_manifest, write_manifest
 
@@ -69,7 +69,10 @@ def write_audit_report(
         near_hamming=config.audit.near_duplicate_hamming,
         max_bucket_size=config.audit.near_duplicate_max_bucket,
     )
-    output = Path(output_root).resolve() if output_root else config.audit.output_root / source_name
+    output = ensure_output_path_is_safe(
+        config,
+        Path(output_root).resolve() if output_root else config.audit.output_root / source_name,
+    )
     output.mkdir(parents=True, exist_ok=True)
     manifest_hash = write_manifest(grouped, output / "samples.csv")
     bad_rows = [asdict(record) for record in grouped if record.decode_status != "ok"]
@@ -115,4 +118,11 @@ def write_audit_report(
         encoding="utf-8",
     )
     (output / "manifest.sha256").write_text(f"{manifest_hash}  samples.csv\n", encoding="utf-8")
+    failures = []
+    if config.audit.fail_on_bad_files and summary["bad_file_count"]:
+        failures.append(f"{summary['bad_file_count']} bad files")
+    if config.audit.fail_on_label_conflicts and summary["same_content_label_conflicts"]:
+        failures.append(f"{summary['same_content_label_conflicts']} same-content label conflicts")
+    if failures:
+        raise RuntimeError(f"strict data audit failed ({', '.join(failures)}); report written to {output}")
     return summary
