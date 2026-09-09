@@ -1,0 +1,35 @@
+synthetic:
+  output_root: ../../artifacts/fixtures/p1p2_smoke
+  seed: 20260909
+  num_classes: 12
+  classes_per_family: 3
+  max_samples_per_class: 24
+  imbalance_ratio: 4.0
+  image_size: 64
+  noise_mode: family
+  noise_rate: 0.3
+  exact_duplicate_count: 4
+  near_duplicate_count: 4
+  corrupt_count: 1
+  truncated_count: 1
+
+dataset:
+  stage: synthetic
+  dataset_root: ../../artifacts/fixtures/p1p2_smoke
+  class_mapping: metadata/classes.csv
+  extensions: [.png]
+  allow_truncated_images: false
+  sources:
+    train:
+      root: images
+      label_source: manifest
+      manifest: metadata/samples.csv
+  audit:
+    output_root: ../../artifacts/audits/p1p2_smoke
+    workers: 4
+    near_duplicate_hamming: 3
+    near_duplicate_max_bucket: 500
+  split:
+    validation_fraction: 0.2
+    seed: 42
+    min_train_per_class: 2
