@@ -40,3 +40,23 @@ D:\aicomp\python312\python.exe scripts\manage_upstream_references.py check
 ```
 
 源码保存在 `references/upstream/` 并被主项目 Git 忽略。同步只检出注册表锁定的 commit，不初始化子模块、不下载 Git LFS 对象，也不安装或运行上游代码。
+
+## P1/P2 数据与噪声夹具
+
+官方配置模板是 `configs/data/template.yaml`。它只定义显式契约，不代表官方压缩包的真实结构。
+
+```powershell
+# 生成完全程序化的细粒度、长尾、噪声标签夹具
+D:\aicomp\python312\python.exe scripts\generate_synthetic_fixture.py --config configs\data\synthetic_smoke.yaml
+
+# 只读审计并检测坏图、精确重复和近重复
+D:\aicomp\python312\python.exe scripts\audit_dataset.py --config configs\data\synthetic_smoke.yaml --source train
+
+# 以重复簇为不可拆分单元创建验证划分
+D:\aicomp\python312\python.exe scripts\build_split.py --config configs\data\synthetic_smoke.yaml --manifest artifacts\audits\p1p2_smoke\train\samples.csv --output artifacts\audits\p1p2_smoke\train\split.csv
+
+# 运行全部 CPU/CUDA 测试
+D:\aicomp\python312\python.exe -m pytest
+```
+
+生成器拒绝覆盖非空目录。合成图片、审计结果和 pytest 临时文件位于 `artifacts/`，不会进入 Git。

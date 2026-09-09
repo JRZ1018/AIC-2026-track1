@@ -66,6 +66,9 @@ repositories:
     deliverable: Single-model ELR baseline with measured state memory and no ELR+ path.
     copy_policy: minimal_attributed_reimplementation
     decision: candidate
+    implementation_status: p2_minimal_complete_p3_experiment_pending
+    implementation_path: src/aictrack1/methods/elr.py
+    evidence: tests/test_elr.py
   - id: logitclip
     repository: hongxin001/LogitClip
     url: https://github.com/hongxin001/LogitClip
@@ -78,6 +81,9 @@ repositories:
     deliverable: Independent implementation from the PMLR paper with gradient and AMP tests.
     copy_policy: forbidden
     decision: candidate
+    implementation_status: p2_independent_implementation_complete_p3_experiment_pending
+    implementation_path: src/aictrack1/methods/logit_clip.py
+    evidence: tests/test_logit_clip.py
   - id: coop
     repository: KaiyangZhou/CoOp
     url: https://github.com/KaiyangZhou/CoOp
@@ -90,6 +96,7 @@ repositories:
     deliverable: Prompt learner interface checklist; do not import pretrained weights or full framework.
     copy_policy: concepts_only
     decision: concepts_only
+    review_status: p1_prompt_interface_review_complete
   - id: dassl
     repository: KaiyangZhou/Dassl.pytorch
     url: https://github.com/KaiyangZhou/Dassl.pytorch
@@ -102,6 +109,7 @@ repositories:
     deliverable: Dataset/trainer/registry architecture checklist without framework vendoring.
     copy_policy: concepts_only
     decision: concepts_only
+    review_status: p1_data_trainer_registry_review_complete
   - id: dividemix
     repository: LiJunnan1992/DivideMix
     url: https://github.com/LiJunnan1992/DivideMix
@@ -114,6 +122,7 @@ repositories:
     deliverable: Warm-up/per-sample GMM design note plus explicit exclusion of two-network training.
     copy_policy: concepts_only
     decision: concepts_only
+    review_status: p2_gmm_and_warmup_concepts_recorded_two_network_path_excluded
   - id: coteaching
     repository: bhanML/Co-teaching
     url: https://github.com/bhanML/Co-teaching
@@ -126,6 +135,7 @@ repositories:
     deliverable: Small-loss curriculum design note plus explicit exclusion of two-network training.
     copy_policy: forbidden
     decision: concepts_only
+    review_status: p2_small_loss_curriculum_recorded_two_network_path_excluded
   - id: open_clip
     repository: mlfoundations/open_clip
     url: https://github.com/mlfoundations/open_clip
@@ -138,3 +148,4 @@ repositories:
     deliverable: CLI/AMP/checkpoint/logging checklist; prohibit all non-OpenAI weights.
     copy_policy: concepts_only
     decision: concepts_only
+    review_status: p1_amp_accumulation_checkpoint_review_complete
