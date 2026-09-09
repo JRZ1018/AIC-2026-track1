@@ -23,6 +23,9 @@ REQUIRED_FILES = (
     ROOT / "docs" / "compliance_questions.md",
     ROOT / "experiments" / "index.csv",
     ROOT / "submissions" / "ledger.csv",
+    ROOT / "references" / "README.md",
+    ROOT / "references" / "upstream" / ".gitkeep",
+    ROOT / "scripts" / "manage_upstream_references.py",
 )
 FORBIDDEN_SUFFIXES = {".pt", ".pth", ".ckpt", ".safetensors", ".onnx", ".pem", ".key"}
 MAX_GIT_FILE_BYTES = 50 * 1024 * 1024
@@ -44,6 +47,8 @@ def validate_registry(errors: list[str]) -> None:
     data = yaml.safe_load(REGISTRY.read_text(encoding="utf-8"))
     repos = data.get("repositories", [])
     allowed_decisions = set(data.get("policy", {}).get("allowed_decisions", []))
+    if data.get("policy", {}).get("local_root") != "references/upstream":
+        errors.append("upstream local_root must remain references/upstream")
     if not repos:
         errors.append("upstream registry has no repositories")
         return

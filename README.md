@@ -31,3 +31,12 @@ D:\aicomp\python312\python.exe scripts\check_governance.py
 ```
 
 检查器会验证上游候选的固定 commit、许可证边界、触发阶段和交付物字段，并阻止数据、权重、密钥或大文件进入 Git 候选集。
+
+只读同步上游参考源码：
+
+```powershell
+D:\aicomp\python312\python.exe scripts\manage_upstream_references.py sync
+D:\aicomp\python312\python.exe scripts\manage_upstream_references.py check
+```
+
+源码保存在 `references/upstream/` 并被主项目 Git 忽略。同步只检出注册表锁定的 commit，不初始化子模块、不下载 Git LFS 对象，也不安装或运行上游代码。

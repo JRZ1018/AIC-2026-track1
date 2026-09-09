@@ -5,6 +5,10 @@ artifacts/**
 .cache/
 cache/
 
+# Read-only upstream source snapshots (managed by docs/upstream_registry.yaml)
+references/upstream/*
+!references/upstream/.gitkeep
+
 # Model weights and large binary outputs
 *.pt
 *.pth

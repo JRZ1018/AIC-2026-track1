@@ -37,6 +37,7 @@
 - 已建立最小目录骨架、实验索引和提交台账。
 - 已将无数据阶段计划升级为获奖导向路线，并建立合规问题与规则变更日志。
 - 已完成 P0/P0.5 治理落地：上游方案固定版本登记、许可证边界、强制触发阶段、最小复用规格和 Git 防泄漏检查器均已建立。
+- 已将 11 个上游参考仓库按锁定 SHA 同步到 `references/upstream/`；源码由主项目 Git 忽略，使用 `scripts/manage_upstream_references.py check` 可离线核验。
 - 已安装 Python 训练环境，且真实 CUDA 运算验证通过。
 - 已安装本地提供的 OpenAI CLIP 源码。
 - 已下载 OpenAI 官方 ViT-B/32 权重：`artifacts/weights/ViT-B-32.pt`（约 337.6 MiB）。
@@ -88,6 +89,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 - 最小模块接口与退出条件：`docs/05_上游最小复用规格.md`
 - 机器可检查的版本和触发点：`docs/upstream_registry.yaml`
 - P0/P0.5 完成证据：`docs/07_P0_P0.5_验收报告.md`
+- 上游本地快照验收：`docs/08_上游本地快照验收.md`
 - 实际复制或改写第三方代码后才创建：`THIRD_PARTY_NOTICES.md`
 
 上游候选不能只列为参考：到达强制触发阶段后必须形成最小实现/正式对照实验或有证据的排除结论。

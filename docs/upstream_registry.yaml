@@ -1,6 +1,7 @@
 schema_version: 1
 audited_at: "2026-09-09"
 policy:
+  local_root: references/upstream
   required_before_stages: [P3, M1, M2, M3, M4, M5, final_retrain]
   allowed_decisions: [adopted, candidate, concepts_only, excluded]
   no_license_copy_policy: forbidden
