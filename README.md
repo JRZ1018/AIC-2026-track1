@@ -20,7 +20,7 @@
 - 尚无官方比赛数据，不得用任何外部真实图像替代训练或调参。
 - 已验证 OpenAI CLIP ViT-B/32 权重及 RTX 4060 Laptop GPU CUDA 环境。
 - 当前优先级是完成报名缴费与数据领取，同时建设合成数据下的可复现训练、评估和提交闭环。
-- P0/P0.5 治理与上游方案审计已落地；下一工程阶段是 P1 数据契约与 P2 可控噪声夹具。
+- P0/P0.5 治理以及无数据阶段的 P1/P2 合成工程验收已完成；下一工程阶段是 P3 计算经济型 CLIP 基线。
 
 ## 治理检查
 
@@ -55,8 +55,11 @@ D:\aicomp\python312\python.exe scripts\audit_dataset.py --config configs\data\sy
 # 以重复簇为不可拆分单元创建验证划分
 D:\aicomp\python312\python.exe scripts\build_split.py --config configs\data\synthetic_smoke.yaml --manifest artifacts\audits\p1p2_smoke\train\samples.csv --output artifacts\audits\p1p2_smoke\train\split.csv
 
+# 运行 CE、LogitClip、ELR 和类内可信度的已知噪声行为验收
+D:\aicomp\python312\python.exe scripts\run_p2_benchmark.py --config configs\experiment\p2_closeout.yaml --output artifacts\audits\p2_closeout\results.json
+
 # 运行全部 CPU/CUDA 测试
 D:\aicomp\python312\python.exe -m pytest
 ```
 
-生成器拒绝覆盖非空目录。合成图片、审计结果和 pytest 临时文件位于 `artifacts/`，不会进入 Git。
+生成器拒绝覆盖非空目录。正式阶段默认对坏图和同内容异标签严格失败；合成配置显式允许记录并排除注入的坏图。合成图片、审计结果和 pytest 临时文件位于 `artifacts/`，不会进入 Git。

@@ -33,12 +33,12 @@
 
 - 已选定赛题并整理官方通知、赛题规则 Markdown。
 - 已将项目级工程与合规规范迁移至根目录：`AGENTS.md`。
-- 已初始化 Git 主分支并建立防泄漏 `.gitignore`；当前治理、上游快照和 P1 数据基础设施提交依次为 `e5fe5bc`、`fd45b8a`、`b1d5e6d`。
+- 已初始化 Git 主分支并建立防泄漏 `.gitignore`；治理、上游快照、P1/P2 初版及验收补齐提交依次为 `e5fe5bc`、`fd45b8a`、`b1d5e6d`、`1a3a752`、`99b1b1f`。
 - 已建立最小目录骨架、实验索引和提交台账。
 - 已将无数据阶段计划升级为获奖导向路线，并建立合规问题与规则变更日志。
 - 已完成 P0/P0.5 治理落地：上游方案固定版本登记、许可证边界、强制触发阶段、最小复用规格和 Git 防泄漏检查器均已建立。
 - 已将 11 个上游参考仓库按锁定 SHA 同步到 `references/upstream/`；源码由主项目 Git 忽略，使用 `scripts/manage_upstream_references.py check` 可离线核验。
-- 已完成 P1 数据契约/只读审计/重复簇隔离划分和 P2 程序化噪声基准；26 项 CPU/CUDA 测试通过，正式 CLIP 效果实验尚未开始。
+- 已完成无数据阶段 P1 数据契约、变换隔离、严格只读审计、重复簇隔离划分，以及 P2 程序化噪声、类内可信度和 CE/ELR/LogitClip 行为基准；44 项 CPU/CUDA 测试通过，正式 CLIP 效果实验尚未开始。
 - 已安装 Python 训练环境，且真实 CUDA 运算验证通过。
 - 已安装本地提供的 OpenAI CLIP 源码。
 - 已下载 OpenAI 官方 ViT-B/32 权重：`artifacts/weights/ViT-B-32.pt`（约 337.6 MiB）。

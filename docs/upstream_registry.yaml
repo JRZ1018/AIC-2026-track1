@@ -68,7 +68,7 @@ repositories:
     decision: candidate
     implementation_status: p2_minimal_complete_p3_experiment_pending
     implementation_path: src/aictrack1/methods/elr.py
-    evidence: tests/test_elr.py
+    evidence: tests/test_elr.py; tests/test_p2_benchmark.py
   - id: logitclip
     repository: hongxin001/LogitClip
     url: https://github.com/hongxin001/LogitClip
@@ -83,7 +83,7 @@ repositories:
     decision: candidate
     implementation_status: p2_independent_implementation_complete_p3_experiment_pending
     implementation_path: src/aictrack1/methods/logit_clip.py
-    evidence: tests/test_logit_clip.py
+    evidence: tests/test_logit_clip.py; tests/test_p2_benchmark.py
   - id: coop
     repository: KaiyangZhou/CoOp
     url: https://github.com/KaiyangZhou/CoOp
