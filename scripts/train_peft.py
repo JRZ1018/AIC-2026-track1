@@ -33,6 +33,7 @@ from aictrack1.data.indexed_images import IndexedImage, IndexedImageDataset, rea
 from aictrack1.data.transforms import build_split_transforms
 from aictrack1.engine.peft import load_trainable_state_dict, trainable_state_dict
 from aictrack1.evaluation.classification import calibration_diagnostics, classification_diagnostics
+from aictrack1.methods.confidence import ClasswiseHistoryWeighting, weighted_cross_entropy
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
 from aictrack1.models.heads import CosineClassifier
 from aictrack1.models.peft import PEFTImageClassifier, configure_visual_peft
@@ -200,6 +201,20 @@ def main() -> int:
         transforms["validation"],
         allow_truncated_images=dataset_config.allow_truncated_images,
     )
+    confidence_raw = raw.get("confidence_weighting")
+    confidence: ClasswiseHistoryWeighting | None = None
+    confidence_warmup_epochs = 0
+    if confidence_raw is not None and bool(confidence_raw.get("enabled", True)):
+        confidence_warmup_epochs = int(confidence_raw.get("warmup_epochs", 1))
+        if confidence_warmup_epochs < 1 or confidence_warmup_epochs >= epochs:
+            raise ValueError("confidence warmup_epochs must be in [1, epochs)")
+        confidence = ClasswiseHistoryWeighting(
+            torch.tensor([record.sample_index for record in train_records]),
+            torch.tensor([int(record.internal_class_index) for record in train_records]),
+            momentum=float(confidence_raw.get("momentum", 0.8)),
+            history_mix=float(confidence_raw.get("history_mix", 0.5)),
+            min_weight=float(confidence_raw.get("min_weight", 0.2)),
+        )
     mapping = ClassMapping.from_csv(dataset_config.class_mapping)
     num_classes = len(mapping)
     weight_path, expected_weight_sha256 = _model_settings(model_path)
@@ -226,15 +241,23 @@ def main() -> int:
         raise ValueError("A1 head and current split differ")
     head.load_state_dict(a1["model"])
     model = PEFTImageClassifier(visual, head).to(device)
+    visual_learning_rate = float(training["visual_learning_rate"])
+    head_learning_rate = float(training["head_learning_rate"])
+    if visual_learning_rate < 0 or head_learning_rate < 0:
+        raise ValueError("learning rates must be non-negative")
+    if head_learning_rate == 0:
+        for parameter in head.parameters():
+            parameter.requires_grad_(False)
     visual_parameters = [parameter for parameter in visual.parameters() if parameter.requires_grad]
-    head_parameters = list(head.parameters())
-    optimizer = torch.optim.AdamW(
-        [
-            {"params": visual_parameters, "lr": float(training["visual_learning_rate"])},
-            {"params": head_parameters, "lr": float(training["head_learning_rate"])},
-        ],
-        weight_decay=float(training["weight_decay"]),
-    )
+    head_parameters = [parameter for parameter in head.parameters() if parameter.requires_grad]
+    parameter_groups = []
+    if visual_parameters and visual_learning_rate > 0:
+        parameter_groups.append({"params": visual_parameters, "lr": visual_learning_rate})
+    if head_parameters and head_learning_rate > 0:
+        parameter_groups.append({"params": head_parameters, "lr": head_learning_rate})
+    if not parameter_groups:
+        raise ValueError("training configuration enables no parameters with a positive learning rate")
+    optimizer = torch.optim.AdamW(parameter_groups, weight_decay=float(training["weight_decay"]))
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
     scaler = torch.amp.GradScaler("cuda", enabled=device.type == "cuda")
     conflict_ids = _conflict_ids(manifest_path, conflicts_path)
@@ -261,6 +284,12 @@ def main() -> int:
         torch.random.set_rng_state(state["torch_rng_state"])
         if "cuda_rng_state_all" in state and torch.cuda.is_available():
             torch.cuda.set_rng_state_all(state["cuda_rng_state_all"])
+        if confidence is not None:
+            if "confidence_weighting" not in state:
+                raise ValueError("M1 resume checkpoint is missing confidence state")
+            confidence.load_state_dict(state["confidence_weighting"])
+        elif "confidence_weighting" in state:
+            raise ValueError("non-M1 run cannot resume an M1 confidence checkpoint")
 
     if epoch == 0:
         initial = _evaluate(
@@ -288,6 +317,8 @@ def main() -> int:
     while epoch < epochs:
         train_dataset.set_epoch(epoch)
         model.train()
+        confidence_active = confidence is not None and epoch >= confidence_warmup_epochs
+        applied_confidence = confidence.diagnostics() if confidence is not None else None
         loader = _loader(
             train_dataset,
             batch_size=batch_size,
@@ -299,12 +330,23 @@ def main() -> int:
         train_started = time.perf_counter()
         loss_sum = 0.0
         count = 0
+        epoch_sample_indices: list[torch.Tensor] = []
+        epoch_sample_losses: list[torch.Tensor] = []
+        epoch_observed_probabilities: list[torch.Tensor] = []
+        epoch_predictions: list[torch.Tensor] = []
         for batch in loader:
             images = batch["image"].to(device, non_blocking=True)
             labels = batch["label"].to(device, non_blocking=True)
             optimizer.zero_grad(set_to_none=True)
             with torch.autocast(device_type=device.type, dtype=torch.float16, enabled=device.type == "cuda"):
-                loss = F.cross_entropy(model(images), labels)
+                logits = model(images)
+                if confidence_active:
+                    batch_weights = confidence.weights_for(batch["sample_index"]).to(
+                        device, non_blocking=True
+                    )
+                    loss = weighted_cross_entropy(logits, labels, batch_weights)
+                else:
+                    loss = F.cross_entropy(logits, labels)
             if not torch.isfinite(loss):
                 raise FloatingPointError("PEFT training produced a non-finite loss")
             scaler.scale(loss).backward()
@@ -317,7 +359,26 @@ def main() -> int:
             scaler.update()
             loss_sum += float(loss.detach()) * len(labels)
             count += len(labels)
+            if confidence is not None:
+                detached_logits = logits.detach().float()
+                probabilities = detached_logits.softmax(dim=1)
+                epoch_sample_indices.append(batch["sample_index"].detach().long().cpu())
+                epoch_sample_losses.append(
+                    F.cross_entropy(detached_logits, labels, reduction="none").cpu()
+                )
+                epoch_observed_probabilities.append(
+                    probabilities.gather(1, labels[:, None]).squeeze(1).cpu()
+                )
+                epoch_predictions.append(detached_logits.argmax(dim=1).cpu())
         train_seconds = time.perf_counter() - train_started
+        next_confidence = None
+        if confidence is not None:
+            next_confidence = confidence.update_epoch(
+                torch.cat(epoch_sample_indices),
+                torch.cat(epoch_sample_losses),
+                torch.cat(epoch_observed_probabilities),
+                torch.cat(epoch_predictions),
+            )
         scheduler.step()
         epoch += 1
         validation = _evaluate(
@@ -338,6 +399,12 @@ def main() -> int:
             "learning_rates": [float(group["lr"]) for group in optimizer.param_groups],
             "validation": validation,
         }
+        if confidence is not None:
+            row["confidence_weighting"] = {
+                "active": confidence_active,
+                "applied": applied_confidence,
+                "next": next_confidence,
+            }
         history.append(row)
         top1 = float(validation["all"]["top1"])
         if top1 > best_top1:
@@ -359,6 +426,8 @@ def main() -> int:
         }
         if torch.cuda.is_available():
             checkpoint["cuda_rng_state_all"] = torch.cuda.get_rng_state_all()
+        if confidence is not None:
+            checkpoint["confidence_weighting"] = confidence.state_dict()
         _save_atomic(checkpoint, output / "last.pt")
 
     if best_state is None:
@@ -380,6 +449,7 @@ def main() -> int:
         "scope": "stage1 train/validation PEFT short screening; test data not accessed",
         "run_id": raw["run_id"],
         "peft": peft,
+        "confidence_weighting": confidence_raw,
         "initial_validation": initial,
         "history": history,
         "best_top1": best_top1,
