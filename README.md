@@ -20,8 +20,10 @@
 - 初赛官方数据已取得，保存在本地 `DataSetStage1/`；该目录整体由 Git 忽略，训练集和测试集必须严格隔离。
 - 已验证 OpenAI CLIP ViT-B/32 权重及 RTX 4060 Laptop GPU CUDA 环境。
 - P0/P0.5 治理以及 P1/P2 合成工程验收已完成。
-- 初赛数据只读审计、真实配置、固定划分和 P3 冻结特征基线已经完成；当前优先级是本地提交工程闭环及 A2/A3 同预算鲁棒损失对照。
+- 初赛数据只读审计、固定划分、冻结特征基线、模拟提交闭环和 A2/A3 鲁棒损失对照均已完成。
 - P3 全量训练特征与 A0/A1 已完成；A1 余弦头以 67.909% noisy-validation Top-1 成为后续统一基线，详见 [`docs/12_P3_A0_A1_正式基线报告.md`](docs/12_P3_A0_A1_正式基线报告.md)。
+- PEFT/M0 已完成：冻结 A1 分类头、只训练最后视觉注意力 rank-4 LoRA 三轮，固定验证集 Top-1 为 68.4282%、macro 为 68.4163%；下一工作包为 M1 类内可信度，详见 [`docs/14_P3_PEFT资源与短程筛选报告.md`](docs/14_P3_PEFT资源与短程筛选报告.md)。
+- 目前未读取测试图片做推理，也未生成真实提交或使用排行榜反馈。
 - 正式训练、全量特征提取或其他大量占用系统资源的过程，必须先报告预计高占用时间和资源，再等待用户批准。
 
 ## 治理检查
@@ -69,3 +71,13 @@ D:\aicomp\python312\python.exe -m pytest
 ## P3 冻结 CLIP 基线
 
 正式命令、续跑方式和执行前预算维护在 [`docs/11_P3_冻结特征基线实施与资源门禁.md`](docs/11_P3_冻结特征基线实施与资源门禁.md)，结果和诊断维护在 [`docs/12_P3_A0_A1_正式基线报告.md`](docs/12_P3_A0_A1_正式基线报告.md)。模型入口固定为 `configs/model/openai_clip_vit_b32.yaml`；脚本拒绝隐式下载权重，训练脚本也拒绝加载测试特征缓存。
+
+## P3 PEFT / M0
+
+当前 M0 复现命令：
+
+```powershell
+D:\aicomp\python312\python.exe scripts\train_peft.py --config configs\experiment\p3_stage1_peft_b3_lora_only_3ep.yaml
+```
+
+该配置只训练最后视觉注意力的 LoRA，分类头冻结；完整消融、资源与 checkpoint 哈希见 [`docs/14_P3_PEFT资源与短程筛选报告.md`](docs/14_P3_PEFT资源与短程筛选报告.md)。

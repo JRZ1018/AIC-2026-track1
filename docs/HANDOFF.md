@@ -45,7 +45,9 @@
 - 已下载 OpenAI 官方 ViT-B/32 权重：`artifacts/weights/ViT-B-32.pt`（约 337.6 MiB）。
 - 已修复环境检查脚本中的 PowerShell/Python 引号问题：`scripts/check_environment.ps1`。
 - P3 全量训练特征与 A0/A1 正式实验已完成；A1 余弦头的 float32 noisy-validation Top-1 为 67.909%、macro accuracy 为 67.894%，选择为后续统一基线。正式报告见 `docs/12_P3_A0_A1_正式基线报告.md`。
-- 当前已经进入**初赛官方数据阶段**，已有正式本地冻结特征基线，但尚无测试推理或排行榜提交。
+- S1 模拟提交生成、严格校验、确定性 ZIP 和 manifest 已完成；A2 GCE、A3 LogitClip 均未超过 A1，已经停止，见 `docs/13_S1与A2_A3验收报告.md`。
+- PEFT 参数白名单、LoRA 折叠、可恢复 checkpoint、确定性训练增强、资源冒烟和正式筛选已完成。当前唯一 M0 为“冻结 A1 分类头，只训练最后视觉注意力 rank-4 LoRA 三轮”，noisy-validation Top-1 68.4282%、macro 68.4163%，见 `docs/14_P3_PEFT资源与短程筛选报告.md`。
+- 当前已经进入**初赛官方数据阶段**并完成 M0，但尚无测试推理或排行榜提交；下一技术工作包是 M1 类内损失与历史稳定性软权重。
 
 ### 当前不可做
 
@@ -82,7 +84,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-下一步先在不读取测试图片的前提下补齐 S1 本地模拟提交生成、校验、ZIP 和 manifest 闭环；随后制定 A2 GCE、A3 LogitClip-CE 与 A1 同预算的对照方案，再按资源门禁获得批准。A2/A3 没有可信增益前，不进入 ELR 或 M1-M5；PEFT 先只做轻量工程与资源冒烟，正式训练另行申请批准。
+下一步在不读取测试图片的前提下进入 M1：先实现类内归一化损失、历史预测稳定性和软权重状态的最小模块与单测，再从 M0 最佳 checkpoint 做单种子短程正式筛选。M1 只允许相对 M0 增加可信度加权，不同时叠加视觉原型或标签修正；有清晰增益才进入多种子/M2，无增益则回退 M0。
 
 ## 7. 上游成熟方案入口
 
@@ -95,6 +97,8 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 - 初赛真实数据审计：`docs/10_初赛数据审计报告.md`
 - P3 实施状态与资源门禁：`docs/11_P3_冻结特征基线实施与资源门禁.md`
 - P3 A0/A1 正式结果：`docs/12_P3_A0_A1_正式基线报告.md`
+- S1 与 A2/A3 验收：`docs/13_S1与A2_A3验收报告.md`
+- P3 PEFT/M0 筛选：`docs/14_P3_PEFT资源与短程筛选报告.md`
 - 实际复制或改写第三方代码后才创建：`THIRD_PARTY_NOTICES.md`
 
 上游候选不能只列为参考：到达强制触发阶段后必须形成最小实现/正式对照实验或有证据的排除结论。
@@ -103,5 +107,5 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 - `pytorch-install.stdout.log` / `pytorch-install.stderr.log`：本次 PyTorch 安装过程日志，可保留用于排错；不是训练实验记录。
 - `docs/技术报告.docx`：项目现有文档，尚未进行内容审查或修改；若后续需要编辑 `.docx`，应遵守文档渲染与校验流程。
-- 已创建并正式运行冻结 CLIP 特征和分类头训练链路，但尚未创建端到端 PEFT 训练或最终提交生成器；不得把 noisy validation 指标误报为干净测试精度。
+- 已创建并正式运行冻结 CLIP、端到端 PEFT 和模拟提交生成链路；真实测试推理与线上提交仍未运行，不得把 noisy-validation 指标误报为干净测试或排行榜成绩。
 - P0/P0.5 已完成治理建设；报名、数据权限和组委会答复仍是外部待办，不应被误报为已完成。
