@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Iterable
 
+import numpy as np
 import torch
 from PIL import Image, ImageFile
 from torch.utils.data import Dataset
@@ -135,10 +136,18 @@ class IndexedImageDataset(Dataset[dict[str, object]]):
         transform: Callable[[Image.Image], torch.Tensor],
         *,
         allow_truncated_images: bool = False,
+        stochastic_seed: int | None = None,
     ) -> None:
         self.records = records
         self.transform = transform
         self.allow_truncated_images = allow_truncated_images
+        self.stochastic_seed = stochastic_seed
+        self.epoch = 0
+
+    def set_epoch(self, epoch: int) -> None:
+        if epoch < 0:
+            raise ValueError("dataset epoch must be non-negative")
+        self.epoch = epoch
 
     def __len__(self) -> int:
         return len(self.records)
@@ -154,8 +163,17 @@ class IndexedImageDataset(Dataset[dict[str, object]]):
             raise RuntimeError(f"failed to load audited image {record.absolute_path}") from exc
         finally:
             ImageFile.LOAD_TRUNCATED_IMAGES = previous
+        if bool(getattr(self.transform, "stochastic", False)):
+            if self.stochastic_seed is None:
+                raise ValueError("stochastic image transform requires an explicit dataset seed")
+            seed = np.random.SeedSequence(
+                [self.stochastic_seed, self.epoch, record.sample_index]
+            )
+            transformed = self.transform(image, rng=np.random.default_rng(seed))
+        else:
+            transformed = self.transform(image)
         return {
-            "image": self.transform(image),
+            "image": transformed,
             "label": -1 if record.internal_class_index is None else record.internal_class_index,
             "sample_index": record.sample_index,
             "sample_id": record.sample_id,

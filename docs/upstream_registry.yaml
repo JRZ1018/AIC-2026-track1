@@ -68,8 +68,8 @@ repositories:
     trigger_stages: [P2, P3]
     deliverable: Single-model ELR baseline with measured state memory and no ELR+ path.
     copy_policy: minimal_attributed_reimplementation
-    decision: candidate
-    implementation_status: p2_minimal_complete_p3_experiment_pending
+    decision: excluded
+    implementation_status: p2_minimal_complete_p3_skipped_after_a2_a3_no_gain
     implementation_path: src/aictrack1/methods/elr.py
     evidence: tests/test_elr.py; tests/test_p2_benchmark.py
   - id: logitclip
@@ -83,10 +83,10 @@ repositories:
     trigger_stages: [P2, P3]
     deliverable: Independent implementation from the PMLR paper with gradient and AMP tests.
     copy_policy: forbidden
-    decision: candidate
-    implementation_status: p2_independent_implementation_complete_p3_experiment_pending
+    decision: excluded
+    implementation_status: p3_frozen_experiments_complete_stopped_below_ce
     implementation_path: src/aictrack1/methods/logit_clip.py
-    evidence: tests/test_logit_clip.py; tests/test_p2_benchmark.py
+    evidence: tests/test_logit_clip.py; tests/test_p2_benchmark.py; docs/13_S1与A2_A3验收报告.md
   - id: coop
     repository: KaiyangZhou/CoOp
     url: https://github.com/KaiyangZhou/CoOp
