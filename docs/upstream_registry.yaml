@@ -125,7 +125,8 @@ repositories:
     deliverable: Warm-up/per-sample GMM design note plus explicit exclusion of two-network training.
     copy_policy: concepts_only
     decision: concepts_only
-    review_status: p2_gmm_and_warmup_concepts_recorded_two_network_path_excluded
+    review_status: m1_single_model_classwise_history_weighting_complete_two_network_path_excluded
+    evidence: src/aictrack1/methods/confidence.py; d0f1dec; docs/15_M1首轮筛选与首次提交选模报告.md
   - id: coteaching
     repository: bhanML/Co-teaching
     url: https://github.com/bhanML/Co-teaching
@@ -138,7 +139,8 @@ repositories:
     deliverable: Small-loss curriculum design note plus explicit exclusion of two-network training.
     copy_policy: forbidden
     decision: concepts_only
-    review_status: p2_small_loss_curriculum_recorded_two_network_path_excluded
+    review_status: m1_classwise_soft_weight_curriculum_complete_two_network_path_excluded
+    evidence: src/aictrack1/methods/confidence.py; d0f1dec; docs/15_M1首轮筛选与首次提交选模报告.md
   - id: open_clip
     repository: mlfoundations/open_clip
     url: https://github.com/mlfoundations/open_clip
