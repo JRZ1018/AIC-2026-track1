@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aictrack1.data.feature_cache import load_feature_cache
-from aictrack1.evaluation.classification import classification_diagnostics
+from aictrack1.evaluation.classification import calibration_diagnostics, classification_diagnostics
 from aictrack1.models.heads import build_classifier_head
 
 
@@ -50,6 +50,7 @@ def main() -> int:
     if checkpoint["feature_cache_metadata"] != cache.metadata.__dict__:
         raise ValueError("checkpoint and feature cache metadata do not match")
     head_config = checkpoint["head"]
+    loss_config = checkpoint.get("loss", {"kind": "cross_entropy"})
     num_classes = int(cache.labels.max()) + 1
     model = build_classifier_head(
         str(head_config["kind"]),
@@ -79,9 +80,11 @@ def main() -> int:
         for (batch,) in DataLoader(TensorDataset(features), batch_size=args.batch_size):
             logits.append(model(batch.to(device)).float().cpu())
         predictions = torch.cat(logits).argmax(dim=1)
+        all_logits = torch.cat(logits)
         conflict_mask = torch.tensor([sample_id in conflict_ids for sample_id in sample_ids])
-        return {
+        result = {
             "all": classification_diagnostics(predictions, targets, num_classes=num_classes),
+            "calibration": calibration_diagnostics(all_logits, targets),
             "cross_label_exact_conflicts": (
                 classification_diagnostics(
                     predictions[conflict_mask], targets[conflict_mask], num_classes=num_classes
@@ -94,9 +97,19 @@ def main() -> int:
             ),
             "conflict_sample_count": int(conflict_mask.sum()),
         }
+        if loss_config.get("kind") == "logit_clip_cross_entropy":
+            tau = float(loss_config["logit_clip_tau"])
+            norms = torch.linalg.vector_norm(all_logits, ord=float(loss_config["logit_clip_p_norm"]), dim=1)
+            result["logit_clip"] = {
+                "tau": tau,
+                "p_norm": float(loss_config["logit_clip_p_norm"]),
+                "would_clip_fraction": float((norms > tau).float().mean()),
+            }
+        return result
 
     result = {
         "scope": "stage1 noisy train/validation only; competition test data not accessed",
+        "loss": loss_config,
         "validation": analyze_partition("validation"),
     }
     if args.include_train:

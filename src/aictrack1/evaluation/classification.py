@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 import torch
+import torch.nn.functional as F
 
 
 def classification_diagnostics(
@@ -60,4 +61,61 @@ def classification_diagnostics(
         "prediction_count_min": int(predicted_count.min()),
         "prediction_count_max": int(predicted_count.max()),
         "top_confusions": confusions,
+    }
+
+
+def calibration_diagnostics(
+    logits: torch.Tensor,
+    targets: torch.Tensor,
+    *,
+    num_bins: int = 15,
+) -> dict[str, Any]:
+    """Return ECE and confidence diagnostics from explicitly supplied logits."""
+
+    logits = logits.detach().cpu().float()
+    targets = targets.detach().cpu().long().flatten()
+    if logits.ndim != 2 or logits.shape[0] != targets.numel() or targets.numel() == 0:
+        raise ValueError("logits and targets must be non-empty with matching rows")
+    if num_bins < 1:
+        raise ValueError("num_bins must be positive")
+    probabilities = F.softmax(logits, dim=1)
+    confidence, predictions = probabilities.max(dim=1)
+    correct = predictions.eq(targets)
+    boundaries = torch.linspace(0.0, 1.0, num_bins + 1)
+    ece = torch.tensor(0.0)
+    bins: list[dict[str, float | int]] = []
+    for index in range(num_bins):
+        lower = boundaries[index]
+        upper = boundaries[index + 1]
+        selected = (confidence > lower) & (confidence <= upper)
+        count = int(selected.sum())
+        if count == 0:
+            continue
+        accuracy = correct[selected].float().mean()
+        average_confidence = confidence[selected].mean()
+        ece += selected.float().mean() * (accuracy - average_confidence).abs()
+        bins.append(
+            {
+                "lower": float(lower),
+                "upper": float(upper),
+                "count": count,
+                "accuracy": float(accuracy),
+                "mean_confidence": float(average_confidence),
+            }
+        )
+    norms = torch.linalg.vector_norm(logits, ord=2, dim=1)
+    quantiles = torch.quantile(norms, torch.tensor([0.0, 0.1, 0.5, 0.9, 0.99, 1.0]))
+    return {
+        "negative_log_likelihood": float(F.cross_entropy(logits, targets)),
+        "expected_calibration_error": float(ece),
+        "mean_confidence": float(confidence.mean()),
+        "logit_l2_norm_quantiles": {
+            "min": float(quantiles[0]),
+            "p10": float(quantiles[1]),
+            "median": float(quantiles[2]),
+            "p90": float(quantiles[3]),
+            "p99": float(quantiles[4]),
+            "max": float(quantiles[5]),
+        },
+        "bins": bins,
     }
