@@ -8,7 +8,8 @@ import torch
 from PIL import Image
 
 from aictrack1.data.contracts import load_dataset_config
-from aictrack1.data.indexed_images import IndexedImageDataset, read_indexed_images
+from aictrack1.data.indexed_images import IndexedImage, IndexedImageDataset, read_indexed_images
+from aictrack1.data.transforms import build_split_transforms
 from aictrack1.data.manifest import build_manifest, write_manifest
 
 
@@ -46,3 +47,50 @@ def test_test_source_rejects_split_assignment(synthetic_dataset) -> None:
     config = load_dataset_config(config_path)
     with pytest.raises(ValueError, match="not declared"):
         read_indexed_images(config, source="test", manifest_path="missing.csv")
+
+
+def test_stochastic_dataset_transform_is_epoch_seeded(synthetic_dataset) -> None:
+    dataset_root, config_path = synthetic_dataset
+    config = load_dataset_config(config_path)
+    record = next(record for record in build_manifest(config, "train") if record.decode_status == "ok")
+    records = [
+        IndexedImage(
+            sample_index=0,
+            sample_id=record.sample_id,
+            relative_path=record.relative_path,
+            absolute_path=config.sources["train"].root / record.relative_path,
+            source="train",
+            partition="train",
+            internal_class_index=record.internal_class_index,
+            official_class_id=record.official_class_id,
+        )
+    ]
+    transform = build_split_transforms(config.transforms)["train"]
+    dataset = IndexedImageDataset(records, transform, stochastic_seed=77)
+    first = dataset[0]["image"]
+    repeated = dataset[0]["image"]
+    assert torch.equal(first, repeated)
+    dataset.set_epoch(1)
+    changed = dataset[0]["image"]
+    assert not torch.equal(first, changed)
+
+
+def test_stochastic_dataset_transform_requires_seed(synthetic_dataset) -> None:
+    dataset_root, config_path = synthetic_dataset
+    config = load_dataset_config(config_path)
+    record = next(record for record in build_manifest(config, "train") if record.decode_status == "ok")
+    records = [
+        IndexedImage(
+            sample_index=0,
+            sample_id=record.sample_id,
+            relative_path=record.relative_path,
+            absolute_path=config.sources["train"].root / record.relative_path,
+            source="train",
+            partition="train",
+            internal_class_index=record.internal_class_index,
+            official_class_id=record.official_class_id,
+        )
+    ]
+    dataset = IndexedImageDataset(records, build_split_transforms(config.transforms)["train"])
+    with pytest.raises(ValueError, match="explicit dataset seed"):
+        dataset[0]
