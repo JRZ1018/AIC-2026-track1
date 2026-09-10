@@ -10,7 +10,7 @@ def test_logit_clip_identity_and_bound() -> None:
     logits = torch.tensor([[0.3, 0.4], [30.0, 40.0]], requires_grad=True)
     clipped = logit_clip(logits, tau=0.5)
     assert torch.allclose(clipped[0], logits[0])
-    assert torch.linalg.vector_norm(clipped[1], ord=2) <= 2.0 + 1e-6
+    assert torch.linalg.vector_norm(clipped[1], ord=2) <= 0.5 + 1e-6
     loss = logit_clip_cross_entropy(logits, torch.tensor([0, 1]), tau=0.5)
     loss.backward()
     assert torch.isfinite(loss)
@@ -29,7 +29,7 @@ def test_logit_clip_preserves_shape_dtype_and_handles_extreme_logits() -> None:
     assert clipped.dtype == logits.dtype
     assert clipped.device == logits.device
     assert torch.isfinite(clipped).all()
-    assert torch.linalg.vector_norm(clipped, dim=1).item() <= 4.0 + 1e-10
+    assert torch.linalg.vector_norm(clipped, dim=1).item() <= 0.25 + 1e-10
 
 
 def test_logit_clip_gradient_matches_finite_difference() -> None:

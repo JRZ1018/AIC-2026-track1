@@ -11,7 +11,7 @@
 1. 阅读根目录 [`AGENTS.md`](AGENTS.md)。
 2. 阅读 [`docs/HANDOFF.md`](docs/HANDOFF.md)。
 3. 阅读两份规则摘要与 [`docs/赛题规则.pdf`](docs/赛题规则.pdf)。
-4. 按 [`docs/00_无官方数据阶段工作计划.md`](docs/00_无官方数据阶段工作计划.md) 的门禁顺序执行。
+4. 按 [`docs/00_获奖导向总体工作计划.md`](docs/00_获奖导向总体工作计划.md) 的门禁顺序执行。
 5. 对规则有疑问时，先登记到 [`docs/compliance_questions.md`](docs/compliance_questions.md)，未经确认采用保守解释。
 6. 开始 P3 或 M1-M5 前，检查 [`docs/04_上游方案调研与复用登记.md`](docs/04_上游方案调研与复用登记.md) 和 [`docs/upstream_registry.yaml`](docs/upstream_registry.yaml)。
 
@@ -20,7 +20,7 @@
 - 初赛官方数据已取得，保存在本地 `DataSetStage1/`；该目录整体由 Git 忽略，训练集和测试集必须严格隔离。
 - 已验证 OpenAI CLIP ViT-B/32 权重及 RTX 4060 Laptop GPU CUDA 环境。
 - P0/P0.5 治理以及 P1/P2 合成工程验收已完成。
-- 初赛数据只读审计、真实配置和固定划分已经完成；当前优先级是建立 P3 OpenAI CLIP ViT-B/32 冻结特征与分类头基线。
+- 初赛数据只读审计、真实配置、固定划分和 P3 冻结特征基线已经完成；当前优先级是本地提交工程闭环及 A2/A3 同预算鲁棒损失对照。
 - P3 全量训练特征与 A0/A1 已完成；A1 余弦头以 67.909% noisy-validation Top-1 成为后续统一基线，详见 [`docs/12_P3_A0_A1_正式基线报告.md`](docs/12_P3_A0_A1_正式基线报告.md)。
 - 正式训练、全量特征提取或其他大量占用系统资源的过程，必须先报告预计高占用时间和资源，再等待用户批准。
 

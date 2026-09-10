@@ -14,6 +14,9 @@ import torch.nn.functional as F
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
 
+from aictrack1.methods.gce import generalized_cross_entropy
+from aictrack1.methods.logit_clip import logit_clip_cross_entropy
+
 
 @dataclass(frozen=True)
 class FrozenHeadConfig:
@@ -40,6 +43,22 @@ class FrozenHeadConfig:
             raise ValueError("optimizer must be sgd or adamw")
 
 
+@dataclass(frozen=True)
+class FrozenLossConfig:
+    kind: str = "cross_entropy"
+    gce_q: float = 0.7
+    logit_clip_tau: float = 1.5
+    logit_clip_p_norm: float = 2.0
+
+    def validate(self) -> None:
+        if self.kind not in {"cross_entropy", "gce", "logit_clip_cross_entropy"}:
+            raise ValueError(f"unsupported frozen-head loss {self.kind!r}")
+        if not 0 < self.gce_q <= 1:
+            raise ValueError("gce_q must be in (0, 1]")
+        if self.logit_clip_tau <= 0 or self.logit_clip_p_norm <= 0:
+            raise ValueError("LogitClip tau and p_norm must be positive")
+
+
 def _classification_metrics(logits: torch.Tensor, targets: torch.Tensor, num_classes: int) -> dict[str, float]:
     predictions = logits.argmax(dim=1)
     correct = predictions.eq(targets)
@@ -61,12 +80,15 @@ class FrozenHeadTrainer:
         *,
         device: str | torch.device,
         num_classes: int,
+        loss_config: FrozenLossConfig = FrozenLossConfig(),
     ) -> None:
         config.validate()
+        loss_config.validate()
         self.model = model.to(device)
         self.config = config
         self.device = torch.device(device)
         self.num_classes = num_classes
+        self.loss_config = loss_config
         if config.optimizer == "sgd":
             self.optimizer = torch.optim.SGD(
                 model.parameters(),
@@ -87,6 +109,18 @@ class FrozenHeadTrainer:
         self.best_top1 = float("-inf")
         self.best_state: dict[str, torch.Tensor] | None = None
         self.history: list[dict[str, float | int]] = []
+
+    def _loss(self, logits: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
+        if self.loss_config.kind == "cross_entropy":
+            return F.cross_entropy(logits, targets)
+        if self.loss_config.kind == "gce":
+            return generalized_cross_entropy(logits, targets, q=self.loss_config.gce_q)
+        return logit_clip_cross_entropy(
+            logits,
+            targets,
+            tau=self.loss_config.logit_clip_tau,
+            p_norm=self.loss_config.logit_clip_p_norm,
+        )
 
     def _loader(
         self,
@@ -121,7 +155,7 @@ class FrozenHeadTrainer:
                 dtype=torch.float16,
                 enabled=self.amp_enabled,
             ):
-                loss = F.cross_entropy(self.model(batch_features), batch_labels)
+                loss = self._loss(self.model(batch_features), batch_labels)
             if not torch.isfinite(loss):
                 raise FloatingPointError("frozen-head training produced a non-finite loss")
             self.scaler.scale(loss).backward()
@@ -175,6 +209,7 @@ class FrozenHeadTrainer:
     def state_dict(self) -> dict[str, Any]:
         state: dict[str, Any] = {
             "config": asdict(self.config),
+            "loss_config": asdict(self.loss_config),
             "epoch": self.epoch,
             "best_top1": self.best_top1,
             "model": copy.deepcopy(self.model.state_dict()),
@@ -194,6 +229,9 @@ class FrozenHeadTrainer:
     def load_state_dict(self, state: dict[str, Any]) -> None:
         if state.get("config") != asdict(self.config):
             raise ValueError("checkpoint training configuration mismatch")
+        saved_loss = state.get("loss_config", asdict(FrozenLossConfig()))
+        if saved_loss != asdict(self.loss_config):
+            raise ValueError("checkpoint loss configuration mismatch")
         self.model.load_state_dict(state["model"])
         self.optimizer.load_state_dict(state["optimizer"])
         self.scheduler.load_state_dict(state["scheduler"])

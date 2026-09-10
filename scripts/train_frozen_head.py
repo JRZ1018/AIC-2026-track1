@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aictrack1.data.feature_cache import load_feature_cache, select_feature_partition
-from aictrack1.engine.frozen_head import FrozenHeadConfig, FrozenHeadTrainer
+from aictrack1.engine.frozen_head import FrozenHeadConfig, FrozenHeadTrainer, FrozenLossConfig
 from aictrack1.models.heads import build_classifier_head
 
 
@@ -63,6 +63,7 @@ def main() -> int:
         raise ValueError("feature labels exceed configured num_classes")
 
     training = FrozenHeadConfig(**raw["training"])
+    loss_config = FrozenLossConfig(**raw.get("loss", {}))
     random.seed(training.seed)
     np.random.seed(training.seed)
     torch.manual_seed(training.seed)
@@ -79,7 +80,13 @@ def main() -> int:
     device = torch.device(str(raw.get("device", "cuda")))
     if device.type == "cuda" and not torch.cuda.is_available():
         raise RuntimeError("CUDA was requested but is not available")
-    trainer = FrozenHeadTrainer(head, training, device=device, num_classes=num_classes)
+    trainer = FrozenHeadTrainer(
+        head,
+        training,
+        device=device,
+        num_classes=num_classes,
+        loss_config=loss_config,
+    )
     if args.resume is not None:
         trainer.load_checkpoint(args.resume)
 
@@ -97,6 +104,7 @@ def main() -> int:
         {
             "model": trainer.best_state,
             "head": head_raw,
+            "loss": loss_config.__dict__,
             "feature_cache_metadata": cache.metadata.__dict__,
             "best_top1": trainer.best_top1,
         },
@@ -105,6 +113,7 @@ def main() -> int:
     metrics = {
         "scope": "stage1 noisy-validation frozen-feature baseline",
         "history": history,
+        "loss": loss_config.__dict__,
         "best_top1": trainer.best_top1,
         "duration_seconds": duration,
         "peak_vram_mib": (

@@ -2,6 +2,7 @@
 
 from .elr import ELRLoss, ELRState, estimate_elr_state_bytes
 from .confidence import classwise_rank_noise_scores, select_suspected_noisy
+from .gce import generalized_cross_entropy
 from .logit_clip import logit_clip, logit_clip_cross_entropy
 
 __all__ = [
@@ -10,6 +11,7 @@ __all__ = [
     "classwise_rank_noise_scores",
     "select_suspected_noisy",
     "estimate_elr_state_bytes",
+    "generalized_cross_entropy",
     "logit_clip",
     "logit_clip_cross_entropy",
 ]
