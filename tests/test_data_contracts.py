@@ -82,3 +82,35 @@ def test_boolean_contract_does_not_accept_truthy_strings(
     config_path.write_text(yaml.safe_dump(raw), encoding="utf-8")
     with pytest.raises(ValueError, match="must be a boolean"):
         load_dataset_config(config_path)
+
+
+def test_derived_mapping_must_be_outside_immutable_data(tmp_path: Path) -> None:
+    data = tmp_path / "data"
+    (data / "train" / "0000").mkdir(parents=True)
+    (data / "test").mkdir()
+    path = tmp_path / "stage1.yaml"
+    path.write_text(
+        yaml.safe_dump(
+            {
+                "stage": "preliminary",
+                "dataset_root": str(data),
+                "class_mapping": "metadata/classes.csv",
+                "class_mapping_provenance": "train_directory_names",
+                "extensions": ["jpg"],
+                "sources": {
+                    "train": {
+                        "root": "train",
+                        "label_source": "directory",
+                        "class_from_parent": True,
+                    },
+                    "test": {"root": "test", "label_source": "none"},
+                },
+                "audit": {"output_root": str(tmp_path / "audit")},
+                "split": {"validation_fraction": 0.2},
+                "transforms": {"image_size": 32, "resize_size": 32},
+            }
+        ),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="outside the immutable"):
+        load_dataset_config(path)

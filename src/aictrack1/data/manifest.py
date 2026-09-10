@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import io
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass, fields, replace
 from pathlib import Path
@@ -52,9 +53,9 @@ def image_dhash(image: Image.Image) -> str:
     return f"{value:016x}"
 
 
-def inspect_image(path: Path) -> tuple[int | None, int | None, str, str, str]:
+def inspect_image_bytes(payload: bytes) -> tuple[int | None, int | None, str, str, str]:
     try:
-        with Image.open(path) as image:
+        with Image.open(io.BytesIO(payload)) as image:
             image.load()
             width, height = image.size
             mode = image.mode
@@ -64,6 +65,10 @@ def inspect_image(path: Path) -> tuple[int | None, int | None, str, str, str]:
         message = str(exc).lower()
         status = "truncated" if "truncated" in message or "broken data stream" in message else "decode_error"
         return None, None, "", "", status
+
+
+def inspect_image(path: Path) -> tuple[int | None, int | None, str, str, str]:
+    return inspect_image_bytes(path.read_bytes())
 
 
 def _manifest_rows(source: SourceConfig) -> list[tuple[str, str]]:
@@ -107,7 +112,8 @@ def build_manifest(config: DatasetConfig, source_name: str) -> list[SampleRecord
             internal = mapping.to_internal(official)
         if not path.is_file():
             return SampleRecord(sample_id, relative_path, source_name, observed_label, internal, official, decode_status="missing")
-        width, height, mode, dhash, status = inspect_image(path)
+        payload = path.read_bytes()
+        width, height, mode, dhash, status = inspect_image_bytes(payload)
         return SampleRecord(
             sample_id=sample_id,
             relative_path=relative_path,
@@ -115,11 +121,11 @@ def build_manifest(config: DatasetConfig, source_name: str) -> list[SampleRecord
             observed_label=observed_label,
             internal_class_index=internal,
             official_class_id=official,
-            file_size=path.stat().st_size,
+            file_size=len(payload),
             width=width,
             height=height,
             mode=mode,
-            sha256=sha256_file(path),
+            sha256=hashlib.sha256(payload).hexdigest(),
             dhash=dhash,
             decode_status=status,
         )

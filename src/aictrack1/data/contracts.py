@@ -11,6 +11,7 @@ import yaml
 
 ALLOWED_STAGES = {"synthetic", "preliminary", "rematch", "semifinal"}
 ALLOWED_LABEL_SOURCES = {"manifest", "directory", "none"}
+ALLOWED_CLASS_MAPPING_PROVENANCE = {"official_file", "train_directory_names"}
 
 
 @dataclass(frozen=True)
@@ -53,6 +54,7 @@ class DatasetConfig:
     stage: str
     dataset_root: Path
     class_mapping: Path
+    class_mapping_provenance: str
     extensions: tuple[str, ...]
     allow_truncated_images: bool
     sources: dict[str, SourceConfig]
@@ -130,8 +132,13 @@ def load_dataset_config(path: str | Path) -> DatasetConfig:
     base = config_path.parent
     dataset_root = _resolve(base, str(_require(raw, "dataset_root", "dataset")))
     class_mapping = _resolve(dataset_root, str(_require(raw, "class_mapping", "dataset")))
-    if not class_mapping.is_relative_to(dataset_root):
-        raise ValueError("class_mapping must be inside dataset_root")
+    class_mapping_provenance = str(raw.get("class_mapping_provenance", "official_file"))
+    if class_mapping_provenance not in ALLOWED_CLASS_MAPPING_PROVENANCE:
+        raise ValueError(
+            "unsupported class_mapping_provenance; expected official_file or train_directory_names"
+        )
+    if class_mapping_provenance == "official_file" and not class_mapping.is_relative_to(dataset_root):
+        raise ValueError("official class_mapping must be inside dataset_root")
     extensions_raw = _require(raw, "extensions", "dataset")
     if not isinstance(extensions_raw, list) or not extensions_raw:
         raise ValueError("dataset.extensions must be a non-empty list")
@@ -143,6 +150,14 @@ def load_dataset_config(path: str | Path) -> DatasetConfig:
     sources = {name: _parse_source(name, value, dataset_root) for name, value in sources_raw.items()}
     if stage != "synthetic" and "test" not in sources:
         raise ValueError("competition stages must contain an explicit unlabeled test source")
+    if class_mapping_provenance == "train_directory_names":
+        train_source = sources["train"]
+        if train_source.label_source != "directory" or not train_source.class_from_parent:
+            raise ValueError(
+                "train_directory_names provenance requires directory labels from train parents"
+            )
+        if class_mapping.is_relative_to(dataset_root):
+            raise ValueError("derived class_mapping must be outside the immutable dataset_root")
 
     audit_raw = _require(raw, "audit", "dataset")
     if not isinstance(audit_raw, dict):
@@ -207,6 +222,7 @@ def load_dataset_config(path: str | Path) -> DatasetConfig:
         stage=stage,
         dataset_root=dataset_root,
         class_mapping=class_mapping,
+        class_mapping_provenance=class_mapping_provenance,
         extensions=extensions,
         allow_truncated_images=_optional_bool(
             raw, "allow_truncated_images", False, "dataset"

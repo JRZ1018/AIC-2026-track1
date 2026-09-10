@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -68,6 +69,36 @@ class ClassMapping:
             for entry in self.entries
         )
         return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+    @classmethod
+    def from_train_directories(cls, root: str | Path) -> "ClassMapping":
+        directory = Path(root)
+        labels = sorted(path.name for path in directory.iterdir() if path.is_dir())
+        if not labels:
+            raise ValueError("training directory contains no class subdirectories")
+        invalid = [label for label in labels if re.fullmatch(r"\d{4}", label) is None]
+        if invalid:
+            raise ValueError(f"class directories must be four digits; examples: {invalid[:3]}")
+        return cls([ClassEntry(label, index) for index, label in enumerate(labels)])
+
+    def write_csv(self, path: str | Path) -> None:
+        output = Path(path)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        with output.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(
+                handle,
+                fieldnames=["official_class_id", "internal_class_index", "class_name"],
+                lineterminator="\n",
+            )
+            writer.writeheader()
+            for entry in self.entries:
+                writer.writerow(
+                    {
+                        "official_class_id": entry.official_class_id,
+                        "internal_class_index": entry.internal_class_index,
+                        "class_name": entry.class_name,
+                    }
+                )
 
     def __len__(self) -> int:
         return len(self.entries)
