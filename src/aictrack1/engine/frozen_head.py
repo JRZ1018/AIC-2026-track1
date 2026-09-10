@@ -144,12 +144,9 @@ class FrozenHeadTrainer:
             features, labels, shuffle=False, epoch=0
         ):
             batch_features = batch_features.to(self.device, non_blocking=True)
-            with torch.autocast(
-                device_type=self.device.type,
-                dtype=torch.float16,
-                enabled=self.amp_enabled,
-            ):
-                logits.append(self.model(batch_features).float().cpu())
+            # Metrics are always computed from float32 head logits. AMP remains a
+            # training optimization, not an evaluation-protocol variable.
+            logits.append(self.model(batch_features.float()).float().cpu())
             targets.append(batch_labels)
         return _classification_metrics(torch.cat(logits), torch.cat(targets), self.num_classes)
 
