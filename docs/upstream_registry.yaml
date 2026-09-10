@@ -18,9 +18,9 @@ repositories:
     deliverable: Official ViT-B/32 loader, weight hash, preprocessing parity and resource benchmark.
     copy_policy: dependency_or_attributed_copy
     decision: adopted
-    implementation_status: p3_loader_cache_and_gpu_smoke_complete_full_baselines_pending
+    implementation_status: p3_full_train_cache_and_a0_a1_complete_a1_selected
     implementation_path: src/aictrack1/models/clip_vit_b32.py; src/aictrack1/data/feature_cache.py
-    evidence: d34c650; tests/test_clip_vit_b32.py; docs/11_P3_冻结特征基线实施与资源门禁.md
+    evidence: d34c650; 5f13a6a; cab1fc0; tests/test_clip_vit_b32.py; docs/12_P3_A0_A1_正式基线报告.md
   - id: deft
     repository: HotanLee/DeFT
     url: https://github.com/HotanLee/DeFT

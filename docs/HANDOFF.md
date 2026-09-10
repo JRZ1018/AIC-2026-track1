@@ -33,7 +33,7 @@
 
 - 已选定赛题并整理官方通知、赛题规则 Markdown。
 - 已将项目级工程与合规规范迁移至根目录：`AGENTS.md`。
-- 已初始化 Git 主分支并建立防泄漏 `.gitignore`；初赛审计报告提交为 `f02fd87`，旧 `data/` 占位移除提交为 `aea9535`，P3 冻结 CLIP 基线工程提交为 `d34c650`。
+- 已初始化 Git 主分支并建立防泄漏 `.gitignore`；初赛审计报告提交为 `f02fd87`，旧 `data/` 占位移除提交为 `aea9535`，P3 冻结 CLIP 基线工程提交为 `d34c650`，float32 分类诊断提交为 `cab1fc0`。
 - 已建立最小目录骨架、实验索引和提交台账。
 - 已将无数据阶段计划升级为获奖导向路线，并建立合规问题与规则变更日志。
 - 已完成 P0/P0.5 治理落地：上游方案固定版本登记、许可证边界、强制触发阶段、最小复用规格和 Git 防泄漏检查器均已建立。
@@ -44,8 +44,8 @@
 - 已安装本地提供的 OpenAI CLIP 源码。
 - 已下载 OpenAI 官方 ViT-B/32 权重：`artifacts/weights/ViT-B-32.pt`（约 337.6 MiB）。
 - 已修复环境检查脚本中的 PowerShell/Python 引号问题：`scripts/check_environment.ps1`。
-- P3 已完成严格本地 OpenAI CLIP ViT-B/32 加载、可恢复冻结特征缓存、线性/余弦头、训练恢复和 58 项测试；256 图实机吞吐冒烟通过。全量训练特征与 A0/A1 正式准确率实验尚未执行。
-- 当前已经进入**初赛官方数据阶段**，真实数据审计与固定划分已完成，但尚无正式训练结果或排行榜提交。
+- P3 全量训练特征与 A0/A1 正式实验已完成；A1 余弦头的 float32 noisy-validation Top-1 为 67.909%、macro accuracy 为 67.894%，选择为后续统一基线。正式报告见 `docs/12_P3_A0_A1_正式基线报告.md`。
+- 当前已经进入**初赛官方数据阶段**，已有正式本地冻结特征基线，但尚无测试推理或排行榜提交。
 
 ### 当前不可做
 
@@ -82,7 +82,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-下一步按 `docs/11_P3_冻结特征基线实施与资源门禁.md` 的已测预算提取完整训练特征并运行 A0/A1。该任务必须获得针对 15–25 分钟特征提取和 2–8 分钟双头训练的明确批准；批准不覆盖测试推理、PEFT 或鲁棒方法。
+下一步先制定 A2 GCE、A3 LogitClip-CE 与 A1 同预算的对照方案，再按资源门禁获得批准。A2/A3 没有可信增益前，不进入 ELR、PEFT 或 M1-M5；测试集仍不读取。
 
 ## 7. 上游成熟方案入口
 
@@ -94,6 +94,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 - P1/P2 实施验收：`docs/09_P1_P2_实施验收报告.md`
 - 初赛真实数据审计：`docs/10_初赛数据审计报告.md`
 - P3 实施状态与资源门禁：`docs/11_P3_冻结特征基线实施与资源门禁.md`
+- P3 A0/A1 正式结果：`docs/12_P3_A0_A1_正式基线报告.md`
 - 实际复制或改写第三方代码后才创建：`THIRD_PARTY_NOTICES.md`
 
 上游候选不能只列为参考：到达强制触发阶段后必须形成最小实现/正式对照实验或有证据的排除结论。
@@ -102,5 +103,5 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 - `pytorch-install.stdout.log` / `pytorch-install.stderr.log`：本次 PyTorch 安装过程日志，可保留用于排错；不是训练实验记录。
 - `docs/技术报告.docx`：项目现有文档，尚未进行内容审查或修改；若后续需要编辑 `.docx`，应遵守文档渲染与校验流程。
-- 已创建冻结 CLIP 特征和分类头训练链路，但尚未创建端到端 PEFT 训练或最终提交生成器；不得把小样本吞吐冒烟误报为正式效果实验。
+- 已创建并正式运行冻结 CLIP 特征和分类头训练链路，但尚未创建端到端 PEFT 训练或最终提交生成器；不得把 noisy validation 指标误报为干净测试精度。
 - P0/P0.5 已完成治理建设；报名、数据权限和组委会答复仍是外部待办，不应被误报为已完成。
