@@ -22,12 +22,8 @@ references/upstream/*
 *.joblib
 
 # Competition predictions and submission archives
-submissions/*.csv
+submissions/**
 !submissions/ledger.csv
-submissions/*.zip
-submissions/*.7z
-submissions/*.tar
-submissions/*.gz
 
 # Per-run experiment artifacts; keep the lightweight reproducibility record
 experiments/**
