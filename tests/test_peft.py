@@ -70,3 +70,12 @@ def test_lora_starts_as_identity_trains_only_low_rank_and_folds() -> None:
     assert not hasattr(attention, "parametrizations") or not hasattr(
         attention.parametrizations, "in_proj_weight"
     )
+
+
+@pytest.mark.skipif(not torch.cuda.is_available(), reason="CUDA is unavailable")
+def test_lora_parameters_follow_visual_cuda_device() -> None:
+    visual = _Visual().cuda()
+    configure_visual_peft(visual, "lora_last_attention", lora_rank=2, lora_alpha=4)
+    trainable = [parameter for parameter in visual.parameters() if parameter.requires_grad]
+    assert trainable
+    assert all(parameter.device.type == "cuda" for parameter in trainable)

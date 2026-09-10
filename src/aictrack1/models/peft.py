@@ -29,8 +29,12 @@ class LowRankWeightDelta(nn.Module):
             raise ValueError("LoRA rank is incompatible with the weight shape")
         if alpha <= 0:
             raise ValueError("LoRA alpha must be positive")
-        self.lora_a = nn.Parameter(torch.empty(rank, weight.shape[1]))
-        self.lora_b = nn.Parameter(torch.zeros(weight.shape[0], rank))
+        self.lora_a = nn.Parameter(
+            torch.empty(rank, weight.shape[1], device=weight.device, dtype=weight.dtype)
+        )
+        self.lora_b = nn.Parameter(
+            torch.zeros(weight.shape[0], rank, device=weight.device, dtype=weight.dtype)
+        )
         nn.init.kaiming_uniform_(self.lora_a, a=math.sqrt(5))
         self.scale = alpha / rank
 
