@@ -16,9 +16,8 @@ def logit_clip(logits: torch.Tensor, tau: float, p_norm: float = 2.0, eps: float
         raise ValueError("tau must be positive")
     if p_norm <= 0:
         raise ValueError("p_norm must be positive")
-    max_norm = 1.0 / tau
     norms = torch.linalg.vector_norm(logits, ord=p_norm, dim=-1, keepdim=True)
-    scale = torch.clamp(max_norm / norms.clamp_min(eps), max=1.0)
+    scale = torch.clamp(tau / norms.clamp_min(eps), max=1.0)
     return logits * scale
 
 

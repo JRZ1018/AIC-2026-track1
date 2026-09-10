@@ -17,7 +17,7 @@ REQUIRED_FILES = (
     ROOT / "AGENTS.md",
     ROOT / ".gitignore",
     ROOT / "docs" / "HANDOFF.md",
-    ROOT / "docs" / "00_无官方数据阶段工作计划.md",
+    ROOT / "docs" / "00_获奖导向总体工作计划.md",
     ROOT / "docs" / "04_上游方案调研与复用登记.md",
     ROOT / "docs" / "05_上游最小复用规格.md",
     ROOT / "docs" / "compliance_questions.md",

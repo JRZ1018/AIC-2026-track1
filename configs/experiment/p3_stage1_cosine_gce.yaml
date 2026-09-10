@@ -1,0 +1,23 @@
+experiment:
+  run_id: 20260910-p3-a2-cosine-gce-q07
+  feature_cache: ../../artifacts/features/stage1/train_openai_vit_b32
+  output_dir: ../../artifacts/experiments/20260910-p3-a2-cosine-gce-q07
+  device: cuda
+  num_classes: 500
+  head:
+    kind: cosine
+    initial_scale: 10.0
+    learnable_scale: true
+  loss:
+    kind: gce
+    gce_q: 0.7
+  training:
+    epochs: 30
+    batch_size: 1024
+    learning_rate: 0.05
+    weight_decay: 0.0
+    momentum: 0.9
+    gradient_clip_norm: 5.0
+    seed: 20260910
+    optimizer: sgd
+    amp: true
