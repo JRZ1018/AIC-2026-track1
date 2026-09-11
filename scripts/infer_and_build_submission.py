@@ -128,7 +128,7 @@ def main() -> int:
         lora_rank=int(peft.get("lora_rank", 4)),
         lora_alpha=float(peft.get("lora_alpha", 8.0)),
     )
-    head, _ = load_classifier_head_checkpoint(
+    head, head_checkpoint = load_classifier_head_checkpoint(
         head_path,
         feature_dim=clip_metadata.feature_dim,
         num_classes=len(mapping),
@@ -139,9 +139,19 @@ def main() -> int:
     expected_head_sha256 = checkpoint.get("head_initializer_sha256")
     if expected_head_sha256 is not None and expected_head_sha256 != _sha256(head_path):
         raise ValueError("checkpoint and classifier head initializer hashes differ")
+    normalized_features = head_checkpoint["feature_cache_metadata"].get("normalized")
+    if not isinstance(normalized_features, bool):
+        raise ValueError("head checkpoint must declare whether cached features were normalized")
+    checkpoint_normalized = checkpoint.get("normalize_features")
+    if checkpoint_normalized is not None and checkpoint_normalized != normalized_features:
+        raise ValueError("checkpoint and classifier head feature normalization differ")
     for parameter in head.parameters():
         parameter.requires_grad_(False)
-    model = PEFTImageClassifier(visual, head).to(device)
+    model = PEFTImageClassifier(
+        visual,
+        head,
+        normalize_features=normalized_features,
+    ).to(device)
     load_trainable_state_dict(model, checkpoint["trainable_state"])
     fold_visual_lora(model.visual)
     model.eval()
