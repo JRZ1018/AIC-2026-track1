@@ -47,6 +47,19 @@ class CosineClassifier(nn.Module):
         return scale * normalized_features @ normalized_weight.t()
 
 
+class FrozenFeatureImageClassifier(nn.Module):
+    """Apply a frozen-feature head to normalized CLIP image embeddings."""
+
+    def __init__(self, visual: nn.Module, classifier: nn.Module) -> None:
+        super().__init__()
+        self.visual = visual
+        self.classifier = classifier
+
+    def forward(self, images: torch.Tensor) -> torch.Tensor:
+        features = F.normalize(self.visual(images).float(), dim=-1)
+        return self.classifier(features)
+
+
 def build_classifier_head(
     kind: str,
     feature_dim: int,
