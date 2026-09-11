@@ -9,6 +9,7 @@
 - Git commit：`6dc7ddf74df5198fe7c3d4bcb3bbc7850b8d2758`
 - 要求：detached HEAD、工作区干净，不修改任何 `.py`、`.yaml`、依赖或固定划分。
 - 训练只可读取 `DataSetStage1/train` 及任务单列出的训练/验证派生产物；不得运行测试推理或打开测试预测。
+- Windows Git 可能按 `core.autocrlf` 将 YAML 检出为 CRLF。各任务单同时列出规范化 LF 与 Windows CRLF 原始哈希；只允许这两种换行差异，B 不手工转换文件。
 
 ## 执行顺序
 

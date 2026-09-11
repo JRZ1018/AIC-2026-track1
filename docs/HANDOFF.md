@@ -55,6 +55,7 @@
 - 已确定双人协作模式：A 负责核心研发、Git 集成、实验决策和唯一测试提交；B 作为第二算力节点，只执行 A 冻结的训练任务单。首次同步、权限边界、Git 和产物规范、故障门禁及近期并行节奏见 `docs/17_双人协作与训练执行交接手册.md`。
 - 已冻结 B 首轮四项配对复验代码 commit `6dc7ddf74df5198fe7c3d4bcb3bbc7850b8d2758`：按 M0 v2 seed2、M1 seed2、M0 v2 seed3、M1 seed3 顺序串行执行。任务总入口为 `docs/task_orders/20260911-B-first-round.md`；四项配置差异单测、治理检查、两步 CUDA smoke 和完整 105 项测试均已通过。
 - 已完成队友线性头优化预算的固定划分公平复验：H1 线性 Adam 三种子 Top-1 均值 68.6916%、总体标准差 0.0114 点，显著推翻旧 A0 作为线性能力代表；同预算 H2 余弦 Adam 均值 67.6412%，说明该配方只适合线性头。证据与榜分差异边界见 `docs/18_公平冻结头复验与榜分差异分析.md`。
+- 已准备 B 产物严格验签与三种子配对汇总工具；验收计划为 `configs/evaluation/b_first_round.yaml`。H1 线性头初始化 LoRA 的单变量配置已预注册但以 `execution_enabled: false` 锁住，未运行。门禁、命令和资源边界见 `docs/19_B结果验收与H1_LoRA预注册.md`。
 - 当前已经进入**初赛官方数据阶段**并完成 M0/M1 首筛及首份真实提交包；不得利用测试预测统计继续调参。
 
 ### 当前不可做
@@ -92,7 +93,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-B 首轮应从 `docs/task_orders/20260911-B-first-round.md` 开始，严格锁定 `6dc7ddf74df5198fe7c3d4bcb3bbc7850b8d2758`，完成 M0 v2/M1 两个 seed 的成对复验。A 端公平冻结头诊断已经完成，不启动 M2；收到 B 产物后汇总三种子，再决定回退 M0 v2、保留 M1，或以更强 H1 线性头作为下一轮 PEFT 初始化。全量 103,218 张重训仍需新的显式批准。
+B 首轮应从 `docs/task_orders/20260911-B-first-round.md` 开始，严格锁定 `6dc7ddf74df5198fe7c3d4bcb3bbc7850b8d2758`，完成 M0 v2/M1 两个 seed 的成对复验。A 使用 `scripts/aggregate_b_results.py` 验签并汇总；在 B 结果到件和用户再次批准前，不启用 H1→LoRA 预备配置、不启动 M2。全量 103,218 张重训仍需新的显式批准。
 
 ## 7. 上游成熟方案入口
 
