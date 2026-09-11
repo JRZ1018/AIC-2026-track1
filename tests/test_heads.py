@@ -5,10 +5,20 @@ import torch
 
 from aictrack1.models.heads import (
     CosineClassifier,
+    FrozenFeatureImageClassifier,
     LinearClassifier,
     build_classifier_head,
     load_classifier_head_checkpoint,
 )
+
+
+def test_frozen_feature_image_classifier_normalizes_visual_features() -> None:
+    visual = torch.nn.Linear(3, 4, bias=False)
+    head = LinearClassifier(4, 2)
+    model = FrozenFeatureImageClassifier(visual, head)
+    images = torch.randn(5, 3)
+    expected = head(torch.nn.functional.normalize(visual(images).float(), dim=-1))
+    assert torch.equal(model(images), expected)
 
 
 def test_linear_and_cosine_heads_have_expected_shapes_and_gradients() -> None:
