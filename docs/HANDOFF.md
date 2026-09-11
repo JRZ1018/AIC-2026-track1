@@ -53,6 +53,7 @@
 - 已在锁模后执行一次真实测试推理，生成 `submissions/20260911_m1_first/pred_results.csv` 与 ZIP；共 24,967 行，CSV SHA-256 为 `bcd3db88d044583b90628e8dfd0a7ff4ab1ec43ad00a0306e18bbf30a389c8ea`。文件已通过严格本地校验但尚未上传。
 - 已补齐换机恢复链路：`requirements-lock.txt` 锁定当前环境，`scripts/setup_environment.ps1` 创建仓库内虚拟环境，`scripts/transfer_workspace.py` 逐文件校验并迁移 Git 忽略的私有状态。完整流程见 `docs/16_换机迁移与恢复指南.md`。
 - 已确定双人协作模式：A 负责核心研发、Git 集成、实验决策和唯一测试提交；B 作为第二算力节点，只执行 A 冻结的训练任务单。首次同步、权限边界、Git 和产物规范、故障门禁及近期并行节奏见 `docs/17_双人协作与训练执行交接手册.md`。
+- 已冻结 B 首轮四项配对复验代码 commit `6dc7ddf74df5198fe7c3d4bcb3bbc7850b8d2758`：按 M0 v2 seed2、M1 seed2、M0 v2 seed3、M1 seed3 顺序串行执行。任务总入口为 `docs/task_orders/20260911-B-first-round.md`；四项配置差异单测、治理检查、两步 CUDA smoke 和完整 105 项测试均已通过。
 - 当前已经进入**初赛官方数据阶段**并完成 M0/M1 首筛及首份真实提交包；不得利用测试预测统计继续调参。
 
 ### 当前不可做
@@ -90,7 +91,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-若首次真实提交已经生成，下一步留到次日：先核验提交格式与台账，再补 M1 多种子确认。M1 只允许相对 M0 增加可信度加权，不同时叠加视觉原型或标签修正；稳定增益才进入 M2，无增益则回退 M0。
+B 首轮应从 `docs/task_orders/20260911-B-first-round.md` 开始，严格锁定 `6dc7ddf74df5198fe7c3d4bcb3bbc7850b8d2758`，完成 M0 v2/M1 两个 seed 的成对复验。A 在等待结果期间只推进冻结特征头的公平基线诊断，不启动 M2；收到 B 产物后再汇总三种子并决定保留 M1 或回退 M0 v2。
 
 ## 7. 上游成熟方案入口
 
