@@ -1,4 +1,8 @@
-﻿$ErrorActionPreference = "Continue"
+param(
+    [string]$PythonExecutable = ""
+)
+
+$ErrorActionPreference = "Continue"
 
 Write-Host "=== OS ==="
 Get-ComputerInfo | Select-Object WindowsProductName, WindowsVersion, OsArchitecture
@@ -13,21 +17,27 @@ foreach ($name in @("python", "py", "pip")) {
     }
 }
 
-$projectPython = "D:\aicomp\python312\python.exe"
+$repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
+$venvPython = Join-Path $repoRoot ".venv\Scripts\python.exe"
 $pythonCmd = Get-Command python -ErrorAction SilentlyContinue
-if (Test-Path -LiteralPath $projectPython) {
-    $pythonExecutable = $projectPython
+if ($PythonExecutable -ne "") {
+    if (-not (Test-Path -LiteralPath $PythonExecutable)) {
+        throw "Python executable does not exist: $PythonExecutable"
+    }
+    $selectedPython = (Resolve-Path -LiteralPath $PythonExecutable).Path
+} elseif (Test-Path -LiteralPath $venvPython) {
+    $selectedPython = $venvPython
 } elseif ($null -ne $pythonCmd) {
-    $pythonExecutable = $pythonCmd.Source
+    $selectedPython = $pythonCmd.Source
 } else {
-    $pythonExecutable = $null
+    $selectedPython = $null
 }
 
-if ($null -ne $pythonExecutable) {
+if ($null -ne $selectedPython) {
     Write-Host "`n=== Python ==="
-    Write-Host "selected interpreter: $pythonExecutable"
-    & $pythonExecutable --version
-    & $pythonExecutable -m pip --version
+    Write-Host "selected interpreter: $selectedPython"
+    & $selectedPython --version
+    & $selectedPython -m pip --version
 
     Write-Host "`n=== ML Python packages ==="
     $probe = @'
@@ -66,7 +76,7 @@ except Exception as exc:
     $probeFile = [System.IO.Path]::ChangeExtension([System.IO.Path]::GetTempFileName(), ".py")
     try {
         Set-Content -LiteralPath $probeFile -Value $probe -Encoding utf8
-        & $pythonExecutable $probeFile
+        & $selectedPython $probeFile
     } finally {
         Remove-Item -LiteralPath $probeFile -Force -ErrorAction SilentlyContinue
     }
