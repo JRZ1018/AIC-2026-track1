@@ -29,3 +29,22 @@ def test_h1_initialized_lora_config_is_safe_and_single_variable() -> None:
     for field in ("dataset_config", "model_config", "manifest", "split", "label_conflicts"):
         assert planned[field] == m0[field]
     assert Path(planned["output_dir"]).name == planned["run_id"]
+
+
+def test_enabled_h1_initialized_lora_config_matches_preregistered_recipe() -> None:
+    config_root = ROOT / "configs" / "experiment"
+    planned = yaml.safe_load(
+        (config_root / "p3_stage1_h1init_peft_lora_only_3ep_seed1_planned.yaml").read_text(
+            encoding="utf-8"
+        )
+    )["experiment"]
+    enabled = yaml.safe_load(
+        (config_root / "p3_stage1_h1init_peft_lora_only_3ep_seed1.yaml").read_text(
+            encoding="utf-8"
+        )
+    )["experiment"]
+
+    allowed_differences = {"execution_enabled", "run_id", "output_dir"}
+    assert {key for key in planned if planned[key] != enabled[key]} == allowed_differences
+    assert enabled["execution_enabled"] is True
+    assert Path(enabled["output_dir"]).name == enabled["run_id"]
