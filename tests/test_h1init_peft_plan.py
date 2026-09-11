@@ -48,3 +48,21 @@ def test_enabled_h1_initialized_lora_config_matches_preregistered_recipe() -> No
     assert {key for key in planned if planned[key] != enabled[key]} == allowed_differences
     assert enabled["execution_enabled"] is True
     assert Path(enabled["output_dir"]).name == enabled["run_id"]
+
+
+def test_a_run_only_changes_executor_identity_from_b_frozen_recipe() -> None:
+    config_root = ROOT / "configs" / "experiment"
+    b_run = yaml.safe_load(
+        (config_root / "p3_stage1_h1init_peft_lora_only_3ep_seed1.yaml").read_text(
+            encoding="utf-8"
+        )
+    )["experiment"]
+    a_run = yaml.safe_load(
+        (config_root / "p3_stage1_h1init_peft_lora_only_3ep_seed1_a.yaml").read_text(
+            encoding="utf-8"
+        )
+    )["experiment"]
+
+    assert {key for key in b_run if b_run[key] != a_run[key]} == {"run_id", "output_dir"}
+    assert a_run["run_id"].startswith("20260911-a-")
+    assert Path(a_run["output_dir"]).name == a_run["run_id"]
