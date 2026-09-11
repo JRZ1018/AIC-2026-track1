@@ -14,6 +14,7 @@
 4. 按 [`docs/00_获奖导向总体工作计划.md`](docs/00_获奖导向总体工作计划.md) 的门禁顺序执行。
 5. 对规则有疑问时，先登记到 [`docs/compliance_questions.md`](docs/compliance_questions.md)，未经确认采用保守解释。
 6. 开始 P3 或 M1-M5 前，检查 [`docs/04_上游方案调研与复用登记.md`](docs/04_上游方案调研与复用登记.md) 和 [`docs/upstream_registry.yaml`](docs/upstream_registry.yaml)。
+7. 换机开发按 [`docs/16_换机迁移与恢复指南.md`](docs/16_换机迁移与恢复指南.md) 分离 GitHub 源码和 U 盘私有状态，并逐文件校验 SHA-256。
 
 ## 当前状态
 
@@ -45,6 +46,10 @@ D:\aicomp\python312\python.exe scripts\manage_upstream_references.py check
 ```
 
 源码保存在 `references/upstream/` 并被主项目 Git 忽略。同步只检出注册表锁定的 commit，不初始化子模块、不下载 Git LFS 对象，也不安装或运行上游代码。
+
+## 新电脑恢复
+
+公开源码从 GitHub 克隆；官方数据、权重、checkpoint、审计划分、真实提交包和可选特征缓存通过 U 盘迁移。不要复制旧 Python 环境。完整命令见 [`docs/16_换机迁移与恢复指南.md`](docs/16_换机迁移与恢复指南.md)，依赖版本锁定在 [`requirements-lock.txt`](requirements-lock.txt)。
 
 ## P1/P2 数据与噪声夹具
 

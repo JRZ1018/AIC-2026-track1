@@ -1,6 +1,6 @@
 # AICtrack1 交接文档
 
-更新时间：2026-09-10（Asia/Shanghai）
+更新时间：2026-09-11（Asia/Shanghai）
 
 ## 1. 给新对话的首要指令
 
@@ -11,6 +11,7 @@
 3. `docs/赛题规则.pdf`
 4. `AGENTS.md`
 5. `docs/00_获奖导向总体工作计划.md`
+6. 换机时阅读 `docs/16_换机迁移与恢复指南.md`
 
 项目目标：参加第八届全球校园人工智能算法精英大赛算法挑战赛道的“面向噪声标签数据的细粒度图像识别鲁棒微调”，做出合规、单模型、可复现、可提交的方案。
 
@@ -49,6 +50,7 @@
 - PEFT 参数白名单、LoRA 折叠、可恢复 checkpoint、确定性训练增强、资源冒烟和正式筛选已完成。当前唯一 M0 为“冻结 A1 分类头，只训练最后视觉注意力 rank-4 LoRA 三轮”，noisy-validation Top-1 68.4282%、macro 68.4163%，见 `docs/14_P3_PEFT资源与短程筛选报告.md`。
 - 已修正零学习率分类头仍参与梯度裁剪的问题并补跑严格 M0 v2（68.3894%）；M1 类内历史软权重单种子最佳为 68.4427%，暂用于首次真实提交，见 `docs/15_M1首轮筛选与首次提交选模报告.md`。该微小增益仍需多种子确认。
 - 已在锁模后执行一次真实测试推理，生成 `submissions/20260911_m1_first/pred_results.csv` 与 ZIP；共 24,967 行，CSV SHA-256 为 `bcd3db88d044583b90628e8dfd0a7ff4ab1ec43ad00a0306e18bbf30a389c8ea`。文件已通过严格本地校验但尚未上传。
+- 已补齐换机恢复链路：`requirements-lock.txt` 锁定当前环境，`scripts/setup_environment.ps1` 创建仓库内虚拟环境，`scripts/transfer_workspace.py` 逐文件校验并迁移 Git 忽略的私有状态。完整流程见 `docs/16_换机迁移与恢复指南.md`。
 - 当前已经进入**初赛官方数据阶段**并完成 M0/M1 首筛及首份真实提交包；不得利用测试预测统计继续调参。
 
 ### 当前不可做
@@ -76,7 +78,7 @@
 powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_environment.ps1"
 ```
 
-注意：不要直接使用系统默认 `python`，它仍指向 Python 3.13。项目命令应显式使用 `D:\aicomp\python312\python.exe`。不需要单独安装 CUDA Toolkit；预编译 PyTorch CUDA 轮子已具备训练所需运行时，只有编译自定义 CUDA 扩展时才需要 Toolkit。
+旧电脑继续显式使用 `D:\aicomp\python312\python.exe`。新电脑应运行 `scripts/setup_environment.ps1` 创建 `.venv`，随后显式使用 `.\.venv\Scripts\python.exe`。不需要单独安装 CUDA Toolkit；预编译 PyTorch CUDA 轮子已具备训练所需运行时，只有编译自定义 CUDA 扩展时才需要 Toolkit。
 
 ## 5. 数据获取状态
 
