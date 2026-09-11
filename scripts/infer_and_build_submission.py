@@ -23,7 +23,7 @@ from aictrack1.data.indexed_images import IndexedImageDataset, read_indexed_imag
 from aictrack1.data.transforms import build_split_transforms
 from aictrack1.engine.peft import load_trainable_state_dict
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
-from aictrack1.models.heads import CosineClassifier
+from aictrack1.models.heads import load_classifier_head_checkpoint
 from aictrack1.models.peft import (
     PEFTImageClassifier,
     configure_visual_peft,
@@ -73,7 +73,15 @@ def main() -> int:
     base = config_path.parent
     dataset_path = _resolve(base, str(experiment["dataset_config"]))
     model_path = _resolve(base, str(experiment["model_config"]))
-    a1_path = _resolve(base, str(experiment["a1_head_checkpoint"]))
+    head_checkpoint_setting = experiment.get(
+        "head_checkpoint", experiment.get("a1_head_checkpoint")
+    )
+    if head_checkpoint_setting is None:
+        raise ValueError("experiment must define head_checkpoint or legacy a1_head_checkpoint")
+    if "head_checkpoint" in experiment and "a1_head_checkpoint" in experiment:
+        raise ValueError("experiment must not define both head checkpoint fields")
+    head_path = _resolve(base, str(head_checkpoint_setting))
+    split_path = _resolve(base, str(experiment["split"]))
     checkpoint_path = args.checkpoint.resolve()
     test_manifest = args.test_manifest.resolve()
     dataset_config = load_dataset_config(dataset_path)
@@ -120,14 +128,17 @@ def main() -> int:
         lora_rank=int(peft.get("lora_rank", 4)),
         lora_alpha=float(peft.get("lora_alpha", 8.0)),
     )
-    head = CosineClassifier(clip_metadata.feature_dim, len(mapping))
-    a1 = torch.load(a1_path, map_location="cpu", weights_only=False)
-    metadata = a1["feature_cache_metadata"]
-    if metadata["clip_weight_sha256"] != clip_metadata.weight_sha256:
-        raise ValueError("A1 head and official CLIP weight hashes differ")
-    if metadata["class_mapping_sha256"] != mapping.digest():
-        raise ValueError("A1 head and class mapping hashes differ")
-    head.load_state_dict(a1["model"])
+    head, _ = load_classifier_head_checkpoint(
+        head_path,
+        feature_dim=clip_metadata.feature_dim,
+        num_classes=len(mapping),
+        expected_clip_weight_sha256=clip_metadata.weight_sha256,
+        expected_class_mapping_sha256=mapping.digest(),
+        expected_split_sha256=_sha256(split_path),
+    )
+    expected_head_sha256 = checkpoint.get("head_initializer_sha256")
+    if expected_head_sha256 is not None and expected_head_sha256 != _sha256(head_path):
+        raise ValueError("checkpoint and classifier head initializer hashes differ")
     for parameter in head.parameters():
         parameter.requires_grad_(False)
     model = PEFTImageClassifier(visual, head).to(device)

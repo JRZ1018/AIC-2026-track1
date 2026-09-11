@@ -35,7 +35,7 @@ from aictrack1.engine.peft import load_trainable_state_dict, trainable_state_dic
 from aictrack1.evaluation.classification import calibration_diagnostics, classification_diagnostics
 from aictrack1.methods.confidence import ClasswiseHistoryWeighting, weighted_cross_entropy
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
-from aictrack1.models.heads import CosineClassifier
+from aictrack1.models.heads import load_classifier_head_checkpoint
 from aictrack1.models.peft import PEFTImageClassifier, configure_visual_peft
 
 
@@ -151,13 +151,20 @@ def main() -> int:
     config_path = args.config.resolve()
     raw_document = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     raw = raw_document.get("experiment", raw_document)
+    if raw.get("execution_enabled", True) is not True:
+        raise RuntimeError("this PEFT configuration is design-only and not approved for execution")
     base = config_path.parent
     dataset_path = _resolve(base, str(raw["dataset_config"]))
     model_path = _resolve(base, str(raw["model_config"]))
     manifest_path = _resolve(base, str(raw["manifest"]))
     split_path = _resolve(base, str(raw["split"]))
     conflicts_path = _resolve(base, str(raw["label_conflicts"]))
-    a1_checkpoint_path = _resolve(base, str(raw["a1_head_checkpoint"]))
+    head_checkpoint_setting = raw.get("head_checkpoint", raw.get("a1_head_checkpoint"))
+    if head_checkpoint_setting is None:
+        raise ValueError("PEFT config must define head_checkpoint or legacy a1_head_checkpoint")
+    if "head_checkpoint" in raw and "a1_head_checkpoint" in raw:
+        raise ValueError("PEFT config must not define both head checkpoint fields")
+    head_checkpoint_path = _resolve(base, str(head_checkpoint_setting))
     output = _resolve(base, str(raw["output_dir"]))
     dataset_config = load_dataset_config(dataset_path)
     ensure_output_path_is_safe(dataset_config, output)
@@ -228,18 +235,16 @@ def main() -> int:
         lora_rank=int(peft.get("lora_rank", 4)),
         lora_alpha=float(peft.get("lora_alpha", 8.0)),
     )
-    head = CosineClassifier(clip_metadata.feature_dim, num_classes)
-    a1 = torch.load(a1_checkpoint_path, map_location="cpu", weights_only=False)
-    if a1["head"]["kind"] != "cosine":
-        raise ValueError("A1 initializer is not a cosine head")
-    metadata = a1["feature_cache_metadata"]
-    if metadata["clip_weight_sha256"] != clip_metadata.weight_sha256:
-        raise ValueError("A1 head and PEFT backbone weight hashes differ")
-    if metadata["class_mapping_sha256"] != mapping.digest():
-        raise ValueError("A1 head and current class mapping differ")
-    if metadata["split_sha256"] != _sha256(split_path):
-        raise ValueError("A1 head and current split differ")
-    head.load_state_dict(a1["model"])
+    head, head_checkpoint = load_classifier_head_checkpoint(
+        head_checkpoint_path,
+        feature_dim=clip_metadata.feature_dim,
+        num_classes=num_classes,
+        expected_clip_weight_sha256=clip_metadata.weight_sha256,
+        expected_class_mapping_sha256=mapping.digest(),
+        expected_split_sha256=_sha256(split_path),
+    )
+    head_config = head_checkpoint["head"]
+    head_checkpoint_sha256 = _sha256(head_checkpoint_path)
     model = PEFTImageClassifier(visual, head).to(device)
     visual_learning_rate = float(training["visual_learning_rate"])
     head_learning_rate = float(training["head_learning_rate"])
@@ -306,7 +311,7 @@ def main() -> int:
         tolerance = float(raw.get("initial_top1_tolerance", 0.002))
         if abs(float(initial["all"]["top1"]) - expected) > tolerance:
             raise RuntimeError(
-                f"raw-image A1 parity failed: got {initial['all']['top1']}, expected {expected}±{tolerance}"
+                f"raw-image head parity failed: got {initial['all']['top1']}, expected {expected}±{tolerance}"
             )
     else:
         initial = None
@@ -439,6 +444,8 @@ def main() -> int:
             "clip_weight_sha256": clip_metadata.weight_sha256,
             "class_mapping_sha256": mapping.digest(),
             "split_sha256": _sha256(split_path),
+            "head_initializer_sha256": head_checkpoint_sha256,
+            "head_kind": str(head_config["kind"]),
             "trainable_state": best_state,
             "best_top1": best_top1,
         },
@@ -465,6 +472,11 @@ def main() -> int:
         "best_checkpoint_sha256": _sha256(output / "best.pt"),
         "last_checkpoint_sha256": _sha256(output / "last.pt"),
         "config_sha256": config_sha256,
+        "head_initializer": {
+            "path": str(head_checkpoint_path),
+            "sha256": head_checkpoint_sha256,
+            "kind": str(head_config["kind"]),
+        },
         "dataset_config_sha256": _sha256(dataset_path),
         "manifest_sha256": _sha256(manifest_path),
         "split_sha256": _sha256(split_path),
