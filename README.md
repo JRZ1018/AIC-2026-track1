@@ -15,6 +15,7 @@
 5. 对规则有疑问时，先登记到 [`docs/compliance_questions.md`](docs/compliance_questions.md)，未经确认采用保守解释。
 6. 开始 P3 或 M1-M5 前，检查 [`docs/04_上游方案调研与复用登记.md`](docs/04_上游方案调研与复用登记.md) 和 [`docs/upstream_registry.yaml`](docs/upstream_registry.yaml)。
 7. 换机开发按 [`docs/16_换机迁移与恢复指南.md`](docs/16_换机迁移与恢复指南.md) 分离 GitHub 源码和 U 盘私有状态，并逐文件校验 SHA-256。
+8. 两台电脑并行开发按 [`docs/17_双人协作与训练执行交接手册.md`](docs/17_双人协作与训练执行交接手册.md) 执行：A 负责核心研发与提交，B 只执行冻结训练任务单。
 
 ## 当前状态
 
@@ -50,6 +51,8 @@ D:\aicomp\python312\python.exe scripts\manage_upstream_references.py check
 ## 新电脑恢复
 
 公开源码从 GitHub 克隆，官方数据从比赛官方渠道重新获取；权重、checkpoint、审计划分、真实提交包和可选特征缓存通过 U 盘迁移。不要复制旧 Python 环境。完整命令见 [`docs/16_换机迁移与恢复指南.md`](docs/16_换机迁移与恢复指南.md)，依赖版本锁定在 [`requirements-lock.txt`](requirements-lock.txt)。
+
+新电脑作为第二训练节点长期协作时，不按两名自由开发者处理。A 统一负责代码、配置、实验决策和测试提交；B 使用任务单指定的 commit 和命令执行长训练、多 seed 与固定消融。权限、Git 流程、产物回传和近期排期见 [`docs/17_双人协作与训练执行交接手册.md`](docs/17_双人协作与训练执行交接手册.md)。
 
 ## P1/P2 数据与噪声夹具
 
