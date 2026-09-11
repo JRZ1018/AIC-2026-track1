@@ -244,8 +244,15 @@ def main() -> int:
         expected_split_sha256=_sha256(split_path),
     )
     head_config = head_checkpoint["head"]
+    normalized_features = head_checkpoint["feature_cache_metadata"].get("normalized")
+    if not isinstance(normalized_features, bool):
+        raise ValueError("head checkpoint must declare whether cached features were normalized")
     head_checkpoint_sha256 = _sha256(head_checkpoint_path)
-    model = PEFTImageClassifier(visual, head).to(device)
+    model = PEFTImageClassifier(
+        visual,
+        head,
+        normalize_features=normalized_features,
+    ).to(device)
     visual_learning_rate = float(training["visual_learning_rate"])
     head_learning_rate = float(training["head_learning_rate"])
     if visual_learning_rate < 0 or head_learning_rate < 0:
@@ -446,6 +453,7 @@ def main() -> int:
             "split_sha256": _sha256(split_path),
             "head_initializer_sha256": head_checkpoint_sha256,
             "head_kind": str(head_config["kind"]),
+            "normalize_features": normalized_features,
             "trainable_state": best_state,
             "best_top1": best_top1,
         },
@@ -476,6 +484,7 @@ def main() -> int:
             "path": str(head_checkpoint_path),
             "sha256": head_checkpoint_sha256,
             "kind": str(head_config["kind"]),
+            "normalize_features": normalized_features,
         },
         "dataset_config_sha256": _sha256(dataset_path),
         "manifest_sha256": _sha256(manifest_path),

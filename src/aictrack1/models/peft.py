@@ -6,6 +6,7 @@ import math
 from dataclasses import dataclass
 
 import torch
+import torch.nn.functional as F
 import torch.nn.utils.parametrize as parametrize
 from torch import nn
 
@@ -117,10 +118,20 @@ def fold_visual_lora(visual: nn.Module) -> None:
 
 
 class PEFTImageClassifier(nn.Module):
-    def __init__(self, visual: nn.Module, classifier: nn.Module) -> None:
+    def __init__(
+        self,
+        visual: nn.Module,
+        classifier: nn.Module,
+        *,
+        normalize_features: bool = False,
+    ) -> None:
         super().__init__()
         self.visual = visual
         self.classifier = classifier
+        self.normalize_features = normalize_features
 
     def forward(self, images: torch.Tensor) -> torch.Tensor:
-        return self.classifier(self.visual(images).float())
+        features = self.visual(images).float()
+        if self.normalize_features:
+            features = F.normalize(features, dim=-1)
+        return self.classifier(features)

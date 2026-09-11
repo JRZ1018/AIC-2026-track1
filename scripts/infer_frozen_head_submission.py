@@ -118,6 +118,8 @@ def main() -> int:
         expected_split_sha256=_sha256(split_path),
     )
     metadata = checkpoint["feature_cache_metadata"]
+    if metadata.get("normalized") is not True:
+        raise ValueError("frozen-head inference requires normalized training features")
     if metadata.get("dataset_config_sha256") != _sha256(dataset_path):
         raise ValueError("frozen head dataset config provenance mismatch")
     if metadata.get("preprocessing") != clip_metadata.preprocessing:

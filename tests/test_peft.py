@@ -6,7 +6,7 @@ import pytest
 import torch
 from torch import nn
 
-from aictrack1.models.peft import configure_visual_peft, fold_visual_lora
+from aictrack1.models.peft import PEFTImageClassifier, configure_visual_peft, fold_visual_lora
 
 
 class _Block(nn.Module):
@@ -27,6 +27,19 @@ class _Visual(nn.Module):
         self.transformer.resblocks = nn.Sequential(_Block(), _Block())
         self.ln_post = nn.LayerNorm(8)
         self.proj = nn.Parameter(torch.eye(8))
+
+
+def test_peft_image_classifier_optionally_normalizes_visual_features() -> None:
+    visual = nn.Linear(3, 4, bias=False)
+    classifier = nn.Linear(4, 2, bias=False)
+    images = torch.randn(5, 3)
+    raw = visual(images).float()
+
+    plain = PEFTImageClassifier(visual, classifier)
+    normalized = PEFTImageClassifier(visual, classifier, normalize_features=True)
+
+    assert torch.equal(plain(images), classifier(raw))
+    assert torch.equal(normalized(images), classifier(torch.nn.functional.normalize(raw, dim=-1)))
 
 
 @pytest.mark.parametrize("mode", ["frozen", "layernorm_projection", "last_block"])
