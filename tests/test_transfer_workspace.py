@@ -43,6 +43,14 @@ def test_create_verify_and_restore_round_trip(tmp_path: Path) -> None:
     assert (restored / "private" / "state.bin").read_bytes() == payload.read_bytes()
 
 
+def test_dataset_is_opt_in() -> None:
+    module = load_transfer_module()
+    assert module.OPTIONAL_DATASET not in module.selected_entries(include_features=False)
+    assert module.OPTIONAL_DATASET in module.selected_entries(
+        include_features=False, include_dataset=True
+    )
+
+
 @pytest.mark.parametrize("raw", ["../outside", "a/../../outside"])
 def test_manifest_rejects_parent_traversal(raw: str) -> None:
     module = load_transfer_module()

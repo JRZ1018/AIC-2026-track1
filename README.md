@@ -49,7 +49,7 @@ D:\aicomp\python312\python.exe scripts\manage_upstream_references.py check
 
 ## 新电脑恢复
 
-公开源码从 GitHub 克隆；官方数据、权重、checkpoint、审计划分、真实提交包和可选特征缓存通过 U 盘迁移。不要复制旧 Python 环境。完整命令见 [`docs/16_换机迁移与恢复指南.md`](docs/16_换机迁移与恢复指南.md)，依赖版本锁定在 [`requirements-lock.txt`](requirements-lock.txt)。
+公开源码从 GitHub 克隆，官方数据从比赛官方渠道重新获取；权重、checkpoint、审计划分、真实提交包和可选特征缓存通过 U 盘迁移。不要复制旧 Python 环境。完整命令见 [`docs/16_换机迁移与恢复指南.md`](docs/16_换机迁移与恢复指南.md)，依赖版本锁定在 [`requirements-lock.txt`](requirements-lock.txt)。
 
 ## P1/P2 数据与噪声夹具
 

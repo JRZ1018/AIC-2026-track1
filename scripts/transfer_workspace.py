@@ -20,13 +20,13 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_NAME = "transfer_manifest.json"
 
 REQUIRED_ENTRIES = (
-    Path("DataSetStage1"),
     Path("artifacts/weights/ViT-B-32.pt"),
     Path("artifacts/audits/stage1"),
     Path("artifacts/experiments/20260910-p3-a1-cosine-ce"),
     Path("artifacts/experiments/20260910-p3-m1-classwise-history-3ep"),
     Path("submissions/20260911_m1_first"),
 )
+OPTIONAL_DATASET = Path("DataSetStage1")
 OPTIONAL_FEATURE_CACHE = Path("artifacts/features/stage1/train_openai_vit_b32")
 
 CRITICAL_SHA256 = {
@@ -100,23 +100,30 @@ def git_head() -> str | None:
     return result.stdout.strip() if result.returncode == 0 else None
 
 
-def selected_entries(include_features: bool) -> tuple[Path, ...]:
+def selected_entries(
+    include_features: bool, include_dataset: bool = False
+) -> tuple[Path, ...]:
     entries = list(REQUIRED_ENTRIES)
+    if include_dataset:
+        entries.append(OPTIONAL_DATASET)
     if include_features:
         entries.append(OPTIONAL_FEATURE_CACHE)
     return tuple(entries)
 
 
-def print_plan(include_features: bool) -> None:
-    files = iter_files(ROOT, selected_entries(include_features))
+def print_plan(include_features: bool, include_dataset: bool = False) -> None:
+    entries = selected_entries(include_features, include_dataset)
+    files = iter_files(ROOT, entries)
     total = sum((ROOT / path).stat().st_size for path in files)
     print(f"files: {len(files):,}")
     print(f"bytes: {total:,} ({total / 1024**3:.2f} GiB)")
-    for entry in selected_entries(include_features):
+    for entry in entries:
         print(entry.as_posix())
 
 
-def create_bundle(destination: Path, include_features: bool) -> None:
+def create_bundle(
+    destination: Path, include_features: bool, include_dataset: bool = False
+) -> None:
     destination = destination.resolve()
     if ROOT == destination or ROOT in destination.parents:
         raise ValueError("bundle destination must be outside the Git workspace")
@@ -125,7 +132,7 @@ def create_bundle(destination: Path, include_features: bool) -> None:
     destination.mkdir(parents=True, exist_ok=True)
 
     validate_critical_files(ROOT)
-    files = iter_files(ROOT, selected_entries(include_features))
+    files = iter_files(ROOT, selected_entries(include_features, include_dataset))
     records: list[dict[str, object]] = []
     for index, relative in enumerate(files, start=1):
         source = ROOT / relative
@@ -146,6 +153,7 @@ def create_bundle(destination: Path, include_features: bool) -> None:
         "schema_version": 1,
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "source_git_head": git_head(),
+        "include_dataset": include_dataset,
         "include_feature_cache": include_features,
         "file_count": len(records),
         "total_bytes": sum(int(record["size"]) for record in records),
@@ -237,10 +245,12 @@ def parse_args() -> argparse.Namespace:
 
     plan = subparsers.add_parser("plan", help="show files and estimated bundle size")
     plan.add_argument("--include-features", action="store_true")
+    plan.add_argument("--include-dataset", action="store_true")
 
     create = subparsers.add_parser("create", help="create a new private USB bundle")
     create.add_argument("destination", type=Path)
     create.add_argument("--include-features", action="store_true")
+    create.add_argument("--include-dataset", action="store_true")
 
     verify = subparsers.add_parser("verify", help="verify every file in a bundle")
     verify.add_argument("bundle", type=Path)
@@ -253,9 +263,9 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     if args.command == "plan":
-        print_plan(args.include_features)
+        print_plan(args.include_features, args.include_dataset)
     elif args.command == "create":
-        create_bundle(args.destination, args.include_features)
+        create_bundle(args.destination, args.include_features, args.include_dataset)
     elif args.command == "verify":
         verify_bundle(args.bundle)
     elif args.command == "restore":
