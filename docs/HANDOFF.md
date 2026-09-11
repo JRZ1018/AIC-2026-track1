@@ -95,7 +95,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-当前等待用户决定是否批准 H1→LoRA seed2/seed3。若批准，A 必须基于归一化修复 commit `a63d287617d1cdda71ce0a8dd3d5f10dbe3e2d20` 创建全新配置和 B 任务单；B 不得执行已作废的旧 seed1 任务。不得启动 M2、全量重训或额外测试推理，除非用户再次明确批准。
+B 下一轮只执行 `docs/task_orders/20260912-B-h1init-lora-multiseed.md`，训练 commit 为 `532d585efa6f4a18c70f7f93308af73d7c281687`，严格顺序为 seed2 后 seed3。旧 seed1 任务仍作废。A 收到两项结果后验签并汇总；不得启动 M2、全量重训或额外测试推理，除非用户再次明确批准。
 
 ## 7. 上游成熟方案入口
 
