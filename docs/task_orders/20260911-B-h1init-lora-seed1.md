@@ -1,5 +1,7 @@
 # 任务单：20260911-B-H1init-LoRA-seed1
 
+> **状态：已作废，B 禁止执行。** A 本机首次运行发现旧 PEFT 接口未按 H1 checkpoint 元数据归一化视觉特征；该任务锁定的 commit `dd444453...` 会在训练前一致性检查失败。问题已由 commit `a63d287617d1cdda71ce0a8dd3d5f10dbe3e2d20` 修复，并由 A 使用新运行 ID 完成 seed1。未来 seed2/seed3 必须另发任务单。
+
 - 负责人：A 设计 / B 执行
 - 比赛阶段：preliminary
 - 实验问题：只检验“以 H1 线性 Adam 最佳头初始化并冻结分类头”是否能让相同 rank-4 LoRA 配方超过 H1。

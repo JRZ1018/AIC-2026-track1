@@ -57,7 +57,7 @@
 - 已完成队友线性头优化预算的固定划分公平复验：H1 线性 Adam 三种子 Top-1 均值 68.6916%、总体标准差 0.0114 点，显著推翻旧 A0 作为线性能力代表；同预算 H2 余弦 Adam 均值 67.6412%，说明该配方只适合线性头。证据与榜分差异边界见 `docs/18_公平冻结头复验与榜分差异分析.md`。
 - 已准备 B 产物严格验签与三种子配对汇总工具；验收计划为 `configs/evaluation/b_first_round.yaml`。H1 线性头初始化 LoRA 的单变量配置已预注册但以 `execution_enabled: false` 锁住，未运行。门禁、命令和资源边界见 `docs/19_B结果验收与H1_LoRA预注册.md`。
 - B 首轮四项结果已正式验签：M1 三组配对增益全部为正，但平均仅 +0.0695 点，低于 +0.10 点门槛，故停止 M1 扩张；H1 仍是更强参考。完整结论见 `docs/20_B首轮验收与H1冻结头提交.md`。
-- 已生成 H1 冻结线性头第二份严格提交候选，最终 ZIP 位于 `submissions/20260911_h1_linear_seed42_v2/`，线上分数待回填。H1→LoRA seed1 已启用并准备交给 B，冻结训练 commit 为 `dd4444537469f59664ebf45b134c871715db5536`。
+- 已生成 H1 冻结线性头第二份严格提交候选，最终 ZIP 位于 `submissions/20260911_h1_linear_seed42_v2/`，线上分数待回填。A 本机 H1→LoRA seed1 修复后最佳 Top-1 68.9615%、macro 68.9492%，通过预注册门槛；原 B seed1 任务已作废。
 - 当前已经进入**初赛官方数据阶段**并完成 M0/M1 首筛及首份真实提交包；不得利用测试预测统计继续调参。
 
 ### 当前不可做
@@ -95,7 +95,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-B 下一项只执行 `docs/task_orders/20260911-B-h1init-lora-seed1.md`，锁定 commit `dd4444537469f59664ebf45b134c871715db5536` 并使用 A 私下提供的 H1 checkpoint。A 等待该单种子结果；未达到 68.8997% 即停止该路线。不得启动 M2、全量重训或额外测试推理，除非用户再次明确批准。
+当前等待用户决定是否批准 H1→LoRA seed2/seed3。若批准，A 必须基于归一化修复 commit `a63d287617d1cdda71ce0a8dd3d5f10dbe3e2d20` 创建全新配置和 B 任务单；B 不得执行已作废的旧 seed1 任务。不得启动 M2、全量重训或额外测试推理，除非用户再次明确批准。
 
 ## 7. 上游成熟方案入口
 
