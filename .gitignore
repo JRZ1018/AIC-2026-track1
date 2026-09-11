@@ -1,0 +1,24 @@
+# ===== 数据（大文件，严禁入库）=====
+train.zip
+test.zip
+train/
+test/
+data/
+
+# ===== 特征缓存 / 输出结果（可复现，不入库）=====
+cache/
+output/
+
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# ===== 系统 / 编辑器 =====
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
