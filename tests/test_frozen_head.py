@@ -110,3 +110,62 @@ def test_resume_rejects_loss_configuration_mismatch(tmp_path) -> None:
     )
     with pytest.raises(ValueError, match="loss configuration"):
         mismatched.load_checkpoint(checkpoint)
+
+
+def test_adam_constant_lr_and_disabled_gradient_clipping(monkeypatch) -> None:
+    features, labels = _data()
+    config = FrozenHeadConfig(
+        epochs=2,
+        batch_size=9,
+        learning_rate=0.01,
+        gradient_clip_norm=None,
+        optimizer="adam",
+        scheduler="constant",
+        amp=False,
+        seed=29,
+    )
+    trainer = _trainer(config)
+
+    def fail_if_called(*_args, **_kwargs):
+        raise AssertionError("gradient clipping must be disabled when configured as null")
+
+    monkeypatch.setattr(torch.nn.utils, "clip_grad_norm_", fail_if_called)
+    first_lr = trainer.optimizer.param_groups[0]["lr"]
+    loss = trainer.train_epoch(features, labels)
+
+    assert isinstance(trainer.optimizer, torch.optim.Adam)
+    assert torch.isfinite(torch.tensor(loss))
+    assert trainer.optimizer.param_groups[0]["lr"] == first_lr
+
+
+@pytest.mark.parametrize("optimizer", ["sgd", "adam", "adamw"])
+def test_supported_optimizers_validate(optimizer: str) -> None:
+    FrozenHeadConfig(optimizer=optimizer).validate()
+
+
+@pytest.mark.parametrize(
+    ("field", "value", "message"),
+    [
+        ("optimizer", "rmsprop", "optimizer"),
+        ("scheduler", "linear", "scheduler"),
+        ("gradient_clip_norm", 0.0, "gradient_clip_norm"),
+    ],
+)
+def test_invalid_training_controls_are_rejected(field: str, value, message: str) -> None:
+    raw = FrozenHeadConfig().__dict__ | {field: value}
+    with pytest.raises(ValueError, match=message):
+        FrozenHeadConfig(**raw).validate()
+
+
+def test_checkpoint_without_scheduler_field_remains_loadable() -> None:
+    features, labels = _data()
+    config = FrozenHeadConfig(epochs=1, batch_size=9, learning_rate=0.2, amp=False)
+    trainer = _trainer(config)
+    trainer.train_epoch(features, labels)
+    legacy_state = trainer.state_dict()
+    del legacy_state["config"]["scheduler"]
+
+    restored = _trainer(config)
+    restored.load_state_dict(legacy_state)
+    for name, expected in trainer.model.state_dict().items():
+        assert torch.equal(expected, restored.model.state_dict()[name])

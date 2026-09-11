@@ -25,9 +25,10 @@ class FrozenHeadConfig:
     learning_rate: float = 0.01
     weight_decay: float = 0.0
     momentum: float = 0.9
-    gradient_clip_norm: float = 5.0
+    gradient_clip_norm: float | None = 5.0
     seed: int = 20260910
     optimizer: str = "sgd"
+    scheduler: str = "cosine"
     amp: bool = True
 
     def validate(self) -> None:
@@ -37,10 +38,12 @@ class FrozenHeadConfig:
             raise ValueError("learning_rate must be positive and weight_decay non-negative")
         if not 0 <= self.momentum < 1:
             raise ValueError("momentum must be in [0, 1)")
-        if self.gradient_clip_norm <= 0:
-            raise ValueError("gradient_clip_norm must be positive")
-        if self.optimizer not in {"sgd", "adamw"}:
-            raise ValueError("optimizer must be sgd or adamw")
+        if self.gradient_clip_norm is not None and self.gradient_clip_norm <= 0:
+            raise ValueError("gradient_clip_norm must be positive or null")
+        if self.optimizer not in {"sgd", "adam", "adamw"}:
+            raise ValueError("optimizer must be sgd, adam, or adamw")
+        if self.scheduler not in {"cosine", "constant"}:
+            raise ValueError("scheduler must be cosine or constant")
 
 
 @dataclass(frozen=True)
@@ -96,13 +99,22 @@ class FrozenHeadTrainer:
                 weight_decay=config.weight_decay,
                 momentum=config.momentum,
             )
+        elif config.optimizer == "adam":
+            self.optimizer = torch.optim.Adam(
+                model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay
+            )
         else:
             self.optimizer = torch.optim.AdamW(
                 model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay
             )
-        self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-            self.optimizer, T_max=config.epochs
-        )
+        if config.scheduler == "cosine":
+            self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+                self.optimizer, T_max=config.epochs
+            )
+        else:
+            self.scheduler = torch.optim.lr_scheduler.LambdaLR(
+                self.optimizer, lr_lambda=lambda _: 1.0
+            )
         self.amp_enabled = config.amp and self.device.type == "cuda"
         self.scaler = torch.amp.GradScaler("cuda", enabled=self.amp_enabled)
         self.epoch = 0
@@ -160,7 +172,10 @@ class FrozenHeadTrainer:
                 raise FloatingPointError("frozen-head training produced a non-finite loss")
             self.scaler.scale(loss).backward()
             self.scaler.unscale_(self.optimizer)
-            nn.utils.clip_grad_norm_(self.model.parameters(), self.config.gradient_clip_norm)
+            if self.config.gradient_clip_norm is not None:
+                nn.utils.clip_grad_norm_(
+                    self.model.parameters(), self.config.gradient_clip_norm
+                )
             self.scaler.step(self.optimizer)
             self.scaler.update()
             total_loss += float(loss.detach()) * len(batch_labels)
@@ -227,7 +242,11 @@ class FrozenHeadTrainer:
         return state
 
     def load_state_dict(self, state: dict[str, Any]) -> None:
-        if state.get("config") != asdict(self.config):
+        saved_config = dict(state.get("config", {}))
+        # Checkpoints created before scheduler selection was configurable used
+        # CosineAnnealingLR unconditionally.
+        saved_config.setdefault("scheduler", "cosine")
+        if saved_config != asdict(self.config):
             raise ValueError("checkpoint training configuration mismatch")
         saved_loss = state.get("loss_config", asdict(FrozenLossConfig()))
         if saved_loss != asdict(self.loss_config):
