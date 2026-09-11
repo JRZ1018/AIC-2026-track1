@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
 import yaml
 
 
@@ -84,3 +85,35 @@ def test_a_v2_retry_only_changes_run_identity_after_normalization_fix() -> None:
     assert {key for key in first if first[key] != retry[key]} == {"run_id", "output_dir"}
     assert retry["run_id"].endswith("-v2")
     assert Path(retry["output_dir"]).name == retry["run_id"]
+
+
+@pytest.mark.parametrize(
+    ("filename", "seed", "suffix"),
+    [
+        ("p3_stage1_h1init_peft_lora_only_3ep_seed2_b.yaml", 20260911, "seed2"),
+        ("p3_stage1_h1init_peft_lora_only_3ep_seed3_b.yaml", 20260912, "seed3"),
+    ],
+)
+def test_b_multiseed_configs_only_change_identity_and_seed(
+    filename: str, seed: int, suffix: str
+) -> None:
+    config_root = ROOT / "configs" / "experiment"
+    reference = yaml.safe_load(
+        (config_root / "p3_stage1_h1init_peft_lora_only_3ep_seed1_a_v2.yaml").read_text(
+            encoding="utf-8"
+        )
+    )["experiment"]
+    candidate = yaml.safe_load((config_root / filename).read_text(encoding="utf-8"))[
+        "experiment"
+    ]
+
+    assert {key for key in reference if reference[key] != candidate[key]} == {
+        "run_id",
+        "output_dir",
+        "training",
+    }
+    expected_training = dict(reference["training"])
+    expected_training["seed"] = seed
+    assert candidate["training"] == expected_training
+    assert candidate["run_id"].endswith(suffix)
+    assert Path(candidate["output_dir"]).name == candidate["run_id"]
