@@ -8,6 +8,81 @@ import torch
 import torch.nn.functional as F
 
 
+def visual_prototype_soft_weights(
+    features: torch.Tensor,
+    class_ids: torch.Tensor,
+    *,
+    low_trust_fraction: float = 0.1,
+    min_weight: float = 0.5,
+    target_similarity_mix: float = 0.5,
+    chunk_size: int = 4096,
+) -> tuple[torch.Tensor, dict[str, float | int]]:
+    """Build conservative class-aware weights from training-only visual prototypes.
+
+    Each observed-class prototype excludes the sample being scored. The trust signal
+    combines target-prototype similarity with its margin over the strongest other
+    prototype. Only the lowest-trust tail in each observed class is downweighted;
+    no sample or label is removed.
+    """
+
+    if features.ndim != 2 or class_ids.ndim != 1 or len(features) != len(class_ids):
+        raise ValueError("features must be 2D and match 1D class_ids")
+    if len(features) == 0 or not torch.isfinite(features).all():
+        raise ValueError("features must be non-empty and finite")
+    if bool((class_ids < 0).any()):
+        raise ValueError("class_ids must be non-negative")
+    if not 0 < low_trust_fraction <= 1:
+        raise ValueError("low_trust_fraction must be in (0, 1]")
+    if not 0 < min_weight <= 1:
+        raise ValueError("min_weight must be in (0, 1]")
+    if not 0 <= target_similarity_mix <= 1:
+        raise ValueError("target_similarity_mix must be in [0, 1]")
+    if chunk_size < 1:
+        raise ValueError("chunk_size must be positive")
+
+    values = F.normalize(features.detach().float().cpu(), dim=1)
+    labels = class_ids.detach().long().cpu()
+    num_classes = int(labels.max()) + 1
+    counts = torch.bincount(labels, minlength=num_classes)
+    if bool((counts < 2).any()):
+        raise ValueError("every observed class needs at least two prototype references")
+
+    sums = torch.zeros(num_classes, values.shape[1], dtype=torch.float32)
+    sums.index_add_(0, labels, values)
+    prototypes = F.normalize(sums / counts[:, None], dim=1)
+    leave_one_out = F.normalize(sums.index_select(0, labels) - values, dim=1)
+    target_similarity = (values * leave_one_out).sum(dim=1)
+
+    strongest_other: list[torch.Tensor] = []
+    for start in range(0, len(values), chunk_size):
+        stop = min(start + chunk_size, len(values))
+        similarities = values[start:stop] @ prototypes.t()
+        batch_labels = labels[start:stop]
+        similarities[torch.arange(stop - start), batch_labels] = -torch.inf
+        strongest_other.append(similarities.max(dim=1).values)
+    prototype_margin = target_similarity - torch.cat(strongest_other)
+
+    target_noise = classwise_rank_noise_scores(-target_similarity, labels)
+    margin_noise = classwise_rank_noise_scores(-prototype_margin, labels)
+    noise = target_similarity_mix * target_noise + (1.0 - target_similarity_mix) * margin_noise
+    cutoff = 1.0 - low_trust_fraction
+    severity = ((noise - cutoff) / low_trust_fraction).clamp(0.0, 1.0)
+    weights = 1.0 - (1.0 - min_weight) * severity
+    diagnostics: dict[str, float | int] = {
+        "sample_count": len(values),
+        "class_count": num_classes,
+        "low_trust_fraction": low_trust_fraction,
+        "min_weight": min_weight,
+        "target_similarity_mix": target_similarity_mix,
+        "downweighted_count": int((weights < 1.0).sum()),
+        "weight_min": float(weights.min()),
+        "weight_mean": float(weights.mean()),
+        "target_similarity_mean": float(target_similarity.mean()),
+        "prototype_margin_mean": float(prototype_margin.mean()),
+    }
+    return weights, diagnostics
+
+
 def classwise_rank_noise_scores(losses: torch.Tensor, class_ids: torch.Tensor) -> torch.Tensor:
     """Map losses to tie-aware within-class percentile scores; higher means noisier."""
     if losses.ndim != 1 or class_ids.ndim != 1 or losses.shape != class_ids.shape:

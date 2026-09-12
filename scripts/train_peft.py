@@ -29,11 +29,16 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from aictrack1.data.class_mapping import ClassMapping
 from aictrack1.data.contracts import ensure_output_path_is_safe, load_dataset_config
+from aictrack1.data.feature_cache import load_feature_cache
 from aictrack1.data.indexed_images import IndexedImage, IndexedImageDataset, read_indexed_images
 from aictrack1.data.transforms import build_split_transforms
 from aictrack1.engine.peft import load_trainable_state_dict, trainable_state_dict
 from aictrack1.evaluation.classification import calibration_diagnostics, classification_diagnostics
-from aictrack1.methods.confidence import ClasswiseHistoryWeighting, weighted_cross_entropy
+from aictrack1.methods.confidence import (
+    ClasswiseHistoryWeighting,
+    visual_prototype_soft_weights,
+    weighted_cross_entropy,
+)
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
 from aictrack1.models.heads import load_classifier_head_checkpoint
 from aictrack1.models.peft import PEFTImageClassifier, configure_visual_peft
@@ -225,6 +230,9 @@ def main() -> int:
         )
     )
     confidence_raw = raw.get("confidence_weighting")
+    visual_trust_raw = raw.get("visual_prototype_weighting")
+    if confidence_raw is not None and visual_trust_raw is not None:
+        raise ValueError("dynamic confidence and visual prototype weighting are separate ablations")
     confidence: ClasswiseHistoryWeighting | None = None
     confidence_warmup_epochs = 0
     if confidence_raw is not None and bool(confidence_raw.get("enabled", True)):
@@ -238,6 +246,51 @@ def main() -> int:
             history_mix=float(confidence_raw.get("history_mix", 0.5)),
             min_weight=float(confidence_raw.get("min_weight", 0.2)),
         )
+    visual_trust_lookup: torch.Tensor | None = None
+    visual_trust_diagnostics: dict[str, float | int] | None = None
+    if visual_trust_raw is not None and bool(visual_trust_raw.get("enabled", True)):
+        cache_path = _resolve(base, str(visual_trust_raw["feature_cache"]))
+        cache = load_feature_cache(cache_path)
+        if cache.metadata.source != "train":
+            raise ValueError("visual prototype weighting requires a training feature cache")
+        if cache.metadata.manifest_sha256 != _sha256(manifest_path):
+            raise ValueError("visual prototype cache manifest hash mismatch")
+        if cache.metadata.split_sha256 != _sha256(split_path):
+            raise ValueError("visual prototype cache split hash mismatch")
+        _, expected_visual_trust_weight_sha256 = _model_settings(model_path)
+        if cache.metadata.clip_weight_sha256 != expected_visual_trust_weight_sha256:
+            raise ValueError("visual prototype cache CLIP weight hash mismatch")
+        if cache.metadata.normalized is not True:
+            raise ValueError("visual prototype weighting requires normalized CLIP features")
+        cache_positions = {sample_id: index for index, sample_id in enumerate(cache.sample_ids)}
+        if len(cache_positions) != len(cache.sample_ids):
+            raise ValueError("visual prototype cache contains duplicate sample IDs")
+        try:
+            positions = torch.tensor([cache_positions[record.sample_id] for record in train_records])
+        except KeyError as error:
+            raise ValueError("training sample is missing from visual prototype cache") from error
+        cached_labels = cache.labels.index_select(0, positions).long()
+        record_labels = torch.tensor(
+            [int(record.internal_class_index) for record in train_records], dtype=torch.long
+        )
+        if not torch.equal(cached_labels, record_labels):
+            raise ValueError("visual prototype cache labels differ from the training manifest")
+        visual_weights, visual_trust_diagnostics = visual_prototype_soft_weights(
+            cache.features.index_select(0, positions),
+            cached_labels,
+            low_trust_fraction=float(visual_trust_raw.get("low_trust_fraction", 0.1)),
+            min_weight=float(visual_trust_raw.get("min_weight", 0.5)),
+            target_similarity_mix=float(visual_trust_raw.get("target_similarity_mix", 0.5)),
+            chunk_size=int(visual_trust_raw.get("chunk_size", 4096)),
+        )
+        visual_trust_lookup = torch.full(
+            (max(record.sample_index for record in train_records) + 1,),
+            torch.nan,
+            dtype=torch.float32,
+        )
+        visual_trust_lookup[
+            torch.tensor([record.sample_index for record in train_records], dtype=torch.long)
+        ] = visual_weights
     mapping = ClassMapping.from_csv(dataset_config.class_mapping)
     num_classes = len(mapping)
     weight_path, expected_weight_sha256 = _model_settings(model_path)
@@ -377,6 +430,11 @@ def main() -> int:
                     batch_weights = confidence.weights_for(batch["sample_index"]).to(
                         device, non_blocking=True
                     )
+                    loss = weighted_cross_entropy(logits, labels, batch_weights)
+                elif visual_trust_lookup is not None:
+                    batch_weights = visual_trust_lookup.index_select(
+                        0, batch["sample_index"].long()
+                    ).to(device, non_blocking=True)
                     loss = weighted_cross_entropy(logits, labels, batch_weights)
                 else:
                     loss = F.cross_entropy(logits, labels)
@@ -522,6 +580,8 @@ def main() -> int:
         "selection_rule": selection_rule,
         "peft": peft,
         "confidence_weighting": confidence_raw,
+        "visual_prototype_weighting": visual_trust_raw,
+        "visual_prototype_diagnostics": visual_trust_diagnostics,
         "initial_validation": initial,
         "history": history,
         "best_top1": selected_top1,
