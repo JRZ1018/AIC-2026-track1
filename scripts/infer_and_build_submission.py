@@ -45,6 +45,19 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def _text_sha256_variants(path: Path) -> set[str]:
+    """Return hashes differing only by platform text line endings."""
+
+    raw = path.read_bytes()
+    text = raw.decode("utf-8")
+    normalized = text.replace("\r\n", "\n").replace("\r", "\n")
+    return {
+        hashlib.sha256(raw).hexdigest(),
+        hashlib.sha256(normalized.encode("utf-8")).hexdigest(),
+        hashlib.sha256(normalized.replace("\n", "\r\n").encode("utf-8")).hexdigest(),
+    }
+
+
 def _model_settings(path: Path) -> tuple[Path, str]:
     document = yaml.safe_load(path.read_text(encoding="utf-8"))
     raw = document.get("model", document)
@@ -91,8 +104,10 @@ def main() -> int:
 
     checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
     config_sha256 = _sha256(config_path)
-    if checkpoint.get("config_sha256") != config_sha256:
-        raise ValueError("checkpoint and experiment configuration hashes differ")
+    if checkpoint.get("config_sha256") not in _text_sha256_variants(config_path):
+        raise ValueError(
+            "checkpoint and experiment configuration hashes differ beyond LF/CRLF normalization"
+        )
     peft = experiment["peft"]
     if checkpoint.get("mode") != peft.get("mode"):
         raise ValueError("checkpoint and experiment PEFT modes differ")

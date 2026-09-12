@@ -58,6 +58,7 @@
 - 已准备 B 产物严格验签与三种子配对汇总工具；验收计划为 `configs/evaluation/b_first_round.yaml`。H1 线性头初始化 LoRA 的单变量配置已预注册但以 `execution_enabled: false` 锁住，未运行。门禁、命令和资源边界见 `docs/19_B结果验收与H1_LoRA预注册.md`。
 - B 首轮四项结果已正式验签：M1 三组配对增益全部为正，但平均仅 +0.0695 点，低于 +0.10 点门槛，故停止 M1 扩张；H1 仍是更强参考。完整结论见 `docs/20_B首轮验收与H1冻结头提交.md`。
 - H1 冻结线性头第二份提交线上分数为 56.8751，相对首次 M1 的 55.0006 提高 1.8745 点。B 的 H1→LoRA seed2/seed3 已验签；与 A seed1 汇总后 Top-1 均值 68.9761%、标准差 0.0241 点、macro 均值 68.9634%，完整通过预注册三种子门禁。详见 `docs/21_H1_LoRA多种子验收.md`。
+- B 的最终全量 H1→LoRA attempt2 已通过 A 端验收：全量 H1 100 epochs 后接全量 LoRA 2 epochs，最终 LoRA checkpoint SHA-256 为 `4656fe634b1b93bf0e986c364ee1f4ef2e951766e791898d937ed83b69ae7d0a`。详见 `docs/23_H1_LoRA最终全量复训验收.md`；测试推理仍未授权。
 - 当前已经进入**初赛官方数据阶段**并完成 M0/M1 首筛及首份真实提交包；不得利用测试预测统计继续调参。
 
 ### 当前不可做
@@ -95,7 +96,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-H1→LoRA 最终全量复训已经获用户批准。B 首次在旧 commit 启动时遭遇外部 `window-CLOSE event`，未产生 checkpoint；恢复修复后的训练代码冻结在 commit `6800050b9549993babccaf3e8b88c0c591989a2a`，增加 H1 每 epoch 原子 checkpoint 与进度输出。B 按更新后的 `docs/task_orders/20260912-B-final-h1-lora-full-retrain.md` 只重试一次。A 收到结果后严格验签；测试推理仍未授权。
+H1→LoRA 最终全量复训 attempt2 已验收通过。下一步必须先取得用户对“一次最终测试推理”的明确授权；批准后使用最终 LoRA `final.pt` 生成、严格校验并归档 `pred_results.csv`/ZIP/manifest。不得根据预测统计继续调参。
 
 ## 7. 上游成熟方案入口
 
