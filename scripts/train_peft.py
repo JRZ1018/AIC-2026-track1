@@ -185,8 +185,11 @@ def main() -> int:
     batch_size = int(training["batch_size"])
     workers = int(training.get("workers", 0))
     seed = int(training["seed"])
+    label_smoothing = float(training.get("label_smoothing", 0.0))
     if epochs < 1 or batch_size < 1 or workers < 0:
         raise ValueError("invalid epoch, batch-size, or worker configuration")
+    if not 0.0 <= label_smoothing < 1.0:
+        raise ValueError("label_smoothing must be in [0, 1)")
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -233,6 +236,8 @@ def main() -> int:
     visual_trust_raw = raw.get("visual_prototype_weighting")
     if confidence_raw is not None and visual_trust_raw is not None:
         raise ValueError("dynamic confidence and visual prototype weighting are separate ablations")
+    if label_smoothing > 0.0 and (confidence_raw is not None or visual_trust_raw is not None):
+        raise ValueError("label smoothing and sample weighting are separate ablations")
     confidence: ClasswiseHistoryWeighting | None = None
     confidence_warmup_epochs = 0
     if confidence_raw is not None and bool(confidence_raw.get("enabled", True)):
@@ -437,7 +442,11 @@ def main() -> int:
                     ).to(device, non_blocking=True)
                     loss = weighted_cross_entropy(logits, labels, batch_weights)
                 else:
-                    loss = F.cross_entropy(logits, labels)
+                    loss = F.cross_entropy(
+                        logits,
+                        labels,
+                        label_smoothing=label_smoothing,
+                    )
             if not torch.isfinite(loss):
                 raise FloatingPointError("PEFT training produced a non-finite loss")
             scaler.scale(loss).backward()
@@ -582,6 +591,7 @@ def main() -> int:
         "confidence_weighting": confidence_raw,
         "visual_prototype_weighting": visual_trust_raw,
         "visual_prototype_diagnostics": visual_trust_diagnostics,
+        "label_smoothing": label_smoothing,
         "initial_validation": initial,
         "history": history,
         "best_top1": selected_top1,
