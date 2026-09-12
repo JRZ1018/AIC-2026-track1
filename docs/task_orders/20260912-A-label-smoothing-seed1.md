@@ -49,3 +49,18 @@ D:\aicomp\python312\python.exe scripts\train_peft.py --config configs\experiment
 参考基线为同 seed H1→LoRA：Top-1 68.9615%、macro 68.9492%、最佳 epoch ECE 2.2925%。候选最佳 Top-1 必须至少达到 69.0615%，macro 不低于 68.9492%，ECE 不高于 2.2925%，且跨标签冲突子集不得异常退化。Top-1 未过门槛时，即使校准改善也停止。
 
 通过本门禁后才申请 seed2/seed3；未经用户再次批准，不运行多种子、全量复训或测试推理。
+
+## 6. A 本机首次启动失败与等价重试
+
+首次启动在初始验证 DataLoader 创建 Windows 多进程管道时因沙箱 ACL 返回 `WinError 5`，尚未开始训练、未生成 `last.pt`。保留原空输出目录和日志，不覆盖现场。等价重试只改变运行标识与输出目录；代码、数据、seed 和全部训练超参数不变。重试需在沙箱外运行，以允许 PyTorch DataLoader 创建工作进程。
+
+- 重试锁定训练 commit：`8ce862c7e2dccc98b104d50416d805030e9b2fef`
+- 重试配置：`configs/experiment/p3_stage1_h1init_peft_lora_label_smoothing_3ep_seed1_a_v2.yaml`
+- 重试输出：`artifacts/experiments/20260912-a-h1init-lora-label-smoothing-005-3ep-seed1-v2/`
+- 配置 LF / CRLF SHA-256：`fd2e516739cb15271d4605ccf767aac8642898dd3a4165f586c3a614f4cc32a8` / `75e7fb921967865448cbcca0ac7b9659135e1099a5b773649fe847c7b0a940b7`
+
+重试唯一训练命令：
+
+```powershell
+D:\aicomp\python312\python.exe scripts\train_peft.py --config configs\experiment\p3_stage1_h1init_peft_lora_label_smoothing_3ep_seed1_a_v2.yaml
+```
