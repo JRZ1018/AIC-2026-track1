@@ -5,6 +5,7 @@ import copy
 import pytest
 import torch
 from torch import nn
+from torch.nn.utils import parametrize
 
 from aictrack1.models.peft import PEFTImageClassifier, configure_visual_peft, fold_visual_lora
 
@@ -83,6 +84,44 @@ def test_lora_starts_as_identity_trains_only_low_rank_and_folds() -> None:
     assert not hasattr(attention, "parametrizations") or not hasattr(
         attention.parametrizations, "in_proj_weight"
     )
+
+
+def test_lora_last_n_attention_targets_exact_tail_and_folds_all() -> None:
+    visual = _Visual()
+    originals = [
+        copy.deepcopy(block.attn.state_dict()) for block in visual.transformer.resblocks
+    ]
+    summary = configure_visual_peft(
+        visual,
+        "lora_last_n_attention",
+        lora_rank=2,
+        lora_alpha=4,
+        lora_blocks=2,
+    )
+
+    assert summary.trainable_visual_parameters == 192
+    assert any("resblocks.0" in name for name in summary.trainable_parameter_names)
+    assert any("resblocks.1" in name for name in summary.trainable_parameter_names)
+    for block, original in zip(visual.transformer.resblocks, originals, strict=True):
+        assert torch.equal(block.attn.in_proj_weight, original["in_proj_weight"])
+        assert torch.equal(block.attn.out_proj.weight, original["out_proj.weight"])
+
+    fold_visual_lora(visual)
+    for block in visual.transformer.resblocks:
+        assert not parametrize.is_parametrized(block.attn, "in_proj_weight")
+        assert not parametrize.is_parametrized(block.attn.out_proj, "weight")
+
+
+@pytest.mark.parametrize("block_count", [0, 3])
+def test_lora_last_n_attention_rejects_invalid_block_count(block_count: int) -> None:
+    with pytest.raises(ValueError, match="lora_blocks"):
+        configure_visual_peft(
+            _Visual(),
+            "lora_last_n_attention",
+            lora_rank=2,
+            lora_alpha=4,
+            lora_blocks=block_count,
+        )
 
 
 @pytest.mark.skipif(not torch.cuda.is_available(), reason="CUDA is unavailable")

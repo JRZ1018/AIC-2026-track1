@@ -158,6 +158,30 @@ def test_a_label_smoothing_retry_only_changes_run_identity() -> None:
     assert Path(retry["output_dir"]).name == retry["run_id"]
 
 
+def test_last_two_attention_lora_candidate_only_expands_peft_scope() -> None:
+    config_root = ROOT / "configs" / "experiment"
+    baseline = yaml.safe_load(
+        (config_root / "p3_stage1_h1init_peft_lora_only_3ep_seed1_a_v2.yaml").read_text(
+            encoding="utf-8"
+        )
+    )["experiment"]
+    candidate = yaml.safe_load(
+        (
+            config_root / "p3_stage1_h1init_peft_lora_last2_r4_3ep_seed1_a.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+
+    assert {key for key in baseline if baseline[key] != candidate[key]} == {
+        "run_id",
+        "output_dir",
+        "peft",
+    }
+    expected_peft = dict(baseline["peft"])
+    expected_peft.update(mode="lora_last_n_attention", lora_blocks=2)
+    assert candidate["peft"] == expected_peft
+    assert candidate["execution_enabled"] is True
+
+
 @pytest.mark.parametrize(
     ("filename", "seed", "suffix"),
     [

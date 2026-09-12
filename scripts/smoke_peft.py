@@ -74,7 +74,12 @@ def main() -> int:
     parser.add_argument(
         "--mode",
         required=True,
-        choices=("layernorm_projection", "last_block", "lora_last_attention"),
+        choices=(
+            "layernorm_projection",
+            "last_block",
+            "lora_last_attention",
+            "lora_last_n_attention",
+        ),
     )
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--max-train", type=int, default=256)
@@ -84,6 +89,7 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=20260910)
     parser.add_argument("--lora-rank", type=int, default=4)
     parser.add_argument("--lora-alpha", type=float, default=8.0)
+    parser.add_argument("--lora-blocks", type=int, default=1)
     parser.add_argument("--device", default="cuda")
     args = parser.parse_args()
     if min(args.max_train, args.max_validation, args.batch_size, args.steps) < 1:
@@ -153,6 +159,7 @@ def main() -> int:
         args.mode,
         lora_rank=args.lora_rank,
         lora_alpha=args.lora_alpha,
+        lora_blocks=args.lora_blocks,
     )
     classifier = CosineClassifier(clip_metadata.feature_dim, len(ClassMapping.from_csv(dataset_config.class_mapping)))
     model = PEFTImageClassifier(visual, classifier).to(device)
