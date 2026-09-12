@@ -96,7 +96,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-当前线上最佳为 H1→LoRA 全量复训的 57.8924。CLIPCleaner/DeFT 启发的训练集视觉原型软降权 M2 seed1 已验签，但最佳 Top-1 68.9615% 与基线完全相同，未达到 69.0615% 门槛；停止 seed2/seed3、全量复训和测试推理。下一候选为 H1→LoRA + 0.05 标签平滑，配置保持 `execution_enabled: false`，在用户明确批准前不得训练。详见 `docs/25_M2视觉原型软降权验收.md` 与 `docs/26_H1_LoRA轻度标签平滑预注册.md`。
+当前线上最佳为 H1→LoRA 全量复训的 57.8924。M2 视觉原型软降权 seed1 与基线持平，已经停止；后续 H1→LoRA + 0.05 标签平滑由 A 本机完成，最佳 Top-1 68.8403%，相对基线下降 0.1212 点且 ECE 明显恶化，也已停止。两者均不执行多种子、全量复训或测试推理。详见 `docs/25_M2视觉原型软降权验收.md` 与 `docs/27_H1_LoRA轻度标签平滑验收.md`。
 
 ## 7. 上游成熟方案入口
 
