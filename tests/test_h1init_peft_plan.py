@@ -114,6 +114,27 @@ def test_label_smoothing_candidate_is_disabled_and_single_variable() -> None:
     assert Path(candidate["output_dir"]).name == candidate["run_id"]
 
 
+def test_a_label_smoothing_run_only_unlocks_preregistered_candidate() -> None:
+    config_root = ROOT / "configs" / "experiment"
+    planned = yaml.safe_load(
+        (
+            config_root
+            / "p3_stage1_h1init_peft_lora_label_smoothing_3ep_seed1.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+    enabled = yaml.safe_load(
+        (
+            config_root
+            / "p3_stage1_h1init_peft_lora_label_smoothing_3ep_seed1_a.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+
+    assert {key for key in planned if planned[key] != enabled[key]} == {
+        "execution_enabled"
+    }
+    assert enabled["execution_enabled"] is True
+
+
 @pytest.mark.parametrize(
     ("filename", "seed", "suffix"),
     [
