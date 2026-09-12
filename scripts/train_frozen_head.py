@@ -56,10 +56,27 @@ def main() -> int:
     cache = load_feature_cache(cache_path)
     if cache.metadata.source != "train":
         raise ValueError("frozen-head training refuses test feature caches")
-    train_features, train_labels = select_feature_partition(cache, "train")
-    validation_features, validation_labels = select_feature_partition(cache, "validation")
+    training_scope = str(raw.get("training_scope", "fixed_split_validation"))
+    if training_scope not in {"fixed_split_validation", "full_train_fixed_epochs"}:
+        raise ValueError(f"unsupported frozen-head training scope {training_scope!r}")
+    if training_scope == "full_train_fixed_epochs":
+        expected_train_count = int(raw["expected_train_count"])
+        if cache.metadata.expected_record_count != expected_train_count:
+            raise ValueError("full-train feature cache count differs from expected_train_count")
+        if set(cache.partitions) != {"train", "validation"}:
+            raise ValueError("full-train feature cache has unexpected partitions")
+        train_features = cache.features.float()
+        train_labels = cache.labels
+        if (train_labels < 0).any():
+            raise ValueError("full-train feature cache contains missing labels")
+        validation_features = validation_labels = None
+    else:
+        train_features, train_labels = select_feature_partition(cache, "train")
+        validation_features, validation_labels = select_feature_partition(cache, "validation")
     num_classes = int(raw["num_classes"])
-    if int(train_labels.max()) >= num_classes or int(validation_labels.max()) >= num_classes:
+    if int(train_labels.max()) >= num_classes or (
+        validation_labels is not None and int(validation_labels.max()) >= num_classes
+    ):
         raise ValueError("feature labels exceed configured num_classes")
 
     training = FrozenHeadConfig(**raw["training"])
@@ -93,39 +110,78 @@ def main() -> int:
     if device.type == "cuda":
         torch.cuda.reset_peak_memory_stats(device)
     started = time.perf_counter()
-    history = trainer.fit(
-        train_features, train_labels, validation_features, validation_labels
-    )
+    if training_scope == "full_train_fixed_epochs":
+        history = trainer.history
+        while trainer.epoch < training.epochs:
+            train_loss = trainer.train_epoch(train_features, train_labels)
+            history.append(
+                {
+                    "epoch": trainer.epoch,
+                    "train_loss": train_loss,
+                    "learning_rate": float(trainer.optimizer.param_groups[0]["lr"]),
+                }
+            )
+    else:
+        assert validation_features is not None and validation_labels is not None
+        history = trainer.fit(
+            train_features, train_labels, validation_features, validation_labels
+        )
     duration = time.perf_counter() - started
     trainer.save_checkpoint(output / "last.pt")
-    if trainer.best_state is None:
-        raise RuntimeError("training did not produce a best checkpoint")
+    if training_scope == "full_train_fixed_epochs":
+        selected_state = trainer.model.state_dict()
+        selected_name = "final.pt"
+        selected_top1 = None
+        selection_rule = f"fixed final epoch {training.epochs}; no validation selection"
+    else:
+        if trainer.best_state is None:
+            raise RuntimeError("training did not produce a best checkpoint")
+        selected_state = trainer.best_state
+        selected_name = "best.pt"
+        selected_top1 = trainer.best_top1
+        selection_rule = "best fixed-split validation Top-1"
+    feature_metadata = cache.metadata.__dict__ | {
+        "training_scope": training_scope,
+        "training_record_count": len(train_labels),
+    }
     torch.save(
         {
-            "model": trainer.best_state,
+            "model": selected_state,
             "head": head_raw,
             "loss": loss_config.__dict__,
-            "feature_cache_metadata": cache.metadata.__dict__,
-            "best_top1": trainer.best_top1,
+            "feature_cache_metadata": feature_metadata,
+            "best_top1": selected_top1,
+            "selection_rule": selection_rule,
         },
-        output / "best.pt",
+        output / selected_name,
     )
     metrics = {
-        "scope": "stage1 noisy-validation frozen-feature baseline",
+        "scope": (
+            "stage1 full official train frozen-feature final retrain; test data not accessed"
+            if training_scope == "full_train_fixed_epochs"
+            else "stage1 noisy-validation frozen-feature baseline"
+        ),
+        "training_scope": training_scope,
+        "selection_rule": selection_rule,
         "history": history,
         "loss": loss_config.__dict__,
-        "best_top1": trainer.best_top1,
+        "best_top1": selected_top1,
         "duration_seconds": duration,
         "peak_vram_mib": (
             torch.cuda.max_memory_allocated(device) / (1024**2) if device.type == "cuda" else 0.0
         ),
         "train_count": len(train_labels),
-        "validation_count": len(validation_labels),
+        "validation_count": 0 if validation_labels is None else len(validation_labels),
         "feature_cache": str(cache_path),
-        "feature_cache_metadata": cache.metadata.__dict__,
-        "best_checkpoint_sha256": _sha256(output / "best.pt"),
+        "feature_cache_metadata": feature_metadata,
+        "selected_checkpoint": selected_name,
+        "selected_checkpoint_sha256": _sha256(output / selected_name),
         "last_checkpoint_sha256": _sha256(output / "last.pt"),
     }
+    if selected_name == "best.pt":
+        metrics["best_checkpoint_sha256"] = metrics["selected_checkpoint_sha256"]
+    else:
+        metrics["final_checkpoint_sha256"] = metrics["selected_checkpoint_sha256"]
     (output / "metrics.json").write_text(
         json.dumps(metrics, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )

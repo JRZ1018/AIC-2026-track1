@@ -173,6 +173,9 @@ def main() -> int:
     output.mkdir(parents=True, exist_ok=True)
 
     training = raw["training"]
+    training_scope = str(raw.get("training_scope", "fixed_split_validation"))
+    if training_scope not in {"fixed_split_validation", "full_train_fixed_epochs"}:
+        raise ValueError(f"unsupported PEFT training scope {training_scope!r}")
     epochs = int(training["epochs"])
     batch_size = int(training["batch_size"])
     workers = int(training.get("workers", 0))
@@ -194,8 +197,17 @@ def main() -> int:
         manifest_path=manifest_path,
         split_path=split_path,
     )
-    train_records = [record for record in records if record.partition == "train"]
-    validation_records = [record for record in records if record.partition == "validation"]
+    if training_scope == "full_train_fixed_epochs":
+        expected_train_count = int(raw["expected_train_count"])
+        if len(records) != expected_train_count:
+            raise ValueError("full-train manifest count differs from expected_train_count")
+        if {record.partition for record in records} != {"train", "validation"}:
+            raise ValueError("full-train manifest has unexpected partitions")
+        train_records = records
+        validation_records = []
+    else:
+        train_records = [record for record in records if record.partition == "train"]
+        validation_records = [record for record in records if record.partition == "validation"]
     transforms = build_split_transforms(dataset_config.transforms)
     train_dataset = IndexedImageDataset(
         train_records,
@@ -203,10 +215,14 @@ def main() -> int:
         allow_truncated_images=dataset_config.allow_truncated_images,
         stochastic_seed=seed,
     )
-    validation_dataset = IndexedImageDataset(
-        validation_records,
-        transforms["validation"],
-        allow_truncated_images=dataset_config.allow_truncated_images,
+    validation_dataset = (
+        None
+        if training_scope == "full_train_fixed_epochs"
+        else IndexedImageDataset(
+            validation_records,
+            transforms["validation"],
+            allow_truncated_images=dataset_config.allow_truncated_images,
+        )
     )
     confidence_raw = raw.get("confidence_weighting")
     confidence: ClasswiseHistoryWeighting | None = None
@@ -272,7 +288,11 @@ def main() -> int:
     optimizer = torch.optim.AdamW(parameter_groups, weight_decay=float(training["weight_decay"]))
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
     scaler = torch.amp.GradScaler("cuda", enabled=device.type == "cuda")
-    conflict_ids = _conflict_ids(manifest_path, conflicts_path)
+    conflict_ids = (
+        set()
+        if training_scope == "full_train_fixed_epochs"
+        else _conflict_ids(manifest_path, conflicts_path)
+    )
     config_sha256 = _sha256(config_path)
     epoch = 0
     history: list[dict[str, Any]] = []
@@ -303,7 +323,8 @@ def main() -> int:
         elif "confidence_weighting" in state:
             raise ValueError("non-M1 run cannot resume an M1 confidence checkpoint")
 
-    if epoch == 0:
+    if epoch == 0 and training_scope == "fixed_split_validation":
+        assert validation_dataset is not None
         initial = _evaluate(
             model,
             validation_records,
@@ -393,24 +414,26 @@ def main() -> int:
             )
         scheduler.step()
         epoch += 1
-        validation = _evaluate(
-            model,
-            validation_records,
-            validation_dataset,
-            batch_size=batch_size,
-            workers=workers,
-            device=device,
-            num_classes=num_classes,
-            conflict_ids=conflict_ids,
-        )
         row = {
             "epoch": epoch,
             "train_loss": loss_sum / count,
             "train_seconds": train_seconds,
             "train_samples_per_second": count / train_seconds,
             "learning_rates": [float(group["lr"]) for group in optimizer.param_groups],
-            "validation": validation,
         }
+        if training_scope == "fixed_split_validation":
+            assert validation_dataset is not None
+            validation = _evaluate(
+                model,
+                validation_records,
+                validation_dataset,
+                batch_size=batch_size,
+                workers=workers,
+                device=device,
+                num_classes=num_classes,
+                conflict_ids=conflict_ids,
+            )
+            row["validation"] = validation
         if confidence is not None:
             row["confidence_weighting"] = {
                 "active": confidence_active,
@@ -418,10 +441,11 @@ def main() -> int:
                 "next": next_confidence,
             }
         history.append(row)
-        top1 = float(validation["all"]["top1"])
-        if top1 > best_top1:
-            best_top1 = top1
-            best_state = copy.deepcopy(trainable_state_dict(model))
+        if training_scope == "fixed_split_validation":
+            top1 = float(row["validation"]["all"]["top1"])
+            if top1 > best_top1:
+                best_top1 = top1
+                best_state = copy.deepcopy(trainable_state_dict(model))
         checkpoint: dict[str, Any] = {
             "config_sha256": config_sha256,
             "epoch": epoch,
@@ -442,8 +466,18 @@ def main() -> int:
             checkpoint["confidence_weighting"] = confidence.state_dict()
         _save_atomic(checkpoint, output / "last.pt")
 
-    if best_state is None:
-        raise RuntimeError("PEFT training produced no best state")
+    if training_scope == "full_train_fixed_epochs":
+        selected_state = trainable_state_dict(model)
+        selected_name = "final.pt"
+        selected_top1 = None
+        selection_rule = f"fixed final epoch {epochs}; no validation selection"
+    else:
+        if best_state is None:
+            raise RuntimeError("PEFT training produced no best state")
+        selected_state = best_state
+        selected_name = "best.pt"
+        selected_top1 = best_top1
+        selection_rule = "best fixed-split validation Top-1"
     _save_atomic(
         {
             "config_sha256": config_sha256,
@@ -454,20 +488,28 @@ def main() -> int:
             "head_initializer_sha256": head_checkpoint_sha256,
             "head_kind": str(head_config["kind"]),
             "normalize_features": normalized_features,
-            "trainable_state": best_state,
-            "best_top1": best_top1,
+            "trainable_state": selected_state,
+            "best_top1": selected_top1,
+            "training_scope": training_scope,
+            "selection_rule": selection_rule,
         },
-        output / "best.pt",
+        output / selected_name,
     )
     total_seconds = time.perf_counter() - total_started
     metrics = {
-        "scope": "stage1 train/validation PEFT short screening; test data not accessed",
+        "scope": (
+            "stage1 full official train PEFT final retrain; test data not accessed"
+            if training_scope == "full_train_fixed_epochs"
+            else "stage1 train/validation PEFT short screening; test data not accessed"
+        ),
         "run_id": raw["run_id"],
+        "training_scope": training_scope,
+        "selection_rule": selection_rule,
         "peft": peft,
         "confidence_weighting": confidence_raw,
         "initial_validation": initial,
         "history": history,
-        "best_top1": best_top1,
+        "best_top1": selected_top1,
         "duration_seconds": total_seconds,
         "peak_vram_mib": torch.cuda.max_memory_allocated(device) / (1024**2) if device.type == "cuda" else 0.0,
         "train_count": len(train_records),
@@ -477,7 +519,8 @@ def main() -> int:
         "trainable_total_parameters": sum(
             parameter.numel() for parameter in model.parameters() if parameter.requires_grad
         ),
-        "best_checkpoint_sha256": _sha256(output / "best.pt"),
+        "selected_checkpoint": selected_name,
+        "selected_checkpoint_sha256": _sha256(output / selected_name),
         "last_checkpoint_sha256": _sha256(output / "last.pt"),
         "config_sha256": config_sha256,
         "head_initializer": {
@@ -500,6 +543,10 @@ def main() -> int:
             "gpu": torch.cuda.get_device_name(device) if device.type == "cuda" else None,
         },
     }
+    if selected_name == "best.pt":
+        metrics["best_checkpoint_sha256"] = metrics["selected_checkpoint_sha256"]
+    else:
+        metrics["final_checkpoint_sha256"] = metrics["selected_checkpoint_sha256"]
     (output / "metrics.json").write_text(
         json.dumps(metrics, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
