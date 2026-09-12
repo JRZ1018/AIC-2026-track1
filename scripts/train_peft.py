@@ -465,6 +465,21 @@ def main() -> int:
         if confidence is not None:
             checkpoint["confidence_weighting"] = confidence.state_dict()
         _save_atomic(checkpoint, output / "last.pt")
+        if training_scope == "full_train_fixed_epochs":
+            print(
+                json.dumps(
+                    {
+                        "stage": "full_train_peft",
+                        "status": "epoch_complete",
+                        "epoch": epoch,
+                        "epochs": epochs,
+                        "train_loss": row["train_loss"],
+                        "train_seconds": train_seconds,
+                    },
+                    sort_keys=True,
+                ),
+                flush=True,
+            )
 
     if training_scope == "full_train_fixed_epochs":
         selected_state = trainable_state_dict(model)
