@@ -8,11 +8,14 @@
 
 - 训练 commit：`c3d54d2ba19889509f8299ada0954dbcf72500ec`
 - H1 配置：`configs/experiment/p3_stage1_h1_linear_adam_e100_full_seed1.yaml`
-  - SHA-256：`b5fa9cb08ee31d292a0c2ac52c779551f115fd3f643cafda1301f11d47444d8f`
+  - LF SHA-256：`b5fa9cb08ee31d292a0c2ac52c779551f115fd3f643cafda1301f11d47444d8f`
+  - CRLF SHA-256：`fda56b2f4873c49603ecaf8a644c64abd4d917333a2a3a1696bbe77bd95bd8fc`
 - LoRA 配置：`configs/experiment/p3_stage1_h1init_peft_lora_only_2ep_full_seed1_b.yaml`
-  - SHA-256：`98370139679806954a9926cb6688e540be99b2559ca33a4238cd9b9e6ee413b8`
+  - LF SHA-256：`98370139679806954a9926cb6688e540be99b2559ca33a4238cd9b9e6ee413b8`
+  - CRLF SHA-256：`29be5fd7331c88680c1fae9a5ea5376f8af513e2853ad236012ef38b4d976276`
 - 唯一入口：`scripts/train_final_h1_lora.py`
-  - SHA-256：`210cd1bf8c1eebf3bfd012a91ee8efcbc37147be0885d3b9389e31b141099483`
+  - LF SHA-256：`210cd1bf8c1eebf3bfd012a91ee8efcbc37147be0885d3b9389e31b141099483`
+  - CRLF SHA-256：`ddfe7caf3700b1867dce5e4005a93c33fef9a03afe90444cfdbb4cb6a961e660`
 - train manifest SHA-256：`212f645a0d027cc4f2aa1a6d2f81f0175e8a3441b6fa6d001947038e00ba75ef`
 - split SHA-256：`9eb97e2b89da76f64323c2800d6c524a8455e31eaa9b0dab1917b7e4b877fb31`
 - label conflicts SHA-256：`d06a03bf23b54e663bfc849236f855dfeb61251262329210a72274b2c4df70f1`
@@ -25,7 +28,7 @@
 ## 运行前门禁
 
 1. `git checkout --detach c3d54d2ba19889509f8299ada0954dbcf72500ec`，确认 `git status --short` 为空；训练中途禁止 pull 或切换 commit。
-2. 上述文件哈希必须全部一致，feature cache 必须完整可读。
+2. 上述三个 Git 文本文件的原始哈希允许对应的 LF 或 CRLF 值；若为 CRLF，规范化为 LF 后必须精确匹配 LF 值。该差异仅允许由 Git 换行转换产生，B 不修改或重新签出文件。其余二进制/数据文件哈希必须逐字节精确一致，feature cache 必须完整可读。
 3. 以下两个输出目录必须都不存在：
    - `artifacts/experiments/20260912-b-final-h1-linear-full-e100-seed1/`
    - `artifacts/experiments/20260912-b-final-h1init-lora-full-2ep-seed1/`

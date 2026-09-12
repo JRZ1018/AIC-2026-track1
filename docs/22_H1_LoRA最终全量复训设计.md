@@ -25,9 +25,9 @@ H1→LoRA 已通过三种子门禁。为避免按单个 best checkpoint 乐观�
 ## 冻结代码与验证
 
 - 训练 commit：`c3d54d2ba19889509f8299ada0954dbcf72500ec`
-- H1 全量配置 SHA-256：`b5fa9cb08ee31d292a0c2ac52c779551f115fd3f643cafda1301f11d47444d8f`
-- LoRA 全量配置 SHA-256：`98370139679806954a9926cb6688e540be99b2559ca33a4238cd9b9e6ee413b8`
-- 单命令入口 SHA-256：`210cd1bf8c1eebf3bfd012a91ee8efcbc37147be0885d3b9389e31b141099483`
+- H1 全量配置 LF / CRLF SHA-256：`b5fa9cb08ee31d292a0c2ac52c779551f115fd3f643cafda1301f11d47444d8f` / `fda56b2f4873c49603ecaf8a644c64abd4d917333a2a3a1696bbe77bd95bd8fc`
+- LoRA 全量配置 LF / CRLF SHA-256：`98370139679806954a9926cb6688e540be99b2559ca33a4238cd9b9e6ee413b8` / `29be5fd7331c88680c1fae9a5ea5376f8af513e2853ad236012ef38b4d976276`
+- 单命令入口 LF / CRLF SHA-256：`210cd1bf8c1eebf3bfd012a91ee8efcbc37147be0885d3b9389e31b141099483` / `ddfe7caf3700b1867dce5e4005a93c33fef9a03afe90444cfdbb4cb6a961e660`
 - A 端定向测试：37 项通过。
 - A 端完整测试：133 项通过。
 - 治理检查：通过；没有数据、权重、checkpoint 或大文件进入 Git。
