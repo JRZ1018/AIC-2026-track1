@@ -32,7 +32,9 @@ repositories:
     trigger_stages: [M2, M3]
     deliverable: Single-model positive/negative trust mechanism experiment or evidence-based exclusion.
     copy_policy: minimal_attributed_reimplementation
-    decision: candidate
+    decision: excluded
+    implementation_status: preliminary_visual_substitute_failed_gate_no_official_semantic_names
+    evidence: docs/25_M2视觉原型软降权验收.md
   - id: clipcleaner
     repository: MrChenFeng/CLIPCleaner_ACMMM2024
     url: https://github.com/MrChenFeng/CLIPCleaner_ACMMM2024
@@ -44,10 +46,10 @@ repositories:
     trigger_stages: [M2, M3]
     deliverable: Blockwise CLIP trust and per-class GMM/consistency selection experiment.
     copy_policy: minimal_attributed_reimplementation
-    decision: candidate
-    implementation_status: visual_prototype_soft_weighting_preregistered_not_trained
+    decision: excluded
+    implementation_status: visual_prototype_soft_weighting_seed1_failed_preregistered_gate
     implementation_path: src/aictrack1/methods/confidence.py; scripts/train_peft.py
-    evidence: tests/test_visual_prototype_weighting.py; docs/24_M2视觉原型软降权预注册.md
+    evidence: tests/test_visual_prototype_weighting.py; docs/24_M2视觉原型软降权预注册.md; docs/25_M2视觉原型软降权验收.md
   - id: joapr
     repository: yunncheng/JoAPR
     url: https://github.com/yunncheng/JoAPR
