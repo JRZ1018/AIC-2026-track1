@@ -53,12 +53,24 @@ def main() -> int:
         raise FileExistsError(f"output directory already exists: {output}")
     output.mkdir(parents=True, exist_ok=True)
 
-    cache = load_feature_cache(cache_path)
-    if cache.metadata.source != "train":
-        raise ValueError("frozen-head training refuses test feature caches")
     training_scope = str(raw.get("training_scope", "fixed_split_validation"))
     if training_scope not in {"fixed_split_validation", "full_train_fixed_epochs"}:
         raise ValueError(f"unsupported frozen-head training scope {training_scope!r}")
+    if training_scope == "full_train_fixed_epochs":
+        print(
+            json.dumps(
+                {
+                    "stage": "full_train_head",
+                    "status": "loading_feature_cache",
+                    "feature_cache": str(cache_path),
+                },
+                sort_keys=True,
+            ),
+            flush=True,
+        )
+    cache = load_feature_cache(cache_path)
+    if cache.metadata.source != "train":
+        raise ValueError("frozen-head training refuses test feature caches")
     if training_scope == "full_train_fixed_epochs":
         expected_train_count = int(raw["expected_train_count"])
         if cache.metadata.expected_record_count != expected_train_count:
@@ -120,6 +132,20 @@ def main() -> int:
                     "train_loss": train_loss,
                     "learning_rate": float(trainer.optimizer.param_groups[0]["lr"]),
                 }
+            )
+            trainer.save_checkpoint(output / "last.pt")
+            print(
+                json.dumps(
+                    {
+                        "stage": "full_train_head",
+                        "status": "epoch_complete",
+                        "epoch": trainer.epoch,
+                        "epochs": training.epochs,
+                        "train_loss": train_loss,
+                    },
+                    sort_keys=True,
+                ),
+                flush=True,
             )
     else:
         assert validation_features is not None and validation_labels is not None

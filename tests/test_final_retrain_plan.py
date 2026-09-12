@@ -53,3 +53,13 @@ def test_final_wrapper_has_one_locked_public_command() -> None:
     assert "20260910" in script
     assert "train_frozen_head.py" in script
     assert "train_peft.py" in script
+
+
+def test_full_train_paths_emit_progress_and_checkpoint_each_epoch() -> None:
+    head_script = (ROOT / "scripts" / "train_frozen_head.py").read_text(encoding="utf-8")
+    peft_script = (ROOT / "scripts" / "train_peft.py").read_text(encoding="utf-8")
+
+    head_loop = head_script[head_script.index('if training_scope == "full_train_fixed_epochs":', head_script.index("started =")) :]
+    assert 'trainer.save_checkpoint(output / "last.pt")' in head_loop
+    assert '"stage": "full_train_head"' in head_loop
+    assert '"stage": "full_train_peft"' in peft_script
