@@ -308,6 +308,7 @@ def main() -> int:
         str(peft["mode"]),
         lora_rank=int(peft.get("lora_rank", 4)),
         lora_alpha=float(peft.get("lora_alpha", 8.0)),
+        lora_blocks=int(peft.get("lora_blocks", 1)),
     )
     head, head_checkpoint = load_classifier_head_checkpoint(
         head_checkpoint_path,

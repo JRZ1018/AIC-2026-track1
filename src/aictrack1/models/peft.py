@@ -57,10 +57,17 @@ def configure_visual_peft(
     *,
     lora_rank: int = 4,
     lora_alpha: float = 8.0,
+    lora_blocks: int = 1,
 ) -> PEFTSummary:
     """Enable exactly one audited visual adaptation strategy."""
 
-    allowed = {"frozen", "layernorm_projection", "last_block", "lora_last_attention"}
+    allowed = {
+        "frozen",
+        "layernorm_projection",
+        "last_block",
+        "lora_last_attention",
+        "lora_last_n_attention",
+    }
     if mode not in allowed:
         raise ValueError(f"unsupported PEFT mode {mode!r}")
     for parameter in visual.parameters():
@@ -76,25 +83,31 @@ def configure_visual_peft(
         for name, parameter in visual.named_parameters():
             if name.startswith(prefix) or name.startswith("ln_post.") or name == "proj":
                 parameter.requires_grad_(True)
-    elif mode == "lora_last_attention":
-        attention = last_block.attn
-        if not isinstance(attention, nn.MultiheadAttention):
-            raise TypeError("last CLIP visual attention is not torch.nn.MultiheadAttention")
-        parametrize.register_parametrization(
-            attention,
-            "in_proj_weight",
-            LowRankWeightDelta(attention.in_proj_weight, rank=lora_rank, alpha=lora_alpha),
-        )
-        parametrize.register_parametrization(
-            attention.out_proj,
-            "weight",
-            LowRankWeightDelta(attention.out_proj.weight, rank=lora_rank, alpha=lora_alpha),
-        )
+    elif mode in {"lora_last_attention", "lora_last_n_attention"}:
+        block_count = 1 if mode == "lora_last_attention" else int(lora_blocks)
+        if block_count < 1 or block_count > len(visual.transformer.resblocks):
+            raise ValueError("lora_blocks must be in [1, number of visual blocks]")
+        for block in visual.transformer.resblocks[-block_count:]:
+            attention = block.attn
+            if not isinstance(attention, nn.MultiheadAttention):
+                raise TypeError("CLIP visual attention is not torch.nn.MultiheadAttention")
+            parametrize.register_parametrization(
+                attention,
+                "in_proj_weight",
+                LowRankWeightDelta(attention.in_proj_weight, rank=lora_rank, alpha=lora_alpha),
+            )
+            parametrize.register_parametrization(
+                attention.out_proj,
+                "weight",
+                LowRankWeightDelta(attention.out_proj.weight, rank=lora_rank, alpha=lora_alpha),
+            )
 
     names = tuple(name for name, parameter in visual.named_parameters() if parameter.requires_grad)
     if mode != "frozen" and not names:
         raise RuntimeError(f"PEFT mode {mode} enabled no visual parameters")
-    if mode == "lora_last_attention" and any("lora_" not in name for name in names):
+    if mode in {"lora_last_attention", "lora_last_n_attention"} and any(
+        "lora_" not in name for name in names
+    ):
         raise RuntimeError("LoRA mode unexpectedly enabled a non-LoRA visual parameter")
     return PEFTSummary(
         mode=mode,
@@ -109,12 +122,16 @@ def configure_visual_peft(
 def fold_visual_lora(visual: nn.Module) -> None:
     """Fold registered LoRA deltas into the single visual model for inference."""
 
-    _, last_block = _last_visual_block(visual)
-    attention = last_block.attn
-    if parametrize.is_parametrized(attention, "in_proj_weight"):
-        parametrize.remove_parametrizations(attention, "in_proj_weight", leave_parametrized=True)
-    if parametrize.is_parametrized(attention.out_proj, "weight"):
-        parametrize.remove_parametrizations(attention.out_proj, "weight", leave_parametrized=True)
+    for block in visual.transformer.resblocks:
+        attention = block.attn
+        if parametrize.is_parametrized(attention, "in_proj_weight"):
+            parametrize.remove_parametrizations(
+                attention, "in_proj_weight", leave_parametrized=True
+            )
+        if parametrize.is_parametrized(attention.out_proj, "weight"):
+            parametrize.remove_parametrizations(
+                attention.out_proj, "weight", leave_parametrized=True
+            )
 
 
 class PEFTImageClassifier(nn.Module):
