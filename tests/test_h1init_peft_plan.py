@@ -87,6 +87,33 @@ def test_a_v2_retry_only_changes_run_identity_after_normalization_fix() -> None:
     assert Path(retry["output_dir"]).name == retry["run_id"]
 
 
+def test_label_smoothing_candidate_is_disabled_and_single_variable() -> None:
+    config_root = ROOT / "configs" / "experiment"
+    baseline = yaml.safe_load(
+        (config_root / "p3_stage1_h1init_peft_lora_only_3ep_seed1_a_v2.yaml").read_text(
+            encoding="utf-8"
+        )
+    )["experiment"]
+    candidate = yaml.safe_load(
+        (
+            config_root
+            / "p3_stage1_h1init_peft_lora_label_smoothing_3ep_seed1.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+
+    assert candidate["execution_enabled"] is False
+    assert {key for key in baseline if baseline[key] != candidate[key]} == {
+        "execution_enabled",
+        "run_id",
+        "output_dir",
+        "training",
+    }
+    expected_training = dict(baseline["training"])
+    expected_training["label_smoothing"] = 0.05
+    assert candidate["training"] == expected_training
+    assert Path(candidate["output_dir"]).name == candidate["run_id"]
+
+
 @pytest.mark.parametrize(
     ("filename", "seed", "suffix"),
     [
