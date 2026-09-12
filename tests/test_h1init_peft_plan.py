@@ -135,6 +135,29 @@ def test_a_label_smoothing_run_only_unlocks_preregistered_candidate() -> None:
     assert enabled["execution_enabled"] is True
 
 
+def test_a_label_smoothing_retry_only_changes_run_identity() -> None:
+    config_root = ROOT / "configs" / "experiment"
+    first = yaml.safe_load(
+        (
+            config_root
+            / "p3_stage1_h1init_peft_lora_label_smoothing_3ep_seed1_a.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+    retry = yaml.safe_load(
+        (
+            config_root
+            / "p3_stage1_h1init_peft_lora_label_smoothing_3ep_seed1_a_v2.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+
+    assert {key for key in first if first[key] != retry[key]} == {
+        "run_id",
+        "output_dir",
+    }
+    assert retry["run_id"].endswith("-v2")
+    assert Path(retry["output_dir"]).name == retry["run_id"]
+
+
 @pytest.mark.parametrize(
     ("filename", "seed", "suffix"),
     [
