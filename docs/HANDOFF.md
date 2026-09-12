@@ -95,7 +95,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-H1→LoRA 短程三种子门禁已经通过。当前先锁定配置和三项 checkpoint；B 无需补交训练产物，也没有新的训练任务。下一步应在用户明确批准后，选择并执行锁模复训/提交路径；不得根据 56.8751 的线上结果搜索参数，也不得擅自启动全量重训或额外测试推理。
+H1→LoRA 最终全量复训已经获用户批准，训练代码冻结在 commit `c3d54d2ba19889509f8299ada0954dbcf72500ec`。B 下一项且唯一任务为 `docs/task_orders/20260912-B-final-h1-lora-full-retrain.md`；完成全量 H1 100 epochs 后串行执行 LoRA 2 epochs。A 收到结果后严格验签；测试推理仍未授权。
 
 ## 7. 上游成熟方案入口
 
