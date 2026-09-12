@@ -24,12 +24,14 @@ H1→LoRA 已通过三种子门禁。为避免按单个 best checkpoint 乐观�
 
 ## 冻结代码与验证
 
-- 训练 commit：`c3d54d2ba19889509f8299ada0954dbcf72500ec`
+- 当前训练 commit：`6800050b9549993babccaf3e8b88c0c591989a2a`（替代未逐 epoch 保存 H1 状态的旧 `c3d54d2...`）
 - H1 全量配置 LF / CRLF SHA-256：`b5fa9cb08ee31d292a0c2ac52c779551f115fd3f643cafda1301f11d47444d8f` / `fda56b2f4873c49603ecaf8a644c64abd4d917333a2a3a1696bbe77bd95bd8fc`
 - LoRA 全量配置 LF / CRLF SHA-256：`98370139679806954a9926cb6688e540be99b2559ca33a4238cd9b9e6ee413b8` / `29be5fd7331c88680c1fae9a5ea5376f8af513e2853ad236012ef38b4d976276`
 - 单命令入口 LF / CRLF SHA-256：`210cd1bf8c1eebf3bfd012a91ee8efcbc37147be0885d3b9389e31b141099483` / `ddfe7caf3700b1867dce5e4005a93c33fef9a03afe90444cfdbb4cb6a961e660`
-- A 端定向测试：37 项通过。
-- A 端完整测试：133 项通过。
+- A 端定向测试：38 项通过。
+- A 端完整测试：134 项通过。
 - 治理检查：通过；没有数据、权重、checkpoint 或大文件进入 Git。
 
 B 的唯一执行入口为 `docs/task_orders/20260912-B-final-h1-lora-full-retrain.md`。结果回传后由 A 验签；通过前不生成测试预测。
+
+首次 B 端启动在约 60 秒遭遇 Intel Fortran runtime `window-CLOSE event`，且 H1 输出目录为空。A 判定为控制台/父进程被外部关闭，同时发现旧入口没有兑现 H1 每 epoch 恢复承诺。新 commit 已增加缓存加载提示、每 epoch 进度和每 epoch 原子 `last.pt`；B 获准保留失败日志、删除经验证为空的精确目录，并在持久终端用既往成功的 `cmd /c` 重定向方式进行一次重试。

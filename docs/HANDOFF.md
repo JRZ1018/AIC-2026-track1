@@ -95,7 +95,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-H1→LoRA 最终全量复训已经获用户批准，训练代码冻结在 commit `c3d54d2ba19889509f8299ada0954dbcf72500ec`。B 下一项且唯一任务为 `docs/task_orders/20260912-B-final-h1-lora-full-retrain.md`；完成全量 H1 100 epochs 后串行执行 LoRA 2 epochs。A 收到结果后严格验签；测试推理仍未授权。
+H1→LoRA 最终全量复训已经获用户批准。B 首次在旧 commit 启动时遭遇外部 `window-CLOSE event`，未产生 checkpoint；恢复修复后的训练代码冻结在 commit `6800050b9549993babccaf3e8b88c0c591989a2a`，增加 H1 每 epoch 原子 checkpoint 与进度输出。B 按更新后的 `docs/task_orders/20260912-B-final-h1-lora-full-retrain.md` 只重试一次。A 收到结果后严格验签；测试推理仍未授权。
 
 ## 7. 上游成熟方案入口
 

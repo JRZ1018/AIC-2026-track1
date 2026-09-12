@@ -6,7 +6,7 @@
 
 ## 冻结输入
 
-- 训练 commit：`c3d54d2ba19889509f8299ada0954dbcf72500ec`
+- 训练 commit：`6800050b9549993babccaf3e8b88c0c591989a2a`
 - H1 配置：`configs/experiment/p3_stage1_h1_linear_adam_e100_full_seed1.yaml`
   - LF SHA-256：`b5fa9cb08ee31d292a0c2ac52c779551f115fd3f643cafda1301f11d47444d8f`
   - CRLF SHA-256：`fda56b2f4873c49603ecaf8a644c64abd4d917333a2a3a1696bbe77bd95bd8fc`
@@ -16,6 +16,12 @@
 - 唯一入口：`scripts/train_final_h1_lora.py`
   - LF SHA-256：`210cd1bf8c1eebf3bfd012a91ee8efcbc37147be0885d3b9389e31b141099483`
   - CRLF SHA-256：`ddfe7caf3700b1867dce5e4005a93c33fef9a03afe90444cfdbb4cb6a961e660`
+- H1 训练入口：`scripts/train_frozen_head.py`
+  - LF SHA-256：`374f820c5da49609f5c9198a44d9048b4c25380017bf80c3e1a0ea0e0775b13c`
+  - CRLF SHA-256：`d385a11e60380e4b14e32b20de75e13b269e6e1c53b011e3c56a892e4b17e7a1`
+- LoRA 训练入口：`scripts/train_peft.py`
+  - LF SHA-256：`02bd25e41e51ed7101e776397da8826f29bbd089468303cf927877f3a9b313ab`
+  - CRLF SHA-256：`54d2b796cd740cfd57c9e7d09fdb4bdbac8a1066f0bc6fd42ffbc2a42f893d81`
 - train manifest SHA-256：`212f645a0d027cc4f2aa1a6d2f81f0175e8a3441b6fa6d001947038e00ba75ef`
 - split SHA-256：`9eb97e2b89da76f64323c2800d6c524a8455e31eaa9b0dab1917b7e4b877fb31`
 - label conflicts SHA-256：`d06a03bf23b54e663bfc849236f855dfeb61251262329210a72274b2c4df70f1`
@@ -27,8 +33,8 @@
 
 ## 运行前门禁
 
-1. `git checkout --detach c3d54d2ba19889509f8299ada0954dbcf72500ec`，确认 `git status --short` 为空；训练中途禁止 pull 或切换 commit。
-2. 上述三个 Git 文本文件的原始哈希允许对应的 LF 或 CRLF 值；若为 CRLF，规范化为 LF 后必须精确匹配 LF 值。该差异仅允许由 Git 换行转换产生，B 不修改或重新签出文件。其余二进制/数据文件哈希必须逐字节精确一致，feature cache 必须完整可读。
+1. `git checkout --detach 6800050b9549993babccaf3e8b88c0c591989a2a`，确认 `git status --short` 为空；训练中途禁止 pull 或切换 commit。旧 commit `c3d54d2...` 已因 H1 未逐 epoch 落盘而作废。
+2. 上述五个 Git 文本文件的原始哈希允许对应的 LF 或 CRLF 值；若为 CRLF，规范化为 LF 后必须精确匹配 LF 值。该差异仅允许由 Git 换行转换产生，B 不修改或重新签出文件。其余二进制/数据文件哈希必须逐字节精确一致，feature cache 必须完整可读。
 3. 以下两个输出目录必须都不存在：
    - `artifacts/experiments/20260912-b-final-h1-linear-full-e100-seed1/`
    - `artifacts/experiments/20260912-b-final-h1init-lora-full-2ep-seed1/`
@@ -43,10 +49,24 @@
 ## 唯一训练命令
 
 ```powershell
-.\.venv\Scripts\python.exe scripts\train_final_h1_lora.py --head-config configs\experiment\p3_stage1_h1_linear_adam_e100_full_seed1.yaml --peft-config configs\experiment\p3_stage1_h1init_peft_lora_only_2ep_full_seed1_b.yaml 2>&1 | Tee-Object b-final-h1-lora-full.stdout.log
+cmd /d /c ".venv\Scripts\python.exe scripts\train_final_h1_lora.py --head-config configs\experiment\p3_stage1_h1_linear_adam_e100_full_seed1.yaml --peft-config configs\experiment\p3_stage1_h1init_peft_lora_only_2ep_full_seed1_b.yaml > b-final-h1-lora-full-attempt2.stdout.log 2>&1"
 ```
 
-预计 GPU 高占用约 25–40 分钟，峰值显存约 0.6 GiB，新增磁盘通常低于 10 MiB。任务支持 epoch 边界恢复；若意外中断且两个输出目录内状态完整，只重复同一命令，入口会自动使用 `last.pt`。不得自行删除或改写现场。
+必须在不会被 60 秒超时或自动关闭的持久终端中运行并等待命令完成。预计 GPU 高占用约 25–40 分钟，峰值显存约 0.6 GiB，新增磁盘通常低于 10 MiB。新 commit 在每个 H1/LoRA epoch 后原子保存 `last.pt` 并输出进度；若意外中断且输出目录内存在完整 `last.pt`，只重复同一命令，入口会自动恢复。不得自行删除或改写非空现场。
+
+## 首次 forrtl 中断的批准恢复
+
+首次尝试在约 60 秒收到 `forrtl: error (200): window-CLOSE event`，没有 Python traceback、训练输出或 checkpoint；这表明控制台/父进程被外部关闭，而不是数值训练报错。B 必须先将原始日志改名保留为 `b-final-h1-lora-full-attempt1.forrtl.log`。随后只允许删除已经确认包含 0 个文件的精确目录：
+
+```powershell
+$failed = (Resolve-Path -LiteralPath "artifacts\experiments\20260912-b-final-h1-linear-full-e100-seed1").Path
+$expected = (Join-Path (Resolve-Path ".").Path "artifacts\experiments\20260912-b-final-h1-linear-full-e100-seed1")
+if ($failed -ne $expected) { throw "unexpected recovery target: $failed" }
+if ((Get-ChildItem -LiteralPath $failed -Force | Measure-Object).Count -ne 0) { throw "recovery target is not empty" }
+Remove-Item -LiteralPath $failed
+```
+
+若目录不存在则无需删除；若非空则停止并回报 A。删除后按新 commit 重新运行定向测试和上述 attempt2 唯一训练命令。若同一 `window-CLOSE` 再次发生，不进行第三次尝试，保留现场回报 A。
 
 ## 成功与停止条件
 
