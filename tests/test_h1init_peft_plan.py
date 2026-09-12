@@ -185,6 +185,38 @@ def test_last_two_attention_lora_candidate_only_expands_peft_scope() -> None:
 @pytest.mark.parametrize(
     ("filename", "seed", "suffix"),
     [
+        ("p3_stage1_h1init_peft_lora_last2_r4_3ep_seed2_a.yaml", 20260911, "seed2"),
+        ("p3_stage1_h1init_peft_lora_last2_r4_3ep_seed3_a.yaml", 20260912, "seed3"),
+    ],
+)
+def test_last_two_attention_multiseed_configs_only_change_identity_and_seed(
+    filename: str, seed: int, suffix: str
+) -> None:
+    config_root = ROOT / "configs" / "experiment"
+    reference = yaml.safe_load(
+        (
+            config_root / "p3_stage1_h1init_peft_lora_last2_r4_3ep_seed1_a.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+    candidate = yaml.safe_load((config_root / filename).read_text(encoding="utf-8"))[
+        "experiment"
+    ]
+
+    assert {key for key in reference if reference[key] != candidate[key]} == {
+        "run_id",
+        "output_dir",
+        "training",
+    }
+    expected_training = dict(reference["training"])
+    expected_training["seed"] = seed
+    assert candidate["training"] == expected_training
+    assert candidate["run_id"].endswith(suffix)
+    assert Path(candidate["output_dir"]).name == candidate["run_id"]
+
+
+@pytest.mark.parametrize(
+    ("filename", "seed", "suffix"),
+    [
         ("p3_stage1_h1init_peft_lora_only_3ep_seed2_b.yaml", 20260911, "seed2"),
         ("p3_stage1_h1init_peft_lora_only_3ep_seed3_b.yaml", 20260912, "seed3"),
     ],
