@@ -58,7 +58,7 @@
 - 已准备 B 产物严格验签与三种子配对汇总工具；验收计划为 `configs/evaluation/b_first_round.yaml`。H1 线性头初始化 LoRA 的单变量配置已预注册但以 `execution_enabled: false` 锁住，未运行。门禁、命令和资源边界见 `docs/19_B结果验收与H1_LoRA预注册.md`。
 - B 首轮四项结果已正式验签：M1 三组配对增益全部为正，但平均仅 +0.0695 点，低于 +0.10 点门槛，故停止 M1 扩张；H1 仍是更强参考。完整结论见 `docs/20_B首轮验收与H1冻结头提交.md`。
 - H1 冻结线性头第二份提交线上分数为 56.8751，相对首次 M1 的 55.0006 提高 1.8745 点。B 的 H1→LoRA seed2/seed3 已验签；与 A seed1 汇总后 Top-1 均值 68.9761%、标准差 0.0241 点、macro 均值 68.9634%，完整通过预注册三种子门禁。详见 `docs/21_H1_LoRA多种子验收.md`。
-- B 的最终全量 H1→LoRA attempt2 已通过 A 端验收，并在用户批准后完成一次最终测试推理。有效提交为 `submissions/20260912_h1init_lora_full_final_v2/pred_results.zip`，SHA-256 `51ca6b204f5d83f2a7d3e949f915df8810dee9b8af660d921844a6fffaec8042`，等待用户上传并回传线上分数。详见 `docs/23_H1_LoRA最终全量复训验收.md`。
+- B 的最终全量 H1→LoRA attempt2 已通过 A 端验收，并在用户批准后完成一次最终测试推理。有效提交线上分数 **57.8924**，比 H1 高 1.0173 点、比队友 baseline 高 0.8451 点，晋级为当前最佳。详见 `docs/23_H1_LoRA最终全量复训验收.md`。
 - 当前已经进入**初赛官方数据阶段**并完成 M0/M1 首筛及首份真实提交包；不得利用测试预测统计继续调参。
 
 ### 当前不可做
@@ -96,7 +96,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-H1→LoRA 最终全量复训及一次最终测试推理均已完成。下一步由用户上传 `submissions/20260912_h1init_lora_full_final_v2/pred_results.zip` 并回传线上分数；不得根据预测统计继续调参。线上成绩若不理想，回退到已得 56.8751 的 H1 提交。
+当前线上最佳为 H1→LoRA 全量复训的 57.8924。下一步候选是 CLIPCleaner/DeFT 启发的训练集视觉原型软降权 M2；先完成固定验证集单种子门禁，不读取测试集、不立即生成新提交。执行配置仍锁定为 `execution_enabled: false`，需用户批准训练资源后才解锁。
 
 ## 7. 上游成熟方案入口
 

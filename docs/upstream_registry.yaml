@@ -45,6 +45,9 @@ repositories:
     deliverable: Blockwise CLIP trust and per-class GMM/consistency selection experiment.
     copy_policy: minimal_attributed_reimplementation
     decision: candidate
+    implementation_status: visual_prototype_soft_weighting_preregistered_not_trained
+    implementation_path: src/aictrack1/methods/confidence.py; scripts/train_peft.py
+    evidence: tests/test_visual_prototype_weighting.py; docs/24_M2视觉原型软降权预注册.md
   - id: joapr
     repository: yunncheng/JoAPR
     url: https://github.com/yunncheng/JoAPR
