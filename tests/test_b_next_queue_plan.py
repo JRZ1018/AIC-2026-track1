@@ -41,3 +41,42 @@ def test_b_promoted_capacity_configs_are_enabled_and_single_variable(
             "lora_alpha": 16.0,
         }
         assert candidate["peft"]["lora_alpha"] / candidate["peft"]["lora_rank"] == 2.0
+
+
+@pytest.mark.parametrize(
+    ("filename", "rank", "alpha", "blocks"),
+    [
+        ("p3_stage1_h1init_peft_lora_last2_r16a32_3ep_seed1_b_planned.yaml", 16, 32.0, 2),
+        ("p3_stage1_h1init_peft_lora_last2_r32a64_3ep_seed1_b_planned.yaml", 32, 64.0, 2),
+        ("p3_stage1_h1init_peft_lora_last2_r8a8_3ep_seed1_b_planned.yaml", 8, 8.0, 2),
+        ("p3_stage1_h1init_peft_lora_last2_r8a32_3ep_seed1_b_planned.yaml", 8, 32.0, 2),
+        ("p3_stage1_h1init_peft_lora_last3_r8a16_3ep_seed1_b_planned.yaml", 8, 16.0, 3),
+        ("p3_stage1_h1init_peft_lora_last4_r8a16_3ep_seed1_b_planned.yaml", 8, 16.0, 4),
+    ],
+)
+def test_next_lora_coarse_search_configs_are_disabled_and_bounded(
+    filename: str, rank: int, alpha: float, blocks: int
+) -> None:
+    reference = _load(
+        "p3_stage1_h1init_peft_lora_last2_r8a16_3ep_seed1_b_planned.yaml"
+    )
+    candidate = _load(filename)
+
+    assert {key for key in reference if reference[key] != candidate[key]} == {
+        "run_id",
+        "execution_enabled",
+        "output_dir",
+        "peft",
+    }
+    assert candidate["execution_enabled"] is False
+    assert candidate["peft"] == {
+        "mode": "lora_last_n_attention",
+        "lora_rank": rank,
+        "lora_alpha": alpha,
+        "lora_blocks": blocks,
+    }
+    assert candidate["training"] == reference["training"]
+    assert candidate["head_checkpoint"] == reference["head_checkpoint"]
+    assert candidate["manifest"] == reference["manifest"]
+    assert candidate["split"] == reference["split"]
+    assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
