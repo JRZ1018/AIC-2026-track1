@@ -212,6 +212,34 @@ def test_attention_mlp_lora_candidate_only_expands_adapter_targets() -> None:
     assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
 
 
+def test_h1_last_block_medium_candidate_is_disabled_and_bounded() -> None:
+    config_root = ROOT / "configs" / "experiment"
+    baseline = yaml.safe_load(
+        (
+            config_root / "p3_stage1_h1init_peft_lora_last2_r4_3ep_seed1_a.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+    candidate = yaml.safe_load(
+        (
+            config_root
+            / "p3_stage1_h1init_last_block_frozen_head_lr3e6_3ep_seed1_planned.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+
+    assert candidate["execution_enabled"] is False
+    assert candidate["peft"] == {"mode": "last_block"}
+    assert candidate["training"] == baseline["training"] | {
+        "visual_learning_rate": 3e-6
+    }
+    assert candidate["head_checkpoint"] == baseline["head_checkpoint"]
+    assert candidate["manifest"] == baseline["manifest"]
+    assert candidate["split"] == baseline["split"]
+    assert candidate["label_conflicts"] == baseline["label_conflicts"]
+    assert candidate["training"]["head_learning_rate"] == 0.0
+    assert candidate["training"]["epochs"] == 3
+    assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
+
+
 @pytest.mark.parametrize(
     ("filename", "seed", "suffix"),
     [
