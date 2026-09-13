@@ -96,7 +96,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-当前线上最佳为 H1→LoRA 全量复训的 57.8924。M2 视觉权重和 0.05 标签平滑均已停止。新的末两层注意力 rank-4 LoRA seed1 达到 69.1215%，相对一层基线提高 0.1600 点并通过门禁；seed2/seed3 配置已冻结，但两次合计 35–45 分钟的扩大资源范围仍需用户再次批准。详见 `docs/29_H1_LoRA末两层seed1验收与多种子计划.md`。
+当前线上最佳为 H1→LoRA 全量复训的 57.8924。末两层注意力 rank-4 LoRA 三种子平均 Top-1 为 69.0908%，相对一层 LoRA 提高 0.1147 点且三个 seed 增益同号，已通过门禁。全量复训固定使用 103,218 张训练图、全量 H1 初始化和 3 epochs；用户已授权持续执行到下一份 `pred_results`。详见 `docs/30_H1_LoRA末两层多种子验收与全量复训设计.md`。
 
 ## 7. 上游成熟方案入口
 

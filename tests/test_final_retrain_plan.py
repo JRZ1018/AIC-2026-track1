@@ -46,6 +46,24 @@ def test_final_lora_is_the_accepted_recipe_with_fixed_two_epochs() -> None:
     assert "test" not in " ".join(str(value) for value in final.values()).lower()
 
 
+def test_last_two_block_final_config_reuses_full_h1_and_fixed_three_epochs() -> None:
+    baseline = _load("p3_stage1_h1init_peft_lora_only_2ep_full_seed1_b.yaml")
+    candidate = _load("p3_stage1_h1init_peft_lora_last2_r4_3ep_full_seed1_a.yaml")
+
+    assert candidate["training_scope"] == "full_train_fixed_epochs"
+    assert candidate["expected_train_count"] == 103218
+    assert candidate["head_checkpoint"] == baseline["head_checkpoint"]
+    assert candidate["training"] == baseline["training"] | {"epochs": 3}
+    assert candidate["peft"] == {
+        "mode": "lora_last_n_attention",
+        "lora_rank": 4,
+        "lora_alpha": 8.0,
+        "lora_blocks": 2,
+    }
+    assert Path(candidate["output_dir"]).name == candidate["run_id"]
+    assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
+
+
 def test_final_wrapper_has_one_locked_public_command() -> None:
     script = (ROOT / "scripts" / "train_final_h1_lora.py").read_text(encoding="utf-8")
     assert "full_train_fixed_epochs" in script
