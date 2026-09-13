@@ -79,6 +79,7 @@ def main() -> int:
             "last_block",
             "lora_last_attention",
             "lora_last_n_attention",
+            "lora_last_n_attention_mlp",
         ),
     )
     parser.add_argument("--output", required=True, type=Path)

@@ -10,11 +10,22 @@ from torch.nn.utils import parametrize
 from aictrack1.models.peft import PEFTImageClassifier, configure_visual_peft, fold_visual_lora
 
 
+class _MLP(nn.Module):
+    def __init__(self, width: int = 8) -> None:
+        super().__init__()
+        self.c_fc = nn.Linear(width, width * 2)
+        self.gelu = nn.ReLU()
+        self.c_proj = nn.Linear(width * 2, width)
+
+    def forward(self, inputs: torch.Tensor) -> torch.Tensor:
+        return self.c_proj(self.gelu(self.c_fc(inputs)))
+
+
 class _Block(nn.Module):
     def __init__(self, width: int = 8) -> None:
         super().__init__()
         self.attn = nn.MultiheadAttention(width, 2)
-        self.mlp = nn.Sequential(nn.Linear(width, width * 2), nn.ReLU(), nn.Linear(width * 2, width))
+        self.mlp = _MLP(width)
         self.ln_1 = nn.LayerNorm(width)
         self.ln_2 = nn.LayerNorm(width)
 
@@ -110,6 +121,31 @@ def test_lora_last_n_attention_targets_exact_tail_and_folds_all() -> None:
     for block in visual.transformer.resblocks:
         assert not parametrize.is_parametrized(block.attn, "in_proj_weight")
         assert not parametrize.is_parametrized(block.attn.out_proj, "weight")
+
+
+def test_lora_last_n_attention_mlp_targets_and_folds_both_sublayers() -> None:
+    visual = _Visual()
+    summary = configure_visual_peft(
+        visual,
+        "lora_last_n_attention_mlp",
+        lora_rank=2,
+        lora_alpha=4,
+        lora_blocks=2,
+    )
+
+    assert summary.trainable_visual_parameters == 384
+    for block in visual.transformer.resblocks:
+        assert parametrize.is_parametrized(block.attn, "in_proj_weight")
+        assert parametrize.is_parametrized(block.attn.out_proj, "weight")
+        assert parametrize.is_parametrized(block.mlp.c_fc, "weight")
+        assert parametrize.is_parametrized(block.mlp.c_proj, "weight")
+
+    fold_visual_lora(visual)
+    for block in visual.transformer.resblocks:
+        assert not parametrize.is_parametrized(block.attn, "in_proj_weight")
+        assert not parametrize.is_parametrized(block.attn.out_proj, "weight")
+        assert not parametrize.is_parametrized(block.mlp.c_fc, "weight")
+        assert not parametrize.is_parametrized(block.mlp.c_proj, "weight")
 
 
 @pytest.mark.parametrize("block_count", [0, 3])
