@@ -99,7 +99,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-当前线上最佳为末两层注意力 rank-8/alpha-16 H1→LoRA 全量复训的 58.1247。层数/rank/Attention+MLP 容量搜索均已停止；下一项是已批准的 H1 末块中强度 seed1，由 B 按任务单执行。A 同时准备 head/mid/tail 诊断和确定性长尾压力测试。双目标路线见 `docs/35_初赛追分与复赛迁移双目标策略.md`。
+当前线上最佳为末两层注意力 rank-8/alpha-16 H1→LoRA 全量复训的 58.1247。Attention+MLP 分支已停止，但 LoRA rank/alpha/层数保留为未来 3–4 天的受控粗筛线；同时推进 H1 末块中强度路线。B 已按更新前交付开始执行 `d473e858afe6a00e9590171dfa65677e801d11b3`，不得中途切换；新双目标方案和 LoRA 队列从下一次交付起生效。详见 `docs/35_初赛追分与复赛迁移双目标策略.md`。
 
 ## 7. 上游成熟方案入口
 
