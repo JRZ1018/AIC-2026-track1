@@ -4,9 +4,11 @@
 
 执行一次固定验证集筛选：从 H1 线性头初始化，冻结分类头，只训练 CLIP ViT-B/32 最后一个完整视觉 Transformer 块、`ln_post` 与 `proj`。本任务只允许 seed1，不追加 seed、不访问 test、不生成提交。
 
+本任务是新的中强度路线首项，而不是继续微调 LoRA rank/alpha：7,482,624 个可训练视觉参数约为当前 rank-8 LoRA 的 101.5 倍。它仍以初赛 Top-1 提分为直接目标，同时验证受控部分解冻是否比轻量适配更有容量；配置不硬编码类别数，后续可在新阶段从官方权重重新运行。
+
 ## 冻结输入
 
-- 训练 commit：`d473e858afe6a00e9590171dfa65677e801d11b3`
+- 训练 commit：`5668419b92eb39ea8d35acc723c982647937b5da`
 - 配置：`configs/experiment/p3_stage1_h1init_last_block_frozen_head_lr3e6_3ep_seed1_planned.yaml`
 - 配置 SHA-256（LF）：`79f06c723b6c303d58948908dedd0b925e508c9d0e945abdb670a289d7750e9f`
 - 配置 SHA-256（CRLF）：`61fec185a500e9c1d4251b32c05022c16c62e1eba9ee6918e53508fefeca2a0f`
@@ -23,7 +25,7 @@
 ```powershell
 Set-Location D:\aicomp\AICtrack1
 git fetch origin
-git switch --detach d473e858afe6a00e9590171dfa65677e801d11b3
+git switch --detach 5668419b92eb39ea8d35acc723c982647937b5da
 git rev-parse HEAD
 git status --short
 .\.venv\Scripts\python.exe -m pytest tests\test_h1init_peft_plan.py tests\test_peft.py tests\test_peft_checkpoint.py -q
