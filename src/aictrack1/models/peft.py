@@ -51,6 +51,15 @@ def _last_visual_block(visual: nn.Module) -> tuple[int, nn.Module]:
     return index, blocks[index]
 
 
+def _register_lora(module: nn.Module, name: str, *, rank: int, alpha: float) -> None:
+    weight = getattr(module, name)
+    parametrize.register_parametrization(
+        module,
+        name,
+        LowRankWeightDelta(weight, rank=rank, alpha=alpha),
+    )
+
+
 def configure_visual_peft(
     visual: nn.Module,
     mode: str,
@@ -67,6 +76,7 @@ def configure_visual_peft(
         "last_block",
         "lora_last_attention",
         "lora_last_n_attention",
+        "lora_last_n_attention_mlp",
     }
     if mode not in allowed:
         raise ValueError(f"unsupported PEFT mode {mode!r}")
@@ -83,7 +93,11 @@ def configure_visual_peft(
         for name, parameter in visual.named_parameters():
             if name.startswith(prefix) or name.startswith("ln_post.") or name == "proj":
                 parameter.requires_grad_(True)
-    elif mode in {"lora_last_attention", "lora_last_n_attention"}:
+    elif mode in {
+        "lora_last_attention",
+        "lora_last_n_attention",
+        "lora_last_n_attention_mlp",
+    }:
         block_count = 1 if mode == "lora_last_attention" else int(lora_blocks)
         if block_count < 1 or block_count > len(visual.transformer.resblocks):
             raise ValueError("lora_blocks must be in [1, number of visual blocks]")
@@ -91,21 +105,23 @@ def configure_visual_peft(
             attention = block.attn
             if not isinstance(attention, nn.MultiheadAttention):
                 raise TypeError("CLIP visual attention is not torch.nn.MultiheadAttention")
-            parametrize.register_parametrization(
-                attention,
-                "in_proj_weight",
-                LowRankWeightDelta(attention.in_proj_weight, rank=lora_rank, alpha=lora_alpha),
-            )
-            parametrize.register_parametrization(
-                attention.out_proj,
-                "weight",
-                LowRankWeightDelta(attention.out_proj.weight, rank=lora_rank, alpha=lora_alpha),
-            )
+            _register_lora(attention, "in_proj_weight", rank=lora_rank, alpha=lora_alpha)
+            _register_lora(attention.out_proj, "weight", rank=lora_rank, alpha=lora_alpha)
+            if mode == "lora_last_n_attention_mlp":
+                for name in ("c_fc", "c_proj"):
+                    layer = getattr(block.mlp, name, None)
+                    if not isinstance(layer, nn.Linear):
+                        raise TypeError(f"CLIP visual MLP {name} is not torch.nn.Linear")
+                    _register_lora(layer, "weight", rank=lora_rank, alpha=lora_alpha)
 
     names = tuple(name for name, parameter in visual.named_parameters() if parameter.requires_grad)
     if mode != "frozen" and not names:
         raise RuntimeError(f"PEFT mode {mode} enabled no visual parameters")
-    if mode in {"lora_last_attention", "lora_last_n_attention"} and any(
+    if mode in {
+        "lora_last_attention",
+        "lora_last_n_attention",
+        "lora_last_n_attention_mlp",
+    } and any(
         "lora_" not in name for name in names
     ):
         raise RuntimeError("LoRA mode unexpectedly enabled a non-LoRA visual parameter")
@@ -132,6 +148,10 @@ def fold_visual_lora(visual: nn.Module) -> None:
             parametrize.remove_parametrizations(
                 attention.out_proj, "weight", leave_parametrized=True
             )
+        for name in ("c_fc", "c_proj"):
+            layer = getattr(block.mlp, name, None)
+            if layer is not None and parametrize.is_parametrized(layer, "weight"):
+                parametrize.remove_parametrizations(layer, "weight", leave_parametrized=True)
 
 
 class PEFTImageClassifier(nn.Module):

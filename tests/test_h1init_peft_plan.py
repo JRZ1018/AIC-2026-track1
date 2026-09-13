@@ -182,6 +182,36 @@ def test_last_two_attention_lora_candidate_only_expands_peft_scope() -> None:
     assert candidate["execution_enabled"] is True
 
 
+def test_attention_mlp_lora_candidate_only_expands_adapter_targets() -> None:
+    baseline = yaml.safe_load(
+        (
+            ROOT
+            / "configs"
+            / "experiment"
+            / "p3_stage1_h1init_peft_lora_last2_r4_3ep_seed1_a.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+    candidate = yaml.safe_load(
+        (
+            ROOT
+            / "configs"
+            / "experiment"
+            / "p3_stage1_h1init_peft_lora_last2_attn_mlp_r4_3ep_seed1_a.yaml"
+        ).read_text(encoding="utf-8")
+    )["experiment"]
+
+    assert {key for key in baseline if baseline[key] != candidate[key]} == {
+        "run_id",
+        "output_dir",
+        "peft",
+    }
+    assert candidate["peft"] == baseline["peft"] | {
+        "mode": "lora_last_n_attention_mlp"
+    }
+    assert candidate["execution_enabled"] is True
+    assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
+
+
 @pytest.mark.parametrize(
     ("filename", "seed", "suffix"),
     [
