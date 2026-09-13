@@ -64,6 +64,25 @@ def test_last_two_block_final_config_reuses_full_h1_and_fixed_three_epochs() -> 
     assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
 
 
+def test_rank8_final_config_only_promotes_validated_capacity() -> None:
+    rank4 = _load("p3_stage1_h1init_peft_lora_last2_r4_3ep_full_seed1_a.yaml")
+    rank8 = _load("p3_stage1_h1init_peft_lora_last2_r8a16_3ep_full_seed1_a.yaml")
+
+    assert {key for key in rank4 if rank4[key] != rank8[key]} == {
+        "run_id",
+        "output_dir",
+        "peft",
+    }
+    assert rank8["peft"] == rank4["peft"] | {
+        "lora_rank": 8,
+        "lora_alpha": 16.0,
+    }
+    assert rank8["peft"]["lora_alpha"] / rank8["peft"]["lora_rank"] == 2.0
+    assert rank8["training_scope"] == "full_train_fixed_epochs"
+    assert rank8["expected_train_count"] == 103218
+    assert "test" not in " ".join(str(value) for value in rank8.values()).lower()
+
+
 def test_final_wrapper_has_one_locked_public_command() -> None:
     script = (ROOT / "scripts" / "train_final_h1_lora.py").read_text(encoding="utf-8")
     assert "full_train_fixed_epochs" in script
