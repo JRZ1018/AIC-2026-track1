@@ -96,7 +96,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-当前线上最佳为末两层注意力 rank-4 H1→LoRA 全量复训的 57.9926，比一层 LoRA 的 57.8924 提高 0.1002。下一批 B 任务已预注册为末三层 rank-4 与末两层 rank-8/alpha-16 的门禁式容量消融，六份配置已晋级为可执行状态；详见 `docs/31_B四小时LoRA容量任务池预注册.md`。
+当前线上最佳为末两层注意力 rank-4 H1→LoRA 全量复训的 57.9926。B 的容量队列已验签：末两层 rank-8/alpha-16 三种子平均 69.2136%，相对 rank-4 提高 0.1228 点并优于末三层 rank-4，已晋级固定 epoch3 全量复训。完成本次提交后停止继续搜索层数/rank，转向 Attention+MLP LoRA。详见 `docs/32_B_LoRA容量队列验收与rank8全量复训.md`。
 
 ## 7. 上游成熟方案入口
 
