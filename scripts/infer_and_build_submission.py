@@ -29,6 +29,11 @@ from aictrack1.models.peft import (
     configure_visual_peft,
     fold_visual_lora,
 )
+
+
+SUPPORTED_FINAL_PEFT_MODES = frozenset(
+    {"lora_last_attention", "lora_last_n_attention"}
+)
 from aictrack1.submission import SubmissionSpec, build_submission_package
 
 
@@ -111,7 +116,7 @@ def main() -> int:
     peft = experiment["peft"]
     if checkpoint.get("mode") != peft.get("mode"):
         raise ValueError("checkpoint and experiment PEFT modes differ")
-    if peft.get("mode") != "lora_last_attention":
+    if peft.get("mode") not in SUPPORTED_FINAL_PEFT_MODES:
         raise ValueError("final inference currently requires the selected LoRA PEFT mode")
 
     mapping = ClassMapping.from_csv(dataset_config.class_mapping)
