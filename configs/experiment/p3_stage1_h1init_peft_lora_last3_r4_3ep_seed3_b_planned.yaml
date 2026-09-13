@@ -1,0 +1,27 @@
+experiment:
+  run_id: 20260913-b-h1init-lora-last3-r4-3ep-seed3
+  execution_enabled: false
+  dataset_config: ../data/stage1.yaml
+  model_config: ../model/openai_clip_vit_b32.yaml
+  manifest: ../../artifacts/audits/stage1/train/samples.csv
+  split: ../../artifacts/audits/stage1/train/split.csv
+  label_conflicts: ../../artifacts/audits/stage1/train/label_conflicts.csv
+  head_checkpoint: ../../artifacts/experiments/20260911-p3-h1-linear-adam-e100-seed42/best.pt
+  output_dir: ../../artifacts/experiments/20260913-b-h1init-lora-last3-r4-3ep-seed3
+  device: cuda
+  expected_initial_top1: 0.686996996
+  initial_top1_tolerance: 0.002
+  peft:
+    mode: lora_last_n_attention
+    lora_rank: 4
+    lora_alpha: 8.0
+    lora_blocks: 3
+  training:
+    epochs: 3
+    batch_size: 64
+    workers: 4
+    seed: 20260912
+    visual_learning_rate: 0.0001
+    head_learning_rate: 0.0
+    weight_decay: 0.01
+    gradient_clip_norm: 1.0
