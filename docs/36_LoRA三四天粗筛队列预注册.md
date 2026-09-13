@@ -6,7 +6,7 @@
 
 用户明确要求不停止 LoRA rank/alpha 搜索，并允许在未来 3–4 天继续寻找增益。本轮先预注册 6 个 seed1 粗筛点，只研究三个轴：rank、`alpha/rank` 比例、末层块数。所有配置复用 H1、固定 manifest/split、seed、3 epochs、学习率、batch size、冻结分类头和 OpenAI CLIP ViT-B/32；不访问 test、不生成提交。
 
-当前配置全部保持 `execution_enabled: false`，完成代码测试不等于批准正式训练。资源获得明确批准后再统一启用、冻结 commit 和生成 B 任务单。
+用户已明确批准本轮资源预算，六个配置统一切换为 `execution_enabled: true`；启用后重新执行差异测试、最大组合 CUDA smoke 和治理检查，再冻结 commit 与 B 任务单。
 
 ## 六个候选与顺序
 
@@ -36,3 +36,19 @@
 - 峰值显存预计低于 0.9 GiB；六项磁盘新增预计 30–90 MiB。
 - 每 epoch 保存 `last.pt`，支持训练器原生续跑；不得并发，不得因结果自行追加 seed 或配置。
 - 任何 NaN/Inf、OOM、test 读取、82,592/20,626 样本数不符、参数量不符或资源明显越界，停止队列并保留现场。
+
+## 启用前预检结果
+
+六份配置启用后已重新执行差异测试、完整测试套件与治理检查：
+
+- `tests/test_b_next_queue_plan.py`、`tests/test_h1init_peft_plan.py` 共 26 项通过；完整测试套件 164 项通过；`scripts/check_governance.py` 为 `PASSED`。
+- 参考配置 `last2 rank8 alpha16 seed1` 保持 `execution_enabled: true` 不变（它就是 B 已执行并已验收的晋升运行），因此不再构成字段级差异；差异集断言相应改为 `{run_id, output_dir, peft}`，并显式断言参考与候选均为启用态。
+
+按上轮惯例对容量上界两个点做受限 CUDA smoke（128 样本 / 4 steps / batch 32，仅训练集与验证集，未访问 test）：
+
+| smoke | 可训练视觉参数 | 峰值显存 | 吞吐 | trainable_state.pt SHA-256 |
+|---|---:|---:|---:|---|
+| last2 r32 α64 | 294,912 | 505.24 MiB | 83.67 samples/s | `69d3569cecdb1ad9d3fa8658fcd65254db50ad3f346f201d7ac1fbd1a07d4140` |
+| last4 r8 α16 | 147,456 | 619.04 MiB | 93.02 samples/s | `d709a08d4e22de374c7d8964ed9f6e1c24ea6586aabe3ed5ab8ec64e52bbbf91` |
+
+两项分别在启用态下完成，可从各自 `result.json` 的 `command` 字段原样重跑；OpenAI CLIP 权重、train manifest、split 与数据配置哈希均与任务单要求一致。实测峰值显存 619.04 MiB 低于申报上限 0.9 GiB。`trainable_visual_parameters` 与预注册表逐项相符，参数名范围分别为 resblocks.10–11 与 resblocks.8–11 的注意力 LoRA。

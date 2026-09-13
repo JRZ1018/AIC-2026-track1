@@ -54,7 +54,7 @@ def test_b_promoted_capacity_configs_are_enabled_and_single_variable(
         ("p3_stage1_h1init_peft_lora_last4_r8a16_3ep_seed1_b_planned.yaml", 8, 16.0, 4),
     ],
 )
-def test_next_lora_coarse_search_configs_are_disabled_and_bounded(
+def test_next_lora_coarse_search_configs_are_enabled_single_variable_and_bounded(
     filename: str, rank: int, alpha: float, blocks: int
 ) -> None:
     reference = _load(
@@ -62,13 +62,14 @@ def test_next_lora_coarse_search_configs_are_disabled_and_bounded(
     )
     candidate = _load(filename)
 
-    assert {key for key in reference if reference[key] != candidate[key]} == {
-        "run_id",
-        "execution_enabled",
-        "output_dir",
-        "peft",
-    }
-    assert candidate["execution_enabled"] is False
+    # The six candidates share this reference's alpha/rank ratio of 2 at rank 8 over the
+    # last two blocks, so the reference itself is never a field-level difference. Only
+    # identity and the single swept axis may change; the reference stays exactly as the
+    # promoted run that B already executed, and stays enabled for reproduction.
+    differences = {key for key in reference if reference[key] != candidate[key]}
+    assert differences == {"run_id", "output_dir", "peft"}
+    assert reference["execution_enabled"] is True
+    assert candidate["execution_enabled"] is True
     assert candidate["peft"] == {
         "mode": "lora_last_n_attention",
         "lora_rank": rank,
