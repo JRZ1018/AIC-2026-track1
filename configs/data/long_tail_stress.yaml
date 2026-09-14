@@ -1,0 +1,30 @@
+# 复赛迁移门禁：确定性长尾压力划分（仅使用初赛训练部分）
+#
+# 本配置只构造工程与机制验收用的压力划分，不替代固定 noisy-validation 选模集，
+# 也不读取 DataSetStage1/test。所有数值在 docs/41_复赛迁移长尾压力与诊断预注册.md
+# 中预注册，运行后不得因结果放宽。
+long_tail_split:
+  stage: preliminary
+  reference_partition: train
+  seed: 20260915
+  train_fraction: 0.100000
+  eval_fraction: 0.150000
+  head_fraction: 0.200000
+  mid_fraction: 0.300000
+  tail_retention: 0.050000
+  mid_retention: 0.200000
+  min_samples_per_class: 1
+  minimum_retained_per_class: 1
+  gates:
+    min_per_class_rate: 0.010000
+    min_tail_to_head_rate_ratio: 0.040000
+    max_tail_to_head_accuracy_gap: 0.700000
+  inputs:
+    train_manifest: ../../artifacts/audits/stage1/train/samples.csv
+    split: ../../artifacts/audits/stage1/train/split.csv
+    class_mapping: ../../artifacts/audits/stage1/metadata/classes.csv
+    reference_class_counts: ../../artifacts/audits/stage1/train/class_counts.csv
+  outputs:
+    split: ../../artifacts/audits/stage1/train/long_tail_split.csv
+    stratification: ../../artifacts/audits/stage1/train/long_tail_strata.csv
+    summary: ../../artifacts/audits/stage1/train/long_tail_summary.json
