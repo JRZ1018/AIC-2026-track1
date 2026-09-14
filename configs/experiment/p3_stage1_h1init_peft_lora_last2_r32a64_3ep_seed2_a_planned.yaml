@@ -1,6 +1,6 @@
 experiment:
   run_id: 20260914-a-h1init-lora-last2-r32a64-3ep-seed2
-  execution_enabled: false
+  execution_enabled: true
   dataset_config: ../data/stage1.yaml
   model_config: ../model/openai_clip_vit_b32.yaml
   manifest: ../../artifacts/audits/stage1/train/samples.csv
