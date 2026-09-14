@@ -90,3 +90,17 @@ D:\aicomp\python312\python.exe scripts\train_peft.py --config configs\experiment
 ```
 
 该配置只训练最后视觉注意力的 LoRA，分类头冻结；完整消融、资源与 checkpoint 哈希见 [`docs/14_P3_PEFT资源与短程筛选报告.md`](docs/14_P3_PEFT资源与短程筛选报告.md)。
+
+## 复赛迁移：长尾压力与分层诊断
+
+协议与门禁见 [`docs/41_复赛迁移长尾压力与分层诊断预注册.md`](docs/41_复赛迁移长尾压力与分层诊断预注册.md)，实测证据见 [`docs/42_复赛迁移长尾压力与分层诊断验收.md`](docs/42_复赛迁移长尾压力与分层诊断验收.md)。全程只使用当前阶段训练部分，不访问 `DataSetStage1/test`。
+
+```powershell
+# 1) 由固定 train 划分生成确定性长尾压力划分（只读官方数据，写 artifacts/）
+D:\aicomp\python312\python.exe scripts\build_long_tail_split.py --config configs\data\long_tail_stress.yaml
+
+# 2) 对已锁定 checkpoint 做一次只读分层诊断（head/mid/tail、最差类召回、每类保留率）
+D:\aicomp\python312\python.exe scripts\diagnose_long_tail.py --experiment-config configs\experiment\p3_stage1_h1init_peft_lora_last2_r32a64_3ep_full_seed1_a_planned.yaml --checkpoint artifacts\experiments\20260914-a-final-h1init-lora-last2-r32a64-full-3ep-seed1\final.pt --long-tail-config configs\data\long_tail_stress.yaml --output-dir artifacts\reports\20260915-long-tail-diagnostics --batch-size 256 --workers 0
+```
+
+诊断结果只作工程口径与失效模式证据，不替代固定 noisy-validation 选模，也不得据其改动已锁定的训练样本、阈值或提交后处理。

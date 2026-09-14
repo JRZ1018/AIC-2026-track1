@@ -67,6 +67,10 @@
 - rank32 seed2/seed3 已完成并严格验收：相对匹配 rank8 的三组 Top-1 增益均为正，均值 +0.4493 点，macro 均值 69.6534%、冲突子集均值 30.7930%，通过预注册门禁。全量 rank32/alpha64 配置已获本次对话预算批准并启用；全量训练、验签与唯一一次 A 端 test 推理仍须按 `docs/38_rank32多种子门禁验收与全量复训冻结.md` 顺序完成。
 - rank32/alpha64 全量三轮复训已严格验签，随后由 A 执行唯一一次 test 推理。`submissions/20260914_h1init_lora_last2_r32a64_full_final/pred_results.zip` 已生成并通过本地严格格式校验，尚未上传；详见 `docs/39_rank32全量复训与提交包验收.md`。
 - rank32/alpha64 提交已获线上 **58.4011**，较 rank8/alpha16 的 58.1247 提高 **0.2764**，成为当前线上最佳。后续交接、禁止项和下一轮实验决策见 `docs/40_rank32线上结果与下班交接计划.md`。
+- 2026-09-15 已完成复赛迁移验收第一批：只读核验 `main`、rank32 全量 checkpoint、提交 CSV/ZIP、H1 头、OpenAI CLIP 权重与全部输入哈希一致；rank32/alpha64 正式冻结为当前最佳与唯一回退，本轮未重训三种子、未重新推理、未重复提交。
+- 已按预注册协议生成确定性长尾压力划分（`configs/data/long_tail_stress.yaml`，seed `20260915`，仅用固定 train 划分）：长尾训练侧 23,880 张/500 类、长尾评估侧 9,823 张；head 100 类 / mid 150 类 / tail 250 类；饿死类 0、最小每类保留率 0.0482、tail/head 保留率比 0.0492，跨侧重复簇泄漏 0，保留率门禁通过。
+- 已实现 head/mid/tail、类均准确率、最差类召回、召回分位、零召回类数与每类保留率诊断（`src/aictrack1/evaluation/long_tail.py`、`scripts/diagnose_long_tail.py`）；rank32 只读诊断结果：固定验证 Top-1 84.2335%（head 87.11 / mid 82.26 / tail 84.26，mid 为最弱分层），长尾评估 Top-1 82.7039%（mid 82.05 / tail 83.12，head 因支持不足被标记为不可用）。这些数字是乐观上界，只用于工程口径与失效模式，不用于选模。
+- 已预注册但保持锁定两个 T2 候选（末 1–2 个完整视觉块解冻，`last_n_blocks`，H1 全量初始化、同 split、同 seed、3 epochs、lr `2e-6`、冻结头）：`configs/experiment/p3_stage1_h1init_last_block_count1_lr2e6_3ep_seed1_planned.yaml` 与 `..._count2_...yaml`，两者 `execution_enabled: false`。完整协议与门禁见 `docs/41_复赛迁移长尾压力与分层诊断预注册.md`，实测证据见 `docs/42_复赛迁移长尾压力与分层诊断验收.md`。
 - 当前仍处于**初赛官方数据阶段**；继续以初赛固定验证和线上 Top-1 追分，同时所有新方法必须通过复赛可迁移门禁。不得利用测试预测统计继续调参。
 
 ### 当前不可做
@@ -104,7 +108,9 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-rank32/alpha64 的固定验证三种子门禁已通过；下一步是运行已启用的全量三轮复训，完成严格验签后由 A 唯一执行一次 test 推理。不得重训 B 的 rank32 seed1，也不得在全量训练验签前触碰 test。完整证据与固定门槛见 `docs/38_rank32多种子门禁验收与全量复训冻结.md`。
+先做只读核验：`git status -sb`、`git rev-parse HEAD`，确认 `main` 干净并已推送，再核对 `docs/42_复赛迁移长尾压力与分层诊断验收.md` 中列出的 rank32 checkpoint 与提交哈希。rank32/alpha64 已冻结为当前最佳与唯一回退，**不得重训其 seed1–seed3、不得重复 test 推理、不得重复提交同一包**。
+
+随后按 `docs/41` 的顺序推进：先决定是否批准“仅用长尾训练划分从头训练一个冻结特征头”的真实长尾压力测试；再对已预注册的 T2 末 1–2 块解冻候选做 seed1 配对固定验证（配置已落盘但 `execution_enabled: false`，启动训练前须在本轮对话取得资源批准）。不得在全量复训验签前触碰 test。
 
 ## 7. 上游成熟方案入口
 
