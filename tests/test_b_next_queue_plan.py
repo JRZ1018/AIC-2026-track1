@@ -81,3 +81,57 @@ def test_next_lora_coarse_search_configs_are_enabled_single_variable_and_bounded
     assert candidate["manifest"] == reference["manifest"]
     assert candidate["split"] == reference["split"]
     assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
+
+
+@pytest.mark.parametrize(
+    ("filename", "seed"),
+    [
+        ("p3_stage1_h1init_peft_lora_last2_r32a64_3ep_seed2_a_planned.yaml", 20260911),
+        ("p3_stage1_h1init_peft_lora_last2_r32a64_3ep_seed3_b_planned.yaml", 20260912),
+    ],
+)
+def test_rank32_multiseed_candidates_are_disabled_and_only_change_seed(
+    filename: str, seed: int
+) -> None:
+    reference = _load(
+        "p3_stage1_h1init_peft_lora_last2_r32a64_3ep_seed1_b_planned.yaml"
+    )
+    candidate = _load(filename)
+
+    assert {key for key in reference if reference[key] != candidate[key]} == {
+        "run_id",
+        "execution_enabled",
+        "output_dir",
+        "training",
+    }
+    expected_training = dict(reference["training"])
+    expected_training["seed"] = seed
+    assert candidate["training"] == expected_training
+    assert candidate["execution_enabled"] is False
+    assert candidate["peft"] == reference["peft"]
+    assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
+
+
+def test_rank32_full_retrain_candidate_is_disabled_and_matches_rank8_recipe() -> None:
+    reference = _load(
+        "p3_stage1_h1init_peft_lora_last2_r8a16_3ep_full_seed1_a.yaml"
+    )
+    candidate = _load(
+        "p3_stage1_h1init_peft_lora_last2_r32a64_3ep_full_seed1_a_planned.yaml"
+    )
+
+    assert {key for key in reference if reference[key] != candidate[key]} == {
+        "run_id",
+        "execution_enabled",
+        "output_dir",
+        "peft",
+    }
+    assert candidate["execution_enabled"] is False
+    assert candidate["peft"] == reference["peft"] | {
+        "lora_rank": 32,
+        "lora_alpha": 64.0,
+    }
+    assert candidate["training_scope"] == "full_train_fixed_epochs"
+    assert candidate["expected_train_count"] == 103218
+    assert candidate["training"] == reference["training"]
+    assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
