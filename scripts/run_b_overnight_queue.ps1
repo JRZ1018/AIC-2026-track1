@@ -32,7 +32,9 @@ foreach ($job in $jobs) {
     $output = Join-Path $root ("artifacts\experiments\" + $job[1])
     $metrics = Join-Path $output "metrics.json"
     $resume = Join-Path $output "last.pt"
-    $log = Join-Path $logRoot ($job[1] + ".log")
+    $attempt = Get-Date -Format "yyyyMMdd-HHmmss"
+    $stdoutLog = Join-Path $logRoot ($job[1] + "." + $attempt + ".stdout.log")
+    $stderrLog = Join-Path $logRoot ($job[1] + "." + $attempt + ".stderr.log")
 
     if (Test-Path -LiteralPath $metrics) {
         Write-Host "SKIP completed: $($job[1])"
@@ -49,8 +51,19 @@ foreach ($job in $jobs) {
         Write-Host "START: $($job[1])"
     }
 
-    & $Python @arguments 2>&1 | Tee-Object -FilePath $log -Append
-    $exitCode = $LASTEXITCODE
+    # Do not merge native stderr into a PowerShell pipeline. On Windows PowerShell,
+    # a harmless Python warning can become an ErrorRecord and, with Stop semantics,
+    # abort the parent while DataLoader workers keep the Tee-Object pipe open.
+    $training = Start-Process `
+        -FilePath $Python `
+        -ArgumentList $arguments `
+        -WorkingDirectory $root `
+        -WindowStyle Hidden `
+        -RedirectStandardOutput $stdoutLog `
+        -RedirectStandardError $stderrLog `
+        -PassThru
+    $training.WaitForExit()
+    $exitCode = $training.ExitCode
     if ($exitCode -ne 0) {
         throw "Training failed with exit code ${exitCode}: $($job[1])"
     }

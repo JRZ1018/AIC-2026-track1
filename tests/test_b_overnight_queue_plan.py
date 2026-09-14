@@ -110,3 +110,9 @@ def test_overnight_runner_lists_every_config_once() -> None:
     assert "--resume" in runner
     assert "infer_and_build_submission" not in runner
     assert "test-manifest" not in runner
+    assert "2>&1" not in runner
+    assert "| Tee-Object" not in runner
+    assert "Start-Process" in runner
+    assert ".WaitForExit()" in runner
+    assert "-RedirectStandardOutput $stdoutLog" in runner
+    assert "-RedirectStandardError $stderrLog" in runner
