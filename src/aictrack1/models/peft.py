@@ -74,6 +74,7 @@ def configure_visual_peft(
         "frozen",
         "layernorm_projection",
         "last_block",
+        "last_n_blocks",
         "lora_last_attention",
         "lora_last_n_attention",
         "lora_last_n_attention_mlp",
@@ -92,6 +93,20 @@ def configure_visual_peft(
         prefix = f"transformer.resblocks.{last_index}."
         for name, parameter in visual.named_parameters():
             if name.startswith(prefix) or name.startswith("ln_post.") or name == "proj":
+                parameter.requires_grad_(True)
+    elif mode == "last_n_blocks":
+        # Only the number of fully unfrozen residual blocks changes; ln_post and
+        # proj stay frozen so the comparison against `last_block` isolates block
+        # count instead of also varying the output projection.
+        block_count = int(lora_blocks)
+        if block_count < 1 or block_count > len(visual.transformer.resblocks):
+            raise ValueError("block count must be in [1, number of visual blocks]")
+        prefixes = tuple(
+            f"transformer.resblocks.{index}."
+            for index in range(len(visual.transformer.resblocks) - block_count, len(visual.transformer.resblocks))
+        )
+        for name, parameter in visual.named_parameters():
+            if name.startswith(prefixes):
                 parameter.requires_grad_(True)
     elif mode in {
         "lora_last_attention",
