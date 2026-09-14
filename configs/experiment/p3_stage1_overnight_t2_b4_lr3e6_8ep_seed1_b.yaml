@@ -1,0 +1,26 @@
+experiment:
+  run_id: 20260915-b-overnight-t2-b4-lr3e6-8ep-seed1
+  execution_enabled: true
+  training_scope: fixed_split_validation
+  dataset_config: ../data/stage1.yaml
+  model_config: ../model/openai_clip_vit_b32.yaml
+  manifest: ../../artifacts/audits/stage1/train/samples.csv
+  split: ../../artifacts/audits/stage1/train/split.csv
+  label_conflicts: ../../artifacts/audits/stage1/train/label_conflicts.csv
+  head_checkpoint: ../../artifacts/experiments/20260911-p3-h1-linear-adam-e100-seed42/best.pt
+  output_dir: ../../artifacts/experiments/20260915-b-overnight-t2-b4-lr3e6-8ep-seed1
+  device: cuda
+  expected_initial_top1: 0.686996996
+  initial_top1_tolerance: 0.002
+  peft:
+    mode: last_n_blocks
+    lora_blocks: 4
+  training:
+    epochs: 8
+    batch_size: 64
+    workers: 4
+    seed: 20260910
+    visual_learning_rate: 0.000003
+    head_learning_rate: 0.0
+    weight_decay: 0.01
+    gradient_clip_norm: 1.0
