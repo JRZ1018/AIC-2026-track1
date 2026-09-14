@@ -90,7 +90,7 @@ def test_next_lora_coarse_search_configs_are_enabled_single_variable_and_bounded
         ("p3_stage1_h1init_peft_lora_last2_r32a64_3ep_seed3_b_planned.yaml", 20260912),
     ],
 )
-def test_rank32_multiseed_candidates_are_disabled_and_only_change_seed(
+def test_rank32_multiseed_candidates_are_enabled_and_only_change_seed(
     filename: str, seed: int
 ) -> None:
     reference = _load(
@@ -100,14 +100,13 @@ def test_rank32_multiseed_candidates_are_disabled_and_only_change_seed(
 
     assert {key for key in reference if reference[key] != candidate[key]} == {
         "run_id",
-        "execution_enabled",
         "output_dir",
         "training",
     }
     expected_training = dict(reference["training"])
     expected_training["seed"] = seed
     assert candidate["training"] == expected_training
-    assert candidate["execution_enabled"] is False
+    assert candidate["execution_enabled"] is True
     assert candidate["peft"] == reference["peft"]
     assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
 
