@@ -74,6 +74,28 @@ def test_peft_modes_enable_only_expected_parameters(mode: str) -> None:
         )
 
 
+def test_last_n_blocks_freezes_the_projection_and_scales_with_block_count() -> None:
+    one = configure_visual_peft(_Visual(), "last_n_blocks", lora_blocks=1)
+    two = configure_visual_peft(_Visual(), "last_n_blocks", lora_blocks=2)
+    assert all(name.startswith("transformer.resblocks.1.") for name in one.trainable_parameter_names)
+    assert all(
+        name.startswith(("transformer.resblocks.0.", "transformer.resblocks.1."))
+        for name in two.trainable_parameter_names
+    )
+    # The output projection stays frozen in this mode so the comparison against
+    # the single-block candidate isolates the block count.
+    assert not any(name.startswith(("ln_post.", "proj")) or name == "proj" for name in two.trainable_parameter_names)
+    assert two.trainable_visual_parameters > one.trainable_visual_parameters
+    assert one.total_visual_parameters == two.total_visual_parameters
+
+
+def test_last_n_blocks_rejects_out_of_range_block_counts() -> None:
+    with pytest.raises(ValueError, match="block count"):
+        configure_visual_peft(_Visual(), "last_n_blocks", lora_blocks=0)
+    with pytest.raises(ValueError, match="block count"):
+        configure_visual_peft(_Visual(), "last_n_blocks", lora_blocks=99)
+
+
 def test_lora_starts_as_identity_trains_only_low_rank_and_folds() -> None:
     visual = _Visual()
     original = copy.deepcopy(visual.transformer.resblocks[-1].attn.state_dict())
