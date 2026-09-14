@@ -1,0 +1,20 @@
+experiment:
+  run_id: 20260915-a-h1-balanced-300ep-lr1e3-seed42
+  execution_enabled: true
+  feature_cache: ../../artifacts/features/stage1/train_openai_vit_b32
+  output_dir: ../../artifacts/experiments/20260915-a-h1-balanced-300ep-lr1e3-seed42
+  device: cuda
+  num_classes: 500
+  head:
+    kind: linear
+  training:
+    epochs: 300
+    batch_size: 4096
+    learning_rate: 0.001
+    weight_decay: 0.0
+    momentum: 0.9
+    gradient_clip_norm: null
+    seed: 42
+    optimizer: adam
+    scheduler: cosine
+    amp: false
