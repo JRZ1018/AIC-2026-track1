@@ -88,6 +88,7 @@ def load_classifier_head_checkpoint(
     expected_clip_weight_sha256: str,
     expected_class_mapping_sha256: str,
     expected_split_sha256: str | None = None,
+    forbid_full_train_initializer: bool = False,
 ) -> tuple[nn.Module, dict[str, Any]]:
     """Load a frozen-feature head only after its provenance matches the run."""
 
@@ -113,6 +114,11 @@ def load_classifier_head_checkpoint(
                 f"classifier head checkpoint {field} mismatch: "
                 f"{metadata.get(field)!r} != {expected!r}"
             )
+    training_scope = metadata.get("training_scope")
+    if forbid_full_train_initializer and training_scope == "full_train_fixed_epochs":
+        raise ValueError(
+            "full-train classifier head cannot initialize a fixed-split validation run"
+        )
     head = build_classifier_head(
         str(head_config.get("kind")),
         feature_dim,

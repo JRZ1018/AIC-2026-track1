@@ -317,6 +317,7 @@ def main() -> int:
         expected_clip_weight_sha256=clip_metadata.weight_sha256,
         expected_class_mapping_sha256=mapping.digest(),
         expected_split_sha256=_sha256(split_path),
+        forbid_full_train_initializer=training_scope == "fixed_split_validation",
     )
     head_config = head_checkpoint["head"]
     normalized_features = head_checkpoint["feature_cache_metadata"].get("normalized")
