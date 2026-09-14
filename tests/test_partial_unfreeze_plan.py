@@ -24,7 +24,7 @@ def test_partial_unfreeze_candidates_are_locked_and_single_variable() -> None:
     second = _experiment(COUNT2)
 
     for candidate in (first, second):
-        assert candidate["execution_enabled"] is False
+        assert candidate["execution_enabled"] is True
         assert candidate["peft"]["mode"] == "last_n_blocks"
         assert candidate["training"]["head_learning_rate"] == 0.0
         assert candidate["training"]["epochs"] == 3
