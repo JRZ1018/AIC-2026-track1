@@ -30,6 +30,14 @@
 - 最多两个候选进入 seed2/seed3；若无候选达标，保留现有 rank-8，不用线上分数反向扩张本轮网格。
 - 本轮不直接生成全量 checkpoint 或 pred_results；多种子结果确认后最多选择一个候选进入全量复训。
 
+## 回传结果与晋级决定（2026-09-14）
+
+B 的六项回传包 SHA-256 为 `a92b14f0b63829cfbf005bdab68268250568e0e4425c86a252dec0b745adbf59`。六项 commit、配置、输入、样本数、参数范围、metrics 与 best/last 哈希均通过验签；两项用户主动暂停后均从 epoch 边界的 `last.pt` 原生续跑，最终 history 完整，无 test 读取、NaN、Inf 或 OOM。
+
+相对 last2 rank8/alpha16 seed1，rank32/alpha64 的 Top-1 提高 0.3830 点、macro 提高 0.3816 点、冲突子集提高 0.2651 点；last4 rank8/alpha16 的整体 Top-1 最高，提高 0.3976 点，但冲突子集下降 0.4639 点。按预注册三项门槛，rank16/alpha32 与 rank32/alpha64 合格，last3/last4 因冲突保护线失败不晋级。
+
+rank32/alpha64 在整体与冲突指标上均支配 rank16/alpha32，因此只晋级 rank32/alpha64 到 seed2/seed3。多种子未完成前，不执行全量复训或 test 推理。
+
 ## 资源预估
 
 - 六项单卡单进程串行，每项预计 24–32 分钟；训练总计约 2.5–3.2 小时，连同检查与打包按 3–3.7 小时申报。
