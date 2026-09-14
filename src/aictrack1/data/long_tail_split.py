@@ -13,6 +13,7 @@ import hashlib
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Sequence
 
 from .manifest import SampleRecord, sha256_file
 from .splits import leakage_group
@@ -34,17 +35,18 @@ class LongTailSplitConfig:
     seed: int
 
 
-def read_split_assignments(path: str | Path) -> dict[str, str]:
+def read_split_assignments(path: str | Path, *, column: str = "split") -> dict[str, str]:
+    """Read a two-column partition file, rejecting duplicated sample IDs."""
     assignments: dict[str, str] = {}
     with Path(path).open("r", encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle)
-        if reader.fieldnames is None or not {"sample_id", "split"}.issubset(reader.fieldnames):
-            raise ValueError("split file requires sample_id and split columns")
+        if reader.fieldnames is None or not {"sample_id", column}.issubset(reader.fieldnames):
+            raise ValueError(f"split file requires sample_id and {column} columns")
         for row in reader:
             sample_id = str(row["sample_id"])
             if sample_id in assignments:
                 raise ValueError(f"duplicate sample_id in split file: {sample_id}")
-            assignments[sample_id] = str(row["split"])
+            assignments[sample_id] = str(row[column])
     return assignments
 
 
@@ -225,6 +227,96 @@ def split_duplicate_cluster_violations(
             continue
         clusters.setdefault(leakage_group(record), set()).add(partition)
     return sum(1 for partitions in clusters.values() if len(partitions) > 1)
+
+
+def select_partition_indices(
+    sample_ids: Sequence[str],
+    assignment: dict[str, str],
+    *,
+    partition: str,
+    available: set[str] | None = None,
+) -> list[int]:
+    """Return row positions of ``sample_ids`` that belong to one partition.
+
+    ``available`` optionally restricts the selection to a subset of sample IDs
+    that already carry labels, for example the rows of a frozen train feature
+    cache. Positions follow the input order, so downstream selection stays
+    deterministic and cache-aligned.
+    """
+    if partition not in {LONG_TAIL_TRAIN, LONG_TAIL_EVAL}:
+        raise ValueError(f"unsupported long-tail partition {partition!r}")
+    positions: list[int] = []
+    for position, sample_id in enumerate(sample_ids):
+        if assignment.get(sample_id) != partition:
+            continue
+        if available is not None and sample_id not in available:
+            continue
+        positions.append(position)
+    if not positions:
+        raise ValueError(f"partition {partition!r} selects no samples")
+    return positions
+
+
+def balanced_size_matched_quota(
+    total: int,
+    num_classes: int,
+    *,
+    smallest_class_size: int | None = None,
+) -> int:
+    """Largest per-class quota whose class-balanced total stays within budget.
+
+    The quota is additionally clamped to the smallest available class so the
+    resulting subset is exactly class-balanced instead of raiding classes that
+    happen to hold more samples.
+    """
+    if num_classes < 1:
+        raise ValueError("num_classes must be positive")
+    if total < 0:
+        raise ValueError("total cannot be negative")
+    if smallest_class_size is not None:
+        if smallest_class_size < 1:
+            raise ValueError("smallest_class_size must be positive")
+    quota = max(1, total // num_classes)
+    if smallest_class_size is not None:
+        quota = min(quota, smallest_class_size)
+    return max(1, quota)
+
+
+def select_balanced_size_matched_ids(
+    sample_ids: Sequence[str],
+    labels: Sequence[int],
+    *,
+    total: int,
+    seed: int,
+    num_classes: int,
+) -> list[str]:
+    """Pick an exactly class-balanced subset of ``sample_ids`` within ``total``.
+
+    Returns the selected sample IDs, never row positions, so callers cannot
+    accidentally index the wrong frame after filtering. Used as the size-matched
+    control for the long-tail stress test: identical label source, no class-frequency
+    skew. ``num_classes`` is required so the quota divides by the full class set and
+    is clamped to the smallest class rather than to whatever happens to appear.
+    """
+    if len(sample_ids) != len(labels) or not sample_ids:
+        raise ValueError("sample_ids and labels must be non-empty and equally long")
+    if len(set(sample_ids)) != len(sample_ids):
+        raise ValueError("sample_ids must be unique")
+    by_class: dict[int, list[int]] = {}
+    for position, label in enumerate(labels):
+        by_class.setdefault(int(label), []).append(position)
+    quota = balanced_size_matched_quota(
+        total,
+        int(num_classes),
+        smallest_class_size=min(len(positions) for positions in by_class.values()),
+    )
+    selected: list[str] = []
+    for label in sorted(by_class):
+        positions = sorted(by_class[label], key=lambda index: _shuffle_key(seed, sample_ids[index]))
+        selected.extend(sample_ids[index] for index in positions[:quota])
+    if len(set(selected)) != len(selected):
+        raise RuntimeError("class-balanced selection produced duplicate sample IDs")
+    return sorted(selected)
 
 
 def write_long_tail_split(assignment: dict[str, str], path: str | Path) -> str:

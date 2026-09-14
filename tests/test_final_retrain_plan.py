@@ -96,7 +96,13 @@ def test_full_train_paths_emit_progress_and_checkpoint_each_epoch() -> None:
     head_script = (ROOT / "scripts" / "train_frozen_head.py").read_text(encoding="utf-8")
     peft_script = (ROOT / "scripts" / "train_peft.py").read_text(encoding="utf-8")
 
-    head_loop = head_script[head_script.index('if training_scope == "full_train_fixed_epochs":', head_script.index("started =")) :]
+    # The fixed-epoch loop also serves the migration stress scopes, so the guard is
+    # a disjunction over the fixed-epoch and stress training scopes.
+    head_loop = head_script[
+        head_script.index("if training_scope ==", head_script.index("started =")) :
+    ]
+    assert "full_train_fixed_epochs" in head_loop
+    assert "STRESS_SCOPES" in head_loop
     assert 'trainer.save_checkpoint(output / "last.pt")' in head_loop
     assert '"stage": "full_train_head"' in head_loop
     assert '"stage": "full_train_peft"' in peft_script

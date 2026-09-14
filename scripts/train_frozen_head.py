@@ -21,8 +21,18 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aictrack1.data.feature_cache import load_feature_cache, select_feature_partition
+from aictrack1.data.long_tail_split import (
+    LONG_TAIL_TRAIN,
+    read_split_assignments,
+    select_balanced_size_matched_ids,
+    select_partition_indices,
+)
 from aictrack1.engine.frozen_head import FrozenHeadConfig, FrozenHeadTrainer, FrozenLossConfig
 from aictrack1.models.heads import build_classifier_head
+
+STRESS_SCOPES = frozenset(
+    {"long_tail_stress", "balanced_size_matched_control", "balanced_full_train_control"}
+)
 
 
 def _resolve(base: Path, value: str) -> Path:
@@ -54,7 +64,7 @@ def main() -> int:
     output.mkdir(parents=True, exist_ok=True)
 
     training_scope = str(raw.get("training_scope", "fixed_split_validation"))
-    if training_scope not in {"fixed_split_validation", "full_train_fixed_epochs"}:
+    if training_scope not in {"fixed_split_validation", "full_train_fixed_epochs"} | STRESS_SCOPES:
         raise ValueError(f"unsupported frozen-head training scope {training_scope!r}")
     if training_scope == "full_train_fixed_epochs":
         print(
@@ -85,6 +95,67 @@ def main() -> int:
     else:
         train_features, train_labels = select_feature_partition(cache, "train")
         validation_features, validation_labels = select_feature_partition(cache, "validation")
+    if training_scope in STRESS_SCOPES:
+        # Migration stress training reuses the frozen train-partition features but
+        # restricts them to the deterministic long-tail (or size-matched) subset.
+        long_tail_split_path = _resolve(base, str(raw["long_tail_split"]))
+        assignment = read_split_assignments(long_tail_split_path, column="long_tail_split")
+        train_sample_ids = list(cache.sample_ids)
+        if len(set(train_sample_ids)) != len(train_sample_ids):
+            raise ValueError("feature cache contains duplicate sample IDs")
+        train_labels_all = [int(value) for value in cache.labels.tolist()]
+        long_tail_rows = select_partition_indices(
+            train_sample_ids,
+            assignment,
+            partition=LONG_TAIL_TRAIN,
+            available=set(train_sample_ids),
+        )
+        cache_index = {sample_id: index for index, sample_id in enumerate(train_sample_ids)}
+        if training_scope == "balanced_size_matched_control":
+            balanced_ids = select_balanced_size_matched_ids(
+                [train_sample_ids[position] for position in long_tail_rows],
+                [train_labels_all[position] for position in long_tail_rows],
+                total=len(long_tail_rows),
+                seed=int(raw["training"]["seed"]),
+                num_classes=int(raw["num_classes"]),
+            )
+            selected = [cache_index[sample_id] for sample_id in balanced_ids]
+        elif training_scope == "balanced_full_train_control":
+            # Same sample budget as the size-matched control, but drawn from the whole
+            # frozen train partition so the comparison varies label skew alone.
+            target_total = int(raw.get("expected_train_count", len(long_tail_rows)))
+            balanced_pool = [
+                position
+                for position, partition in enumerate(cache.partitions)
+                if partition == "train"
+            ]
+            balanced_ids = select_balanced_size_matched_ids(
+                [train_sample_ids[position] for position in balanced_pool],
+                [train_labels_all[position] for position in balanced_pool],
+                total=target_total,
+                seed=int(raw["training"]["seed"]),
+                num_classes=int(raw["num_classes"]),
+            )
+            selected = [cache_index[sample_id] for sample_id in balanced_ids]
+        else:
+            selected = long_tail_rows
+        selected = sorted(selected)
+        index = torch.tensor(selected, dtype=torch.long)
+        train_features = cache.features.index_select(0, index).float()
+        train_labels = cache.labels.index_select(0, index)
+        validation_features = validation_labels = None
+        print(
+            json.dumps(
+                {
+                    "stage": training_scope,
+                    "status": "selected_stress_subset",
+                    "record_count": len(selected),
+                    "long_tail_split_sha256": _sha256(long_tail_split_path),
+                },
+                sort_keys=True,
+            ),
+            flush=True,
+        )
     num_classes = int(raw["num_classes"])
     if int(train_labels.max()) >= num_classes or (
         validation_labels is not None and int(validation_labels.max()) >= num_classes
@@ -122,7 +193,7 @@ def main() -> int:
     if device.type == "cuda":
         torch.cuda.reset_peak_memory_stats(device)
     started = time.perf_counter()
-    if training_scope == "full_train_fixed_epochs":
+    if training_scope == "full_train_fixed_epochs" or training_scope in STRESS_SCOPES:
         history = trainer.history
         while trainer.epoch < training.epochs:
             train_loss = trainer.train_epoch(train_features, train_labels)
@@ -154,7 +225,7 @@ def main() -> int:
         )
     duration = time.perf_counter() - started
     trainer.save_checkpoint(output / "last.pt")
-    if training_scope == "full_train_fixed_epochs":
+    if training_scope == "full_train_fixed_epochs" or training_scope in STRESS_SCOPES:
         selected_state = trainer.model.state_dict()
         selected_name = "final.pt"
         selected_top1 = None
@@ -170,6 +241,11 @@ def main() -> int:
         "training_scope": training_scope,
         "training_record_count": len(train_labels),
     }
+    if training_scope in STRESS_SCOPES:
+        # Record the exact per-class training support so evaluations can probe
+        # starvation without guessing which rows the run consumed.
+        support = torch.bincount(train_labels.long(), minlength=num_classes)
+        feature_metadata["training_class_support"] = [int(value) for value in support.tolist()]
     torch.save(
         {
             "model": selected_state,
@@ -181,11 +257,26 @@ def main() -> int:
         },
         output / selected_name,
     )
-    metrics = {
-        "scope": (
+    scope_descriptions = {
+        "full_train_fixed_epochs": (
             "stage1 full official train frozen-feature final retrain; test data not accessed"
-            if training_scope == "full_train_fixed_epochs"
-            else "stage1 noisy-validation frozen-feature baseline"
+        ),
+        "long_tail_stress": (
+            "stage1 long-tail stress frozen-feature head; current-stage train partition only; "
+            "test data not accessed"
+        ),
+        "balanced_size_matched_control": (
+            "stage1 class-balanced size-matched frozen-feature control; current-stage train "
+            "partition only; test data not accessed"
+        ),
+        "balanced_full_train_control": (
+            "stage1 class-balanced full-train frozen-feature control; current-stage train "
+            "partition only; test data not accessed"
+        ),
+    }
+    metrics = {
+        "scope": scope_descriptions.get(
+            training_scope, "stage1 noisy-validation frozen-feature baseline"
         ),
         "training_scope": training_scope,
         "selection_rule": selection_rule,
