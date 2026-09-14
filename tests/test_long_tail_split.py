@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import uuid
+from collections import Counter
 from pathlib import Path
 
 import pytest
@@ -9,8 +10,11 @@ from aictrack1.data.long_tail_split import (
     LONG_TAIL_EVAL,
     LONG_TAIL_TRAIN,
     LongTailSplitConfig,
+    balanced_size_matched_quota,
     build_long_tail_split,
     read_split_assignments,
+    select_balanced_size_matched_ids,
+    select_partition_indices,
     split_duplicate_cluster_violations,
     summarize_partition,
     write_long_tail_split,
@@ -217,6 +221,66 @@ def test_read_split_assignments_rejects_duplicates() -> None:
     path.write_text("sample_id,split\na,train\na,validation\n", encoding="utf-8")
     with pytest.raises(ValueError, match="duplicate sample_id"):
         read_split_assignments(path)
+
+
+def test_select_partition_indices_follows_input_positions() -> None:
+    assignment = {
+        "a": LONG_TAIL_TRAIN,
+        "b": LONG_TAIL_EVAL,
+        "c": LONG_TAIL_TRAIN,
+        "d": LONG_TAIL_TRAIN,
+    }
+    sample_ids = ["d", "b", "a", "c"]
+    positions = select_partition_indices(sample_ids, assignment, partition=LONG_TAIL_TRAIN)
+    assert positions == [0, 2, 3]
+    assert [sample_ids[position] for position in positions] == ["d", "a", "c"]
+    restricted = select_partition_indices(
+        sample_ids, assignment, partition=LONG_TAIL_TRAIN, available={"a", "c"}
+    )
+    assert [sample_ids[position] for position in restricted] == ["a", "c"]
+    with pytest.raises(ValueError, match="unsupported long-tail partition"):
+        select_partition_indices(sample_ids, assignment, partition="train")
+
+
+def test_balanced_selection_is_class_balanced_and_clamped_to_the_smallest_class() -> None:
+    sample_ids = [f"s{index:03d}" for index in range(30)]
+    labels = [0] * 12 + [1] * 10 + [2] * 8
+    selected = select_balanced_size_matched_ids(
+        sample_ids, labels, total=27, seed=5, num_classes=3
+    )
+    counts = Counter(labels[sample_ids.index(sample_id)] for sample_id in selected)
+    # total // 3 == 9 but the smallest class holds 8, so every class keeps exactly 8.
+    assert counts == {0: 8, 1: 8, 2: 8}
+    assert len(selected) == 24
+    assert selected == sorted(selected)
+
+
+def test_balanced_selection_returns_ids_never_row_positions() -> None:
+    sample_ids = ["alpha", "beta", "gamma", "delta"]
+    labels = [0, 0, 1, 1]
+    selected = select_balanced_size_matched_ids(
+        sample_ids, labels, total=2, seed=7, num_classes=2
+    )
+    assert set(selected).issubset(set(sample_ids))
+    assert all(isinstance(value, str) for value in selected)
+    again = select_balanced_size_matched_ids(
+        sample_ids, labels, total=2, seed=7, num_classes=2
+    )
+    assert selected == again
+
+
+def test_balanced_selection_rejects_duplicate_ids() -> None:
+    with pytest.raises(ValueError, match="unique"):
+        select_balanced_size_matched_ids(
+            ["a", "a"], [0, 1], total=2, seed=1, num_classes=2
+        )
+
+
+def test_balanced_size_matched_quota_clamps_to_smallest_class() -> None:
+    assert balanced_size_matched_quota(100, 10) == 10
+    assert balanced_size_matched_quota(100, 10, smallest_class_size=3) == 3
+    with pytest.raises(ValueError, match="num_classes"):
+        balanced_size_matched_quota(10, 0)
 
 
 def test_read_manifest_survives_round_trip() -> None:

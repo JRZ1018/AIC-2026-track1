@@ -337,6 +337,70 @@ def _macro_gap(strata_payload: Mapping[str, Any], left: str, right: str) -> floa
     return float(left_value) - float(right_value)
 
 
+def support_stratified_accuracy(
+    predictions: torch.Tensor,
+    targets: torch.Tensor,
+    *,
+    num_classes: int,
+    train_class_counts: Sequence[int],
+    max_bucket_support: int = 16,
+) -> dict[str, Any]:
+    """Bucket classes by how many training samples they received.
+
+    This is the starvation probe: if recall collapses exactly for the classes
+    that hold very few training samples, class-frequency skew — or an automatic
+    sample filter — is starving them, and the buckets make that visible.
+    """
+    counts = [int(value) for value in train_class_counts]
+    if len(counts) != num_classes:
+        raise ValueError("train_class_counts must cover every class")
+    recall, support = per_class_recall(predictions, targets, num_classes=num_classes)
+    buckets: list[tuple[str, int, int | None]] = [
+        ("train_support_1", 1, 1),
+        ("train_support_2_4", 2, 4),
+        ("train_support_5_8", 5, 8),
+        ("train_support_9_16", 9, 16),
+        (f"train_support_{max_bucket_support + 1}_plus", max_bucket_support + 1, None),
+    ]
+    payload: dict[str, Any] = {}
+    for name, low, high in buckets:
+        classes = [
+            index
+            for index in range(num_classes)
+            if counts[index] >= low and (high is None or counts[index] <= high)
+        ]
+        evaluated = [index for index in classes if support[index] > 0]
+        recalls = [float(recall[index]) for index in evaluated if recall[index] is not None]
+        payload[name] = {
+            "class_count": len(classes),
+            "evaluated_class_count": len(evaluated),
+            "evaluation_sample_count": sum(support[index] for index in classes),
+            "zero_recall_class_count": sum(1 for value in recalls if value == 0.0),
+            "mean_recall": (sum(recalls) / len(recalls)) if recalls else None,
+            "worst_class_recall": min(recalls) if recalls else None,
+            "evaluation_recall": _pooled_recall(predictions, targets, classes),
+        }
+    return {
+        "buckets": payload,
+        "total_train_samples": sum(counts),
+    }
+
+
+def _pooled_recall(
+    predictions: torch.Tensor, targets: torch.Tensor, classes: Sequence[int]
+) -> float | None:
+    if not classes:
+        return None
+    mask = torch.zeros(int(targets.max()) + 1, dtype=torch.bool)
+    for index in classes:
+        mask[index] = True
+    selected = mask[targets]
+    if not bool(selected.any()):
+        return None
+    correct = predictions.eq(targets)
+    return float(correct[selected].float().mean())
+
+
 def retention_diagnostics(
     reference_class_counts: Sequence[int],
     retained_class_counts: Sequence[int],
