@@ -14,6 +14,10 @@ from torch.utils.data import Dataset
 
 from .contracts import DatasetConfig
 
+# The vocabulary of the frozen project split. Diagnostic views such as the
+# long-tail stress split pass a wider set explicitly through allowed_partitions.
+DEFAULT_PARTITIONS = frozenset({"train", "validation", "test", "excluded_bad_file"})
+
 
 @dataclass(frozen=True)
 class IndexedImage:
@@ -48,14 +52,28 @@ def read_indexed_images(
     manifest_path: str | Path,
     split_path: str | Path | None = None,
     partitions: Iterable[str] | None = None,
+    allowed_partitions: Iterable[str] = DEFAULT_PARTITIONS,
+    require_complete_split: bool = True,
 ) -> list[IndexedImage]:
-    """Read an audited manifest without inferring labels or partitions from paths."""
+    """Read an audited manifest without inferring labels or partitions from paths.
+
+    ``require_complete_split`` guarantees that the supplied split file covers every
+    manifest sample. Diagnostic views that intentionally publish only a subset must
+    pass ``False``; the fallback partition is then never selected, because the
+    caller filters by explicit partition names.
+    """
     if source not in config.sources:
         raise ValueError(f"source {source!r} is not declared in the dataset configuration")
     if source == "train" and split_path is None:
         raise ValueError("train feature extraction requires the fixed split file")
     if source == "test" and split_path is not None:
         raise ValueError("test data cannot receive train/validation partition assignments")
+
+    accepted = frozenset(allowed_partitions)
+    if not accepted:
+        raise ValueError("allowed_partitions cannot be empty")
+    if source == "test" and accepted != DEFAULT_PARTITIONS:
+        raise ValueError("test records always use the default partition vocabulary")
 
     wanted = set(partitions) if partitions is not None else None
     assignments = _read_split_assignments(Path(split_path)) if split_path is not None else {}
@@ -96,8 +114,11 @@ def read_indexed_images(
             manifest_ids.add(sample_id)
             partition = assignments.get(sample_id, "test")
             if split_path is not None and sample_id not in assignments:
-                raise ValueError(f"sample {sample_id} is missing from the fixed split")
-            if partition not in {"train", "validation", "test", "excluded_bad_file"}:
+                if require_complete_split:
+                    raise ValueError(f"sample {sample_id} is missing from the fixed split")
+                if wanted is not None:
+                    continue
+            if partition not in accepted:
                 raise ValueError(f"unsupported partition {partition!r} for sample {sample_id}")
             if wanted is not None and partition not in wanted:
                 continue
