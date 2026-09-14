@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG_ROOT = ROOT / "configs" / "experiment"
 COUNT1 = CONFIG_ROOT / "p3_stage1_h1init_last_block_count1_lr2e6_3ep_seed1_planned.yaml"
 COUNT2 = CONFIG_ROOT / "p3_stage1_h1init_last_block_count2_lr2e6_3ep_seed1_planned.yaml"
-FULL_H1 = "artifacts/experiments/20260912-b-final-h1-linear-full-e100-seed1/final.pt"
+FIXED_SPLIT_H1 = "artifacts/experiments/20260911-p3-h1-linear-adam-e100-seed42/best.pt"
 
 
 def _experiment(path: Path) -> dict:
@@ -29,7 +29,7 @@ def test_partial_unfreeze_candidates_are_locked_and_single_variable() -> None:
         assert candidate["training"]["head_learning_rate"] == 0.0
         assert candidate["training"]["epochs"] == 3
         assert candidate["training"]["visual_learning_rate"] == 2e-6
-        assert FULL_H1 in candidate["head_checkpoint"]
+        assert FIXED_SPLIT_H1 in candidate["head_checkpoint"]
         assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
         assert Path(candidate["output_dir"]).name == candidate["run_id"]
 
@@ -63,7 +63,7 @@ def test_partial_unfreeze_block_counts_are_bounded_by_the_backbone() -> None:
 def test_candidate_recipe_matches_the_rank32_baseline_initializer_and_split() -> None:
     candidate = _experiment(COUNT1)
     baseline = _experiment(
-        CONFIG_ROOT / "p3_stage1_h1init_peft_lora_last2_r32a64_3ep_full_seed1_a_planned.yaml"
+        CONFIG_ROOT / "p3_stage1_h1init_peft_lora_last2_r32a64_3ep_seed1_b_planned.yaml"
     )
     for field in ("dataset_config", "model_config", "manifest", "split", "label_conflicts"):
         assert candidate[field] == baseline[field]

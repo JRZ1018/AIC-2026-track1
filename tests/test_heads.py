@@ -95,3 +95,34 @@ def test_classifier_head_checkpoint_rejects_provenance_mismatch(tmp_path) -> Non
             expected_class_mapping_sha256="mapping",
             expected_split_sha256="split",
         )
+
+
+def test_classifier_head_checkpoint_rejects_full_train_initializer_for_validation(
+    tmp_path,
+) -> None:
+    head = LinearClassifier(4, 3)
+    checkpoint = tmp_path / "full-head.pt"
+    torch.save(
+        {
+            "head": {"kind": "linear"},
+            "feature_cache_metadata": {
+                "clip_weight_sha256": "clip",
+                "class_mapping_sha256": "mapping",
+                "split_sha256": "split",
+                "training_scope": "full_train_fixed_epochs",
+                "training_record_count": 103218,
+            },
+            "model": head.state_dict(),
+        },
+        checkpoint,
+    )
+    with pytest.raises(ValueError, match="cannot initialize a fixed-split validation run"):
+        load_classifier_head_checkpoint(
+            checkpoint,
+            feature_dim=4,
+            num_classes=3,
+            expected_clip_weight_sha256="clip",
+            expected_class_mapping_sha256="mapping",
+            expected_split_sha256="split",
+            forbid_full_train_initializer=True,
+        )

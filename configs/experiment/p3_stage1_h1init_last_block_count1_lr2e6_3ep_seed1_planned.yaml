@@ -1,5 +1,5 @@
 experiment:
-  run_id: 20260915-a-h1init-last-block-count1-lr2e6-3ep-seed1
+  run_id: 20260915-a-h1init-last-block-count1-lr2e6-3ep-seed1-v2
   execution_enabled: false
   training_scope: fixed_split_validation
   dataset_config: ../data/stage1.yaml
@@ -7,10 +7,10 @@ experiment:
   manifest: ../../artifacts/audits/stage1/train/samples.csv
   split: ../../artifacts/audits/stage1/train/split.csv
   label_conflicts: ../../artifacts/audits/stage1/train/label_conflicts.csv
-  head_checkpoint: ../../artifacts/experiments/20260912-b-final-h1-linear-full-e100-seed1/final.pt
-  output_dir: ../../artifacts/experiments/20260915-a-h1init-last-block-count1-lr2e6-3ep-seed1
+  head_checkpoint: ../../artifacts/experiments/20260911-p3-h1-linear-adam-e100-seed42/best.pt
+  output_dir: ../../artifacts/experiments/20260915-a-h1init-last-block-count1-lr2e6-3ep-seed1-v2
   device: cuda
-  expected_initial_top1: 0.829300
+  expected_initial_top1: 0.686996996
   initial_top1_tolerance: 0.002
   peft:
     mode: last_n_blocks
