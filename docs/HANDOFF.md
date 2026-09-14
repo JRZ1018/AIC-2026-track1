@@ -1,6 +1,6 @@
 # AICtrack1 交接文档
 
-更新时间：2026-09-13（Asia/Shanghai）
+更新时间：2026-09-14（Asia/Shanghai）
 
 ## 1. 给新对话的首要指令
 
@@ -63,6 +63,8 @@
 - Attention+MLP LoRA seed1 固定验证仅比匹配 rank-4 高 0.0097 点，已经停止，不运行多种子或提交。
 - 已批准并冻结首个中强度候选：H1 初始化、冻结头、解冻最后一个完整视觉块、视觉学习率 `3e-6`、3 epochs。B 任务单为 `docs/task_orders/20260913-B-h1-last-block-medium-seed1.md`，训练 commit 为 `d473e858afe6a00e9590171dfa65677e801d11b3`。
 - B 的末块 seed1 已验签：Top-1 69.2815%，比 rank-8 LoRA 同 seed 高 0.0630 点，但冲突子集低 0.4639 点，未过预注册门槛；不直接晋级多种子或提交。因三个 epoch 连续上升，可另行预注册更长的探索性对照。
+- B 的 LoRA 六点粗筛队列已全部验签并归档。last2 rank32/alpha64 seed1 的 Top-1 为 69.6015%、macro 为 69.5893%、冲突子集 Top-1 为 30.9476%，相对匹配 rank8 seed1 分别提高 0.3830、0.3816、0.2651 点；它在合格候选中支配 rank16，因此是唯一晋级多种子确认的候选。last3/last4 虽有较高整体 Top-1，但未过预注册冲突保护线。
+- rank32 seed2、seed3 和全量训练三份配置已经预注册在 commit `3159540e05dc4faa7f352350dca3eec9f8e11216`，当前均为 `execution_enabled: false`。新对话必须重新完成资源审批，先启用 seed2/seed3；全量配置只能在三种子门禁通过后另行启用。
 - 当前仍处于**初赛官方数据阶段**；继续以初赛固定验证和线上 Top-1 追分，同时所有新方法必须通过复赛可迁移门禁。不得利用测试预测统计继续调参。
 
 ### 当前不可做
@@ -100,7 +102,7 @@ powershell -ExecutionPolicy Bypass -File "D:\aicomp\AICtrack1\scripts\check_envi
 
 ## 6. 新对话的建议第一件事
 
-当前线上最佳为末两层注意力 rank-8/alpha-16 H1→LoRA 全量复训的 58.1247。Attention+MLP 分支已停止，但 LoRA rank/alpha/层数保留为未来 3–4 天的受控粗筛线；同时推进 H1 末块中强度路线。B 已按更新前交付开始执行 `d473e858afe6a00e9590171dfa65677e801d11b3`，不得中途切换；新双目标方案和 LoRA 队列从下一次交付起生效。详见 `docs/35_初赛追分与复赛迁移双目标策略.md`。
+当前线上最佳仍为末两层注意力 rank-8/alpha-16 H1→LoRA 全量复训的 58.1247。下一步不是重训 B 已完成的 rank32 seed1，而是按 `docs/37_新对话交接_rank32多种子至下一份提交.md` 执行：新对话重新审批资源后，A 本机运行 rank32 seed2、B 运行 seed3；仅当预注册三种子门禁通过，A 才运行全量复训和最终 test 推理。所有后续配置目前仍被 `execution_enabled: false` 锁定。
 
 ## 7. 上游成熟方案入口
 
