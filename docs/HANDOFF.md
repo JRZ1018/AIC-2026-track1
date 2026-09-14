@@ -71,6 +71,13 @@
 - 已按预注册协议生成确定性长尾压力划分（`configs/data/long_tail_stress.yaml`，seed `20260915`，仅用固定 train 划分）：长尾训练侧 23,880 张/500 类、长尾评估侧 9,823 张；head 100 类 / mid 150 类 / tail 250 类；饿死类 0、最小每类保留率 0.0482、tail/head 保留率比 0.0492，跨侧重复簇泄漏 0，保留率门禁通过。
 - 已实现 head/mid/tail、类均准确率、最差类召回、召回分位、零召回类数与每类保留率诊断（`src/aictrack1/evaluation/long_tail.py`、`scripts/diagnose_long_tail.py`）；rank32 只读诊断结果：固定验证 Top-1 84.2335%（head 87.11 / mid 82.26 / tail 84.26，mid 为最弱分层），长尾评估 Top-1 82.7039%（mid 82.05 / tail 83.12，head 因支持不足被标记为不可用）。这些数字是乐观上界，只用于工程口径与失效模式，不用于选模。
 - 已预注册但保持锁定两个 T2 候选（末 1–2 个完整视觉块解冻，`last_n_blocks`，H1 全量初始化、同 split、同 seed、3 epochs、lr `2e-6`、冻结头）：`configs/experiment/p3_stage1_h1init_last_block_count1_lr2e6_3ep_seed1_planned.yaml` 与 `..._count2_...yaml`，两者 `execution_enabled: false`。完整协议与门禁见 `docs/41_复赛迁移长尾压力与分层诊断预注册.md`，实测证据见 `docs/42_复赛迁移长尾压力与分层诊断验收.md`。
+- 已按 `docs/41` 第 6 节完成真实长尾压力测试（4 个线性头，同配方、只换训练子集，共 32.3 秒 GPU，未访问 test）：
+  - L1 长尾压力头（23,880 张，249 类仅 8 张）：固定验证 Top-1 43.6246%，tail 21.35%，**31 个零召回类**，tail 最差类召回 0；
+  - L2 支持数匹配对照（同池每类恰好 8 张）：Top-1 45.3214%，tail 45.11%，零召回类 4；
+  - L3 预算对照（每类 20 张）：Top-1 55.7306%，tail 55.31%；
+  - H1 参照（每类约 166 张）：Top-1 68.6997%，tail 68.51%。
+  - **结论**：长尾确实饿死尾类（触发 `docs/41` 停止线：8 张桶类均召回 21.29% < 0.30、零召回类 31 > 25）；在同等 8 张/类稀缺度下，类频偏斜还额外使 tail 降低约 23.8 点。复赛机制必须先补“每类最低保留 + 类感知阈值”，不得原样送入复赛。
+  - 支撑工程：`scripts/train_frozen_head.py` 新增 `long_tail_stress` / `balanced_size_matched_control` / `balanced_full_train_control` 三个训练范围并把实际每类训练支持写入 checkpoint 元数据；`scripts/evaluate_long_tail_heads.py` 支持一次评估多个头并输出按训练支持数分桶的饥饿探针；指标见 `artifacts/reports/20260915-long-tail-heads/long_tail_heads.json`。
 - 当前仍处于**初赛官方数据阶段**；继续以初赛固定验证和线上 Top-1 追分，同时所有新方法必须通过复赛可迁移门禁。不得利用测试预测统计继续调参。
 
 ### 当前不可做

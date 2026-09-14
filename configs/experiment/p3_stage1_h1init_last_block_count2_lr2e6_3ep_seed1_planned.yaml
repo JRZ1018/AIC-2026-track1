@@ -10,6 +10,8 @@ experiment:
   head_checkpoint: ../../artifacts/experiments/20260912-b-final-h1-linear-full-e100-seed1/final.pt
   output_dir: ../../artifacts/experiments/20260915-a-h1init-last-block-count2-lr2e6-3ep-seed1
   device: cuda
+  expected_initial_top1: 0.829300
+  initial_top1_tolerance: 0.002
   peft:
     mode: last_n_blocks
     lora_blocks: 2
