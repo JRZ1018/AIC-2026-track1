@@ -111,7 +111,7 @@ def test_rank32_multiseed_candidates_are_enabled_and_only_change_seed(
     assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
 
 
-def test_rank32_full_retrain_candidate_is_disabled_and_matches_rank8_recipe() -> None:
+def test_rank32_full_retrain_candidate_is_enabled_and_matches_rank8_recipe() -> None:
     reference = _load(
         "p3_stage1_h1init_peft_lora_last2_r8a16_3ep_full_seed1_a.yaml"
     )
@@ -121,11 +121,10 @@ def test_rank32_full_retrain_candidate_is_disabled_and_matches_rank8_recipe() ->
 
     assert {key for key in reference if reference[key] != candidate[key]} == {
         "run_id",
-        "execution_enabled",
         "output_dir",
         "peft",
     }
-    assert candidate["execution_enabled"] is False
+    assert candidate["execution_enabled"] is True
     assert candidate["peft"] == reference["peft"] | {
         "lora_rank": 32,
         "lora_alpha": 64.0,
