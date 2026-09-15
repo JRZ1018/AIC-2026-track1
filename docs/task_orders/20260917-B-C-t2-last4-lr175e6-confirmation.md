@@ -2,7 +2,7 @@
 
 这是今晚第二个独立候选。它与 lr1.5e-6 候选分开验收，不能根据任何线上分数临时改参。
 
-- 训练 commit：`fae5ebaa54d48998f906e8428d66f48906b44ac6`
+- 训练 commit：`574e0f86032bbeb54c2d968d1ae047450eed7fc5`
 - B 配置：`configs\experiment\p3_stage1_h1init_t2_last4_lr175e6_6ep_seed2_b.yaml`
 - C 配置：`configs\experiment\p3_stage1_h1init_t2_last4_lr175e6_6ep_seed3_c.yaml`
 - 单卡单进程、6 epochs、batch 64、预计每项 25–35 分钟；不访问 test、不生成提交。
