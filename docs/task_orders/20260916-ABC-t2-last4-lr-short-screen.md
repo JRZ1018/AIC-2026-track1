@@ -12,7 +12,7 @@
 
 ## 冻结版本与资源
 
-- 训练 commit：`919bd03497a57f2de57f3b4b64bf487b85c7f041`
+- 训练 commit：`d27e91cf710f9fc04c26587bbba46c2187932df9`
 - Python：B/C 使用 `D:\aicomp\AICtrack1\.venv\Scripts\python.exe`；A 使用 `D:\aicomp\python312\python.exe`
 - 单卡单进程；每项预计 25–35 分钟，峰值显存约 1.2 GiB，新增磁盘约 0.4 GiB；支持 epoch 边界断点恢复。
 - 用户已批准本轮资源。不得并发第二个训练进程，不得改变参数或配置。
