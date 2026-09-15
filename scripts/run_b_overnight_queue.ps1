@@ -45,8 +45,14 @@ foreach ($job in $jobs) {
     if (Test-Path -LiteralPath $resume) {
         $arguments += @("--resume", $resume)
         Write-Host "RESUME: $($job[1])"
-    } elseif ((Test-Path -LiteralPath $output) -and (Get-ChildItem -LiteralPath $output -Force)) {
-        throw "Non-empty, non-resumable output directory: $output"
+    } elseif (Test-Path -LiteralPath $output) {
+        if (Get-ChildItem -LiteralPath $output -Force) {
+            throw "Non-empty, non-resumable output directory: $output"
+        }
+        # train_peft intentionally rejects every pre-existing output directory.
+        # Remove only this exact, verified-empty run directory before first start.
+        Remove-Item -LiteralPath $output
+        Write-Host "START after removing empty directory: $($job[1])"
     } else {
         Write-Host "START: $($job[1])"
     }
@@ -63,7 +69,11 @@ foreach ($job in $jobs) {
         -RedirectStandardError $stderrLog `
         -PassThru
     $training.WaitForExit()
+    $training.Refresh()
     $exitCode = $training.ExitCode
+    if ($null -eq $exitCode) {
+        throw "Training process returned no exit code: $($job[1])"
+    }
     if ($exitCode -ne 0) {
         throw "Training failed with exit code ${exitCode}: $($job[1])"
     }

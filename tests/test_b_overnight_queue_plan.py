@@ -114,5 +114,9 @@ def test_overnight_runner_lists_every_config_once() -> None:
     assert "| Tee-Object" not in runner
     assert "Start-Process" in runner
     assert ".WaitForExit()" in runner
+    assert ".Refresh()" in runner
+    assert "$null -eq $exitCode" in runner
+    assert "Remove-Item -LiteralPath $output" in runner
+    assert "Get-ChildItem -LiteralPath $output -Force" in runner
     assert "-RedirectStandardOutput $stdoutLog" in runner
     assert "-RedirectStandardError $stderrLog" in runner
