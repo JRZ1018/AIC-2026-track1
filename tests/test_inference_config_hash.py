@@ -24,8 +24,9 @@ def test_text_sha256_variants_accepts_only_line_ending_changes(tmp_path: Path) -
     assert _sha256(b"experiment:\n  seed: 2\n") not in variants
 
 
-def test_final_inference_accepts_both_valid_lora_scopes() -> None:
+def test_final_inference_accepts_supported_single_model_peft_scopes() -> None:
     assert SUPPORTED_FINAL_PEFT_MODES == {
+        "last_n_blocks",
         "lora_last_attention",
         "lora_last_n_attention",
     }

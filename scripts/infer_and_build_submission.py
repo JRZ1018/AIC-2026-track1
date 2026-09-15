@@ -32,7 +32,7 @@ from aictrack1.models.peft import (
 
 
 SUPPORTED_FINAL_PEFT_MODES = frozenset(
-    {"lora_last_attention", "lora_last_n_attention"}
+    {"last_n_blocks", "lora_last_attention", "lora_last_n_attention"}
 )
 from aictrack1.submission import SubmissionSpec, build_submission_package
 
@@ -117,7 +117,7 @@ def main() -> int:
     if checkpoint.get("mode") != peft.get("mode"):
         raise ValueError("checkpoint and experiment PEFT modes differ")
     if peft.get("mode") not in SUPPORTED_FINAL_PEFT_MODES:
-        raise ValueError("final inference currently requires the selected LoRA PEFT mode")
+        raise ValueError("unsupported final PEFT mode")
 
     mapping = ClassMapping.from_csv(dataset_config.class_mapping)
     if checkpoint.get("class_mapping_sha256") != mapping.digest():
@@ -174,7 +174,9 @@ def main() -> int:
         normalize_features=normalized_features,
     ).to(device)
     load_trainable_state_dict(model, checkpoint["trainable_state"])
-    fold_visual_lora(model.visual)
+    lora_folded = str(peft["mode"]).startswith("lora_")
+    if lora_folded:
+        fold_visual_lora(model.visual)
     model.eval()
 
     transforms = build_split_transforms(dataset_config.transforms)
@@ -233,7 +235,7 @@ def main() -> int:
             "test_record_count": len(test_records),
             "inference_seconds": inference_seconds,
             "device": str(device),
-            "lora_folded_for_single_model_inference": True,
+            "lora_folded_for_single_model_inference": lora_folded,
         },
         spec=SubmissionSpec(include_header=False),
     )
