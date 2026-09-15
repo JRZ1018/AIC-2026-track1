@@ -11,6 +11,7 @@ SEED1 = CONFIG_ROOT / "p3_stage1_overnight_t2_b4_lr1e6_8ep_seed1_b.yaml"
 SEED2 = CONFIG_ROOT / "p3_stage1_h1init_t2_last4_lr1e6_8ep_seed2_a.yaml"
 SEED3 = CONFIG_ROOT / "p3_stage1_h1init_t2_last4_lr1e6_8ep_seed3_c.yaml"
 FULL = CONFIG_ROOT / "p3_stage1_h1init_t2_last4_lr1e6_8ep_full_seed1_a_planned.yaml"
+FULL_ENABLED = CONFIG_ROOT / "p3_stage1_h1init_t2_last4_lr1e6_8ep_full_seed1_a.yaml"
 
 
 def _experiment(path: Path) -> dict:
@@ -48,3 +49,11 @@ def test_full_config_is_disabled_until_multiseed_gate() -> None:
     assert candidate["peft"] == {"mode": "last_n_blocks", "lora_blocks": 4}
     assert candidate["training"]["epochs"] == 8
     assert "test" not in " ".join(str(value) for value in candidate.values()).lower()
+
+
+def test_enabled_full_config_only_flips_execution_gate() -> None:
+    planned = _experiment(FULL)
+    enabled = _experiment(FULL_ENABLED)
+    assert planned["execution_enabled"] is False
+    assert enabled["execution_enabled"] is True
+    assert {**enabled, "execution_enabled": False} == planned
