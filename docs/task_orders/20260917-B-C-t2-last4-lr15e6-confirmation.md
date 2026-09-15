@@ -11,7 +11,7 @@
 
 ## 冻结版本与资源
 
-- 训练 commit：`56437f44d556976d904baf701eeab00038bfe532`
+- 训练 commit：`81afcddbc1a8b26bed0efecfd1bf349dc95c1f96`
 - 单卡单进程，6 epochs，batch 64；每项预计 25–35 分钟，峰值显存约 1.2 GiB，新增磁盘约 0.4 GiB。
 - B/C 可在不同机器并行；同一机器不得并发 GPU 训练。
 - 训练中不得切换 commit、修改配置、改变 seed/lr/epoch/batch 或删除现场。
@@ -21,7 +21,7 @@
 ```powershell
 Set-Location D:\aicomp\AICtrack1
 git fetch origin
-git switch --detach 56437f44d556976d904baf701eeab00038bfe532
+git switch --detach 81afcddbc1a8b26bed0efecfd1bf349dc95c1f96
 git rev-parse HEAD
 git status --short
 .\.venv\Scripts\python.exe -m pytest tests\test_t2_lr15e6_multiseed_plan.py tests\test_partial_unfreeze_plan.py tests\test_peft.py tests\test_peft_checkpoint.py -q -p no:cacheprovider
