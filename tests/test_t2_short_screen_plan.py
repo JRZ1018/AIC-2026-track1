@@ -5,7 +5,11 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_ROOT = ROOT / "configs" / "experiment"
-FILES = sorted(CONFIG_ROOT.glob("p3_stage1_h1init_t2_last4_lr*e6_6ep_seed1_*.yaml"))
+FILES = [
+    CONFIG_ROOT / "p3_stage1_h1init_t2_last4_lr075e6_6ep_seed1_a.yaml",
+    CONFIG_ROOT / "p3_stage1_h1init_t2_last4_lr125e6_6ep_seed1_b.yaml",
+    CONFIG_ROOT / "p3_stage1_h1init_t2_last4_lr15e6_6ep_seed1_c.yaml",
+]
 
 
 def test_short_screen_is_three_fixed_split_last4_learning_rates() -> None:
