@@ -17,4 +17,15 @@
 
 `artifacts\experiments\20260917-a-final-h1init-t2-last4-lr15e6-full-6ep-seed1`
 
-训练完成后仅使用该目录的 `best.pt` 做最终 test 推理，生成新的 `pred_results.zip`；按既有提交校验流程检查 24,967 行、文件名顺序、四位标签和 ZIP 内容。
+训练完成后仅使用该目录的 `final.pt` 做最终 test 推理，生成新的 `pred_results.zip`；按既有提交校验流程检查 24,967 行、文件名顺序、四位标签和 ZIP 内容。
+
+> **checkpoint 选择口径（2026-09-16 修正）**
+> 训练完成后执行最终推理必须使用最后 epoch 的 **`final.pt`**，不是 `best.pt`。
+> `best.pt` 只用于 `fixed_split_validation` 范围下的固定验证选模；本任务单是
+> `training_scope: full_train_fixed_epochs`、`validation_count = 0`，不存在可用于选模的
+> 验证集，因此 `best.pt` 无意义。
+>
+> 实际执行记录：本次全量训练产出的 `final.pt` 为
+> `d712409e839e49227787698239a0305515ceaefbefeb5b0b93c5a03fdcd10e72`，
+> `metrics.json` 中 `selected_checkpoint = final.pt`，推理命令使用的也是 `final.pt`，
+> 与上述口径一致。
