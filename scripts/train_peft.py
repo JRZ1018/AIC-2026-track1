@@ -250,6 +250,7 @@ def main() -> int:
             momentum=float(confidence_raw.get("momentum", 0.8)),
             history_mix=float(confidence_raw.get("history_mix", 0.5)),
             min_weight=float(confidence_raw.get("min_weight", 0.2)),
+            magnitude_mix=float(confidence_raw.get("magnitude_mix", 0.0)),
         )
     visual_trust_lookup: torch.Tensor | None = None
     visual_trust_diagnostics: dict[str, float | int] | None = None
