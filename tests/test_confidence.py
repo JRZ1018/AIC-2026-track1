@@ -79,6 +79,77 @@ def test_history_weighting_checkpoint_round_trip_and_strict_coverage() -> None:
     assert restored.diagnostics() == state.diagnostics()
 
 
+def test_magnitude_mix_keeps_between_class_loss_magnitude() -> None:
+    """The classwise percentile alone cannot see that one class is noisier than another.
+
+    Screening 2 measured this on the audited conflict ground truth: the classwise
+    percentile separates conflicts with AUC 0.642, the global loss ranking with 0.790.
+    """
+    indices = torch.arange(6)
+    # Two classes with clearly different loss scales, each internally ordered.
+    classes = torch.tensor([0, 0, 0, 1, 1, 1])
+    losses = torch.tensor([1.0, 2.0, 3.0, 10.0, 20.0, 30.0])
+    probabilities = torch.full((6,), 0.5)
+    predictions = torch.zeros(6, dtype=torch.long)
+
+    classwise = ClasswiseHistoryWeighting(indices, classes, momentum=0.0, history_mix=0.5, min_weight=0.1)
+    classwise.update_epoch(indices, losses, probabilities, predictions)
+    baseline = classwise.weights_for(indices)
+
+    mixed = ClasswiseHistoryWeighting(
+        indices, classes, momentum=0.0, history_mix=0.5, min_weight=0.1, magnitude_mix=1.0
+    )
+    mixed.update_epoch(indices, losses, probabilities, predictions)
+    blended = mixed.weights_for(indices)
+
+    # Pure classwise: identical within-class ordering in both classes, so the class with
+    # the larger absolute losses is treated exactly like the easy class.
+    assert torch.allclose(baseline[:3], baseline[3:])
+    assert abs(float(baseline[:3].mean() - baseline[3:].mean())) < 1e-6
+    # Pure global ranking: ranks come from the whole split, so the easy class is treated
+    # as clean and the hard class as noisy, even though both are ordered identically
+    # inside themselves. The noisiest easy sample beats the cleanest hard sample.
+    assert blended[2] > blended[3]
+    assert torch.all(blended[:3] > baseline[:3])
+    assert torch.all(blended[3:] < baseline[3:])
+
+
+def test_magnitude_mix_default_reproduces_the_classwise_only_weights() -> None:
+    indices = torch.arange(6)
+    classes = torch.tensor([0, 0, 0, 1, 1, 1])
+    losses = torch.tensor([1.0, 2.0, 3.0, 10.0, 20.0, 30.0])
+    probabilities = torch.full((6,), 0.5)
+    predictions = torch.zeros(6, dtype=torch.long)
+
+    default = ClasswiseHistoryWeighting(indices, classes, momentum=0.0, history_mix=0.5, min_weight=0.1)
+    explicit = ClasswiseHistoryWeighting(
+        indices, classes, momentum=0.0, history_mix=0.5, min_weight=0.1, magnitude_mix=0.0
+    )
+    default.update_epoch(indices, losses, probabilities, predictions)
+    explicit.update_epoch(indices, losses, probabilities, predictions)
+    assert torch.equal(default.weights, explicit.weights)
+    assert default.diagnostics()["magnitude_mix"] == 0.0
+
+
+def test_magnitude_mix_is_validated_and_round_trips_through_the_checkpoint() -> None:
+    indices = torch.arange(4)
+    classes = torch.tensor([0, 0, 1, 1])
+    with pytest.raises(ValueError, match="magnitude_mix"):
+        ClasswiseHistoryWeighting(indices, classes, magnitude_mix=1.5)
+    with pytest.raises(ValueError, match="magnitude_mix"):
+        ClasswiseHistoryWeighting(indices, classes, magnitude_mix=-0.1)
+
+    state = ClasswiseHistoryWeighting(indices, classes, magnitude_mix=0.5, min_weight=0.1)
+    state.update_epoch(indices, torch.tensor([0.1, 0.2, 0.3, 0.4]), torch.ones(4), classes)
+    restored = ClasswiseHistoryWeighting(indices, classes, magnitude_mix=0.5, min_weight=0.1)
+    restored.load_state_dict(state.state_dict())
+    assert torch.equal(restored.weights, state.weights)
+
+    mismatched = ClasswiseHistoryWeighting(indices, classes, magnitude_mix=0.25, min_weight=0.1)
+    with pytest.raises(ValueError, match="magnitude_mix"):
+        mismatched.load_state_dict(state.state_dict())
+
+
 def test_weighted_cross_entropy_is_normalized_and_validated() -> None:
     logits = torch.tensor([[2.0, 0.0], [0.0, 2.0]])
     targets = torch.tensor([0, 1])

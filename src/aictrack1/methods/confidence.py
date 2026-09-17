@@ -157,6 +157,16 @@ class ClasswiseHistoryWeighting:
 
     State is defined only for explicitly supplied training sample indices. Validation
     and test samples therefore cannot silently enter the weighting statistics.
+
+    ``magnitude_mix`` blends the within-class loss ranking with the global loss ranking.
+    The within-class ranking is a percentile, so it forces every class to receive an
+    identical weight distribution no matter how noisy that class actually is; the global
+    ranking is a rank over the whole training split and therefore keeps between-class
+    loss magnitude. ``scripts/analyze_classwise_weighting_capacity.py`` measures the
+    difference on the audited conflict ground truth: the classwise percentile separates
+    conflicts with AUC 0.642 while the global loss ranking reaches 0.790, and at a 10%
+    downweighting budget the latter recovers 32.2% of true conflicts against 22.0%.
+    ``magnitude_mix=0.0`` reproduces the historical classwise-only behaviour exactly.
     """
 
     def __init__(
@@ -167,6 +177,7 @@ class ClasswiseHistoryWeighting:
         momentum: float = 0.8,
         history_mix: float = 0.5,
         min_weight: float = 0.2,
+        magnitude_mix: float = 0.0,
     ) -> None:
         if sample_indices.ndim != 1 or class_ids.ndim != 1 or sample_indices.shape != class_ids.shape:
             raise ValueError("sample_indices and class_ids must be matching 1D tensors")
@@ -180,6 +191,8 @@ class ClasswiseHistoryWeighting:
             raise ValueError("momentum must be in [0, 1)")
         if not 0 <= history_mix <= 1:
             raise ValueError("history_mix must be in [0, 1]")
+        if not 0 <= magnitude_mix <= 1:
+            raise ValueError("magnitude_mix must be in [0, 1]")
         if not 0 < min_weight <= 1:
             raise ValueError("min_weight must be in (0, 1]")
 
@@ -187,6 +200,7 @@ class ClasswiseHistoryWeighting:
         self.class_ids = class_ids.detach().long().cpu().clone()
         self.momentum = float(momentum)
         self.history_mix = float(history_mix)
+        self.magnitude_mix = float(magnitude_mix)
         self.min_weight = float(min_weight)
         self.epochs_updated = 0
         count = self.sample_indices.numel()
@@ -277,6 +291,14 @@ class ClasswiseHistoryWeighting:
         current_noise = classwise_rank_noise_scores(ordered_losses, self.class_ids)
         history_noise = classwise_rank_noise_scores(-history_trust, self.class_ids)
         noise = (1.0 - self.history_mix) * current_noise + self.history_mix * history_noise
+        if self.magnitude_mix > 0.0:
+            # Rank over the whole split instead of inside each class, so between-class
+            # loss magnitude survives. Reuses the same tie-aware ranker by passing a
+            # single constant class, which makes the ranking global.
+            global_noise = classwise_rank_noise_scores(
+                ordered_losses, torch.zeros_like(self.class_ids)
+            )
+            noise = (1.0 - self.magnitude_mix) * noise + self.magnitude_mix * global_noise
         self.weights = self.min_weight + (1.0 - self.min_weight) * (1.0 - noise)
         self.epochs_updated += 1
         return self.diagnostics()
@@ -297,6 +319,7 @@ class ClasswiseHistoryWeighting:
             "effective_sample_ratio": float(self.weights.sum() / self.weights.numel()),
             "class_mean_min": float(class_means.min()),
             "class_mean_max": float(class_means.max()),
+            "magnitude_mix": self.magnitude_mix,
         }
 
     def state_dict(self) -> dict[str, Any]:
@@ -305,6 +328,7 @@ class ClasswiseHistoryWeighting:
             "class_ids": self.class_ids.clone(),
             "momentum": self.momentum,
             "history_mix": self.history_mix,
+            "magnitude_mix": self.magnitude_mix,
             "min_weight": self.min_weight,
             "epochs_updated": self.epochs_updated,
             "weights": self.weights.clone(),
@@ -326,6 +350,7 @@ class ClasswiseHistoryWeighting:
         for name, expected in (
             ("momentum", self.momentum),
             ("history_mix", self.history_mix),
+            ("magnitude_mix", self.magnitude_mix),
             ("min_weight", self.min_weight),
         ):
             if float(state[name]) != expected:
