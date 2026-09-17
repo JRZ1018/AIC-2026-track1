@@ -10,7 +10,7 @@
 
 ## 冻结信息
 
-- **训练 commit：待下发（见任务单末尾的 SHA，必须逐字核对）**
+- **训练 commit：`3f02eebfa99752020e7b2eeed742945e1648129c`**（必须逐字核对，不得使用 `main` 浮动头）
 - 配置：`configs\experiment\p3_stage1_h1init_t2_last4_lr175e6_nocwh_12ep_seed1_n.yaml`
 - 唯一变化：**整块删除 `confidence_weighting`**；epochs 12、lr 1.75e-6、
   `last_n_blocks` 4、batch 64、seed 20260910、wd 0.01、clip 1.0、冻结头、H1 seed42 `best.pt` 全部不变
