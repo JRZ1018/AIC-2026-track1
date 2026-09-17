@@ -1,0 +1,25 @@
+experiment:
+  run_id: 20260917-n-final-h1init-t2-last4-lr175e6-nocwh-12ep-full-seed1
+  execution_enabled: true
+  training_scope: full_train_fixed_epochs
+  expected_train_count: 103218
+  dataset_config: ../data/stage1.yaml
+  model_config: ../model/openai_clip_vit_b32.yaml
+  manifest: ../../artifacts/audits/stage1/train/samples.csv
+  split: ../../artifacts/audits/stage1/train/split.csv
+  label_conflicts: ../../artifacts/audits/stage1/train/label_conflicts.csv
+  head_checkpoint: ../../artifacts/experiments/20260912-b-final-h1-linear-full-e100-seed1/final.pt
+  output_dir: ../../artifacts/experiments/20260917-n-final-h1init-t2-last4-lr175e6-nocwh-12ep-full-seed1
+  device: cuda
+  peft:
+    mode: last_n_blocks
+    lora_blocks: 4
+  training:
+    epochs: 12
+    batch_size: 64
+    workers: 4
+    seed: 20260910
+    visual_learning_rate: 0.00000175
+    head_learning_rate: 0.0
+    weight_decay: 0.01
+    gradient_clip_norm: 1.0
