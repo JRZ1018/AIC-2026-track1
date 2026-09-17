@@ -15,13 +15,13 @@ D，欢迎加入。你的机器是全新的，所以**在跑正式任务前必�
 
 ```powershell
 git fetch origin
-git checkout <下方 SHA>
+git checkout e48c1894c6612f57fabce589f1a0cf70aa39bf75
 git rev-parse HEAD
 ```
 
 必须原样输出该 SHA，工作区要干净（`git status --short` 为空）。**不要用 `main`。**
 
-**SHA：`<见任务单末尾，A 会在下发给你的消息里替换>`**
+**SHA：`e48c1894c6612f57fabce589f1a0cf70aa39bf75`**
 
 核对这五个文件的 SHA-256：
 
