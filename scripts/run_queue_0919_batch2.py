@@ -24,9 +24,9 @@ D = "configs/experiment/"
 E = "artifacts/experiments/"
 
 QUEUE = [
-    ("AA", D + "p3_stage1_h1init_t2_last4_lr175e6_cwh_mw05_magmix75_16ep_full_seed1_aa.yaml",
-     E + "20260919-aa-final-h1init-t2-last4-lr175e6-cwh-mw05-magmix75-16ep-full-seed1",
-     "mw 0.05 with 16 epochs: the two strongest levers combined"),
+    ("AA", D + "p3_stage1_h1init_t2_last4_lr175e6_cwh_mw05_magmix75_20ep_full_seed1_aa.yaml",
+     E + "20260919-aa-final-h1init-t2-last4-lr175e6-cwh-mw05-magmix75-20ep-full-seed1",
+     "mw 0.05 with 20 epochs: best floor pushed to the longest duration"),
     ("AB", D + "p3_stage1_h1init_t2_last4_lr175e6_cwh_mw05_magmix75_12ep_full_seed2_ab.yaml",
      E + "20260919-ab-final-h1init-t2-last4-lr175e6-cwh-mw05-magmix75-12ep-full-seed2",
      "seed lottery on the 61.3690 recipe"),
