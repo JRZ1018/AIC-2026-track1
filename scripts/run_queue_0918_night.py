@@ -58,12 +58,49 @@ def _log(message: str) -> None:
 
 
 def _in_flight() -> list[str]:
+    """Any training on this machine, not merely this queue's members.
+
+    An earlier version only looked at this queue, so it started a run while a different
+    queue's job was still training and briefly ran two full trainings at once. The probe
+    below matches the trainer's command line instead, so it catches every queue.
+    """
     pending = []
     for _tag, _config, output, _purpose in QUEUE:
         directory = ROOT / output
         if directory.is_dir() and not (directory / "metrics.json").is_file():
             pending.append(output)
+    pending.extend(_other_training_directories())
     return pending
+
+
+def _other_training_directories() -> list[str]:
+    """Return run directories whose trainer process is alive but not in QUEUE."""
+    try:
+        completed = subprocess.run(
+            [
+                "powershell",
+                "-NoProfile",
+                "-Command",
+                "Get-CimInstance Win32_Process -Filter \"Name='python.exe'\" | "
+                "Where-Object { $_.CommandLine -like '*train_peft.py*' } | "
+                "ForEach-Object { $_.CommandLine }",
+            ],
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+    except Exception as error:  # pragma: no cover - defensive
+        _log(f"could not probe running trainers ({error}); assuming none")
+        return []
+    found = []
+    for line in completed.stdout.splitlines():
+        line = line.strip()
+        if "train_peft.py" not in line:
+            continue
+        if any(output in line for _tag, _config, output, _purpose in QUEUE):
+            continue
+        found.append(line[:160])
+    return found
 
 
 def _wait_for_predecessors() -> None:
