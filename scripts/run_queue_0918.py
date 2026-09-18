@@ -1,5 +1,4 @@
 """Run the 2026-09-18 follow-up queue back to back, one full train at a time.
-
 Order and purpose:
   P  mix 0.75 -> 1.00        extends the coefficient axis, which gained twice already
   R  seed 20260910 -> 20260912  the run-to-run noise scale, without which no single
@@ -12,7 +11,7 @@ restart after an interruption resumes the queue instead of repeating finished wo
 run that exits without metrics.json is recorded and the queue stops, rather than pressing
 on and producing an unreadable chain.
 
-Usage:  .\.venv\Scripts\python.exe scripts\run_queue_0918.py
+Usage:  run it with the repository virtual environment's python, passing this file path.
 """
 from __future__ import annotations
 
@@ -49,6 +48,32 @@ def _log(message: str) -> None:
         handle.write(line + "\n")
 
 
+def _training_in_progress() -> list[str]:
+    """Return the paths of queue runs that look mid-flight (dir present, no metrics yet)."""
+    pending = []
+    for _tag, _config, output, _purpose in QUEUE:
+        directory = ROOT / output
+        if directory.is_dir() and not (directory / "metrics.json").is_file():
+            pending.append(output)
+    return pending
+
+
+def _wait_for_predecessors() -> None:
+    """Never start a run while another training job is still writing its output."""
+    pending = _training_in_progress()
+    if not pending:
+        return
+    _log(
+        "waiting for an in-flight training run before starting: " + ", ".join(pending)
+    )
+    while True:
+        pending = _training_in_progress()
+        if not pending:
+            _log("in-flight run finished; proceeding")
+            return
+        time.sleep(60)
+
+
 def main() -> int:
     LOGS.mkdir(parents=True, exist_ok=True)
     _log("queue start")
@@ -57,6 +82,7 @@ def main() -> int:
         if metrics.is_file():
             _log(f"{tag}: already complete, skipping ({purpose})")
             continue
+        _wait_for_predecessors()
         log_path = LOGS / f"{tag}.log"
         _log(f"{tag}: starting - {purpose}")
         started = time.time()
