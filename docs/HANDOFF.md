@@ -64,6 +64,10 @@
 H1 全量头（`configs/experiment/p3_stage1_h1init_t2_last4_lr175e6_cwh_mw02_magmix75_16ep_full_seed1_ac.yaml`），
 提交包 `submissions/20260919_ac_mw02_magmix75_16ep_full_final/`。较接手时的 58.8577 提升 **+2.9439**。
 
+复赛准备 B02 已完成：类别 ID 不再硬编码为四位数字，提交首列可由显式契约选择 basename
+或相对路径，嵌套路径冲突与不安全路径硬失败；Stage 1 配置哈希保持不变，AC 24,967 行
+CSV/ZIP 已用新校验器兼容验收。详见 `docs/76_复赛类别映射与提交契约_20260919.md`。
+
 **三条必须继承的结论**：
 
 1. **排行榜是确定性的**（byte-identical 重跑精确得到同一分数 61.0005）→ 同配方换种子的差值

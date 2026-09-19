@@ -40,6 +40,8 @@ def test_stage2_templates_are_explicit_isolated_and_not_executable() -> None:
     assert dataset["competition_stage"] == "stage2"
     assert dataset["contract_confirmed"] is False
     assert dataset["stage"] == "rematch"
+    assert dataset["class_mapping_provenance"] == "official_file"
+    assert dataset["submission"]["official_class_id_pattern"] is None
     assert experiment["competition_stage"] == "stage2"
     assert experiment["execution_enabled"] is False
     assert "DataSetStage2" in dataset["dataset_root"]
@@ -53,7 +55,7 @@ def test_stage2_templates_are_explicit_isolated_and_not_executable() -> None:
     resolved = load_dataset_config(DATA_TEMPLATE)
     assert resolved.dataset_root == (ROOT / "DataSetStage2").resolve()
     assert resolved.class_mapping == (
-        ROOT / "artifacts" / "audits" / "stage2" / "metadata" / "classes.csv"
+        ROOT / "DataSetStage2" / "metadata" / "classes.csv"
     ).resolve()
     assert resolved.audit.output_root == (
         ROOT / "artifacts" / "audits" / "stage2"

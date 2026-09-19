@@ -21,7 +21,10 @@ def main() -> int:
     if config.class_mapping_provenance != "train_directory_names":
         raise ValueError("configuration does not authorize directory-derived class mapping")
     output = ensure_output_path_is_safe(config, config.class_mapping)
-    mapping = ClassMapping.from_train_directories(config.sources["train"].root)
+    mapping = ClassMapping.from_train_directories(
+        config.sources["train"].root,
+        official_id_pattern=config.submission.official_class_id_pattern,
+    )
     mapping.write_csv(output)
     print(f"classes={len(mapping)} sha256={mapping.digest()} output={output}")
     return 0
