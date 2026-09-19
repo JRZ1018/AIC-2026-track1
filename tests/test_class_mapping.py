@@ -34,7 +34,34 @@ def test_directory_mapping_is_sorted_lossless_and_writable(tmp_path: Path) -> No
     assert restored.entries == mapping.entries
 
 
-def test_directory_mapping_rejects_ambiguous_names(tmp_path: Path) -> None:
-    (tmp_path / "train" / "class-one").mkdir(parents=True)
-    with pytest.raises(ValueError, match="four digits"):
-        ClassMapping.from_train_directories(tmp_path / "train")
+def test_directory_mapping_accepts_safe_non_numeric_ids_by_default(
+    tmp_path: Path,
+) -> None:
+    train = tmp_path / "train"
+    for label in ("cls_001", "class-one", "物种甲"):
+        (train / label).mkdir(parents=True)
+    mapping = ClassMapping.from_train_directories(train)
+    assert {entry.official_class_id for entry in mapping.entries} == {
+        "cls_001",
+        "class-one",
+        "物种甲",
+    }
+
+
+def test_directory_mapping_applies_only_an_explicit_id_pattern(tmp_path: Path) -> None:
+    train = tmp_path / "train"
+    (train / "0001").mkdir(parents=True)
+    (train / "cls_001").mkdir()
+    with pytest.raises(ValueError, match="configured official ID pattern"):
+        ClassMapping.from_train_directories(
+            train,
+            official_id_pattern=r"\d{4}",
+        )
+
+
+@pytest.mark.parametrize(
+    "official_id", [" leading", "trailing ", "bad\nline", "bad\tcolumn", ""]
+)
+def test_mapping_rejects_unsafe_official_ids(official_id: str) -> None:
+    with pytest.raises(ValueError, match="official class IDs"):
+        ClassMapping([ClassEntry(official_id, 0)])

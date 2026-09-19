@@ -25,7 +25,11 @@ from aictrack1.models.heads import (
     FrozenFeatureImageClassifier,
     load_classifier_head_checkpoint,
 )
-from aictrack1.submission import SubmissionSpec, build_submission_package
+from aictrack1.submission import (
+    SubmissionSpec,
+    build_submission_package,
+    submission_keys_from_relative_paths,
+)
 
 
 def _sha256(path: Path) -> str:
@@ -94,11 +98,15 @@ def main() -> int:
         source="test",
         manifest_path=test_manifest,
     )
-    filenames = [Path(record.relative_path).name for record in test_records]
-    if len(set(filenames)) != len(filenames):
-        raise ValueError("test manifest does not map to unique submission basenames")
-    if any(Path(record.relative_path).name != record.relative_path for record in test_records):
-        raise ValueError("competition test manifest must contain root-level image filenames")
+    submission_spec = SubmissionSpec(
+        include_header=False,
+        filename_mode=dataset_config.submission.filename_mode,
+        official_class_id_pattern=dataset_config.submission.official_class_id_pattern,
+    )
+    filenames = submission_keys_from_relative_paths(
+        [record.relative_path for record in test_records],
+        spec=submission_spec,
+    )
 
     device = torch.device(args.device)
     if device.type == "cuda" and not torch.cuda.is_available():
@@ -186,7 +194,7 @@ def main() -> int:
             "device": str(device),
             "inference_mode": "single_frozen_normalized_clip_head",
         },
-        spec=SubmissionSpec(include_header=False),
+        spec=submission_spec,
     )
     print(
         json.dumps(

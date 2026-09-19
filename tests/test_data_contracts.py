@@ -14,6 +14,44 @@ def test_explicit_synthetic_contract_loads(synthetic_dataset: tuple[Path, Path])
     assert config.stage == "synthetic"
     assert config.dataset_root == root.resolve()
     assert config.sources["train"].label_source == "manifest"
+    assert config.submission.filename_mode == "basename"
+    assert config.submission.official_class_id_pattern is None
+
+
+def test_submission_contract_accepts_explicit_path_mode_and_id_pattern(
+    synthetic_dataset: tuple[Path, Path],
+) -> None:
+    _, config_path = synthetic_dataset
+    raw = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    raw["dataset"]["submission"] = {
+        "filename_mode": "relative_path",
+        "official_class_id_pattern": r"cls_\d{3}",
+    }
+    config_path.write_text(yaml.safe_dump(raw), encoding="utf-8")
+    config = load_dataset_config(config_path)
+    assert config.submission.filename_mode == "relative_path"
+    assert config.submission.official_class_id_pattern == r"cls_\d{3}"
+
+
+@pytest.mark.parametrize(
+    ("submission", "match"),
+    [
+        ({"filename_mode": "flat"}, "filename_mode"),
+        ({"official_class_id_pattern": "["}, "valid regular expression"),
+        ({"official_class_id_pattern": ".*"}, "must not match an empty"),
+    ],
+)
+def test_submission_contract_rejects_invalid_settings(
+    synthetic_dataset: tuple[Path, Path],
+    submission: dict,
+    match: str,
+) -> None:
+    _, config_path = synthetic_dataset
+    raw = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    raw["dataset"]["submission"] = submission
+    config_path.write_text(yaml.safe_dump(raw), encoding="utf-8")
+    with pytest.raises(ValueError, match=match):
+        load_dataset_config(config_path)
 
 
 def test_test_source_cannot_have_labels(tmp_path: Path) -> None:

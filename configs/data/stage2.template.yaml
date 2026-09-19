@@ -6,8 +6,8 @@ dataset:
   contract_confirmed: false
   stage: rematch
   dataset_root: ../../DataSetStage2
-  class_mapping: ../artifacts/audits/stage2/metadata/classes.csv
-  class_mapping_provenance: train_directory_names
+  class_mapping: metadata/classes.csv
+  class_mapping_provenance: official_file
   extensions: [.jpg]
   allow_truncated_images: false
   sources:
@@ -34,6 +34,10 @@ dataset:
     resize_size: 224
     train_crop_scale_min: 0.8
     train_horizontal_flip_probability: 0.5
+  submission:
+    # Placeholders only. Confirm both values from the Stage 2 rules and archive layout.
+    filename_mode: basename
+    official_class_id_pattern: null
 
 # Non-executable contract template. Confirm the official archive layout, counts,
 # mapping semantics, and split policy after authorized Stage 2 data access.

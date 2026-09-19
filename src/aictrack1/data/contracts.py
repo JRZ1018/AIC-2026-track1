@@ -15,6 +15,7 @@ ALLOWED_STAGES = {"synthetic", "preliminary", "rematch", "semifinal"}
 ALLOWED_LABEL_SOURCES = {"manifest", "directory", "none"}
 ALLOWED_CLASS_MAPPING_PROVENANCE = {"official_file", "train_directory_names"}
 ALLOWED_COMPETITION_STAGES = {"stage1", "stage2", "stage3"}
+ALLOWED_SUBMISSION_FILENAME_MODES = {"basename", "relative_path"}
 STAGE_REFERENCE_FIELDS = {
     "dataset_config",
     "dataset_root",
@@ -67,6 +68,12 @@ class TransformConfig:
 
 
 @dataclass(frozen=True)
+class SubmissionContract:
+    filename_mode: str = "basename"
+    official_class_id_pattern: str | None = None
+
+
+@dataclass(frozen=True)
 class DatasetConfig:
     config_path: Path
     stage: str
@@ -79,6 +86,7 @@ class DatasetConfig:
     audit: AuditConfig
     split: SplitConfig
     transforms: TransformConfig
+    submission: SubmissionContract
 
 
 def _resolve(base: Path, value: str) -> Path:
@@ -303,6 +311,37 @@ def load_dataset_config(path: str | Path) -> DatasetConfig:
     if not 0 <= transforms.train_horizontal_flip_probability <= 1:
         raise ValueError("train_horizontal_flip_probability must be in [0, 1]")
 
+    submission_raw = raw.get("submission", {})
+    if not isinstance(submission_raw, dict):
+        raise ValueError("dataset.submission must be a mapping")
+    filename_mode = str(submission_raw.get("filename_mode", "basename"))
+    if filename_mode not in ALLOWED_SUBMISSION_FILENAME_MODES:
+        raise ValueError(
+            "submission.filename_mode must be basename or relative_path"
+        )
+    pattern_value = submission_raw.get("official_class_id_pattern")
+    official_class_id_pattern = None
+    if pattern_value is not None:
+        official_class_id_pattern = str(pattern_value)
+        if not official_class_id_pattern:
+            raise ValueError(
+                "submission.official_class_id_pattern must be null or non-empty"
+            )
+        try:
+            compiled_pattern = re.compile(official_class_id_pattern)
+        except re.error as exc:
+            raise ValueError(
+                "submission.official_class_id_pattern is not a valid regular expression"
+            ) from exc
+        if compiled_pattern.fullmatch("") is not None:
+            raise ValueError(
+                "submission.official_class_id_pattern must not match an empty ID"
+            )
+    submission = SubmissionContract(
+        filename_mode=filename_mode,
+        official_class_id_pattern=official_class_id_pattern,
+    )
+
     source_roots = [source.root for source in sources.values()]
     if audit.output_root == dataset_root or audit.output_root.is_relative_to(dataset_root):
         raise ValueError("audit output_root cannot be inside dataset_root")
@@ -324,4 +363,5 @@ def load_dataset_config(path: str | Path) -> DatasetConfig:
         audit=audit,
         split=split,
         transforms=transforms,
+        submission=submission,
     )

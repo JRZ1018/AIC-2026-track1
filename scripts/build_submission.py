@@ -66,7 +66,11 @@ def main() -> int:
         class_mapping,
         output,
         run_metadata=run_metadata,
-        spec=SubmissionSpec(include_header=args.include_header),
+        spec=SubmissionSpec(
+            include_header=args.include_header,
+            filename_mode=dataset.submission.filename_mode,
+            official_class_id_pattern=dataset.submission.official_class_id_pattern,
+        ),
     )
     print(
         json.dumps(

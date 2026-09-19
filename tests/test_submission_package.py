@@ -11,6 +11,7 @@ from aictrack1.data.class_mapping import ClassEntry, ClassMapping
 from aictrack1.submission import (
     SubmissionSpec,
     build_submission_package,
+    submission_keys_from_relative_paths,
     validate_submission_csv,
     validate_submission_zip,
 )
@@ -54,6 +55,7 @@ def test_package_is_exact_order_no_header_and_one_file_zip(tmp_path: Path) -> No
         assert archive.namelist() == ["pred_results.csv"]
         assert archive.read("pred_results.csv") == package.csv_path.read_bytes()
     manifest = json.loads(package.manifest_path.read_text(encoding="utf-8"))
+    assert manifest["schema_version"] == 2
     assert manifest["record_count"] == 3
     assert manifest["run_metadata"] == METADATA
     assert manifest["csv_sha256"] == package.csv_sha256
@@ -159,3 +161,87 @@ def test_writer_uses_csv_quoting_but_validator_preserves_exact_filename(tmp_path
     )
     with package.csv_path.open(encoding="utf-8", newline="") as handle:
         assert list(csv.reader(handle)) == [["comma,name.jpg", "0001"]]
+
+
+def test_non_numeric_official_ids_are_validated_by_mapping_membership(
+    tmp_path: Path,
+) -> None:
+    mapping = ClassMapping(
+        [
+            ClassEntry("cls_001", 0),
+            ClassEntry("物种 甲", 1),
+            ClassEntry("10001", 2),
+        ]
+    )
+    expected = ["a.jpg", "b.jpg", "c.jpg"]
+    package = build_submission_package(
+        {"a.jpg": 0, "b.jpg": 1, "c.jpg": 2},
+        expected,
+        mapping,
+        tmp_path,
+        run_metadata=METADATA,
+    )
+    with package.csv_path.open(encoding="utf-8", newline="") as handle:
+        assert list(csv.reader(handle)) == [
+            ["a.jpg", "cls_001"],
+            ["b.jpg", "物种 甲"],
+            ["c.jpg", "10001"],
+        ]
+
+
+def test_explicit_official_id_pattern_is_optional_and_enforced(tmp_path: Path) -> None:
+    mapping = ClassMapping([ClassEntry("cls_001", 0)])
+    spec = SubmissionSpec(official_class_id_pattern=r"\d{4}")
+    with pytest.raises(ValueError, match="configured pattern"):
+        build_submission_package(
+            {"a.jpg": 0},
+            ["a.jpg"],
+            mapping,
+            tmp_path,
+            run_metadata=METADATA,
+            spec=spec,
+        )
+
+
+def test_nested_test_paths_support_explicit_relative_path_mode(tmp_path: Path) -> None:
+    spec = SubmissionSpec(filename_mode="relative_path")
+    relative_paths = ["folder-a/x.jpg", "folder-b/x.jpg", "root.jpg"]
+    keys = submission_keys_from_relative_paths(relative_paths, spec=spec)
+    assert keys == tuple(relative_paths)
+    package = build_submission_package(
+        {"folder-a/x.jpg": 0, "folder-b/x.jpg": 1, "root.jpg": 2},
+        keys,
+        _mapping(),
+        tmp_path,
+        run_metadata=METADATA,
+        spec=spec,
+    )
+    assert package.csv_path.read_text(encoding="utf-8") == (
+        "folder-a/x.jpg,0001\nfolder-b/x.jpg,0123\nroot.jpg,0456\n"
+    )
+
+
+def test_basename_mode_rejects_nested_path_collisions() -> None:
+    with pytest.raises(ValueError, match="collide"):
+        submission_keys_from_relative_paths(
+            ["folder-a/x.jpg", "folder-b/X.JPG"],
+            spec=SubmissionSpec(filename_mode="basename"),
+        )
+
+
+@pytest.mark.parametrize(
+    "relative_path",
+    [
+        "../escape.jpg",
+        "folder/../escape.jpg",
+        "/absolute.jpg",
+        "folder//x.jpg",
+        "folder/bad\tname.jpg",
+    ],
+)
+def test_submission_keys_reject_unsafe_relative_paths(relative_path: str) -> None:
+    with pytest.raises(ValueError, match="unsafe|control characters"):
+        submission_keys_from_relative_paths(
+            [relative_path],
+            spec=SubmissionSpec(filename_mode="relative_path"),
+        )

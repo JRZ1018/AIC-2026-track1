@@ -22,8 +22,18 @@ class ClassMapping:
             raise ValueError("class mapping cannot be empty")
         official = [entry.official_class_id for entry in entries]
         internal = [entry.internal_class_index for entry in entries]
-        if any(not value for value in official):
+        if any(not isinstance(value, str) or not value for value in official):
             raise ValueError("official class IDs must be non-empty strings")
+        unsafe = [
+            value
+            for value in official
+            if value != value.strip()
+            or any(ord(character) < 32 or ord(character) == 127 for character in value)
+        ]
+        if unsafe:
+            raise ValueError(
+                "official class IDs must not contain surrounding whitespace or control characters"
+            )
         if len(set(official)) != len(official):
             raise ValueError("duplicate official class ID")
         if len(set(internal)) != len(internal):
@@ -71,14 +81,27 @@ class ClassMapping:
         return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
     @classmethod
-    def from_train_directories(cls, root: str | Path) -> "ClassMapping":
+    def from_train_directories(
+        cls,
+        root: str | Path,
+        *,
+        official_id_pattern: str | None = None,
+    ) -> "ClassMapping":
         directory = Path(root)
         labels = sorted(path.name for path in directory.iterdir() if path.is_dir())
         if not labels:
             raise ValueError("training directory contains no class subdirectories")
-        invalid = [label for label in labels if re.fullmatch(r"\d{4}", label) is None]
-        if invalid:
-            raise ValueError(f"class directories must be four digits; examples: {invalid[:3]}")
+        if official_id_pattern is not None:
+            try:
+                pattern = re.compile(official_id_pattern)
+            except re.error as exc:
+                raise ValueError("official class ID pattern is invalid") from exc
+            invalid = [label for label in labels if pattern.fullmatch(label) is None]
+            if invalid:
+                raise ValueError(
+                    "class directories do not match the configured official ID pattern; "
+                    f"examples: {invalid[:3]}"
+                )
         return cls([ClassEntry(label, index) for index, label in enumerate(labels)])
 
     def write_csv(self, path: str | Path) -> None:

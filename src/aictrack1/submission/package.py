@@ -4,20 +4,19 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import io
 import json
 import re
-import tempfile
 import zipfile
 from dataclasses import asdict, dataclass
 from datetime import datetime
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Mapping, Sequence
 from zoneinfo import ZoneInfo
 
 from aictrack1.data.class_mapping import ClassMapping
 
 
-_FOUR_DIGIT_LABEL = re.compile(r"\d{4}")
 _REQUIRED_RUN_METADATA = {
     "run_id",
     "checkpoint_sha256",
@@ -36,6 +35,8 @@ class SubmissionSpec:
     include_header: bool = False
     filename_column: str = "filename"
     label_column: str = "label"
+    filename_mode: str = "basename"
+    official_class_id_pattern: str | None = None
 
     def validate(self) -> None:
         if self.csv_name != "pred_results.csv":
@@ -44,6 +45,17 @@ class SubmissionSpec:
             raise ValueError("CSV column names must be non-empty")
         if self.filename_column == self.label_column:
             raise ValueError("filename and label columns must be different")
+        if self.filename_mode not in {"basename", "relative_path"}:
+            raise ValueError("filename_mode must be basename or relative_path")
+        if self.official_class_id_pattern is not None:
+            if not self.official_class_id_pattern:
+                raise ValueError("official_class_id_pattern must be null or non-empty")
+            try:
+                pattern = re.compile(self.official_class_id_pattern)
+            except re.error as exc:
+                raise ValueError("official_class_id_pattern is invalid") from exc
+            if pattern.fullmatch("") is not None:
+                raise ValueError("official_class_id_pattern must not match an empty ID")
 
 
 @dataclass(frozen=True)
@@ -68,23 +80,98 @@ def _sequence_sha256(values: Sequence[str]) -> str:
     return hashlib.sha256("\n".join(values).encode("utf-8")).hexdigest()
 
 
-def _validate_expected_filenames(expected_filenames: Sequence[str]) -> tuple[str, ...]:
+def _normalize_relative_path(value: str) -> str:
+    normalized = value.replace("\\", "/")
+    if not normalized or any(
+        ord(character) < 32 or ord(character) == 127 for character in normalized
+    ):
+        raise ValueError("test relative paths must be non-empty and contain no control characters")
+    parts = normalized.split("/")
+    if (
+        PurePosixPath(normalized).is_absolute()
+        or Path(value).is_absolute()
+        or any(part in {"", ".", ".."} for part in parts)
+    ):
+        raise ValueError(f"unsafe test relative path: {value!r}")
+    return PurePosixPath(normalized).as_posix()
+
+
+def submission_keys_from_relative_paths(
+    relative_paths: Sequence[str],
+    *,
+    spec: SubmissionSpec = SubmissionSpec(),
+) -> tuple[str, ...]:
+    """Convert audited test paths into the exact first-column submission keys."""
+
+    spec.validate()
+    normalized = tuple(_normalize_relative_path(str(value)) for value in relative_paths)
+    if spec.filename_mode == "basename":
+        keys = tuple(PurePosixPath(value).name for value in normalized)
+    else:
+        keys = normalized
+    if len({value.casefold() for value in keys}) != len(keys):
+        raise ValueError(
+            f"test paths collide under submission filename_mode={spec.filename_mode}"
+        )
+    return keys
+
+
+def _validate_expected_filenames(
+    expected_filenames: Sequence[str],
+    spec: SubmissionSpec,
+) -> tuple[str, ...]:
     filenames = tuple(str(value) for value in expected_filenames)
     if not filenames:
         raise ValueError("expected filename sequence cannot be empty")
-    if any(not value or Path(value).name != value for value in filenames):
-        raise ValueError("expected filenames must be non-empty basenames")
+    canonical = submission_keys_from_relative_paths(filenames, spec=spec)
+    if canonical != filenames:
+        raise ValueError(
+            "expected filenames must already use the configured canonical submission format"
+        )
     if len(set(filenames)) != len(filenames):
         raise ValueError("expected filename sequence contains duplicates")
     return filenames
+
+
+def _validate_official_class_ids(
+    values: Sequence[str],
+    spec: SubmissionSpec,
+) -> tuple[str, ...]:
+    official_ids = tuple(str(value) for value in values)
+    if not official_ids:
+        raise ValueError("allowed official class IDs cannot be empty")
+    if any(
+        not value
+        or value != value.strip()
+        or any(ord(character) < 32 or ord(character) == 127 for character in value)
+        for value in official_ids
+    ):
+        raise ValueError(
+            "official class IDs must be non-empty and contain no surrounding whitespace or control characters"
+        )
+    if len(set(official_ids)) != len(official_ids):
+        raise ValueError("allowed official class IDs contain duplicates")
+    if spec.official_class_id_pattern is not None:
+        pattern = re.compile(spec.official_class_id_pattern)
+        invalid = [value for value in official_ids if pattern.fullmatch(value) is None]
+        if invalid:
+            raise ValueError(
+                "official class IDs do not match the configured pattern; "
+                f"examples: {invalid[:3]}"
+            )
+    return official_ids
 
 
 def _ordered_official_predictions(
     predictions: Mapping[str, int],
     expected_filenames: Sequence[str],
     class_mapping: ClassMapping,
+    spec: SubmissionSpec,
 ) -> list[tuple[str, str]]:
-    filenames = _validate_expected_filenames(expected_filenames)
+    filenames = _validate_expected_filenames(expected_filenames, spec)
+    _validate_official_class_ids(
+        [entry.official_class_id for entry in class_mapping.entries], spec
+    )
     prediction_names = set(predictions)
     expected_names = set(filenames)
     missing = sorted(expected_names - prediction_names)
@@ -103,16 +190,11 @@ def _ordered_official_predictions(
             official = class_mapping.to_official(raw_index)
         except KeyError as exc:
             raise ValueError(f"prediction for {filename!r} has unknown class index {raw_index}") from exc
-        if _FOUR_DIGIT_LABEL.fullmatch(official) is None:
-            raise ValueError(f"official class ID must be exactly four digits: {official!r}")
         rows.append((filename, official))
     return rows
 
 
-def _read_csv_rows(path: Path, spec: SubmissionSpec) -> list[tuple[str, str]]:
-    if path.name != spec.csv_name:
-        raise ValueError(f"submission CSV must be named {spec.csv_name}")
-    raw = path.read_bytes()
+def _parse_csv_rows(raw: bytes, spec: SubmissionSpec) -> list[tuple[str, str]]:
     if raw.startswith(b"\xef\xbb\xbf"):
         raise ValueError("submission CSV must not contain a UTF-8 BOM")
     try:
@@ -121,8 +203,7 @@ def _read_csv_rows(path: Path, spec: SubmissionSpec) -> list[tuple[str, str]]:
         raise ValueError("submission CSV must be UTF-8") from exc
     if "\r" in text:
         raise ValueError("submission CSV must use LF line endings")
-    with path.open("r", encoding="utf-8", newline="") as handle:
-        parsed = list(csv.reader(handle))
+    parsed = list(csv.reader(io.StringIO(text, newline="")))
     if not parsed:
         raise ValueError("submission CSV is empty")
     if spec.include_header:
@@ -140,6 +221,32 @@ def _read_csv_rows(path: Path, spec: SubmissionSpec) -> list[tuple[str, str]]:
     return [(row[0], row[1]) for row in parsed]
 
 
+def _read_csv_rows(path: Path, spec: SubmissionSpec) -> list[tuple[str, str]]:
+    if path.name != spec.csv_name:
+        raise ValueError(f"submission CSV must be named {spec.csv_name}")
+    return _parse_csv_rows(path.read_bytes(), spec)
+
+
+def _validate_parsed_rows(
+    rows: Sequence[tuple[str, str]],
+    expected: Sequence[str],
+    allowed: set[str],
+) -> None:
+    filenames = [filename for filename, _ in rows]
+    if len(set(filenames)) != len(filenames):
+        raise ValueError("submission CSV contains duplicate filenames")
+    if tuple(filenames) != tuple(expected):
+        missing = sorted(set(expected) - set(filenames))
+        extra = sorted(set(filenames) - set(expected))
+        raise ValueError(
+            "submission filenames or order do not match the expected sequence: "
+            f"missing={missing[:3]}, extra={extra[:3]}"
+        )
+    for filename, label in rows:
+        if label not in allowed:
+            raise ValueError(f"invalid official class ID for {filename!r}: {label!r}")
+
+
 def validate_submission_csv(
     path: str | Path,
     expected_filenames: Sequence[str],
@@ -150,24 +257,10 @@ def validate_submission_csv(
     """Validate exact order, filenames, labels, encoding, and row structure."""
 
     spec.validate()
-    expected = _validate_expected_filenames(expected_filenames)
-    allowed = set(str(value) for value in allowed_official_class_ids)
-    if not allowed or any(_FOUR_DIGIT_LABEL.fullmatch(value) is None for value in allowed):
-        raise ValueError("allowed official class IDs must be non-empty four-digit strings")
+    expected = _validate_expected_filenames(expected_filenames, spec)
+    allowed = set(_validate_official_class_ids(allowed_official_class_ids, spec))
     rows = _read_csv_rows(Path(path), spec)
-    filenames = [filename for filename, _ in rows]
-    if len(set(filenames)) != len(filenames):
-        raise ValueError("submission CSV contains duplicate filenames")
-    if tuple(filenames) != expected:
-        missing = sorted(set(expected) - set(filenames))
-        extra = sorted(set(filenames) - set(expected))
-        raise ValueError(
-            "submission filenames or order do not match the expected sequence: "
-            f"missing={missing[:3]}, extra={extra[:3]}"
-        )
-    for filename, label in rows:
-        if label not in allowed:
-            raise ValueError(f"invalid official class ID for {filename!r}: {label!r}")
+    _validate_parsed_rows(rows, expected, allowed)
     return rows
 
 
@@ -188,15 +281,11 @@ def validate_submission_zip(
         if infos[0].flag_bits & 0x1:
             raise ValueError("submission ZIP must not be encrypted")
         payload = handle.read(infos[0])
-    with tempfile.TemporaryDirectory(prefix="submission-validate-", dir=archive.parent) as temp:
-        extracted = Path(temp) / spec.csv_name
-        extracted.write_bytes(payload)
-        validate_submission_csv(
-            extracted,
-            expected_filenames,
-            allowed_official_class_ids,
-            spec=spec,
-        )
+    spec.validate()
+    expected = _validate_expected_filenames(expected_filenames, spec)
+    allowed = set(_validate_official_class_ids(allowed_official_class_ids, spec))
+    rows = _parse_csv_rows(payload, spec)
+    _validate_parsed_rows(rows, expected, allowed)
 
 
 def build_submission_package(
@@ -219,7 +308,9 @@ def build_submission_package(
     )
     if empty_metadata:
         raise ValueError(f"run metadata fields must be non-empty: {empty_metadata}")
-    rows = _ordered_official_predictions(predictions, expected_filenames, class_mapping)
+    rows = _ordered_official_predictions(
+        predictions, expected_filenames, class_mapping, spec
+    )
     output = Path(output_dir).resolve()
     output.mkdir(parents=True, exist_ok=True)
     csv_path = output / spec.csv_name
@@ -250,7 +341,7 @@ def build_submission_package(
         validate_submission_zip(zip_path, expected_filenames, allowed, spec=spec)
 
         manifest = {
-            "schema_version": 1,
+            "schema_version": 2,
             "created_at": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(),
             "record_count": len(rows),
             "expected_filenames_sha256": _sequence_sha256(tuple(expected_filenames)),
