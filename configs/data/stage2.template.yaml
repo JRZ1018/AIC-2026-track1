@@ -1,0 +1,39 @@
+# Non-executable contract scaffold. The directory layout and mapping provenance are
+# placeholders until the authorized Stage 2 archive is inspected. Do not promote this
+# file to configs/data/stage2.yaml without replacing them with audited facts.
+dataset:
+  competition_stage: stage2
+  contract_confirmed: false
+  stage: rematch
+  dataset_root: ../../DataSetStage2
+  class_mapping: ../artifacts/audits/stage2/metadata/classes.csv
+  class_mapping_provenance: train_directory_names
+  extensions: [.jpg]
+  allow_truncated_images: false
+  sources:
+    train:
+      root: train
+      label_source: directory
+      class_from_parent: true
+    test:
+      root: test
+      label_source: none
+  audit:
+    output_root: ../../artifacts/audits/stage2
+    workers: 4
+    near_duplicate_hamming: 3
+    near_duplicate_max_bucket: 500
+    fail_on_bad_files: true
+    fail_on_label_conflicts: true
+  split:
+    validation_fraction: 0.2
+    seed: 20260921
+    min_train_per_class: 1
+  transforms:
+    image_size: 224
+    resize_size: 224
+    train_crop_scale_min: 0.8
+    train_horizontal_flip_probability: 0.5
+
+# Non-executable contract template. Confirm the official archive layout, counts,
+# mapping semantics, and split policy after authorized Stage 2 data access.
