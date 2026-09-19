@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -12,6 +14,22 @@ import yaml
 ALLOWED_STAGES = {"synthetic", "preliminary", "rematch", "semifinal"}
 ALLOWED_LABEL_SOURCES = {"manifest", "directory", "none"}
 ALLOWED_CLASS_MAPPING_PROVENANCE = {"official_file", "train_directory_names"}
+ALLOWED_COMPETITION_STAGES = {"stage1", "stage2", "stage3"}
+STAGE_REFERENCE_FIELDS = {
+    "dataset_config",
+    "dataset_root",
+    "manifest",
+    "split",
+    "label_conflicts",
+    "class_mapping",
+    "feature_cache",
+    "head_checkpoint",
+    "a1_head_checkpoint",
+    "checkpoint",
+    "output_dir",
+    "output_root",
+    "weight_path",
+}
 
 
 @dataclass(frozen=True)
@@ -79,6 +97,81 @@ def _optional_bool(mapping: dict[str, Any], key: str, default: bool, context: st
     if not isinstance(value, bool):
         raise ValueError(f"{context}.{key} must be a boolean")
     return value
+
+
+def validate_competition_stage_references(
+    competition_stage: str,
+    document: Mapping[str, Any],
+    *,
+    context: str = "configuration",
+) -> None:
+    """Reject path-like references to assets from another competition stage.
+
+    This is deliberately a static guard: it examines declared references without
+    requiring the referenced data, manifests, or checkpoints to exist. Stage 1
+    configurations predate ``competition_stage`` and remain valid; every new Stage 2
+    template/config must opt in and is then forbidden from naming Stage 1 assets.
+    """
+
+    stage = str(competition_stage).lower()
+    if stage not in ALLOWED_COMPETITION_STAGES:
+        raise ValueError(
+            f"{context}: unsupported competition_stage {competition_stage!r}; "
+            f"expected one of {sorted(ALLOWED_COMPETITION_STAGES)}"
+        )
+
+    forbidden_markers = {
+        other
+        for other in ALLOWED_COMPETITION_STAGES
+        if other != stage
+    }
+    violations: list[str] = []
+
+    def mentions_stage(value: str, marker: str) -> bool:
+        normalized = value.replace("\\", "/").lower()
+        stage_token = re.compile(rf"(?<![a-z0-9]){re.escape(marker)}(?![a-z0-9])")
+        dataset_token = re.compile(
+            rf"(?<![a-z0-9])dataset{re.escape(marker)}(?![a-z0-9])"
+        )
+        return stage_token.search(normalized) is not None or dataset_token.search(
+            normalized
+        ) is not None
+
+    def visit(
+        value: Any,
+        trail: tuple[str, ...] = (),
+        *,
+        reference_field: bool = False,
+    ) -> None:
+        if isinstance(value, Mapping):
+            for raw_key, child in value.items():
+                key = str(raw_key)
+                visit(
+                    child,
+                    (*trail, key),
+                    reference_field=key in STAGE_REFERENCE_FIELDS,
+                )
+            return
+        if isinstance(value, (list, tuple)):
+            for index, child in enumerate(value):
+                visit(
+                    child,
+                    (*trail, str(index)),
+                    reference_field=reference_field,
+                )
+            return
+        if not reference_field:
+            return
+        if not isinstance(value, (str, Path)):
+            return
+        for marker in sorted(forbidden_markers):
+            if mentions_stage(str(value), marker):
+                violations.append(f"{'.'.join(trail)}={value!s} references {marker}")
+
+    visit(document)
+    if violations:
+        joined = "; ".join(violations)
+        raise ValueError(f"{context}: cross-stage reference rejected: {joined}")
 
 
 def _parse_source(name: str, raw: dict[str, Any], dataset_root: Path) -> SourceConfig:

@@ -11,6 +11,11 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from aictrack1.data.contracts import validate_competition_stage_references
+
+
 REGISTRY = ROOT / "docs" / "upstream_registry.yaml"
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 REQUIRED_FILES = (
@@ -93,6 +98,36 @@ def validate_git_safety(errors: list[str]) -> None:
             errors.append(f"file larger than 50 MiB is visible to Git: {rel}")
 
 
+def validate_stage_isolation(errors: list[str]) -> None:
+    """Validate every explicitly stage-scoped YAML without resolving private assets."""
+
+    for path in sorted((ROOT / "configs").rglob("*.yaml")):
+        rel = path.relative_to(ROOT).as_posix()
+        try:
+            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, yaml.YAMLError) as exc:
+            errors.append(f"cannot parse configuration {rel}: {exc}")
+            continue
+        if not isinstance(document, dict):
+            continue
+        payload = document.get("experiment", document.get("dataset", document))
+        if not isinstance(payload, dict):
+            continue
+        competition_stage = payload.get("competition_stage")
+        is_stage2_named = "stage2" in path.name.lower()
+        if is_stage2_named and competition_stage != "stage2":
+            errors.append(f"Stage 2 configuration must declare competition_stage: stage2: {rel}")
+            continue
+        if competition_stage is None:
+            continue
+        try:
+            validate_competition_stage_references(
+                str(competition_stage), payload, context=rel
+            )
+        except ValueError as exc:
+            errors.append(str(exc))
+
+
 def main() -> int:
     errors: list[str] = []
     for path in REQUIRED_FILES:
@@ -100,6 +135,7 @@ def main() -> int:
             errors.append(f"required file missing: {path.relative_to(ROOT)}")
     if REGISTRY.is_file():
         validate_registry(errors)
+    validate_stage_isolation(errors)
     if (ROOT / ".git").exists():
         try:
             validate_git_safety(errors)
@@ -115,6 +151,7 @@ def main() -> int:
         return 1
     print("Governance check PASSED")
     print(f"- upstream entries: {len(yaml.safe_load(REGISTRY.read_text(encoding='utf-8'))['repositories'])}")
+    print("- explicitly stage-scoped configurations contain no cross-stage references")
     print("- Git candidate files contain no forbidden data, weights, secrets, or >50 MiB files")
     return 0
 

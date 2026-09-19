@@ -3,7 +3,7 @@
 The fixed split was shown to have a resolution floor: mix 0.75 scored exactly equal to mix
 0.50 locally (0.721419573 both, delta 0.000000000000) yet gained +0.2083 online. So these
 runs go straight to full train one variable at a time, and each must be provably identical
-to the current best (61.0005) apart from its single change.
+to the then-current best (61.0005) apart from its single change.
 """
 
 from __future__ import annotations
@@ -97,8 +97,8 @@ def test_every_queue_member_writes_its_own_run_directory() -> None:
         seen.add(experiment["run_id"])
 
 
-def test_the_best_config_is_the_one_that_scored_61_0005() -> None:
-    """Anchor the baseline so the queue cannot silently drift off it."""
+def test_historical_queue_baseline_is_the_one_that_scored_61_0005() -> None:
+    """Anchor the historical queue baseline without asserting it remains global best."""
     import csv
 
     ledger = ROOT / "submissions" / "ledger.csv"
@@ -106,9 +106,6 @@ def test_the_best_config_is_the_one_that_scored_61_0005() -> None:
         return
     with ledger.open("r", encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
-    scored = [row for row in rows if row["online_score"]]
-    if not scored:
-        return
-    top = max(scored, key=lambda row: float(row["online_score"]))
-    assert top["online_score"] == "61.0005"
-    assert top["run_id"] == _load(BEST)["run_id"]
+    matches = [row for row in rows if row["run_id"] == _load(BEST)["run_id"]]
+    assert len(matches) == 1
+    assert matches[0]["online_score"] == "61.0005"
