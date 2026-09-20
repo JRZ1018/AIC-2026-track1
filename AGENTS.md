@@ -173,6 +173,12 @@ experiments/YYYYMMDD-HHMM_method_seed/
 - 与基线相比的绝对提升；
 - 失败现象、异常和下一步判断。
 
+`environment_hash` 必须由 `aictrack1.environment.v1` 规范对象计算，不得手填。规范对象至少包含
+Python 实现/版本、完整平台信息、PyTorch/CUDA/cuDNN、设备/GPU、`requirements-lock.txt`
+SHA-256 和 OpenAI CLIP ViT-B/32 权重 SHA-256。中央实验索引只允许通过
+`scripts/rebuild_experiment_index.py` 从运行产物更新；缺少完整历史证据时写
+`unknown_legacy` 并记录原因，禁止用当前机器信息伪造旧实验环境。
+
 不得只在聊天记录、终端滚屏或在线实验平台中保存关键结果。任何用于报告或提交决策的数字必须能追溯到本地实验目录。
 
 ## 6. 可复现性与工程质量
