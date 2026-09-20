@@ -21,7 +21,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aictrack1.data.class_mapping import ClassMapping  # noqa: E402
-from aictrack1.data.contracts import load_dataset_config  # noqa: E402
+from aictrack1.data.contracts import (  # noqa: E402
+    load_dataset_config,
+    validate_experiment_runtime_contract,
+)
 from aictrack1.data.feature_cache import load_feature_cache  # noqa: E402
 from aictrack1.data.long_tail_split import (  # noqa: E402
     LONG_TAIL_EVAL,
@@ -36,6 +39,10 @@ from aictrack1.evaluation.long_tail import (  # noqa: E402
     long_tail_diagnostics,
     read_stratification,
     support_stratified_accuracy,
+)
+from aictrack1.engine.provenance import (  # noqa: E402
+    CheckpointProvenance,
+    validate_checkpoint_provenance,
 )
 from aictrack1.models.heads import build_classifier_head  # noqa: E402
 from aictrack1.models.single_model import dump_json, resolve_relative, sha256_file  # noqa: E402
@@ -100,6 +107,17 @@ def main() -> int:
         raise ValueError("stratification and class mapping disagree")
 
     all_records = read_manifest(manifest_path)
+    runtime_experiment = {
+        "competition_stage": dataset_config.competition_stage,
+        "execution_enabled": True,
+    }
+    if dataset_config.competition_stage is not None:
+        validate_experiment_runtime_contract(
+            runtime_experiment,
+            dataset_config,
+            train_count=len(all_records),
+            num_classes=num_classes,
+        )
     frozen_assignments = read_split_assignments(frozen_split_path)
     long_tail_assignment = read_split_assignments(split_path, column="long_tail_split")
     reference_counts = summarize_partition(
@@ -113,6 +131,22 @@ def main() -> int:
     cache = load_feature_cache(args.feature_cache.resolve())
     if cache.metadata.source != "train":
         raise ValueError("stress diagnostics refuse test feature caches")
+    if cache.metadata.manifest_sha256 != sha256_file(manifest_path):
+        raise ValueError("feature cache belongs to a different training manifest")
+    if cache.metadata.split_sha256 != sha256_file(frozen_split_path):
+        raise ValueError("feature cache belongs to a different frozen split")
+    provenance = (
+        None
+        if dataset_config.competition_stage is None
+        else CheckpointProvenance(
+            competition_stage=dataset_config.competition_stage,
+            class_mapping_sha256=mapping.digest(),
+            train_manifest_sha256=sha256_file(manifest_path),
+            split_sha256=sha256_file(frozen_split_path),
+            clip_weight_sha256=cache.metadata.clip_weight_sha256,
+            num_classes=num_classes,
+        )
+    )
     sample_ids = list(cache.sample_ids)
     sample_index = {sample_id: index for index, sample_id in enumerate(sample_ids)}
 
@@ -177,6 +211,12 @@ def main() -> int:
             checkpoint_path = (ROOT / checkpoint_path).resolve()
         _assert_not_test(checkpoint_path, label=f"checkpoint {label}")
         checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+        if provenance is not None:
+            validate_checkpoint_provenance(
+                checkpoint,
+                provenance,
+                context=f"checkpoint {label}",
+            )
         if checkpoint.get("feature_cache_metadata", {}).get("manifest_sha256") != cache.metadata.manifest_sha256:
             raise ValueError(f"checkpoint {label} belongs to a different manifest")
         head_config = checkpoint["head"]

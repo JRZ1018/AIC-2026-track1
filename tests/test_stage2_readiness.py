@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 from collections import Counter
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
@@ -12,10 +13,15 @@ from aictrack1.data.class_mapping import ClassEntry, ClassMapping
 from aictrack1.data.contracts import (
     load_dataset_config,
     validate_competition_stage_references,
+    validate_experiment_runtime_contract,
 )
 from aictrack1.data.manifest import SampleRecord
 from aictrack1.data.splits import build_grouped_stratified_split
 from aictrack1.methods.confidence import ClasswiseHistoryWeighting
+from aictrack1.engine.provenance import (
+    CheckpointProvenance,
+    validate_checkpoint_provenance,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,6 +45,9 @@ def test_stage2_templates_are_explicit_isolated_and_not_executable() -> None:
 
     assert dataset["competition_stage"] == "stage2"
     assert dataset["contract_confirmed"] is False
+    assert dataset["expected_train_count"] is None
+    assert dataset["expected_test_count"] is None
+    assert dataset["expected_num_classes"] is None
     assert dataset["stage"] == "rematch"
     assert dataset["class_mapping_provenance"] == "official_file"
     assert dataset["submission"]["official_class_id_pattern"] is None
@@ -60,6 +69,112 @@ def test_stage2_templates_are_explicit_isolated_and_not_executable() -> None:
     assert resolved.audit.output_root == (
         ROOT / "artifacts" / "audits" / "stage2"
     ).resolve()
+
+
+def test_stage2_template_cannot_be_enabled_before_contract_confirmation() -> None:
+    dataset = load_dataset_config(DATA_TEMPLATE)
+    experiment = _load_payload(EXPERIMENT_TEMPLATE, "experiment") | {
+        "execution_enabled": True
+    }
+    with pytest.raises(ValueError, match="contract_confirmed"):
+        validate_experiment_runtime_contract(experiment, dataset)
+
+
+def _confirmed_stage2_contract():
+    return replace(
+        load_dataset_config(DATA_TEMPLATE),
+        contract_confirmed=True,
+        expected_train_count=148_695,
+        expected_test_count=37_444,
+        expected_num_classes=750,
+    )
+
+
+def test_confirmed_stage2_runtime_contract_accepts_exact_counts() -> None:
+    dataset = _confirmed_stage2_contract()
+    experiment = _load_payload(EXPERIMENT_TEMPLATE, "experiment") | {
+        "execution_enabled": True
+    }
+    assert (
+        validate_experiment_runtime_contract(
+            experiment,
+            dataset,
+            train_count=148_695,
+            test_count=37_444,
+            num_classes=750,
+        )
+        == "stage2"
+    )
+
+
+@pytest.mark.parametrize(
+    ("counts", "message"),
+    [
+        ({"train_count": 103_218}, "train_count mismatch"),
+        ({"test_count": 24_967}, "test_count mismatch"),
+        ({"num_classes": 500}, "num_classes mismatch"),
+    ],
+)
+def test_stage2_runtime_contract_rejects_stage1_scale(
+    counts: dict[str, int], message: str
+) -> None:
+    dataset = _confirmed_stage2_contract()
+    experiment = _load_payload(EXPERIMENT_TEMPLATE, "experiment") | {
+        "execution_enabled": True
+    }
+    with pytest.raises(ValueError, match=message):
+        validate_experiment_runtime_contract(experiment, dataset, **counts)
+
+
+def test_runtime_contract_rejects_experiment_dataset_stage_mismatch() -> None:
+    dataset = _confirmed_stage2_contract()
+    with pytest.raises(ValueError, match="competition_stage mismatch"):
+        validate_experiment_runtime_contract(
+            {"competition_stage": "stage1", "execution_enabled": True},
+            dataset,
+        )
+
+
+def _stage2_provenance() -> CheckpointProvenance:
+    return CheckpointProvenance(
+        competition_stage="stage2",
+        class_mapping_sha256="1" * 64,
+        train_manifest_sha256="2" * 64,
+        split_sha256="3" * 64,
+        clip_weight_sha256="4" * 64,
+        num_classes=750,
+    )
+
+
+def test_checkpoint_provenance_accepts_exact_stage2_identity() -> None:
+    expected = _stage2_provenance()
+    validate_checkpoint_provenance(expected.to_dict(), expected)
+
+
+@pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("competition_stage", "stage1"),
+        ("num_classes", 500),
+        ("class_mapping_sha256", "a" * 64),
+        ("train_manifest_sha256", "b" * 64),
+        ("split_sha256", "c" * 64),
+        ("clip_weight_sha256", "d" * 64),
+    ],
+)
+def test_checkpoint_provenance_rejects_every_mismatch(field: str, value) -> None:
+    expected = _stage2_provenance()
+    payload = expected.to_dict() | {field: value}
+    with pytest.raises(ValueError, match=field):
+        validate_checkpoint_provenance(payload, expected)
+
+
+def test_checkpoint_provenance_rejects_missing_fields() -> None:
+    expected = _stage2_provenance()
+    payload = expected.to_dict()
+    del payload["train_manifest_sha256"]
+    with pytest.raises(ValueError, match="missing provenance fields"):
+        validate_checkpoint_provenance(payload, expected)
 
 
 @pytest.mark.parametrize(

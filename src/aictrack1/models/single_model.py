@@ -18,6 +18,10 @@ import torch
 import yaml
 
 from ..engine.peft import load_trainable_state_dict
+from ..engine.provenance import (
+    CheckpointProvenance,
+    validate_checkpoint_provenance,
+)
 from .clip_vit_b32 import load_clip_vit_b32
 from .heads import load_classifier_head_checkpoint
 from .peft import PEFTImageClassifier, configure_visual_peft, fold_visual_lora
@@ -134,6 +138,23 @@ def load_diagnostic_model(
 
     model_path = resolve_relative(config_path.parent, str(experiment["model_config"]))
     weight_path, expected_weight_sha256 = model_settings(model_path)
+    provenance = None
+    competition_stage = experiment.get("competition_stage")
+    if competition_stage is not None:
+        manifest_path = resolve_relative(config_path.parent, str(experiment["manifest"]))
+        provenance = CheckpointProvenance(
+            competition_stage=str(competition_stage).lower(),
+            class_mapping_sha256=class_mapping_digest,
+            train_manifest_sha256=sha256_file(manifest_path),
+            split_sha256=split_sha256,
+            clip_weight_sha256=expected_weight_sha256,
+            num_classes=int(num_classes),
+        )
+        validate_checkpoint_provenance(
+            checkpoint,
+            provenance,
+            context="diagnostic checkpoint",
+        )
     clip_model, _, clip_metadata = load_clip_vit_b32(weight_path, expected_weight_sha256, device)
     if checkpoint.get("clip_weight_sha256") != clip_metadata.weight_sha256:
         raise ValueError("checkpoint and official CLIP weight hashes differ")
@@ -161,6 +182,7 @@ def load_diagnostic_model(
         expected_clip_weight_sha256=clip_metadata.weight_sha256,
         expected_class_mapping_sha256=class_mapping_digest,
         expected_split_sha256=split_sha256,
+        expected_provenance=provenance,
     )
     normalized = head_checkpoint["feature_cache_metadata"].get("normalized")
     if not isinstance(normalized, bool):

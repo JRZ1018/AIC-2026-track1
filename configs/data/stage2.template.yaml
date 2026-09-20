@@ -4,6 +4,10 @@
 dataset:
   competition_stage: stage2
   contract_confirmed: false
+  # Replace all nulls with audited facts before setting contract_confirmed: true.
+  expected_train_count: null
+  expected_test_count: null
+  expected_num_classes: null
   stage: rematch
   dataset_root: ../../DataSetStage2
   class_mapping: metadata/classes.csv

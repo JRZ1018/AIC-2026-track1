@@ -76,6 +76,11 @@ class SubmissionContract:
 @dataclass(frozen=True)
 class DatasetConfig:
     config_path: Path
+    competition_stage: str | None
+    contract_confirmed: bool
+    expected_train_count: int | None
+    expected_test_count: int | None
+    expected_num_classes: int | None
     stage: str
     dataset_root: Path
     class_mapping: Path
@@ -105,6 +110,83 @@ def _optional_bool(mapping: dict[str, Any], key: str, default: bool, context: st
     if not isinstance(value, bool):
         raise ValueError(f"{context}.{key} must be a boolean")
     return value
+
+
+def _optional_positive_int(
+    mapping: dict[str, Any], key: str, context: str
+) -> int | None:
+    value = mapping.get(key)
+    if value is None:
+        return None
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError(f"{context}.{key} must be a positive integer or null")
+    if value < 1:
+        raise ValueError(f"{context}.{key} must be a positive integer or null")
+    return value
+
+
+def validate_experiment_runtime_contract(
+    experiment: Mapping[str, Any],
+    dataset: DatasetConfig,
+    *,
+    train_count: int | None = None,
+    test_count: int | None = None,
+    num_classes: int | None = None,
+) -> str | None:
+    """Validate the executable stage/count contract for new stage-scoped runs.
+
+    Historical Stage 1 configurations predate ``competition_stage`` and remain
+    loadable. Every new stage-scoped configuration must declare the stage in both
+    the experiment and dataset contracts, confirm the audited dataset contract,
+    and freeze all three official counts before execution.
+    """
+
+    raw_stage = experiment.get("competition_stage")
+    if raw_stage is None:
+        if dataset.competition_stage is not None:
+            raise ValueError(
+                "experiment must declare competition_stage when the dataset does"
+            )
+        return None
+    stage = str(raw_stage).lower()
+    if stage not in ALLOWED_COMPETITION_STAGES:
+        raise ValueError(
+            f"experiment: unsupported competition_stage {raw_stage!r}; "
+            f"expected one of {sorted(ALLOWED_COMPETITION_STAGES)}"
+        )
+    if dataset.competition_stage != stage:
+        raise ValueError(
+            "experiment and dataset competition_stage mismatch: "
+            f"{stage!r} != {dataset.competition_stage!r}"
+        )
+    validate_competition_stage_references(stage, experiment, context="experiment")
+    if experiment.get("execution_enabled", True) is not True:
+        return stage
+    if not dataset.contract_confirmed:
+        raise ValueError("dataset contract_confirmed must be true before execution")
+
+    expected = {
+        "train_count": dataset.expected_train_count,
+        "test_count": dataset.expected_test_count,
+        "num_classes": dataset.expected_num_classes,
+    }
+    missing = [name for name, value in expected.items() if value is None]
+    if missing:
+        raise ValueError(
+            "confirmed dataset contract is missing required expectations: "
+            + ", ".join(missing)
+        )
+    actual = {
+        "train_count": train_count,
+        "test_count": test_count,
+        "num_classes": num_classes,
+    }
+    for name, value in actual.items():
+        if value is not None and int(value) != expected[name]:
+            raise ValueError(
+                f"dataset {name} mismatch: actual {int(value)} != expected {expected[name]}"
+            )
+    return stage
 
 
 def validate_competition_stage_references(
@@ -226,6 +308,41 @@ def load_dataset_config(path: str | Path) -> DatasetConfig:
     raw = raw.get("dataset", raw)
     if not isinstance(raw, dict):
         raise ValueError("dataset configuration must be a mapping")
+
+    competition_stage_value = raw.get("competition_stage")
+    competition_stage = (
+        None if competition_stage_value is None else str(competition_stage_value).lower()
+    )
+    if competition_stage is not None and competition_stage not in ALLOWED_COMPETITION_STAGES:
+        raise ValueError(
+            f"unsupported competition_stage {competition_stage_value!r}; "
+            f"expected one of {sorted(ALLOWED_COMPETITION_STAGES)}"
+        )
+    contract_confirmed = _optional_bool(
+        raw, "contract_confirmed", competition_stage is None, "dataset"
+    )
+    expected_train_count = _optional_positive_int(raw, "expected_train_count", "dataset")
+    expected_test_count = _optional_positive_int(raw, "expected_test_count", "dataset")
+    expected_num_classes = _optional_positive_int(raw, "expected_num_classes", "dataset")
+    if competition_stage is not None:
+        validate_competition_stage_references(
+            competition_stage, raw, context="dataset configuration"
+        )
+    if contract_confirmed and competition_stage is not None:
+        missing = [
+            name
+            for name, value in (
+                ("expected_train_count", expected_train_count),
+                ("expected_test_count", expected_test_count),
+                ("expected_num_classes", expected_num_classes),
+            )
+            if value is None
+        ]
+        if missing:
+            raise ValueError(
+                "confirmed stage-scoped dataset contract is missing: "
+                + ", ".join(missing)
+            )
 
     stage = str(_require(raw, "stage", "dataset"))
     if stage not in ALLOWED_STAGES:
@@ -351,6 +468,11 @@ def load_dataset_config(path: str | Path) -> DatasetConfig:
 
     return DatasetConfig(
         config_path=config_path,
+        competition_stage=competition_stage,
+        contract_confirmed=contract_confirmed,
+        expected_train_count=expected_train_count,
+        expected_test_count=expected_test_count,
+        expected_num_classes=expected_num_classes,
         stage=stage,
         dataset_root=dataset_root,
         class_mapping=class_mapping,

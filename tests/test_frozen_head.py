@@ -4,6 +4,7 @@ import pytest
 import torch
 
 from aictrack1.engine.frozen_head import FrozenHeadConfig, FrozenHeadTrainer, FrozenLossConfig
+from aictrack1.engine.provenance import CheckpointProvenance
 from aictrack1.models.heads import LinearClassifier
 
 
@@ -169,3 +170,32 @@ def test_checkpoint_without_scheduler_field_remains_loadable() -> None:
     restored.load_state_dict(legacy_state)
     for name, expected in trainer.model.state_dict().items():
         assert torch.equal(expected, restored.model.state_dict()[name])
+
+
+def test_frozen_head_resume_rejects_cross_stage_checkpoint() -> None:
+    config = FrozenHeadConfig(epochs=1, batch_size=9, learning_rate=0.2, amp=False)
+    stage2 = CheckpointProvenance(
+        competition_stage="stage2",
+        class_mapping_sha256="1" * 64,
+        train_manifest_sha256="2" * 64,
+        split_sha256="3" * 64,
+        clip_weight_sha256="4" * 64,
+        num_classes=3,
+    )
+    trainer = FrozenHeadTrainer(
+        LinearClassifier(6, 3),
+        config,
+        device="cpu",
+        num_classes=3,
+        provenance=stage2,
+    )
+    state = trainer.state_dict() | {"competition_stage": "stage1"}
+    restored = FrozenHeadTrainer(
+        LinearClassifier(6, 3),
+        config,
+        device="cpu",
+        num_classes=3,
+        provenance=stage2,
+    )
+    with pytest.raises(ValueError, match="competition_stage mismatch"):
+        restored.load_state_dict(state)

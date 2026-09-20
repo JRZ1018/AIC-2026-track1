@@ -18,8 +18,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aictrack1.data.class_mapping import ClassMapping
-from aictrack1.data.contracts import ensure_output_path_is_safe, load_dataset_config
+from aictrack1.data.contracts import (
+    ensure_output_path_is_safe,
+    load_dataset_config,
+    validate_experiment_runtime_contract,
+)
 from aictrack1.data.indexed_images import IndexedImageDataset, read_indexed_images
+from aictrack1.engine.provenance import CheckpointProvenance
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
 from aictrack1.models.heads import (
     FrozenFeatureImageClassifier,
@@ -72,6 +77,8 @@ def main() -> int:
     experiment_path = args.experiment_config.resolve()
     experiment_document = yaml.safe_load(experiment_path.read_text(encoding="utf-8"))
     experiment = experiment_document.get("experiment", experiment_document)
+    if experiment.get("execution_enabled", True) is not True:
+        raise RuntimeError("this frozen-head configuration is not approved for inference")
     if "peft" in experiment:
         raise ValueError("frozen-head inference refuses PEFT experiment configs")
     if str(experiment.get("head", {}).get("kind")) not in {"linear", "cosine"}:
@@ -86,6 +93,27 @@ def main() -> int:
     dataset_path = args.dataset_config.resolve()
     model_path = args.model_config.resolve()
     dataset_config = load_dataset_config(dataset_path)
+    competition_stage = validate_experiment_runtime_contract(
+        experiment, dataset_config
+    )
+    if competition_stage is not None:
+        configured_dataset = experiment.get("dataset_config")
+        configured_model = experiment.get("model_config")
+        configured_split = experiment.get("split")
+        if configured_dataset is None or configured_model is None or configured_split is None:
+            raise ValueError(
+                "stage-scoped frozen-head inference requires dataset, model, and split references"
+            )
+        base = experiment_path.parent
+        for label, configured, supplied in (
+            ("dataset config", configured_dataset, dataset_path),
+            ("model config", configured_model, model_path),
+            ("split", configured_split, split_path),
+        ):
+            value = Path(str(configured))
+            resolved = (value if value.is_absolute() else base / value).resolve()
+            if resolved != supplied:
+                raise ValueError(f"{label} argument differs from the experiment contract")
     output = ensure_output_path_is_safe(dataset_config, args.output_dir)
     if output.exists() and any(output.iterdir()):
         raise FileExistsError(f"submission output directory is not empty: {output}")
@@ -97,6 +125,12 @@ def main() -> int:
         dataset_config,
         source="test",
         manifest_path=test_manifest,
+    )
+    validate_experiment_runtime_contract(
+        experiment,
+        dataset_config,
+        test_count=len(test_records),
+        num_classes=len(mapping),
     )
     submission_spec = SubmissionSpec(
         include_header=False,
@@ -112,6 +146,27 @@ def main() -> int:
     if device.type == "cuda" and not torch.cuda.is_available():
         raise RuntimeError("CUDA was requested but is unavailable")
     weight_path, expected_weight_sha256 = _model_settings(model_path)
+    provenance = None
+    if competition_stage is not None:
+        manifest_setting = experiment.get("manifest")
+        if manifest_setting is None:
+            raise ValueError(
+                "stage-scoped frozen-head inference requires a training manifest"
+            )
+        manifest_value = Path(str(manifest_setting))
+        train_manifest = (
+            manifest_value
+            if manifest_value.is_absolute()
+            else experiment_path.parent / manifest_value
+        ).resolve()
+        provenance = CheckpointProvenance(
+            competition_stage=competition_stage,
+            class_mapping_sha256=mapping.digest(),
+            train_manifest_sha256=_sha256(train_manifest),
+            split_sha256=_sha256(split_path),
+            clip_weight_sha256=expected_weight_sha256,
+            num_classes=len(mapping),
+        )
     clip_model, preprocess, clip_metadata = load_clip_vit_b32(
         weight_path, expected_weight_sha256, device
     )
@@ -124,6 +179,7 @@ def main() -> int:
         expected_clip_weight_sha256=clip_metadata.weight_sha256,
         expected_class_mapping_sha256=mapping.digest(),
         expected_split_sha256=_sha256(split_path),
+        expected_provenance=provenance,
     )
     metadata = checkpoint["feature_cache_metadata"]
     if metadata.get("normalized") is not True:

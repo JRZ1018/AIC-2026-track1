@@ -28,11 +28,19 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aictrack1.data.class_mapping import ClassMapping
-from aictrack1.data.contracts import ensure_output_path_is_safe, load_dataset_config
+from aictrack1.data.contracts import (
+    ensure_output_path_is_safe,
+    load_dataset_config,
+    validate_experiment_runtime_contract,
+)
 from aictrack1.data.feature_cache import load_feature_cache
 from aictrack1.data.indexed_images import IndexedImage, IndexedImageDataset, read_indexed_images
 from aictrack1.data.transforms import build_split_transforms
 from aictrack1.engine.peft import load_trainable_state_dict, trainable_state_dict
+from aictrack1.engine.provenance import (
+    CheckpointProvenance,
+    validate_checkpoint_provenance,
+)
 from aictrack1.evaluation.classification import calibration_diagnostics, classification_diagnostics
 from aictrack1.methods.confidence import (
     ClasswiseHistoryWeighting,
@@ -172,6 +180,7 @@ def main() -> int:
     head_checkpoint_path = _resolve(base, str(head_checkpoint_setting))
     output = _resolve(base, str(raw["output_dir"]))
     dataset_config = load_dataset_config(dataset_path)
+    competition_stage = validate_experiment_runtime_contract(raw, dataset_config)
     ensure_output_path_is_safe(dataset_config, output)
     if output.exists() and args.resume is None:
         raise FileExistsError(f"PEFT output already exists: {output}")
@@ -205,8 +214,18 @@ def main() -> int:
         manifest_path=manifest_path,
         split_path=split_path,
     )
+    validate_experiment_runtime_contract(
+        raw,
+        dataset_config,
+        train_count=len(records),
+    )
     if training_scope == "full_train_fixed_epochs":
-        expected_train_count = int(raw["expected_train_count"])
+        expected_value = raw.get(
+            "expected_train_count", dataset_config.expected_train_count
+        )
+        if expected_value is None:
+            raise ValueError("full-train run requires expected_train_count")
+        expected_train_count = int(expected_value)
         if len(records) != expected_train_count:
             raise ValueError("full-train manifest count differs from expected_train_count")
         if {record.partition for record in records} != {"train", "validation"}:
@@ -299,8 +318,26 @@ def main() -> int:
         ] = visual_weights
     mapping = ClassMapping.from_csv(dataset_config.class_mapping)
     num_classes = len(mapping)
+    validate_experiment_runtime_contract(
+        raw,
+        dataset_config,
+        train_count=len(records),
+        num_classes=num_classes,
+    )
     weight_path, expected_weight_sha256 = _model_settings(model_path)
     clip_model, _, clip_metadata = load_clip_vit_b32(weight_path, expected_weight_sha256, device)
+    provenance = (
+        None
+        if competition_stage is None
+        else CheckpointProvenance(
+            competition_stage=competition_stage,
+            class_mapping_sha256=mapping.digest(),
+            train_manifest_sha256=_sha256(manifest_path),
+            split_sha256=_sha256(split_path),
+            clip_weight_sha256=clip_metadata.weight_sha256,
+            num_classes=num_classes,
+        )
+    )
     visual = clip_model.visual.float()
     del clip_model
     peft = raw["peft"]
@@ -318,6 +355,7 @@ def main() -> int:
         expected_clip_weight_sha256=clip_metadata.weight_sha256,
         expected_class_mapping_sha256=mapping.digest(),
         expected_split_sha256=_sha256(split_path),
+        expected_provenance=provenance,
         forbid_full_train_initializer=training_scope == "fixed_split_validation",
     )
     head_config = head_checkpoint["head"]
@@ -362,6 +400,12 @@ def main() -> int:
 
     if args.resume is not None:
         state = torch.load(args.resume.resolve(), map_location="cpu", weights_only=False)
+        if provenance is not None:
+            validate_checkpoint_provenance(
+                state,
+                provenance,
+                context="PEFT resume checkpoint",
+            )
         if state["config_sha256"] != config_sha256:
             raise ValueError("PEFT resume configuration hash mismatch")
         load_trainable_state_dict(model, state["trainable_state"])
@@ -530,6 +574,8 @@ def main() -> int:
             "numpy_rng_state": np.random.get_state(),
             "torch_rng_state": torch.random.get_rng_state().clone(),
         }
+        if provenance is not None:
+            checkpoint.update(provenance.to_dict())
         if torch.cuda.is_available():
             checkpoint["cuda_rng_state_all"] = torch.cuda.get_rng_state_all()
         if confidence is not None:
@@ -563,29 +609,31 @@ def main() -> int:
         selected_name = "best.pt"
         selected_top1 = best_top1
         selection_rule = "best fixed-split validation Top-1"
-    _save_atomic(
-        {
-            "config_sha256": config_sha256,
-            "mode": peft["mode"],
-            "clip_weight_sha256": clip_metadata.weight_sha256,
-            "class_mapping_sha256": mapping.digest(),
-            "split_sha256": _sha256(split_path),
-            "head_initializer_sha256": head_checkpoint_sha256,
-            "head_kind": str(head_config["kind"]),
-            "normalize_features": normalized_features,
-            "trainable_state": selected_state,
-            "best_top1": selected_top1,
-            "training_scope": training_scope,
-            "selection_rule": selection_rule,
-        },
-        output / selected_name,
-    )
+    selected_checkpoint: dict[str, Any] = {
+        "config_sha256": config_sha256,
+        "mode": peft["mode"],
+        "clip_weight_sha256": clip_metadata.weight_sha256,
+        "class_mapping_sha256": mapping.digest(),
+        "split_sha256": _sha256(split_path),
+        "head_initializer_sha256": head_checkpoint_sha256,
+        "head_kind": str(head_config["kind"]),
+        "normalize_features": normalized_features,
+        "trainable_state": selected_state,
+        "best_top1": selected_top1,
+        "training_scope": training_scope,
+        "selection_rule": selection_rule,
+    }
+    if provenance is not None:
+        selected_checkpoint.update(provenance.to_dict())
+    _save_atomic(selected_checkpoint, output / selected_name)
     total_seconds = time.perf_counter() - total_started
     metrics = {
         "scope": (
-            "stage1 full official train PEFT final retrain; test data not accessed"
+            f"{competition_stage or 'stage1-legacy'} full official train PEFT final retrain; "
+            "test data not accessed"
             if training_scope == "full_train_fixed_epochs"
-            else "stage1 train/validation PEFT short screening; test data not accessed"
+            else f"{competition_stage or 'stage1-legacy'} train/validation PEFT short screening; "
+            "test data not accessed"
         ),
         "run_id": raw["run_id"],
         "training_scope": training_scope,
@@ -631,6 +679,8 @@ def main() -> int:
             "gpu": torch.cuda.get_device_name(device) if device.type == "cuda" else None,
         },
     }
+    if provenance is not None:
+        metrics["checkpoint_provenance"] = provenance.to_dict()
     if selected_name == "best.pt":
         metrics["best_checkpoint_sha256"] = metrics["selected_checkpoint_sha256"]
     else:
