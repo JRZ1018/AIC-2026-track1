@@ -3,6 +3,7 @@ from __future__ import annotations
 import pytest
 import torch
 
+from aictrack1.engine.provenance import CheckpointProvenance
 from aictrack1.models.heads import (
     CosineClassifier,
     FrozenFeatureImageClassifier,
@@ -125,4 +126,41 @@ def test_classifier_head_checkpoint_rejects_full_train_initializer_for_validatio
             expected_class_mapping_sha256="mapping",
             expected_split_sha256="split",
             forbid_full_train_initializer=True,
+        )
+
+
+def test_classifier_head_checkpoint_rejects_cross_stage_provenance(tmp_path) -> None:
+    expected = CheckpointProvenance(
+        competition_stage="stage2",
+        class_mapping_sha256="1" * 64,
+        train_manifest_sha256="2" * 64,
+        split_sha256="3" * 64,
+        clip_weight_sha256="4" * 64,
+        num_classes=3,
+    )
+    head = LinearClassifier(4, 3)
+    checkpoint = tmp_path / "stage1-head.pt"
+    torch.save(
+        {
+            **expected.to_dict(),
+            "competition_stage": "stage1",
+            "head": {"kind": "linear"},
+            "feature_cache_metadata": {
+                "clip_weight_sha256": expected.clip_weight_sha256,
+                "class_mapping_sha256": expected.class_mapping_sha256,
+                "split_sha256": expected.split_sha256,
+            },
+            "model": head.state_dict(),
+        },
+        checkpoint,
+    )
+    with pytest.raises(ValueError, match="competition_stage mismatch"):
+        load_classifier_head_checkpoint(
+            checkpoint,
+            feature_dim=4,
+            num_classes=3,
+            expected_clip_weight_sha256=expected.clip_weight_sha256,
+            expected_class_mapping_sha256=expected.class_mapping_sha256,
+            expected_split_sha256=expected.split_sha256,
+            expected_provenance=expected,
         )

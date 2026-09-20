@@ -10,6 +10,11 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
+from aictrack1.engine.provenance import (
+    CheckpointProvenance,
+    validate_checkpoint_provenance,
+)
+
 
 class LinearClassifier(nn.Module):
     def __init__(self, feature_dim: int, num_classes: int) -> None:
@@ -88,6 +93,7 @@ def load_classifier_head_checkpoint(
     expected_clip_weight_sha256: str,
     expected_class_mapping_sha256: str,
     expected_split_sha256: str | None = None,
+    expected_provenance: CheckpointProvenance | None = None,
     forbid_full_train_initializer: bool = False,
 ) -> tuple[nn.Module, dict[str, Any]]:
     """Load a frozen-feature head only after its provenance matches the run."""
@@ -102,6 +108,12 @@ def load_classifier_head_checkpoint(
         raise ValueError("classifier head checkpoint is missing head or feature metadata")
     if not isinstance(state, dict):
         raise ValueError("classifier head checkpoint is missing model state")
+    if expected_provenance is not None:
+        validate_checkpoint_provenance(
+            checkpoint,
+            expected_provenance,
+            context="classifier head checkpoint",
+        )
     exact_metadata = {
         "clip_weight_sha256": expected_clip_weight_sha256,
         "class_mapping_sha256": expected_class_mapping_sha256,

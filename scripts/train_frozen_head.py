@@ -20,6 +20,11 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from aictrack1.data.class_mapping import ClassMapping
+from aictrack1.data.contracts import (
+    load_dataset_config,
+    validate_experiment_runtime_contract,
+)
 from aictrack1.data.feature_cache import load_feature_cache, select_feature_partition
 from aictrack1.data.long_tail_split import (
     LONG_TAIL_TRAIN,
@@ -28,6 +33,7 @@ from aictrack1.data.long_tail_split import (
     select_partition_indices,
 )
 from aictrack1.engine.frozen_head import FrozenHeadConfig, FrozenHeadTrainer, FrozenLossConfig
+from aictrack1.engine.provenance import CheckpointProvenance
 from aictrack1.models.heads import build_classifier_head
 
 STRESS_SCOPES = frozenset(
@@ -56,7 +62,19 @@ def main() -> int:
     config_path = args.config.resolve()
     raw = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     raw = raw.get("experiment", raw)
+    if raw.get("execution_enabled", True) is not True:
+        raise RuntimeError("this frozen-head configuration is not approved for execution")
     base = config_path.parent
+    dataset_config = None
+    competition_stage = raw.get("competition_stage")
+    if competition_stage is not None:
+        dataset_setting = raw.get("dataset_config")
+        if dataset_setting is None:
+            raise ValueError(
+                "stage-scoped frozen-head configuration requires dataset_config"
+            )
+        dataset_config = load_dataset_config(_resolve(base, str(dataset_setting)))
+        competition_stage = validate_experiment_runtime_contract(raw, dataset_config)
     cache_path = _resolve(base, str(raw["feature_cache"]))
     output = _resolve(base, str(raw["output_dir"]))
     if output.exists() and args.resume is None:
@@ -82,7 +100,13 @@ def main() -> int:
     if cache.metadata.source != "train":
         raise ValueError("frozen-head training refuses test feature caches")
     if training_scope == "full_train_fixed_epochs":
-        expected_train_count = int(raw["expected_train_count"])
+        expected_value = raw.get(
+            "expected_train_count",
+            None if dataset_config is None else dataset_config.expected_train_count,
+        )
+        if expected_value is None:
+            raise ValueError("full-train run requires expected_train_count")
+        expected_train_count = int(expected_value)
         if cache.metadata.expected_record_count != expected_train_count:
             raise ValueError("full-train feature cache count differs from expected_train_count")
         if set(cache.partitions) != {"train", "validation"}:
@@ -161,6 +185,29 @@ def main() -> int:
         validation_labels is not None and int(validation_labels.max()) >= num_classes
     ):
         raise ValueError("feature labels exceed configured num_classes")
+    provenance = None
+    if dataset_config is not None:
+        mapping = ClassMapping.from_csv(dataset_config.class_mapping)
+        validate_experiment_runtime_contract(
+            raw,
+            dataset_config,
+            train_count=cache.metadata.expected_record_count,
+            num_classes=len(mapping),
+        )
+        if num_classes != len(mapping):
+            raise ValueError("frozen-head num_classes differs from class mapping")
+        if cache.metadata.class_mapping_sha256 != mapping.digest():
+            raise ValueError("feature cache class mapping hash mismatch")
+        if cache.metadata.manifest_sha256 is None or cache.metadata.split_sha256 is None:
+            raise ValueError("stage-scoped feature cache is missing manifest or split hash")
+        provenance = CheckpointProvenance(
+            competition_stage=str(competition_stage),
+            class_mapping_sha256=mapping.digest(),
+            train_manifest_sha256=cache.metadata.manifest_sha256,
+            split_sha256=cache.metadata.split_sha256,
+            clip_weight_sha256=cache.metadata.clip_weight_sha256,
+            num_classes=num_classes,
+        )
 
     training = FrozenHeadConfig(**raw["training"])
     loss_config = FrozenLossConfig(**raw.get("loss", {}))
@@ -186,6 +233,7 @@ def main() -> int:
         device=device,
         num_classes=num_classes,
         loss_config=loss_config,
+        provenance=provenance,
     )
     if args.resume is not None:
         trainer.load_checkpoint(args.resume)
@@ -246,37 +294,40 @@ def main() -> int:
         # starvation without guessing which rows the run consumed.
         support = torch.bincount(train_labels.long(), minlength=num_classes)
         feature_metadata["training_class_support"] = [int(value) for value in support.tolist()]
-    torch.save(
-        {
-            "model": selected_state,
-            "head": head_raw,
-            "loss": loss_config.__dict__,
-            "feature_cache_metadata": feature_metadata,
-            "best_top1": selected_top1,
-            "selection_rule": selection_rule,
-        },
-        output / selected_name,
-    )
+    selected_checkpoint = {
+        "model": selected_state,
+        "head": head_raw,
+        "loss": loss_config.__dict__,
+        "feature_cache_metadata": feature_metadata,
+        "best_top1": selected_top1,
+        "selection_rule": selection_rule,
+    }
+    if provenance is not None:
+        selected_checkpoint.update(provenance.to_dict())
+    torch.save(selected_checkpoint, output / selected_name)
+    stage_label = str(competition_stage or "stage1-legacy")
     scope_descriptions = {
         "full_train_fixed_epochs": (
-            "stage1 full official train frozen-feature final retrain; test data not accessed"
+            f"{stage_label} full official train frozen-feature final retrain; "
+            "test data not accessed"
         ),
         "long_tail_stress": (
-            "stage1 long-tail stress frozen-feature head; current-stage train partition only; "
+            f"{stage_label} long-tail stress frozen-feature head; "
+            "current-stage train partition only; "
             "test data not accessed"
         ),
         "balanced_size_matched_control": (
-            "stage1 class-balanced size-matched frozen-feature control; current-stage train "
+            f"{stage_label} class-balanced size-matched frozen-feature control; current-stage train "
             "partition only; test data not accessed"
         ),
         "balanced_full_train_control": (
-            "stage1 class-balanced full-train frozen-feature control; current-stage train "
+            f"{stage_label} class-balanced full-train frozen-feature control; current-stage train "
             "partition only; test data not accessed"
         ),
     }
     metrics = {
         "scope": scope_descriptions.get(
-            training_scope, "stage1 noisy-validation frozen-feature baseline"
+            training_scope, f"{stage_label} noisy-validation frozen-feature baseline"
         ),
         "training_scope": training_scope,
         "selection_rule": selection_rule,
@@ -295,6 +346,8 @@ def main() -> int:
         "selected_checkpoint_sha256": _sha256(output / selected_name),
         "last_checkpoint_sha256": _sha256(output / "last.pt"),
     }
+    if provenance is not None:
+        metrics["checkpoint_provenance"] = provenance.to_dict()
     if selected_name == "best.pt":
         metrics["best_checkpoint_sha256"] = metrics["selected_checkpoint_sha256"]
     else:

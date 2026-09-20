@@ -16,6 +16,10 @@ from torch.utils.data import DataLoader, TensorDataset
 
 from aictrack1.methods.gce import generalized_cross_entropy
 from aictrack1.methods.logit_clip import logit_clip_cross_entropy
+from aictrack1.engine.provenance import (
+    CheckpointProvenance,
+    validate_checkpoint_provenance,
+)
 
 
 @dataclass(frozen=True)
@@ -84,6 +88,7 @@ class FrozenHeadTrainer:
         device: str | torch.device,
         num_classes: int,
         loss_config: FrozenLossConfig = FrozenLossConfig(),
+        provenance: CheckpointProvenance | None = None,
     ) -> None:
         config.validate()
         loss_config.validate()
@@ -92,6 +97,7 @@ class FrozenHeadTrainer:
         self.device = torch.device(device)
         self.num_classes = num_classes
         self.loss_config = loss_config
+        self.provenance = provenance
         if config.optimizer == "sgd":
             self.optimizer = torch.optim.SGD(
                 model.parameters(),
@@ -239,9 +245,17 @@ class FrozenHeadTrainer:
         }
         if torch.cuda.is_available():
             state["cuda_rng_state_all"] = torch.cuda.get_rng_state_all()
+        if self.provenance is not None:
+            state.update(self.provenance.to_dict())
         return state
 
     def load_state_dict(self, state: dict[str, Any]) -> None:
+        if self.provenance is not None:
+            validate_checkpoint_provenance(
+                state,
+                self.provenance,
+                context="frozen-head resume checkpoint",
+            )
         saved_config = dict(state.get("config", {}))
         # Checkpoints created before scheduler selection was configurable used
         # CosineAnnealingLR unconditionally.

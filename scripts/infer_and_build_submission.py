@@ -18,10 +18,18 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aictrack1.data.class_mapping import ClassMapping
-from aictrack1.data.contracts import ensure_output_path_is_safe, load_dataset_config
+from aictrack1.data.contracts import (
+    ensure_output_path_is_safe,
+    load_dataset_config,
+    validate_experiment_runtime_contract,
+)
 from aictrack1.data.indexed_images import IndexedImageDataset, read_indexed_images
 from aictrack1.data.transforms import build_split_transforms
 from aictrack1.engine.peft import load_trainable_state_dict
+from aictrack1.engine.provenance import (
+    CheckpointProvenance,
+    validate_checkpoint_provenance,
+)
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
 from aictrack1.models.heads import load_classifier_head_checkpoint
 from aictrack1.models.peft import (
@@ -92,6 +100,8 @@ def main() -> int:
     config_path = args.experiment_config.resolve()
     config_document = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     experiment = config_document.get("experiment", config_document)
+    if experiment.get("execution_enabled", True) is not True:
+        raise RuntimeError("this experiment configuration is not approved for inference")
     base = config_path.parent
     dataset_path = _resolve(base, str(experiment["dataset_config"]))
     model_path = _resolve(base, str(experiment["model_config"]))
@@ -107,6 +117,9 @@ def main() -> int:
     checkpoint_path = args.checkpoint.resolve()
     test_manifest = args.test_manifest.resolve()
     dataset_config = load_dataset_config(dataset_path)
+    competition_stage = validate_experiment_runtime_contract(
+        experiment, dataset_config
+    )
     output = ensure_output_path_is_safe(dataset_config, args.output_dir)
     if output.exists() and any(output.iterdir()):
         raise FileExistsError(f"submission output directory is not empty: {output}")
@@ -124,12 +137,16 @@ def main() -> int:
         raise ValueError("unsupported final PEFT mode")
 
     mapping = ClassMapping.from_csv(dataset_config.class_mapping)
-    if checkpoint.get("class_mapping_sha256") != mapping.digest():
-        raise ValueError("checkpoint and class mapping hashes differ")
     test_records = read_indexed_images(
         dataset_config,
         source="test",
         manifest_path=test_manifest,
+    )
+    validate_experiment_runtime_contract(
+        experiment,
+        dataset_config,
+        test_count=len(test_records),
+        num_classes=len(mapping),
     )
     submission_spec = SubmissionSpec(
         include_header=False,
@@ -141,10 +158,29 @@ def main() -> int:
         spec=submission_spec,
     )
 
+    weight_path, expected_weight_sha256 = _model_settings(model_path)
+    provenance = None
+    if competition_stage is not None:
+        train_manifest = _resolve(base, str(experiment["manifest"]))
+        provenance = CheckpointProvenance(
+            competition_stage=competition_stage,
+            class_mapping_sha256=mapping.digest(),
+            train_manifest_sha256=_sha256(train_manifest),
+            split_sha256=_sha256(split_path),
+            clip_weight_sha256=expected_weight_sha256,
+            num_classes=len(mapping),
+        )
+        validate_checkpoint_provenance(
+            checkpoint,
+            provenance,
+            context="inference checkpoint",
+        )
+    elif checkpoint.get("class_mapping_sha256") != mapping.digest():
+        raise ValueError("checkpoint and class mapping hashes differ")
+
     device = torch.device(str(experiment.get("device", "cuda")))
     if device.type == "cuda" and not torch.cuda.is_available():
         raise RuntimeError("CUDA was requested but is unavailable")
-    weight_path, expected_weight_sha256 = _model_settings(model_path)
     clip_model, _, clip_metadata = load_clip_vit_b32(weight_path, expected_weight_sha256, device)
     if checkpoint.get("clip_weight_sha256") != clip_metadata.weight_sha256:
         raise ValueError("checkpoint and official CLIP weight hashes differ")
@@ -164,6 +200,7 @@ def main() -> int:
         expected_clip_weight_sha256=clip_metadata.weight_sha256,
         expected_class_mapping_sha256=mapping.digest(),
         expected_split_sha256=_sha256(split_path),
+        expected_provenance=provenance,
     )
     expected_head_sha256 = checkpoint.get("head_initializer_sha256")
     if expected_head_sha256 is not None and expected_head_sha256 != _sha256(head_path):

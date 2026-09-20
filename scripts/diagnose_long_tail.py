@@ -24,7 +24,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aictrack1.data.class_mapping import ClassMapping  # noqa: E402
-from aictrack1.data.contracts import load_dataset_config  # noqa: E402
+from aictrack1.data.contracts import (  # noqa: E402
+    load_dataset_config,
+    validate_experiment_runtime_contract,
+)
 from aictrack1.data.indexed_images import IndexedImageDataset, read_indexed_images  # noqa: E402
 from aictrack1.data.long_tail_split import (  # noqa: E402
     LONG_TAIL_EVAL,
@@ -149,6 +152,7 @@ def main() -> int:
     experiment = yaml.safe_load(experiment_path.read_text(encoding="utf-8"))["experiment"]
     dataset_config_path = resolve_relative(experiment_path.parent, experiment["dataset_config"])
     dataset_config = load_dataset_config(dataset_config_path)
+    validate_experiment_runtime_contract(experiment, dataset_config)
     manifest_path = resolve_relative(experiment_path.parent, experiment["manifest"])
     frozen_split_path = resolve_relative(experiment_path.parent, experiment["split"])
     _assert_not_test(manifest_path, label="training manifest")
@@ -169,6 +173,12 @@ def main() -> int:
         raise ValueError("long-tail summary and class mapping disagree")
 
     all_records = read_manifest(manifest_path)
+    validate_experiment_runtime_contract(
+        experiment,
+        dataset_config,
+        train_count=len(all_records),
+        num_classes=num_classes,
+    )
     frozen_assignments = read_split_assignments(frozen_split_path)
     if len(frozen_assignments) != len(all_records):
         raise ValueError("frozen split and manifest cover different sample counts")
