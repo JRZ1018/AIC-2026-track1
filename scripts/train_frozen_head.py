@@ -5,7 +5,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import platform
 import random
 import shutil
 import subprocess
@@ -33,6 +32,10 @@ from aictrack1.data.long_tail_split import (
     select_partition_indices,
 )
 from aictrack1.engine.frozen_head import FrozenHeadConfig, FrozenHeadTrainer, FrozenLossConfig
+from aictrack1.engine.environment_identity import (
+    capture_environment_identity,
+    environment_hash,
+)
 from aictrack1.engine.provenance import CheckpointProvenance
 from aictrack1.models.heads import build_classifier_head
 
@@ -325,6 +328,15 @@ def main() -> int:
             "partition only; test data not accessed"
         ),
     }
+    environment = capture_environment_identity(
+        ROOT,
+        torch_module=torch,
+        device=device,
+        clip_weight_sha256=cache.metadata.clip_weight_sha256,
+    )
+    git = subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True
+    ).stdout.strip()
     metrics = {
         "scope": scope_descriptions.get(
             training_scope, f"{stage_label} noisy-validation frozen-feature baseline"
@@ -345,6 +357,9 @@ def main() -> int:
         "selected_checkpoint": selected_name,
         "selected_checkpoint_sha256": _sha256(output / selected_name),
         "last_checkpoint_sha256": _sha256(output / "last.pt"),
+        "git_commit": git,
+        "environment": environment,
+        "environment_hash": environment_hash(environment),
     }
     if provenance is not None:
         metrics["checkpoint_provenance"] = provenance.to_dict()
@@ -357,18 +372,12 @@ def main() -> int:
     )
     shutil.copy2(config_path, output / "config.yaml")
     (output / "command.txt").write_text(" ".join(sys.argv) + "\n", encoding="utf-8")
-    git = subprocess.run(
-        ["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True
-    ).stdout.strip()
     (output / "environment.json").write_text(
         json.dumps(
             {
                 "git_commit": git,
-                "python": platform.python_version(),
-                "torch": torch.__version__,
-                "cuda_runtime": torch.version.cuda,
-                "device": str(device),
-                "gpu": torch.cuda.get_device_name(device) if device.type == "cuda" else None,
+                "environment": environment,
+                "environment_hash": environment_hash(environment),
             },
             indent=2,
             sort_keys=True,

@@ -8,7 +8,6 @@ import csv
 import hashlib
 import json
 import os
-import platform
 import random
 import shutil
 import subprocess
@@ -37,6 +36,10 @@ from aictrack1.data.feature_cache import load_feature_cache
 from aictrack1.data.indexed_images import IndexedImage, IndexedImageDataset, read_indexed_images
 from aictrack1.data.transforms import build_split_transforms
 from aictrack1.engine.peft import load_trainable_state_dict, trainable_state_dict
+from aictrack1.engine.environment_identity import (
+    capture_environment_identity,
+    environment_hash,
+)
 from aictrack1.engine.provenance import (
     CheckpointProvenance,
     validate_checkpoint_provenance,
@@ -627,6 +630,12 @@ def main() -> int:
         selected_checkpoint.update(provenance.to_dict())
     _save_atomic(selected_checkpoint, output / selected_name)
     total_seconds = time.perf_counter() - total_started
+    environment = capture_environment_identity(
+        ROOT,
+        torch_module=torch,
+        device=device,
+        clip_weight_sha256=clip_metadata.weight_sha256,
+    )
     metrics = {
         "scope": (
             f"{competition_stage or 'stage1-legacy'} full official train PEFT final retrain; "
@@ -671,13 +680,8 @@ def main() -> int:
         "git_commit": subprocess.run(
             ["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True
         ).stdout.strip(),
-        "environment": {
-            "python": platform.python_version(),
-            "torch": torch.__version__,
-            "cuda_runtime": torch.version.cuda,
-            "device": str(device),
-            "gpu": torch.cuda.get_device_name(device) if device.type == "cuda" else None,
-        },
+        "environment": environment,
+        "environment_hash": environment_hash(environment),
     }
     if provenance is not None:
         metrics["checkpoint_provenance"] = provenance.to_dict()
