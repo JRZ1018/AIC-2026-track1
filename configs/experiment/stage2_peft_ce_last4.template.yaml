@@ -1,0 +1,30 @@
+# Stage 1 AC architecture start point with confidence weighting disabled.
+# All paths and identities are placeholders; this file must remain disabled
+# until the Stage 2 audit and H1 training are complete.
+experiment:
+  competition_stage: stage2
+  run_id: stage2-peft-ce-last4-template-not-executable
+  execution_enabled: false
+  training_scope: fixed_split_validation
+  dataset_config: ../data/stage2.template.yaml
+  model_config: ../model/openai_clip_vit_b32.yaml
+  manifest: ../../artifacts/audits/stage2/train/samples.csv
+  split: ../../artifacts/audits/stage2/train/split.csv
+  label_conflicts: ../../artifacts/audits/stage2/train/label_conflicts.csv
+  head_checkpoint: ../../artifacts/experiments/stage2-h1-placeholder/best.pt
+  output_dir: ../../artifacts/experiments/stage2-peft-ce-last4-template-not-executable
+  device: cuda
+  peft:
+    mode: last_n_blocks
+    lora_blocks: 4
+  confidence_weighting:
+    enabled: false
+  training:
+    epochs: 16
+    batch_size: 64
+    workers: 4
+    seed: 20260921
+    visual_learning_rate: 0.00000175
+    head_learning_rate: 0.0
+    weight_decay: 0.01
+    gradient_clip_norm: 1.0
