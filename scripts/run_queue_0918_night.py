@@ -13,17 +13,19 @@ Order:
   Y  min_weight 0.05 with 16 epochs                 - the two strongest levers together
   Z  mix 0.50 seed lottery (new seed)               - hedged draw against the 60.7922 recipe
 
-Each run is skipped when its metrics.json already exists, and the chain waits for any run
-that looks mid-flight, so an interruption resumes rather than repeating work.
+All historical items use the shared atomic training lock. Validated completed outputs are
+skipped; partial outputs, external trainers, probe failures, and stale locks stop the queue.
 """
 from __future__ import annotations
 
-import subprocess
 import sys
-import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from aictrack1.engine.training_queue import QueueItem, run_serial_queue  # noqa: E402
+
 PYTHON = ROOT / ".venv" / "Scripts" / "python.exe"
 LOGS = ROOT / "artifacts" / "queues" / "20260918-night"
 
@@ -49,102 +51,14 @@ QUEUE = [
 ]
 
 
-def _log(message: str) -> None:
-    stamp = time.strftime("%Y-%m-%d %H:%M:%S")
-    line = f"[{stamp}] {message}"
-    print(line, flush=True)
-    with (LOGS / "chain.log").open("a", encoding="utf-8") as handle:
-        handle.write(line + "\n")
-
-
-def _in_flight() -> list[str]:
-    """Any training on this machine, not merely this queue's members.
-
-    An earlier version only looked at this queue, so it started a run while a different
-    queue's job was still training and briefly ran two full trainings at once. The probe
-    below matches the trainer's command line instead, so it catches every queue.
-    """
-    pending = []
-    for _tag, _config, output, _purpose in QUEUE:
-        directory = ROOT / output
-        if directory.is_dir() and not (directory / "metrics.json").is_file():
-            pending.append(output)
-    pending.extend(_other_training_directories())
-    return pending
-
-
-def _other_training_directories() -> list[str]:
-    """Return run directories whose trainer process is alive but not in QUEUE."""
-    try:
-        completed = subprocess.run(
-            [
-                "powershell",
-                "-NoProfile",
-                "-Command",
-                "Get-CimInstance Win32_Process -Filter \"Name='python.exe'\" | "
-                "Where-Object { $_.CommandLine -like '*train_peft.py*' } | "
-                "ForEach-Object { $_.CommandLine }",
-            ],
-            capture_output=True,
-            text=True,
-            timeout=60,
-        )
-    except Exception as error:  # pragma: no cover - defensive
-        _log(f"could not probe running trainers ({error}); assuming none")
-        return []
-    found = []
-    for line in completed.stdout.splitlines():
-        line = line.strip()
-        if "train_peft.py" not in line:
-            continue
-        if any(output in line for _tag, _config, output, _purpose in QUEUE):
-            continue
-        found.append(line[:160])
-    return found
-
-
-def _wait_for_predecessors() -> None:
-    pending = _in_flight()
-    if not pending:
-        return
-    _log("waiting for an in-flight training run: " + ", ".join(pending))
-    while True:
-        pending = _in_flight()
-        if not pending:
-            _log("in-flight run finished; proceeding")
-            return
-        time.sleep(60)
-
-
 def main() -> int:
-    LOGS.mkdir(parents=True, exist_ok=True)
-    _log("night queue start")
-    for tag, config, output, purpose in QUEUE:
-        if (ROOT / output / "metrics.json").is_file():
-            _log(f"{tag}: already complete, skipping ({purpose})")
-            continue
-        _wait_for_predecessors()
-        log_path = LOGS / f"{tag}.log"
-        _log(f"{tag}: starting - {purpose}")
-        started = time.time()
-        with log_path.open("w", encoding="utf-8") as handle:
-            completed = subprocess.run(
-                [str(PYTHON), "scripts/train_peft.py", "--config", config],
-                cwd=ROOT,
-                stdout=handle,
-                stderr=subprocess.STDOUT,
-            )
-        elapsed = time.time() - started
-        if (ROOT / output / "metrics.json").is_file():
-            _log(f"{tag}: finished in {elapsed / 60:.1f} min, metrics.json written")
-        else:
-            _log(
-                f"{tag}: STOPPED after {elapsed / 60:.1f} min (return code {completed.returncode}) "
-                f"with NO metrics.json; halting. Log: {log_path}"
-            )
-            return 1
-    _log("night queue finished")
-    return 0
+    return run_serial_queue(
+        root=ROOT,
+        python=PYTHON,
+        logs=LOGS,
+        queue_name="20260918-night",
+        items=[QueueItem(*item) for item in QUEUE],
+    )
 
 
 if __name__ == "__main__":
