@@ -1,0 +1,25 @@
+# Stage 2 H1 start template. It is intentionally non-executable until the
+# official archive, class mapping, feature cache and counts have been audited.
+experiment:
+  competition_stage: stage2
+  run_id: stage2-h1-frozen-head-template-not-executable
+  execution_enabled: false
+  training_scope: fixed_split_validation
+  dataset_config: ../data/stage2.template.yaml
+  feature_cache: ../../artifacts/features/stage2/train_openai_vit_b32
+  output_dir: ../../artifacts/experiments/stage2-h1-frozen-head-template-not-executable
+  device: cuda
+  num_classes: null
+  head:
+    kind: linear
+  training:
+    epochs: 100
+    batch_size: 4096
+    learning_rate: 0.01
+    weight_decay: 0.0
+    momentum: 0.9
+    gradient_clip_norm: null
+    seed: 20260921
+    optimizer: adam
+    scheduler: constant
+    amp: false

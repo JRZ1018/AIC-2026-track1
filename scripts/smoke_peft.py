@@ -1,4 +1,4 @@
-"""Measure one PEFT mode on a bounded train-only stage-1 subset."""
+"""Measure one PEFT mode on a bounded train/validation-only dataset."""
 
 from __future__ import annotations
 
@@ -28,6 +28,11 @@ from aictrack1.engine.peft import load_trainable_state_dict, trainable_state_dic
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
 from aictrack1.models.heads import CosineClassifier
 from aictrack1.models.peft import PEFTImageClassifier, configure_visual_peft
+from aictrack1.submission import (
+    SubmissionSpec,
+    build_submission_package,
+    submission_keys_from_relative_paths,
+)
 
 
 def _sha256(path: Path) -> str:
@@ -92,6 +97,11 @@ def main() -> int:
     parser.add_argument("--lora-alpha", type=float, default=8.0)
     parser.add_argument("--lora-blocks", type=int, default=1)
     parser.add_argument("--device", default="cuda")
+    parser.add_argument(
+        "--build-local-package",
+        action="store_true",
+        help="package validation predictions for local migration testing only",
+    )
     args = parser.parse_args()
     if min(args.max_train, args.max_validation, args.batch_size, args.steps) < 1:
         raise ValueError("sample counts, batch size, and steps must be positive")
@@ -223,8 +233,61 @@ def main() -> int:
     if not torch.equal(before, after):
         raise RuntimeError("PEFT trainable checkpoint did not restore exact model outputs")
 
+    local_package = None
+    if args.build_local_package:
+        validation_logits: list[torch.Tensor] = []
+        relative_paths: list[str] = []
+        model.eval()
+        with torch.inference_mode():
+            for batch in validation_loader:
+                images = batch["image"].to(device, non_blocking=True)
+                with torch.autocast(
+                    device_type=device.type,
+                    dtype=torch.float16,
+                    enabled=device.type == "cuda",
+                ):
+                    validation_logits.append(model(images).float().cpu())
+                relative_paths.extend(str(value) for value in batch["relative_path"])
+        predicted_indices = torch.cat(validation_logits).argmax(dim=1).tolist()
+        spec = SubmissionSpec(
+            include_header=False,
+            filename_mode=dataset_config.submission.filename_mode,
+            official_class_id_pattern=dataset_config.submission.official_class_id_pattern,
+        )
+        filenames = submission_keys_from_relative_paths(relative_paths, spec=spec)
+        mapping = ClassMapping.from_csv(dataset_config.class_mapping)
+        package = build_submission_package(
+            dict(zip(filenames, (int(value) for value in predicted_indices), strict=True)),
+            filenames,
+            mapping,
+            output / "local_validation_package",
+            run_metadata={
+                "run_id": "migration_smoke_only",
+                "checkpoint_sha256": _sha256(checkpoint_path),
+                "config_hash": _sha256(args.dataset_config.resolve()),
+                "data_hash": _sha256(args.manifest.resolve()),
+                "git_commit": subprocess.run(
+                    ["git", "rev-parse", "HEAD"],
+                    cwd=ROOT,
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                ).stdout.strip(),
+                "inference_command": "local validation inference inside smoke_peft.py",
+                "scope": "validation-only package; not an official submission",
+            },
+            spec=spec,
+        )
+        local_package = {
+            "record_count": package.record_count,
+            "csv_sha256": package.csv_sha256,
+            "zip_sha256": package.zip_sha256,
+            "manifest_path": str(package.manifest_path),
+        }
+
     result = {
-        "scope": "bounded stage1 train/validation PEFT resource smoke; test data not accessed",
+        "scope": "bounded train/validation migration smoke; competition test data not accessed",
+        "migration_smoke_only": True,
         "mode": args.mode,
         "train_samples_available": len(train_records),
         "validation_samples": len(validation_records),
@@ -256,6 +319,7 @@ def main() -> int:
         "torch_version": torch.__version__,
         "device": str(device),
         "gpu": torch.cuda.get_device_name(device) if device.type == "cuda" else None,
+        "local_validation_package": local_package,
     }
     (output / "result.json").write_text(
         json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8"

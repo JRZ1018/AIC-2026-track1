@@ -1,0 +1,27 @@
+schema: aictrack1.stage2_report_charts.v1
+charts:
+  - id: overall_metrics
+    source: metrics.json
+    required_fields: [run_id, top1, macro_accuracy]
+    optional_fields: [head_accuracy, mid_accuracy, tail_accuracy, conflict_accuracy]
+  - id: class_support_distribution
+    source: stage2-long-tail-readiness.json
+    required_fields: [support.min, support.p10, support.median, support.p90, support.max]
+    optional_fields: [support.gini, support.effective_number]
+  - id: effective_training_quality
+    source: per-class-training-diagnostics.json
+    required_fields: [internal_class_index, raw_support, effective_quality, effective_to_raw_ratio]
+    optional_fields: [mean_loss, mean_weight, downweighted_fraction, sampling_count, recall]
+  - id: ablation_matrix
+    source: experiments/index.csv
+    required_fields: [run_id, top1, duration_seconds, peak_vram_mib, decision]
+    optional_fields: [macro_accuracy, head_accuracy, mid_accuracy, tail_accuracy]
+  - id: resource_curve
+    source: metrics.json
+    required_fields: [run_id, duration_seconds, peak_vram_mib]
+    optional_fields: [train_count, validation_count, trainable_total_parameters]
+rules:
+  - every plotted number must retain run_id and source path
+  - missing values remain null and are never converted to zero
+  - Stage 1 and Stage 2 series must never share an unlabeled aggregate
+  - test predictions and online scores are never used for training diagnostics

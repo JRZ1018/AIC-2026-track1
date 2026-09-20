@@ -24,6 +24,7 @@ references/upstream/*
 # Competition predictions and submission archives
 submissions/**
 !submissions/ledger.csv
+!submissions/*.template.csv
 
 # Per-run experiment artifacts; keep the lightweight reproducibility record
 experiments/**
