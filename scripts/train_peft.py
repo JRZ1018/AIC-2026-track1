@@ -427,6 +427,7 @@ def main() -> int:
     history: list[dict[str, Any]] = []
     best_top1 = float("-inf")
     best_state: dict[str, torch.Tensor] | None = None
+    initial: dict[str, Any] | None = None
 
     if args.resume is not None:
         state = torch.load(args.resume.resolve(), map_location="cpu", weights_only=False)
@@ -446,6 +447,7 @@ def main() -> int:
         history = state["history"]
         best_top1 = float(state["best_top1"])
         best_state = state["best_state"]
+        initial = state.get("initial_validation")
         random.setstate(state["python_rng_state"])
         np.random.set_state(state["numpy_rng_state"])
         torch.random.set_rng_state(state["torch_rng_state"])
@@ -477,9 +479,6 @@ def main() -> int:
             raise RuntimeError(
                 f"raw-image head parity failed: got {initial['all']['top1']}, expected {expected}±{tolerance}"
             )
-    else:
-        initial = None
-
     if device.type == "cuda":
         torch.cuda.reset_peak_memory_stats(device)
     total_started = time.perf_counter()
@@ -620,6 +619,7 @@ def main() -> int:
             "scheduler": scheduler.state_dict(),
             "scaler": scaler.state_dict(),
             "history": history,
+            "initial_validation": initial,
             "best_top1": best_top1,
             "best_state": best_state,
             "python_rng_state": random.getstate(),
