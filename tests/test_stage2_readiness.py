@@ -26,6 +26,7 @@ from aictrack1.engine.provenance import (
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_TEMPLATE = ROOT / "configs" / "data" / "stage2.template.yaml"
+DATA_CONFIG = ROOT / "configs" / "data" / "stage2.yaml"
 EXPERIMENT_TEMPLATE = (
     ROOT / "configs" / "experiment" / "p3_stage2_readiness.template.yaml"
 )
@@ -68,6 +69,34 @@ def test_stage2_templates_are_explicit_isolated_and_not_executable() -> None:
     ).resolve()
     assert resolved.audit.output_root == (
         ROOT / "artifacts" / "audits" / "stage2"
+    ).resolve()
+
+
+def test_stage2_real_data_contract_matches_audited_archive_layout() -> None:
+    dataset = _load_payload(DATA_CONFIG, "dataset")
+    assert dataset["competition_stage"] == "stage2"
+    assert dataset["contract_confirmed"] is True
+    assert dataset["expected_train_count"] == 148_695
+    assert dataset["expected_test_count"] == 37_444
+    assert dataset["expected_num_classes"] == 750
+    assert dataset["class_mapping_provenance"] == "train_directory_names"
+    assert dataset["audit"]["fail_on_bad_files"] is True
+    assert dataset["audit"]["fail_on_label_conflicts"] is False
+    assert dataset["submission"] == {
+        "filename_mode": "basename",
+        "official_class_id_pattern": r"\d{4}",
+    }
+
+    resolved = load_dataset_config(DATA_CONFIG)
+    assert resolved.dataset_root == (ROOT / "DataSetStage2").resolve()
+    assert resolved.class_mapping == (
+        ROOT / "artifacts" / "audits" / "stage2" / "metadata" / "classes.csv"
+    ).resolve()
+    assert resolved.sources["train"].root == (
+        ROOT / "DataSetStage2" / "train"
+    ).resolve()
+    assert resolved.sources["test"].root == (
+        ROOT / "DataSetStage2" / "test"
     ).resolve()
 
 

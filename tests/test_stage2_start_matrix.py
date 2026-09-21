@@ -15,6 +15,7 @@ NAMES = (
     "stage2_peft_ce_last4.template.yaml",
     "stage2_peft_ac_last4.template.yaml",
 )
+REAL_H1 = "stage2_h1_frozen_head_seed20260921.yaml"
 
 
 def _load(name: str) -> dict:
@@ -37,6 +38,18 @@ def test_h1_template_has_no_invented_class_count() -> None:
     assert h1["num_classes"] is None
     assert h1["head"] == {"kind": "linear"}
     assert h1["feature_cache"].endswith("stage2/train_openai_vit_b32")
+
+
+def test_real_h1_is_enabled_only_for_the_audited_stage2_contract() -> None:
+    h1 = _load(REAL_H1)
+    assert h1["competition_stage"] == "stage2"
+    assert h1["execution_enabled"] is True
+    assert h1["training_scope"] == "fixed_split_validation"
+    assert h1["dataset_config"] == "../data/stage2.yaml"
+    assert h1["num_classes"] == 750
+    assert h1["head"] == {"kind": "linear"}
+    assert h1["feature_cache"].endswith("stage2/train_openai_vit_b32")
+    validate_competition_stage_references("stage2", h1, context=REAL_H1)
 
 
 def test_ce_and_ac_templates_have_exactly_one_algorithmic_change() -> None:
