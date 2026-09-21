@@ -2,6 +2,7 @@
 data/**
 !data/.gitkeep
 /DataSetStage1/
+/DataSetStage2/
 /dataset/
 artifacts/**
 .cache/

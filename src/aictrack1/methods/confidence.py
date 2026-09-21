@@ -322,6 +322,39 @@ class ClasswiseHistoryWeighting:
             "magnitude_mix": self.magnitude_mix,
         }
 
+    def effective_quality_profile(
+        self,
+        sample_indices: torch.Tensor,
+        losses: torch.Tensor,
+        *,
+        downweight_threshold: float = 0.5,
+    ) -> dict[str, Any]:
+        """Report classwise effective mass for the weights prepared for the next epoch."""
+
+        if sample_indices.ndim != 1 or losses.ndim != 1:
+            raise ValueError("effective-quality inputs must be 1D")
+        if sample_indices.numel() != self.sample_indices.numel() or losses.shape != sample_indices.shape:
+            raise ValueError("effective-quality inputs must cover every training sample")
+        positions = self._positions(sample_indices)
+        if torch.unique(positions).numel() != positions.numel():
+            raise ValueError("effective-quality inputs contain duplicate samples")
+        if not torch.isfinite(losses).all() or bool((losses < 0).any()):
+            raise ValueError("effective-quality losses must be finite and non-negative")
+        ordered_losses = torch.empty_like(self.weights)
+        ordered_losses[positions] = losses.detach().float().cpu()
+
+        from aictrack1.evaluation.long_tail_readiness import (
+            effective_training_quality_profile,
+        )
+
+        return effective_training_quality_profile(
+            self.class_ids.tolist(),
+            ordered_losses.tolist(),
+            self.weights.tolist(),
+            num_classes=int(self.class_ids.max()) + 1,
+            downweight_threshold=downweight_threshold,
+        )
+
     def state_dict(self) -> dict[str, Any]:
         return {
             "sample_indices": self.sample_indices.clone(),

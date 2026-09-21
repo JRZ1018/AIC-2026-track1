@@ -45,6 +45,11 @@ from aictrack1.engine.provenance import (
     validate_checkpoint_provenance,
 )
 from aictrack1.evaluation.classification import calibration_diagnostics, classification_diagnostics
+from aictrack1.evaluation.long_tail import (
+    Stratification,
+    long_tail_diagnostics,
+    stratify_classes,
+)
 from aictrack1.methods.confidence import (
     ClasswiseHistoryWeighting,
     visual_prototype_soft_weights,
@@ -126,6 +131,7 @@ def _evaluate(
     device: torch.device,
     num_classes: int,
     conflict_ids: set[str],
+    stratification: Stratification,
 ) -> dict[str, Any]:
     model.eval()
     logits: list[torch.Tensor] = []
@@ -156,6 +162,12 @@ def _evaluate(
             predictions[~conflict_mask], all_targets[~conflict_mask], num_classes=num_classes
         ),
         "conflict_sample_count": int(conflict_mask.sum()),
+        "long_tail": long_tail_diagnostics(
+            predictions,
+            all_targets,
+            num_classes=num_classes,
+            stratification=stratification,
+        ),
     }
 
 
@@ -321,6 +333,21 @@ def main() -> int:
         ] = visual_weights
     mapping = ClassMapping.from_csv(dataset_config.class_mapping)
     num_classes = len(mapping)
+    training_class_counts = torch.bincount(
+        torch.tensor(
+            [int(record.internal_class_index) for record in train_records],
+            dtype=torch.long,
+        ),
+        minlength=num_classes,
+    )
+    if bool((training_class_counts == 0).any()):
+        raise ValueError("fixed training partition leaves one or more classes empty")
+    long_tail_stratification = stratify_classes(
+        training_class_counts,
+        head_fraction=0.2,
+        mid_fraction=0.3,
+        seed=int(dataset_config.split.seed),
+    )
     validate_experiment_runtime_contract(
         raw,
         dataset_config,
@@ -442,6 +469,7 @@ def main() -> int:
             device=device,
             num_classes=num_classes,
             conflict_ids=conflict_ids,
+            stratification=long_tail_stratification,
         )
         expected = float(raw["expected_initial_top1"])
         tolerance = float(raw.get("initial_top1_tolerance", 0.002))
@@ -455,6 +483,7 @@ def main() -> int:
     if device.type == "cuda":
         torch.cuda.reset_peak_memory_stats(device)
     total_started = time.perf_counter()
+    early_stop: dict[str, Any] | None = None
     while epoch < epochs:
         train_dataset.set_epoch(epoch)
         model.train()
@@ -522,12 +551,19 @@ def main() -> int:
                 epoch_predictions.append(detached_logits.argmax(dim=1).cpu())
         train_seconds = time.perf_counter() - train_started
         next_confidence = None
+        next_effective_quality = None
         if confidence is not None:
+            completed_indices = torch.cat(epoch_sample_indices)
+            completed_losses = torch.cat(epoch_sample_losses)
             next_confidence = confidence.update_epoch(
-                torch.cat(epoch_sample_indices),
-                torch.cat(epoch_sample_losses),
+                completed_indices,
+                completed_losses,
                 torch.cat(epoch_observed_probabilities),
                 torch.cat(epoch_predictions),
+            )
+            next_effective_quality = confidence.effective_quality_profile(
+                completed_indices,
+                completed_losses,
             )
         scheduler.step()
         epoch += 1
@@ -549,6 +585,7 @@ def main() -> int:
                 device=device,
                 num_classes=num_classes,
                 conflict_ids=conflict_ids,
+                stratification=long_tail_stratification,
             )
             row["validation"] = validation
         if confidence is not None:
@@ -556,7 +593,19 @@ def main() -> int:
                 "active": confidence_active,
                 "applied": applied_confidence,
                 "next": next_confidence,
+                "next_effective_quality": next_effective_quality,
             }
+            if (
+                bool(confidence_raw.get("stop_on_effective_quality_l2", False))
+                and next_effective_quality is not None
+                and next_effective_quality["decision"] == "L2"
+            ):
+                early_stop = {
+                    "epoch": epoch,
+                    "reason": "next-epoch confidence weights triggered L2 effective-quality gate",
+                    "decision": "L2",
+                }
+                row["early_stop"] = early_stop
         history.append(row)
         if training_scope == "fixed_split_validation":
             top1 = float(row["validation"]["all"]["top1"])
@@ -584,6 +633,32 @@ def main() -> int:
         if confidence is not None:
             checkpoint["confidence_weighting"] = confidence.state_dict()
         _save_atomic(checkpoint, output / "last.pt")
+        if training_scope == "fixed_split_validation":
+            long_tail = row["validation"]["long_tail"]
+            print(
+                json.dumps(
+                    {
+                        "stage": "fixed_split_peft",
+                        "status": "epoch_complete",
+                        "epoch": epoch,
+                        "epochs": epochs,
+                        "train_loss": row["train_loss"],
+                        "top1": row["validation"]["all"]["top1"],
+                        "macro_accuracy": long_tail["macro_accuracy"],
+                        "tail_accuracy": long_tail["strata"]["tail"]["accuracy"],
+                        "effective_quality_decision": (
+                            next_effective_quality["decision"]
+                            if next_effective_quality is not None
+                            else None
+                        ),
+                        "early_stop": early_stop,
+                    },
+                    sort_keys=True,
+                ),
+                flush=True,
+            )
+        if early_stop is not None:
+            break
         if training_scope == "full_train_fixed_epochs":
             print(
                 json.dumps(
@@ -649,6 +724,7 @@ def main() -> int:
         "selection_rule": selection_rule,
         "peft": peft,
         "confidence_weighting": confidence_raw,
+        "early_stop": early_stop,
         "visual_prototype_weighting": visual_trust_raw,
         "visual_prototype_diagnostics": visual_trust_diagnostics,
         "label_smoothing": label_smoothing,

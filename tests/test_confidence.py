@@ -79,6 +79,41 @@ def test_history_weighting_checkpoint_round_trip_and_strict_coverage() -> None:
     assert restored.diagnostics() == state.diagnostics()
 
 
+def test_history_weighting_reports_classwise_effective_quality() -> None:
+    indices = torch.tensor([10, 20, 30, 40, 50, 60])
+    classes = torch.tensor([0, 0, 0, 1, 1, 1])
+    losses = torch.tensor([0.1, 0.2, 0.3, 10.0, 20.0, 30.0])
+    state = ClasswiseHistoryWeighting(
+        indices,
+        classes,
+        momentum=0.0,
+        history_mix=0.0,
+        min_weight=0.02,
+        magnitude_mix=1.0,
+    )
+    state.update_epoch(indices, losses, torch.full((6,), 0.5), classes)
+
+    profile = state.effective_quality_profile(indices, losses)
+
+    assert profile["class_count"] == 2
+    assert profile["observation_count"] == 6
+    assert profile["classes"][0]["raw_support"] == 3
+    assert profile["classes"][1]["raw_support"] == 3
+    assert profile["classes"][0]["mean_weight"] > profile["classes"][1]["mean_weight"]
+    assert profile["classes"][1]["effective_quality"] < 1.0
+
+
+def test_effective_quality_profile_requires_complete_unique_epoch() -> None:
+    indices = torch.tensor([2, 5, 8])
+    state = ClasswiseHistoryWeighting(indices, torch.tensor([0, 0, 1]))
+    with pytest.raises(ValueError, match="every training sample"):
+        state.effective_quality_profile(indices[:2], torch.ones(2))
+    with pytest.raises(ValueError, match="duplicate samples"):
+        state.effective_quality_profile(
+            torch.tensor([2, 2, 8]), torch.ones(3)
+        )
+
+
 def test_magnitude_mix_keeps_between_class_loss_magnitude() -> None:
     """The classwise percentile alone cannot see that one class is noisier than another.
 
