@@ -16,6 +16,8 @@ NAMES = (
     "stage2_peft_ac_last4.template.yaml",
 )
 REAL_H1 = "stage2_h1_frozen_head_seed20260921.yaml"
+REAL_CE = "stage2_peft_ce_last4_seed20260921.yaml"
+REAL_AC = "stage2_peft_ac_last4_seed20260921.yaml"
 
 
 def _load(name: str) -> dict:
@@ -85,4 +87,37 @@ def test_peft_start_point_matches_frozen_stage1_reference_without_claiming_optim
         "head_learning_rate": 0.0,
         "weight_decay": 0.01,
         "gradient_clip_norm": 1.0,
+    }
+
+
+def test_real_ce_and_ac_are_enabled_stage2_single_variable_pair() -> None:
+    ce = _load(REAL_CE)
+    ac = _load(REAL_AC)
+    for name, config in ((REAL_CE, ce), (REAL_AC, ac)):
+        assert config["competition_stage"] == "stage2"
+        assert config["execution_enabled"] is True
+        assert config["training_scope"] == "fixed_split_validation"
+        assert config["dataset_config"] == "../data/stage2.yaml"
+        assert config["expected_initial_top1"] == 0.6447187066078186
+        assert config["head_checkpoint"].endswith(
+            "20260921-stage2-h1-linear-fixed-seed20260921/best.pt"
+        )
+        validate_competition_stage_references("stage2", config, context=name)
+
+    normalized_ce = deepcopy(ce)
+    normalized_ac = deepcopy(ac)
+    for payload in (normalized_ce, normalized_ac):
+        payload.pop("run_id")
+        payload.pop("output_dir")
+        payload.pop("confidence_weighting")
+    assert normalized_ce == normalized_ac
+    assert ce["confidence_weighting"] == {"enabled": False}
+    assert ac["confidence_weighting"] == {
+        "enabled": True,
+        "warmup_epochs": 1,
+        "momentum": 0.8,
+        "history_mix": 0.5,
+        "min_weight": 0.02,
+        "magnitude_mix": 0.75,
+        "stop_on_effective_quality_l2": True,
     }
