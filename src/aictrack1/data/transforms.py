@@ -37,6 +37,22 @@ def _normalize(image: Image.Image) -> torch.Tensor:
     return (tensor - mean) / std
 
 
+def _safe_exif_transpose(image: Image.Image) -> Image.Image:
+    """Apply a valid EXIF orientation and ignore only malformed EXIF metadata.
+
+    The decoded pixels remain usable when Pillow rejects a corrupt EXIF/TIFF
+    header.  Falling back to the already loaded pixels is deterministic and
+    avoids treating metadata damage as permission to skip a training sample.
+    """
+
+    try:
+        return ImageOps.exif_transpose(image)
+    except (OSError, SyntaxError, ValueError):
+        fallback = image.copy()
+        fallback.info.pop("exif", None)
+        return fallback
+
+
 @dataclass(frozen=True)
 class ImageTransform:
     split: str
@@ -47,7 +63,7 @@ class ImageTransform:
         return self.split == "train"
 
     def __call__(self, image: Image.Image, *, rng: np.random.Generator | None = None) -> torch.Tensor:
-        image = ImageOps.exif_transpose(image).convert("RGB")
+        image = _safe_exif_transpose(image).convert("RGB")
         if self.split == "train":
             if rng is None:
                 raise ValueError("train transform requires an explicit numpy random generator")

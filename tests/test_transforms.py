@@ -42,3 +42,16 @@ def test_train_transform_requires_explicit_rng_and_replays() -> None:
     assert torch.equal(first, replay)
     assert not torch.equal(first, second)
     assert transform.stochastic
+
+
+def test_transform_falls_back_to_decoded_pixels_for_malformed_exif() -> None:
+    image = _pattern_image()
+    image.info["exif"] = b"Exif\x00\x00IIRO\x08\x00\x00\x00"
+    transform = build_split_transforms(TransformConfig(image_size=32, resize_size=40))[
+        "validation"
+    ]
+
+    transformed = transform(image)
+
+    assert transformed.shape == (3, 32, 32)
+    assert torch.isfinite(transformed).all()
