@@ -109,6 +109,8 @@ def _loader(
     *,
     batch_size: int,
     workers: int,
+    prefetch_factor: int,
+    persistent_workers: bool,
     shuffle: bool,
     seed: int,
     device: torch.device,
@@ -127,16 +129,32 @@ def _loader(
             replacement=True,
             generator=generator,
         )
-    return DataLoader(
-        dataset,
-        batch_size=batch_size,
-        shuffle=shuffle and sampler is None,
-        sampler=sampler,
-        generator=torch.Generator().manual_seed(seed + 1),
-        num_workers=workers,
-        pin_memory=device.type == "cuda",
-        persistent_workers=workers > 0,
-    )
+    loader_kwargs: dict[str, Any] = {
+        "dataset": dataset,
+        "batch_size": batch_size,
+        "shuffle": shuffle and sampler is None,
+        "sampler": sampler,
+        "generator": torch.Generator().manual_seed(seed + 1),
+        "num_workers": workers,
+        "pin_memory": device.type == "cuda",
+    }
+    if workers > 0:
+        loader_kwargs.update(
+            prefetch_factor=prefetch_factor,
+            persistent_workers=persistent_workers,
+        )
+    return DataLoader(**loader_kwargs)
+
+
+def _data_loader_settings(training: dict[str, Any]) -> tuple[int, int, bool]:
+    workers = int(training.get("workers", 0))
+    prefetch_factor = int(training.get("prefetch_factor", 2))
+    persistent_workers_raw = training.get("persistent_workers", True)
+    if not isinstance(persistent_workers_raw, bool):
+        raise ValueError("persistent_workers must be a boolean")
+    if workers < 0 or prefetch_factor < 1:
+        raise ValueError("workers must be non-negative and prefetch_factor must be positive")
+    return workers, prefetch_factor, persistent_workers_raw
 
 
 @torch.inference_mode()
@@ -147,6 +165,8 @@ def _evaluate(
     *,
     batch_size: int,
     workers: int,
+    prefetch_factor: int,
+    persistent_workers: bool,
     device: torch.device,
     num_classes: int,
     conflict_ids: set[str],
@@ -159,6 +179,8 @@ def _evaluate(
         dataset,
         batch_size=batch_size,
         workers=workers,
+        prefetch_factor=prefetch_factor,
+        persistent_workers=persistent_workers,
         shuffle=False,
         seed=0,
         device=device,
@@ -226,11 +248,11 @@ def main() -> int:
         raise ValueError(f"unsupported PEFT training scope {training_scope!r}")
     epochs = int(training["epochs"])
     batch_size = int(training["batch_size"])
-    workers = int(training.get("workers", 0))
+    workers, prefetch_factor, persistent_workers = _data_loader_settings(training)
     seed = int(training["seed"])
     label_smoothing = float(training.get("label_smoothing", 0.0))
-    if epochs < 1 or batch_size < 1 or workers < 0:
-        raise ValueError("invalid epoch, batch-size, or worker configuration")
+    if epochs < 1 or batch_size < 1:
+        raise ValueError("invalid epoch or batch-size configuration")
     if not 0.0 <= label_smoothing < 1.0:
         raise ValueError("label_smoothing must be in [0, 1)")
     random.seed(seed)
@@ -532,6 +554,8 @@ def main() -> int:
             validation_dataset,
             batch_size=batch_size,
             workers=workers,
+            prefetch_factor=prefetch_factor,
+            persistent_workers=persistent_workers,
             device=device,
             num_classes=num_classes,
             conflict_ids=conflict_ids,
@@ -556,6 +580,8 @@ def main() -> int:
             train_dataset,
             batch_size=batch_size,
             workers=workers,
+            prefetch_factor=prefetch_factor,
+            persistent_workers=persistent_workers,
             shuffle=True,
             seed=seed + epoch,
             device=device,
@@ -661,6 +687,8 @@ def main() -> int:
                 validation_dataset,
                 batch_size=batch_size,
                 workers=workers,
+                prefetch_factor=prefetch_factor,
+                persistent_workers=persistent_workers,
                 device=device,
                 num_classes=num_classes,
                 conflict_ids=conflict_ids,
@@ -797,6 +825,12 @@ def main() -> int:
         "trainable_state": selected_state,
         "best_top1": selected_top1,
         "training_scope": training_scope,
+        "data_loader": {
+            "workers": workers,
+            "prefetch_factor": prefetch_factor if workers > 0 else None,
+            "persistent_workers": persistent_workers if workers > 0 else False,
+            "pin_memory": device.type == "cuda",
+        },
         "selection_rule": selection_rule,
     }
     if provenance is not None:
@@ -819,6 +853,12 @@ def main() -> int:
         ),
         "run_id": raw["run_id"],
         "training_scope": training_scope,
+        "data_loader": {
+            "workers": workers,
+            "prefetch_factor": prefetch_factor if workers > 0 else None,
+            "persistent_workers": persistent_workers if workers > 0 else False,
+            "pin_memory": device.type == "cuda",
+        },
         "selection_rule": selection_rule,
         "peft": peft,
         "confidence_weighting": confidence_raw,
