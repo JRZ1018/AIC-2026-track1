@@ -108,7 +108,45 @@ def read_training_lock(path: str | Path) -> TrainingLockRecord | None:
 
 
 def probe_running_trainers() -> list[RunningTrainer]:
-    """Return every supported trainer process on Windows, failing closed."""
+    """Return every supported trainer process on the current OS, failing closed."""
+
+    if os.name != "nt":
+        try:
+            completed = subprocess.run(
+                ["ps", "-eo", "pid=,args="],
+                capture_output=True,
+                text=True,
+                timeout=60,
+                check=False,
+            )
+        except Exception as exc:  # pragma: no cover - defensive OS boundary
+            raise TrainingProcessProbeError(
+                f"could not inspect running training processes: {exc}"
+            ) from exc
+        if completed.returncode != 0:
+            message = completed.stderr.strip() or completed.stdout.strip()
+            raise TrainingProcessProbeError(
+                f"training process probe failed with code {completed.returncode}: {message}"
+            )
+        trainers: list[RunningTrainer] = []
+        for line in completed.stdout.splitlines():
+            stripped = line.strip()
+            if not stripped:
+                continue
+            fields = stripped.split(maxsplit=1)
+            if len(fields) != 2:
+                continue
+            try:
+                pid = int(fields[0])
+            except ValueError as exc:
+                raise TrainingProcessProbeError("process probe returned an invalid PID") from exc
+            command_line = fields[1]
+            executable = command_line.split(maxsplit=1)[0].replace("\\", "/").rsplit("/", 1)[-1].lower()
+            if not executable.startswith("python"):
+                continue
+            if any(entrypoint in command_line for entrypoint in TRAINER_ENTRYPOINTS):
+                trainers.append(RunningTrainer(pid=pid, command_line=command_line))
+        return trainers
 
     command = (
         "Get-CimInstance Win32_Process | "
@@ -168,6 +206,16 @@ def probe_pid_exists(pid: int) -> bool:
 
     if pid < 1:
         raise ValueError("PID must be positive")
+    if os.name != "nt":
+        try:
+            os.kill(pid, 0)
+        except ProcessLookupError:
+            return False
+        except PermissionError:
+            return True
+        except OSError as exc:  # pragma: no cover - defensive OS boundary
+            raise TrainingProcessProbeError(f"could not inspect queue owner PID: {exc}") from exc
+        return True
     command = (
         f"if (Get-Process -Id {pid} -ErrorAction SilentlyContinue) "
         "{ 'exists' } else { 'missing' }"

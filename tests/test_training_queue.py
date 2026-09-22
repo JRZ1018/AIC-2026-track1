@@ -169,6 +169,39 @@ def test_windows_process_probe_rejects_command_failure(
         probe_running_trainers()
 
 
+def test_linux_process_probe_finds_all_supported_trainers(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr("aictrack1.engine.training_queue.os.name", "posix")
+    monkeypatch.setattr(
+        "aictrack1.engine.training_queue.subprocess.run",
+        lambda *_args, **_kwargs: SimpleNamespace(
+            returncode=0,
+            stdout=(
+                "  41 /opt/aic-venv/bin/python scripts/train_peft.py --config a.yaml\n"
+                "  42 python scripts/train_frozen_head.py --config b.yaml\n"
+                "  43 bash scripts/train_peft.py\n"
+            ),
+            stderr="",
+        ),
+    )
+    assert probe_running_trainers() == [
+        RunningTrainer(41, "/opt/aic-venv/bin/python scripts/train_peft.py --config a.yaml"),
+        RunningTrainer(42, "python scripts/train_frozen_head.py --config b.yaml"),
+    ]
+
+
+def test_linux_pid_probe_uses_signal_zero(monkeypatch: pytest.MonkeyPatch) -> None:
+    calls: list[tuple[int, int]] = []
+    monkeypatch.setattr("aictrack1.engine.training_queue.os.name", "posix")
+    monkeypatch.setattr(
+        "aictrack1.engine.training_queue.os.kill",
+        lambda pid, signal: calls.append((pid, signal)),
+    )
+    assert probe_pid_exists(321) is True
+    assert calls == [(321, 0)]
+
+
 def test_windows_owner_pid_probe_is_read_only_and_strict(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

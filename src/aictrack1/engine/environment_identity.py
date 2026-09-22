@@ -94,10 +94,16 @@ def capture_environment_identity(
     if getattr(device, "type", None) == "cuda":
         gpu = torch_module.cuda.get_device_name(device)
     cudnn_version = None
+    cudnn_probe_error = None
     backends = getattr(torch_module, "backends", None)
     cudnn = getattr(backends, "cudnn", None)
     if cudnn is not None:
-        cudnn_version = cudnn.version()
+        try:
+            cudnn_version = cudnn.version()
+        except RuntimeError as error:
+            # Environment capture must not invalidate an otherwise complete run.
+            # Preserve the exact probe failure instead of inventing a version.
+            cudnn_probe_error = f"{type(error).__name__}: {error}"
     identity: dict[str, Any] = {
         "schema": ENVIRONMENT_SCHEMA,
         "python": {
@@ -114,6 +120,7 @@ def capture_environment_identity(
             "version": str(torch_module.__version__),
             "cuda_runtime": getattr(torch_module.version, "cuda", None),
             "cudnn": cudnn_version,
+            "cudnn_probe_error": cudnn_probe_error,
         },
         "accelerator": {"device": device_text, "gpu": gpu},
         "dependencies": {

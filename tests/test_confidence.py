@@ -194,3 +194,72 @@ def test_weighted_cross_entropy_is_normalized_and_validated() -> None:
     assert torch.allclose(weighted_cross_entropy(logits, targets, weights), expected)
     with pytest.raises(ValueError, match="strictly positive"):
         weighted_cross_entropy(logits, targets, torch.tensor([0.0, 1.0]))
+
+
+def test_tail_mean_floor_protects_low_support_classes_and_preserves_order() -> None:
+    indices = torch.arange(12)
+    classes = torch.tensor([0] * 8 + [1] * 3 + [2])
+    state = ClasswiseHistoryWeighting(
+        indices,
+        classes,
+        momentum=0.0,
+        history_mix=0.0,
+        min_weight=0.02,
+        magnitude_mix=1.0,
+        tail_class_fraction=0.5,
+        tail_min_mean_weight=0.35,
+    )
+    losses = torch.arange(12, dtype=torch.float32)
+    state.update_epoch(indices, losses, torch.full((12,), 0.5), classes)
+    weights = state.weights_for(indices)
+    assert float(weights[classes == 2].mean()) >= 0.35 - 1e-6
+    assert float(weights[classes == 1].mean()) >= 0.35 - 1e-6
+    assert torch.all(weights[classes == 0][:-1] >= weights[classes == 0][1:])
+    diagnostics = state.diagnostics()
+    assert diagnostics["tail_protected_class_count"] == 2
+    assert diagnostics["tail_protected_mean_min"] >= 0.35 - 1e-6
+
+
+def test_minimum_effective_mass_protects_ultra_tail_class() -> None:
+    indices = torch.arange(10)
+    classes = torch.tensor([0] * 6 + [1] * 4)
+    state = ClasswiseHistoryWeighting(
+        indices,
+        classes,
+        momentum=0.0,
+        history_mix=0.0,
+        min_weight=0.02,
+        magnitude_mix=1.0,
+        min_effective_mass_per_class=4.0,
+    )
+    losses = torch.arange(10, dtype=torch.float32)
+    state.update_epoch(indices, losses, torch.full((10,), 0.5), classes)
+    weights = state.weights_for(indices)
+    assert float(weights[classes == 0].sum()) >= 4.0 - 1e-6
+    assert float(weights[classes == 1].sum()) == pytest.approx(4.0)
+
+
+def test_effective_mass_protection_configuration_is_strict_and_checkpointed() -> None:
+    indices = torch.arange(4)
+    classes = torch.tensor([0, 0, 1, 1])
+    with pytest.raises(ValueError, match="configured together"):
+        ClasswiseHistoryWeighting(indices, classes, tail_class_fraction=0.5)
+    with pytest.raises(ValueError, match="positive"):
+        ClasswiseHistoryWeighting(indices, classes, min_effective_mass_per_class=0.0)
+    protected = ClasswiseHistoryWeighting(
+        indices,
+        classes,
+        tail_class_fraction=0.5,
+        tail_min_mean_weight=0.35,
+    )
+    state = protected.state_dict()
+    restored = ClasswiseHistoryWeighting(
+        indices,
+        classes,
+        tail_class_fraction=0.5,
+        tail_min_mean_weight=0.35,
+    )
+    restored.load_state_dict(state)
+    mismatched = ClasswiseHistoryWeighting(indices, classes)
+    with pytest.raises(ValueError, match="tail_class_fraction"):
+        mismatched.load_state_dict(state)
