@@ -85,6 +85,35 @@ def test_capture_environment_identity_covers_lock_model_and_runtime(tmp_path) ->
     assert verified_environment_hash({"environment": identity, "environment_hash": digest}) == digest
 
 
+def test_cudnn_probe_failure_is_recorded_without_losing_the_run(tmp_path) -> None:
+    (tmp_path / "requirements-lock.txt").write_text("torch==2.11.0\n", encoding="utf-8")
+
+    class Device:
+        type = "cuda"
+
+        def __str__(self) -> str:
+            return "cuda:0"
+
+    def failed_probe() -> int:
+        raise RuntimeError("compiled 9.19 but found 9.2")
+
+    fake_torch = SimpleNamespace(
+        __version__="2.11.0+cu128",
+        version=SimpleNamespace(cuda="12.8"),
+        cuda=SimpleNamespace(get_device_name=lambda _device: "Synthetic GPU"),
+        backends=SimpleNamespace(cudnn=SimpleNamespace(version=failed_probe)),
+    )
+    identity = capture_environment_identity(
+        tmp_path,
+        torch_module=fake_torch,
+        device=Device(),
+        clip_weight_sha256=SHA_B,
+    )
+    assert identity["pytorch"]["cudnn"] is None
+    assert "compiled 9.19 but found 9.2" in identity["pytorch"]["cudnn_probe_error"]
+    assert environment_hash(identity)
+
+
 def test_verified_environment_hash_rejects_tampering() -> None:
     with pytest.raises(ValueError, match="environment hash mismatch"):
         verified_environment_hash({"environment": _identity(), "environment_hash": SHA_A})

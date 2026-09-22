@@ -178,6 +178,9 @@ class ClasswiseHistoryWeighting:
         history_mix: float = 0.5,
         min_weight: float = 0.2,
         magnitude_mix: float = 0.0,
+        tail_class_fraction: float | None = None,
+        tail_min_mean_weight: float | None = None,
+        min_effective_mass_per_class: float | None = None,
     ) -> None:
         if sample_indices.ndim != 1 or class_ids.ndim != 1 or sample_indices.shape != class_ids.shape:
             raise ValueError("sample_indices and class_ids must be matching 1D tensors")
@@ -195,6 +198,16 @@ class ClasswiseHistoryWeighting:
             raise ValueError("magnitude_mix must be in [0, 1]")
         if not 0 < min_weight <= 1:
             raise ValueError("min_weight must be in (0, 1]")
+        if (tail_class_fraction is None) != (tail_min_mean_weight is None):
+            raise ValueError(
+                "tail_class_fraction and tail_min_mean_weight must be configured together"
+            )
+        if tail_class_fraction is not None and not 0.0 < tail_class_fraction < 1.0:
+            raise ValueError("tail_class_fraction must be in (0, 1)")
+        if tail_min_mean_weight is not None and not 0.0 < tail_min_mean_weight <= 1.0:
+            raise ValueError("tail_min_mean_weight must be in (0, 1]")
+        if min_effective_mass_per_class is not None and min_effective_mass_per_class <= 0.0:
+            raise ValueError("min_effective_mass_per_class must be positive")
 
         self.sample_indices = sample_indices.detach().long().cpu().clone()
         self.class_ids = class_ids.detach().long().cpu().clone()
@@ -202,6 +215,17 @@ class ClasswiseHistoryWeighting:
         self.history_mix = float(history_mix)
         self.magnitude_mix = float(magnitude_mix)
         self.min_weight = float(min_weight)
+        self.tail_class_fraction = (
+            None if tail_class_fraction is None else float(tail_class_fraction)
+        )
+        self.tail_min_mean_weight = (
+            None if tail_min_mean_weight is None else float(tail_min_mean_weight)
+        )
+        self.min_effective_mass_per_class = (
+            None
+            if min_effective_mass_per_class is None
+            else float(min_effective_mass_per_class)
+        )
         self.epochs_updated = 0
         count = self.sample_indices.numel()
         self.weights = torch.ones(count, dtype=torch.float32)
@@ -212,6 +236,44 @@ class ClasswiseHistoryWeighting:
         self.seen = torch.zeros(count, dtype=torch.bool)
         self._lookup = torch.full((int(self.sample_indices.max()) + 1,), -1, dtype=torch.long)
         self._lookup[self.sample_indices] = torch.arange(count)
+        num_classes = int(self.class_ids.max()) + 1
+        class_counts = torch.bincount(self.class_ids, minlength=num_classes)
+        self.tail_protected_classes: torch.Tensor | None = None
+        if self.tail_class_fraction is not None:
+            self.tail_protected_classes = torch.zeros(num_classes, dtype=torch.bool)
+            observed = [index for index, support in enumerate(class_counts.tolist()) if support > 0]
+            tail_count = max(1, round(len(observed) * self.tail_class_fraction))
+            ordered = sorted(observed, key=lambda index: (int(class_counts[index]), index))
+            self.tail_protected_classes[torch.tensor(ordered[:tail_count])] = True
+
+    def _apply_class_effective_mass_protection(self) -> None:
+        """Raise protected class means without changing within-class ordering."""
+
+        for class_id in torch.unique(self.class_ids, sorted=True).tolist():
+            mask = self.class_ids == int(class_id)
+            support = int(mask.sum())
+            target_mean = 0.0
+            if (
+                self.tail_min_mean_weight is not None
+                and self.tail_protected_classes is not None
+                and bool(self.tail_protected_classes[int(class_id)])
+            ):
+                target_mean = max(target_mean, self.tail_min_mean_weight)
+            if self.min_effective_mass_per_class is not None:
+                target_mean = max(
+                    target_mean,
+                    min(1.0, self.min_effective_mass_per_class / support),
+                )
+            if target_mean <= 0.0:
+                continue
+            values = self.weights[mask]
+            current_mean = float(values.mean())
+            if current_mean >= target_mean:
+                continue
+            if current_mean >= 1.0:
+                continue
+            interpolation = (target_mean - current_mean) / (1.0 - current_mean)
+            self.weights[mask] = values + interpolation * (1.0 - values)
 
     def _positions(self, sample_indices: torch.Tensor) -> torch.Tensor:
         indices = sample_indices.detach().long().cpu()
@@ -300,13 +362,22 @@ class ClasswiseHistoryWeighting:
             )
             noise = (1.0 - self.magnitude_mix) * noise + self.magnitude_mix * global_noise
         self.weights = self.min_weight + (1.0 - self.min_weight) * (1.0 - noise)
+        self._apply_class_effective_mass_protection()
         self.epochs_updated += 1
         return self.diagnostics()
 
-    def diagnostics(self) -> dict[str, float | int]:
+    def diagnostics(self) -> dict[str, float | int | None]:
         quantiles = torch.quantile(self.weights, torch.tensor([0.0, 0.1, 0.5, 0.9, 1.0]))
+        observed_classes = torch.unique(self.class_ids, sorted=True)
         class_means = torch.stack(
-            [self.weights[self.class_ids == class_id].mean() for class_id in torch.unique(self.class_ids)]
+            [self.weights[self.class_ids == class_id].mean() for class_id in observed_classes]
+        )
+        protected_means = (
+            torch.empty(0, dtype=class_means.dtype)
+            if self.tail_protected_classes is None
+            else class_means[
+                self.tail_protected_classes.index_select(0, observed_classes)
+            ]
         )
         return {
             "epochs_updated": self.epochs_updated,
@@ -320,6 +391,17 @@ class ClasswiseHistoryWeighting:
             "class_mean_min": float(class_means.min()),
             "class_mean_max": float(class_means.max()),
             "magnitude_mix": self.magnitude_mix,
+            "tail_class_fraction": self.tail_class_fraction,
+            "tail_min_mean_weight": self.tail_min_mean_weight,
+            "tail_protected_class_count": (
+                0
+                if self.tail_protected_classes is None
+                else int(self.tail_protected_classes.sum())
+            ),
+            "tail_protected_mean_min": (
+                None if protected_means.numel() == 0 else float(protected_means.min())
+            ),
+            "min_effective_mass_per_class": self.min_effective_mass_per_class,
         }
 
     def effective_quality_profile(
@@ -363,6 +445,9 @@ class ClasswiseHistoryWeighting:
             "history_mix": self.history_mix,
             "magnitude_mix": self.magnitude_mix,
             "min_weight": self.min_weight,
+            "tail_class_fraction": self.tail_class_fraction,
+            "tail_min_mean_weight": self.tail_min_mean_weight,
+            "min_effective_mass_per_class": self.min_effective_mass_per_class,
             "epochs_updated": self.epochs_updated,
             "weights": self.weights.clone(),
             "ema_observed_probability": self.ema_observed_probability.clone(),
@@ -387,6 +472,13 @@ class ClasswiseHistoryWeighting:
             ("min_weight", self.min_weight),
         ):
             if float(state[name]) != expected:
+                raise ValueError(f"confidence checkpoint {name} mismatch")
+        for name, expected in (
+            ("tail_class_fraction", self.tail_class_fraction),
+            ("tail_min_mean_weight", self.tail_min_mean_weight),
+            ("min_effective_mass_per_class", self.min_effective_mass_per_class),
+        ):
+            if state.get(name) != expected:
                 raise ValueError(f"confidence checkpoint {name} mismatch")
         for name in (
             "weights",

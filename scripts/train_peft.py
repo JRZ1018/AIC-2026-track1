@@ -21,7 +21,7 @@ import torch
 import torch.nn.functional as F
 import yaml
 from torch import nn
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, WeightedRandomSampler
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
@@ -54,6 +54,10 @@ from aictrack1.methods.confidence import (
     ClasswiseHistoryWeighting,
     visual_prototype_soft_weights,
     weighted_cross_entropy,
+)
+from aictrack1.methods.long_tail_training import (
+    mild_class_balanced_sample_weights,
+    train_prior_logit_adjustment,
 )
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
 from aictrack1.models.heads import load_classifier_head_checkpoint
@@ -108,12 +112,27 @@ def _loader(
     shuffle: bool,
     seed: int,
     device: torch.device,
+    sample_weights: torch.Tensor | None = None,
 ) -> DataLoader:
+    generator = torch.Generator().manual_seed(seed)
+    sampler = None
+    if sample_weights is not None:
+        if not shuffle:
+            raise ValueError("sample weights are only valid for a shuffled training loader")
+        if sample_weights.ndim != 1 or sample_weights.numel() != len(dataset):
+            raise ValueError("sample weights must match the training dataset")
+        sampler = WeightedRandomSampler(
+            sample_weights,
+            num_samples=len(dataset),
+            replacement=True,
+            generator=generator,
+        )
     return DataLoader(
         dataset,
         batch_size=batch_size,
-        shuffle=shuffle,
-        generator=torch.Generator().manual_seed(seed),
+        shuffle=shuffle and sampler is None,
+        sampler=sampler,
+        generator=torch.Generator().manual_seed(seed + 1),
         num_workers=workers,
         pin_memory=device.type == "cuda",
         persistent_workers=workers > 0,
@@ -285,6 +304,21 @@ def main() -> int:
             history_mix=float(confidence_raw.get("history_mix", 0.5)),
             min_weight=float(confidence_raw.get("min_weight", 0.2)),
             magnitude_mix=float(confidence_raw.get("magnitude_mix", 0.0)),
+            tail_class_fraction=(
+                None
+                if confidence_raw.get("tail_class_fraction") is None
+                else float(confidence_raw["tail_class_fraction"])
+            ),
+            tail_min_mean_weight=(
+                None
+                if confidence_raw.get("tail_min_mean_weight") is None
+                else float(confidence_raw["tail_min_mean_weight"])
+            ),
+            min_effective_mass_per_class=(
+                None
+                if confidence_raw.get("min_effective_mass_per_class") is None
+                else float(confidence_raw["min_effective_mass_per_class"])
+            ),
         )
     visual_trust_lookup: torch.Tensor | None = None
     visual_trust_diagnostics: dict[str, float | int] | None = None
@@ -342,6 +376,36 @@ def main() -> int:
     )
     if bool((training_class_counts == 0).any()):
         raise ValueError("fixed training partition leaves one or more classes empty")
+    sampling_raw = training.get("sampling", {"mode": "natural"})
+    sampling_mode = str(sampling_raw.get("mode", "natural"))
+    if sampling_mode not in {"natural", "class_balanced"}:
+        raise ValueError(f"unsupported training sampling mode {sampling_mode!r}")
+    sampling_weights: torch.Tensor | None = None
+    sampling_diagnostics: dict[str, float | int | str] = {"mode": sampling_mode}
+    if sampling_mode == "class_balanced":
+        if confidence is not None or visual_trust_lookup is not None or label_smoothing > 0.0:
+            raise ValueError("class-balanced sampling is a separate ablation")
+        sampling_weights, balance_diagnostics = mild_class_balanced_sample_weights(
+            torch.tensor([int(record.internal_class_index) for record in train_records]),
+            num_classes=num_classes,
+            power=float(sampling_raw.get("class_balance_power", 0.5)),
+        )
+        sampling_diagnostics.update(balance_diagnostics)
+    logit_raw = raw.get("logit_adjustment", {"enabled": False})
+    logit_adjustment: torch.Tensor | None = None
+    logit_diagnostics: dict[str, float | int | str] | None = None
+    if bool(logit_raw.get("enabled", False)):
+        if (
+            confidence is not None
+            or visual_trust_lookup is not None
+            or label_smoothing > 0.0
+            or sampling_mode != "natural"
+        ):
+            raise ValueError("logit adjustment is a separate ablation")
+        logit_adjustment, logit_diagnostics = train_prior_logit_adjustment(
+            training_class_counts,
+            tau=float(logit_raw.get("tau", 0.5)),
+        )
     long_tail_stratification = stratify_classes(
         training_class_counts,
         head_fraction=0.2,
@@ -495,6 +559,7 @@ def main() -> int:
             shuffle=True,
             seed=seed + epoch,
             device=device,
+            sample_weights=sampling_weights,
         )
         train_started = time.perf_counter()
         loss_sum = 0.0
@@ -503,25 +568,31 @@ def main() -> int:
         epoch_sample_losses: list[torch.Tensor] = []
         epoch_observed_probabilities: list[torch.Tensor] = []
         epoch_predictions: list[torch.Tensor] = []
+        epoch_sampling_counts = torch.zeros(num_classes, dtype=torch.long)
         for batch in loader:
             images = batch["image"].to(device, non_blocking=True)
             labels = batch["label"].to(device, non_blocking=True)
             optimizer.zero_grad(set_to_none=True)
             with torch.autocast(device_type=device.type, dtype=torch.float16, enabled=device.type == "cuda"):
                 logits = model(images)
+                loss_logits = (
+                    logits
+                    if logit_adjustment is None
+                    else logits + logit_adjustment.to(device=device, dtype=logits.dtype)
+                )
                 if confidence_active:
                     batch_weights = confidence.weights_for(batch["sample_index"]).to(
                         device, non_blocking=True
                     )
-                    loss = weighted_cross_entropy(logits, labels, batch_weights)
+                    loss = weighted_cross_entropy(loss_logits, labels, batch_weights)
                 elif visual_trust_lookup is not None:
                     batch_weights = visual_trust_lookup.index_select(
                         0, batch["sample_index"].long()
                     ).to(device, non_blocking=True)
-                    loss = weighted_cross_entropy(logits, labels, batch_weights)
+                    loss = weighted_cross_entropy(loss_logits, labels, batch_weights)
                 else:
                     loss = F.cross_entropy(
-                        logits,
+                        loss_logits,
                         labels,
                         label_smoothing=label_smoothing,
                     )
@@ -537,6 +608,7 @@ def main() -> int:
             scaler.update()
             loss_sum += float(loss.detach()) * len(labels)
             count += len(labels)
+            epoch_sampling_counts += torch.bincount(labels.detach().cpu(), minlength=num_classes)
             if confidence is not None:
                 detached_logits = logits.detach().float()
                 probabilities = detached_logits.softmax(dim=1)
@@ -572,6 +644,14 @@ def main() -> int:
             "train_seconds": train_seconds,
             "train_samples_per_second": count / train_seconds,
             "learning_rates": [float(group["lr"]) for group in optimizer.param_groups],
+            "sampling": {
+                "mode": sampling_mode,
+                "sample_count": int(epoch_sampling_counts.sum()),
+                "class_count_min": int(epoch_sampling_counts.min()),
+                "class_count_median": float(epoch_sampling_counts.float().median()),
+                "class_count_max": int(epoch_sampling_counts.max()),
+                "zero_sample_class_count": int((epoch_sampling_counts == 0).sum()),
+            },
         }
         if training_scope == "fixed_split_validation":
             assert validation_dataset is not None
@@ -646,8 +726,26 @@ def main() -> int:
                         "top1": row["validation"]["all"]["top1"],
                         "macro_accuracy": long_tail["macro_accuracy"],
                         "tail_accuracy": long_tail["strata"]["tail"]["accuracy"],
+                        "zero_recall_class_count": long_tail["zero_recall_class_count"],
+                        "sampling_zero_class_count": row["sampling"][
+                            "zero_sample_class_count"
+                        ],
                         "effective_quality_decision": (
                             next_effective_quality["decision"]
+                            if next_effective_quality is not None
+                            else None
+                        ),
+                        "effective_quality_min_ratio": (
+                            next_effective_quality["summary"][
+                                "min_effective_to_raw_ratio"
+                            ]
+                            if next_effective_quality is not None
+                            else None
+                        ),
+                        "effective_quality_p10_ratio": (
+                            next_effective_quality["summary"][
+                                "p10_effective_to_raw_ratio"
+                            ]
                             if next_effective_quality is not None
                             else None
                         ),
@@ -728,6 +826,8 @@ def main() -> int:
         "visual_prototype_weighting": visual_trust_raw,
         "visual_prototype_diagnostics": visual_trust_diagnostics,
         "label_smoothing": label_smoothing,
+        "sampling": sampling_diagnostics,
+        "logit_adjustment": logit_diagnostics,
         "initial_validation": initial,
         "history": history,
         "best_top1": selected_top1,
