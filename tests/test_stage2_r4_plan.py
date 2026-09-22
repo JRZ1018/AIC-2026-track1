@@ -83,9 +83,9 @@ def test_r4_ac_protection_candidates_each_change_one_field_group() -> None:
     }
 
 
-def test_r4_ac_protection_candidates_stay_locked_until_ce_screens_finish() -> None:
+def test_r4_ac_protection_candidates_are_unlocked_after_ce_screens_finish() -> None:
     for name in (AC_REFERENCE, AC_TAIL_FLOOR, AC_MIN_MASS):
         candidate = _load(name)
-        assert candidate["execution_enabled"] is False
+        assert candidate["execution_enabled"] is (name != AC_REFERENCE)
         assert candidate["competition_stage"] == "stage2"
         validate_competition_stage_references("stage2", candidate, context=name)
