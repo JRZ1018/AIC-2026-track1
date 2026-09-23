@@ -5,6 +5,59 @@ from __future__ import annotations
 import torch
 
 
+def train_loss_class_weights(
+    class_ids: torch.Tensor,
+    *,
+    num_classes: int,
+    mode: str,
+    power: float = 0.5,
+    beta: float = 0.99,
+) -> tuple[torch.Tensor, dict[str, float | int | str]]:
+    """Build mean-effective-one class weights from the current train split.
+
+    The normalization keeps the average per-sample loss scale at one so this
+    experiment changes class contribution rather than silently changing the
+    optimizer's effective learning rate.
+    """
+
+    labels = class_ids.detach().long().cpu()
+    if labels.ndim != 1 or labels.numel() == 0:
+        raise ValueError("class_ids must be a non-empty 1D tensor")
+    if num_classes < 1 or int(labels.min()) < 0 or int(labels.max()) >= num_classes:
+        raise ValueError("class_ids exceed num_classes")
+    counts = torch.bincount(labels, minlength=num_classes)
+    if bool((counts == 0).any()):
+        raise ValueError("class-weighted loss requires every class in the train split")
+    if mode == "inverse_frequency":
+        if not 0.0 < power <= 1.0:
+            raise ValueError("class-weight power must be in (0, 1]")
+        weights = counts.float().pow(-float(power))
+    elif mode == "effective_number":
+        if not 0.0 < beta < 1.0:
+            raise ValueError("effective-number beta must be in (0, 1)")
+        weights = (1.0 - float(beta)) / (1.0 - torch.pow(float(beta), counts.float()))
+    else:
+        raise ValueError("class-weight mode must be inverse_frequency or effective_number")
+    sample_scale = weights.index_select(0, labels).mean()
+    weights = weights / sample_scale
+    diagnostics: dict[str, float | int | str] = {
+        "source": "current_stage_train_split_only",
+        "mode": mode,
+        "class_count": int(num_classes),
+        "sample_count": int(labels.numel()),
+        "class_support_min": int(counts.min()),
+        "class_support_max": int(counts.max()),
+        "class_weight_min": float(weights.min()),
+        "class_weight_max": float(weights.max()),
+        "effective_sample_weight_mean": float(weights.index_select(0, labels).mean()),
+    }
+    if mode == "inverse_frequency":
+        diagnostics["power"] = float(power)
+    else:
+        diagnostics["beta"] = float(beta)
+    return weights, diagnostics
+
+
 def mild_class_balanced_sample_weights(
     class_ids: torch.Tensor,
     *,

@@ -118,6 +118,106 @@ def test_rebuild_backfills_legacy_adds_run_and_is_idempotent(tmp_path: Path) -> 
     assert rebuilt == read_index(index)
 
 
+def test_rebuild_recovers_config_by_hash_and_indexes_best_history_metrics(
+    tmp_path: Path,
+) -> None:
+    index = tmp_path / "experiments" / "index.csv"
+    index.parent.mkdir(parents=True)
+    write_index(index, [])
+    result = _write_modern_run(tmp_path, "stage2-history-run")
+    local_config = result / "config.yaml"
+    config_text = local_config.read_text(encoding="utf-8")
+    config_hash = sha256_file(local_config)
+    config_root = tmp_path / "configs" / "experiment"
+    config_root.mkdir(parents=True)
+    source_config = config_root / "stage2_history.yaml"
+    source_config.write_text(config_text, encoding="utf-8")
+    local_config.unlink()
+    metrics_path = result / "metrics.json"
+    metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
+    metrics.update(
+        config_sha256=config_hash,
+        best_top1=0.7,
+        history=[
+            {
+                "epoch": 1,
+                "validation": {
+                    "all": {"top1": 0.6, "macro_accuracy": 0.55},
+                    "long_tail": {
+                        "strata": {
+                            "head": {"accuracy": 0.61},
+                            "mid": {"accuracy": 0.59},
+                            "tail": {"accuracy": 0.58},
+                        }
+                    },
+                },
+            },
+            {
+                "epoch": 2,
+                "validation": {
+                    "all": {"top1": 0.7, "macro_accuracy": 0.66},
+                    "long_tail": {
+                        "strata": {
+                            "head": {"accuracy": 0.69},
+                            "mid": {"accuracy": 0.68},
+                            "tail": {"accuracy": 0.67},
+                        }
+                    },
+                },
+            },
+        ],
+    )
+    metrics_path.write_text(json.dumps(metrics), encoding="utf-8")
+
+    rows, audit = rebuild_index(tmp_path, index)
+    assert audit.added_rows == 1
+    row = rows[0]
+    assert row["seed"] == "7"
+    assert row["top1"] == "0.7"
+    assert row["macro_accuracy"] == "0.66"
+    assert row["head_accuracy"] == "0.69"
+    assert row["mid_accuracy"] == "0.68"
+    assert row["tail_accuracy"] == "0.67"
+    assert "config recovered by SHA-256" in row["notes"]
+
+
+def test_rebuild_indexes_frozen_head_history_metrics(tmp_path: Path) -> None:
+    index = tmp_path / "experiments" / "index.csv"
+    index.parent.mkdir(parents=True)
+    write_index(index, [])
+    result = _write_modern_run(tmp_path, "head-history-run")
+    metrics_path = result / "metrics.json"
+    metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
+    metrics.update(
+        peft=None,
+        loss={"kind": "cross_entropy"},
+        best_top1=0.72,
+        history=[
+            {"epoch": 1, "top1": 0.65, "macro_accuracy": 0.64},
+            {"epoch": 2, "top1": 0.72, "macro_accuracy": 0.71},
+        ],
+    )
+    metrics_path.write_text(json.dumps(metrics), encoding="utf-8")
+
+    rows, _ = rebuild_index(tmp_path, index)
+    assert rows[0]["method"] == "frozen_head_cross_entropy"
+    assert rows[0]["top1"] == "0.72"
+    assert rows[0]["macro_accuracy"] == "0.71"
+
+
+def test_rebuild_recovers_seed_from_run_id_when_returned_config_is_missing(
+    tmp_path: Path,
+) -> None:
+    index = tmp_path / "experiments" / "index.csv"
+    index.parent.mkdir(parents=True)
+    write_index(index, [])
+    result = _write_modern_run(tmp_path, "stage2-return-seed20260923")
+    (result / "config.yaml").unlink()
+
+    rows, _ = rebuild_index(tmp_path, index)
+    assert rows[0]["seed"] == "20260923"
+
+
 def test_rebuild_repairs_machine_derived_checkpoint_columns(tmp_path: Path) -> None:
     index = tmp_path / "experiments" / "index.csv"
     index.parent.mkdir(parents=True)

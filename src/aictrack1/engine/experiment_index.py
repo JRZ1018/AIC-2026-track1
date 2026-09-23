@@ -112,13 +112,93 @@ def _load_config(path: Path) -> dict[str, Any]:
     return raw
 
 
+def _resolve_config(
+    root: Path,
+    result_dir: Path,
+    metrics: Mapping[str, Any],
+) -> tuple[dict[str, Any], str | None]:
+    """Load the run-local config or recover the exact source config by hash.
+
+    Some returned Stage2 runs contain a complete ``metrics.json`` but not the
+    copied ``config.yaml``.  The recorded config digest is sufficient to locate
+    an unchanged checked-in config without guessing from the run name.
+    """
+
+    local_path = result_dir / "config.yaml"
+    if local_path.is_file():
+        return _load_config(local_path), None
+    digest = metrics.get("config_sha256")
+    if not isinstance(digest, str) or _SHA256.fullmatch(digest) is None:
+        return {}, None
+    config_root = root / "configs" / "experiment"
+    if not config_root.is_dir():
+        return {}, None
+    matches = [
+        path
+        for path in sorted(config_root.glob("*.yaml"))
+        if sha256_file(path) == digest
+    ]
+    if len(matches) > 1:
+        raise ValueError(f"multiple experiment configs match config_sha256 {digest}")
+    if not matches:
+        return {}, None
+    return _load_config(matches[0]), matches[0].relative_to(root).as_posix()
+
+
+def _history_validation_metrics(metrics: Mapping[str, Any]) -> dict[str, Any]:
+    """Return metrics from the history row selected by validation Top-1."""
+
+    history = metrics.get("history")
+    if not isinstance(history, list):
+        return {}
+    candidates: list[tuple[float, Mapping[str, Any]]] = []
+    for row in history:
+        if not isinstance(row, Mapping):
+            continue
+        if row.get("top1") is not None:
+            candidates.append((float(row["top1"]), row))
+            continue
+        validation = row.get("validation")
+        if not isinstance(validation, Mapping):
+            continue
+        all_metrics = validation.get("all")
+        if isinstance(all_metrics, Mapping) and all_metrics.get("top1") is not None:
+            candidates.append((float(all_metrics["top1"]), row))
+    if not candidates:
+        return {}
+    _, selected = max(candidates, key=lambda item: item[0])
+    if selected.get("top1") is not None:
+        return {
+            "top1": selected.get("top1"),
+            "macro_accuracy": selected.get("macro_accuracy"),
+        }
+    validation = selected["validation"]
+    all_metrics = validation.get("all", {})
+    long_tail = validation.get("long_tail", {})
+    strata = long_tail.get("strata", {}) if isinstance(long_tail, Mapping) else {}
+    result = {
+        "top1": all_metrics.get("top1") if isinstance(all_metrics, Mapping) else None,
+        "macro_accuracy": (
+            all_metrics.get("macro_accuracy") if isinstance(all_metrics, Mapping) else None
+        ),
+    }
+    for name in ("head", "mid", "tail"):
+        stratum = strata.get(name, {}) if isinstance(strata, Mapping) else {}
+        result[f"{name}_accuracy"] = (
+            stratum.get("accuracy") if isinstance(stratum, Mapping) else None
+        )
+    return result
+
+
 def _method(metrics: Mapping[str, Any], config: Mapping[str, Any]) -> str:
     peft = metrics.get("peft", config.get("peft"))
     if isinstance(peft, Mapping) and peft.get("mode"):
         return f"peft_{peft['mode']}"
     loss = metrics.get("loss")
-    if isinstance(loss, Mapping) and loss.get("name"):
-        return f"frozen_head_{loss['name']}"
+    if isinstance(loss, Mapping):
+        loss_name = loss.get("kind") or loss.get("name")
+        if loss_name:
+            return f"frozen_head_{loss_name}"
     return "training_run"
 
 
@@ -131,12 +211,15 @@ def _stage(metrics: Mapping[str, Any], config: Mapping[str, Any]) -> str:
     return "preliminary"
 
 
-def _seed(config: Mapping[str, Any]) -> str:
+def _seed(config: Mapping[str, Any], run_id: str) -> str:
     training = config.get("training")
     if isinstance(training, Mapping) and training.get("seed") is not None:
         return str(training["seed"])
     if config.get("seed") is not None:
         return str(config["seed"])
+    match = re.search(r"(?:^|[-_])seed(\d+)(?:$|[-_])", run_id)
+    if match is not None:
+        return match.group(1)
     return ""
 
 
@@ -175,25 +258,30 @@ def row_from_result(root: Path, result_dir: Path) -> dict[str, str]:
     metrics_path = result_dir / "metrics.json"
     metrics = _read_json(metrics_path)
     config_path = result_dir / "config.yaml"
-    config = _load_config(config_path)
+    config, recovered_config = _resolve_config(root, result_dir, metrics)
     run_id = str(metrics.get("run_id") or config.get("run_id") or result_dir.name)
     if run_id != result_dir.name:
         raise ValueError(f"run_id/result directory mismatch: {run_id!r} != {result_dir.name!r}")
     env_hash = verified_environment_hash(metrics) or UNKNOWN_LEGACY
     notes = "Automatically indexed from metrics.json"
+    if recovered_config is not None:
+        notes = _append_note(notes, f"config recovered by SHA-256 from {recovered_config}")
     if env_hash == UNKNOWN_LEGACY:
         notes = _append_note(notes, _LEGACY_NOTE)
     config_hash = str(metrics.get("config_sha256") or "")
     if not config_hash and config_path.is_file():
         config_hash = sha256_file(config_path)
     relative = result_dir.relative_to(root).as_posix()
+    selected_metrics = _history_validation_metrics(metrics)
     top1 = metrics.get("best_top1")
+    if top1 is None:
+        top1 = selected_metrics.get("top1")
     return {
         "run_id": run_id,
         "stage": _stage(metrics, config),
         "method": _method(metrics, config),
         "upstream_candidates": "openai_clip",
-        "seed": _seed(config),
+        "seed": _seed(config, run_id),
         "data_hash": str(metrics.get("dataset_config_sha256") or ""),
         "split_hash": str(metrics.get("split_sha256") or ""),
         "config_hash": config_hash,
@@ -201,10 +289,10 @@ def row_from_result(root: Path, result_dir: Path) -> dict[str, str]:
         "git_commit": str(metrics.get("git_commit") or ""),
         "status": "completed",
         "top1": "" if top1 is None else str(top1),
-        "macro_accuracy": "",
-        "head_accuracy": "",
-        "mid_accuracy": "",
-        "tail_accuracy": "",
+        "macro_accuracy": _scalar(selected_metrics.get("macro_accuracy")),
+        "head_accuracy": _scalar(selected_metrics.get("head_accuracy")),
+        "mid_accuracy": _scalar(selected_metrics.get("mid_accuracy")),
+        "tail_accuracy": _scalar(selected_metrics.get("tail_accuracy")),
         "peak_vram_mib": _scalar(metrics.get("peak_vram_mib")),
         "duration_seconds": _scalar(metrics.get("duration_seconds")),
         "best_checkpoint_sha256": _checkpoint_hash(metrics),

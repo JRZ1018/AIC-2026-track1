@@ -88,6 +88,7 @@ class FrozenHeadTrainer:
         device: str | torch.device,
         num_classes: int,
         loss_config: FrozenLossConfig = FrozenLossConfig(),
+        class_weights: torch.Tensor | None = None,
         provenance: CheckpointProvenance | None = None,
     ) -> None:
         config.validate()
@@ -97,6 +98,17 @@ class FrozenHeadTrainer:
         self.device = torch.device(device)
         self.num_classes = num_classes
         self.loss_config = loss_config
+        if class_weights is not None:
+            weights = class_weights.detach().float().cpu()
+            if weights.shape != (num_classes,):
+                raise ValueError("class_weights must have shape [num_classes]")
+            if not torch.isfinite(weights).all() or bool((weights <= 0).any()):
+                raise ValueError("class_weights must be finite and strictly positive")
+            if loss_config.kind != "cross_entropy":
+                raise ValueError("class_weights currently require cross_entropy")
+            self.class_weights = weights.to(self.device)
+        else:
+            self.class_weights = None
         self.provenance = provenance
         if config.optimizer == "sgd":
             self.optimizer = torch.optim.SGD(
@@ -130,7 +142,7 @@ class FrozenHeadTrainer:
 
     def _loss(self, logits: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
         if self.loss_config.kind == "cross_entropy":
-            return F.cross_entropy(logits, targets)
+            return F.cross_entropy(logits, targets, weight=self.class_weights)
         if self.loss_config.kind == "gce":
             return generalized_cross_entropy(logits, targets, q=self.loss_config.gce_q)
         return logit_clip_cross_entropy(
@@ -231,6 +243,9 @@ class FrozenHeadTrainer:
         state: dict[str, Any] = {
             "config": asdict(self.config),
             "loss_config": asdict(self.loss_config),
+            "class_weights": (
+                None if self.class_weights is None else self.class_weights.detach().cpu().clone()
+            ),
             "epoch": self.epoch,
             "best_top1": self.best_top1,
             "model": copy.deepcopy(self.model.state_dict()),
@@ -265,6 +280,16 @@ class FrozenHeadTrainer:
         saved_loss = state.get("loss_config", asdict(FrozenLossConfig()))
         if saved_loss != asdict(self.loss_config):
             raise ValueError("checkpoint loss configuration mismatch")
+        saved_class_weights = state.get("class_weights")
+        expected_class_weights = (
+            None if self.class_weights is None else self.class_weights.detach().cpu()
+        )
+        if (saved_class_weights is None) != (expected_class_weights is None):
+            raise ValueError("checkpoint class-weight configuration mismatch")
+        if saved_class_weights is not None and not torch.equal(
+            saved_class_weights.detach().cpu(), expected_class_weights
+        ):
+            raise ValueError("checkpoint class weights mismatch")
         self.model.load_state_dict(state["model"])
         self.optimizer.load_state_dict(state["optimizer"])
         self.scheduler.load_state_dict(state["scheduler"])
