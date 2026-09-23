@@ -16,13 +16,13 @@ ITEMS = [
     QueueItem(
         "L1-lr125",
         "configs/experiment/stage2_d3_lr125_8ep_seed20260921.yaml",
-        "artifacts/experiments/20260923-stage3-lr125-8ep-seed20260921",
+        "artifacts/experiments/20260923-stage2-d3-lr125-8ep-seed20260921",
         "last-4 AC with only visual learning rate changed to 1.25e-6",
     ),
     QueueItem(
         "L2-lr225",
         "configs/experiment/stage2_d3_lr225_8ep_seed20260921.yaml",
-        "artifacts/experiments/20260923-stage3-lr225-8ep-seed20260921",
+        "artifacts/experiments/20260923-stage2-d3-lr225-8ep-seed20260921",
         "last-4 AC with only visual learning rate changed to 2.25e-6",
     ),
 ]
