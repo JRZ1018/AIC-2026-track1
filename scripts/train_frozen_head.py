@@ -103,6 +103,12 @@ def main() -> int:
     cache = load_feature_cache(cache_path)
     if cache.metadata.source != "train":
         raise ValueError("frozen-head training refuses test feature caches")
+    expected_peft_sha = raw.get("expected_peft_checkpoint_sha256")
+    if cache.metadata.peft_checkpoint_sha256 is not None:
+        if expected_peft_sha != cache.metadata.peft_checkpoint_sha256:
+            raise ValueError("PEFT feature cache checkpoint hash does not match the experiment config")
+    elif expected_peft_sha is not None:
+        raise ValueError("experiment expects PEFT features but the cache is from the original CLIP")
     if training_scope == "full_train_fixed_epochs":
         expected_value = raw.get(
             "expected_train_count",
