@@ -173,15 +173,22 @@ def _runtime_settings(raw: dict[str, Any]) -> dict[str, bool]:
     defer_epoch_metrics = runtime_raw.get("defer_epoch_metrics", False)
     if not isinstance(defer_epoch_metrics, bool):
         raise ValueError("runtime.defer_epoch_metrics must be a boolean")
-    return {"defer_epoch_metrics": defer_epoch_metrics}
+    reuse_validation_loader = runtime_raw.get("reuse_validation_loader", False)
+    if not isinstance(reuse_validation_loader, bool):
+        raise ValueError("runtime.reuse_validation_loader must be a boolean")
+    return {
+        "defer_epoch_metrics": defer_epoch_metrics,
+        "reuse_validation_loader": reuse_validation_loader,
+    }
 
 
 @torch.inference_mode()
 def _evaluate(
     model: PEFTImageClassifier,
     records: list[IndexedImage],
-    dataset: IndexedImageDataset,
+    dataset: IndexedImageDataset | None,
     *,
+    loader: DataLoader | None = None,
     batch_size: int,
     workers: int,
     prefetch_factor: int,
@@ -194,16 +201,20 @@ def _evaluate(
     model.eval()
     logits: list[torch.Tensor] = []
     targets: list[torch.Tensor] = []
-    for batch in _loader(
-        dataset,
-        batch_size=batch_size,
-        workers=workers,
-        prefetch_factor=prefetch_factor,
-        persistent_workers=persistent_workers,
-        shuffle=False,
-        seed=0,
-        device=device,
-    ):
+    if loader is None:
+        if dataset is None:
+            raise ValueError("evaluation requires either a dataset or a loader")
+        loader = _loader(
+            dataset,
+            batch_size=batch_size,
+            workers=workers,
+            prefetch_factor=prefetch_factor,
+            persistent_workers=persistent_workers,
+            shuffle=False,
+            seed=0,
+            device=device,
+        )
+    for batch in loader:
         images = batch["image"].to(device, non_blocking=True)
         with torch.autocast(device_type=device.type, dtype=torch.float16, enabled=device.type == "cuda"):
             logits.append(model(images).float().cpu())
@@ -270,6 +281,7 @@ def main() -> int:
     workers, prefetch_factor, persistent_workers = _data_loader_settings(training)
     runtime_settings = _runtime_settings(raw)
     defer_epoch_metrics = runtime_settings["defer_epoch_metrics"]
+    reuse_validation_loader = runtime_settings["reuse_validation_loader"]
     seed = int(training["seed"])
     label_smoothing = float(training.get("label_smoothing", 0.0))
     if epochs < 1 or batch_size < 1:
@@ -328,6 +340,18 @@ def main() -> int:
             allow_truncated_images=dataset_config.allow_truncated_images,
         )
     )
+    validation_loader: DataLoader | None = None
+    if validation_dataset is not None and reuse_validation_loader:
+        validation_loader = _loader(
+            validation_dataset,
+            batch_size=batch_size,
+            workers=workers,
+            prefetch_factor=prefetch_factor,
+            persistent_workers=persistent_workers,
+            shuffle=False,
+            seed=0,
+            device=device,
+        )
     confidence_raw = raw.get("confidence_weighting")
     visual_trust_raw = raw.get("visual_prototype_weighting")
     if confidence_raw is not None and visual_trust_raw is not None:
@@ -573,6 +597,7 @@ def main() -> int:
             model,
             validation_records,
             validation_dataset,
+            loader=validation_loader,
             batch_size=batch_size,
             workers=workers,
             prefetch_factor=prefetch_factor,
@@ -739,6 +764,7 @@ def main() -> int:
                 model,
                 validation_records,
                 validation_dataset,
+                loader=validation_loader,
                 batch_size=batch_size,
                 workers=workers,
                 prefetch_factor=prefetch_factor,
