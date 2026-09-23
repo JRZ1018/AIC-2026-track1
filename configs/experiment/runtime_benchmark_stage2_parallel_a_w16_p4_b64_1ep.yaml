@@ -1,6 +1,6 @@
 experiment:
   competition_stage: stage2
-  run_id: runtime-benchmark-stage2-parallel-a-w16-p4-b64-1ep
+  run_id: runtime-benchmark-stage2-parallel-a-w16-p4-b64-2ep
   execution_enabled: true
   training_scope: fixed_split_validation
   dataset_config: ../data/stage2.yaml
@@ -9,7 +9,7 @@ experiment:
   split: ../../artifacts/audits/stage2/train/split.csv
   label_conflicts: ../../artifacts/audits/stage2/train/label_conflicts.csv
   head_checkpoint: ../../artifacts/experiments/20260921-stage2-h1-linear-fixed-seed20260921/best.pt
-  output_dir: ../../artifacts/experiments/runtime-benchmark-stage2-parallel-a-w16-p4-b64-1ep
+  output_dir: ../../artifacts/experiments/runtime-benchmark-stage2-parallel-a-w16-p4-b64-2ep
   device: cuda
   expected_initial_top1: 0.6447187066078186
   initial_top1_tolerance: 0.002
@@ -25,7 +25,7 @@ experiment:
     magnitude_mix: 0.75
     stop_on_effective_quality_l2: true
   training:
-    epochs: 1
+    epochs: 2
     batch_size: 64
     workers: 16
     prefetch_factor: 4
