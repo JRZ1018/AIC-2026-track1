@@ -673,6 +673,11 @@ def main() -> int:
         for batch in loader:
             images = batch["image"].to(device, non_blocking=True)
             labels = batch["label"].to(device, non_blocking=True)
+            conflict_batch_weights = None
+            if conflict_weight_lookup is not None:
+                conflict_batch_weights = conflict_weight_lookup.index_select(
+                    0, batch["sample_index"].long().to(device, non_blocking=True)
+                )
             optimizer.zero_grad(set_to_none=True)
             with torch.autocast(device_type=device.type, dtype=torch.float16, enabled=device.type == "cuda"):
                 logits = model(images)
@@ -685,25 +690,18 @@ def main() -> int:
                     batch_weights = confidence.weights_for(batch["sample_index"]).to(
                         device, non_blocking=True
                     )
-                    if conflict_weight_lookup is not None:
-                        batch_weights = batch_weights * conflict_weight_lookup.index_select(
-                            0, batch["sample_index"].long()
-                        )
+                    if conflict_batch_weights is not None:
+                        batch_weights = batch_weights * conflict_batch_weights
                     loss = weighted_cross_entropy(loss_logits, labels, batch_weights)
                 elif visual_trust_lookup is not None:
                     batch_weights = visual_trust_lookup.index_select(
                         0, batch["sample_index"].long()
                     ).to(device, non_blocking=True)
-                    if conflict_weight_lookup is not None:
-                        batch_weights = batch_weights * conflict_weight_lookup.index_select(
-                            0, batch["sample_index"].long()
-                        )
+                    if conflict_batch_weights is not None:
+                        batch_weights = batch_weights * conflict_batch_weights
                     loss = weighted_cross_entropy(loss_logits, labels, batch_weights)
-                elif conflict_weight_lookup is not None:
-                    batch_weights = conflict_weight_lookup.index_select(
-                        0, batch["sample_index"].long()
-                    )
-                    loss = weighted_cross_entropy(loss_logits, labels, batch_weights)
+                elif conflict_batch_weights is not None:
+                    loss = weighted_cross_entropy(loss_logits, labels, conflict_batch_weights)
                 else:
                     loss = F.cross_entropy(
                         loss_logits,
