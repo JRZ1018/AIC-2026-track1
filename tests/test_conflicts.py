@@ -45,10 +45,10 @@ def test_conflict_group_lookup_normalizes_only_selected_partition(tmp_path) -> N
         ],
     )
     lookup, diagnostics = conflict_group_weight_lookup(
-        manifest, conflicts, split, partition="train"
+        manifest, conflicts, split, partition="train", minimum_size=4
     )
     assert torch.equal(lookup, torch.ones(4))
-    assert diagnostics["conflict_group_count"] == 1
+    assert diagnostics["conflict_group_count"] == 2
     assert diagnostics["multi_member_group_count"] == 0
 
     lookup_all, diagnostics_all = conflict_group_weight_lookup(
@@ -69,4 +69,3 @@ def test_conflict_group_lookup_rejects_bad_audit_schema(tmp_path) -> None:
     _write_csv(split, ["sample_id", "split"], [])
     with pytest.raises(ValueError, match="sha256"):
         conflict_group_weight_lookup(manifest, conflicts, split, partition="train")
-
