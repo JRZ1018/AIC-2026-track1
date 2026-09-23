@@ -157,6 +157,25 @@ def _data_loader_settings(training: dict[str, Any]) -> tuple[int, int, bool]:
     return workers, prefetch_factor, persistent_workers_raw
 
 
+def _runtime_settings(raw: dict[str, Any]) -> dict[str, bool]:
+    """Read opt-in runtime switches without changing algorithm defaults.
+
+    ``defer_epoch_metrics`` moves diagnostic reductions from every batch to a
+    single reduction at epoch end. It does not change logits, losses, gradients,
+    sampling, or checkpoint selection.
+    """
+
+    runtime_raw = raw.get("runtime", {})
+    if runtime_raw is None:
+        runtime_raw = {}
+    if not isinstance(runtime_raw, dict):
+        raise ValueError("runtime must be a mapping when provided")
+    defer_epoch_metrics = runtime_raw.get("defer_epoch_metrics", False)
+    if not isinstance(defer_epoch_metrics, bool):
+        raise ValueError("runtime.defer_epoch_metrics must be a boolean")
+    return {"defer_epoch_metrics": defer_epoch_metrics}
+
+
 @torch.inference_mode()
 def _evaluate(
     model: PEFTImageClassifier,
@@ -249,6 +268,8 @@ def main() -> int:
     epochs = int(training["epochs"])
     batch_size = int(training["batch_size"])
     workers, prefetch_factor, persistent_workers = _data_loader_settings(training)
+    runtime_settings = _runtime_settings(raw)
+    defer_epoch_metrics = runtime_settings["defer_epoch_metrics"]
     seed = int(training["seed"])
     label_smoothing = float(training.get("label_smoothing", 0.0))
     if epochs < 1 or batch_size < 1:
@@ -588,13 +609,21 @@ def main() -> int:
             sample_weights=sampling_weights,
         )
         train_started = time.perf_counter()
-        loss_sum = 0.0
+        loss_sum = (
+            torch.zeros((), dtype=torch.float64, device=device)
+            if defer_epoch_metrics
+            else 0.0
+        )
         count = 0
         epoch_sample_indices: list[torch.Tensor] = []
         epoch_sample_losses: list[torch.Tensor] = []
         epoch_observed_probabilities: list[torch.Tensor] = []
         epoch_predictions: list[torch.Tensor] = []
-        epoch_sampling_counts = torch.zeros(num_classes, dtype=torch.long)
+        epoch_sampling_counts = torch.zeros(
+            num_classes,
+            dtype=torch.long,
+            device=device if defer_epoch_metrics else torch.device("cpu"),
+        )
         for batch in loader:
             images = batch["image"].to(device, non_blocking=True)
             labels = batch["label"].to(device, non_blocking=True)
@@ -632,31 +661,56 @@ def main() -> int:
             )
             scaler.step(optimizer)
             scaler.update()
-            loss_sum += float(loss.detach()) * len(labels)
+            if defer_epoch_metrics:
+                loss_sum += loss.detach().to(dtype=torch.float64) * len(labels)
+            else:
+                loss_sum += float(loss.detach()) * len(labels)
             count += len(labels)
-            epoch_sampling_counts += torch.bincount(labels.detach().cpu(), minlength=num_classes)
+            if defer_epoch_metrics:
+                epoch_sampling_counts += torch.bincount(labels, minlength=num_classes)
+            else:
+                epoch_sampling_counts += torch.bincount(
+                    labels.detach().cpu(), minlength=num_classes
+                )
             if confidence is not None:
                 detached_logits = logits.detach().float()
                 probabilities = detached_logits.softmax(dim=1)
                 epoch_sample_indices.append(batch["sample_index"].detach().long().cpu())
-                epoch_sample_losses.append(
-                    F.cross_entropy(detached_logits, labels, reduction="none").cpu()
-                )
-                epoch_observed_probabilities.append(
-                    probabilities.gather(1, labels[:, None]).squeeze(1).cpu()
-                )
-                epoch_predictions.append(detached_logits.argmax(dim=1).cpu())
+                sample_losses = F.cross_entropy(detached_logits, labels, reduction="none")
+                observed_probabilities = probabilities.gather(
+                    1, labels[:, None]
+                ).squeeze(1)
+                predictions = detached_logits.argmax(dim=1)
+                if defer_epoch_metrics:
+                    epoch_sample_losses.append(sample_losses)
+                    epoch_observed_probabilities.append(observed_probabilities)
+                    epoch_predictions.append(predictions)
+                else:
+                    epoch_sample_losses.append(sample_losses.cpu())
+                    epoch_observed_probabilities.append(observed_probabilities.cpu())
+                    epoch_predictions.append(predictions.cpu())
         train_seconds = time.perf_counter() - train_started
+        if defer_epoch_metrics:
+            loss_sum_value = float(loss_sum.item())
+            epoch_sampling_counts = epoch_sampling_counts.cpu()
+        else:
+            loss_sum_value = float(loss_sum)
         next_confidence = None
         next_effective_quality = None
         if confidence is not None:
             completed_indices = torch.cat(epoch_sample_indices)
             completed_losses = torch.cat(epoch_sample_losses)
+            completed_observed_probabilities = torch.cat(epoch_observed_probabilities)
+            completed_predictions = torch.cat(epoch_predictions)
+            if defer_epoch_metrics:
+                completed_losses = completed_losses.cpu()
+                completed_observed_probabilities = completed_observed_probabilities.cpu()
+                completed_predictions = completed_predictions.cpu()
             next_confidence = confidence.update_epoch(
                 completed_indices,
                 completed_losses,
-                torch.cat(epoch_observed_probabilities),
-                torch.cat(epoch_predictions),
+                completed_observed_probabilities,
+                completed_predictions,
             )
             next_effective_quality = confidence.effective_quality_profile(
                 completed_indices,
@@ -666,7 +720,7 @@ def main() -> int:
         epoch += 1
         row = {
             "epoch": epoch,
-            "train_loss": loss_sum / count,
+            "train_loss": loss_sum_value / count,
             "train_seconds": train_seconds,
             "train_samples_per_second": count / train_seconds,
             "learning_rates": [float(group["lr"]) for group in optimizer.param_groups],
@@ -831,6 +885,7 @@ def main() -> int:
             "persistent_workers": persistent_workers if workers > 0 else False,
             "pin_memory": device.type == "cuda",
         },
+        "runtime": runtime_settings,
         "selection_rule": selection_rule,
     }
     if provenance is not None:
@@ -853,6 +908,7 @@ def main() -> int:
         ),
         "run_id": raw["run_id"],
         "training_scope": training_scope,
+        "runtime": runtime_settings,
         "data_loader": {
             "workers": workers,
             "prefetch_factor": prefetch_factor if workers > 0 else None,
