@@ -16,13 +16,13 @@ ITEMS = [
     QueueItem(
         "parallel-a",
         "configs/experiment/runtime_benchmark_stage2_parallel_a_w16_p4_b64_1ep.yaml",
-        "artifacts/experiments/runtime-benchmark-stage2-parallel-a-w16-p4-b64-1ep",
+        "artifacts/experiments/runtime-benchmark-stage2-parallel-a-w16-p4-b64-2ep",
         "controlled concurrency gate A",
     ),
     QueueItem(
         "parallel-b",
         "configs/experiment/runtime_benchmark_stage2_parallel_b_w16_p4_b64_1ep.yaml",
-        "artifacts/experiments/runtime-benchmark-stage2-parallel-b-w16-p4-b64-1ep",
+        "artifacts/experiments/runtime-benchmark-stage2-parallel-b-w16-p4-b64-2ep",
         "controlled concurrency gate B",
     ),
 ]
