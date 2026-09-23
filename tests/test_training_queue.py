@@ -18,6 +18,7 @@ from aictrack1.engine.training_queue import (
     probe_pid_exists,
     probe_running_trainers,
     read_training_lock,
+    run_parallel_queue,
     run_serial_queue,
 )
 
@@ -420,3 +421,75 @@ def test_all_historical_queue_entries_use_the_shared_guard() -> None:
         assert "Get-CimInstance" not in source
         assert "subprocess.run(" not in source
         assert "time.sleep(" not in source
+
+
+def test_parallel_queue_holds_one_lease_and_validates_independent_outputs(
+    tmp_path: Path,
+) -> None:
+    items = [
+        _item("A", "artifacts/experiments/run-a"),
+        _item("B", "artifacts/experiments/run-b"),
+    ]
+    launched: list[str] = []
+
+    class CompletedProcess:
+        def __init__(self, pid: int) -> None:
+            self.pid = pid
+
+        def wait(self) -> int:
+            return 0
+
+    def factory(command, root, _handle):
+        item = items[len(launched)]
+        launched.append(str(command[-1]))
+        _write_complete_output(root, item)
+        return CompletedProcess(900 + len(launched))
+
+    lock = tmp_path / "training.lock.json"
+    logs = tmp_path / "logs"
+    result = run_parallel_queue(
+        root=tmp_path,
+        python=Path("python"),
+        logs=logs,
+        queue_name="synthetic-parallel",
+        items=items,
+        max_concurrent_jobs=2,
+        process_probe=lambda: [],
+        process_factory=factory,
+        lock_path=lock,
+    )
+
+    assert result == 0
+    assert launched == [items[0].config, items[1].config]
+    assert not lock.exists()
+    state = json.loads((logs / "parallel_state.json").read_text(encoding="utf-8"))
+    assert state["status"] == "complete"
+    assert state["jobs"]["A"]["pid"] == 901
+    assert state["jobs"]["B"]["pid"] == 902
+    assert state["jobs"]["A"]["return_code"] == 0
+    assert state["jobs"]["B"]["output_status"] == "complete"
+
+
+def test_parallel_queue_rejects_partial_output_before_acquiring_lock(
+    tmp_path: Path,
+) -> None:
+    first = _item("A", "artifacts/experiments/run-a")
+    second = _item("B", "artifacts/experiments/run-b")
+    (tmp_path / second.output_dir).mkdir(parents=True)
+
+    result = run_parallel_queue(
+        root=tmp_path,
+        python=Path("python"),
+        logs=tmp_path / "logs",
+        queue_name="synthetic-parallel",
+        items=[first, second],
+        max_concurrent_jobs=2,
+        process_probe=lambda: [],
+        process_factory=lambda *_args: (_ for _ in ()).throw(
+            AssertionError("must not launch")
+        ),
+        lock_path=tmp_path / "training.lock.json",
+    )
+
+    assert result == 2
+    assert not (tmp_path / "training.lock.json").exists()

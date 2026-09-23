@@ -10,7 +10,7 @@ import uuid
 from dataclasses import asdict, dataclass
 from datetime import datetime
 from pathlib import Path
-from typing import Callable, IO, Sequence
+from typing import Any, Callable, IO, Sequence
 from zoneinfo import ZoneInfo
 
 
@@ -407,6 +407,7 @@ def inspect_run_output(root: Path, output_dir: str) -> RunOutputState:
 
 
 LaunchFunction = Callable[[Sequence[str], Path, IO[str], Callable[[int], None]], int]
+ProcessFactory = Callable[[Sequence[str], Path, IO[str]], Any]
 
 
 def launch_and_wait(
@@ -423,6 +424,202 @@ def launch_and_wait(
     )
     on_start(process.pid)
     return process.wait()
+
+
+def start_process(command: Sequence[str], cwd: Path, output: IO[str]) -> subprocess.Popen:
+    return subprocess.Popen(
+        list(command),
+        cwd=cwd,
+        stdout=output,
+        stderr=subprocess.STDOUT,
+    )
+
+
+def _write_parallel_state(path: Path, payload: dict[str, Any]) -> None:
+    temporary = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp")
+    temporary.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    os.replace(temporary, path)
+
+
+def run_parallel_queue(
+    *,
+    root: Path,
+    python: Path,
+    logs: Path,
+    queue_name: str,
+    items: Sequence[QueueItem],
+    max_concurrent_jobs: int,
+    process_probe: Callable[[], list[RunningTrainer]] = probe_running_trainers,
+    process_factory: ProcessFactory = start_process,
+    lock_path: Path | None = None,
+) -> int:
+    """Run one explicitly bounded batch under the repository-wide lease.
+
+    This is intentionally not a general scheduler.  Every item is preflighted
+    before the lease is acquired, all child PIDs and exit codes are written to
+    ``parallel_state.json``, and the lease is retained if child termination is
+    ambiguous.  The first PID is also attached to the shared lock; stale-lock
+    cleanup still probes the full system for every supported trainer.
+    """
+
+    if max_concurrent_jobs < 2:
+        raise ValueError("parallel mode requires max_concurrent_jobs >= 2")
+    if len(items) > max_concurrent_jobs:
+        raise ValueError("parallel batch exceeds max_concurrent_jobs")
+    if not items:
+        raise ValueError("parallel batch must contain at least one item")
+    tags = [item.tag for item in items]
+    if len(set(tags)) != len(tags):
+        raise ValueError("parallel item tags must be unique")
+    outputs = [item.output_dir for item in items]
+    if len(set(outputs)) != len(outputs):
+        raise ValueError("parallel item output directories must be unique")
+
+    logs.mkdir(parents=True, exist_ok=True)
+    effective_lock = lock_path or root / DEFAULT_LOCK_RELATIVE_PATH
+
+    def log(message: str) -> None:
+        stamp = time.strftime("%Y-%m-%d %H:%M:%S")
+        line = f"[{stamp}] {message}"
+        print(line, flush=True)
+        with (logs / "chain.log").open("a", encoding="utf-8") as handle:
+            handle.write(line + "\n")
+
+    log(f"{queue_name} parallel start; max_concurrent_jobs={max_concurrent_jobs}")
+    ready: list[QueueItem] = []
+    for item in items:
+        before = inspect_run_output(root, item.output_dir)
+        if before.status == "complete":
+            log(f"{item.tag}: already complete, skipping ({item.purpose})")
+            continue
+        if before.status != "ready":
+            log(
+                f"{item.tag}: HALT before launch: {before.reason}; "
+                "partial outputs require manual inspection or an explicit resume task"
+            )
+            return 2
+        ready.append(item)
+    if not ready:
+        log(f"{queue_name} finished; all outputs were already complete")
+        return 0
+
+    commands = {
+        item.tag: (str(python), "scripts/train_peft.py", "--config", item.config)
+        for item in ready
+    }
+    lease_command = (
+        str(python),
+        "parallel-training-controller",
+        queue_name,
+        *(item.config for item in ready),
+    )
+    try:
+        lease = TrainingLease.acquire(
+            effective_lock,
+            owner=queue_name,
+            config=" | ".join(item.config for item in ready),
+            output_dir=" | ".join(item.output_dir for item in ready),
+            command=lease_command,
+            process_probe=process_probe,
+        )
+    except TrainingGuardError as exc:
+        log(f"HALT before parallel launch: {exc}")
+        return 2
+
+    state_path = logs / "parallel_state.json"
+    state: dict[str, Any] = {
+        "schema": "aictrack1.parallel_training_queue.v1",
+        "queue_name": queue_name,
+        "max_concurrent_jobs": max_concurrent_jobs,
+        "started_at": _lock_timestamp(),
+        "status": "launching",
+        "jobs": {
+            item.tag: {
+                "config": item.config,
+                "output_dir": item.output_dir,
+                "log": str((logs / f"{item.tag}.log").relative_to(root)),
+                "pid": None,
+                "return_code": None,
+            }
+            for item in ready
+        },
+    }
+    _write_parallel_state(state_path, state)
+    processes: dict[str, Any] = {}
+    handles: dict[str, IO[str]] = {}
+    waits_confirmed = False
+    launch_error: Exception | None = None
+    release_error: Exception | None = None
+    started = time.time()
+    try:
+        for index, item in enumerate(ready):
+            handle = (logs / f"{item.tag}.log").open("w", encoding="utf-8")
+            handles[item.tag] = handle
+            process = process_factory(commands[item.tag], root, handle)
+            processes[item.tag] = process
+            if index == 0:
+                lease.attach_trainer(int(process.pid))
+            state["jobs"][item.tag]["pid"] = int(process.pid)
+            log(f"{item.tag}: started pid={process.pid} - {item.purpose}")
+            _write_parallel_state(state_path, state)
+        state["status"] = "running"
+        _write_parallel_state(state_path, state)
+        for item in ready:
+            return_code = int(processes[item.tag].wait())
+            state["jobs"][item.tag]["return_code"] = return_code
+            _write_parallel_state(state_path, state)
+        waits_confirmed = True
+    except Exception as exc:  # pragma: no cover - defensive process boundary
+        launch_error = exc
+    finally:
+        for handle in handles.values():
+            handle.close()
+        if waits_confirmed or not processes:
+            try:
+                lease.release()
+            except Exception as exc:
+                release_error = exc
+        else:
+            release_error = TrainingLockHeld(
+                "one or more parallel trainers were started but every exit was not confirmed; "
+                "lock retained"
+            )
+
+    elapsed = time.time() - started
+    if launch_error is not None or release_error is not None:
+        state["status"] = "ambiguous"
+        state["error"] = f"launch_error={launch_error!r}; release_error={release_error!r}"
+        _write_parallel_state(state_path, state)
+        log(
+            f"STOPPED after {elapsed / 60:.1f} min; {state['error']}; "
+            "manual inspection required"
+        )
+        return 1
+
+    failed = False
+    for item in ready:
+        return_code = state["jobs"][item.tag]["return_code"]
+        after = inspect_run_output(root, item.output_dir)
+        state["jobs"][item.tag]["output_status"] = after.status
+        state["jobs"][item.tag]["output_reason"] = after.reason
+        if return_code != 0 or after.status != "complete":
+            failed = True
+            log(
+                f"{item.tag}: failed return_code={return_code}; "
+                f"output status={after.status}: {after.reason}"
+            )
+        else:
+            log(f"{item.tag}: output validated")
+    state["status"] = "failed" if failed else "complete"
+    state["finished_at"] = _lock_timestamp()
+    state["elapsed_seconds"] = elapsed
+    _write_parallel_state(state_path, state)
+    log(f"{queue_name} finished in {elapsed / 60:.1f} min; status={state['status']}")
+    return 1 if failed else 0
 
 
 def run_serial_queue(
