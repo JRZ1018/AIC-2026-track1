@@ -37,6 +37,7 @@ from aictrack1.engine.environment_identity import (
     environment_hash,
 )
 from aictrack1.engine.provenance import CheckpointProvenance
+from aictrack1.methods.long_tail_training import train_loss_class_weights
 from aictrack1.models.heads import build_classifier_head
 
 STRESS_SCOPES = frozenset(
@@ -214,6 +215,22 @@ def main() -> int:
 
     training = FrozenHeadConfig(**raw["training"])
     loss_config = FrozenLossConfig(**raw.get("loss", {}))
+    class_weighting_raw = raw.get("class_weighting", {"enabled": False})
+    if not isinstance(class_weighting_raw, dict):
+        raise ValueError("class_weighting must be a mapping")
+    class_weighting_enabled = bool(class_weighting_raw.get("enabled", False))
+    if class_weighting_enabled:
+        class_weights, class_weighting_diagnostics = train_loss_class_weights(
+            train_labels,
+            num_classes=num_classes,
+            mode=str(class_weighting_raw.get("mode", "inverse_frequency")),
+            power=float(class_weighting_raw.get("power", 0.5)),
+            beta=float(class_weighting_raw.get("beta", 0.99)),
+        )
+        class_weighting_diagnostics["enabled"] = True
+    else:
+        class_weights = None
+        class_weighting_diagnostics = {"enabled": False, "mode": "none"}
     random.seed(training.seed)
     np.random.seed(training.seed)
     torch.manual_seed(training.seed)
@@ -236,6 +253,7 @@ def main() -> int:
         device=device,
         num_classes=num_classes,
         loss_config=loss_config,
+        class_weights=class_weights,
         provenance=provenance,
     )
     if args.resume is not None:
@@ -301,6 +319,7 @@ def main() -> int:
         "model": selected_state,
         "head": head_raw,
         "loss": loss_config.__dict__,
+        "class_weighting": class_weighting_diagnostics,
         "feature_cache_metadata": feature_metadata,
         "best_top1": selected_top1,
         "selection_rule": selection_rule,
@@ -345,6 +364,7 @@ def main() -> int:
         "selection_rule": selection_rule,
         "history": history,
         "loss": loss_config.__dict__,
+        "class_weighting": class_weighting_diagnostics,
         "best_top1": selected_top1,
         "duration_seconds": duration,
         "peak_vram_mib": (

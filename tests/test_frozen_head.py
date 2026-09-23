@@ -113,6 +113,42 @@ def test_resume_rejects_loss_configuration_mismatch(tmp_path) -> None:
         mismatched.load_checkpoint(checkpoint)
 
 
+def test_weighted_ce_training_and_resume_are_exact(tmp_path) -> None:
+    features, labels = _data()
+    weights = torch.tensor([0.5, 1.0, 2.0])
+    config = FrozenHeadConfig(epochs=2, batch_size=9, learning_rate=0.2, amp=False, seed=31)
+    torch.manual_seed(71)
+    trainer = FrozenHeadTrainer(
+        LinearClassifier(6, 3),
+        config,
+        device="cpu",
+        num_classes=3,
+        class_weights=weights,
+    )
+    trainer.train_epoch(features, labels)
+    checkpoint = tmp_path / "weighted.pt"
+    trainer.save_checkpoint(checkpoint)
+    torch.manual_seed(71)
+    resumed = FrozenHeadTrainer(
+        LinearClassifier(6, 3),
+        config,
+        device="cpu",
+        num_classes=3,
+        class_weights=weights,
+    )
+    resumed.load_checkpoint(checkpoint)
+    assert resumed.epoch == 1
+    with pytest.raises(ValueError, match="class weights mismatch"):
+        mismatched = FrozenHeadTrainer(
+            LinearClassifier(6, 3),
+            config,
+            device="cpu",
+            num_classes=3,
+            class_weights=torch.ones(3),
+        )
+        mismatched.load_checkpoint(checkpoint)
+
+
 def test_adam_constant_lr_and_disabled_gradient_clipping(monkeypatch) -> None:
     features, labels = _data()
     config = FrozenHeadConfig(
