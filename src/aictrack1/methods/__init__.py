@@ -9,6 +9,7 @@ from .confidence import (
 )
 from .gce import generalized_cross_entropy
 from .logit_clip import logit_clip, logit_clip_cross_entropy
+from .conflicts import conflict_group_weight_lookup
 
 __all__ = [
     "ELRLoss",
@@ -21,4 +22,5 @@ __all__ = [
     "generalized_cross_entropy",
     "logit_clip",
     "logit_clip_cross_entropy",
+    "conflict_group_weight_lookup",
 ]
