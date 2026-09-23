@@ -23,12 +23,20 @@ def test_data_loader_settings_validate_runtime_fields() -> None:
 
 
 def test_runtime_settings_default_to_legacy_path_and_validate_opt_in() -> None:
-    assert _runtime_settings({}) == {"defer_epoch_metrics": False}
-    assert _runtime_settings({"runtime": {"defer_epoch_metrics": True}}) == {
-        "defer_epoch_metrics": True
+    assert _runtime_settings({}) == {
+        "defer_epoch_metrics": False,
+        "reuse_validation_loader": False,
+    }
+    assert _runtime_settings(
+        {"runtime": {"defer_epoch_metrics": True, "reuse_validation_loader": True}}
+    ) == {
+        "defer_epoch_metrics": True,
+        "reuse_validation_loader": True,
     }
     with pytest.raises(ValueError, match="defer_epoch_metrics"):
         _runtime_settings({"runtime": {"defer_epoch_metrics": "true"}})
+    with pytest.raises(ValueError, match="reuse_validation_loader"):
+        _runtime_settings({"runtime": {"reuse_validation_loader": "true"}})
 
 
 def test_loader_applies_prefetch_only_with_worker_processes() -> None:
