@@ -35,6 +35,49 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def advancement_gate(
+    candidate: dict,
+    baseline: dict,
+    *,
+    max_top1_drop: float = 0.002,
+) -> dict:
+    """Apply the frozen Day-1 H1 gate using fixed-validation metrics."""
+
+    candidate_validation = candidate["validation"]
+    baseline_validation = baseline["validation"]
+    deltas = {
+        "top1": candidate_validation["top1"] - baseline_validation["top1"],
+        "macro_accuracy": (
+            candidate_validation["macro_accuracy"]
+            - baseline_validation["macro_accuracy"]
+        ),
+        "tail_accuracy": (
+            candidate_validation["strata"]["tail"]["accuracy"]
+            - baseline_validation["strata"]["tail"]["accuracy"]
+        ),
+        "zero_recall_class_count": (
+            candidate_validation["zero_recall_class_count"]
+            - baseline_validation["zero_recall_class_count"]
+        ),
+    }
+    checks = {
+        "top1_not_down_more_than_limit": deltas["top1"] >= -max_top1_drop,
+        "macro_improved": deltas["macro_accuracy"] > 0.0,
+        "tail_improved": deltas["tail_accuracy"] > 0.0,
+    }
+    return {
+        "advance": all(checks.values()),
+        "checks": checks,
+        "deltas": deltas,
+        "deltas_percentage_points": {
+            key: value * 100.0
+            for key, value in deltas.items()
+            if key != "zero_recall_class_count"
+        },
+        "max_allowed_top1_drop": max_top1_drop,
+    }
+
+
 @torch.inference_mode()
 def _predictions(model, features: torch.Tensor, *, device: torch.device, batch_size: int):
     model.eval()
@@ -48,6 +91,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--feature-cache", required=True, type=Path)
     parser.add_argument("--checkpoint", action="append", required=True, help="LABEL=PATH")
+    parser.add_argument("--baseline", help="checkpoint label used for advancement gates")
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--batch-size", type=int, default=4096)
@@ -116,8 +160,24 @@ def main() -> int:
                 stratification=strata,
             ),
         }
+    if args.baseline is not None and args.baseline not in reports:
+        raise ValueError("--baseline must name one of the checkpoint labels")
+    gates = {}
+    selected_candidate = None
+    if args.baseline is not None:
+        gates = {
+            label: advancement_gate(report, reports[args.baseline])
+            for label, report in reports.items()
+            if label != args.baseline
+        }
+        eligible = [label for label, gate in gates.items() if gate["advance"]]
+        if eligible:
+            selected_candidate = max(
+                eligible,
+                key=lambda label: reports[label]["validation"]["top1"],
+            )
     payload = {
-        "schema": "aictrack1.frozen_head_comparison.v1",
+        "schema": "aictrack1.frozen_head_comparison.v2",
         "scope": "Stage2 fixed validation only; test data not accessed",
         "git_commit": subprocess.run(
             ["git", "rev-parse", "HEAD"],
@@ -138,6 +198,14 @@ def main() -> int:
             "train_support_max": int(class_counts.max()),
         },
         "heads": reports,
+        "advancement": {
+            "baseline": args.baseline,
+            "gate": (
+                "macro and tail must improve; Top-1 may not drop by more than 0.2 percentage points"
+            ),
+            "candidates": gates,
+            "selected_candidate": selected_candidate,
+        },
     }
     args.output.resolve().parent.mkdir(parents=True, exist_ok=True)
     args.output.resolve().write_text(
