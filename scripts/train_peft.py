@@ -55,6 +55,7 @@ from aictrack1.methods.confidence import (
     visual_prototype_soft_weights,
     weighted_cross_entropy,
 )
+from aictrack1.methods.conflicts import conflict_group_weight_lookup
 from aictrack1.methods.long_tail_training import (
     mild_class_balanced_sample_weights,
     train_prior_logit_adjustment,
@@ -387,6 +388,26 @@ def main() -> int:
                 else float(confidence_raw["min_effective_mass_per_class"])
             ),
         )
+    conflict_raw = raw.get("conflict_loss", {"enabled": False})
+    if conflict_raw is None:
+        conflict_raw = {"enabled": False}
+    if not isinstance(conflict_raw, dict):
+        raise ValueError("conflict_loss must be a mapping when provided")
+    conflict_enabled = bool(conflict_raw.get("enabled", False))
+    conflict_mode = str(conflict_raw.get("mode", "group_normalized"))
+    if conflict_enabled and conflict_mode != "group_normalized":
+        raise ValueError("unsupported conflict_loss mode")
+    conflict_weight_lookup: torch.Tensor | None = None
+    conflict_diagnostics: dict[str, int | str] | None = None
+    if conflict_enabled:
+        conflict_weight_lookup, conflict_diagnostics = conflict_group_weight_lookup(
+            manifest_path,
+            conflicts_path,
+            split_path,
+            partition=("train" if training_scope == "fixed_split_validation" else None),
+            minimum_size=max(record.sample_index for record in train_records) + 1,
+        )
+        conflict_weight_lookup = conflict_weight_lookup.to(device=device)
     visual_trust_lookup: torch.Tensor | None = None
     visual_trust_diagnostics: dict[str, float | int] | None = None
     if visual_trust_raw is not None and bool(visual_trust_raw.get("enabled", True)):
@@ -664,11 +685,24 @@ def main() -> int:
                     batch_weights = confidence.weights_for(batch["sample_index"]).to(
                         device, non_blocking=True
                     )
+                    if conflict_weight_lookup is not None:
+                        batch_weights = batch_weights * conflict_weight_lookup.index_select(
+                            0, batch["sample_index"].long()
+                        )
                     loss = weighted_cross_entropy(loss_logits, labels, batch_weights)
                 elif visual_trust_lookup is not None:
                     batch_weights = visual_trust_lookup.index_select(
                         0, batch["sample_index"].long()
                     ).to(device, non_blocking=True)
+                    if conflict_weight_lookup is not None:
+                        batch_weights = batch_weights * conflict_weight_lookup.index_select(
+                            0, batch["sample_index"].long()
+                        )
+                    loss = weighted_cross_entropy(loss_logits, labels, batch_weights)
+                elif conflict_weight_lookup is not None:
+                    batch_weights = conflict_weight_lookup.index_select(
+                        0, batch["sample_index"].long()
+                    )
                     loss = weighted_cross_entropy(loss_logits, labels, batch_weights)
                 else:
                     loss = F.cross_entropy(
@@ -944,6 +978,8 @@ def main() -> int:
         "selection_rule": selection_rule,
         "peft": peft,
         "confidence_weighting": confidence_raw,
+        "conflict_loss": conflict_raw,
+        "conflict_diagnostics": conflict_diagnostics,
         "early_stop": early_stop,
         "visual_prototype_weighting": visual_trust_raw,
         "visual_prototype_diagnostics": visual_trust_diagnostics,
