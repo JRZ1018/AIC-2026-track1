@@ -20,6 +20,12 @@ def main() -> int:
     parser.add_argument("--config", required=True, type=Path)
     parser.add_argument("--manifest", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument(
+        "--group-order",
+        choices=("largest_first", "seeded_random"),
+        default="largest_first",
+        help="Keep historical default unless explicitly building a diagnostic fold",
+    )
     args = parser.parse_args()
     config = load_dataset_config(args.config)
     records = read_manifest(args.manifest)
@@ -32,6 +38,7 @@ def main() -> int:
         seed=config.split.seed,
         min_train_per_class=config.split.min_train_per_class,
         allowed_decode_statuses=frozenset(allowed_statuses),
+        group_order=args.group_order,
     )
     output = ensure_output_path_is_safe(config, args.output)
     digest = write_split(assignment, output)

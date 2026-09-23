@@ -33,6 +33,8 @@ class FeatureCacheMetadata:
     normalized: bool
     expected_record_count: int
     schema_version: int = SCHEMA_VERSION
+    peft_checkpoint_sha256: str | None = None
+    peft_config_sha256: str | None = None
 
 
 @dataclass(frozen=True)

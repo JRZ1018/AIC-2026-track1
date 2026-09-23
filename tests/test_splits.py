@@ -25,3 +25,19 @@ def test_split_is_deterministic_and_has_no_duplicate_leakage(synthetic_dataset: 
     assert list(first.values()).count("excluded_bad_file") == 2
     train_counts = Counter(record.official_class_id for record in records if first[record.sample_id] == "train")
     assert all(count >= 2 for count in train_counts.values())
+
+
+def test_seeded_random_group_order_is_deterministic_and_isolated(
+    synthetic_dataset: tuple[Path, Path],
+) -> None:
+    _, config_path = synthetic_dataset
+    config = load_dataset_config(config_path)
+    records, _, _ = audit_records(build_manifest(config, "train"), near_hamming=3, max_bucket_size=100)
+    kwargs = dict(validation_fraction=0.25, seed=20260924, min_train_per_class=2, group_order="seeded_random")
+    first = build_grouped_stratified_split(records, **kwargs)
+    assert first == build_grouped_stratified_split(list(reversed(records)), **kwargs)
+    groups: dict[str, set[str]] = defaultdict(set)
+    for record in records:
+        groups[leakage_group(record)].add(first[record.sample_id])
+    assert all(len(partitions) == 1 for partitions in groups.values())
+    assert "validation" in set(first.values())

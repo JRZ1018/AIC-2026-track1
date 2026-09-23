@@ -73,3 +73,25 @@ def test_feature_cache_refuses_metadata_or_order_mismatch(tmp_path) -> None:
     resumed = FeatureCacheWriter(root, _metadata(), resume=True)
     with pytest.raises(ValueError, match="record order mismatch"):
         resumed.verify_record_prefix(list(reversed(records)))
+
+
+def test_peft_feature_cache_binds_exact_checkpoint(tmp_path) -> None:
+    records = _records(tmp_path)
+    root = tmp_path / "peft-cache"
+    metadata = replace(
+        _metadata(count=2),
+        peft_checkpoint_sha256="1" * 64,
+        peft_config_sha256="2" * 64,
+    )
+    writer = FeatureCacheWriter(root, metadata)
+    features = torch.nn.functional.normalize(torch.ones(2, 3), dim=1).half()
+    writer.append(features, records[:2])
+    with pytest.raises(ValueError, match="metadata mismatch"):
+        FeatureCacheWriter(
+            root,
+            replace(metadata, peft_checkpoint_sha256="3" * 64),
+            resume=True,
+        )
+    writer.finalize()
+    loaded = load_feature_cache(root)
+    assert loaded.metadata.peft_checkpoint_sha256 == "1" * 64

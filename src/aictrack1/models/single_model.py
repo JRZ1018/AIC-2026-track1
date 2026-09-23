@@ -2,8 +2,8 @@
 
 The helper mirrors the final inference rules so a diagnostic forward pass uses
 exactly the same composition as the submission path: official OpenAI CLIP
-ViT-B/32 weights, one classifier head, one LoRA configuration, and LoRA folded
-before the forward pass.
+ViT-B/32 weights, one classifier head, and one visual PEFT configuration.
+LoRA is folded before the forward pass when that mode is selected.
 """
 
 from __future__ import annotations
@@ -26,7 +26,7 @@ from .clip_vit_b32 import load_clip_vit_b32
 from .heads import load_classifier_head_checkpoint
 from .peft import PEFTImageClassifier, configure_visual_peft, fold_visual_lora
 
-SUPPORTED_PEFT_MODES = frozenset({"lora_last_attention", "lora_last_n_attention"})
+SUPPORTED_PEFT_MODES = frozenset({"last_n_blocks", "lora_last_attention", "lora_last_n_attention"})
 
 
 @dataclass(frozen=True)
@@ -44,6 +44,7 @@ class DiagnosticModel:
     config_sha256: str
     checkpoint_sha256: str
     git_commit: str
+    lora_folded: bool
 
     def provenance(self) -> dict[str, object]:
         return {
@@ -54,7 +55,7 @@ class DiagnosticModel:
             "class_mapping_sha256": self.class_mapping_digest,
             "git_commit": self.git_commit,
             "device": str(self.device),
-            "lora_folded_for_single_model_inference": True,
+            "lora_folded_for_single_model_inference": self.lora_folded,
         }
 
 
@@ -130,7 +131,7 @@ def load_diagnostic_model(
     if checkpoint.get("mode") != peft.get("mode"):
         raise ValueError("checkpoint and experiment PEFT modes differ")
     if peft.get("mode") not in SUPPORTED_PEFT_MODES:
-        raise ValueError("diagnostics require the selected LoRA PEFT mode")
+        raise ValueError("diagnostics require a supported single-model PEFT mode")
     if checkpoint.get("class_mapping_sha256") != class_mapping_digest:
         raise ValueError("checkpoint and class mapping hashes differ")
     if int(num_classes) <= 0:
@@ -197,7 +198,9 @@ def load_diagnostic_model(
         parameter.requires_grad_(False)
     model = PEFTImageClassifier(visual, head, normalize_features=normalized).to(device)
     load_trainable_state_dict(model, checkpoint["trainable_state"])
-    fold_visual_lora(model.visual)
+    lora_folded = str(peft["mode"]).startswith("lora_")
+    if lora_folded:
+        fold_visual_lora(model.visual)
     model.eval()
     return DiagnosticModel(
         model=model,
@@ -211,6 +214,7 @@ def load_diagnostic_model(
         config_sha256=config_sha256,
         checkpoint_sha256=sha256_file(checkpoint_path),
         git_commit=git_commit,
+        lora_folded=lora_folded,
     )
 
 

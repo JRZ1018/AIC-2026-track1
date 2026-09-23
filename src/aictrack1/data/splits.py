@@ -6,6 +6,7 @@ import csv
 import hashlib
 from collections import Counter, defaultdict
 from pathlib import Path
+from typing import Literal
 
 from .manifest import SampleRecord, sha256_file
 
@@ -21,9 +22,12 @@ def build_grouped_stratified_split(
     seed: int,
     min_train_per_class: int,
     allowed_decode_statuses: frozenset[str] = frozenset({"ok"}),
+    group_order: Literal["largest_first", "seeded_random"] = "largest_first",
 ) -> dict[str, str]:
     if not 0 < validation_fraction < 1:
         raise ValueError("validation_fraction must be strictly between 0 and 1")
+    if group_order not in {"largest_first", "seeded_random"}:
+        raise ValueError(f"unknown group_order: {group_order}")
     labeled = [record for record in records if record.official_class_id]
     if len(labeled) != len(records):
         raise ValueError("only fully labeled training records can be split")
@@ -42,7 +46,8 @@ def build_grouped_stratified_split(
 
     def order_key(group_id: str) -> tuple[int, str]:
         digest = hashlib.sha256(f"{seed}\0{group_id}".encode("utf-8")).hexdigest()
-        return (-len(groups[group_id]), digest)
+        priority = -len(groups[group_id]) if group_order == "largest_first" else 0
+        return (priority, digest)
 
     val_counts: Counter[str] = Counter()
     assignment: dict[str, str] = {}
