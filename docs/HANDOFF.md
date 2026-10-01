@@ -1,5 +1,9 @@
 # AICtrack1 交接文档
 
+> **2026-10-01 18:03折2回传完成：**本轮best/完整last/metrics/config/command/两队列收据/四视图report与预测共11项均已回本机canonical并逐文件SHA验签；best及14轮完整last本机CPU weights_only=True再验通过。恢复路径`artifacts/experiments/20261001-stage2-p21-fold2-sce-ac-14ep-4090-matched/last.pt`，SHA `9bd65ddfa032e64bda0c95c9a550cf19e3a1e097b025c5d29c8f0264a4ea2564`。下段“回传进行中”已结束；当前唯一活动任务仍为折3配对，不重跑折2。
+
+> **2026-10-01 18:00 CST P21已晋级折3：**折2同源码14/14轮于17:34正常完成；完整last/best在远端SHA及CPU安全加载通过，固定384四视图29,737行对照Top1 **73.551468%**，20轮候选 **74.133235%**；20−14 **+0.581767pp**、近重复组CI95 **[+0.404908,+0.752928]pp**，macro/tail/ordinary均正，五项原门槛全部通过。报告`artifacts/reports/20261001-p21-fold2-20-vs14-matched-gate.json`，SHA `c630d2f8b54040d477eb5e1dac2c6f8a427e691bf1957b9a5ba819f95a6f9873`。新train-only根`/root/autodl-tmp/AICtrack1_p21_fold3_pair_20261001`经来源验签/配置一致性/21项队列回归后，于18:00启动唯一共享原子队列`20261001-p21-fold3-4090-14-vs20-matched`，父PID24968、trainer24986，先14轮再20轮，16 workers/batch64；硬5小时/新增≤6GiB，启动空闲30.75GiB。既有fold3 split/H1来源及冻结预算见docs176；约20%折间验证重叠，不称独立盲折。当前只监控此队列，不重复旧折2训练或诊断、不改活跃代码配置、不读test。完成后需新折3两个真实best SHA固定四视图及同五项门槛，通过才全量148,695张重新训练；尚未启动全量/新包。折211文件回传由私有helper `p21_control_remote_ops_20261001.py fetch`进行，只有逐文件SHA完成才认回传，`.p21-control-transfer-partial`禁止加载或当正式产物。
+
 > **2026-10-01 16:17 CST P21匹配14轮正在运行：**用户批准走完P21。为避免旧P21出包目录中的无标签test进入训练，新建独立train-only根`/root/autodl-tmp/AICtrack1_p21_fold2_control_20261001`，69项冻结源码/Stage2 train输入SHA逐项验签。唯一活动队列`20261001-p21-fold2-4090-14ep-matched`由原项目共享锁保护，trainer PID19841，14轮SCE+AC折2，16 workers；3小时硬截止/新增≤3GiB，启动前4090与磁盘资源充足。未读test、未启动折3/全量。完成后先验完整best/last并在全29,737行做固定384四视图配对，按docs173原五项门槛判定，失败立即止损；不要重启旧20轮队列或启动重叠GPU。准备好的诊断/审计及来源见`docs/175_P21同源码十四轮对照与后续门禁_20261001.md`。代码已推`main`至`c9ac933`。
 
 > **2026-10-01 P21 线上结果：**用户提交了刚生成的折2 20轮实验包并回报 **67.93344728127337**，低于 P7 **68.19784211088559**（−0.26439482961222pp，净少99张正确）。P7仍是已知最佳，P21不晋级；不依据该榜分调轮数或均衡参数，不再对test重推理。P21包的审计和“折2非全量、未跑匹配14轮”的限制见 `docs/174_P21折2二十轮实验性提交包与限制_20261001.md`。本批自动化应暂停，服务器GPU空闲、锁释放，不擅自释放实例。
