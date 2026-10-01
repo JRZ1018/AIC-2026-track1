@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 import argparse
+import atexit
 import hashlib
 import json
+import re
 import subprocess
 import sys
 import time
+from dataclasses import replace
 from pathlib import Path
 
 import torch
@@ -25,12 +28,23 @@ from aictrack1.data.contracts import (
 )
 from aictrack1.data.indexed_images import IndexedImageDataset, read_indexed_images
 from aictrack1.data.transforms import build_split_transforms
-from aictrack1.engine.peft import load_trainable_state_dict
+from aictrack1.engine.peft import (
+    configure_classifier_trainability_from_state,
+    load_trainable_state_dict,
+)
+from aictrack1.engine.training_queue import TrainingLease
 from aictrack1.engine.provenance import (
     CheckpointProvenance,
     validate_checkpoint_provenance,
 )
+from aictrack1.evaluation.four_view import (
+    PairedViewDataset,
+    fixed_four_view_logits,
+    resolve_four_view_resize,
+)
+from aictrack1.evaluation.balanced_prior import fit_uniform_soft_bias
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
+from aictrack1.models.clip_resolution import enable_interpolated_visual_resolution
 from aictrack1.models.heads import load_classifier_head_checkpoint
 from aictrack1.models.peft import (
     PEFTImageClassifier,
@@ -85,17 +99,102 @@ def _model_settings(path: Path) -> tuple[Path, str]:
     return _resolve(path.parent, str(raw["weight_path"])), str(raw["expected_weight_sha256"])
 
 
+def _validate_resolution_contract(experiment, dataset_config, checkpoint) -> int:
+    resolution = int(experiment.get("visual_input_resolution", 224))
+    if resolution != dataset_config.transforms.image_size:
+        raise ValueError("inference resolution differs from dataset transform contract")
+    if int(checkpoint.get("visual_input_resolution", 224)) != resolution:
+        raise ValueError("checkpoint and inference visual resolutions differ")
+    interpolation = experiment.get("position_interpolation")
+    if resolution in (320, 336):
+        if interpolation != "bicubic_7x7_to_10x10":
+            raise ValueError("336 inference requires the preregistered position interpolation")
+        if checkpoint.get("position_interpolation") != interpolation:
+            raise ValueError("checkpoint and inference position interpolation differ")
+    elif resolution != 224 or interpolation is not None:
+        raise ValueError("unsupported final inference resolution contract")
+    return resolution
+
+
+def _fixed_horizontal_flip_logits(model, images: torch.Tensor) -> torch.Tensor:
+    """The preregistered single-checkpoint two-view inference protocol."""
+
+    center_logits = model(images).float()
+    flipped_logits = model(torch.flip(images, dims=(-1,))).float()
+    return (center_logits + flipped_logits) / 2
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--experiment-config", required=True, type=Path)
     parser.add_argument("--checkpoint", required=True, type=Path)
+    parser.add_argument("--expected-checkpoint-sha256")
     parser.add_argument("--test-manifest", required=True, type=Path)
     parser.add_argument("--output-dir", required=True, type=Path)
+    parser.add_argument(
+        "--source-git-commit",
+        help="verified commit of the source workspace when the inference host has no Git metadata",
+    )
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument(
+        "--balanced-prior-uniform-soft",
+        action="store_true",
+        help="apply the frozen uniform soft-mass inference prior after all logits are collected",
+    )
+    parser.add_argument("--balanced-prior-temperature-multiplier", type=float)
+    parser.add_argument("--balanced-prior-bias-strength", type=float)
+    parser.add_argument("--balanced-prior-selection-report", type=Path)
+    parser.add_argument("--expected-balanced-prior-report-sha256")
+    view_protocol = parser.add_mutually_exclusive_group()
+    view_protocol.add_argument(
+        "--tta-horizontal-flip",
+        action="store_true",
+        help="fixed equal-logit average of native and horizontal-flip views from one checkpoint",
+    )
+    view_protocol.add_argument(
+        "--tta-four-view-scale384",
+        "--four-view-scale384",
+        dest="tta_four_view_scale384",
+        action="store_true",
+        help=(
+            "fixed equal-logit average of native336, its exact flip, "
+            "resize_short_side384/center_crop336 and its exact flip from one checkpoint"
+        ),
+    )
     args = parser.parse_args()
     if args.batch_size < 1 or args.workers < 0:
         raise ValueError("batch size must be positive and workers non-negative")
+    balanced_values = (
+        args.balanced_prior_temperature_multiplier,
+        args.balanced_prior_bias_strength,
+    )
+    balanced_report_values = (
+        args.balanced_prior_selection_report,
+        args.expected_balanced_prior_report_sha256,
+    )
+    if args.balanced_prior_uniform_soft:
+        if any(value is None or value <= 0 for value in balanced_values):
+            raise ValueError("balanced prior requires positive temperature and bias strength")
+        if any(value is None for value in balanced_report_values):
+            raise ValueError("balanced prior requires its frozen train-derived selection report")
+    elif any(value is not None for value in balanced_values):
+        raise ValueError("balanced prior values require --balanced-prior-uniform-soft")
+    elif any(value is not None for value in balanced_report_values):
+        raise ValueError("balanced prior report requires --balanced-prior-uniform-soft")
+    git_commit = (
+        args.source_git_commit.lower()
+        if args.source_git_commit is not None
+        else subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+    )
+    if re.fullmatch(r"[0-9a-f]{40}", git_commit) is None:
+        raise ValueError("source Git commit must be a 40-character SHA-1")
 
     config_path = args.experiment_config.resolve()
     config_document = yaml.safe_load(config_path.read_text(encoding="utf-8"))
@@ -123,8 +222,45 @@ def main() -> int:
     output = ensure_output_path_is_safe(dataset_config, args.output_dir)
     if output.exists() and any(output.iterdir()):
         raise FileExistsError(f"submission output directory is not empty: {output}")
+    lease = TrainingLease.acquire(
+        ROOT / "artifacts" / "queues" / "training.lock.json",
+        owner="stage2-final-single-checkpoint-inference",
+        config=str(config_path),
+        output_dir=str(output),
+        command=tuple(sys.argv),
+    )
+    atexit.register(lease.release)
 
-    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+    balanced_selection_metadata = None
+    if args.balanced_prior_uniform_soft:
+        selection_report = args.balanced_prior_selection_report.resolve()
+        selection_report_sha256 = _sha256(selection_report)
+        if selection_report_sha256 != args.expected_balanced_prior_report_sha256.lower():
+            raise ValueError("balanced-prior selection report SHA-256 mismatch")
+        selection = json.loads(selection_report.read_text(encoding="utf-8"))
+        expected_name = (
+            f"uniform_soft_t{args.balanced_prior_temperature_multiplier:g}_"
+            f"s{args.balanced_prior_bias_strength:g}"
+        )
+        if (
+            selection.get("scope")
+            != "Stage 2 train-derived balanced proxy only; no test access"
+            or selection.get("gate_passed") is not True
+            or selection.get("selected_candidate") != expected_name
+        ):
+            raise ValueError("balanced-prior parameters do not match the frozen train-derived gate")
+        balanced_selection_metadata = {
+            "report_sha256": selection_report_sha256,
+            "selected_candidate": expected_name,
+            "gate": selection["gate"],
+        }
+
+    checkpoint_sha256 = _sha256(checkpoint_path)
+    if args.tta_four_view_scale384 and not args.expected_checkpoint_sha256:
+        raise ValueError("four-view inference requires a frozen expected checkpoint SHA-256")
+    if args.expected_checkpoint_sha256 and checkpoint_sha256 != args.expected_checkpoint_sha256.lower():
+        raise ValueError("checkpoint SHA-256 differs from the frozen expected checkpoint")
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
     config_sha256 = _sha256(config_path)
     if checkpoint.get("config_sha256") not in _text_sha256_variants(config_path):
         raise ValueError(
@@ -135,6 +271,7 @@ def main() -> int:
         raise ValueError("checkpoint and experiment PEFT modes differ")
     if peft.get("mode") not in SUPPORTED_FINAL_PEFT_MODES:
         raise ValueError("unsupported final PEFT mode")
+    visual_resolution = _validate_resolution_contract(experiment, dataset_config, checkpoint)
 
     mapping = ClassMapping.from_csv(dataset_config.class_mapping)
     test_records = read_indexed_images(
@@ -186,6 +323,8 @@ def main() -> int:
         raise ValueError("checkpoint and official CLIP weight hashes differ")
     visual = clip_model.visual.float()
     del clip_model
+    if visual_resolution in (320, 336):
+        enable_interpolated_visual_resolution(visual, target_resolution=visual_resolution)
     configure_visual_peft(
         visual,
         str(peft["mode"]),
@@ -211,25 +350,43 @@ def main() -> int:
     checkpoint_normalized = checkpoint.get("normalize_features")
     if checkpoint_normalized is not None and checkpoint_normalized != normalized_features:
         raise ValueError("checkpoint and classifier head feature normalization differ")
-    for parameter in head.parameters():
-        parameter.requires_grad_(False)
+    configure_classifier_trainability_from_state(head, checkpoint["trainable_state"])
     model = PEFTImageClassifier(
         visual,
         head,
         normalize_features=normalized_features,
     ).to(device)
     load_trainable_state_dict(model, checkpoint["trainable_state"])
+    for parameter in model.parameters():
+        parameter.requires_grad_(False)
     lora_folded = str(peft["mode"]).startswith("lora_")
     if lora_folded:
         fold_visual_lora(model.visual)
     model.eval()
 
     transforms = build_split_transforms(dataset_config.transforms)
-    test_dataset = IndexedImageDataset(
-        test_records,
-        transforms["validation"],
-        allow_truncated_images=dataset_config.allow_truncated_images,
+    four_view_resize = resolve_four_view_resize(
+        visual_resolution, "scale384" if args.tta_four_view_scale384 else None
     )
+    if four_view_resize is None:
+        test_dataset = IndexedImageDataset(
+            test_records,
+            transforms["validation"],
+            allow_truncated_images=dataset_config.allow_truncated_images,
+        )
+    else:
+        # Test records are unlabeled, so no partition guard applies here.  Image
+        # loading still matches the two-view path exactly, which keeps the
+        # additional views the only difference from the frozen 61.67 protocol.
+        test_dataset = PairedViewDataset(
+            test_records,
+            transforms["validation"],
+            build_split_transforms(
+                replace(dataset_config.transforms, resize_size=four_view_resize)
+            )["validation"],
+            required_partition=None,
+            allow_truncated_images=dataset_config.allow_truncated_images,
+        )
     loader = DataLoader(
         test_dataset,
         batch_size=args.batch_size,
@@ -239,6 +396,7 @@ def main() -> int:
         persistent_workers=args.workers > 0,
     )
     predicted_indices: list[int] = []
+    fused_logits_chunks: list[torch.Tensor] = []
     started = time.perf_counter()
     with torch.inference_mode():
         for batch in loader:
@@ -248,19 +406,46 @@ def main() -> int:
                 dtype=torch.float16,
                 enabled=device.type == "cuda",
             ):
-                logits = model(images)
-            predicted_indices.extend(int(value) for value in logits.argmax(dim=1).cpu())
+                if four_view_resize is not None:
+                    scaled = batch["scaled_image"].to(device, non_blocking=True)
+                    logits = fixed_four_view_logits(model, images, scaled)[2]
+                elif args.tta_horizontal_flip:
+                    logits = _fixed_horizontal_flip_logits(model, images)
+                else:
+                    logits = model(images)
+            if args.balanced_prior_uniform_soft:
+                fused_logits_chunks.append(logits.detach().to(device="cpu", dtype=torch.float16))
+            else:
+                predicted_indices.extend(int(value) for value in logits.argmax(dim=1).cpu())
+    balanced_prior_metadata = None
+    if args.balanced_prior_uniform_soft:
+        fused_logits = torch.cat(fused_logits_chunks).to(device=device, dtype=torch.float32)
+        if fused_logits.shape != (len(filenames), len(mapping)):
+            raise RuntimeError("test logits have an unexpected shape")
+        bias, balanced_prior_fit = fit_uniform_soft_bias(
+            fused_logits,
+            temperature_multiplier=float(args.balanced_prior_temperature_multiplier),
+            iterations=60,
+        )
+        adjusted_logits = fused_logits + float(args.balanced_prior_bias_strength) * bias
+        predicted_indices = [int(value) for value in adjusted_logits.argmax(dim=1).cpu()]
+        counts = torch.bincount(
+            torch.tensor(predicted_indices), minlength=len(mapping)
+        )
+        balanced_prior_metadata = {
+            "schema": "aictrack1.uniform_soft_balanced_prior.v1",
+            "temperature_multiplier": float(args.balanced_prior_temperature_multiplier),
+            "bias_strength": float(args.balanced_prior_bias_strength),
+            "fit": balanced_prior_fit,
+            "prediction_count_min": int(counts.min().item()),
+            "prediction_count_median": float(counts.float().median().item()),
+            "prediction_count_max": int(counts.max().item()),
+            "selection_evidence": "Stage2 train-derived balanced proxy only",
+        }
     if len(predicted_indices) != len(filenames):
         raise RuntimeError("test inference output count does not match manifest")
     inference_seconds = time.perf_counter() - started
     predictions = dict(zip(filenames, predicted_indices, strict=True))
-    git_commit = subprocess.run(
-        ["git", "rev-parse", "HEAD"],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
     command = subprocess.list2cmdline(sys.argv)
     package = build_submission_package(
         predictions,
@@ -269,7 +454,7 @@ def main() -> int:
         output,
         run_metadata={
             "run_id": str(experiment["run_id"]),
-            "checkpoint_sha256": _sha256(checkpoint_path),
+            "checkpoint_sha256": checkpoint_sha256,
             "config_hash": config_sha256,
             "data_hash": _sha256(test_manifest),
             "git_commit": git_commit,
@@ -281,9 +466,31 @@ def main() -> int:
             "inference_seconds": inference_seconds,
             "device": str(device),
             "lora_folded_for_single_model_inference": lora_folded,
+            "visual_input_resolution": visual_resolution,
+            "position_interpolation": experiment.get("position_interpolation"),
+            "four_view_resize": four_view_resize,
+            "inference_view_protocol": (
+                "native_center_plus_exact_horizontal_flip_equal_mean_logits_single_checkpoint"
+                if args.tta_horizontal_flip
+                else (
+                    f"native{visual_resolution}_center_and_exact_flip_plus_resize_short_side"
+                    f"{four_view_resize}_center_crop{visual_resolution}_and_exact_flip_"
+                    "equal_four_logits_single_checkpoint"
+                    if four_view_resize is not None
+                    else "native_center_single_view"
+                )
+            ),
+            "balanced_prior": balanced_prior_metadata,
+            "balanced_prior_selection": balanced_selection_metadata,
+            "inference_source_sha256": _sha256(Path(__file__)),
+            "balanced_prior_source_sha256": _sha256(
+                ROOT / "src" / "aictrack1" / "evaluation" / "balanced_prior.py"
+            ),
         },
         spec=submission_spec,
     )
+    lease.release()
+    atexit.unregister(lease.release)
     print(
         json.dumps(
             {

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import math
+import copy
 from pathlib import Path
 from typing import Any
 
@@ -23,6 +24,22 @@ class LinearClassifier(nn.Module):
 
     def forward(self, features: torch.Tensor) -> torch.Tensor:
         return self.linear(features)
+
+
+def tau_normalize_linear_classifier(head: LinearClassifier, tau: float) -> LinearClassifier:
+    """Return a single-head post-hoc weight-norm calibration; keep bias fixed."""
+
+    if not isinstance(head, LinearClassifier):
+        raise TypeError("tau normalization requires a linear classifier")
+    if not math.isfinite(tau) or not 0.0 <= tau <= 1.0:
+        raise ValueError("tau must be finite and within [0, 1]")
+    calibrated = copy.deepcopy(head)
+    with torch.no_grad():
+        norms = calibrated.linear.weight.norm(p=2, dim=1, keepdim=True)
+        if bool((norms <= 0).any()):
+            raise ValueError("tau normalization requires nonzero class weight norms")
+        calibrated.linear.weight.div_(norms.pow(tau))
+    return calibrated
 
 
 class CosineClassifier(nn.Module):
@@ -52,6 +69,39 @@ class CosineClassifier(nn.Module):
         return scale * normalized_features @ normalized_weight.t()
 
 
+class ResidualMLPClassifier(nn.Module):
+    """Linear logits plus a zero-initialized nonlinear residual branch.
+
+    The zero initialization makes the architecture start as an ordinary linear
+    classifier while allowing train-only frozen-feature fitting to learn a
+    bounded-capacity nonlinear correction.
+    """
+
+    def __init__(
+        self,
+        feature_dim: int,
+        num_classes: int,
+        *,
+        hidden_dim: int = 256,
+        dropout: float = 0.1,
+    ) -> None:
+        super().__init__()
+        if hidden_dim < 1:
+            raise ValueError("residual hidden_dim must be positive")
+        if not 0.0 <= dropout < 1.0:
+            raise ValueError("residual dropout must be in [0, 1)")
+        self.linear = nn.Linear(feature_dim, num_classes)
+        self.norm = nn.LayerNorm(feature_dim)
+        self.down = nn.Linear(feature_dim, hidden_dim)
+        self.dropout = nn.Dropout(dropout)
+        self.up = nn.Linear(hidden_dim, num_classes, bias=False)
+        nn.init.zeros_(self.up.weight)
+
+    def forward(self, features: torch.Tensor) -> torch.Tensor:
+        residual = self.up(self.dropout(F.gelu(self.down(self.norm(features)))))
+        return self.linear(features) + residual
+
+
 class FrozenFeatureImageClassifier(nn.Module):
     """Apply a frozen-feature head to normalized CLIP image embeddings."""
 
@@ -72,6 +122,8 @@ def build_classifier_head(
     *,
     cosine_initial_scale: float = 10.0,
     cosine_learnable_scale: bool = True,
+    residual_hidden_dim: int = 256,
+    residual_dropout: float = 0.1,
 ) -> nn.Module:
     if kind == "linear":
         return LinearClassifier(feature_dim, num_classes)
@@ -81,6 +133,13 @@ def build_classifier_head(
             num_classes,
             initial_scale=cosine_initial_scale,
             learnable_scale=cosine_learnable_scale,
+        )
+    if kind == "residual_mlp":
+        return ResidualMLPClassifier(
+            feature_dim,
+            num_classes,
+            hidden_dim=residual_hidden_dim,
+            dropout=residual_dropout,
         )
     raise ValueError(f"unsupported classifier head {kind!r}")
 
@@ -98,7 +157,7 @@ def load_classifier_head_checkpoint(
 ) -> tuple[nn.Module, dict[str, Any]]:
     """Load a frozen-feature head only after its provenance matches the run."""
 
-    checkpoint = torch.load(Path(path), map_location="cpu", weights_only=False)
+    checkpoint = torch.load(Path(path), map_location="cpu", weights_only=True)
     if not isinstance(checkpoint, dict):
         raise ValueError("classifier head checkpoint must contain a mapping")
     head_config = checkpoint.get("head")
@@ -137,6 +196,8 @@ def load_classifier_head_checkpoint(
         num_classes,
         cosine_initial_scale=float(head_config.get("initial_scale", 10.0)),
         cosine_learnable_scale=bool(head_config.get("learnable_scale", True)),
+        residual_hidden_dim=int(head_config.get("hidden_dim", 256)),
+        residual_dropout=float(head_config.get("dropout", 0.1)),
     )
     try:
         head.load_state_dict(state, strict=True)

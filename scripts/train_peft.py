@@ -36,6 +36,7 @@ from aictrack1.data.feature_cache import load_feature_cache
 from aictrack1.data.indexed_images import IndexedImage, IndexedImageDataset, read_indexed_images
 from aictrack1.data.transforms import build_split_transforms
 from aictrack1.engine.peft import load_trainable_state_dict, trainable_state_dict
+from aictrack1.engine.ema import TrainableEMA, optimizer_step_completed
 from aictrack1.engine.environment_identity import (
     capture_environment_identity,
     environment_hash,
@@ -56,11 +57,19 @@ from aictrack1.methods.confidence import (
     weighted_cross_entropy,
 )
 from aictrack1.methods.conflicts import conflict_group_weight_lookup
+from aictrack1.methods.elr import ELRLoss, ELRState
+from aictrack1.methods.gce import generalized_cross_entropy
+from aictrack1.methods.nce_rce import (
+    normalized_cross_entropy_plus_reverse_cross_entropy,
+    validate_nce_rce_parameters,
+)
+from aictrack1.methods.sce import symmetric_cross_entropy, validate_sce_parameters
 from aictrack1.methods.long_tail_training import (
     mild_class_balanced_sample_weights,
     train_prior_logit_adjustment,
 )
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
+from aictrack1.models.clip_resolution import enable_interpolated_visual_resolution
 from aictrack1.models.heads import load_classifier_head_checkpoint
 from aictrack1.models.peft import PEFTImageClassifier, configure_visual_peft
 
@@ -76,6 +85,97 @@ def _sha256(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def _git_commit(root: Path) -> str:
+    """Return a verified commit or an explicit archive sentinel.
+
+    Compute-only hosts may receive a verified source archive without ``.git``.
+    In that case a valid ``AICTRACK1_GIT_COMMIT`` may identify the source
+    checkout. If neither is available, the archive is recorded as
+    ``unknown_archive``; the launch receipt must then carry the file-level
+    source hashes. A missing Git checkout is provenance metadata, not a reason
+    to fail after a fully completed training run.
+    """
+
+    try:
+        return subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+    except (FileNotFoundError, subprocess.CalledProcessError):
+        archived_commit = os.environ.get("AICTRACK1_GIT_COMMIT", "").strip().lower()
+        if len(archived_commit) != 40 or any(
+            character not in "0123456789abcdef" for character in archived_commit
+        ):
+            return "unknown_archive"
+        return archived_commit
+
+
+def _base_loss_per_sample(
+    logits: torch.Tensor,
+    targets: torch.Tensor,
+    *,
+    kind: str,
+    q: float,
+    label_smoothing: float,
+    sce_alpha: float = 0.1,
+    sce_beta: float = 1.0,
+    sce_log_zero: float = -4.0,
+    nce_alpha: float = 750.0,
+    nce_beta: float = 0.1,
+    nce_log_zero: float = -4.0,
+    elr_loss: ELRLoss | None = None,
+    sample_indices: torch.Tensor | None = None,
+) -> torch.Tensor:
+    """Return the configured base loss for each sample.
+
+    The AC/confidence update below intentionally keeps using detached CE losses;
+    this function only changes the gradient-bearing loss used for the optimizer.
+    """
+    if kind == "gce":
+        return generalized_cross_entropy(logits, targets, q=q, reduction="none")
+    if kind == "sce":
+        if label_smoothing != 0.0:
+            raise ValueError("SCE and label smoothing are separate ablations")
+        return symmetric_cross_entropy(
+            logits, targets, alpha=sce_alpha, beta=sce_beta,
+            log_zero=sce_log_zero, reduction="none",
+        )
+    if kind == "nce_rce":
+        return normalized_cross_entropy_plus_reverse_cross_entropy(
+            logits, targets, alpha=nce_alpha, beta=nce_beta,
+            log_zero=nce_log_zero, reduction="none",
+        )
+    if kind == "elr":
+        if elr_loss is None or sample_indices is None:
+            raise ValueError("ELR requires its stateful loss and sample indices")
+        return elr_loss(logits, targets, sample_indices, reduction="none")
+    if kind != "cross_entropy":
+        raise ValueError(f"unsupported base_loss kind {kind!r}")
+    return F.cross_entropy(
+        logits,
+        targets,
+        reduction="none",
+        label_smoothing=label_smoothing,
+    )
+
+
+def _weighted_base_loss(
+    per_sample_loss: torch.Tensor,
+    weights: torch.Tensor | None,
+) -> torch.Tensor:
+    if weights is None:
+        return per_sample_loss.mean()
+    normalized = weights.to(device=per_sample_loss.device, dtype=per_sample_loss.dtype)
+    if normalized.ndim != 1 or normalized.shape != per_sample_loss.shape:
+        raise ValueError("weights must match per-sample loss shape")
+    if not torch.isfinite(normalized).all() or bool((normalized <= 0).any()):
+        raise ValueError("weights must be finite and strictly positive")
+    return (per_sample_loss * normalized).sum() / normalized.sum()
 
 
 def _save_atomic(payload: object, path: Path) -> None:
@@ -274,6 +374,11 @@ def main() -> int:
     output.mkdir(parents=True, exist_ok=True)
 
     training = raw["training"]
+    ema_raw = raw.get("trainable_ema")
+    if ema_raw is not None and not isinstance(ema_raw, dict):
+        raise ValueError("trainable_ema must be a mapping")
+    ema_enabled = bool(ema_raw and ema_raw.get("enabled", False))
+    ema_decay = float(ema_raw.get("decay", 0.999)) if ema_enabled else None
     training_scope = str(raw.get("training_scope", "fixed_split_validation"))
     if training_scope not in {"fixed_split_validation", "full_train_fixed_epochs"}:
         raise ValueError(f"unsupported PEFT training scope {training_scope!r}")
@@ -285,10 +390,45 @@ def main() -> int:
     reuse_validation_loader = runtime_settings["reuse_validation_loader"]
     seed = int(training["seed"])
     label_smoothing = float(training.get("label_smoothing", 0.0))
+    base_loss_raw = raw.get("base_loss", {"kind": "cross_entropy"})
+    if base_loss_raw is None:
+        base_loss_raw = {"kind": "cross_entropy"}
+    if not isinstance(base_loss_raw, dict):
+        raise ValueError("base_loss must be a mapping when provided")
+    base_loss_kind = str(base_loss_raw.get("kind", "cross_entropy"))
+    if base_loss_kind not in {"cross_entropy", "gce", "sce", "nce_rce", "elr"}:
+        raise ValueError(f"unsupported base_loss kind {base_loss_kind!r}")
+    base_loss_q = float(base_loss_raw.get("q", 0.7))
+    if base_loss_kind == "gce" and not 0.0 < base_loss_q <= 1.0:
+        raise ValueError("GCE q must be in (0, 1]")
+    sce_alpha = float(base_loss_raw.get("alpha", 0.1))
+    sce_beta = float(base_loss_raw.get("beta", 1.0))
+    sce_log_zero = float(base_loss_raw.get("log_zero", -4.0))
+    if base_loss_kind == "sce":
+        validate_sce_parameters(sce_alpha, sce_beta, sce_log_zero)
+    nce_alpha = float(base_loss_raw.get("alpha", 750.0))
+    nce_beta = float(base_loss_raw.get("beta", 0.1))
+    nce_log_zero = float(base_loss_raw.get("log_zero", -4.0))
+    if base_loss_kind == "nce_rce":
+        validate_nce_rce_parameters(nce_alpha, nce_beta, nce_log_zero)
+    elr_beta = float(base_loss_raw.get("beta", 0.7))
+    elr_lambda = float(base_loss_raw.get("lambda", 3.0))
+    elr_eps = float(base_loss_raw.get("eps", 1e-6))
+    if base_loss_kind == "elr":
+        if not 0.0 <= elr_beta < 1.0 or elr_lambda < 0.0 or not 0.0 < elr_eps < 0.5:
+            raise ValueError("invalid ELR beta, lambda or eps")
     if epochs < 1 or batch_size < 1:
         raise ValueError("invalid epoch or batch-size configuration")
     if not 0.0 <= label_smoothing < 1.0:
         raise ValueError("label_smoothing must be in [0, 1)")
+    if base_loss_kind == "gce" and label_smoothing > 0.0:
+        raise ValueError("GCE and label smoothing are separate ablations")
+    if base_loss_kind == "sce" and label_smoothing > 0.0:
+        raise ValueError("SCE and label smoothing are separate ablations")
+    if base_loss_kind == "nce_rce" and label_smoothing > 0.0:
+        raise ValueError("NCE+RCE and label smoothing are separate ablations")
+    if base_loss_kind == "elr" and label_smoothing > 0.0:
+        raise ValueError("ELR and label smoothing are separate ablations")
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -455,6 +595,16 @@ def main() -> int:
         ] = visual_weights
     mapping = ClassMapping.from_csv(dataset_config.class_mapping)
     num_classes = len(mapping)
+    elr_loss: ELRLoss | None = None
+    if base_loss_kind == "elr":
+        elr_state = ELRState(
+            num_samples=max(record.sample_index for record in train_records) + 1,
+            num_classes=num_classes,
+            dtype=torch.float32,
+            device="cpu",
+            max_bytes=512 * 1024 * 1024,
+        )
+        elr_loss = ELRLoss(elr_state, beta=elr_beta, lambda_=elr_lambda, eps=elr_eps)
     training_class_counts = torch.bincount(
         torch.tensor(
             [int(record.internal_class_index) for record in train_records],
@@ -522,6 +672,15 @@ def main() -> int:
     )
     visual = clip_model.visual.float()
     del clip_model
+    visual_input_resolution = int(raw.get("visual_input_resolution", 224))
+    if visual_input_resolution != dataset_config.transforms.image_size:
+        raise ValueError("visual input resolution must match the dataset transform contract")
+    if visual_input_resolution in (320, 336):
+        if raw.get("position_interpolation") != "bicubic_7x7_to_10x10":
+            raise ValueError("320/336 visual input requires the frozen bicubic position interpolation")
+        enable_interpolated_visual_resolution(visual, target_resolution=visual_input_resolution)
+    elif visual_input_resolution != 224:
+        raise ValueError("only official 224 or preregistered 320/336 visual input is supported")
     peft = raw["peft"]
     summary = configure_visual_peft(
         visual,
@@ -569,6 +728,7 @@ def main() -> int:
     optimizer = torch.optim.AdamW(parameter_groups, weight_decay=float(training["weight_decay"]))
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
     scaler = torch.amp.GradScaler("cuda", enabled=device.type == "cuda")
+    trainable_ema = TrainableEMA(model, decay=ema_decay) if ema_enabled else None
     conflict_ids = (
         set()
         if training_scope == "full_train_fixed_epochs"
@@ -579,10 +739,12 @@ def main() -> int:
     history: list[dict[str, Any]] = []
     best_top1 = float("-inf")
     best_state: dict[str, torch.Tensor] | None = None
+    raw_best_top1 = float("-inf")
+    raw_best_state: dict[str, torch.Tensor] | None = None
     initial: dict[str, Any] | None = None
 
     if args.resume is not None:
-        state = torch.load(args.resume.resolve(), map_location="cpu", weights_only=False)
+        state = torch.load(args.resume.resolve(), map_location="cpu", weights_only=bool((raw.get("runtime") or {}).get("safe_numpy_rng_checkpoint", False)))
         if provenance is not None:
             validate_checkpoint_provenance(
                 state,
@@ -599,6 +761,14 @@ def main() -> int:
         history = state["history"]
         best_top1 = float(state["best_top1"])
         best_state = state["best_state"]
+        if trainable_ema is not None:
+            if "trainable_ema" not in state:
+                raise ValueError("EMA resume checkpoint is missing EMA state")
+            trainable_ema.load_state_dict(state["trainable_ema"])
+            raw_best_top1 = float(state["raw_best_top1"])
+            raw_best_state = state["raw_best_state"]
+        elif "trainable_ema" in state:
+            raise ValueError("non-EMA run cannot resume an EMA checkpoint")
         initial = state.get("initial_validation")
         random.setstate(state["python_rng_state"])
         np.random.set_state(state["numpy_rng_state"])
@@ -611,6 +781,12 @@ def main() -> int:
             confidence.load_state_dict(state["confidence_weighting"])
         elif "confidence_weighting" in state:
             raise ValueError("non-M1 run cannot resume an M1 confidence checkpoint")
+        if elr_loss is not None:
+            if "elr_state" not in state:
+                raise ValueError("ELR resume checkpoint is missing ELR state")
+            elr_loss.state.load_state_dict(state["elr_state"])
+        elif "elr_state" in state:
+            raise ValueError("non-ELR run cannot resume an ELR checkpoint")
 
     if epoch == 0 and training_scope == "fixed_split_validation":
         assert validation_dataset is not None
@@ -661,6 +837,9 @@ def main() -> int:
             else 0.0
         )
         count = 0
+        record_gradient_diagnostics = bool((raw.get("runtime") or {}).get("record_gradient_diagnostics", False))
+        gradient_norms: list[torch.Tensor] = []
+        diagnostic_initial_scale = scaler.get_scale() if record_gradient_diagnostics else None
         epoch_sample_indices: list[torch.Tensor] = []
         epoch_sample_losses: list[torch.Tensor] = []
         epoch_observed_probabilities: list[torch.Tensor] = []
@@ -686,38 +865,56 @@ def main() -> int:
                     if logit_adjustment is None
                     else logits + logit_adjustment.to(device=device, dtype=logits.dtype)
                 )
+                per_sample_loss = _base_loss_per_sample(
+                    loss_logits,
+                    labels,
+                    kind=base_loss_kind,
+                    q=base_loss_q,
+                    label_smoothing=label_smoothing,
+                    sce_alpha=sce_alpha,
+                    sce_beta=sce_beta,
+                    sce_log_zero=sce_log_zero,
+                    nce_alpha=nce_alpha,
+                    nce_beta=nce_beta,
+                    nce_log_zero=nce_log_zero,
+                    elr_loss=elr_loss,
+                    sample_indices=batch["sample_index"],
+                )
+                batch_weights: torch.Tensor | None = None
                 if confidence_active:
                     batch_weights = confidence.weights_for(batch["sample_index"]).to(
                         device, non_blocking=True
                     )
                     if conflict_batch_weights is not None:
                         batch_weights = batch_weights * conflict_batch_weights
-                    loss = weighted_cross_entropy(loss_logits, labels, batch_weights)
                 elif visual_trust_lookup is not None:
                     batch_weights = visual_trust_lookup.index_select(
                         0, batch["sample_index"].long()
                     ).to(device, non_blocking=True)
                     if conflict_batch_weights is not None:
                         batch_weights = batch_weights * conflict_batch_weights
-                    loss = weighted_cross_entropy(loss_logits, labels, batch_weights)
                 elif conflict_batch_weights is not None:
-                    loss = weighted_cross_entropy(loss_logits, labels, conflict_batch_weights)
-                else:
-                    loss = F.cross_entropy(
-                        loss_logits,
-                        labels,
-                        label_smoothing=label_smoothing,
-                    )
+                    batch_weights = conflict_batch_weights
+                loss = _weighted_base_loss(per_sample_loss, batch_weights)
             if not torch.isfinite(loss):
                 raise FloatingPointError("PEFT training produced a non-finite loss")
             scaler.scale(loss).backward()
             scaler.unscale_(optimizer)
-            nn.utils.clip_grad_norm_(
+            gradient_norm = nn.utils.clip_grad_norm_(
                 [*visual_parameters, *head_parameters],
                 float(training["gradient_clip_norm"]),
             )
+            if record_gradient_diagnostics:
+                gradient_norms.append(gradient_norm.detach())
+            previous_scale = scaler.get_scale() if trainable_ema is not None else None
             scaler.step(optimizer)
             scaler.update()
+            if trainable_ema is not None and optimizer_step_completed(
+                scaler_enabled=scaler.is_enabled(),
+                before=previous_scale,
+                after=scaler.get_scale(),
+            ):
+                trainable_ema.update()
             if defer_epoch_metrics:
                 loss_sum += loss.detach().to(dtype=torch.float64) * len(labels)
             else:
@@ -792,6 +989,21 @@ def main() -> int:
         }
         if training_scope == "fixed_split_validation":
             assert validation_dataset is not None
+            if record_gradient_diagnostics:
+                norms = torch.stack(gradient_norms).float()
+                finite_norms = norms[torch.isfinite(norms)]
+                row["gradient_diagnostics"] = {
+                    "pre_clip_finite_norm_mean": float(finite_norms.mean().item()) if len(finite_norms) else None,
+                    "pre_clip_finite_norm_max": float(finite_norms.max().item()) if len(finite_norms) else None,
+                    "finite_norm_clip_fraction": float((finite_norms > float(training["gradient_clip_norm"])).float().mean().item()) if len(finite_norms) else None,
+                    "all_finite": bool(torch.isfinite(norms).all().item()),
+                    "nonfinite_norm_count": int((~torch.isfinite(norms)).sum().item()),
+                    "initial_scaler_scale": diagnostic_initial_scale,
+                    "final_scaler_scale": scaler.get_scale(),
+                    "note": "raw nonfinite gradients may be normal AMP overflow; scaler skips such optimizer steps; inspect separately",
+                    "batch_count": len(gradient_norms),
+                    "diagnostic_only": True,
+                }
             validation = _evaluate(
                 model,
                 validation_records,
@@ -807,6 +1019,22 @@ def main() -> int:
                 stratification=long_tail_stratification,
             )
             row["validation"] = validation
+            if trainable_ema is not None:
+                with trainable_ema.applied():
+                    row["ema_validation"] = _evaluate(
+                        model,
+                        validation_records,
+                        validation_dataset,
+                        loader=validation_loader,
+                        batch_size=batch_size,
+                        workers=workers,
+                        prefetch_factor=prefetch_factor,
+                        persistent_workers=persistent_workers,
+                        device=device,
+                        num_classes=num_classes,
+                        conflict_ids=conflict_ids,
+                        stratification=long_tail_stratification,
+                    )
         if confidence is not None:
             row["confidence_weighting"] = {
                 "active": confidence_active,
@@ -827,12 +1055,24 @@ def main() -> int:
                 row["early_stop"] = early_stop
         history.append(row)
         if training_scope == "fixed_split_validation":
-            top1 = float(row["validation"]["all"]["top1"])
+            if trainable_ema is not None:
+                raw_top1 = float(row["validation"]["all"]["top1"])
+                if raw_top1 > raw_best_top1:
+                    raw_best_top1 = raw_top1
+                    raw_best_state = copy.deepcopy(trainable_state_dict(model))
+            selection_validation = row.get("ema_validation", row["validation"])
+            top1 = float(selection_validation["all"]["top1"])
             if top1 > best_top1:
                 best_top1 = top1
-                best_state = copy.deepcopy(trainable_state_dict(model))
+                best_state = (
+                    trainable_ema.trainable_state_dict()
+                    if trainable_ema is not None
+                    else copy.deepcopy(trainable_state_dict(model))
+                )
         checkpoint: dict[str, Any] = {
             "config_sha256": config_sha256,
+            "visual_input_resolution": visual_input_resolution,
+            "position_interpolation": raw.get("position_interpolation"),
             "epoch": epoch,
             "trainable_state": trainable_state_dict(model),
             "optimizer": optimizer.state_dict(),
@@ -852,6 +1092,17 @@ def main() -> int:
             checkpoint["cuda_rng_state_all"] = torch.cuda.get_rng_state_all()
         if confidence is not None:
             checkpoint["confidence_weighting"] = confidence.state_dict()
+        if trainable_ema is not None:
+            checkpoint["trainable_ema"] = trainable_ema.state_dict()
+            checkpoint["raw_best_top1"] = raw_best_top1
+            checkpoint["raw_best_state"] = raw_best_state
+        if elr_loss is not None:
+            checkpoint["elr_state"] = elr_loss.state.state_dict()
+        if bool((raw.get("runtime") or {}).get("safe_numpy_rng_checkpoint", False)):
+            # MT19937 list round-trips through np.random.set_state exactly while
+            # allowing PyTorch weights_only CPU loading without NumPy globals.
+            name, keys, position, has_gauss, cached = checkpoint["numpy_rng_state"]
+            checkpoint["numpy_rng_state"] = (name, keys.tolist(), position, has_gauss, cached)
         _save_atomic(checkpoint, output / "last.pt")
         if training_scope == "fixed_split_validation":
             long_tail = row["validation"]["long_tail"]
@@ -864,6 +1115,11 @@ def main() -> int:
                         "epochs": epochs,
                         "train_loss": row["train_loss"],
                         "top1": row["validation"]["all"]["top1"],
+                        "ema_top1": (
+                            row["ema_validation"]["all"]["top1"]
+                            if trainable_ema is not None
+                            else None
+                        ),
                         "macro_accuracy": long_tail["macro_accuracy"],
                         "tail_accuracy": long_tail["strata"]["tail"]["accuracy"],
                         "zero_recall_class_count": long_tail["zero_recall_class_count"],
@@ -914,7 +1170,11 @@ def main() -> int:
             )
 
     if training_scope == "full_train_fixed_epochs":
-        selected_state = trainable_state_dict(model)
+        selected_state = (
+            trainable_ema.trainable_state_dict()
+            if trainable_ema is not None
+            else trainable_state_dict(model)
+        )
         selected_name = "final.pt"
         selected_top1 = None
         selection_rule = f"fixed final epoch {epochs}; no validation selection"
@@ -924,9 +1184,15 @@ def main() -> int:
         selected_state = best_state
         selected_name = "best.pt"
         selected_top1 = best_top1
-        selection_rule = "best fixed-split validation Top-1"
+        selection_rule = (
+            "best EMA fixed-split validation Top-1"
+            if trainable_ema is not None
+            else "best fixed-split validation Top-1"
+        )
     selected_checkpoint: dict[str, Any] = {
         "config_sha256": config_sha256,
+        "visual_input_resolution": visual_input_resolution,
+        "position_interpolation": raw.get("position_interpolation"),
         "mode": peft["mode"],
         "clip_weight_sha256": clip_metadata.weight_sha256,
         "class_mapping_sha256": mapping.digest(),
@@ -948,7 +1214,20 @@ def main() -> int:
     }
     if provenance is not None:
         selected_checkpoint.update(provenance.to_dict())
+    if trainable_ema is not None:
+        selected_checkpoint["trainable_ema"] = {
+            "enabled": True, "decay": trainable_ema.decay, "updates": trainable_ema.updates
+        }
     _save_atomic(selected_checkpoint, output / selected_name)
+    if trainable_ema is not None and training_scope == "fixed_split_validation":
+        if raw_best_state is None:
+            raise RuntimeError("EMA run did not produce a raw diagnostic checkpoint")
+        raw_checkpoint = dict(selected_checkpoint)
+        raw_checkpoint["trainable_state"] = raw_best_state
+        raw_checkpoint["best_top1"] = raw_best_top1
+        raw_checkpoint["trainable_ema"] = None
+        raw_checkpoint["selection_rule"] = "raw best fixed-split validation Top-1; diagnostic only"
+        _save_atomic(raw_checkpoint, output / "raw_best.pt")
     total_seconds = time.perf_counter() - total_started
     environment = capture_environment_identity(
         ROOT,
@@ -956,7 +1235,10 @@ def main() -> int:
         device=device,
         clip_weight_sha256=clip_metadata.weight_sha256,
     )
+    git_commit = _git_commit(ROOT)
     metrics = {
+        "visual_input_resolution": visual_input_resolution,
+        "position_interpolation": raw.get("position_interpolation"),
         "scope": (
             f"{competition_stage or 'stage1-legacy'} full official train PEFT final retrain; "
             "test data not accessed"
@@ -981,6 +1263,7 @@ def main() -> int:
         "early_stop": early_stop,
         "visual_prototype_weighting": visual_trust_raw,
         "visual_prototype_diagnostics": visual_trust_diagnostics,
+        "base_loss": base_loss_raw,
         "label_smoothing": label_smoothing,
         "sampling": sampling_diagnostics,
         "logit_adjustment": logit_diagnostics,
@@ -1009,9 +1292,12 @@ def main() -> int:
         "dataset_config_sha256": _sha256(dataset_path),
         "manifest_sha256": _sha256(manifest_path),
         "split_sha256": _sha256(split_path),
-        "git_commit": subprocess.run(
-            ["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True
-        ).stdout.strip(),
+        "git_commit": git_commit,
+        "git_commit_source": (
+            "verified_git_checkout_or_launcher_receipt"
+            if git_commit != "unknown_archive"
+            else "unknown_archive; use per-file source hashes in the queue receipt"
+        ),
         "environment": environment,
         "environment_hash": environment_hash(environment),
     }

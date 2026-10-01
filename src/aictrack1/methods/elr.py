@@ -68,7 +68,16 @@ class ELRLoss(nn.Module):
         self.lambda_ = lambda_
         self.eps = eps
 
-    def forward(self, logits: torch.Tensor, targets: torch.Tensor, sample_indices: torch.Tensor) -> torch.Tensor:
+    def forward(
+        self,
+        logits: torch.Tensor,
+        targets: torch.Tensor,
+        sample_indices: torch.Tensor,
+        *,
+        reduction: str = "mean",
+    ) -> torch.Tensor:
+        if reduction not in {"none", "mean"}:
+            raise ValueError("ELR reduction must be 'none' or 'mean'")
         if logits.ndim != 2 or logits.shape[1] != self.state.num_classes:
             raise ValueError("logits shape does not match ELR state")
         if targets.shape != sample_indices.shape or targets.ndim != 1:
@@ -84,5 +93,7 @@ class ELRLoss(nn.Module):
         updated = self.beta * previous + (1.0 - self.beta) * probs.detach()
         self.state.target.index_copy_(0, indices, updated.to(device=self.state.device, dtype=self.state.dtype))
         agreement = (updated * probs).sum(dim=1)
-        regularizer = torch.log((1.0 - agreement).clamp_min(self.eps)).mean()
-        return F.cross_entropy(logits, targets) + self.lambda_ * regularizer
+        regularizer = torch.log((1.0 - agreement).clamp_min(self.eps))
+        if reduction == "none":
+            return F.cross_entropy(logits, targets, reduction="none") + self.lambda_ * regularizer
+        return F.cross_entropy(logits, targets) + self.lambda_ * regularizer.mean()
