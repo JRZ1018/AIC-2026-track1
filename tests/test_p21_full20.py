@@ -38,7 +38,7 @@ def test_recipe_rejects_training_drift(key,value):
 
 def test_new_h1_same_full_recipe():
     head=read(m.H1_CONFIG);old=read('configs/experiment/stage2_p5_sce_h1_336_full_a10.yaml')
-    assert head == {**old,'run_id':Path(m.H1).name,'output_dir':'../../'+m.H1}
+    assert head == {**old,'run_id':Path(m.H1).name,'output_dir':'../../'+m.H1,'feature_cache':'../../'+m.CACHE}
 
 
 def test_two_frozen_gates_and_bounded_budget():

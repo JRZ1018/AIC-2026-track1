@@ -25,7 +25,7 @@ LOCK = Path('/root/autodl-tmp/AICtrack1/artifacts/queues/training.lock.json')
 QUEUE = ROOT / 'artifacts/queues/20261001-p21-full20-4090'
 HARD_SECONDS = 5 * 3600
 MAX_ADDED = 4 * 1024**3
-CACHE = 'artifacts/features/stage2/train_official336_p5_20260928'
+CACHE = 'artifacts/features/stage2/train_official336_p21_20261001'
 H1 = 'artifacts/experiments/20261001-stage2-p21-h1-336-full-seed20260921-4090'
 PEFT = 'artifacts/experiments/20261001-stage2-p21-sce-ac-336-full20-seed20260921-4090'
 H1_CONFIG = 'configs/experiment/stage2_p21_h1_336_full_4090.yaml'
@@ -94,7 +94,7 @@ def preflight():
                    yaml.safe_load((ROOT/'configs/experiment/stage2_p21_fold2_sce_ac_20ep_4090_screen.yaml').read_text())['experiment'])
     head = yaml.safe_load((ROOT/H1_CONFIG).read_text())['experiment']
     old_head = yaml.safe_load((ROOT/'configs/experiment/stage2_p5_sce_h1_336_full_a10.yaml').read_text())['experiment']
-    if head != {**old_head, 'run_id':Path(H1).name, 'output_dir':'../../'+H1}:
+    if head != {**old_head, 'run_id':Path(H1).name, 'output_dir':'../../'+H1, 'feature_cache':'../../'+CACHE}:
         raise RuntimeError('fresh full H1 recipe differs from established full100 recipe')
     cache = load_feature_cache(ROOT/CACHE)
     md = cache.metadata

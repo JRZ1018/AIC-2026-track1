@@ -4,7 +4,7 @@ experiment:
   execution_enabled: true
   training_scope: full_train_fixed_epochs
   dataset_config: ../data/stage2_fold1_336.yaml
-  feature_cache: ../../artifacts/features/stage2/train_official336_p5_20260928
+  feature_cache: ../../artifacts/features/stage2/train_official336_p21_20261001
   output_dir: ../../artifacts/experiments/20261001-stage2-p21-h1-336-full-seed20260921-4090
   device: cuda
   expected_train_count: 148695
