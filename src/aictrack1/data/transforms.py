@@ -29,8 +29,14 @@ def _center_crop(image: Image.Image, size: int) -> Image.Image:
     return image.crop((left, top, left + size, top + size))
 
 
+def _ensure_rgb(image: Image.Image) -> Image.Image:
+    # Pillow convert("RGB") copies the full pixel buffer even for RGB input.
+    return image if image.mode == "RGB" else image.convert("RGB")
+
+
 def _normalize(image: Image.Image) -> torch.Tensor:
-    array = np.asarray(image.convert("RGB"), dtype=np.float32) / 255.0
+    image = _ensure_rgb(image)
+    array = np.asarray(image, dtype=np.float32) / 255.0
     tensor = torch.from_numpy(array).permute(2, 0, 1)
     mean = torch.tensor(CLIP_MEAN, dtype=tensor.dtype).view(3, 1, 1)
     std = torch.tensor(CLIP_STD, dtype=tensor.dtype).view(3, 1, 1)
@@ -63,7 +69,7 @@ class ImageTransform:
         return self.split == "train"
 
     def __call__(self, image: Image.Image, *, rng: np.random.Generator | None = None) -> torch.Tensor:
-        image = _safe_exif_transpose(image).convert("RGB")
+        image = _ensure_rgb(_safe_exif_transpose(image))
         if self.split == "train":
             if rng is None:
                 raise ValueError("train transform requires an explicit numpy random generator")

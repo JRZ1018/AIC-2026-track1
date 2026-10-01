@@ -16,6 +16,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 from aictrack1.methods.gce import generalized_cross_entropy
 from aictrack1.methods.logit_clip import logit_clip_cross_entropy
+from aictrack1.methods.balanced_softmax import balanced_softmax_cross_entropy
 from aictrack1.engine.provenance import (
     CheckpointProvenance,
     validate_checkpoint_provenance,
@@ -58,7 +59,7 @@ class FrozenLossConfig:
     logit_clip_p_norm: float = 2.0
 
     def validate(self) -> None:
-        if self.kind not in {"cross_entropy", "gce", "logit_clip_cross_entropy"}:
+        if self.kind not in {"cross_entropy", "gce", "logit_clip_cross_entropy", "balanced_softmax"}:
             raise ValueError(f"unsupported frozen-head loss {self.kind!r}")
         if not 0 < self.gce_q <= 1:
             raise ValueError("gce_q must be in (0, 1]")
@@ -89,6 +90,7 @@ class FrozenHeadTrainer:
         num_classes: int,
         loss_config: FrozenLossConfig = FrozenLossConfig(),
         class_weights: torch.Tensor | None = None,
+        class_counts: torch.Tensor | None = None,
         provenance: CheckpointProvenance | None = None,
     ) -> None:
         config.validate()
@@ -98,6 +100,15 @@ class FrozenHeadTrainer:
         self.device = torch.device(device)
         self.num_classes = num_classes
         self.loss_config = loss_config
+        if (loss_config.kind == "balanced_softmax") != (class_counts is not None):
+            raise ValueError("balanced_softmax requires class_counts and other losses forbid them")
+        if class_counts is not None:
+            counts = class_counts.detach().float().cpu()
+            if counts.shape != (num_classes,) or not torch.isfinite(counts).all() or bool((counts <= 0).any()):
+                raise ValueError("class_counts must be finite positive training counts for every class")
+            self.class_counts = counts.to(self.device)
+        else:
+            self.class_counts = None
         if class_weights is not None:
             weights = class_weights.detach().float().cpu()
             if weights.shape != (num_classes,):
@@ -143,6 +154,9 @@ class FrozenHeadTrainer:
     def _loss(self, logits: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
         if self.loss_config.kind == "cross_entropy":
             return F.cross_entropy(logits, targets, weight=self.class_weights)
+        if self.loss_config.kind == "balanced_softmax":
+            assert self.class_counts is not None
+            return balanced_softmax_cross_entropy(logits, targets, self.class_counts)
         if self.loss_config.kind == "gce":
             return generalized_cross_entropy(logits, targets, q=self.loss_config.gce_q)
         return logit_clip_cross_entropy(
@@ -240,11 +254,15 @@ class FrozenHeadTrainer:
         return self.history
 
     def state_dict(self) -> dict[str, Any]:
+        numpy_name, numpy_keys, numpy_position, numpy_has_gauss, numpy_cached_gaussian = np.random.get_state()
         state: dict[str, Any] = {
             "config": asdict(self.config),
             "loss_config": asdict(self.loss_config),
             "class_weights": (
                 None if self.class_weights is None else self.class_weights.detach().cpu().clone()
+            ),
+            "class_counts": (
+                None if self.class_counts is None else self.class_counts.detach().cpu().clone()
             ),
             "epoch": self.epoch,
             "best_top1": self.best_top1,
@@ -255,7 +273,13 @@ class FrozenHeadTrainer:
             "scaler": copy.deepcopy(self.scaler.state_dict()),
             "history": copy.deepcopy(self.history),
             "python_rng_state": random.getstate(),
-            "numpy_rng_state": np.random.get_state(),
+            "numpy_rng_state": {
+                "bit_generator": numpy_name,
+                "keys": torch.from_numpy(numpy_keys.astype(np.int64)),
+                "position": int(numpy_position),
+                "has_gauss": int(numpy_has_gauss),
+                "cached_gaussian": float(numpy_cached_gaussian),
+            },
             "torch_rng_state": torch.random.get_rng_state().clone(),
         }
         if torch.cuda.is_available():
@@ -290,6 +314,16 @@ class FrozenHeadTrainer:
             saved_class_weights.detach().cpu(), expected_class_weights
         ):
             raise ValueError("checkpoint class weights mismatch")
+        saved_class_counts = state.get("class_counts")
+        expected_class_counts = (
+            None if self.class_counts is None else self.class_counts.detach().cpu()
+        )
+        if (saved_class_counts is None) != (expected_class_counts is None):
+            raise ValueError("checkpoint class counts mismatch")
+        if saved_class_counts is not None and not torch.equal(
+            saved_class_counts.detach().cpu(), expected_class_counts
+        ):
+            raise ValueError("checkpoint class counts mismatch")
         self.model.load_state_dict(state["model"])
         self.optimizer.load_state_dict(state["optimizer"])
         self.scheduler.load_state_dict(state["scheduler"])
@@ -299,10 +333,30 @@ class FrozenHeadTrainer:
         self.best_state = state["best_model"]
         self.history = state["history"]
         random.setstate(state["python_rng_state"])
-        np.random.set_state(state["numpy_rng_state"])
-        torch.random.set_rng_state(state["torch_rng_state"])
+        numpy_state = state["numpy_rng_state"]
+        if isinstance(numpy_state, dict):
+            np.random.set_state(
+                (
+                    str(numpy_state["bit_generator"]),
+                    numpy_state["keys"].detach().cpu().numpy().astype(np.uint32),
+                    int(numpy_state["position"]),
+                    int(numpy_state["has_gauss"]),
+                    float(numpy_state["cached_gaussian"]),
+                )
+            )
+        else:
+            # In-memory compatibility for states produced by older versions.
+            # Old on-disk pickle checkpoints are intentionally not auto-loaded.
+            np.random.set_state(numpy_state)
+        # Loading with map_location=self.device moves every tensor, including
+        # serialized RNG byte tensors, onto CUDA during GPU resume. The RNG
+        # restore APIs require CPU ByteTensors, so move only these bookkeeping
+        # tensors back without changing model or optimizer placement.
+        torch.random.set_rng_state(state["torch_rng_state"].detach().cpu())
         if "cuda_rng_state_all" in state and torch.cuda.is_available():
-            torch.cuda.set_rng_state_all(state["cuda_rng_state_all"])
+            torch.cuda.set_rng_state_all(
+                [rng_state.detach().cpu() for rng_state in state["cuda_rng_state_all"]]
+            )
 
     def save_checkpoint(self, path: str | Path) -> None:
         output = Path(path)
@@ -312,5 +366,5 @@ class FrozenHeadTrainer:
         temporary.replace(output)
 
     def load_checkpoint(self, path: str | Path) -> None:
-        state = torch.load(Path(path), map_location=self.device, weights_only=False)
+        state = torch.load(Path(path), map_location=self.device, weights_only=True)
         self.load_state_dict(state)

@@ -23,6 +23,7 @@ def build_grouped_stratified_split(
     min_train_per_class: int,
     allowed_decode_statuses: frozenset[str] = frozenset({"ok"}),
     group_order: Literal["largest_first", "seeded_random"] = "largest_first",
+    forbidden_validation_groups: frozenset[str] = frozenset(),
 ) -> dict[str, str]:
     if not 0 < validation_fraction < 1:
         raise ValueError("validation_fraction must be strictly between 0 and 1")
@@ -60,7 +61,7 @@ def build_grouped_stratified_split(
             for label, count in group_counts.items()
         )
         improves = any(val_counts[label] < targets[label] for label in group_counts)
-        split = "validation" if can_add and improves else "train"
+        split = "validation" if can_add and improves and group_id not in forbidden_validation_groups else "train"
         if split == "validation":
             val_counts.update(group_counts)
         for record in groups[group_id]:

@@ -35,3 +35,22 @@ def load_trainable_state_dict(
             if value.shape != parameter.shape:
                 raise ValueError(f"trainable checkpoint shape mismatch for {name}")
             parameter.copy_(value.to(device=parameter.device, dtype=parameter.dtype))
+
+
+def configure_classifier_trainability_from_state(
+    classifier: nn.Module,
+    state: Mapping[str, torch.Tensor],
+) -> bool:
+    """Match frozen or jointly trained classifier state before strict PEFT loading."""
+
+    expected = {f"classifier.{name}" for name, _ in classifier.named_parameters()}
+    present = {name for name in state if name.startswith("classifier.")}
+    if present and present != expected:
+        raise ValueError(
+            "classifier checkpoint trainable parameter mismatch: "
+            f"missing={sorted(expected - present)}, extra={sorted(present - expected)}"
+        )
+    enabled = bool(present)
+    for parameter in classifier.parameters():
+        parameter.requires_grad_(enabled)
+    return enabled

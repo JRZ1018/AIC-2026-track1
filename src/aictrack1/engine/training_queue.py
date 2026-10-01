@@ -45,6 +45,8 @@ class QueueItem:
     config: str
     output_dir: str
     purpose: str
+    trainer_entrypoint: str = "scripts/train_peft.py"
+    resume_checkpoint: str | None = None
 
 
 @dataclass(frozen=True)
@@ -478,6 +480,8 @@ def run_parallel_queue(
     outputs = [item.output_dir for item in items]
     if len(set(outputs)) != len(outputs):
         raise ValueError("parallel item output directories must be unique")
+    if any(item.trainer_entrypoint != "scripts/train_peft.py" for item in items):
+        raise ValueError("parallel queue currently supports only train_peft.py")
 
     logs.mkdir(parents=True, exist_ok=True)
     effective_lock = lock_path or root / DEFAULT_LOCK_RELATIVE_PATH
@@ -647,18 +651,43 @@ def run_serial_queue(
 
     log(f"{queue_name} start")
     for item in items:
+        if item.trainer_entrypoint not in {
+            "scripts/train_peft.py",
+            "scripts/train_frozen_head.py",
+        }:
+            raise ValueError(f"unsupported serial trainer entrypoint {item.trainer_entrypoint!r}")
         before = inspect_run_output(root, item.output_dir)
         if before.status == "complete":
             log(f"{item.tag}: already complete, skipping ({item.purpose})")
             continue
-        if before.status != "ready":
+        resume_path: Path | None = None
+        if item.resume_checkpoint is not None:
+            output = (root / item.output_dir).resolve()
+            resume_path = (root / item.resume_checkpoint).resolve()
+            if (
+                item.trainer_entrypoint
+                not in {"scripts/train_peft.py", "scripts/train_frozen_head.py"}
+                or before.status != "partial"
+                or not output.is_relative_to(root.resolve())
+                or resume_path != output / "last.pt"
+                or not resume_path.is_file()
+                or (output / "metrics.json").exists()
+            ):
+                log(
+                    f"{item.tag}: HALT before launch: explicit resume requires "
+                    "a partial supported trainer output with its exact last.pt and no metrics.json"
+                )
+                return 2
+        elif before.status != "ready":
             log(
                 f"{item.tag}: HALT before launch: {before.reason}; "
                 "partial outputs require manual inspection or an explicit resume task"
             )
             return 2
 
-        command = (str(python), "scripts/train_peft.py", "--config", item.config)
+        command = (str(python), item.trainer_entrypoint, "--config", item.config)
+        if resume_path is not None:
+            command += ("--resume", str(resume_path))
         try:
             lease = TrainingLease.acquire(
                 effective_lock,

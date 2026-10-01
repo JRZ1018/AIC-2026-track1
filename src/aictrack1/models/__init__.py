@@ -4,6 +4,7 @@ from .clip_vit_b32 import CLIPLoadMetadata, load_clip_vit_b32
 from .heads import (
     CosineClassifier,
     LinearClassifier,
+    ResidualMLPClassifier,
     build_classifier_head,
     load_classifier_head_checkpoint,
 )
@@ -13,6 +14,7 @@ __all__ = [
     "CLIPLoadMetadata",
     "CosineClassifier",
     "LinearClassifier",
+    "ResidualMLPClassifier",
     "PEFTImageClassifier",
     "PEFTSummary",
     "build_classifier_head",

@@ -17,12 +17,16 @@ from pathlib import Path
 import torch
 import yaml
 
-from ..engine.peft import load_trainable_state_dict
+from ..engine.peft import (
+    configure_classifier_trainability_from_state,
+    load_trainable_state_dict,
+)
 from ..engine.provenance import (
     CheckpointProvenance,
     validate_checkpoint_provenance,
 )
 from .clip_vit_b32 import load_clip_vit_b32
+from .clip_resolution import enable_interpolated_visual_resolution
 from .heads import load_classifier_head_checkpoint
 from .peft import PEFTImageClassifier, configure_visual_peft, fold_visual_lora
 
@@ -123,7 +127,7 @@ def load_diagnostic_model(
     document = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     experiment = document.get("experiment", document)
     checkpoint_path = checkpoint_path.resolve()
-    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
     config_sha256 = sha256_file(config_path)
     if checkpoint.get("config_sha256") not in _text_sha256_variants(config_path):
         raise ValueError("checkpoint and experiment configuration hashes differ")
@@ -132,6 +136,17 @@ def load_diagnostic_model(
         raise ValueError("checkpoint and experiment PEFT modes differ")
     if peft.get("mode") not in SUPPORTED_PEFT_MODES:
         raise ValueError("diagnostics require a supported single-model PEFT mode")
+    visual_resolution = int(experiment.get("visual_input_resolution", 224))
+    if int(checkpoint.get("visual_input_resolution", 224)) != visual_resolution:
+        raise ValueError("diagnostic checkpoint and config visual resolutions differ")
+    if visual_resolution in (320, 336):
+        if (
+            experiment.get("position_interpolation") != "bicubic_7x7_to_10x10"
+            or checkpoint.get("position_interpolation") != "bicubic_7x7_to_10x10"
+        ):
+            raise ValueError("diagnostic 336 interpolation contract differs")
+    elif visual_resolution != 224 or experiment.get("position_interpolation") is not None:
+        raise ValueError("unsupported diagnostic visual resolution")
     if checkpoint.get("class_mapping_sha256") != class_mapping_digest:
         raise ValueError("checkpoint and class mapping hashes differ")
     if int(num_classes) <= 0:
@@ -161,6 +176,8 @@ def load_diagnostic_model(
         raise ValueError("checkpoint and official CLIP weight hashes differ")
     visual = clip_model.visual.float()
     del clip_model
+    if visual_resolution in (320, 336):
+        enable_interpolated_visual_resolution(visual, target_resolution=visual_resolution)
     configure_visual_peft(
         visual,
         str(peft["mode"]),
@@ -194,10 +211,11 @@ def load_diagnostic_model(
     expected_head_sha256 = checkpoint.get("head_initializer_sha256")
     if expected_head_sha256 is not None and expected_head_sha256 != sha256_file(head_path):
         raise ValueError("checkpoint and classifier head initializer hashes differ")
-    for parameter in head.parameters():
-        parameter.requires_grad_(False)
+    configure_classifier_trainability_from_state(head, checkpoint["trainable_state"])
     model = PEFTImageClassifier(visual, head, normalize_features=normalized).to(device)
     load_trainable_state_dict(model, checkpoint["trainable_state"])
+    for parameter in model.parameters():
+        parameter.requires_grad_(False)
     lora_folded = str(peft["mode"]).startswith("lora_")
     if lora_folded:
         fold_visual_lora(model.visual)
