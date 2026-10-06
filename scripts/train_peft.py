@@ -720,7 +720,9 @@ def main() -> int:
     head_parameters = [parameter for parameter in head.parameters() if parameter.requires_grad]
     parameter_groups = []
     if visual_parameters and visual_learning_rate > 0:
-        parameter_groups.append({"params": visual_parameters, "lr": visual_learning_rate})
+        from aictrack1.methods.prefix_plasticity import prefix_parameter_groups
+        parameter_groups.extend(prefix_parameter_groups(visual, visual_learning_rate,
+            prefix_scale=raw.get("prefix_learning_rate_scale")))
     if head_parameters and head_learning_rate > 0:
         parameter_groups.append({"params": head_parameters, "lr": head_learning_rate})
     if not parameter_groups:
