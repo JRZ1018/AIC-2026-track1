@@ -1,5 +1,7 @@
 # AICtrack1 交接文档
 
+> **2026-10-06 11:27:51 已挂脱机后继，覆盖下方“尚未接trainer”：**用户准备关闭本机，独立服务器`/root/autodl-tmp/AICtrack1_attention_screen_v2_20261006`104源SHAc01c8292e3ebfb7c998c9a14457633652d3d684a1907a0df939103208bdb3817、17服务器CPU测试/逐SHA通过；timeout235540/controller235541于11:28:12断SSH重连核验独立session/父1/stdin-devnull/相对argv存活。历史PID仅锚点，按真实startticks查。私有attention_screen_ops_20261006.py只progress，不重复build/upload/start。当前prefix训练+原诊断及预算未动，新CPU链等前序完整/锁释放/空闲后自动A0实际20min/.5GiB/free7，再新实际8h/4.5GiB/free7/reserve45min串行CLS→mean-channel→spatial各20轮；同已验签foldH1100复用，各fresh官方CLIP，未叠PF1/prefix/EMA，无test。当前A0/A1未开始，不把等待launch当prepare/GPU成功。详docs203：三臂完成只到diagnostics_pending，不自动全量/test；预检RNG仅安全序列化，不称位级续跑。前序工程失败/资源不足保留证据停止有限链，不无限重试/清锁。关闭本机后本地heartbeat停，但已挂服务器链继续；回来先progress核验，后续正式统计/多seed/PF1/全量门禁仍须落实。
+
 > **2026-10-06 10:50:28 工程交付：**筛样12项与注意力9项CPU测试在服务器独立规划目录`/root/autodl-tmp/AICtrack1_plan_revision_20261006`均PASS，8文件快照SHA5895c6160071e8dc6c8a0a0780f848dc0740358053c27596e7c8b63ff7855551；本机联合既有patch-readout回归24项PASS。半小时aictrack1已实际更新后继优先级。未新GPU训练/未接正式trainer/未test，规划快照不替换活动prefix来源。docs202交付补记与不可变服务器快照区别明确；A0及正式对照须独立真实预算和资源/锁预检。
 
 > **2026-10-06 最新追加：注意力列为共同重点。**用户新截图/要求提升attention优先级，docs202补充docs201：当前prefix和既有诊断照常；注意力A1与筛样PF1同步做独立工程准备，锁释放后优先注意力小scope真实预检，按准备度开启一个正式GPU对照，不盲叠。回查docs108只是均值拼接头失败，不是learned attention；新增保留CLIP全部内部算子的513参数残差query/gain与同参数mean-channel对照模块，**9CPU测试实际PASS**，未接正式trainer/未新GPU训练。不因群聊74/涨3分承诺收益或更换算子/骨干。docs202列3臂20轮拟8h/新增峰4.5GiB/free7GiB独立scope，当前旧预算完全不变。身份如印为官方按用户更正，其他群聊昵称不自动升级。
