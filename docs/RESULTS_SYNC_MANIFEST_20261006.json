@@ -1,0 +1,464 @@
+{
+  "schema": "aictrack1.docs-sync.v1",
+  "date": "2026-10-06",
+  "repository": "JRZ1018/AIC-2026-track1",
+  "base_commit": "066278027ad89655e213e83c0ee7dd26a1a4b1b9",
+  "source_workspace": "E:/AICtrack1_p13_20260929",
+  "scope": "documentation_only_no_execution_no_assets",
+  "original_files_preserved": true,
+  "new_root_documents": 72,
+  "historical_snapshots": 3,
+  "redacted_documents": 5,
+  "files": [
+    {
+      "path": "docs/106_复赛D2_D4头部与表征诊断预注册_20260923.md",
+      "source_sha256": "00111b1731f2c10693212de2e423634a2a8382255475991f33ac93b46f7ac7e0",
+      "synchronized_sha256": "00111b1731f2c10693212de2e423634a2a8382255475991f33ac93b46f7ac7e0",
+      "redacted": false
+    },
+    {
+      "path": "docs/107_复赛V1联合头末六块单变量实验_20260923.md",
+      "source_sha256": "bf0f7e9ee9b111aae052769991a5632f4f5791969f729d558df50e826468188e",
+      "synchronized_sha256": "bf0f7e9ee9b111aae052769991a5632f4f5791969f729d558df50e826468188e",
+      "redacted": false
+    },
+    {
+      "path": "docs/108_复赛V2局部patch读出诊断预注册_20260924.md",
+      "source_sha256": "90bbaf20c83557bb74281d995d3ec3a4c1aa4b3f7e54bcd57275907636a5187c",
+      "synchronized_sha256": "90bbaf20c83557bb74281d995d3ec3a4c1aa4b3f7e54bcd57275907636a5187c",
+      "redacted": false
+    },
+    {
+      "path": "docs/109_复赛云端实例缺货与迁移记录_20260924.md",
+      "source_sha256": "b26618c5d2f48db8e21e6da7b3d1a751518bb47543f302beadb48761110d048b",
+      "synchronized_sha256": "88c02404f29feee7febd4145cb0f978243344982484aa5a7e3aa1b0f3b484273",
+      "redacted": true
+    },
+    {
+      "path": "docs/110_复赛V2输入裁剪单变量诊断预注册_20260924.md",
+      "source_sha256": "85d749f1d5150e2110aba34c974f9e6ab6b1a9ebb902951a1ebad32625543efb",
+      "synchronized_sha256": "85d749f1d5150e2110aba34c974f9e6ab6b1a9ebb902951a1ebad32625543efb",
+      "redacted": false
+    },
+    {
+      "path": "docs/111_复赛C3末八视觉块短筛预注册_20260924.md",
+      "source_sha256": "e065affff96cc8f4c0b7e3bd3a549ca099ff5d3c86eb3455a753b6f49d8b8c4f",
+      "synchronized_sha256": "e065affff96cc8f4c0b7e3bd3a549ca099ff5d3c86eb3455a753b6f49d8b8c4f",
+      "redacted": false
+    },
+    {
+      "path": "docs/112_复赛C3第二折独立确认预注册_20260924.md",
+      "source_sha256": "a3fd82b8241863e832f0f21151d0ff2dcd48cd7d7a4c97deee2ed9691715e26f",
+      "synchronized_sha256": "a79601b47720ed9dfff46a0c36a6b7647f782211b60ba2db9cd864acf1c1719d",
+      "redacted": true
+    },
+    {
+      "path": "docs/113_复赛C4末十二块容量试验预注册_20260924.md",
+      "source_sha256": "73d32202f7c801fa79a80ecda2a7461d0370b11e846496e5b82116fbe6e5d6f7",
+      "synchronized_sha256": "73d32202f7c801fa79a80ecda2a7461d0370b11e846496e5b82116fbe6e5d6f7",
+      "redacted": false
+    },
+    {
+      "path": "docs/114_复赛单模型TTA与336输入试验门槛_20260924.md",
+      "source_sha256": "e20f96dfc63c34b2476502fbd4733da06f6db726dfd430720a3c070281f8d3f2",
+      "synchronized_sha256": "e20f96dfc63c34b2476502fbd4733da06f6db726dfd430720a3c070281f8d3f2",
+      "redacted": false
+    },
+    {
+      "path": "docs/115_复赛C5匹配336分辨率折2试验预注册_20260925.md",
+      "source_sha256": "41a9a11ee4401cf489e63c6a2c749e920dc6aaa3440e1cce18b4609b39a92878",
+      "synchronized_sha256": "41a9a11ee4401cf489e63c6a2c749e920dc6aaa3440e1cce18b4609b39a92878",
+      "redacted": false
+    },
+    {
+      "path": "docs/116_复赛C6匹配336加固定翻转TTA双折验证预注册_20260925.md",
+      "source_sha256": "047aa7d6a3ffd7cc37b091113f2ba8c5e81335d9a089ab83690f35227d7c9bda",
+      "synchronized_sha256": "047aa7d6a3ffd7cc37b091113f2ba8c5e81335d9a089ab83690f35227d7c9bda",
+      "redacted": false
+    },
+    {
+      "path": "docs/117_复赛C3固定翻转TTA回退包冻结_20260925.md",
+      "source_sha256": "73818df26cb85be0a745445ac69b8ce5e0e373923c697821f7ea1c9db032d86b",
+      "synchronized_sha256": "73818df26cb85be0a745445ac69b8ce5e0e373923c697821f7ea1c9db032d86b",
+      "redacted": false
+    },
+    {
+      "path": "docs/118_复赛C7同权重双尺度四视图TTA预注册_20260925.md",
+      "source_sha256": "4cc738bb47b61325a8ced909556242a431f56a33ad59f54c30e0eef5d4876e22",
+      "synchronized_sha256": "4cc738bb47b61325a8ced909556242a431f56a33ad59f54c30e0eef5d4876e22",
+      "redacted": false
+    },
+    {
+      "path": "docs/119_复赛Top1与零召回取舍复盘及下一轮门槛建议_20260925.md",
+      "source_sha256": "0015ce28d15e8b05d8443332f8e06bf9da3c97c2f1473b51650b6fadc7217aa7",
+      "synchronized_sha256": "0015ce28d15e8b05d8443332f8e06bf9da3c97c2f1473b51650b6fadc7217aa7",
+      "redacted": false
+    },
+    {
+      "path": "docs/120_复赛Top1优先_336与TTA新折确认及今日出包计划_20260925.md",
+      "source_sha256": "bb8e479d07cb1d9ac176c4958a246a293603b95e6629d54d512426d0db68aef2",
+      "synchronized_sha256": "bb8e479d07cb1d9ac176c4958a246a293603b95e6629d54d512426d0db68aef2",
+      "redacted": false
+    },
+    {
+      "path": "docs/121_复赛61分后冲分计划_注意力分辨率TTA与损失_20260925.md",
+      "source_sha256": "bb3728067bb9dff1d9c6722248a6b2727c971548df5769a991fc0b98ed732a69",
+      "synchronized_sha256": "bb3728067bb9dff1d9c6722248a6b2727c971548df5769a991fc0b98ed732a69",
+      "redacted": false
+    },
+    {
+      "path": "docs/122_零上下文AI接手复赛完整交接_20260925.md",
+      "source_sha256": "45184a021e2d5a52866a44a79e43871f79e256a654113f91aa895a0eb099bf7d",
+      "synchronized_sha256": "45184a021e2d5a52866a44a79e43871f79e256a654113f91aa895a0eb099bf7d",
+      "redacted": false
+    },
+    {
+      "path": "docs/123_异机接手迁移清单与验收_20260925.md",
+      "source_sha256": "a18c95c3074663221be53a901c59d5c581533af07930acc47f0d44f7b52c5deb",
+      "synchronized_sha256": "a18c95c3074663221be53a901c59d5c581533af07930acc47f0d44f7b52c5deb",
+      "redacted": false
+    },
+    {
+      "path": "docs/124_复赛P0_C8-336同权重双尺度四视图TTA预注册_20260925.md",
+      "source_sha256": "d237e5d6753e02a404ad351f6a8213152bc296f8be47da2d4120402bbc2c8f35",
+      "synchronized_sha256": "d237e5d6753e02a404ad351f6a8213152bc296f8be47da2d4120402bbc2c8f35",
+      "redacted": false
+    },
+    {
+      "path": "docs/124_C6_336固定四视图P0预注册与B机任务交接_20260925.md",
+      "source_sha256": "7e492026460d71fd6291b8bdb6515f7aae636752d1ff71f7d87f9817bc470ccb",
+      "synchronized_sha256": "7e492026460d71fd6291b8bdb6515f7aae636752d1ff71f7d87f9817bc470ccb",
+      "redacted": false
+    },
+    {
+      "path": "docs/125_A机C6_336四视图P0预注册与B机任务交接_20260925.md",
+      "source_sha256": "33227e0831eab0c254cda44c1a5a2b0f38a2a223ae8a19aa846e0a8d1269367b",
+      "synchronized_sha256": "33227e0831eab0c254cda44c1a5a2b0f38a2a223ae8a19aa846e0a8d1269367b",
+      "redacted": false
+    },
+    {
+      "path": "docs/125_P0_C6_336四视图通过与新提交包_20260926.md",
+      "source_sha256": "2514b203a65674cfbbbd891c1b457b89bff163c14d5c840b075550341cf47501",
+      "synchronized_sha256": "2514b203a65674cfbbbd891c1b457b89bff163c14d5c840b075550341cf47501",
+      "redacted": false
+    },
+    {
+      "path": "docs/126_B机fold2_C8四视图验证结果与回传_20260925.md",
+      "source_sha256": "54e409338765d091e87b56641e940f6ea4051ed3244ff3385f376dc40d5f4cc6",
+      "synchronized_sha256": "54e409338765d091e87b56641e940f6ea4051ed3244ff3385f376dc40d5f4cc6",
+      "redacted": false
+    },
+    {
+      "path": "docs/126_B机P2-GCE折2任务单_20260926.md",
+      "source_sha256": "f922d152ff55595b69da21f055ce74a5f0630d21eff2fa9c71f03f24c7acf3c5",
+      "synchronized_sha256": "f922d152ff55595b69da21f055ce74a5f0630d21eff2fa9c71f03f24c7acf3c5",
+      "redacted": false
+    },
+    {
+      "path": "docs/127_B机P2_GCE折2验签缺件清单_20260926.md",
+      "source_sha256": "3c1e56d736ca21c99a82da9a441fe11f99c3319ea6d2835a2f0236d643ff597a",
+      "synchronized_sha256": "3c1e56d736ca21c99a82da9a441fe11f99c3319ea6d2835a2f0236d643ff597a",
+      "redacted": false
+    },
+    {
+      "path": "docs/127_P1_320分辨率折1筛选止损_20260926.md",
+      "source_sha256": "48ad71a15046ada81e435aaeb95e54bc1f3887155494eaaa9bdb97a629c128fd",
+      "synchronized_sha256": "48ad71a15046ada81e435aaeb95e54bc1f3887155494eaaa9bdb97a629c128fd",
+      "redacted": false
+    },
+    {
+      "path": "docs/128_A机P2-GCE折2任务单_20260926.md",
+      "source_sha256": "b38ebf8ed36ae4f15898b84fed623b0e6f56940c14a3e12ef3b3da075ebbbd93",
+      "synchronized_sha256": "b38ebf8ed36ae4f15898b84fed623b0e6f56940c14a3e12ef3b3da075ebbbd93",
+      "redacted": false
+    },
+    {
+      "path": "docs/128_P2_GCE折1首折门禁通过_20260926.md",
+      "source_sha256": "7d44e9eef59701dc28fcd7f0c13bf6239b8736a2e27de51e3939f2cbc12199fe",
+      "synchronized_sha256": "7d44e9eef59701dc28fcd7f0c13bf6239b8736a2e27de51e3939f2cbc12199fe",
+      "redacted": false
+    },
+    {
+      "path": "docs/129_A机P1_320分辨率折1筛选止损_20260926.md",
+      "source_sha256": "cb2987b8ba6acf398f6c3d63066b467a966e5e664c74411f9eb8ec1b717620cf",
+      "synchronized_sha256": "cb2987b8ba6acf398f6c3d63066b467a966e5e664c74411f9eb8ec1b717620cf",
+      "redacted": false
+    },
+    {
+      "path": "docs/129_P2_GCE双折确认通过与全量重训_20260926.md",
+      "source_sha256": "25cbaf588bf9c320acd5de7526c32817fd258826faab239ac7a9afde1983d6ab",
+      "synchronized_sha256": "25cbaf588bf9c320acd5de7526c32817fd258826faab239ac7a9afde1983d6ab",
+      "redacted": false
+    },
+    {
+      "path": "docs/130_20260926_全天工作交接与B接替清单.md",
+      "source_sha256": "5f0feefd1f4aa51ca2984796698be194bc453d51f3681c6170b7cb8541b86944",
+      "synchronized_sha256": "5f0feefd1f4aa51ca2984796698be194bc453d51f3681c6170b7cb8541b86944",
+      "redacted": false
+    },
+    {
+      "path": "docs/130_B机P2-GCE折2同步验签与开跑记录_20260926.md",
+      "source_sha256": "abdea09cdda7b773c2c3121ad9557cdd81ce0c2510a2fecfb3a7e3a95677f056",
+      "synchronized_sha256": "abdea09cdda7b773c2c3121ad9557cdd81ce0c2510a2fecfb3a7e3a95677f056",
+      "redacted": false
+    },
+    {
+      "path": "docs/131_B机P2-GCE折2完成回传_20260926.md",
+      "source_sha256": "ea9432123baad079b5da29dbc6927bb2d41448e97b01f77df86a50d291faade8",
+      "synchronized_sha256": "ea9432123baad079b5da29dbc6927bb2d41448e97b01f77df86a50d291faade8",
+      "redacted": false
+    },
+    {
+      "path": "docs/132_本机唯一开发环境同步验收与后续入口_20260926.md",
+      "source_sha256": "614f94c4ed117907fa210139bb177d67d92b09ab83c00af261ce373de49dbc66",
+      "synchronized_sha256": "614f94c4ed117907fa210139bb177d67d92b09ab83c00af261ce373de49dbc66",
+      "redacted": false
+    },
+    {
+      "path": "docs/133_新远端3090连接与资源验收_20260926.md",
+      "source_sha256": "af1b9d9dd47e2db7b9e1cb981f62c0434604154ca7ec6ad5a69a293ff88fc388",
+      "synchronized_sha256": "f5013b85493e56c699b61caf4f2b9175983c4b223179749bb2325119855f12d8",
+      "redacted": true
+    },
+    {
+      "path": "docs/134_3090首批P4_GCE强度单变量预注册_20260927.md",
+      "source_sha256": "f1b42b7dc9a5d1e2e071f6bdecf69fa48f922940f20a15b50106b20d9bb803a7",
+      "synchronized_sha256": "f1b42b7dc9a5d1e2e071f6bdecf69fa48f922940f20a15b50106b20d9bb803a7",
+      "redacted": false
+    },
+    {
+      "path": "docs/135_3090云盘安全清理记录_20260927.md",
+      "source_sha256": "9b3d809743b305ac4a5e85b648c96dbf4d9c6cfdaa3fc0db16fbd9993aae15a8",
+      "synchronized_sha256": "9b3d809743b305ac4a5e85b648c96dbf4d9c6cfdaa3fc0db16fbd9993aae15a8",
+      "redacted": false
+    },
+    {
+      "path": "docs/136_3090大批训练与每小时回传及15点交付计划_20260927.md",
+      "source_sha256": "9ddeb7b88a21a4bd094a5c715660cbfdf0a3a235a34c51fd28dc1665081c6125",
+      "synchronized_sha256": "9ddeb7b88a21a4bd094a5c715660cbfdf0a3a235a34c51fd28dc1665081c6125",
+      "redacted": false
+    },
+    {
+      "path": "docs/137_P4折1q05候选验收与回传清理记录_20260927.md",
+      "source_sha256": "50af3fa9716942433fe2f11f1216fbac26c50d27b9e390314f5ee88bfa3c9acb",
+      "synchronized_sha256": "50af3fa9716942433fe2f11f1216fbac26c50d27b9e390314f5ee88bfa3c9acb",
+      "redacted": false
+    },
+    {
+      "path": "docs/138_P4_q07固定种子回退折1启动记录_20260927.md",
+      "source_sha256": "18b729ec4b125a53f89187dda0a4d62069173a3df2e873ff9335b27c56f8a906",
+      "synchronized_sha256": "18b729ec4b125a53f89187dda0a4d62069173a3df2e873ff9335b27c56f8a906",
+      "redacted": false
+    },
+    {
+      "path": "docs/139_P4_q07固定种子回退折2同机配对预注册_20260927.md",
+      "source_sha256": "7aa4cde37ae275a32bc8eb5122d5883784ddb7aa3d4f1369397f1fc70c72e46a",
+      "synchronized_sha256": "7aa4cde37ae275a32bc8eb5122d5883784ddb7aa3d4f1369397f1fc70c72e46a",
+      "redacted": false
+    },
+    {
+      "path": "docs/140_3090资源180秒采样与训练后性能优化计划_20260927.md",
+      "source_sha256": "37af753b067e07aa50191e32281aa2506f37aa2eb77ae9a3e2c8d440ac66f0f2",
+      "synchronized_sha256": "37af753b067e07aa50191e32281aa2506f37aa2eb77ae9a3e2c8d440ac66f0f2",
+      "redacted": false
+    },
+    {
+      "path": "docs/141_复赛损失优化与75分冲刺计划_20260927.md",
+      "source_sha256": "e1e85f4daa7619780e6dafd55e16743421cfc4627587846d9b05a59541e17507",
+      "synchronized_sha256": "e1e85f4daa7619780e6dafd55e16743421cfc4627587846d9b05a59541e17507",
+      "redacted": false
+    },
+    {
+      "path": "docs/142_P5本机4060首折损失配对启动与值守_20260927.md",
+      "source_sha256": "bf150ea970c00229df625b4f831d9c60e911c536be7c3d151e9525d649ae4eb5",
+      "synchronized_sha256": "bf150ea970c00229df625b4f831d9c60e911c536be7c3d151e9525d649ae4eb5",
+      "redacted": false
+    },
+    {
+      "path": "docs/143_P5探索门槛调整与本机第二折预算_20260927.md",
+      "source_sha256": "a8623e9d1596bb0193f481ec802104a0f24f2c129194186189661ec8dda71bb6",
+      "synchronized_sha256": "a8623e9d1596bb0193f481ec802104a0f24f2c129194186189661ec8dda71bb6",
+      "redacted": false
+    },
+    {
+      "path": "docs/144_阿里云新服务器接入与安全迁移_20260927.md",
+      "source_sha256": "2502a8eecba7cfe75c73362a013f42611b379b2bebcf70fcb1c1f4308c7c690a",
+      "synchronized_sha256": "a421276c8f6fc6fa06e36d75c5abb706dc0840a67abd7348320cf2b76297ec8a",
+      "redacted": true
+    },
+    {
+      "path": "docs/145_A10资源验收与P5折2启动_20260928.md",
+      "source_sha256": "9166c02f644da1b220bd859255093d89387b2c12cd8da63c909592d7aefe76dd",
+      "synchronized_sha256": "9166c02f644da1b220bd859255093d89387b2c12cd8da63c909592d7aefe76dd",
+      "redacted": false
+    },
+    {
+      "path": "docs/146_P5_A10全量训练与最终出包验收_20260928.md",
+      "source_sha256": "7a98b48e275d1eeaa3e87298398271f98a66e623aa46faee514a0003c57c1d41",
+      "synchronized_sha256": "7a98b48e275d1eeaa3e87298398271f98a66e623aa46faee514a0003c57c1d41",
+      "redacted": false
+    },
+    {
+      "path": "docs/147_P5增益瓶颈诊断与70分后续门禁_20260928.md",
+      "source_sha256": "74eeb2149edc7ff36994c50f4bf6021cf69558d73f8747d3c973ead890ac8404",
+      "synchronized_sha256": "74eeb2149edc7ff36994c50f4bf6021cf69558d73f8747d3c973ead890ac8404",
+      "redacted": false
+    },
+    {
+      "path": "docs/148_P6_AC单变量验证预注册与资源预算_20260928.md",
+      "source_sha256": "6d0b1b91368e89174398d1c1dc0de5d095bf0e9b2379cceec868b44713029562",
+      "synchronized_sha256": "f5ebb598e64e39850744d6982ef776a62d10bba056f68944cc06e09e992e46f6",
+      "redacted": true
+    },
+    {
+      "path": "docs/149_主办方测试先验公告影响与后续计划修订_20260928.md",
+      "source_sha256": "8507b84a352a8cd77e3ff61bd3f62e9602062339fa56b15911da0c686bd10031",
+      "synchronized_sha256": "8507b84a352a8cd77e3ff61bd3f62e9602062339fa56b15911da0c686bd10031",
+      "redacted": false
+    },
+    {
+      "path": "docs/150_P7类别均衡推理旁路与下一包预注册_20260928.md",
+      "source_sha256": "e2922d0abafdfc2c744ff7b410545ba309064e237315a1802027c952d01cdb7f",
+      "synchronized_sha256": "e2922d0abafdfc2c744ff7b410545ba309064e237315a1802027c952d01cdb7f",
+      "redacted": false
+    },
+    {
+      "path": "docs/151_P7类别均衡推理包验收_20260928.md",
+      "source_sha256": "f3cb482bc4484b083def4328cc7ae66f8c41463d73aea0f6a76e7e20936a1657",
+      "synchronized_sha256": "f3cb482bc4484b083def4328cc7ae66f8c41463d73aea0f6a76e7e20936a1657",
+      "redacted": false
+    },
+    {
+      "path": "docs/152_P8残差分类头两折短筛预注册_20260928.md",
+      "source_sha256": "989b6e92e09fd8b9b92d1eb15f52745c762eccf3f20eb8021389e0dfa153ccbe",
+      "synchronized_sha256": "989b6e92e09fd8b9b92d1eb15f52745c762eccf3f20eb8021389e0dfa153ccbe",
+      "redacted": false
+    },
+    {
+      "path": "docs/153_P9梯度裁剪阈值两折筛选与预算_20260928.md",
+      "source_sha256": "20b34db92f6de7fd68de198f638a43e59715dc21428010516a02d6ab6fa20547",
+      "synchronized_sha256": "20b34db92f6de7fd68de198f638a43e59715dc21428010516a02d6ab6fa20547",
+      "redacted": false
+    },
+    {
+      "path": "docs/154_A10产物迁回本机与关机验收_20260928.md",
+      "source_sha256": "c99797feeca3bc22d550e013c715a46cd04d1ee70a82c78b65ef16fc06aa2c9d",
+      "synchronized_sha256": "c99797feeca3bc22d550e013c715a46cd04d1ee70a82c78b65ef16fc06aa2c9d",
+      "redacted": false
+    },
+    {
+      "path": "docs/155_P10硬类别容量分配旁路预注册_20260929.md",
+      "source_sha256": "52388e3ed5cb2866190c662fdb8806b15a81956f096585012516af6808c595df",
+      "synchronized_sha256": "52388e3ed5cb2866190c662fdb8806b15a81956f096585012516af6808c595df",
+      "redacted": false
+    },
+    {
+      "path": "docs/156_P11_NCE_RCE同折配对预注册_20260929.md",
+      "source_sha256": "71e3cd98d209c3a6b5246f5b672ff6fba66a1066734a22b3efb80d136a506c96",
+      "synchronized_sha256": "71e3cd98d209c3a6b5246f5b672ff6fba66a1066734a22b3efb80d136a506c96",
+      "redacted": false
+    },
+    {
+      "path": "docs/157_P12_ELR复赛单折配对短筛预注册_20260929.md",
+      "source_sha256": "0ad0438ee59acef95515fb31cc193b273d7e215d5e68b615ba10703e2af724f7",
+      "synchronized_sha256": "0ad0438ee59acef95515fb31cc193b273d7e215d5e68b615ba10703e2af724f7",
+      "redacted": false
+    },
+    {
+      "path": "docs/171_20261001_EMA冻结期间的替代方向审计.md",
+      "source_sha256": "21194aef212a4a8382698ae9131e4120aba0ca542f3b7058621b446d013b3d68",
+      "synchronized_sha256": "21194aef212a4a8382698ae9131e4120aba0ca542f3b7058621b446d013b3d68",
+      "redacted": false
+    },
+    {
+      "path": "docs/172_P21折2训练侧只读来源审计_20261001.md",
+      "source_sha256": "aabd6e987eb0a94aa30fc457c6368ce229c3c1c8b18b37a2313d2636c88e5a3b",
+      "synchronized_sha256": "aabd6e987eb0a94aa30fc457c6368ce229c3c1c8b18b37a2313d2636c88e5a3b",
+      "redacted": false
+    },
+    {
+      "path": "docs/173_P21折3同机14对20轮确认观察与验证冻结_20261001.md",
+      "source_sha256": "95db499d2c01e25909e7bc38395972869b28bcfe698471afdb46cb998440c009",
+      "synchronized_sha256": "95db499d2c01e25909e7bc38395972869b28bcfe698471afdb46cb998440c009",
+      "redacted": false
+    },
+    {
+      "path": "docs/174_P21数据加载workers16_24_32限时基准_20261001.md",
+      "source_sha256": "5ede2319415ad0a6c5ed73a1c8f0383f8a73f947757d390b391273f469cca1cf",
+      "synchronized_sha256": "5ede2319415ad0a6c5ed73a1c8f0383f8a73f947757d390b391273f469cca1cf",
+      "redacted": false
+    },
+    {
+      "path": "docs/175_P21折3workers端到端两轮性能对照_20261001.md",
+      "source_sha256": "7553fb5d739781bb1cec097c95288072efed1f6b7dad489b0c74e04b69e31845",
+      "synchronized_sha256": "7553fb5d739781bb1cec097c95288072efed1f6b7dad489b0c74e04b69e31845",
+      "redacted": false
+    },
+    {
+      "path": "docs/180_参考179的Q0与N1前瞻方案_20261002.md",
+      "source_sha256": "47e58cd1e3f76e25288e96d2df79f15e84b5b6a853514419b1611827ffa57e7f",
+      "synchronized_sha256": "47e58cd1e3f76e25288e96d2df79f15e84b5b6a853514419b1611827ffa57e7f",
+      "redacted": false
+    },
+    {
+      "path": "docs/181_N2受约束暖头可行性草案_20261003.md",
+      "source_sha256": "5370e79b4febdff69068e4416ba08d210c537f8dddcfd4b75f1a8d5e9dd3dc1b",
+      "synchronized_sha256": "5370e79b4febdff69068e4416ba08d210c537f8dddcfd4b75f1a8d5e9dd3dc1b",
+      "redacted": false
+    },
+    {
+      "path": "docs/182_N2暖头开发预注册与执行_20261003.md",
+      "source_sha256": "a445b5b5bb5fb064c8c122d879c94118769c389d11298e9666fcd7c4ccbd479f",
+      "synchronized_sha256": "a445b5b5bb5fb064c8c122d879c94118769c389d11298e9666fcd7c4ccbd479f",
+      "redacted": false
+    },
+    {
+      "path": "docs/183_N4层别学习率新试验准备与待授权预算_20261003.md",
+      "source_sha256": "5d0fdec0b8c86bce6f29816a031cb93989d22869b577afe934714845260a5d05",
+      "synchronized_sha256": "5d0fdec0b8c86bce6f29816a031cb93989d22869b577afe934714845260a5d05",
+      "redacted": false
+    },
+    {
+      "path": "docs/184_主线20轮前瞻确认与资源预算_20261003.md",
+      "source_sha256": "dadc59515049610820639c6e093094421d6638da96c25aefe885f0e6796fe094",
+      "synchronized_sha256": "dadc59515049610820639c6e093094421d6638da96c25aefe885f0e6796fe094",
+      "redacted": false
+    },
+    {
+      "path": "docs/185_主线工程守卫修复草案与连接阻塞_20261004.md",
+      "source_sha256": "8b92f0055ab92c62a1116b32219e856e90724996b44b13f49869a8caeb373a89",
+      "synchronized_sha256": "8b92f0055ab92c62a1116b32219e856e90724996b44b13f49869a8caeb373a89",
+      "redacted": false
+    },
+    {
+      "path": "docs/186_主线本机4060迁移预算_20261004.md",
+      "source_sha256": "9eb6935842f374221ea8c25498e5261dcb62b98ec4456488f3123bdcaf0ca069",
+      "synchronized_sha256": "9eb6935842f374221ea8c25498e5261dcb62b98ec4456488f3123bdcaf0ca069",
+      "redacted": false
+    },
+    {
+      "path": "docs/187_主线中断恢复与新资源预算待批_20261006.md",
+      "source_sha256": "233b2f38d70dd750efb8d06563b483ae2bfc77d5f77514b22cf83ec4ad311193",
+      "synchronized_sha256": "233b2f38d70dd750efb8d06563b483ae2bfc77d5f77514b22cf83ec4ad311193",
+      "redacted": false
+    },
+    {
+      "path": "docs/local_snapshots_20261006/166_P17训练权重EMA折2单变量短筛预注册_20260930.md",
+      "source_sha256": "1fb2ead1b5ac8c15e4c91ec5c583e53346523bf44420ee8d1ea4486d9667eb99",
+      "synchronized_sha256": "1fb2ead1b5ac8c15e4c91ec5c583e53346523bf44420ee8d1ea4486d9667eb99",
+      "redacted": false
+    },
+    {
+      "path": "docs/local_snapshots_20261006/167_P18温和训练裁剪折2短筛预注册_20260930.md",
+      "source_sha256": "f6f8746fc74ca0eaee13f6e5cacdb74b64ae27eb6895bd2e4d53dedca6a9d776",
+      "synchronized_sha256": "f6f8746fc74ca0eaee13f6e5cacdb74b64ae27eb6895bd2e4d53dedca6a9d776",
+      "redacted": false
+    },
+    {
+      "path": "docs/local_snapshots_20261006/168_20260929_30训练成果与队友交接_20260930.md",
+      "source_sha256": "5fb9e92cde3883cb901b41f939e9dd038918db56850e806b58d5ecce7316f6be",
+      "synchronized_sha256": "5fb9e92cde3883cb901b41f939e9dd038918db56850e806b58d5ecce7316f6be",
+      "redacted": false
+    }
+  ]
+}
