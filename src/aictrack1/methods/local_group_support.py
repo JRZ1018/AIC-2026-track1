@@ -6,10 +6,31 @@ component receives one vote; conflicting labels share that vote equally by row.
 Cosine ties use lexicographic component order, never label-aware tie breaking.
 """
 from collections import Counter
+import hashlib
 from typing import Callable, Sequence
 
 import torch
 import torch.nn.functional as F
+
+
+def independent_queries(sample_ids: Sequence[str], targets: Sequence[int], *,
+                        num_classes: int, seed: int = 20261003,
+                        skip: int = 1, take: int = 4) -> list[int]:
+    """Next fixed SHA-ranked rows per class; never repeat first-audit queries."""
+    if len(sample_ids) != len(targets) or len(set(sample_ids)) != len(sample_ids):
+        raise ValueError('unique IDs bound to targets')
+    if skip < 1 or take < 1 or num_classes < 1:
+        raise ValueError('independent nonempty query selection')
+    bins=[[] for _ in range(num_classes)]
+    for i,(sid,label) in enumerate(zip(sample_ids,targets)):
+        if not isinstance(sid,str) or not sid or type(label) is not int or not 0<=label<num_classes:
+            raise ValueError('explicit ID/class mapping')
+        bins[label].append(i)
+    result=[]
+    for rows in bins:
+        ordered=sorted(rows,key=lambda i:(hashlib.sha256(f'{seed}:{sample_ids[i]}'.encode()).digest(),sample_ids[i]))
+        result.extend(ordered[skip:skip+take])
+    return result
 
 
 def local_group_support(features: torch.Tensor, targets: torch.Tensor,

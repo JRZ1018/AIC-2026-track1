@@ -22,7 +22,8 @@ def sha(path):
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--config',required=True)
     config=Path(parser.parse_args().config).resolve(); root=config.parent
-    assert root==Path('/root/AICtrack1_local_group_support_audit_20261007')
+    assert root in (Path('/root/AICtrack1_local_group_support_audit_20261007'),
+                    Path('/root/AICtrack1_local_group_coverage_audit_20261007'))
     cfg=json.loads(config.read_text()); stage=json.loads((root/'stage_receipt.json').read_text())
     assert sha(root/'sources.json')==os.environ['LOCAL_GROUP_SOURCE_SHA']
     for name,digest in json.loads((root/'sources.json').read_text())['files'].items():
@@ -51,6 +52,7 @@ def main():
     from aictrack1.data.indexed_images import read_indexed_images
     from aictrack1.methods.heldout_supervision import grouped_folds
     from aictrack1.methods.local_group_support import local_group_support
+    from aictrack1.methods.local_group_support import independent_queries
     from mainline_h1_contract import bind_rows, validate_cache_metadata, MANIFEST_SHA, SPLIT_SHA
     torch.set_num_threads(2)
     assert cfg['num_classes']==750 and cfg['k']==16 and cfg['query_batch']==8 and cfg['sample_seed']==20261003
@@ -82,6 +84,12 @@ def main():
     for c in range(750):
         candidates=(y==c).nonzero().flatten().tolist(); assert candidates
         queries.append(min(candidates,key=lambda i:hashlib.sha256(f"20261003:{rows[i]['sample_id']}".encode()).digest()))
+    previous=set(queries)
+    coverage_mode=root.name=='AICtrack1_local_group_coverage_audit_20261007'
+    if coverage_mode:
+        assert cfg['query_selection']=='next4_per_class_skip_first' and cfg['previous_scopes_reserved_seconds']==3000 and cfg['this_scope_seconds']==600
+        queries=independent_queries([r['sample_id'] for r in rows],y.tolist(),num_classes=750)
+        assert queries and not previous.intersection(queries) and len(queries)<=3000
     guard(); started=time.time()
     result=local_group_support(x,y,groups,queries,num_classes=750,k=16,query_batch=8,guard=guard)
     elapsed=time.time()-started
@@ -89,7 +97,7 @@ def main():
     counts=torch.bincount(y,minlength=750); tail=torch.isin(y[q],torch.tensor(sorted(range(750),key=lambda c:(int(counts[c]),c))[:150]))
     hard=v['scores']['original_h1']['argmax'][q]!=y[q]
     summary={}
-    for name,mask in [('all',torch.ones(750,dtype=torch.bool)),('tail150',tail),('h1_disagreement',hard),('tail_and_h1_disagreement',tail&hard)]:
+    for name,mask in [('all',torch.ones(len(queries),dtype=torch.bool)),('tail150',tail),('h1_disagreement',hard),('tail_and_h1_disagreement',tail&hard)]:
         summary[name]=dict(count=int(mask.sum()),mean_target_support=float(support[mask].mean()) if mask.any() else None,
                           positive_target_support=int((support[mask]>0).sum()),
                           original_ac_mean=float(ac[mask].mean()) if mask.any() else None)
@@ -101,8 +109,10 @@ def main():
                  groups=[groups[i] for i in queries],neighbour_groups=neighbours,target_support=support,
                  cosines=result['cosines'],ac20_weights=ac,source_sha256=sha(root/'sources.json'),
                  config_sha256=sha(config),row_binding=binding,k=16)
+    (output/'config.yaml').write_bytes(config.read_bytes())
+    (output/'command.txt').write_text(json.dumps(sys.argv))
     torch.save(payload,output/'query_support.pt'); guard()
-    report=dict(complete=True,finished_epoch=time.time(),train_rows=118958,queries=750,classes=750,
+    report=dict(complete=True,finished_epoch=time.time(),train_rows=118958,queries=len(queries),classes=750,
                 query_id_sha256=hashlib.sha256('\n'.join(payload['sample_ids']).encode()).hexdigest(),
                 group_count=len(names),k=16,group_exclusion_zero_leakage=True,distinct_component_votes=True,
                 optimizer_steps=0,head_fit_steps=0,gpu_access=False,test_access=False,validation_used=False,
@@ -119,7 +129,28 @@ def main():
                              'fixed k16 is descriptive, no coefficient/k scanning',
                              'FP16 initial CLIP center cache; visual semantics may mismatch fine-grained labels',
                              'no new weighting policy or candidate authorized by mechanical audit PASS'])
+    if coverage_mode:
+        from aictrack1.methods.confidence import classwise_rank_noise_scores
+        selected_counts=torch.bincount(y[q],minlength=750)
+        eligible=selected_counts[y[q]]>=3
+        ranks=lambda z:classwise_rank_noise_scores(-z,y[q])
+        sr=ranks(support);ar=ranks(ac);hr=ranks(v['scores']['original_h1']['py'][q])
+        def rank_comparison(other):
+            a=sr[eligible];b=other[eligible]
+            return dict(rows=int(eligible.sum()),corr=float(torch.corrcoef(torch.stack([a,b]))[0,1]) if a.std()>0 and b.std()>0 else None,
+                        rank_move_ge_point2=float((abs(a-b)>=.2).float().mean()))
+        report.update(previous_queries_repeated=0,query_selection=cfg['query_selection'],
+            selected_class_counts=selected_counts.tolist(),classes_with_at_least3_queries=int((selected_counts>=3).sum()),
+            classes_with_any_support=int(sum(bool((support[y[q]==c]>0).any()) for c in range(750))),
+            within_selected_class_vs_ac=rank_comparison(ar),within_selected_class_vs_h1=rank_comparison(hr))
+        report['limitations'][0]='up to four new fixed rows/class, excludes first audit; selected-class ranks not full-train ranks'
     with (root/'audit_result.json').open('x') as f:json.dump(report,f,indent=2)
+    # The canonical queue's generic completion schema names this field
+    # selected_checkpoint. Explicit role prevents mistaking scalars for a model.
+    with (output/'metrics.json').open('x') as f:
+        json.dump(dict(complete=True,selected_checkpoint='query_support.pt',
+                       role='audit_scalar_payload_not_a_trained_model',
+                       optimizer_steps=0,test_access=False,gpu_access=False),f)
     print(json.dumps(report),flush=True)
 
 
