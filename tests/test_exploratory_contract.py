@@ -52,6 +52,18 @@ class ExplorationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_terminal_history(dict(epoch=20, head_initializer_sha256='old'))
 
+    def test_engine_restore_must_precede_inference_freeze(self):
+        import torch
+        from aictrack1.engine.peft import load_trainable_state_dict
+        model = torch.nn.Linear(3, 2)
+        saved = {name: value.detach().clone() for name, value in model.named_parameters()}
+        load_trainable_state_dict(model, saved)
+        for parameter in model.parameters():
+            parameter.requires_grad_(False)
+        with self.assertRaises(ValueError):
+            load_trainable_state_dict(model, saved)
+        self.assertTrue(all(torch.equal(value, saved[name]) for name,value in model.named_parameters()))
+
 
 if __name__ == '__main__':
     unittest.main()
