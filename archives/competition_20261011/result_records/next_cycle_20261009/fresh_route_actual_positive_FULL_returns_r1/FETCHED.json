@@ -1,0 +1,61 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/FETCHED.json",
+  "original_sha256": "dd9a8e20d16b498476a51138bad3508b02aebb63b8d5ee2221fcde6f495b4ee3",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791530354.5045314,
+    "files": {
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_positive_review.json": {
+        "sha256": "2f0d386d4bde7cb99b21750eb09d66719417da4fd7f0c42238605e5e2074cde5",
+        "local_name": "00_root_actual_positive_review.json",
+        "bytes": 1802
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_positive_evidence.json": {
+        "sha256": "0044006254b4727070f3743cbf0455a5bdecda152eaec3df30b2da5ff535aea4",
+        "local_name": "01_root_actual_positive_evidence.json",
+        "bytes": 7997
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_positive_confirmation.json": {
+        "sha256": "dc3232619e394b4528454f155711d9b88366ac7066f594886860e31a340d8e5f",
+        "local_name": "02_root_actual_positive_confirmation.json",
+        "bytes": 10610
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_full_budget.json": {
+        "sha256": "62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517",
+        "local_name": "03_root_actual_full_budget.json",
+        "bytes": 883
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/smoke/J5_4e55925291244704b94345f61cd01423/receipt.json": {
+        "sha256": "c76fad79031c65e79d35a57eb427edfe9586d745dde61d0e900ba3ad641926a4",
+        "local_name": "04_receipt.json",
+        "bytes": 1410
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/queues/full_attempt_4e55925291244704b94345f61cd01423.json": {
+        "sha256": "74840612b3b268915e03a79a41b6bf9fa547b6874a623aa8105b5ff6157d950b",
+        "local_name": "05_full_attempt_4e55925291244704b94345f61cd01423.json",
+        "bytes": 582
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/source_manifest.json": {
+        "sha256": "be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54",
+        "local_name": "06_source_manifest.json",
+        "bytes": 13160
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/inputs/full_assets.json": {
+        "sha256": "d03dbc72ee219c29340b0d51a40c09fb739173449bc9aab5f8c470eb43d65277",
+        "local_name": "07_full_assets.json",
+        "bytes": 2929
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/configs/experiment/p1_full_J5.yaml": {
+        "sha256": "04e13ffde658a7c532e59767d445e3ba58db20b6e7e7d2232282ed3a8c350d75",
+        "local_name": "08_p1_full_J5.yaml",
+        "bytes": 1682
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/root_actual_FULL_launch.json": {
+        "sha256": "fc544d3b1156b8648c2cbc5165b336cfcf4f5166e8c2190026e2ea0c822f3e35",
+        "local_name": "09_root_actual_FULL_launch.json",
+        "bytes": 1425
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_final_R2_template_actual_CPU_entry.json",
+  "original_sha256": "4bc2ce2788a004834cd4294d2a07e27a72b44e1433c1592ced40a88bab714d6c",
+  "omitted_fields": [
+    "/entries/stdout"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.final.R2_template.actual_CPU_entry.v1",
+    "complete": true,
+    "template_manifest_sha256": "b51766e051ab4f384b7dd0428ab08f0a70c37dd12910cd353592b839d8383048",
+    "verified_source_members": 89,
+    "entries": [
+      {
+        "entry": "scripts/prepare_final_source.py",
+        "return_code": 0
+      },
+      {
+        "entry": "scripts/audit_full_checkpoint.py",
+        "return_code": 0
+      },
+      {
+        "entry": "scripts/run_final.py",
+        "return_code": 0
+      },
+      {
+        "entry": "scripts/accept_return.py",
+        "return_code": 0
+      }
+    ],
+    "unbound": true,
+    "actual_full_checkpoint_sha256": null,
+    "actual_full_model_CPU_restore_performed": false,
+    "actual_inference_performed": false,
+    "GPU_started": false,
+    "test_images_opened": false,
+    "collected_epoch": 1791505576.4314213
+  }
+}

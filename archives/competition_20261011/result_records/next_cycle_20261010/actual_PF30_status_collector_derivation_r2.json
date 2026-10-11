@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_status_collector_derivation_r2.json",
+  "original_sha256": "82fdfcfbcaf3c9f002a8bdafe0caebd15cbc7c419bd300b553d4f259c5fc2d1e",
+  "omitted_fields": [],
+  "record": {
+    "scope": "one extra parenthesis in additive scalar read-only summary fixed before first server use; R1 retained byte-identical",
+    "R1_nested_compile_diagnostic": {
+      "type": "SyntaxError",
+      "message": "unmatched ')' (original_pf_readonly_remote, line 27)"
+    },
+    "R2_outer_and_nested_remote_CPU_compile_passed": true,
+    "files": {
+      "PF30_status_r2.py": "19ceaadadf283628c717b725f86d97c02ba8b892d1419b2cf2c3ed102f846c8a",
+      "PF30_status_fixed_host_public_dns_r2.py": "0684a8c9022c1be72d808e3229a30ce4ada047ca535b78d3737d2af015e68fd2"
+    },
+    "remote_executed": false,
+    "scientific_training_source_modified": false,
+    "checkpoint_loaded": false,
+    "new_waiter_or_framework": false
+  }
+}

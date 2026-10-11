@@ -1,0 +1,99 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/NEXT_CYCLE_PLAN_20261009.json",
+  "original_sha256": "a3af8b547e061ce69200283850263b347d92a2cfc11861d31702a3ed3ba9aca4",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.next_cycle_plan.v1",
+    "recorded_at_local": "2026-10-09T17:46:36+08:00",
+    "status": "planned_no_new_GPU_experiment_started",
+    "execution_authorized_by_existing_user_scope": true,
+    "repeat_user_approval_required": false,
+    "plan_document": "D:\\aicomp\\AICtrack1\\docs\\242_线上69点247记录与下一轮提分执行计划_20261009.md",
+    "plan_document_sha256": "16064c644fb39543f68847ac759e2ab60adb19b873b3f5a53c8ce260aa445e25",
+    "score_record": "ONLINE_SCORE_REPORT_20261009.json",
+    "baseline_route": "J5_GRAPH",
+    "baseline_reported_online_score": "69.24740946480077",
+    "baseline_model_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+    "exploration_split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+    "exploration_split_status": "previously_revealed_query_exploration_only",
+    "exploration_legal_H1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+    "training_seed_exploration": 20261008,
+    "training_epochs": 20,
+    "selection": "fixed_last20",
+    "priority_A": {
+      "variable": "SCE alpha on joint J5",
+      "control_alpha": 0.1,
+      "candidate_alphas": [
+        0.3,
+        0.5
+      ],
+      "beta": 1,
+      "log_zero": -4,
+      "other_config": "match actual joint J5 except alpha; no simultaneous clip or AC changes",
+      "estimated_GPU_hours": [
+        4,
+        6
+      ]
+    },
+    "priority_B": {
+      "method": "Jo-SRC-inspired single student plus EMA soft supervision",
+      "status": "formula_and_source_to_freeze_before_real_100_step_profile",
+      "ema": 0.999,
+      "warmup_epochs": 5,
+      "soft_supervision_coefficients": [
+        0.25,
+        0.5
+      ],
+      "OOD_negative_consistency": false,
+      "soft_supervision_multiplied_by_AC_or_hard_mask": false,
+      "final_branch": "student_only",
+      "estimated_GPU_hours_per_candidate": [
+        4,
+        6
+      ]
+    },
+    "fixed_inference": {
+      "views": 4,
+      "graph": {
+        "k": 10,
+        "lambda": 0.3,
+        "iterations": 3,
+        "temperature": 1,
+        "margin_protection": "ln4"
+      },
+      "P7": {
+        "temperature": 0.5,
+        "strength": 0.75,
+        "iterations": 60
+      }
+    },
+    "confirmation": {
+      "query_groups": "exclude union of previously revealed query groups; freeze exact available IDs before experiments",
+      "actual_new_split_sha256": null,
+      "new_train_only_H1_required": true,
+      "paired_control": "fresh J5_GRAPH",
+      "candidate_count": 1,
+      "shared_new_training_seed": 20261010,
+      "criterion": "actual full-combination primary delta>0 plus root risk review; report natural and CI without adding hard gates"
+    },
+    "planning_resource_envelope": {
+      "GPU_hours_max": 20,
+      "exploration_H1_confirmation_GPU_hours_max": 16,
+      "final_GPU_hours_reserved_min": 4,
+      "heavy_CPU_hours_max": 6,
+      "transfer_acceptance_wall_hours_reserved_min": 2,
+      "actual_next_phase_start": null,
+      "actual_next_phase_deadline": null,
+      "new_disk_peak_budget": "bind real available space, EMA+optimizer+atomic-save peak and cumulative capacity ledger before launch"
+    },
+    "next_package_conditional_target_hours": [
+      12,
+      20
+    ],
+    "target_note": "If A independently confirms and execution is healthy; B or negative confirmation can extend the window. No score guarantee.",
+    "test_score_used_to_select_hyperparameters": false,
+    "new_test_inference_started": false,
+    "current_full_return_local_CPU_acceptance_complete": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_FULL_first_evidence_refs_preparation_r1.json",
+  "original_sha256": "872b939b1151ccb0cb589fb23d7e62b5f258300cff2b9c57038b204cc6581ae7",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "scope": "actual first-query references only; no FULL admission",
+    "first": {
+      "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+      "primary_scope": "candidate_fixed_graph_P7_vs_actual_L35_GRAPH_P7",
+      "primary_delta_pp": 0.22357723577235775,
+      "natural_delta_pp": 0.4102633083364159,
+      "training_seed": 20261008,
+      "training_source_sha256": "4b3f0fe90d8ef5b138d05714526bc92e46dabbdd9254ae849416db61e16638fd",
+      "evidence": {
+        "paired_report": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_diagnostic_20261011/artifacts/comparisons/L50/report.json",
+          "sha256": "ecc3efa7aacf66c2a4092714a009be8b4e04d85780df0da35192ca82138558bd"
+        },
+        "result_manifest": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_diagnostic_20261011/artifacts/comparisons/L50/result_manifest.json",
+          "sha256": "46d5b6ad1768aa465c46220e609045daf41908890ef561277f826be152189cc0"
+        },
+        "root_review": {
+          "path": "/root/autodl-tmp/AICtrack1_L50_FULL_actual_evidence_20261011/actual_L50_first_reused_query_root_review_r1.json",
+          "sha256": "af5014357dc7756d3405ccd69d6faabbd3f109c2b1acf307e5fb2c76b4e93c7d"
+        },
+        "numpy_review": {
+          "path": "/root/autodl-tmp/AICtrack1_L50_FULL_actual_evidence_20261011/actual_L50_first_reused_query_numpy_review_r1.json",
+          "sha256": "bd62185337cad196eb8b4a04eb6892a56dca0f15250e2a1e2d085312c310c24a"
+        },
+        "training_source": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_L50_20261011/source_manifest.json",
+          "sha256": "4b3f0fe90d8ef5b138d05714526bc92e46dabbdd9254ae849416db61e16638fd"
+        },
+        "candidate_identity": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_diagnostic_20261011/artifacts/diagnostics/JOINT_L50/input_identity.json",
+          "sha256": "c3c3b4a105ab46d423677593f6ade08202d19e376c8475d7523ba64d38ce53ec"
+        },
+        "candidate_audit": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_diagnostic_20261011/artifacts/diagnostics/JOINT_L50/p1_checkpoint_audit.json",
+          "sha256": "860f0d7292d89fed952c920ebe0f9751d967b4cdd784eeee684651503500e8ed"
+        },
+        "control_audit": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_diagnostic_20261010/artifacts/diagnostics/JOINT_L35/p1_checkpoint_audit.json",
+          "sha256": "cc1ef2a0fbff94b25fc00e4374743657838a7f52f7f3d155db8a40bbd446e89d"
+        }
+      }
+    },
+    "future_second": null,
+    "future_FULL_budget": null
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/continuation_actual_POSIX_GO_core_CPU_preflight_r2.json",
+  "original_sha256": "d20d3a7508fd1db86ca354119e6029d814f3c9e1218659bc2c74449295884318",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.continuation.actual_POSIX_GO_core_CPU_preflight.v1",
+    "complete": true,
+    "source_manifest_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+    "launch_gate_sha256": "bff35345a90cbd9623041572fa569a36e5ce0ecfb9067213f3d35996404f761e",
+    "actual_POSIX_exec": true,
+    "actual_Linux_proc_identity": true,
+    "results": [
+      {
+        "mode": "G",
+        "returncode": 0,
+        "owner": {
+          "pid": 241893,
+          "ppid": 241892,
+          "pgrp": 241893,
+          "session": 241893,
+          "start_ticks": "309594699"
+        },
+        "real_POSIX_exec_pid_birth_preserved": true,
+        "whole_session_group_closed": true
+      },
+      {
+        "mode": "EOF",
+        "returncode": 73,
+        "owner": {
+          "pid": 241894,
+          "ppid": 241892,
+          "pgrp": 241894,
+          "session": 241894,
+          "start_ticks": "309594707"
+        },
+        "real_POSIX_exec_pid_birth_preserved": false,
+        "whole_session_group_closed": true
+      },
+      {
+        "mode": "X",
+        "returncode": 73,
+        "owner": {
+          "pid": 241895,
+          "ppid": 241892,
+          "pgrp": 241895,
+          "session": 241895,
+          "start_ticks": "309594711"
+        },
+        "real_POSIX_exec_pid_birth_preserved": false,
+        "whole_session_group_closed": true
+      }
+    ],
+    "fixture_command_only": true,
+    "production_launch_gate_main_invoked": false,
+    "production_trainer_invoked": false,
+    "checkpoint_loaded": false,
+    "budget_bound": false,
+    "GPU_admitted": false,
+    "CUDA_used": false,
+    "model_forwards": 0,
+    "optimizer_steps": 0,
+    "canonical_J5_unchanged": true,
+    "test_access": false,
+    "created_epoch": 1791522294.4908183
+  }
+}

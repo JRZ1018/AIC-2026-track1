@@ -80,5 +80,25 @@ class PersistentFilterTests(unittest.TestCase):
         self.assertTrue(has);self.assertEqual(float(loss.detach()),2.)
         loss.backward();self.assertEqual(x.grad.tolist(),[1.,0.])
 
+    def test_lookup_train_only_and_order(self):
+        g=PersistentTrainingGate(torch.tensor([2,4,8]),torch.tensor([0,0,0]))
+        g.keep[1]=False
+        self.assertEqual(g.keep_for(torch.tensor([8,4,2])).tolist(),[True,False,True])
+        for ids in (torch.tensor([3]),torch.tensor([10]),torch.tensor([-1])):
+            with self.assertRaises(ValueError):g.keep_for(ids)
+
+    def test_all_keep_exact_weighted_loss_and_grad(self):
+        x=torch.tensor([2.,4.,9.],requires_grad=True);w=torch.tensor([.03,.4,.8])
+        expected=(x*w).sum()/w.sum();actual,has=gated_weighted_loss(x,w,torch.ones(3,dtype=torch.bool))
+        self.assertTrue(has);self.assertTrue(torch.equal(expected,actual))
+        self.assertTrue(torch.equal(torch.autograd.grad(expected,x)[0],torch.autograd.grad(actual,x)[0]))
+
+    def test_empty_supervision_skips_adamw_all_state(self):
+        p=torch.nn.Parameter(torch.tensor([1.]));opt=torch.optim.AdamW([p],lr=.1,weight_decay=.1)
+        before=p.detach().clone();loss,has=gated_weighted_loss(p.square(),torch.ones(1),torch.zeros(1,dtype=torch.bool))
+        opt.zero_grad(set_to_none=True)
+        if has:loss.backward();opt.step()
+        self.assertTrue(torch.equal(before,p));self.assertEqual(len(opt.state),0)
+
 
 if __name__=='__main__': unittest.main()

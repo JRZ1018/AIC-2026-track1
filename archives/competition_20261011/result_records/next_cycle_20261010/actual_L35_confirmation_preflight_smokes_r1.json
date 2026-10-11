@@ -1,0 +1,31 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_confirmation_preflight_smokes_r1.json",
+  "original_sha256": "b296a7aefc11d3e12efaa0a0c46d6c1f493a2a293551c0bfbf2ebe9fd795b688",
+  "omitted_fields": [
+    "/stderr",
+    "/stdout"
+  ],
+  "record": [
+    {
+      "args": [
+        "--preflight"
+      ],
+      "returncode": 0
+    },
+    {
+      "args": [
+        "--smoke",
+        "J5"
+      ],
+      "returncode": 0
+    },
+    {
+      "args": [
+        "--smoke",
+        "L35"
+      ],
+      "returncode": 0
+    }
+  ]
+}

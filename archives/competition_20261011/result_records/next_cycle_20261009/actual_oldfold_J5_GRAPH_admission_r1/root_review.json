@@ -1,0 +1,35 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/actual_oldfold_J5_GRAPH_admission_r1/root_review.json",
+  "original_sha256": "463a006bff29f3cf05adb21870c9b4bf54c2c04faf6019ccd2d303c922ed2ba5",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.root_oldfold_review.v1",
+    "selected_route": "J5_GRAPH",
+    "decision": "proceed_to_fresh_confirmation",
+    "reason": "Direct fixed graph+J5 P7 vs C has the stronger primary signal (+37/14740) and positive natural signal; S barely clears exploratory continuation (+16/14740). Select exactly one J5_GRAPH for an untouched grouped-split matched-runtime confirmation. No stable or online gain is claimed.",
+    "selected_combo_sha256": "2aec2e3c1b176c76d0488933ce7b540d23c9cffe75fc7454fef53a7b786fd559",
+    "selected_raw_J5_pair_sha256": "e712cd82b6de831edab53e4432c4ee1fc1a5ac71c1a771e903798a83d2bd8b15",
+    "S_paired_report_sha256": "776b1120fb75544ae5422b3960347c6a4f87c4881b4b16e0088d8ce86e216d66",
+    "primary_delta_vs_C_pp": 0.25101763907734054,
+    "raw_J5_primary_delta_pp": 0.06784260515603799,
+    "S_primary_delta_pp": 0.10854816824966079,
+    "S_natural_delta_pp": -0.0033628140027575078,
+    "risk_review": "Four supported20 classes16/168/364/500 lose2 correct each; no new zero recall or high-margin wrong changes in the prior root review. Tail is not broadly collapsed. Old C/J/S runtime is incompletely matched and graph was selected among4 old-query points; conditional intervals omit selection and training-seed variance. Independent confirmation is required.",
+    "selection_protocol_sha256": "b60a39fc5e966b45f97a04bae30e5d2b67fe70b83f96c01c1d97799622cd2a02",
+    "fixed_graph": {
+      "k": 10,
+      "lambda_value": 0.3,
+      "iterations": 3,
+      "probability_temperature": 1.0,
+      "protection_raw_margin": 1.3862943611198906
+    },
+    "S_is_below_stable_gain_evidence": true,
+    "S_continuation_threshold_met": true,
+    "natural_nonnegative_is_not_a_hard_gate": true,
+    "test_access": false,
+    "used_test_or_online_scores": false,
+    "root_reviewed": true,
+    "created_epoch": 1791510940.396931
+  }
+}

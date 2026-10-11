@@ -1,0 +1,152 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_confirmation_fixed20_launch_r1.json",
+  "original_sha256": "fd7e9f6fbb02565095a9840a5940d8e880c67ead29cbcb7318f4b288e70a77c0",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.L35_confirmation.actual_launch.v1",
+    "source_manifest_sha256": "39ee976aa28643cc86dde75cc118338d96fdf84aae8957bbae8628e18751aae4",
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_20261010",
+    "controller": {
+      "pid": 19306,
+      "pgrp": 19306,
+      "session": 19306,
+      "start_ticks": "926376118"
+    },
+    "planned_arms": [
+      "J5",
+      "L35"
+    ],
+    "epochs_each": 20,
+    "planned_pause": false,
+    "test_access": false,
+    "new_H1_checkpoint_sha256": "4073c5b58f5993373f1678f714342d829fdb6c2d092cf60cf1ebfa7aa0083980",
+    "training_seed": 20261010,
+    "launch_unix": 1791633959.0872009,
+    "budget_sha256": null,
+    "smokes": [
+      {
+        "arm": "J5",
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_20261010/artifacts/smoke/J5_dd25552aca4647d48bc9229c7bdf9d05/receipt.json",
+        "receipt": {
+          "schema": "aictrack1.fresh_route.cuda_smoke.v1",
+          "status": "passed",
+          "synthetic_only": true,
+          "candidate": false,
+          "config_sha256": "f60b13689a2f0e95cf4b87d04129fe1b5b3e1a645e80550146d8b5f9b934f554",
+          "full_visual_tensors": 152,
+          "trainable_tensors": 154,
+          "trainable_parameters": 88233966,
+          "head_gradient_norms": {
+            "linear.weight": 0.10219016671180725,
+            "linear.bias": 0.10218612849712372
+          },
+          "head_frozen": false,
+          "base_loss": {
+            "kind": "sce",
+            "alpha": 0.1,
+            "beta": 1.0,
+            "log_zero": -4.0
+          },
+          "first_loss": 4.809621810913086,
+          "uninterrupted_second_loss": 4.708592414855957,
+          "resumed_second_loss": 4.708592414855957,
+          "max_parameter_difference": 1.1641532182693481e-10,
+          "scheduler_T_max": 20,
+          "amp_overflow_skips": [
+            {
+              "from_scale": 65536.0,
+              "to_scale": 32768.0
+            },
+            {
+              "from_scale": 32768.0,
+              "to_scale": 16384.0
+            }
+          ],
+          "successful_update_count": 3,
+          "successful_updates": [
+            {
+              "loss": 4.809621810913086,
+              "scale": 16384.0,
+              "scheduler_epoch": 1
+            },
+            {
+              "loss": 4.708592414855957,
+              "scale": 16384.0,
+              "scheduler_epoch": 2
+            },
+            {
+              "loss": 4.708592414855957,
+              "scale": 16384.0,
+              "scheduler_epoch": 2
+            }
+          ],
+          "checkpoint_sha256": "d0811e365915e2a9d007326ed4a5179315b082a2386acf61f998f3a986e3f553",
+          "checkpoint_role": "synthetic_resume_only"
+        }
+      },
+      {
+        "arm": "L35",
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_20261010/artifacts/smoke/L35_31608195952d410eacc28e1e72d351a1/receipt.json",
+        "receipt": {
+          "schema": "aictrack1.fresh_route.cuda_smoke.v1",
+          "status": "passed",
+          "synthetic_only": true,
+          "candidate": false,
+          "config_sha256": "35fc5b350f171c7ee7eb0a50e17f8960bce166045312877b9095d66fb01161dc",
+          "full_visual_tensors": 152,
+          "trainable_tensors": 154,
+          "trainable_parameters": 88233966,
+          "head_gradient_norms": {
+            "linear.weight": 0.13697344064712524,
+            "linear.bias": 0.1369791030883789
+          },
+          "head_frozen": false,
+          "base_loss": {
+            "kind": "sce",
+            "alpha": 0.1,
+            "beta": 1.0,
+            "log_zero": -4.0
+          },
+          "first_loss": 4.809621810913086,
+          "uninterrupted_second_loss": 4.438943862915039,
+          "resumed_second_loss": 4.438943862915039,
+          "max_parameter_difference": 7.450580596923828e-09,
+          "scheduler_T_max": 20,
+          "amp_overflow_skips": [
+            {
+              "from_scale": 65536.0,
+              "to_scale": 32768.0
+            },
+            {
+              "from_scale": 32768.0,
+              "to_scale": 16384.0
+            }
+          ],
+          "successful_update_count": 3,
+          "successful_updates": [
+            {
+              "loss": 4.809621810913086,
+              "scale": 16384.0,
+              "scheduler_epoch": 1
+            },
+            {
+              "loss": 4.438943862915039,
+              "scale": 16384.0,
+              "scheduler_epoch": 2
+            },
+            {
+              "loss": 4.438943862915039,
+              "scale": 16384.0,
+              "scheduler_epoch": 2
+            }
+          ],
+          "checkpoint_sha256": "c6ab02f9fe889aba2b986eda7e78c269b5d7ce593f2d0924ff842b0fbaedc8be",
+          "checkpoint_role": "synthetic_resume_only"
+        }
+      }
+    ]
+  }
+}

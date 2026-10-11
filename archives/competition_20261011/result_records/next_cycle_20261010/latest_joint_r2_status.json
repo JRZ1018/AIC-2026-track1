@@ -1,0 +1,110 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_joint_r2_status.json",
+  "original_sha256": "3d703be00d2d3ecd97d845b26ddf4a5f664f2f37cf40f64a1217af3d18338d6c",
+  "omitted_fields": [
+    "/actual_launch_reference/receipt/command",
+    "/actual_launch_reference/receipt/controller/argv",
+    "/runtime_receipts/A3_53c072ee6eef46aba34b583609dd7e7a.json/environment",
+    "/runtime_receipts/A3_58e02629199741519b70ebc4b1baf206.json/environment",
+    "/runtime_receipts/A5_e1f9a00df1464444b8552450635c07a9.json/environment"
+  ],
+  "record": {
+    "epoch": 1791542379.8498225,
+    "processes": [],
+    "canonical_lock": null,
+    "epochs": {
+      "artifacts/queues/805fd351f66d4c4b86cf431c94a2476a/chain.log": [],
+      "artifacts/queues/805fd351f66d4c4b86cf431c94a2476a/A3.log": [],
+      "artifacts/queues/9447f553cc39487f8b62770878158358/chain.log": [],
+      "artifacts/queues/9447f553cc39487f8b62770878158358/A5.log": [],
+      "artifacts/queues/82481b3b98ca4b19aaf4e2a4eb328006/chain.log": [],
+      "artifacts/queues/82481b3b98ca4b19aaf4e2a4eb328006/A3.log": []
+    },
+    "logs": {
+      "artifacts/queues/805fd351f66d4c4b86cf431c94a2476a/chain.log": "[2026-10-09 18:31:34] 20261010-supervision-joint-A3-A5 start\n[2026-10-09 18:31:34] A3: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-09 18:31:44] A3: finished in 0.2 min; output validated\n[2026-10-09 18:31:44] 20261010-supervision-joint-A3-A5 finished\n",
+      "artifacts/queues/805fd351f66d4c4b86cf431c94a2476a/A3.log": "{\"schema\": \"aictrack1.fresh_route.cuda_smoke.v1\", \"status\": \"passed\", \"synthetic_only\": true, \"candidate\": false, \"config_sha256\": \"6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6\", \"full_visual_tensors\": 152, \"trainable_tensors\": 154, \"trainable_parameters\": 88233966, \"head_gradient_norms\": {\"linear.weight\": 0.3030812442302704, \"linear.bias\": 0.30306896567344666}, \"head_frozen\": false, \"base_loss\": {\"kind\": \"sce\", \"alpha\": 0.3, \"beta\": 1.0, \"log_zero\": -4.0}, \"first_loss\": 6.362217426300049, \"uninterrupted_second_loss\": 6.038030624389648, \"resumed_second_loss\": 6.038030624389648, \"max_parameter_difference\": 4.656612873077393e-10, \"scheduler_T_max\": 20, \"amp_overflow_skips\": [{\"from_scale\": 65536.0, \"to_scale\": 32768.0}, {\"from_scale\": 32768.0, \"to_scale\": 16384.0}, {\"from_scale\": 16384.0, \"to_scale\": 8192.0}, {\"from_scale\": 8192.0, \"to_scale\": 4096.0}], \"successful_update_count\": 3, \"successful_updates\": [{\"loss\": 6.362217426300049, \"scale\": 4096.0, \"scheduler_epoch\": 1}, {\"loss\": 6.038030624389648, \"scale\": 4096.0, \"scheduler_epoch\": 2}, {\"loss\": 6.038030624389648, \"scale\": 4096.0, \"scheduler_epoch\": 2}], \"checkpoint_sha256\": \"b3ed9d3ec2e99864ccfea2c9ef524cb0e6cfc42a4011fd0d01e3172301157491\", \"checkpoint_role\": \"synthetic_resume_only\"}\n",
+      "artifacts/queues/9447f553cc39487f8b62770878158358/chain.log": "[2026-10-09 18:33:08] 20261010-supervision-joint-A3-A5 start\n[2026-10-09 18:33:08] A5: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-09 18:33:19] A5: finished in 0.2 min; output validated\n[2026-10-09 18:33:19] 20261010-supervision-joint-A3-A5 finished\n",
+      "artifacts/queues/9447f553cc39487f8b62770878158358/A5.log": "{\"schema\": \"aictrack1.fresh_route.cuda_smoke.v1\", \"status\": \"passed\", \"synthetic_only\": true, \"candidate\": false, \"config_sha256\": \"8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa\", \"full_visual_tensors\": 152, \"trainable_tensors\": 154, \"trainable_parameters\": 88233966, \"head_gradient_norms\": {\"linear.weight\": 0.501869797706604, \"linear.bias\": 0.5019727945327759}, \"head_frozen\": false, \"base_loss\": {\"kind\": \"sce\", \"alpha\": 0.5, \"beta\": 1.0, \"log_zero\": -4.0}, \"first_loss\": 7.938050270080566, \"uninterrupted_second_loss\": 7.401813983917236, \"resumed_second_loss\": 7.401813983917236, \"max_parameter_difference\": 2.3283064365386963e-10, \"scheduler_T_max\": 20, \"amp_overflow_skips\": [{\"from_scale\": 65536.0, \"to_scale\": 32768.0}, {\"from_scale\": 32768.0, \"to_scale\": 16384.0}, {\"from_scale\": 16384.0, \"to_scale\": 8192.0}, {\"from_scale\": 8192.0, \"to_scale\": 4096.0}, {\"from_scale\": 4096.0, \"to_scale\": 2048.0}], \"successful_update_count\": 3, \"successful_updates\": [{\"loss\": 7.938050270080566, \"scale\": 2048.0, \"scheduler_epoch\": 1}, {\"loss\": 7.401813983917236, \"scale\": 2048.0, \"scheduler_epoch\": 2}, {\"loss\": 7.401813983917236, \"scale\": 2048.0, \"scheduler_epoch\": 2}], \"checkpoint_sha256\": \"b6f3496d3a2605c81b5353d8df87a5e6b7148198c90c6dfc64ecdc5a748f6d01\", \"checkpoint_role\": \"synthetic_resume_only\"}\n",
+      "artifacts/queues/82481b3b98ca4b19aaf4e2a4eb328006/chain.log": "[2026-10-09 18:34:32] 20261010-supervision-joint-A3-A5 start\n[2026-10-09 18:34:32] A3: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-09 18:34:46] A3: STOPPED after 0.2 min with return code 1; output status=partial: output directory exists without metrics.json; halting queue. Log: /root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r2_20261010/artifacts/queues/82481b3b98ca4b19aaf4e2a4eb328006/A3.log\n",
+      "artifacts/queues/82481b3b98ca4b19aaf4e2a4eb328006/A3.log": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r2_20261010/scripts/train_n1_peft.py\", line 1463, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r2_20261010/scripts/train_n1_peft.py\", line 491, in main\n    \"baseline_trainer_sha256\": _sha256(ROOT / \"scripts/train_peft.py\"),\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r2_20261010/scripts/train_n1_peft.py\", line 89, in _sha256\n    with path.open(\"rb\") as handle:\n         ^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r2_20261010/scripts/train_peft.py'\n"
+    },
+    "checkpoint_stats": {},
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21616865280,
+        "free": 10595389440
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 92712710144,
+        "free": 36136308736
+      }
+    },
+    "actual_launch_reference": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r2_20261010/root_actual_launch.json",
+      "sha256": "c21e4cc8533b30d203d24b9825f46af4913b5be8eb2d88ca610cd7837c48e982",
+      "receipt": {
+        "schema": "aictrack1.supervision_joint.actual_launch.v1",
+        "controller": {
+          "pid": 8993,
+          "ppid": 8991,
+          "pgrp": 8993,
+          "session": 8993,
+          "start_ticks": "311572270",
+          "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r2_20261010"
+        },
+        "source_manifest_sha256": "7a9522f5295b73ac21b809aff6e3062c28be80268ef6c533fe26b9af70580cd6",
+        "launch_unix": 1791542070.043623,
+        "test_access": false,
+        "planned_arms": [
+          "A3",
+          "A5"
+        ],
+        "epochs_each": 20,
+        "planned_pause": false
+      }
+    },
+    "runtime_receipts": {
+      "A3_53c072ee6eef46aba34b583609dd7e7a.json": {
+        "schema": "aictrack1.fresh_route.runtime.v1",
+        "arm": "A3",
+        "selected_route": "J5_GRAPH",
+        "pid": 8866,
+        "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+        "source_manifest_sha256": "7a9522f5295b73ac21b809aff6e3062c28be80268ef6c533fe26b9af70580cd6",
+        "collected_at_unix": 1791541898.0030885,
+        "test_access": false,
+        "actual_torch_threads": 4,
+        "actual_torch_interop_threads": 64
+      },
+      "A5_e1f9a00df1464444b8552450635c07a9.json": {
+        "schema": "aictrack1.fresh_route.runtime.v1",
+        "arm": "A5",
+        "selected_route": "J5_GRAPH",
+        "pid": 8936,
+        "config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa",
+        "source_manifest_sha256": "7a9522f5295b73ac21b809aff6e3062c28be80268ef6c533fe26b9af70580cd6",
+        "collected_at_unix": 1791541992.7459388,
+        "test_access": false,
+        "actual_torch_threads": 4,
+        "actual_torch_interop_threads": 64
+      },
+      "A3_58e02629199741519b70ebc4b1baf206.json": {
+        "schema": "aictrack1.fresh_route.runtime.v1",
+        "arm": "A3",
+        "selected_route": "J5_GRAPH",
+        "pid": 8999,
+        "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+        "source_manifest_sha256": "7a9522f5295b73ac21b809aff6e3062c28be80268ef6c533fe26b9af70580cd6",
+        "collected_at_unix": 1791542076.5270858,
+        "test_access": false,
+        "actual_torch_threads": 4,
+        "actual_torch_interop_threads": 64
+      }
+    },
+    "controller_log": "[2026-10-09 18:34:32] 20261010-supervision-joint-A3-A5 start\n[2026-10-09 18:34:32] A3: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-09 18:34:46] A3: STOPPED after 0.2 min with return code 1; output status=partial: output directory exists without metrics.json; halting queue. Log: /root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r2_20261010/artifacts/queues/82481b3b98ca4b19aaf4e2a4eb328006/A3.log\n",
+    "gpu": "1 MiB, 0 %"
+  }
+}

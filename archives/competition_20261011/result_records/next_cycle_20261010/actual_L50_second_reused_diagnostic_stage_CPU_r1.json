@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_reused_diagnostic_stage_CPU_r1.json",
+  "original_sha256": "ff36e005b468970b2fd2980a18253c34efa815a2c8be650466018d254edf175b",
+  "omitted_fields": [
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "complete": true,
+    "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_L50_second_reused_diagnostic_template_20261011",
+    "source_sha256": "55d70da919395c6fff708ccdeabe18eed83465cefe506d5f7738ba3797d5d1da",
+    "reused_files": 17,
+    "uploaded_bytes": 2376080,
+    "dependency_exit": 0,
+    "checkpoint_reads": 0,
+    "image_reads": 0,
+    "GPU": false,
+    "future_last_sha256": null,
+    "now_unix": 1791682006.611575
+  }
+}

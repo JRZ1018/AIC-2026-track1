@@ -1,0 +1,18 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_FULL_cuda_smoke_launch_r1.json",
+  "original_sha256": "32d09803a64f2cdca461ef7903f27c27bb0bd1e751705757f2909a5e5ef15999",
+  "omitted_fields": [],
+  "record": {
+    "controller": {
+      "pid": 30235,
+      "pgrp": 30235,
+      "session": 30235,
+      "start_ticks": "928148137"
+    },
+    "source_manifest_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+    "synthetic_only": true,
+    "candidate": false,
+    "launch_unix": 1791651678.279066
+  }
+}

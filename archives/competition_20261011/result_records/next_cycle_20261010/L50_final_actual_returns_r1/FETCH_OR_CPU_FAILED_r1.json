@@ -1,0 +1,13 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/FETCH_OR_CPU_FAILED_r1.json",
+  "original_sha256": "86ec76cfb83be34235c8bd02755aac181de4cc792ffc7b806f27759bc0a2fd74",
+  "omitted_fields": [],
+  "record": {
+    "error": "AssertionError('remote stream EOF')",
+    "done": 173,
+    "received": 0,
+    "partials_preserved": true,
+    "time_unix": 1791703624.0730805
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_append_operator_stage_CPU_r2.json",
+  "original_sha256": "4abc59abaa6f21a2345aedbd3c31a9bdcc7dd451969f06267f4ab1ef8c56c69d",
+  "omitted_fields": [],
+  "record": "{\"complete\": true, \"CPU_entry_PASS\": true, \"member_count\": 8, \"source_manifest_sha256\": \"e33a805cf254f6261e12415ad379c606487ad9bda2a7df685c06e3abb840da15\", \"remote_root\": \"/root/autodl-tmp/AICtrack1_next_cycle_CG_append_continuation_r2_20261010\", \"bound\": false, \"GPU\": false, \"checkpoint_reads\": 0, \"test_access\": false}\n"
+}

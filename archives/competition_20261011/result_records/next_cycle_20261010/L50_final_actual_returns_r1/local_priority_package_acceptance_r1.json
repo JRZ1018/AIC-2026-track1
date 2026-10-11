@@ -1,0 +1,25 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/local_priority_package_acceptance_r1.json",
+  "original_sha256": "882256279c09183f66af9df2c9fb3c80dc77440fd40d5a56c3f8bfcdd08479f3",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.L50.priority_package_acceptance.v1",
+    "complete": true,
+    "rows": 37444,
+    "classes": 750,
+    "exact_test_JPG_ids_order_unique": true,
+    "root_single_CSV_bytes_CRC_SHA": true,
+    "package_hashes": {
+      "pred_results.csv": "908850887577f16302ce5fabd2656051b25eb0b8446c1fd90f0504d4bd0c8ba9",
+      "pred_results.zip": "6d06027999c68074f8232426c0fbe3e3475b804f35457b9f04561957557b45fe",
+      "submission_manifest.json": "1fa3f729fab410c924e0b6643a5d32ba009a7e411b344f6b25b4e2dae785b59c"
+    },
+    "return_manifest_sha256": "4eb23dc2627848f949b026ed5c7c03739436c72e91aa374cbd4f284d7bb781e6",
+    "final_sha256": "5a7db0752140e0b73bc923fe62951253dd97b0f6c347a0c8d6b588873d6027e9",
+    "actual_remote_CPU_recovery_PASS": true,
+    "all_final_groups_closed": true,
+    "canonical_idle": true,
+    "model_source_return_pending": true
+  }
+}

@@ -1,0 +1,510 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_CG25_actual_fourview_status_r1.json",
+  "original_sha256": "4b08aeb206b57e39964df13bc7c7aa5e985bbd021bfe882dcdd284d2a895096c",
+  "omitted_fields": [
+    "/jsons/runtime_receipt.json/upstream_receipts/receipt/environment",
+    "/stdout"
+  ],
+  "record": {
+    "observed_unix": 1791611633.3815558,
+    "group": [],
+    "outputs": [
+      {
+        "name": "runtime_receipt.json",
+        "bytes": 4361
+      },
+      {
+        "name": "p1_checkpoint_audit.json",
+        "bytes": 3614
+      },
+      {
+        "name": "fused_logits.pt",
+        "bytes": 47052393
+      },
+      {
+        "name": "paired_predictions.csv",
+        "bytes": 2390984
+      },
+      {
+        "name": "report.json",
+        "bytes": 2713
+      },
+      {
+        "name": "rows.csv",
+        "bytes": 5434584
+      },
+      {
+        "name": "fused_features.pt",
+        "bytes": 63342453
+      },
+      {
+        "name": "input_identity.json",
+        "bytes": 9937
+      },
+      {
+        "name": "result_manifest.json",
+        "bytes": 1260
+      }
+    ],
+    "jsons": {
+      "runtime_receipt.json": {
+        "schema": "aictrack1.fresh_route.diagnostic_runtime.v1",
+        "arm": "CG25",
+        "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+        "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+        "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+        "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+        "selected_route": "J5_GRAPH",
+        "runtime": {
+          "OMP_NUM_THREADS": "4",
+          "MKL_NUM_THREADS": "4",
+          "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+          "torch_num_threads": 4,
+          "torch_num_interop_threads": 64
+        },
+        "upstream_receipts": [
+          {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/runtime_receipts/CG25_769f12fe4ea54b56819a7bef41e4c0d1.json",
+            "sha256": "dfb8ba773a43837693945c16c2039e3fae8d8c8748e98f5e75d4d207858ba1d6",
+            "receipt": {
+              "schema": "aictrack1.fresh_route.runtime.v1",
+              "arm": "CG25",
+              "selected_route": "J5_GRAPH",
+              "pid": 38688,
+              "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+              "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+              "collected_at_unix": 1791599678.038732,
+              "test_access": false,
+              "actual_torch_threads": 4,
+              "actual_torch_interop_threads": 64
+            }
+          },
+          {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/runtime_receipts/CG25_904e4081d5174d69a82566f46e165745.json",
+            "sha256": "a56b3be70c93a5a193d4d2c847cd9db7ee85f8783f6c2ce8463ef3f9375572ee",
+            "receipt": {
+              "schema": "aictrack1.fresh_route.runtime.v1",
+              "arm": "CG25",
+              "selected_route": "J5_GRAPH",
+              "pid": 5498,
+              "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+              "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+              "collected_at_unix": 1791610519.1068754,
+              "test_access": false,
+              "actual_torch_threads": 4,
+              "actual_torch_interop_threads": 64
+            }
+          },
+          {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/runtime_receipts/CG25_944e1fddba0340c7897138f2f764401b.json",
+            "sha256": "68b518d85948762bcc043836d7ecdea1ad90d7af0bcb0172fbf8f8462af07ad4",
+            "receipt": {
+              "schema": "aictrack1.fresh_route.runtime.v1",
+              "arm": "CG25",
+              "selected_route": "J5_GRAPH",
+              "pid": 38629,
+              "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+              "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+              "collected_at_unix": 1791599601.6709416,
+              "test_access": false,
+              "actual_torch_threads": 4,
+              "actual_torch_interop_threads": 64
+            }
+          },
+          {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/runtime_receipts/CG25_e548e51fd9b34cc7990cbf42e85584e2.json",
+            "sha256": "aa41a873f3418029708bc11647965c110f6c22f46439b926ff26d8fc0b90b1f2",
+            "receipt": {
+              "schema": "aictrack1.fresh_route.runtime.v1",
+              "arm": "CG25",
+              "selected_route": "J5_GRAPH",
+              "pid": 2077,
+              "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+              "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+              "collected_at_unix": 1791604326.45485,
+              "test_access": false,
+              "actual_torch_threads": 4,
+              "actual_torch_interop_threads": 64
+            }
+          }
+        ],
+        "test_access": false
+      },
+      "p1_checkpoint_audit.json": {
+        "checkpoint_role": "last",
+        "checkpoint_epoch": 20,
+        "epoch": 20,
+        "fixed_last_sha256": "afb1d33152e61bff7fbf015d6a87e3a5d835b6bb189aa23daff775bc344ce652",
+        "checkpoint_sha256": "afb1d33152e61bff7fbf015d6a87e3a5d835b6bb189aa23daff775bc344ce652",
+        "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+        "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+        "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+        "train_count": 118958,
+        "validation_count": 29737,
+        "training_seed": 20261008,
+        "history_epochs": 20,
+        "trainable_tensors": 154,
+        "trainable_numel": 88233966,
+        "visual_tensors": 152,
+        "head_tensors": 2,
+        "optimizer_parameter_groups": [
+          152,
+          2
+        ],
+        "optimizer_moments_finite": true,
+        "scheduler_epoch": 20,
+        "ac_observation_epochs": 20,
+        "python_rng_private_restore": true,
+        "numpy_safe_list_private_restore": true,
+        "torch_rng_private_CPU_restore": true,
+        "cuda_rng_payloads": 1,
+        "cuda_rng_payload_structurally_checked": true,
+        "cuda_accessed": false,
+        "schema": "aictrack1.fresh_route.fixed_last_diagnostic_audit.v1",
+        "p1_arm": "CG25",
+        "model_arm": "CG25",
+        "complete": true,
+        "status": "complete_fixed_last20_audit",
+        "classifier_head_source": "joint_fixed_last_state",
+        "classifier_parameters_restored_equal": true,
+        "model_frozen_eval": true,
+        "training_source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+        "diagnostic_source_manifest_sha256": "6d4e32f82bc727866477f78dc0bc47bebf4c1450130bc0b0c9f86d7dcea6152e",
+        "exact_ac_train_id_label_binding": true,
+        "train_validation_group_overlap": 0,
+        "model_initialization_official_clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+        "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/experiments/JOINT_CG25/last.pt",
+        "config_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/configs/experiment/p1_CG25.yaml",
+        "inference_optimizer_steps": 0,
+        "historical_control_cache_reused": false,
+        "test_access": false,
+        "admission_receipt_sha256": null,
+        "source_h1_manifest_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+        "selected_route": "J5_GRAPH",
+        "center_guard_augmentation": {
+          "schema": "aictrack1.center_guard.augmentation.v1",
+          "center_guard_fraction": 0.25,
+          "image_size": 336,
+          "resize_size": 336,
+          "train_crop_scale_min": 0.8,
+          "train_horizontal_flip_probability": 0.5,
+          "stochastic_seed_protocol": "SeedSequence[training_seed,epoch,original_sample_index]",
+          "random_draws": "original uniform scale, original left integer, original top integer, original flip; no extra RNG",
+          "dataset_config_sha256": "c6f99eb275a074aba0026bea7d577528b35571ed838be0a8ced9e25977161ac0",
+          "transform_source_sha256": "877d60117c376a6a1030b869b3dea3c38ac066915daefac581ce11c8bbef9174",
+          "confidence_observation": "same candidate strong logits; AC trajectory may differ",
+          "validation_transform": "unchanged shorter-side resize and center crop"
+        },
+        "center_guard_identity_restored": true,
+        "validation_transform_unchanged": true,
+        "AC_trajectory_may_differ": true,
+        "numel": 88233966,
+        "runtime": {
+          "OMP_NUM_THREADS": "4",
+          "MKL_NUM_THREADS": "4",
+          "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+          "torch_num_threads": 4,
+          "torch_num_interop_threads": 64
+        },
+        "runtime_receipt": "runtime_receipt.json",
+        "runtime_receipt_sha256": "a20c7a9e0d72bae50a6d5b77bbff19407bde30f0c05a4909ed00e0d897aba49a"
+      },
+      "report.json": {
+        "scope": "Stage 2 train-derived fixed validation only; no test access",
+        "view_protocol": "native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint",
+        "visual_input_resolution": 336,
+        "smoke_only": false,
+        "full_validation_count": 29737,
+        "evaluated_count": 29737,
+        "experiment_config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+        "checkpoint_sha256": "afb1d33152e61bff7fbf015d6a87e3a5d835b6bb189aa23daff775bc344ce652",
+        "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+        "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+        "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+        "elapsed_seconds": 224.4811822641641,
+        "center": {
+          "top1": 0.7325890064239502,
+          "macro_accuracy": 0.7235881090164185,
+          "zero_recall_classes": 5,
+          "tail_class_mean_recall": 0.7041928172111511,
+          "tail_sample_accuracy": 0.719971776008606
+        },
+        "flip_tta": {
+          "top1": 0.7399199604988098,
+          "macro_accuracy": 0.73089599609375,
+          "zero_recall_classes": 5,
+          "tail_class_mean_recall": 0.7115638256072998,
+          "tail_sample_accuracy": 0.7274935245513916
+        },
+        "delta_tta_minus_center": {
+          "top1": 0.007330954074859619,
+          "macro_accuracy": 0.007307887077331543,
+          "tail_class_mean_recall": 0.007371008396148682,
+          "tail_sample_accuracy": 0.0075217485427856445
+        },
+        "paired_wins": 530,
+        "paired_losses": 312,
+        "changed_predictions": 1996,
+        "checkpoint_role": "final",
+        "checkpoint_epoch": 20,
+        "four_view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+        "four_view_resize": 384,
+        "four_view": {
+          "top1": 0.7428119778633118,
+          "macro_accuracy": 0.7336984276771545,
+          "zero_recall_classes": 5,
+          "tail_class_mean_recall": 0.7152906060218811,
+          "tail_sample_accuracy": 0.7317245006561279
+        },
+        "delta_four_minus_flip_tta": {
+          "top1": 0.002892017364501953,
+          "macro_accuracy": 0.002802431583404541,
+          "tail_class_mean_recall": 0.003726780414581299,
+          "tail_sample_accuracy": 0.004230976104736328
+        },
+        "four_view_changed_predictions": 1784,
+        "four_view_paired_wins": 431,
+        "four_view_paired_losses": 345,
+        "fused_logits": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_diagnostic_r2_20261010/artifacts/diagnostics/JOINT_CG25/fused_logits.pt",
+          "sha256": "132141c52aad2f5894336b8af52a059ff795c86079ec2380e9be5dc966e3a489",
+          "dtype": "torch.float16",
+          "shape": [
+            29737,
+            750
+          ],
+          "weights_only_safe_load_verified": true
+        }
+      },
+      "input_identity.json": {
+        "schema": "aictrack1.p0_frozen_fold_input.v1",
+        "stage": 2,
+        "holdout_verified": true,
+        "test_access": false,
+        "training_validation_overlap_rows": 0,
+        "train_validation_exact_group_overlap": 0,
+        "train_validation_near_group_overlap": 0,
+        "checkpoint_role": "last",
+        "upstream_checkpoint_role": "final",
+        "checkpoint_epoch": 20,
+        "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/experiments/JOINT_CG25/last.pt",
+        "checkpoint_sha256": "afb1d33152e61bff7fbf015d6a87e3a5d835b6bb189aa23daff775bc344ce652",
+        "experiment_config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+        "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+        "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+        "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+        "view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+        "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+        "training_count": 118958,
+        "validation_count": 29737,
+        "num_classes": 750,
+        "training_scope": "fixed_split_validation",
+        "bundle_path": "fused_logits.pt",
+        "bundle_sha256": "132141c52aad2f5894336b8af52a059ff795c86079ec2380e9be5dc966e3a489",
+        "logits_dtype": "float16",
+        "row_csv": "rows.csv",
+        "row_csv_sha256": "b19c80bbb8b8068598d2bcc7e74d2cacc0b1e4c7d2bbbf30880d54a396135308",
+        "sample_ids_order_sha256": "88fbf1a88145ae0b58e95d1487bd5809c2a943aa1d01d2c1eebd7dfd865f12d1",
+        "source_provenance_receipt": "p1_checkpoint_audit.json",
+        "source_receipt_sha256": "2fe649a0537a5194cc2454755734bb1c45bf26e614a05aab4ff8882e8804bbca",
+        "report_sha256": "d8c80ad243383491d1e2c8d8065b4d53a9eaafe7e9cdd8c7c82edf2898bd3c52",
+        "p1_arm": "CG25",
+        "model_arm": "CG25",
+        "trainable_tensors": 154,
+        "trainable_numel": 88233966,
+        "joint_trainable_tensors": 154,
+        "joint_trainable_numel": 88233966,
+        "classifier_head_source": "joint_fixed_last_state",
+        "selected_arm": "CG25",
+        "selected_route": "J5_GRAPH",
+        "admission_receipt_sha256": null,
+        "source_h1_manifest_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+        "training_source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+        "diagnostic_source_manifest_sha256": "6d4e32f82bc727866477f78dc0bc47bebf4c1450130bc0b0c9f86d7dcea6152e",
+        "runtime": {
+          "OMP_NUM_THREADS": "4",
+          "MKL_NUM_THREADS": "4",
+          "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+          "torch_num_threads": 4,
+          "torch_num_interop_threads": 64
+        },
+        "runtime_receipt": "runtime_receipt.json",
+        "runtime_receipt_sha256": "a20c7a9e0d72bae50a6d5b77bbff19407bde30f0c05a4909ed00e0d897aba49a",
+        "inference_optimizer_steps": 0,
+        "training_seed": 20261008,
+        "group_source": "connected exact SHA/exact-group/near-group union; used57189 query, exploration only",
+        "center_guard_augmentation": {
+          "schema": "aictrack1.center_guard.augmentation.v1",
+          "center_guard_fraction": 0.25,
+          "image_size": 336,
+          "resize_size": 336,
+          "train_crop_scale_min": 0.8,
+          "train_horizontal_flip_probability": 0.5,
+          "stochastic_seed_protocol": "SeedSequence[training_seed,epoch,original_sample_index]",
+          "random_draws": "original uniform scale, original left integer, original top integer, original flip; no extra RNG",
+          "dataset_config_sha256": "c6f99eb275a074aba0026bea7d577528b35571ed838be0a8ced9e25977161ac0",
+          "transform_source_sha256": "877d60117c376a6a1030b869b3dea3c38ac066915daefac581ce11c8bbef9174",
+          "confidence_observation": "same candidate strong logits; AC trajectory may differ",
+          "validation_transform": "unchanged shorter-side resize and center crop"
+        },
+        "exploration_phase_context": {
+          "actual": true,
+          "training_source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+          "launch_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/root_actual_CG25_fixed20_launch_r1.json",
+          "launch_sha256": "2bbb3a57950d7e65f9cca2d14aef5bcbfe35bca490e6e24655f21740a31540a8",
+          "controller_owner": {
+            "pid": 38683,
+            "pgrp": 38683,
+            "session": 38683,
+            "start_ticks": "317332444"
+          },
+          "controller_and_all_arm_groups_closed": true,
+          "canonical_idle": true,
+          "checkpoints": {
+            "CG25": {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/experiments/JOINT_CG25/last.pt",
+              "sha256": "afb1d33152e61bff7fbf015d6a87e3a5d835b6bb189aa23daff775bc344ce652",
+              "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/experiments/JOINT_CG25/metrics.json",
+              "metrics_sha256": "f55473580058fab904aed49aef4115b0b77436b704b98937b2018c61e0b32504",
+              "epoch": 20,
+              "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811"
+            }
+          },
+          "arm_closure_evidence": [
+            {
+              "arm": "CG25",
+              "launch_attempts": [
+                {
+                  "start_path": "/root/autodl-tmp/AICtrack1_next_cycle_CG_append_continuation_r2_20261010/artifacts/1be994eb7398405c802bbce890855888/CG25/START.json",
+                  "start_sha256": "1cd66bcc79f57cd0f95db0b99fa6b14281a766a405ab332358ad6b2bfb726618",
+                  "exit_path": "/root/autodl-tmp/AICtrack1_next_cycle_CG_append_continuation_r2_20261010/artifacts/1be994eb7398405c802bbce890855888/CG25/EXIT.json",
+                  "exit_sha256": "1e5e4dd4718410788a2d034f1087acc3aae9148a1eecb3eef9232a4569240ea4",
+                  "owner": {
+                    "pid": 5498,
+                    "pgrp": 5498,
+                    "session": 5498,
+                    "start_ticks": "924031924"
+                  },
+                  "return_code": 0
+                }
+              ]
+            }
+          ],
+          "shared_phase_context": {
+            "budget": {
+              "schema": "aictrack1.center_guard_joint.budget.v1",
+              "root_authorized": true,
+              "phase_start_unix": 1791610202.1390533,
+              "deadline_unix": 1791613802.1390533,
+              "initial_free_bytes": 13013950464,
+              "capacity_increase_bytes": 32212254720,
+              "adjusted_initial_free_bytes": 45226205184,
+              "data_total_bytes": 128849018880,
+              "disk_max_bytes": 32212254720,
+              "min_free_bytes": 3221225472,
+              "atomic_reserve_bytes": 2147483648,
+              "final_gpu_reserve_hours": 4,
+              "test_access": false,
+              "capacity_evidence": {
+                "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+                "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+              },
+              "source_template_sha256": "7175b378a3ff67c907bea49de75cab3429f4f8aa63b072ba562f3bfe527c65d5",
+              "actual_stage_sha256": "486e90476c1ebaabe183c946a79de03b30eb7104f3078a44fabe60f60d6f3e6d",
+              "actual_independent_CPU_chunks": [
+                "e50930",
+                "021520",
+                "222e8d"
+              ],
+              "scientific_scope": "Only center_guard_fraction.25; one fresh CG25 fixedlast20 officialCLIP/e88a/split57189, then frozen4V/graph/P7 compared directly to actual J5_GRAPH",
+              "initialization": "fresh official OpenAI CLIP plus legal oldfold e88a H1; no candidate checkpoint",
+              "human_latest_wall_deadline_unix": 1791712738.0,
+              "remaining32h_plan_sha256": "e2235eacd9417cf3de30786512e6dddaf5a1fd35c1eb7bd58b061d5bd2d4c58a",
+              "old_phase_clocks_sources_ledgers_modified": false,
+              "final_wall_reserve_hours_min": 8,
+              "planned_pause19": false,
+              "phase": "explicit_append_exact_student_resume",
+              "original_budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+              "original_source_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605"
+            },
+            "budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_CG_append_continuation_r2_20261010/actual_append_budget_r1.json",
+            "budget_sha256": "5425b5852aa5e61c6b845b5ea43a69f2cdc47cf3d2581213d2bbc30346dd9f97",
+            "training_source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+            "old_query_reused_for_exploration": true,
+            "independent_confirmation": false,
+            "original_budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+            "append_adapter_source_sha256": "58eb183cf31a47a34b99eb5a490a93dd724c26db591bda95cbf7628d0c0a7987",
+            "actual_append_chain": {
+              "protocol_sha256": "5425b5852aa5e61c6b845b5ea43a69f2cdc47cf3d2581213d2bbc30346dd9f97",
+              "operator_source_manifest_sha256": "e33a805cf254f6261e12415ad379c606487ad9bda2a7df685c06e3abb840da15",
+              "original_resource_and_clock_preserved": true,
+              "original_partial": {
+                "CG25": {
+                  "status": "partial",
+                  "last_sha256": "6846c0a412d2d88d7e3c7ed9607f8f1899fd956fa2d999f879b3251765467537"
+                }
+              },
+              "migration_launch_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/root_actual_new_instance_exactlast_resume_launch_r1.json",
+              "migration_launch_sha256": "c92b2dd926becfec65262f087f1c89c604445ce75c27daf70a1742bfcb6355b1"
+            }
+          },
+          "original_shutdown_missing_EXIT_preserved": true,
+          "actual_migration_and_append_receipts": true,
+          "test_access": false
+        },
+        "independent_confirmation": false,
+        "old_query_reused_for_exploration": true,
+        "save_features": true,
+        "feature_file": "fused_features.pt",
+        "feature_file_sha256": "d5903d18af90c0641af7be2dfe2e7fb08e9b7a99091f0cf2380d0309e765f7c9",
+        "feature_dim": 512,
+        "feature_dtype": "float32",
+        "feature_construction_dtype": "float32",
+        "feature_protocol": "L2_normalize(mean(L2_normalize(raw_visual_each_of_four_views))) in float32 on CPU",
+        "additional_model_forwards": 0
+      },
+      "result_manifest.json": {
+        "schema": "aictrack1.fresh_route.diagnostic_result.v1",
+        "p1_arm": "CG25",
+        "complete": true,
+        "test_access": false,
+        "files": {
+          "fused_features.pt": {
+            "bytes": 63342453,
+            "sha256": "d5903d18af90c0641af7be2dfe2e7fb08e9b7a99091f0cf2380d0309e765f7c9"
+          },
+          "fused_logits.pt": {
+            "bytes": 47052393,
+            "sha256": "132141c52aad2f5894336b8af52a059ff795c86079ec2380e9be5dc966e3a489"
+          },
+          "input_identity.json": {
+            "bytes": 9937,
+            "sha256": "311cc947d3541fba218a129caa75f192b737264130dc6dcf5ac1bd3637f4835c"
+          },
+          "p1_checkpoint_audit.json": {
+            "bytes": 3614,
+            "sha256": "2fe649a0537a5194cc2454755734bb1c45bf26e614a05aab4ff8882e8804bbca"
+          },
+          "paired_predictions.csv": {
+            "bytes": 2390984,
+            "sha256": "a7093a4d652fb232ec2e58c290e61482b21fe92f1b8e167e8a73746897f24c74"
+          },
+          "report.json": {
+            "bytes": 2713,
+            "sha256": "d8c80ad243383491d1e2c8d8065b4d53a9eaafe7e9cdd8c7c82edf2898bd3c52"
+          },
+          "rows.csv": {
+            "bytes": 5434584,
+            "sha256": "b19c80bbb8b8068598d2bcc7e74d2cacc0b1e4c7d2bbbf30880d54a396135308"
+          },
+          "runtime_receipt.json": {
+            "bytes": 4361,
+            "sha256": "a20c7a9e0d72bae50a6d5b77bbff19407bde30f0c05a4909ed00e0d897aba49a"
+          }
+        }
+      }
+    },
+    "canonical": null
+  }
+}

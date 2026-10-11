@@ -1,0 +1,73 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/remote_assets.json",
+  "original_sha256": "c95876995c8359a50ea8e7d3a16edf82fa5dab5c75f37e20db0508fa28913264",
+  "omitted_fields": [],
+  "record": {
+    "epoch": 1791478716.7794113,
+    "assets": [
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "sha256": "0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c"
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/experiments/mainline-h1/last.pt",
+        "bytes": 4641410,
+        "sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753"
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/experiments/mainline-h1/h1_receipt.json",
+        "bytes": 981,
+        "sha256": "314a1affe38a39f117e7bc8f95971739dee7e26497fd41993ea174b086ac3a34"
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/configs/experiment/fullvisual20.yaml",
+        "bytes": 1723,
+        "sha256": "58766198d816efc7655cb21079a70cde00459c71b8948e762bcfdfda048f68d8"
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/configs/data/mainline336.yaml",
+        "bytes": 1152,
+        "sha256": "2126b32c58239c36bd42fb683a2d4874864445b7d40fccc65ef533cf85347b0a"
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/configs/model/mainline_clip.yaml",
+        "bytes": 333,
+        "sha256": "47750b6d4f8053250869470fc4c6efd29150619d4e19549ed9385ca0b905e3b9"
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/experiments/fullvisual20/metrics.json",
+        "bytes": 8137823,
+        "sha256": "585c567cb487e0402181b24034402ff4b254c36df34195900c2ac320520607cb"
+      }
+    ],
+    "lock": null,
+    "h1_receipt": {
+      "actual_cpu_optimizer_scheduler_scaler_model_rng_restored": true,
+      "checkpoint_sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753",
+      "complete": true,
+      "cuda_rng_serialized": true,
+      "epoch": 100,
+      "feature_complete_sha256": "3cfc37066d9419182d8c008f65f5e32918982d40e7bd00d51a5c46628570d322",
+      "row_binding": {
+        "all_rows_sha256": "5d746ffd5dec45b94f2a8dab27702f4d7c2767a16c58652f7f02ec209b6b8521",
+        "counts": {
+          "train": 118958,
+          "validation": 29737
+        },
+        "schema": "aictrack1.mainline.h1.rows.v1",
+        "train_rows_sha256": "0af84b6d506b378b7e26a0c63b9da8e5de8b0cbf18e0e388bf492154852150d0",
+        "validation_used_for_optimization_or_selection": false
+      },
+      "scope": "fold_train_fixed_final_epochs",
+      "source_sha256": "891e9820126710700441a2dcbb70bb2d8919107a9b3ae77505a164851a7ad882",
+      "terminal_cache_parity_top1": 0.6575310230255127,
+      "test_access": false,
+      "training_seed": 20261008,
+      "validation_selection": false
+    },
+    "model_config": "model:\n  provider: OpenAI\n  name: ViT-B/32\n  upstream_commit: d05afc436d78f1c48dc0dbf8e5980a9d471f35f6\n  weight_path: /root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/weights/ViT-B-32.pt\n  expected_weight_sha256: 40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af\n  runtime_downloads_allowed: false\n",
+    "runtime": "{\"python\": \"3.12.3 | packaged by Anaconda, Inc. | (main, May  6 2024, 19:46:43) [GCC 11.2.0]\", \"torch\": \"2.11.0+cu128\", \"cuda\": \"12.8\", \"device\": \"NVIDIA GeForce RTX 4080 SUPER\", \"total_memory\": 33796456448, \"cpu_threads\": 64}"
+  }
+}

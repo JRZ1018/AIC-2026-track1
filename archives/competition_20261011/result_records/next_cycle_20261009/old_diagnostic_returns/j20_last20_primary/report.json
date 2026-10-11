@@ -1,0 +1,73 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/old_diagnostic_returns/j20_last20_primary/report.json",
+  "original_sha256": "80add725345f38fd18bf2685f1f60ca94884e4293a8d73740f8f3a98b0018103",
+  "omitted_fields": [],
+  "record": {
+    "scope": "Stage 2 train-derived fixed validation only; no test access",
+    "view_protocol": "native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint",
+    "visual_input_resolution": 336,
+    "smoke_only": false,
+    "full_validation_count": 29737,
+    "evaluated_count": 29737,
+    "experiment_config_sha256": "567d12e6a36daf01d5c20ec26bec238fd2aa735b11d6dfdb452fb92d4b33e1db",
+    "checkpoint_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+    "split_sha256": "0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c",
+    "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+    "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+    "elapsed_seconds": 226.39780905190855,
+    "center": {
+      "top1": 0.7355819344520569,
+      "macro_accuracy": 0.7269561290740967,
+      "zero_recall_classes": 2,
+      "tail_class_mean_recall": 0.7072620391845703,
+      "tail_sample_accuracy": 0.7215388417243958
+    },
+    "flip_tta": {
+      "top1": 0.7396172881126404,
+      "macro_accuracy": 0.7306901216506958,
+      "zero_recall_classes": 3,
+      "tail_class_mean_recall": 0.7104990482330322,
+      "tail_sample_accuracy": 0.7252213358879089
+    },
+    "delta_tta_minus_center": {
+      "top1": 0.004035353660583496,
+      "macro_accuracy": 0.003733992576599121,
+      "tail_class_mean_recall": 0.003237009048461914,
+      "tail_sample_accuracy": 0.0036824941635131836
+    },
+    "paired_wins": 479,
+    "paired_losses": 359,
+    "changed_predictions": 1977,
+    "checkpoint_role": "final",
+    "checkpoint_epoch": 20,
+    "four_view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+    "four_view_resize": 384,
+    "four_view": {
+      "top1": 0.7438880801200867,
+      "macro_accuracy": 0.7350597381591797,
+      "zero_recall_classes": 3,
+      "tail_class_mean_recall": 0.7154815793037415,
+      "tail_sample_accuracy": 0.7303141951560974
+    },
+    "delta_four_minus_flip_tta": {
+      "top1": 0.004270792007446289,
+      "macro_accuracy": 0.004369616508483887,
+      "tail_class_mean_recall": 0.0049825310707092285,
+      "tail_sample_accuracy": 0.0050928592681884766
+    },
+    "four_view_changed_predictions": 1787,
+    "four_view_paired_wins": 461,
+    "four_view_paired_losses": 334,
+    "fused_logits": {
+      "path": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/diagnostics/P1_J20/fused_logits.pt",
+      "sha256": "7fe479979f893a4cf1c49c27634d87b5037e18d72130a0fded5d3e3c71a86665",
+      "dtype": "torch.float16",
+      "shape": [
+        29737,
+        750
+      ],
+      "weights_only_safe_load_verified": true
+    }
+  }
+}

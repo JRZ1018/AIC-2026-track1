@@ -1,0 +1,24 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/00_root_actual_positive_review.json",
+  "original_sha256": "2f0d386d4bde7cb99b21750eb09d66719417da4fd7f0c42238605e5e2074cde5",
+  "omitted_fields": [],
+  "record": {
+    "acknowledges_capacity_expansion_without_time_or_baseline_reset": true,
+    "acknowledges_completion_after_original_deadline": true,
+    "appended_stage_budget_sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571",
+    "continuation_operator_source_manifest_sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2",
+    "decision": "accept_fresh_route_confirmation",
+    "disk_expansion_recovery_sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52",
+    "independent_integer_review": true,
+    "original_fresh_budget_sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941",
+    "original_shared_budget_sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed",
+    "paired_report_sha256": "e59d9972dcdc4f37be8e51882f087c03c660aa744e9b0f947dd88e1412cf8cd8",
+    "prior_failure_sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32",
+    "reason": "Independent19file SHA and6NPZ/query/perclass integer review PASS. Direct fixed graph plus P7 vs fresh C: balanced94corrected-66spoiled=net28(+0.189701897pp); natural183-146=net37(+0.124424118pp). RawJ5 is negative(-6/-8), so admit graph combination only. Balanced head-3/mid+8/tail+23; class694 loses3 and329/487/556/667 lose2 of20; natural413 newzero has4images/3groups and is already rawJ failure. Gains spread across groups; producer highmarginwrong0 and ln4 anchors unchanged. Small positive noisy observed-label validation accepted under existing delta>0 rule; CI conditional on fixed model, not seed robustness or test score. Preserve all original failures and additive disk accounting.",
+    "root_reviewed_at_unix": 1791530127.091026,
+    "schema": "aictrack1.fresh_route.root_review.v1",
+    "selected_route": "J5_GRAPH",
+    "test_access": false
+  }
+}

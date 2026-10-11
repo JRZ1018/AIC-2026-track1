@@ -1,0 +1,25 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_new_instance_CG25_1158_health_r1.json",
+  "original_sha256": "af3daad5f8b9db5a24d93867c18e0c388d7849fd2028308b26562621548bb8ad",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791604685.7848964,
+    "exact_controller_trainer_lease_unchanged": true,
+    "trainer_cpu_seconds": 331.42,
+    "previous_trainer_cpu_seconds": 240.61,
+    "gpu": "5038 MiB, 87 %",
+    "new_epoch_summary": {
+      "read_full_log": true,
+      "total_bytes": 3071,
+      "incomplete_or_nonjson_lines": 32,
+      "observed_epochs": [],
+      "latest": []
+    },
+    "datafree": 22229045248,
+    "cgroup_oom": 0,
+    "checkpoint_loaded": false,
+    "status": "healthy_initial_resumed_epoch_in_progress; first_new_wallclock_not_yet_measured",
+    "original_budget_unchanged": true
+  }
+}

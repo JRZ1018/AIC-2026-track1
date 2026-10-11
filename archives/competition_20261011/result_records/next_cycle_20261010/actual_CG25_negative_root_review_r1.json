@@ -1,0 +1,49 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_negative_root_review_r1.json",
+  "original_sha256": "a89ed2eac08a52445fa7e48291a8d3323cf6a7d4337ee2e9b144dd56b8d12cdf",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.CG25.actual_negative_root_review.v1",
+    "complete": true,
+    "main_balanced": {
+      "section": "protocols",
+      "name": "balanced_supported_unique",
+      "rows": 14760,
+      "candidate_correct": 11053,
+      "control_correct": 11091,
+      "net": -38,
+      "win": 116,
+      "loss": 154,
+      "head_mid_tail_net": {
+        "head": -11,
+        "mid": -9,
+        "tail": -18
+      }
+    },
+    "natural": {
+      "section": "protocols",
+      "name": "natural_unique_images",
+      "rows": 29737,
+      "candidate_correct": 22109,
+      "control_correct": 22120,
+      "net": -11,
+      "win": 266,
+      "loss": 277,
+      "head_mid_tail_net": {
+        "head": -3,
+        "mid": 0,
+        "tail": -8
+      }
+    },
+    "primary_delta_pp": -0.25745257452574527,
+    "natural_delta_pp": -0.03699095403033258,
+    "decision": "not_admitted_to_new610_confirmation_FULL_or_test",
+    "reason": "Actual complete fixed graph+P7 combo negative vs J5_GRAPH; natural negative too. Hardware migration exploratory, no stability claim.",
+    "actual_report_sha256": "2686edbf996397d6f4e180528fee1d871939f76a135d548078e0159318fddc5c",
+    "independent_recount_sha256": "9c4ba495689a7d56c247ea963ac0041bba5272b6c21e7859c7bff3ce705646fb",
+    "next_step": "Existing AFA single mechanism active100 successful update profile; explicit budget preserves cumulative ledger and final reserve",
+    "test_access": false,
+    "reviewed_at": "2026-10-10T13:58:52.527595+08:00"
+  }
+}

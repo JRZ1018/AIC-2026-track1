@@ -1,0 +1,47 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/old_diagnostic_returns/j5_last20_primary/FETCH_PLAN.json",
+  "original_sha256": "57ed4d27c688611399e784ab4cd2be31d69ff057b4d7c9118ba9b860a174cc46",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.old_diagnostic_return_plan.v1",
+    "arm": "J5",
+    "remote_root": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/diagnostics/P1_J5",
+    "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+    "remote_manifest_sha256": "4be4d2df0b3073065d117725cc59ab825a54a7ec1c00684295ce4c47e168d0e2",
+    "remote_manifest_bytes": 1108,
+    "files": {
+      "fused_features.pt": {
+        "bytes": 63342453,
+        "sha256": "2293bef2b06954320da6df6f277dff31711d5a30e1bfc9d5d5b25c78163c0b16"
+      },
+      "fused_logits.pt": {
+        "bytes": 47052393,
+        "sha256": "35764e25ad082dfb621ec3600b29dd53ebaf374c955bb47578ad4af351d96170"
+      },
+      "input_identity.json": {
+        "bytes": 2797,
+        "sha256": "b500ae860f92b9b961c1b9a246733bb2436ef0981c11755e34fcd056ec983cf5"
+      },
+      "p1_checkpoint_audit.json": {
+        "bytes": 1581,
+        "sha256": "639e3b9d93efab51c35dc69f1dcc5dac093c6b7033df22a903419ce576b4c22e"
+      },
+      "paired_predictions.csv": {
+        "bytes": 2391350,
+        "sha256": "49dbfc18d04b65752e6d84fd9468e77e85c26f0c81c0c661484f0fc305bfbd11"
+      },
+      "report.json": {
+        "bytes": 2682,
+        "sha256": "69dec91ca6d6dae0c869be0511c3926fcd96c1e1e5594ef98b17bbb3af6b6396"
+      },
+      "rows.csv": {
+        "bytes": 5604499,
+        "sha256": "7d48a89a73c70158deb0bd4bb1607666b677e5f0ef483035f5f9dc8600cec8f0"
+      }
+    },
+    "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+    "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+    "max_aggregate_increment_bytes": 536870912
+  }
+}

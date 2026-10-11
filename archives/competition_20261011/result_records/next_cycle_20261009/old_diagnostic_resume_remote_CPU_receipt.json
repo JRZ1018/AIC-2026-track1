@@ -1,0 +1,21 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/old_diagnostic_resume_remote_CPU_receipt.json",
+  "original_sha256": "1feea8d40de027de02526e22d61068a6334aa9b66bb197969c8f573e15341ed8",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.old_diagnostic_resume.deployed_CPU_preflight.v1",
+    "status": "passed",
+    "observed_epoch": 1791494347.317191,
+    "operator_manifest_sha256": "d229ecdbb3e4a4e23f30c4637a3bebc3737e35cf3b0dc2eb9ef572191fd4e96c",
+    "source_sha256": "f0b52809be92455f6feb905947f99458e22da0c46709a56f21fbac23a7f25510",
+    "verified_source_files": 4,
+    "actual_linux_dry_run_passed": true,
+    "checkpoint_contents_read": false,
+    "GPU_started": false,
+    "real_admission_pending": true,
+    "real_launch_pending": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_fourview_launch_r1.json",
+  "original_sha256": "3212411a1c699ea73f7c34326d55ca7d61a536ccd4be868d7346a316776fcea0",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "controller": {
+      "pid": 18098,
+      "state": "R",
+      "ppid": 18031,
+      "pgrp": 18098,
+      "session": 18098,
+      "start_ticks": "926255822"
+    },
+    "launch_unix": 1791632755.3320594,
+    "test_access": false
+  }
+}

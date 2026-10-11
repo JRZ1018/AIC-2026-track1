@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_new610_reused_template_stage_CPU_r1.json",
+  "original_sha256": "8bdcf1156bb081a976220d40b371d94a6af3fc20f68a6b839103a3a0adc7317c",
+  "omitted_fields": [
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "complete": true,
+    "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_template_20261011",
+    "source_sha256": "ffa827d08e9689eafed604bc7abbd8050a7d0db0fbe2d4ccb8cecb3cbb8ef2c2",
+    "reused_files": 89,
+    "uploaded_bytes": 40221,
+    "dependency_exit": 0,
+    "checkpoint_reads": 0,
+    "image_reads": 0,
+    "GPU": false,
+    "future_last_sha256": null,
+    "now_unix": 1791676003.307931
+  }
+}

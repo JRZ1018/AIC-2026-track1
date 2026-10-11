@@ -1,0 +1,3062 @@
+[
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/actual_J5_GRAPH_admission_publication.json",
+    "original_sha256": "47d13c86c36bf3109f396e7588faa0149d11464e4456e998d6daeab0add1758d",
+    "sha256": "f0e60b071981004e8a953e92800097beb097540bf27d32724dd346f0d1e3d729"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/actual_oldfold_J5_GRAPH_admission_r1/admission.json",
+    "original_sha256": "25391e7f14d38ca39f27d5475ccdd5519389b1e8fe20f88415991de410fe64af",
+    "sha256": "bb8716ec599c15e5ff69f748bf3893f2c4557db0a6d4c03679b1b36e85b714c4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/actual_oldfold_J5_GRAPH_admission_r1/combo_report.json",
+    "original_sha256": "2aec2e3c1b176c76d0488933ce7b540d23c9cffe75fc7454fef53a7b786fd559",
+    "sha256": "1ce51a64b6372816d8a36230ff71cf2fb0d90e12ed41c99719ad0f67e3d32240"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/actual_oldfold_J5_GRAPH_admission_r1/PUBLICATION_RECEIPT.json",
+    "original_sha256": "c9a7ed5c2e37c5b073616c26f80e014e2c650a820d346c4afac01112b7a76fdf",
+    "sha256": "45c7ad11df48dcca1b3af94cf43a66b3e8975bb39fff1544fb3932c0e36e7c46"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/actual_oldfold_J5_GRAPH_admission_r1/raw_J5_paired_report.json",
+    "original_sha256": "e712cd82b6de831edab53e4432c4ee1fc1a5ac71c1a771e903798a83d2bd8b15",
+    "sha256": "3e19bd0e462af91028b21439b6d1c5d4df2436dae1fd24319bf36d54c96cf474"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/actual_oldfold_J5_GRAPH_admission_r1/root_review.json",
+    "original_sha256": "463a006bff29f3cf05adb21870c9b4bf54c2c04faf6019ccd2d303c922ed2ba5",
+    "sha256": "22020a6d61b778d44fa1215031609f2cd3aa57da7e3c1c61138f504ce9fe7fa4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/append_diagnostic_actual_stage_and_CPU_entry_r2.json",
+    "original_sha256": "3215d3ba219fd18aa3f89add9182e1e8c25c17b9b375b58136a80d48988be5bb",
+    "sha256": "916846867ede2a9bb4d418d534bb0833109e37d8f4ae4f91e660dcba06e89fc1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/confirmation_diagnostic_stage_receipt.json",
+    "original_sha256": "57a7c18804b09104cc53bb4228f46532b234c61bc4cd9f805f8a14009529d127",
+    "sha256": "411813bd947005ecd973f4f49dec155bb3e6a512c25d6e00112f2623dab3fb40"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/confirmation_stage_receipt.json",
+    "original_sha256": "f5534dd80f37aa8d309b0af34012265c9a900f3b363fadcb051d2759f9615125",
+    "sha256": "c8fc1a475b7fc8f52cf16ce74ef3ae8c15ecdbff9e4150d5e1b9f8bdfe606ee0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/continuation_actual_POSIX_GO_core_CPU_preflight_r2.json",
+    "original_sha256": "d20d3a7508fd1db86ca354119e6029d814f3c9e1218659bc2c74449295884318",
+    "sha256": "0ecc2f33c1acf4a8ffcb31c0b22f44f254dcb011038bfd12c54a2fd33499ba2e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/continuation_actual_stage_and_CPU_entry_r2.json",
+    "original_sha256": "ebb9c4e7cf155301742f6437bd3bce4c59fd004487524a6a1dd2e270e8b20f4c",
+    "sha256": "d8274df3f851bde4cc329dd9653d3876a590910b493bbf01841f906dcce59e1c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/cuda_smoke_failure_v1.json",
+    "original_sha256": "7622ee10d00f7f712476ededc56fbd256a4d8d6c5fcd78783270f807ea18fa41",
+    "sha256": "b6180baa8dfaf2ab35e532d563fdbc0f69daf99d3a4dd3d01f505ae72d630dfd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/cuda_smoke_receipt.json",
+    "original_sha256": "cd0e8588ffa558f99ff0a5b43521350a643516224550c3120f12645a6038f036",
+    "sha256": "99152827ed4fb0e3f5b68998836688e049b7833b2ee36184dad77b203ac8f707"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/diagnostic_stage_receipt.json",
+    "original_sha256": "23597a4e1eae745de3754da5b868668499cc210ea9e5e5a214f7ad0b357882a8",
+    "sha256": "15a927f2a421cf1a152b299651e50d1e9fc61afb8f2b55e3888ef5e7e2217af1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R1_BOUNDED_DECISION.json",
+    "original_sha256": "d4d24cce39a24ac1c5fdc5598ce8534b065c7bbd29944847d047f8305223616d",
+    "sha256": "cdda5cdffd6d8491fbe7d38e62c4c83f43fd58088c7f41343532b5245dcfcfc3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R1_PHASE.json",
+    "original_sha256": "23f5d515776834fe3311bb13b02289fd4d473677313f594497960b544e7e45ac",
+    "sha256": "f38acc774c2b0b87d4b814160d5633b9476d44e6040616942ba90cbb6852e4f2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R1_PROBE_CLOSED.json",
+    "original_sha256": "a5e53931ab0aa364709ce4c8f6b18bae7e3fcbb3748ed822c8984fa17a9cce29",
+    "sha256": "c0998e2cd36b42493787d14fde213595250add61270adaf93da4a0d13ffd8790"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R1_PROBE_COMPLETE.json",
+    "original_sha256": "52bb136558aa8070bfd6d97a1f3926079d5e3945fbaf2485d41ebcc6673c4f3c",
+    "sha256": "3a89eac53e6dbf4815b877e32e7af42e23769a1f217f4c427e2bbcd41c174aea"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R2_LOCAL_ACCEPTANCE_ACTUAL_CHILD.json",
+    "original_sha256": "2816e8a17baeb638fdd9983aa3bab03eb8ac737330fefc1b6a1b22c74c857eba",
+    "sha256": "d99f601859668ba6cb4aa23f6ce6c925f5d64b196b80feafb7901ffaa57ddbc5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R2_LOCAL_ACCEPTANCE_WAITER_CLOSED.json",
+    "original_sha256": "773bc7f55a8345009993c8c4ac24f2832ea318b9286cc75b95d3c67f2b986c23",
+    "sha256": "e78b09b5077aa5e6b5a0a39d63db38acdedcaeb2c81770db6474b52601c01ace"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R2_LOCAL_ACCEPTANCE_WAITER_FAILED.json",
+    "original_sha256": "a4479c7dcafd326cc53bf0b395e4ee647adacc67ef9b926ea65673354042fc53",
+    "sha256": "0cdef654feb7520888bb815ad3e5f3b2584ffdeee69b5fafdc24436a566fbe1e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R2_LONG_PHASE.json",
+    "original_sha256": "14318a642b54b9f5ed10e7e325167402ad5ed1f748ac537af8afd04e9a24a671",
+    "sha256": "28944a5432eb14064ca58f624a1bccab08bfe57c6f1235e8a903497c8cad7727"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R2_LONG_RUN_A1_CLOSED.json",
+    "original_sha256": "502fd4e3aea96d96d72c282704bda1d14a3177ee57e61c14d96d2dcfc0c2889d",
+    "sha256": "c8ea20d5a86381c2a133e39fbf15fb5f7f296c373380b0c33ac16f89e08d41ec"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R1_FORCED_CLOSURE.json",
+    "original_sha256": "50b19851caa1bfde2c5146bd5c608082a13172361459ceee19c182b90c6eb5d3",
+    "sha256": "00afac4001bb9113853d87fcfbf7787ef411fab47e52a6918dce3fc1770c9b40"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R1_RUNNING.json",
+    "original_sha256": "3a1075779c7d87b31d8a0a4ddd769beb0be57781af59546d6d97cd7ca862701b",
+    "sha256": "3bc344667fe54dafcf1e2609131760c372967a20aea9e143eb816817c1009695"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R2_CLOSED.json",
+    "original_sha256": "309a85ceb8ba4e9fa1cac32ee5eb39a11e263417cb7ae50a591e658f84558bbd",
+    "sha256": "e9feb235af22510ec7fb7b16fa23fed06a52a4f2d690bdda953168fb11357784"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R2_FAILED.json",
+    "original_sha256": "57dcd844bedba32f8f5baadc8b30caa57c2672ae63cea859ca1961c7beaa6cf3",
+    "sha256": "d09b9232ca7a2ad85c70b5e7bf471bfb984600079fa92cfe88048aea3c818b22"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R3_PROBE_CLOSED.json",
+    "original_sha256": "f9e42ae6bce8f31c7048f1617b799c14b560d643479823f96ec3b27c75e856a3",
+    "sha256": "6a62975c2e8db96f284a2569d705b27d75d32c8a99ea80ce5a6be62694e36b56"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R3_PROBE_FAILED.json",
+    "original_sha256": "d1664bb043c62036b925637b8f1057f1de6f3f56156b782c775cda1bdd480626",
+    "sha256": "38c94377622d4f7ee8695a3d051fe92dd59b8525181e71f7b104ebfbf6e41c31"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R3_RETRY1_PROBE_CLOSED.json",
+    "original_sha256": "8f45ebdd44dc8fb1ebbacfaf77942702016b3354727da9089363d644441f94d7",
+    "sha256": "1361f8f21854553130494e49d927f8f04cc71687a6fdf43ee640077403dae107"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R3_RETRY1_PROBE_FAILED.json",
+    "original_sha256": "6176d07660d7b9f6f173d0ec23eb4ce35e24fd611b791ee43bd6c6c927af5838",
+    "sha256": "3171ec0ced346b2b699efa3eb850211ee208f69f0c7e282d6ee797e6f008b604"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/FETCHED.json",
+    "original_sha256": "d612c9587f09662f16d3854d2ee0662bb0c71ad89015b6284284b896dbce80a5",
+    "sha256": "a1c4abea474823db705b0ea961b0c12a3d298808b5e4c2ca42877421db94149b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/full/disk_expansion_recovery.json",
+    "original_sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52",
+    "sha256": "de02d1727e83c0633e331bf93329797c04d7a9bf2af8f0e1398ec8a6301f2a3e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/full/full_budget.json",
+    "original_sha256": "62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517",
+    "sha256": "8e9571af9d396701f25517b36c85bddc145dd15e620946913ba5bea8c50c9dc3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/full/full_source.json",
+    "original_sha256": "be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54",
+    "sha256": "ca9389d7a8ccaad3d9552d63bc2123f613fa3096b7a71f07537062f8f0b67152"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/full/h1_receipt.json",
+    "original_sha256": "0e46cf54918bc152af34f7b3edb6b84fe7a9c3d2211bc3925f8b994a1dc144cf",
+    "sha256": "65413f780e6390f126a23e3153cd29738b5e59d0ee75e8402bd0885fb2602802"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/full/launch_receipt.json",
+    "original_sha256": "595eb16ec635944af3ab569e691360d87519334364a48bf65ac130a1db9463eb",
+    "sha256": "08053d32d04abaa1ee7ca445c2a8c7a7ff2f04751585ca5e58ce936b8843ae67"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/full/metrics.json",
+    "original_sha256": "5518a02131f987ed786063ad612b79302227b77e7e5f15c0f598bcd052b5b608",
+    "sha256": "8862c9a7632c51b94201a21294b4adb8f8b14417ac8b985e9de6acbc409ac259"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/full/runtime_receipts/J5_4e55925291244704b94345f61cd01423.json",
+    "original_sha256": "5d2c6edb81d0edfc0ef1ca5b3e9adf2fbc2a1371a9062563832adba23d37ecc9",
+    "sha256": "746bdc8b15ff3820dbb7eaadd116b4acbfa02752166518c8b810e02178bc12ac"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/full/runtime_receipts/J5_fc6a85bf3def4fdab045ac18fb0c43e9.json",
+    "original_sha256": "af341776002b6a787075527665a08884f8ecd32c2c254f7e327d838d2518341b",
+    "sha256": "edbb5fed428092742555d3ea2a4bee2f39ffe44aed0447cdc86e45ed4117daef"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference/artifacts/final_graph_budget.json",
+    "original_sha256": "da89651c9173539e67fbd5fe9c31f4251d5a1df17bf77b4b5b159cf10b88faa1",
+    "sha256": "3d4d412622ffce3562826a5683ad9f2900244d2ba3535d1a1382292479b9bfce"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference/artifacts/final_graph_result.json",
+    "original_sha256": "86c48b2c29660ff8a7e395410585dd293e2e17327c024bf99fe886f519708677",
+    "sha256": "b13b0b3272a85c434f995a8a24514b87713770a90512216ec847e6518e9676f1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference/artifacts/full_final_cpu_audit.json",
+    "original_sha256": "9fa62244fbaf27b5a64ed6869c06e2665c558a21874019eec3d9ce616e00e604",
+    "sha256": "f2053c21227bb532d48cbf5364e6f2d764b38703b6f05ded66d355953d07e572"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference/artifacts/inference_command.json",
+    "original_sha256": "b64c515e84f56e02f0b03d3f90a2729727c0312af031d585107b403e33390ae4",
+    "sha256": "aa870c187962e8bf0d97b9523d8e53968e1edcccaa58893fb5d758cbe58a2a5d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference/artifacts/inference_freeze.json",
+    "original_sha256": "3e16f7f8504880dbb11e4d65021992cdfa73087f5ce8759ec09cc9371645f6b7",
+    "sha256": "ff01f0de02c6b7205ebf15b20fadd695704e2035e05423b175866884dbfd9cd5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference/artifacts/resource_policy.json",
+    "original_sha256": "5cf323f7d69907d7fcd6862dbace9780cbc7c84da560d1dde6a1692d118b4702",
+    "sha256": "9ca6c29e7ac5a30a9192451567fdffb95745c84e4bb3aa9005cfd856ff3aeb9a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference_source/CPU_VERIFICATION.json",
+    "original_sha256": "c355cba0ccf474c2ad437b0c09f242d22550a0c61e36334138659b38eec3e053",
+    "sha256": "891484cb1f02972d657148c21a5851cfc5f64b9cbf7cd742f2399692fd857131"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference_source/references/UPSTREAM_D0C7_FULL_TEMPLATE.json",
+    "original_sha256": "d0c7ccbc2276b300a758bbbab992a36c4a5652fca47648bc80dccd797f5c8291",
+    "sha256": "f5ff06a833a08fdba5853982212744faa7f6856013f19721e5edfdee7579225b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference_source/references/UPSTREAM_FINAL_62367_CPU_VERIFICATION.json",
+    "original_sha256": "2a82485a3ab48ba605ad65e25d6d046afbbfde94c05d51ebbbb29e925ce029ae",
+    "sha256": "bf04d076e1e0eb807a64c61b876e7279e5d5d1df23ab9ac15f8a387cb6475e5e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference_source/references/UPSTREAM_FINAL_62367_TEMPLATE.json",
+    "original_sha256": "62367dcd6d87f4df39da0d6bb8217559a880ae45165b45e303ec88882f795861",
+    "sha256": "ff82be27dc76291e3916c9da1d6ca106b9288a7b9c4c15c041257b67185cd800"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference_source/references/UPSTREAM_FINAL_B517_TEMPLATE.json",
+    "original_sha256": "b51766e051ab4f384b7dd0428ab08f0a70c37dd12910cd353592b839d8383048",
+    "sha256": "045269efa68e2e4d74019660cbc12bc60f5ff03854d2f6cbc7af97247bafb395"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference_source/references/UPSTREAM_FINAL_SOURCE.json",
+    "original_sha256": "27e634fdcb6d6d4c616a48e15f966cd652d2c6300352a35f996d9e65c4da6cf8",
+    "sha256": "f567bf30e3760ad376f89c850152bbf7b6f68e5c884e3b06e95760d5f888671a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference_source/references/UPSTREAM_FULL_TEMPLATE.json",
+    "original_sha256": "578eb15ce02421e16e3476b063c406fdf0322d8cc63233e740c29d9f51ab4d71",
+    "sha256": "66e2cd2b85cef1b1b6546fe4c3ca4eeb06136cb86e227203a5aeff86e21a970d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/inference_source/references/UPSTREAM_GRAPH_SOURCE.json",
+    "original_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+    "sha256": "6cf38d79514a75888cb5580025d893ee74ec57a5f266ca43f15da265b342f41e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/LOCAL_REUSE_AFTER_EXEC_PROBE_R1.json",
+    "original_sha256": "b542b8ab84cdec6f19eba61192e059dbf15d65bdfab9659d57f32be9523ae714",
+    "sha256": "717c57b6286fa467fedb021b26fc0f89384d139f94009a4b15edec9500c4dc74"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_actual_returns_r1/return_manifest.json",
+    "original_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+    "sha256": "0d305a27c50a9845036d00414caca0aeb1de51e58c35a6b3a51b39bf37bf9f09"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/final_inference_stage_receipt.json",
+    "original_sha256": "d2ec774ff3b856d8cb994d1f333925a4e8bdf5fb7eb8be962699ba1cb08d5ced",
+    "sha256": "eef1d08945cdf67ef1fc1e6054b42e011ffe8cbc2517d3e263e3124f4538a939"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_H1_actual_CPU_complete.json",
+    "original_sha256": "0e83f79655fa32f3672a51a95c1505802f2a8e476aca0ef20213fac636b08767",
+    "sha256": "11b5286ab55fb26dea566e5119924b4ec7f78f6e4f20dcc7861fd6262c2f1d51"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_H1_actual_launch.json",
+    "original_sha256": "134dca0b161775b243dc96df0efa373b02e4af48e3f938d6f644e8285d0bb7fa",
+    "sha256": "ee4b1f6a9eba39ec35ccc9c98f4dfbdce465ce0e3389f94855f95023308038bf"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_receipt_source_stage_receipt.json",
+    "original_sha256": "1369e82cec937aef7783d3b071bd185dc0c8c5b483d0551f319a3c51d7d1b449",
+    "sha256": "b8b9013e29f26ac194588b4cbcb50cf821e585574da55b5e9ca5617bcafd1eaa"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_append_continuation_controller_launch.json",
+    "original_sha256": "5c6a341f7f9953891d490981e6a764c6dca932d6a8da8a38133503286abb4df3",
+    "sha256": "c87c7dd83800c5e49225e3fe48e8a67d17e5cb004687a0bcf3a026dab839324d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_append_controller_first_observation.json",
+    "original_sha256": "177ce342a20afdee8ebdd323f2b97fa040be71d62f96919143094cc2ef528db8",
+    "sha256": "9a9d70fc7b414365fb5670e6d1c657a170ea386bcf43d44b6f759b01c062f2dd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_append_CPU_preflight_return.json",
+    "original_sha256": "1d41959864d4619a0738632729f58e0205deb7f013e31a1041c5876ed7bc233d",
+    "sha256": "1a69e7a65d82d754db0d0140375a8e2a3ff0b6a652ba06d3e96909c5c4a96136"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_append_failure_disk_and_closed_groups.json",
+    "original_sha256": "fd99a38f0d46d17811e5129fa03f317b4de3d769dc03a378533eea8a894d29b9",
+    "sha256": "adec4b9b22c850343d2db07ae134fda5350e512e9db854b5b5af35c5f8bbbb7d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_append_root_admission_review.json",
+    "original_sha256": "9d8d320f6be72c79746502a389d6a503f3103836f9298d5739cc75524cc10b16",
+    "sha256": "628ea6858b9d3768ddcec161322560b49d5972a3b375dceaa5a586108d0f2191"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_bound_554d_dependency_check.json",
+    "original_sha256": "e057c6969f2294d35661f513f5c35c6a2a1abccc3aa64fe20b0ddf3da76295c5",
+    "sha256": "fb00c9f423b5e0e8fbb6df38f26701cfa78026bb7f1927d8d5032a61c36863d9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_C20_launch.json",
+    "original_sha256": "1ba90a054815bfc9ed6224f9c14b7fe52c1fcf9731a489d47316eeb18fe9aff6",
+    "sha256": "006e7a4dd06c8dc31d1ea3e78cea77b80d91569f88def67a0b7da68cf17bdfdd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_C20_terminal_summary.json",
+    "original_sha256": "5b84c67f45e82ae8e3d78535d34c2239c2610dec14f951e99fff1ee7ca0d8c3b",
+    "sha256": "4f91be39274b4754d9a3dfcaf8b14323be5e1cd50b603ba7c43f0d55eaa0b16c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_disk_expansion_recovery_receipt.json",
+    "original_sha256": "b4f43cb4af8a6768fbe2351e466ad221bdf11826a19828352a1f6763d45284ea",
+    "sha256": "a5bc04e429c67e5ef6dc497b2a62f909c0eed2d65df9b73ee39cd3b311a08fb4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_expanded_full_template_stage_and_CPU_entry.json",
+    "original_sha256": "9057989b85699cc559b4f68961c729fcc3440b26d4f1d1c672d027e013489ed2",
+    "sha256": "57ee89a1ff04ec101439cc643e70076e885891320f62bc6bb8fa3a75dbe8639d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_final_binding_and_CPU.json",
+    "original_sha256": "5189bc83375a8915b76d5ead1eb4b40a7606f7c8a261087ff516d646948768e7",
+    "sha256": "3619ede2575e841cf702aafdee0ac3f5dd1502a83b423474d5219f386479936f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_final_FETCHED.json",
+    "original_sha256": "d612c9587f09662f16d3854d2ee0662bb0c71ad89015b6284284b896dbce80a5",
+    "sha256": "44a187e9709b0ba796790ba81fb71f7c1f7a7a06107a2278e6984d600003f80a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_final_run_launch.json",
+    "original_sha256": "b320114123befafae6931f2ef1127f7a20871d89e60ee37b9dbbb1abfc7ca4f4",
+    "sha256": "00aa60053979b5a89adc113b9ba228242237403f342b31d7a5a9cb1c353b9cf8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_FULL20_launch.json",
+    "original_sha256": "ede5d6b3f34ed5ee86acd74e48d1669a3fe61b517118beb1aab49f47c332bd4f",
+    "sha256": "8b50a8805eb08be603243489e80f55fe35285d3a8587417ee5fb05cda0f6b6bf"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_FULL_initial_health.json",
+    "original_sha256": "dcda939723e48990b0d09ee0cd84abbf7ac7e6d1f04598838e6c5f8301cb46d2",
+    "sha256": "7e905edb9bdb80a1e04589654fc4bbc99d5fe14ada3cb7a94cb50ab60172cec7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_FULL_smoke_launch.json",
+    "original_sha256": "decdce95e8f63c5896abb4559fcd4fd83c44e40cf5b183ad879259bf1c3a8d08",
+    "sha256": "db204fe76e0e7e83613b8163b887f2cc0ddbe2a04f99a2ba531d975a7dc00294"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_J5_pause19_and_append_budget_bind.json",
+    "original_sha256": "5c6a4fd3ad3196af7e5eeb454991cadd5a393ea681d6a36d71e062735cc18a3f",
+    "sha256": "d2a893ae462c18e222a4621252bb3c2fde075fda0c35e34fc423554e7e2749c0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_J5_pause19_launch.json",
+    "original_sha256": "599df70a494a09e129372a2a19eb80c6e434bb80178732b879133e94172b18ef",
+    "sha256": "4d1402eeda51eaafb3e8a87fecf7cf8ecc6903e74c91dade5d7c9bf498a96c17"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_local_CPU_acceptance_retry_r2.json",
+    "original_sha256": "5dc7a1244ff88361c0513aa2646129c3a8a6726801bcdbd95478f808309b5e85",
+    "sha256": "242979b2d76c0706dc9e1c828aead93e4b8f91653547e0972b9ebb1025eb7ff0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_positive_confirmation_and_FULL_binding.json",
+    "original_sha256": "f1f837a632aa8d447dcae5890b16d1e72d82d78e5b823aacbd6ce1e2706ad3bf",
+    "sha256": "123def3d8bd778136528ea63f0c0c61f61a6404f0b14b58ca47f8b9fc77baad2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/00_root_actual_positive_review.json",
+    "original_sha256": "2f0d386d4bde7cb99b21750eb09d66719417da4fd7f0c42238605e5e2074cde5",
+    "sha256": "87669013075724cc266fe05c7cdd8905e72560e77839282d27e837c8730b3b89"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/01_root_actual_positive_evidence.json",
+    "original_sha256": "0044006254b4727070f3743cbf0455a5bdecda152eaec3df30b2da5ff535aea4",
+    "sha256": "a314313ffbac2cf64e059422954cc25a5254ad6bf0309bac3abd84258c016236"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/02_root_actual_positive_confirmation.json",
+    "original_sha256": "dc3232619e394b4528454f155711d9b88366ac7066f594886860e31a340d8e5f",
+    "sha256": "a359fe1f58c7cbdc8e32fb1c0eb2a0bb26a26560ce381ee9847e95377c1cbf4f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/03_root_actual_full_budget.json",
+    "original_sha256": "62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517",
+    "sha256": "88700c2b5bee3d62df35e29512ca8d8f0b38891f0c20536dc362310b454b375b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/04_receipt.json",
+    "original_sha256": "c76fad79031c65e79d35a57eb427edfe9586d745dde61d0e900ba3ad641926a4",
+    "sha256": "66be4398d2f782de116720cfd2a6af97962706eeab354879b7ef0b1e761b9562"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/05_full_attempt_4e55925291244704b94345f61cd01423.json",
+    "original_sha256": "74840612b3b268915e03a79a41b6bf9fa547b6874a623aa8105b5ff6157d950b",
+    "sha256": "f8dfa3c6752d72a6e7ada5d6ef46e885178d66bee63442432f32557a884e3aee"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/07_full_assets.json",
+    "original_sha256": "d03dbc72ee219c29340b0d51a40c09fb739173449bc9aab5f8c470eb43d65277",
+    "sha256": "5aa1d84b3e83606d02674c4bfc8f928b8704ac53d557c1a671f9b157a8517c60"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/09_root_actual_FULL_launch.json",
+    "original_sha256": "fc544d3b1156b8648c2cbc5165b336cfcf4f5166e8c2190026e2ea0c822f3e35",
+    "sha256": "15e03f1ae50bd107b9abffc888cf1577ded0d7e4bf30876adb4af41082ea5767"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/FETCHED.json",
+    "original_sha256": "dd9a8e20d16b498476a51138bad3508b02aebb63b8d5ee2221fcde6f495b4ee3",
+    "sha256": "3609c07cc3ec230bd1d02960dd9d2c4198f34a722141ab37e162a00510df2166"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_priority_ZIP_delivery.json",
+    "original_sha256": "51de1ee2f65e74c4b6fcb9dc24e9bc8ff238b1211720dd3a819c3103240c04c9",
+    "sha256": "4ebd0f28dbe96cf3340ef20487dff1f9a50e099155149d1b460eccb42d094b94"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_continuation_launch.json",
+    "original_sha256": "a450653a3f4517698c5693a194d08507df77f43dab577b68f5562012a6b37032",
+    "sha256": "9107c7cc421db1f37a123eae9169a7f2cb8cd36634b65071306868d373e709bb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_diagnostic_stage_and_dependency.json",
+    "original_sha256": "59eed1bd7177ad03b0ccafaff05b300c3e773a97c02e3c5d001042a69a2ac0b2",
+    "sha256": "353defcead890dd807574619a5efe1c8014066317653a53746b2fdae47a31789"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/C/input_identity.json",
+    "original_sha256": "cfdd57601bb6d28b00b2343b2dfbe9d341963576f2ddd29c07e81d69ad83834a",
+    "sha256": "85621cff3fa14e2f94a9472b681bb20292e25bcfc3c3d273642f2d05bd79c586"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/C/p1_checkpoint_audit.json",
+    "original_sha256": "1779aa21d0692db8bb323845be0724ee96c905514453f7733915ee63029fa8af",
+    "sha256": "0df965c0faa15fece5c1651807f28b7b6d4256d8dbb5d26dcf2b0430356cc898"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/C/report.json",
+    "original_sha256": "be9f4ead9578e51c1dd262aed89d510ed9db5f5804478191236f854330ba34c4",
+    "sha256": "18c5c7ad4cdff1b7b7a18ab8abf7ca7367a79d12019949a56e7e563b2eb4cc64"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/C/result_manifest.json",
+    "original_sha256": "ae8955a86637a60710929b9dae37e6b06828dda248e6a6c9e095b6582514c9ee",
+    "sha256": "4179179fa96eb42d4f52a53fbe15f344895a711b7c6e2b2bc27575e6d84bce71"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/C/runtime_receipt.json",
+    "original_sha256": "30673762a26e89a27f6b86b25556c6697947fef3301195bd9f235cc170300d91",
+    "sha256": "ae2ccc7118a522de053ccdc993b13fa639f7a96eba07c93fc29311b316e71199"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/FETCHED.json",
+    "original_sha256": "d69a7c7e0b7a6edec62ddc81ffa60ba466b13fdea8d3a96f399771feca632bfe",
+    "sha256": "6a940f3a6f90f586e9c39546fca46473e7f48e586d674e82fc6e5bbf6320a0e2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/graph/graph_budget_snapshot.json",
+    "original_sha256": "32774e6d6e377d95af10378c99bc6fd39bbeed7e252d420c2198113919262561",
+    "sha256": "38835b381bf78eab873ac069a24af358a2e0eeb9edeeb9b23ba280ca82239869"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/graph/report.json",
+    "original_sha256": "e59d9972dcdc4f37be8e51882f087c03c660aa744e9b0f947dd88e1412cf8cd8",
+    "sha256": "5f308ec663766dbbbaeacbc3b9c65ae972dfa2012c4b5e0fb2386f66dbf65ca5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/graph/result_manifest.json",
+    "original_sha256": "1466013cf8e06a973478c9fa9800576a2b1c2381b5b09b57e089f54972e938ce",
+    "sha256": "fcb6bfe6510d4b7aed1417b40f0dc4b3ada5cb112e3fcb2eee124a932b6305af"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/J5/input_identity.json",
+    "original_sha256": "1d23b0729dadfbfb37fcf1807601b1e73c22cdf8c5ee270fb74d5306750ba6df",
+    "sha256": "701ad91e22a8f4c51347e73449e7e60d094b7214db6ca606550529aa1a1d375f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/J5/p1_checkpoint_audit.json",
+    "original_sha256": "051b0d32b4197ef79d250cdff57fd9d0983a052e9ea39f20c598cdef995183af",
+    "sha256": "6b81d663929274760518218eb17e2b4753a8ce37555e8104e99ea033af594859"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/J5/report.json",
+    "original_sha256": "2b6e637e67364fd5120148c9212e3a79aca291a25f015ca2ade8f1f8cff44478",
+    "sha256": "5e1e686babd926702e5e6afd4552cbf7ee80e30b536afa34f74ac7563f90cf28"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/J5/result_manifest.json",
+    "original_sha256": "8daa70eb1412807475eacbe6bd0548f28c5b07ba1b80a8043f6276a2d7d614e8",
+    "sha256": "809130b67ad1e6e751f40c1d9673ff7705204179dc0ec1a63269160a2535e32e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/J5/runtime_receipt.json",
+    "original_sha256": "a1a79377ea0e3c6e7eabfe8b1f21a5b0bba87be6325d5ac7f2cf30733af9f3f1",
+    "sha256": "842f1bf3e7fe7da4f47bbaf69aafda5232fbdd53e92f41b5cd05ad7b097f6bc4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_retry_stage_and_budget.json",
+    "original_sha256": "3317201a3ad3aa05c6f876f13f9155790f9f1b72c52d1cbf62593f729af55749",
+    "sha256": "49b381b8577d1f32cfacc36eb1501162f673435ea92c93cdb33b374d99dede96"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_serial_fixed_validation_launch.json",
+    "original_sha256": "ecf3f3529538145f9911115f3952b380ed6a39853a57a3816f7bd1c0db968287",
+    "sha256": "c44647efada9d08b68bb39f439816edb0b7f9b4fdce863d41b46973923e7b8f1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_actual_two_arm_smoke.json",
+    "original_sha256": "3e5d9b944b5453dabc0e01a49248e64d5f68acb06715204ee4287f1fc9e6e7c6",
+    "sha256": "1d170d25cf8e02300e6945a1ba56fe041d3acb1aa924337aa5b22c80014a1784"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_diagnostic_actual_CPU_entry.json",
+    "original_sha256": "1ad7f697b31949c09868c15fd3e3e72c29c9ea5b30d090dd344d250e4e29ea34",
+    "sha256": "76e76506a96a64137e2ae352a1624b44cc442628cd1d6c87fd6211297e299238"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_diagnostic_actual_stage.json",
+    "original_sha256": "01db483f59368ea739861de4f453de1321d5fa362577b292641ecccf68568b8e",
+    "sha256": "db58dbfde8733895dc9c7bb023e9cda141c26647201813f9fb6cce11732136fe"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_final_R2_template_actual_CPU_entry.json",
+    "original_sha256": "4bc2ce2788a004834cd4294d2a07e27a72b44e1433c1592ced40a88bab714d6c",
+    "sha256": "9d63dbe257267677080c403906540383c4eac36db62b4c14dbf4bcc1dacf7384"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_final_R2_template_actual_stage.json",
+    "original_sha256": "6dede240f0318e9b6310ec82c2d9fad8a414ae71c84056ba695937d01ac28335",
+    "sha256": "4ee65d6028c817baf88b3e007897e0e59a57987b135a94bacef69acd25126b9d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_full_template_actual_CPU_entry.json",
+    "original_sha256": "923d848b9b7efa7390b5403cc9eec6875a4dee4d5cbed70f52490bbde01f5dd7",
+    "sha256": "30a6aa4359e6b095b235d1eb88a9e8ee244e8dcff9e8fc88b669aa63e9e46ebf"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_full_template_actual_stage.json",
+    "original_sha256": "b033626a1e9475908ac97beedce713006a47e5e00c1b036fc4613fc1308adb44",
+    "sha256": "c09366de11d9667d83c515dfd2ed521f321a68fece8f62b16fa11d44ffdd9ac7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_J5_GRAPH_actual_prepare_CPU.json",
+    "original_sha256": "1f3f2bcd48263225c7d61af752093036325d28bb1b45cb0eace1d31542c383a4",
+    "sha256": "6d2a5a9e717da2d2bee04e7b385801ad2a95bb238fb3bd0e939d77fb799bb2f0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_retry_final_R1_actual_CPU_entry.json",
+    "original_sha256": "0efebb14aba00a150a3d6aa37f5ebcf2619f0eea63d7c873aae995e8e839d5fd",
+    "sha256": "23d38212ffbdf216fe6ddf93ffe12a778f80e0e71df123bf0ba7cf5676638dda"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_retry_final_R1_actual_stage.json",
+    "original_sha256": "c7e8c6d2d3e32c50a47ff309e3cdb0eccbf37876d19cbd69f1c46f6d534f86cd",
+    "sha256": "25eb085cef17aec78ff776396bd3a29ea41b00b64dd17754c79d73e0db40992f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_template_actual_CPU_entry.json",
+    "original_sha256": "06fb490fe188ce0ffd184ca4f0b79c51fb58366e8f4d8d13881446050888ae8b",
+    "sha256": "4f6e67947e8896bd06bd43e764b009555512cbb815cf298b8131f01dff41e618"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/fresh_route_template_actual_stage.json",
+    "original_sha256": "2d3e329bc75806b5bf065371f05b50e1f641b46a498eb357cb1fb100c20495b7",
+    "sha256": "1610ef06c581c83f709f1e6f625263ea86d72cc4f9068a788c057dbe8b2d3f73"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/full_stage_receipt.json",
+    "original_sha256": "e01867b4d95578b65c255e6ba3eb3b6960a97e1d01b576847a271c67adba8107",
+    "sha256": "1681dbfa22e3482caecce04136a77e120facdb1468bea5dabe89d2112a815641"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/bridge_bind_receipt.json",
+    "original_sha256": "bff7ebd45f203ac548114d3ac0318b6b18464ce74c3afcc46c3af73c5199b4b0",
+    "sha256": "127a0ba11230b7db6b8d71a8c0faabf711bb829a16f69fb6a2cd307f2bd8a9e8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/bridge_plan.json",
+    "original_sha256": "a65fc291359c6a76a48b55b802e985e057eaa882e72dec1e688df350b0a55c8d",
+    "sha256": "f8422c953d3e0a532d744f0a08d24565426b4d867a4a4ed72b6ae03babd9e7ec"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/EVIDENCE_FETCH_RECEIPT.json",
+    "original_sha256": "35917715b22a392d75c3e1f83098b6ada8daef67ae73fab1be592f5b33ea6596",
+    "sha256": "1c26ecacf9f3a36e987921d9a97348e52d562a4f89ce6b813dbceb9a46907bd4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/graph_assets.json",
+    "original_sha256": "830f2b525496c35794781cf39bd2c4578f985167d8938af6332104a26c93cd1a",
+    "sha256": "27ac715275759177d5ef316f5c1750ad0eddd153fe259324956ad445ed3cb7e7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/graph_budget.json",
+    "original_sha256": "75632df7571d5b975cc9515feae1d8d300a2b6bd6783f83a3767f83259cb5821",
+    "sha256": "b3a324822dab5719e1419d728261e0dc1c214bc62b8b2991d6bbfe875ff47f68"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/graph_choice.json",
+    "original_sha256": "ac7dd8c3f76a8f3f24453ff3e5509dd1941ccd9f2b85c200df12c2b355cd38c2",
+    "sha256": "effe5d77e4b305c0946e7fa92c81f8c69cee7d399b52f6ee3d9c57ccec77a11a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/graph_combo_vs_C.json",
+    "original_sha256": "2aec2e3c1b176c76d0488933ce7b540d23c9cffe75fc7454fef53a7b786fd559",
+    "sha256": "63f479237ee12f3c2882600198e0bb4208f65fa9d0330b5217abe1f56a9d8da9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/report.json",
+    "original_sha256": "548d1e7a230585eb5634db959ea5ff7ff341fefbfe3d480d3967e9961bde8a27",
+    "sha256": "2918789ff9f85431bab324a5aa3ebac8101a48d656b763bb72967f760416d2e8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/result_manifest.json",
+    "original_sha256": "958b724975c0a57c9e4f9959a6fbe6aed1b66527c7ecdb5a7ef5e405ab70b219",
+    "sha256": "d6e8f5bb9073b15dbfc00c2b66d9c02b3c1bacfb5478f3126c24ca95c17966da"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_root_exploratory_review.json",
+    "original_sha256": "783b0a54fd9936b1e14a2a57facc0c509bb65f5e2da109a27f0dbb568aea79ec",
+    "sha256": "a9c811853e4141a8c053f4014a0187ff8ba6b80d6334c3248439b984bbb402c6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/graph_stage_receipt.json",
+    "original_sha256": "263ad103f66fdd290c70bbe121a1f9a937aca0b96e84a4ff208585ae53ed767a",
+    "sha256": "ad28f41dce8c223bd550bd477b072d73fd875eea359e7411225579b4f5371bd8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/j5_graph_actual_complete_risk.json",
+    "original_sha256": "a96182c9e2156e1ea878abf237dd8b3f33996d29f1108332482f5a09c9fd0d40",
+    "sha256": "2ff0ba798939a0a8dc1f8fdd5f17f79a084b7beeb8c4ae5594fe06e1c0d77968"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/j5_graph_bridge_actual_stage.json",
+    "original_sha256": "a1d1167397d3b1562cb5efa1bd2f113b4026e5e039c284ebc300260580e85158",
+    "sha256": "d63ddd6ef98d67525688b077755cfbd4f0f921399730d4f11ffab035599ebb70"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_actual_append_execution.json",
+    "original_sha256": "e7df45a04fb1429b6e0372278c50a552bd04cc17b65f4940322d389f43449f96",
+    "sha256": "f9a39a9900d6b4ab33d182c66d97f32b273e9936ee8b9ea0be7a09b1f26a7c94"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_actual_final_completion_wait.json",
+    "original_sha256": "f41c5eacf887510e873a2c8da76b7ffbefdb393902f0e64554639c614bd5022d",
+    "sha256": "fba0bbce959fbc92742f73633f460d6404d0d07cee48e8508010ad1c680aac40"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_actual_final_status.json",
+    "original_sha256": "e6890163c145cea0d25d1085899d03d7804236d988192c55fa2c107df59c52c1",
+    "sha256": "744c789ea46e139a9405564d771043b8e16df526db6bf776071bc6182f0cc7d1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_actual_FULL_status.json",
+    "original_sha256": "2ca2ee357a98a016a6e96cb1c5a76bd4fa9392be7c749c8549b38b367cfbe5e2",
+    "sha256": "ea9847532cc831e628ca566a4c4832195993dda778b687ead47285f0a54e59ed"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_actual_retry_execution.json",
+    "original_sha256": "85d04ddac0ed1b343325c1ebfadb76338458268f4b8bdfb364f2204e2ba674fb",
+    "sha256": "7bb0ed0ba6b64f8b95ff74dcd7428bb9975b8a3d7df1c725239254a7c4979560"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_actual_retry_serial_validation.json",
+    "original_sha256": "2e76f6f04edcc0e85d5b8158a1c6d2b21f05ef90810a690fea8774b75225082f",
+    "sha256": "b1789326c604ac755600ba49ea4f0a898e6f672483185445d4c2e05ea803cf3b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_FULL_monitor_summary.json",
+    "original_sha256": "a924f97ac30c797fa8b18f2d0924657ab4a070f6b97fddd10bfdb3bea93ffaad",
+    "sha256": "7d5f9f01b85cec00fcf7fb27fef7fdd781f313fd9bd1688526cf2004ae3178fd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_FULL_terminal_wait.json",
+    "original_sha256": "fef7a3313e49f51b589ddd3fa8dfb4a790aef9f30ae67156a9b4028d41f82fc2",
+    "sha256": "a50176da77a43e2d75c3da3197f84190163e0525a723ec97ce4f0fac88959ccf"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_old_diagnostic_r2_status.json",
+    "original_sha256": "6b2b38d863474744a9889a7e76ec8d4a0e0f340a730ded936ccc7069ab761b30",
+    "sha256": "a9fe5231df113618fb5c45c99b377bc1d6f43161933d9c5ed8aa955761ac71f1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_old_diagnostic_status.json",
+    "original_sha256": "46d135ba92b6d761f9c31af497ebbd9043d653bbb997a9b03cc77b16b9c1de23",
+    "sha256": "e6393ac382f0a41642d27604fa580586b02a57d0dc28fc79a33d6d098c2cd53c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_phase_status.json",
+    "original_sha256": "72fb98e6a45237c1d2f618964c3ed75294026118a3e2bafc58b5385c09004884",
+    "sha256": "e6245b40a60b49f4e2923c7379f31409800c2400d8287585f6b4fb7c35a0558a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_remote_status.json",
+    "original_sha256": "696b54638444765a220216f84c5fe1ec0c9062b0a0f9dff786da36dbf441d47f",
+    "sha256": "3adcc93847c2dff44a5331eff0105cd769780169b3bb734bb52144c67ff1751a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_routes_phase_compact.json",
+    "original_sha256": "6a33be8164066730cd329094389ea8fe871e7a0673bee4f74394be3dd52e9948",
+    "sha256": "7515bb2a4aba50157293ccc744eb79a6161cef813a0c726df347be332ad9b54f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_S_terminal_followon_R3_status.json",
+    "original_sha256": "54ebffc51018fc5fc10271fba59024e6c677448f1f42a03b4fea35f224c763d2",
+    "sha256": "c33438eca8fbbe03bdccdb44a9ba73ec3a3d70ce163802667afc862556146cd8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/latest_supervision_phase_compact.json",
+    "original_sha256": "e6e4ee24804bf05fd08d13628e165302e6ca95881efef77c35f925eeaa854e2d",
+    "sha256": "adb2bb9420aaf1fa0555cbe372018de4abd5f662d8b578bde1b80f771363dbe7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/NEXT_CYCLE_PLAN_20261009.json",
+    "original_sha256": "a3af8b547e061ce69200283850263b347d92a2cfc11861d31702a3ed3ba9aca4",
+    "sha256": "64770d1ab524c983dc67ae34758cae5be47686c0bc8da0bd018c26d186799192"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/official_cache_restore_receipt.json",
+    "original_sha256": "8aa2974836d3dfafe2b38bf88d180bed54c3d3c9c1b6d4ae7384650cad6a1e22",
+    "sha256": "82f46dd6262f3ac2b177ea61757d5f9644bc8f3063f00af8352073f38d51213d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/official_test_path_receipt.json",
+    "original_sha256": "61403bf40bd651e7a002f7e08f4e655230a1d8034b31e12d7ae8c5ec5d63cf12",
+    "sha256": "22d01745814a292c5ec13a2d55495cd855554b8745f03b912280630442208acd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_actual_admission.json",
+    "original_sha256": "365c59178bd172b52965b7d7b7cbd63a57bc2aeb0263cb85203e78b45ada4c11",
+    "sha256": "e4ff60e4f0bcd0e68a1dbd4f5968e414ce5bab16a5d485cc3ff474772f29aa33"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_actual_launch.json",
+    "original_sha256": "c822447916b1e0c7645d8648a0c919015a50cd8ee746ce07b55f27ecbab99687",
+    "sha256": "e6d32dafd30da07ccdb569bcca7b824182fefc3888ba1f75a8165abcbceb1d06"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_completed_producers_recovery.json",
+    "original_sha256": "bd51972e26577e6fdfdd6eac373ea1b497e99dc57228ac3915566264962eb7b0",
+    "sha256": "0d6594047897a51b71f53f4c198471e70ee5456c5b80d23f4a83da7b6b4fc020"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_r1_gate_failure.json",
+    "original_sha256": "78be46c4f537553a15965700b02e9b5f33c7addeff520428a87285454ee18d7b",
+    "sha256": "ad0e3bedbf73dddd96948ba03db7bd20168fcbb1308090f85f6020847fb500dd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_r2_actual_admission.json",
+    "original_sha256": "ed4fa02e8b06e2c8251c60d944edd19380b89fdd58fcc80ac43a3cafc4ebd5c6",
+    "sha256": "e6a66e70363a006585a6a70f617221cf24603ee95448e54424ffae4941c422fc"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_r2_actual_launch.json",
+    "original_sha256": "7b34d1d2a4e1dff3979cfeb9f81a7604113a20a96d5e90cd6e2a28f71c079a0f",
+    "sha256": "0dbd8f087271c0dfe2c619c63dd2f8052c1b322b2998f67fab5a6a0013db85f1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_r2_stage_receipt.json",
+    "original_sha256": "1f096d18d055bd6f014a72272e43dbc499c97d1d9936207b499dbf7854e107bf",
+    "sha256": "cffaf8a7b4ec0b2dd7d35086a408d687738fed3207ebb3e5508f7fb038470358"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_resume_remote_CPU_receipt.json",
+    "original_sha256": "1feea8d40de027de02526e22d61068a6334aa9b66bb197969c8f573e15341ed8",
+    "sha256": "6b770a99e07db13b644680a83b680ae12ac7a75a1e8c5d56f7efdea0ed9d7c4d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_resume_stage_receipt.json",
+    "original_sha256": "4f1599d12f567207dc4993aed05bf7fa471081d3e0a790a159194dc1172b0edc",
+    "sha256": "36733d0fd24467f880ff7f9a9909a952ad89c76f7129f29510f47e057926e74b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j20_last20_primary/FETCH_PLAN.json",
+    "original_sha256": "6601f0e5a5503963425ba5ad06a9894b784e466eabb4eb1fda8853b5d52021d1",
+    "sha256": "06fc6a8665e7acbc771786aa83853735f6c74bb9ceb55e632470b0c029db6073"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j20_last20_primary/FETCH_RECEIPT.json",
+    "original_sha256": "bc529fc93f0e76594e172db2dc74538b483727046fec44b2eb339db5b5a781cb",
+    "sha256": "ca9ebc85bb3b9aae90b645a5259294fe633111785f39ec21ac77b7749af37d92"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j20_last20_primary/input_identity.json",
+    "original_sha256": "187aea95b303e13fb95d624e15eadc3333183f36313e36d776ae70546cea936f",
+    "sha256": "af41104fc0cd60b869e6a7d6246386671a98e9e8a517351a2d382fd999fff664"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j20_last20_primary/p1_checkpoint_audit.json",
+    "original_sha256": "6292446808c3c480ba9b9c07e9cfe00ab3dfb3e61f257995c1ab3fb4e38b8bb2",
+    "sha256": "a8bb20b8112bca7d991a9388817214152c6c7c9b4c5b411608b91cac9eaf3b69"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j20_last20_primary/report.json",
+    "original_sha256": "80add725345f38fd18bf2685f1f60ca94884e4293a8d73740f8f3a98b0018103",
+    "sha256": "9aa6df1eb65b29036d245e8b224bd00fb74b137642b55226cac6bde7e23dfe34"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j20_last20_primary/result_manifest.json",
+    "original_sha256": "7abebe4f0a917c6efba3ea925e343f55e19d34967250e6f500021ca813ec5417",
+    "sha256": "c5f0c8d432aba88f9606f5c75cd3558bcd485d9c2f46274da51edf27453ff9f3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j5_last20_primary/FETCH_PLAN.json",
+    "original_sha256": "57ed4d27c688611399e784ab4cd2be31d69ff057b4d7c9118ba9b860a174cc46",
+    "sha256": "287c8dd8c803384c6bbb8dd5530e2e6b5b9de573bc506710caac6c9bfc7b427c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j5_last20_primary/FETCH_RECEIPT.json",
+    "original_sha256": "048b7442185eeb96faa42013f4976dfd84cbc547515d616018fb7aeefc000047",
+    "sha256": "3daca4c1792484b222897102b9e409a1657957bd45da663a5a63c6a9ea8151e2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j5_last20_primary/input_identity.json",
+    "original_sha256": "b500ae860f92b9b961c1b9a246733bb2436ef0981c11755e34fcd056ec983cf5",
+    "sha256": "801e8d2841393f6bf75a4c4e0ede6cba2c6cd365e29777f38af7fe9abb2c804c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j5_last20_primary/p1_checkpoint_audit.json",
+    "original_sha256": "639e3b9d93efab51c35dc69f1dcc5dac093c6b7033df22a903419ce576b4c22e",
+    "sha256": "6a85fa6ef51c3b85568ad8ce16181b5a76f5269df9468875b8fde4b4c8e557c8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j5_last20_primary/report.json",
+    "original_sha256": "69dec91ca6d6dae0c869be0511c3926fcd96c1e1e5594ef98b17bbb3af6b6396",
+    "sha256": "4bb5666d5c05677a3f01fe1b0b0d04386a0d6b3b4853519234ce921831e229e8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/old_diagnostic_returns/j5_last20_primary/result_manifest.json",
+    "original_sha256": "4be4d2df0b3073065d117725cc59ab825a54a7ec1c00684295ce4c47e168d0e2",
+    "sha256": "ae697ff7f27851c14f3beb173632200b6cb1367a55dcc4618b5d62c57a4432de"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/ONLINE_SCORE_REPORT_20261009.json",
+    "original_sha256": "ecd7f38137bbc861918d2027e81ed076db210c4ffa409b73cae5db7cb38a18b5",
+    "sha256": "5375edc1a2f0521ae87e09da6e7d8bdf07dfefc859089e0ec6532ecd4a0b5da2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/p1_completed_J5_metadata.json",
+    "original_sha256": "5588eaa355199a4e9162a23ad766bcfac13b16fc30dd13bfca31923f6e8cdbe0",
+    "sha256": "44e95fbf8b041836d7bee50ba9a5983d31d7e24517e45652d57a62197a1f4150"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/P1_full_delivery.json",
+    "original_sha256": "5590b2244d0d195cc52b6d5bd3b90a9bca0d495fed13a00c5dd73067983866c6",
+    "sha256": "5f3f12f028831bae23b77afff1a01fba4a6ff7c19b2dc828a3df7127db8e261e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/P1_full_h1_local_audit.json",
+    "original_sha256": "c6e6766c38850bfc8421f256b755f54b501fd836ed5f5bd168ef98043f0e4a2e",
+    "sha256": "24789c4bec6aa94d93b593070d48167e69a312095feaf270489a82bb738f83da"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/P1_J20_first_observed_epoch_audit.json",
+    "original_sha256": "c1a8b341e4de91d083e317f8476b79a78f2a8b19f639c0f37bed949ae0c5de37",
+    "sha256": "870bcda63fadcf0f31b034e08e34de735981a0df51cb9504973f19f49369b95f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/P1_J5_first_observed_epoch_audit.json",
+    "original_sha256": "bab9479105ea35cec011b5a06218604799fa3177fc5823efa11994a1502712b5",
+    "sha256": "bf4f814324a15b82ee1d98244c4b8d140bc2abfead11cfa29e6ba5aa6a4f575e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/p1_launch_receipt.json",
+    "original_sha256": "2ac8fa66ea9974d7624b8a524e16b71ed0ff500c80110f59bfee3aa14185b13a",
+    "sha256": "29e223b1ab540bee26f7a2058b6ea33e6e78a7bade7c8c7ccee35dc0b3a16aa7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/P3_graph_delivery.json",
+    "original_sha256": "6a98a49a40717ced7e656736d3e96b904064b0dd39f582f78e9f39bf5de1acf3",
+    "sha256": "349e9770eca03d9de2699a06fbafbcabb60dfa25dcc62d09150aa0f6b2a888b5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/phase_status_after_H1_launch_compact.json",
+    "original_sha256": "225020f1a79c67b352a77b18757c39a94a4d569110caeca5cd273d84a8ac1d93",
+    "sha256": "1d337cc84466841f78e513ca0eb843a8e8b2b11132f2cb285abb89d15180e7f6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/phase_status_graph_running_compact.json",
+    "original_sha256": "5f8178178be1b976b9326580a78300f12ba10f52fe37796fa84db3fabe8d8b2b",
+    "sha256": "205312689e52f72bb27a5d1a23c1f9ba6082e8f83da5d10aeefd09adfb99db1e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/remote_assets.json",
+    "original_sha256": "c95876995c8359a50ea8e7d3a16edf82fa5dab5c75f37e20db0508fa28913264",
+    "sha256": "d74068947a6a2b65f2d492e15d88e41644e90ea4c9cdfb6404792cda135eb13d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/S_terminal_followon_actual_sessions_preflight.json",
+    "original_sha256": "c3fc154629c3745f79d9da1eb7364af351961d84a2f1f9de62da8a758d2f52b8",
+    "sha256": "09f76a02c3e113634997504b58fca32a17f2d48c7dae7d82525a9386d89571b6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/S_terminal_followon_R3_actual_CPU_wait_entry.json",
+    "original_sha256": "b73e69e1e32ef5e1b873408783ad59a3005c151940df120d254222f104c7a2d6",
+    "sha256": "977a86b5a88e2423cb951e7715dae9ca00d4f4b051cbc53d3e875e1409eb133a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/S_terminal_followon_R3_actual_launch.json",
+    "original_sha256": "01f9606de0e6fcff1abb813a52f22392ef96ec4269fe5325f96e3302788327dd",
+    "sha256": "ee7ee010a27f8342a6f2556e17cd032527689674ed827d61beef413b9c20ab40"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/S_terminal_followon_R3_actual_stage.json",
+    "original_sha256": "3b0ebae30e203124fd512c36e48609d1fd73a47b3b2011a49943f4e39e4ceeb2",
+    "sha256": "8ef84140d49f9ee5deb4a4d468b52089607054f01f20dc9a011395515e5c18f9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/server_inventory.json",
+    "original_sha256": "df9bc8eb574cbe80fc703814ce4ff860de5c94ba33b121ced7c438b70caefdc5",
+    "sha256": "0f8f093f083821869ed579e9c8db270eb8059e352dd26927740f1979efa34b15"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/STATE.json",
+    "original_sha256": "10b9a27ec6de5dd6bb10fbb4263fb86a93377d8c0a7c6d881770b55252fa4e34",
+    "sha256": "ebab442f7dabe46abea82c9e4190d6bc67db8605cc615913827c4d7cd8326116"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_CPU_preflight.json",
+    "original_sha256": "f0d86b0dbe935c814197a21c698611c73bdedef8079c8bbfea8f820490fbd8cd",
+    "sha256": "7644f5d935d67f37d6008030d140b74fe1a1f1127191757bf27b635e5a878c2d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_first_epoch_CPU_audit.json",
+    "original_sha256": "74e17d3c4d4e16aad687899c4b220956510ca92fba0c62ceb5bab5c543d78925",
+    "sha256": "ffd79eaa54360801a80c6607de7bf7b0f0106ced2bd5bce8fd4be506f35545e6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_smoke_complete.json",
+    "original_sha256": "7705ef1d04e4e4a58ef5333998967643fb7d657e62b772d172d2fd0e676a6d5a",
+    "sha256": "7899bae57eaeea1eaa5af19ed9e8cc348f034cacf14628da700f2b7b78f24aca"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_smoke_launch.json",
+    "original_sha256": "873886d297e93ad8f4cb56f1828c3d993a5f8201caa26577efb9d1d36b53faac",
+    "sha256": "dd81de1086b94a578d379278cbf98a13cf246972be11188e56bcd4ecabdaa0e5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_stage.json",
+    "original_sha256": "6386508080e831cf4cb2a828bc7016d36875d590411cf19cebd01c3818d9caf9",
+    "sha256": "720b7eba6c3b97e7cd7315d229f08d1d463de8f63cadcb2541e5f736a9f0243f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_terminal_returns_r1/diagnostic/input_identity.json",
+    "original_sha256": "bb1142079db0a4294d7edf74f02846892685b391b98785fd9b709dfffd768074",
+    "sha256": "8d67a39cb0644ee6bf33bc7b5e1e2bdcd6055f3d59892368d659930a10cde80d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_terminal_returns_r1/diagnostic/report.json",
+    "original_sha256": "990a9f1399cfac59c541fed945c040a76b05d7f07ae3888bdffa55f5a612209d",
+    "sha256": "0b3d0b57bacb3be3e045f1ad1a6564e2d88d60958faa3e746fe4554d6be10f49"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_terminal_returns_r1/diagnostic/result_manifest.json",
+    "original_sha256": "a50d906276302886ea346bf04a78512ef0ccb1aec830e809dfe14059579ba191",
+    "sha256": "ef591e227aea92a4a6e2817f1a35e3b3431aad1301fd0c1299d11d8149d91f1b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_terminal_returns_r1/diagnostic/supervision_checkpoint_audit.json",
+    "original_sha256": "d29742944303548121376450b3592d9855ad4dbf3b99b9548862333c8f40284e",
+    "sha256": "395689cb637f7b65a71eed713fb347d9f9788c9aa937cd30f3173e7734ecde49"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_terminal_returns_r1/FETCH_RECEIPT.json",
+    "original_sha256": "7338b355db7354720b0376047e9d49b51e6c14b8d31ba6b53a826f8536fc3e5c",
+    "sha256": "38958c30bd98639745c4f26e040bf23eb99ee35d571449e3d7cff94588355735"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_terminal_returns_r1/paired/report.json",
+    "original_sha256": "776b1120fb75544ae5422b3960347c6a4f87c4881b4b16e0088d8ce86e216d66",
+    "sha256": "2857a5c79004b9838c1d7169d4b194655f6d230ca2ced8306fa93dfdb77481ed"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_terminal_returns_r1/paired/result_manifest.json",
+    "original_sha256": "3e148dd1084a884eeafcb4eb9ccfcd683472f11a265ea36161987269649343de",
+    "sha256": "5d2bf68afcd7bfca3e02341319ce9c61a31c5547ca08fa2924fa8982715e08d5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_actual_train_launch.json",
+    "original_sha256": "85450a40a6c3953e944a4b63102c362b25862c16925dbf555a7b52cf540e1235",
+    "sha256": "f6732e681bdf90eed70266525649c03d83b9838530a0ad3a76535417a5ee6d46"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_diagnostic_actual_CPU_entry.json",
+    "original_sha256": "41a60b1a8d6c71fa238c7fcbb1c4d090fe5231a22f1fd0d20435cc0e86e3f02a",
+    "sha256": "a689ed6c4f35ea2ecc27f190697f229bebdcf91479745057eb5b4afb26896bcd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261009/supervision_diagnostic_actual_stage.json",
+    "original_sha256": "797351432ac214aa290e59b6a73f142d306917765da7895ae55335a8dc344a6b",
+    "sha256": "21d94f46448267734a12bb373245e271754bfa4770b666e4e9cb2a58a54308e9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_bound_CPU_and_profile_launch_r1.json",
+    "original_sha256": "05912713b747873ef0b5cb00608a4a19c83cd8e49cbf1ffbed4e5de6940ad32d",
+    "sha256": "78a2caa95ecb0e97a585238e3400d896f5224b8b027a10ef38cb9e5f592bcd70"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_diagnostic_metadata_bind_CPU_r1.json",
+    "original_sha256": "f8b7b01c008cce92f7cc7471265a2374ae8b29448c74ed16cb406701af108408",
+    "sha256": "fc3f1ea905f972e3659e9c74e2db726ccd034ef897498f509b175b41bc4a0f2b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_diagnostic_metadata_bind_CPU_r2.json",
+    "original_sha256": "4417548c53705041ee6cc0262e0521142d5863820a5b27552b2c2c13890955f2",
+    "sha256": "116c9b3273221202fc70e741b4398b4e64e6707ffb4a304042d062155032f77b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_diagnostic_new_instance_template_stage_r1.json",
+    "original_sha256": "2be85dbfbe0c895da8666d0da5b2031dd4d4f6b42208fd011826036e9c093e87",
+    "sha256": "07b3254e5070cebc556d1888f010bc7889fddb741d22df7db4069d9f3c7dcdbc"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_fixed20_fourview_launch_r1.json",
+    "original_sha256": "aa83e46e1769b0ccdc37fb8cdc88f9e2f21d3ec63be616dfe61f7badf6301631",
+    "sha256": "288fa1f3d6ddfa93154850bfcdf15ed136b48d8a26cef24065ca3d20bb8126ab"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_fixed20_launch_r1.json",
+    "original_sha256": "6c29275119e8b0b7934d48199b9ff470c331d424da5aa8e2dc0faa9ce705a2ff",
+    "sha256": "2d7af1e36fbb2449f0f3348c8618d7e66d4b6c8156dec143511a1cb847883b25"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_fourview_all_SHA_and_restore_r1.json",
+    "original_sha256": "0a5bd9f83aa0f011cec7d52002e1e01ca7404f9a3994a6c6cc82e414811bc36b",
+    "sha256": "3890f72ae683d72f72f9c2270d79c960cca2bb35aed9379226fdebfff9b472e3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_fourview_terminal_audit_observation_r1.json",
+    "original_sha256": "f472a305f3a43761908630d0b467a6901789120d9f6141479f6bf4c5e89bce9d",
+    "sha256": "67f863e458529486087704657f6d5db20c78d9a5a5b4a9c946e06860e54d5e4f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_negative_root_review_r1.json",
+    "original_sha256": "1d574a6ca154ed1301dd637393236879accab43446334ae0ca3990c818a3f05e",
+    "sha256": "41997e9e1c1fa9b60721d21c24ec7e5251d80a92fc9720406f8402621b69f221"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_phase_budget_r1.json",
+    "original_sha256": "b21140ba952fcdb3095239958e5cb4d0bc25e9e704772b41cec2ab7335785e0c",
+    "sha256": "3e3f5d21fbdc6f24066605c36c429ea01a2644b79d1cfa908ddebfd21770c3af"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AFA_template_CPU_stage_r1.json",
+    "original_sha256": "76e0a564bd7c152c5a786f0374b3f0ce9975ee3bede7313b01661744dce3d8d6",
+    "sha256": "13aa6e2b2c67f443548d08dec9217b24aaea0345b48e1069bb7a444d6be1f3c7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_AutoDL_expiry_shutdown_r1.json",
+    "original_sha256": "6f41709873bfe1c196af8130e41fede042a9056f5bc5917f760dce6375fb2468",
+    "sha256": "492f54d80dce498f9568a981a51c5f73b00e4012fe88e37b2a19c31805fb8dc4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B25_EMA_4V_launch_r1.json",
+    "original_sha256": "c595fb0d63f42e6ca3eed7f60fe587e0558404413d08d070533770996d5d8345",
+    "sha256": "68dc8f06f72263247e58f85f4da00babec2bbc6f968d2215d4e7b3fd4aff1e18"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B25_EMA_fixed_compare_launch_r1.json",
+    "original_sha256": "2f191a9193ea4afd52a24179deff8675f830150cad067e7dedb140b9211cad77",
+    "sha256": "a0239abd7334419bff329bfdf3f578d2dee850a2fb16cd0ed8f1e9ba50740b91"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B25_epoch18_progress_r1.json",
+    "original_sha256": "412ab596bd16b13dedcc50afbd2829f852c443f8f87931eaff4e9ea58fbc431a",
+    "sha256": "af57e12cb8a5a20cf4112fab671015513193d6ed001dc51b360bc79abc53eda6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B25_epoch6_progress_and_wallclock_forecast_r1.json",
+    "original_sha256": "18c8dfca5a41aff710cfab20ab5d3330281704a1e53d264a0dd5bb59a351f0d8",
+    "sha256": "0f9ff2d4b677ee23dd01a97471ab7634cc669d50d49dddd14627b8ccb12b7396"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B25_first_epoch_metadata_CPU_r1.json",
+    "original_sha256": "c9f8dea94d151de55199902c539e3aaba3cdaac90b5cc529ff99470b4eaa48be",
+    "sha256": "29878ac4d1edf7d348d637dfdf728b84318916c995ebde5812084d42a19643f9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B25_frozen_4V_launch_r1.json",
+    "original_sha256": "0abec6151b9a362961e1662fe139e9e0edd80011f5cce16e485d517c44b4c377",
+    "sha256": "7bfc412359a872fca33da9c3cdbc3fc39505ba30dd0549dd3aa38d3c9f09fb57"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B25_graph_compare_launch_r1.json",
+    "original_sha256": "8c636a123583e2b2be6942fb7d6ba8bb271beb6646a1d3c8f7893717aeafd0f2",
+    "sha256": "63f1efe691cef5b9206688cafcd61b1aa851f1b03920020c26a51ec14b1bbd2f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B25_small_evidence_fetch_r1.json",
+    "original_sha256": "4d74fabf5d70dfc2a5353043245afc575b411be59da5e65b0c6056d134991ffb",
+    "sha256": "73cec06b2135291e932f028c0b5360945c8fd2cac8efc8a64a26c5876f39523c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B25_terminal20_metrics_summary_r1.json",
+    "original_sha256": "d352d5895aa154427b8fa3204a43c8e69ab22fc5dda00b58cb6d88933cec0989",
+    "sha256": "d0f0d4e355a2dd507893234ba2e367663078cc2b08265956ab08a5f785ef7486"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B50_EMA_4V_launch_r1.json",
+    "original_sha256": "c15edb25898ec58b56a91ab3fff6505653d6dd54bf5918f7db991a6935597cd4",
+    "sha256": "6e5f98669fba44499561129f90a9ac342f30d7193723e9cd8a5f2987e9253316"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B50_EMA_parity_failure_outputs_r1.json",
+    "original_sha256": "b52a11cef19272efbc7e4bef83012cd71c1819e514ddd043f757d69a8f22fff2",
+    "sha256": "b8ebb760fb2ab84a6c0ce8397d876a01f2d9ea4941e01bf4cbdc4f2792638401"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B50_EMA_R3_budget_r1.json",
+    "original_sha256": "57dd9a03a74155a90e92fa100ac3972fad853cb53f7060da1438c2ae2981870e",
+    "sha256": "79ec80fe2d43034fc6f06aed117d341596f5ecca9d4665de45f017898baee0fb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B50_EMA_R3_fixed_compare_launch_r1.json",
+    "original_sha256": "e74d401fe7c747babf664f0ce02c5d8e124865e2cde0da85f75c654b86246cf0",
+    "sha256": "7ec76c6de3e82d180e243082fb6e874340c3e433288c60f9d6cf0ca5b234c0b4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B50_EMA_R3_new_budget_and_4V_launch_r1.json",
+    "original_sha256": "65b7571eacc782f0eab4d4c547ecd488ff7cd9a21f0f792682d84fe30ba9165e",
+    "sha256": "18f07bff74f1ddc39519924c320300845b0dc2c35bd546416f9f29bf17af6613"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B50_frozen_4V_launch_r1.json",
+    "original_sha256": "27307d0afbba5ea014c9b1e0ce236faef673574af2353c32b6a5e21f85a0c4e7",
+    "sha256": "8007175b5390c36498556073735cf1d5a5353230019dce6ce7b5b4466b8b81e5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B50_graph_compare_launch_r1.json",
+    "original_sha256": "74089a9a29da38b688cfbe1b5fc782ebee96896e4aa8404989e49dd89ce559c0",
+    "sha256": "a22e65e69ecf3d5cd7c69b7e164d5bc4150eb028034dfcd5bdd6aecfe6faaf67"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B50_small_evidence_fetch_r1.json",
+    "original_sha256": "0037d6877a5322b623c96eeb25fb554192ac67a4a6abc9c9ca4df6abd9e67725",
+    "sha256": "7b2ce91485eb9778f8eac49fa304e0d98934fd6e785ef0843659b8af847eb7db"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B_both_negative_root_review_r1.json",
+    "original_sha256": "752056c05a3b2727aa34da4a96e865051818ac3273f58eed16df199019c02275",
+    "sha256": "51eea6e7c2a84f79863e10df4f25d660fd48ed9db6bc5257251cc7b53aad2e12"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B_EMA_exploration_budget_r1.json",
+    "original_sha256": "c905d9f877527f1878a3e9bb1f25c4585553234586cc9bc3a540be6834b0e60a",
+    "sha256": "2eeb1122501b23eb47158366094730238809828062b2360e8473a8d557ec6be9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B_EMA_exploration_preregistration_and_cost_review_r1.json",
+    "original_sha256": "30f6c9f7644fb2d29ccca5e18e9cf459e45382ae938e689807437139b47932c6",
+    "sha256": "8ec183ce6c39f1c0e882454634191cc9ed2d099cf2c9d6039e1276e640578cef"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B_EMA_two_negative_root_review_r1.json",
+    "original_sha256": "0a22ab80633e005e5551759563dc0e9f956cf3ad629d956c35b948ac7f29003f",
+    "sha256": "b579c8fec69aa1fa98cec927c15d8f38db058ed13602e7dcc38f017f92bc2cd5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B_profile100_root_cost_review_r1.json",
+    "original_sha256": "ff575999463f7c51aa7da4d98a5f97ffebcfe5b62161b42963defbbb3684bee0",
+    "sha256": "26a92d87ae50861c7847543503e90fd56bfd6a7388d9c0275b6a4125e46c8e82"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_B_terminal20_files_and_metrics_r1.json",
+    "original_sha256": "0d76afbc25a64b30274cb9905d802b8220ab180d7df4f51a03eab3df8ed3f670",
+    "sha256": "ca6a796530f4b4bf47fe970d99c1e8a5a713981e3a0af7f85166cd075519f568"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_append19_to20_launch_r1.json",
+    "original_sha256": "469537a5f3f65f40fbab4b2d49b1687e9c8e19b85939d74cb9e073b2713726f2",
+    "sha256": "4b14fe3c7138c593abd9bb1c1088a29ac801c1ac236972baaa1393be2b538b04"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_append_bound19_CPU_r1.json",
+    "original_sha256": "a208e509e733e09bb3af1580ef10f0844961bfe9659dadf54bedbbb44f7c0ac0",
+    "sha256": "c5e67079f096fab6c35e39a811d444e35232516fe221302e34dd2c20106cc2e4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_append_diagnostic_CPU_stage_r1.json",
+    "original_sha256": "12f00ed7e4d4ad945024be863ef6fce3211cb6778cd8a4635d3a0d1418191dbd",
+    "sha256": "e6976a324be2900e6156822f02557bc8ebbd7fccd40083aaaa3d4e28a8822d3f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_append_fixed20_fourview_launch_r1.json",
+    "original_sha256": "9556f2b20c95847348bd71f2f06d02dcbf22acfda15bd8df5518d1af80bd1969",
+    "sha256": "e3dcfbfd01f140d2d8ec9d0d232c7195a303fca93ec55a8d00992c73620adeac"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_append_operator_stage_CPU_r2.json",
+    "original_sha256": "4abc59abaa6f21a2345aedbd3c31a9bdcc7dd451969f06267f4ab1ef8c56c69d",
+    "sha256": "23ffecce1fa1c6e91d047961a2391be8ef879cc7065aa78182e9e665c2a0036c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_append_resource_authorization_r1.json",
+    "original_sha256": "eb21a4f7aec24ea37a24c7e18980f3f013537ae3877f1cc9f8bc6f62c3acea00",
+    "sha256": "a5b6367470e7339bc547974066d4d81ec14b6adcbfad588312545fc3b7f43e9f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_CUDA_smoke_and_fixed20_handoff_r1.json",
+    "original_sha256": "59168ba26f058016e2752fdfc700723aec82cb928c2ce1f5b3960e70090449e1",
+    "sha256": "0be77d323bb7a4503914bb72911111583048e9158986c6de54171d3f4678d67b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_CUDA_smoke_launch_r1.json",
+    "original_sha256": "c836fd207a7dea9d30578afd58589d4085ab39f6d3865945992f4dfab648e01b",
+    "sha256": "71aeda05adf174fd769fdfdd778a3343d3f83e7afad17dcd34292576012400dd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_diagnostic_metadata_bind_dependency_r1.json",
+    "original_sha256": "a20615ac0bd00e79e052302522a5d35242d81ea14cee5005561cb53fbe37faf1",
+    "sha256": "b1fc32e4b89d465fb3c25b6e6c6bcf81d28cf298d7e2b59a8a6a0d14787a214b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_diagnostic_template_CPU_stage_r1.json",
+    "original_sha256": "ea2c9048d27a1ac651ec7f58ad638c3c55f0e27d597cd076bc89f0836c523dd3",
+    "sha256": "8cdc6e8047862d35e8b89a6030a451ade35e36289ecb7b7f3d2e1aabc4d7f5c9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_first_stable_CPU_audit_r1.json",
+    "original_sha256": "2ccb3de3ca4c09d7178dff968dbc0d0091bf67191fca3df8e6ae961d1e9cbc0e",
+    "sha256": "17353a8b3b9ab06738b6e3efbe2511d0f7651db71810e932baf36ff9b91b9ede"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_fixed_graph_launch_r1.json",
+    "original_sha256": "f6f092e4d8b44989cc1984b1694ea6ea1a8888d228b86bad27937d7c7e2fe466",
+    "sha256": "2921b24fe0b7037d11bcc3d187824bdb3365996d295a44e567344fe4e9e34ffb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_negative_root_review_r1.json",
+    "original_sha256": "a89ed2eac08a52445fa7e48291a8d3323cf6a7d4337ee2e9b144dd56b8d12cdf",
+    "sha256": "aa845c8018f4db2c0704db9bd90008c16cae89d59c30e37f611308c17cd3930c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_new_budget_bind_and_CPU_preflight_r1.json",
+    "original_sha256": "ddbd1d8fa4b0f20afd37bedf2bff71a7b263d79793543f767377d672aaa2be8c",
+    "sha256": "ec22f5768b73898ece3aaffa958934434c9467244216db851f21be081a5a82a4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_phase_budget_r1.json",
+    "original_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+    "sha256": "2fefb2e6d1e4babfc9e0c05d8ff9a5383885c6fda1ef622034aac9ffdef89361"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_R2_diagnostic_new_instance_bind_CPU_r1.json",
+    "original_sha256": "07f662fe3c93a8348a4b22602fce7f7fc4dc7e95fcef12cf77cc023846f98c33",
+    "sha256": "9dbdb119459c64f42a32743137d5064187aa2f19b08e67edc24708766dc17591"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_R2_diagnostic_new_instance_stage_r1.json",
+    "original_sha256": "df395f1803abedd65352206f0b7e0d893b31cc423c6acabcdb6d6a1a78f98bb5",
+    "sha256": "83cca962788de702607fed14924ac2543d209f4104693086e8f68d82f93f11fd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_CG25_template_CPU_stage_r1.json",
+    "original_sha256": "486e90476c1ebaabe183c946a79de03b30eb7104f3078a44fabe60f60d6f3e6d",
+    "sha256": "65538e13060892caa33bf0baa7dac47c99b8db126f9bd9f02f21e9562d6c12ac"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_cloud_cleanup_allowlist_r1.json",
+    "original_sha256": "ae8d7745c8c95b7ae53abe2c763fd34ce2d858faad39a0f2af0abac377d2736d",
+    "sha256": "3a7779c9c99edcbcbc74956b3ada8c413980284290ee9f2032daafdf90be1e8d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_cloud_cleanup_backed_old_models_r1.json",
+    "original_sha256": "4b732b832cbdacb158c22dc7a639548a92c774d904cf2e8ce419c06f3fa34ebe",
+    "sha256": "f75904111adbaa657c0d7bd6cb78bca6f930344a99cb5f31591786cd7538bca4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_cloud_cleanup_inventory_r1.json",
+    "original_sha256": "f39ef38a1ccb188be98b8809512ae7e61ca8a8a8fb5a3d9acf2b9c1b4da32b75",
+    "sha256": "c3c5da7a9e5ea3e1bfb92bdb3f931204ec9dbdb34b377a93581024b223a2cd22"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_cloud_cleanup_post_training_health_r1.json",
+    "original_sha256": "72677ef71e8b765bc929de7f7ee482d7eb7aa3cf943446e945026a8047a4d86b",
+    "sha256": "224844aaebfcfb014531d4b99bbd09ed852c6ff749fa43e82f93b0ef7f05c889"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_fixed_server_banner_failure_r1.json",
+    "original_sha256": "0c49645dfbcbd99b041fc99631968d7bf4fba94739957a8854df69cc0dcc1f9b",
+    "sha256": "21b850b0ebd7bf3af6144068efa64295bb6411146af72cd880d3a0b85faf21b8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_diagnostic_r1_launch_A3.json",
+    "original_sha256": "5cea6230226b6dcc2b6f43eb245d3a2b51714a76c8f3c497c430a23ab28663d5",
+    "sha256": "9b273813ac9d08ce12c39b91687b024e0bf641719706a7938d04dd960e4f731d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_diagnostic_r1_launch_A5.json",
+    "original_sha256": "373afc0ae1d92c16f94743f602df1591950bb7121b8b70b1a9a7dfe8bc88dc3c",
+    "sha256": "6114b1f5eb7f9e2021ce79ca90d4d856d03f71b13450cbf2d3e55241676e706f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_diagnostic_r1_preflight.json",
+    "original_sha256": "e9fcda2ccfa30b63c0883a0778002bffc4640fc04f6abb224215094b5f8a7474",
+    "sha256": "d6876eaa3b658a057735b06b06d8011924f190b201f49acc7e7a9d392bb0ff42"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_diagnostic_r2_compare_A3.json",
+    "original_sha256": "93476d7e46cb572da8de366552e13efcee9b443fa499644b4a29522b7bcdddcb",
+    "sha256": "1b45a822768caaf9161d4db7a6e25ec2491bf5b041e8145a44e2d1b662330ddd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_diagnostic_r2_compare_A5.json",
+    "original_sha256": "da226cbf287b4c6e207ca400fbdb51f46def5703a4f4de83725c8681339894ed",
+    "sha256": "489066304cc3cfded18ec85ac2c8bc183de35a5f0b74f0fd9783366aee7e2036"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_diagnostic_repaired_stage_r1.json",
+    "original_sha256": "496eca845be7a3f3aece8f43d768d342dcdd22118756ed91536fec0990cd0119",
+    "sha256": "e8d5b9c233441b5128180a16ae7d224ba68dff2bacd90dec9a37bcbc0d0cab21"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_r2_launch.json",
+    "original_sha256": "3af38da47dce593253d07642c7e48e5a66afea1bd3be8b70bff22ba59839990b",
+    "sha256": "888c3f86ca20894e91f64fcda4b55e36dec971716fec99e31d413a24d7ca3ea4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_r2_smoke_A3.json",
+    "original_sha256": "e0acb43d46cff96315bac3cfc2c855a67f5d80e16123268a93b4af73ce3b58ff",
+    "sha256": "c9b607d7ca3634d19c01ea57b6d17332ac2e96f00ab2b4b3d3360b0b418e4c96"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_r2_smoke_A5.json",
+    "original_sha256": "e8c2a37b654a73d37bf43fedaee0968ffcadb1bc701660eef72e2d4f825beda9",
+    "sha256": "ecc10a9706ec9724ca52be752ffcd611c3b8941c76a1be0705281f7683a1c321"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_r2_source_stage_and_CPU_preflight.json",
+    "original_sha256": "def0075414867461274f3e91684b5999a1886cf2e1b55e973c1efdc2cb0aebd7",
+    "sha256": "aebf20e2f82ce60ff7bba0cebe66db2d0092d776238c3afbc937c41f6cee0ebf"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_r3_launch.json",
+    "original_sha256": "88e309010c8e37b37e8d20d22ca62fd55da5a68c3b7e4c904a7489f01a83130f",
+    "sha256": "eda6d8df3c1cbfe5d6d6df209e8550943311e1c06e5dff8b235dc50edb108fc6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_r3_smoke_A3.json",
+    "original_sha256": "282e924cfd9b52d2d323b3a83fe7983bf4755541fff854a9d17c8acf818dcad8",
+    "sha256": "15801e059603fbf9fc52636ef9582ae49fbad90b3aabf9c59d6957d60202d568"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_r3_smoke_A5.json",
+    "original_sha256": "bf032ef8133f0ce2777ec031341b3bc0533a8f1d3423e263c5d0212cfffda0d2",
+    "sha256": "a6e0ce93a0bd4e3ba199f643ee7427a4f40d6264234ae5ecfe98cad607b3949d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_r3_source_stage_and_CPU_preflight.json",
+    "original_sha256": "fa9cd117b35e94381e5cc13221bb4a3a9dd29b2697f3048de2d477e44a9dd938",
+    "sha256": "45f9fc83cb22e11c04a0cc453f8dbcf669b6ed103bfccdb53592fb4f18bb8f92"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_R3_terminal20_summary_r1.json",
+    "original_sha256": "425112caa5a72cfac811f5e7fdbc23f79375260c3f2b445cd3c86c00642ef7d9",
+    "sha256": "b30b5c797ee4cf6a7cb67149ed65e9b9f350f2107f385a4f7597b419be6e56df"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_joint_source_stage_and_CPU_preflight.json",
+    "original_sha256": "fc592f56bab725de6396a8e2bfbc16cb64682b37bc9e9bbf3247adb32bd4ef9f",
+    "sha256": "e9550a6755331e7a5cc8acd473d4bc487a681d3eeae406122a1dae438166b182"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_diagnostic_bind_r1.json",
+    "original_sha256": "47dc48c55395ed06a3da96c942fbdfdaadea4dac1336424536dd89be1b9a2d03",
+    "sha256": "3c63984778b63ed1f489a0e7b931e82bccfbe9b139bc877ad6ebcd53d4e4fbe6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_diagnostic_preflight_r1.json",
+    "original_sha256": "971059a9a334677db97d8f262073bb5126b7142b2953d3acfdc1b851ef652365",
+    "sha256": "e3ce6732dcaec50c311aa71475ab722d673edba866e193e9866e197a8f21741e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_diagnostic_stage_r1.json",
+    "original_sha256": "ed0bf337dd286602a42f3074b8a8031957a20f0bc17e66aa557863bae73efe8b",
+    "sha256": "9bac50af52ad3bf6317b71f5246d6a6ef46db32b516eecfdbf35a4e45b0d3b35"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_profile_stage.json",
+    "original_sha256": "34b2e4b4702d237051acb9314fe5fb6312beaa449f0599609440141e9bc65f81",
+    "sha256": "5220f643e2fab0d1f288f129d5ec67fa7ba0ecc4361ec84009f94972b2a9b832"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_r2_profile_bind.json",
+    "original_sha256": "3dbea48927ecde247b3b51ce5c60bb5b674aa118668432a48d390aa2afc2e16d",
+    "sha256": "c98d6838075d81b0399197d926449787aa6d05414ef09ea145b1e2c3c92055fd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_r2_profile_launch.json",
+    "original_sha256": "6cf9f007d58d3d5395fc656bb4070ad350ac0b97df3423e246534aac02f94053",
+    "sha256": "1ee1024a83e85602c64f6c4e06a7a139ec238ef2aec5b720a7cc5ab90d626e8b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_r2_profile_preflight.json",
+    "original_sha256": "7e05f2a462bbd3e3532b3b602a9164c94efbb052178093281521c3b9781fbd2f",
+    "sha256": "a3bda239dacc507304342413680173239fd1f9c75851f164adf40a3bb5881997"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_r2_profile_stage.json",
+    "original_sha256": "c75f632cd7c18dc8fcff6d87ac530dcd39703c08041357e3c0e70281d703ee5f",
+    "sha256": "938ac302413e090eda1c5cbbf6db0d15f325b68e2f7054c56d3ab4b6efb69df2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_r2_train_bind.json",
+    "original_sha256": "d42048582e0c2d38c999975df58d797f5f3f65f81ee8d0b18517d9cf338f1f8f",
+    "sha256": "186fb7f93a3a6ed09861f5b9fe8b4b606184c68d694a023c533da9702550fbc4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_r2_train_launch.json",
+    "original_sha256": "7c4e57641c4b5bf122059c88a69abbc5f3b71e4a7d03e8979f88253ebb65aa75",
+    "sha256": "3e70dc77c9691529af2b5bdc4c67efeaa3657dfa38173dfbe7eebf2be0b20723"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_josrc_r2_train_preflight.json",
+    "original_sha256": "b9ad10057ed516156d7677cc31c54fa96fcd043bc61508f248e8d3fcdce615f8",
+    "sha256": "76a9ff23523d20c43f969b89f2959bfd8a00c33060499a05dee42bd6fdbfafb4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_actual_final_bind_CPU_r1.json",
+    "original_sha256": "0585b9c5e9e5528fbccb908ca31752ef08068ea26f93c5afcc1965f35715b7e1",
+    "sha256": "f95dea6a345093ecb41d689d81ab4cb0e7a15d240a6765a4715748344eb73794"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_actual_final_launch_r1.json",
+    "original_sha256": "b664edb772176b3a7d0c907efd4884d13d301ed5ca50386edb6289e52e175736",
+    "sha256": "1ff88e82b3525df2b6784071cfc413b83bec26eae26f8168e7bac7e4e475332e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_author_CPU_preparation_r1.json",
+    "original_sha256": "2c9350717cc67e961c08fde0c24198aa2f110bf1ab253b6b8ed96ea0669978e7",
+    "sha256": "2ef4e234b542b5efdc740e6ddd31984026957e9d38d226573bc12c09f6f72861"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_admission_r1.json",
+    "original_sha256": "d00ffb026c6bda72f725e804951c6460bff09a3599c521ed0df354252cfbcd56",
+    "sha256": "69ee2ea941533b90172e0f2d9ffa1354ec077cd0ad9a9f13732dee2f1100607c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_budget_r1.json",
+    "original_sha256": "697a43c1f97aa2e4348f8036b166df9e45e36b695ac71780392c83153304b6d2",
+    "sha256": "15f21d85e041912178f1b50c77f1fe04aa819ed7dafe8bf642172bc5afe8c662"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_diagnostic_CPU_dependency_r1.json",
+    "original_sha256": "1f39dede5eab90cba42ad916c49a55b4f8af32824d52385c1860de954a83ea91",
+    "sha256": "3c69b3c73f0966756f1b5073b6fee5bc9930ea8e3cde4eecf3ca6d4e0cd5312b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_diagnostic_R2_stage_bind_dependency_r1.json",
+    "original_sha256": "5776826dc24d757496cad18fc9183dcadae74e638cecc8271f145ff80a700de4",
+    "sha256": "3038afddbca87cc8d1deed73a9cb379a9f4f36fa461bae6e9e5a74dd6b243822"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_diagnostic_stage_bind_r1.json",
+    "original_sha256": "427a53a7bdb69ae4f244ba9fa68674ec5750e9f9d91c0fc129ec01fea44005e8",
+    "sha256": "e59ba02048a1c866079113ed6a7ebd73af31f5df702b1201b4b1d5cabbc01174"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_fixed20_launch_r1.json",
+    "original_sha256": "fd7e9f6fbb02565095a9840a5940d8e880c67ead29cbcb7318f4b288e70a77c0",
+    "sha256": "6e6757a4fb177f925484369c442af4b038c8cc1a16f1d066b07938bd0e6e6769"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_H1_bind_r1.json",
+    "original_sha256": "1385b1e2dc2852af0114366600791a46a9d6148fb6e4df045b05b25a4308daae",
+    "sha256": "7b6f0b5f15d6f52ba82d211277ea02f5e4b85a8b10b1bc137a07a943efbe1513"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_initial_J5_failure_r1.json",
+    "original_sha256": "edc0bd8def117391dedda7e57ef14fbf4ab26dd8a01e11473fb2c885dae80b71",
+    "sha256": "4064fc18995cdb1b4c0f132910e708d393b2c213baa34f911c71e3ae8af1eb8a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_preflight_smokes_r1.json",
+    "original_sha256": "b296a7aefc11d3e12efaa0a0c46d6c1f493a2a293551c0bfbf2ebe9fd795b688",
+    "sha256": "cc0ec1052755805af444244b6389c0267e08c0e5cc5ba34b1edc8697abd890c5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_R2_fixed20_launch_r1.json",
+    "original_sha256": "9859e5573b6ec05a573079db71180cbf7bfb0b7adba201f03f4e71ec3719e0ab",
+    "sha256": "e18546722fdcd47bc0bed004f0ddc0ae50479d1c41eb9cca5d6ec908eec51308"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_templates_CPU_r1.json",
+    "original_sha256": "7ad21b250ec6da22a526f1d9931809d54d9b6e6263e5c005de64c264854be2fc",
+    "sha256": "ede325740818a64ac85c204e2c312b8f9e5f2ac9640ab80035cea7af92146e59"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_templates_stage_r1.json",
+    "original_sha256": "053f4746d023dba28df8f45899e3861869b04aa55067a6f20f7954f63134e2e3",
+    "sha256": "4af87b419fc188da194a4a2404dbe5d04ca4cc93e127b211137788934205b5c0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_visual_bind_r1.json",
+    "original_sha256": "184446b26bf8868dfcec91218eebac3170dc6be7e5ba763d8b9e4b33fd8b12fb",
+    "sha256": "e509fc01ef07eca266a0e96ee6f0ffa1ba830da81bdca69cc9b4d5d2dc279df5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_confirmation_visual_R2_stage_bind_r1.json",
+    "original_sha256": "c9c2e620853cb6e7a122205431c1f0137094a1e7832786ef1ed3d0bb78efcc3d",
+    "sha256": "ec12e02c28c4e430e96a985a88c05f8ae41d58f57838b8d1f93f9b5d352bd4b7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_CUDA_smoke_r1.json",
+    "original_sha256": "e49b8fea77bd7f9c022b6f5bb16195d69cebcb940dc576923ccae46aa29fb55b",
+    "sha256": "89a2beea28b3273124c092fa18d4daf62da87e133be3462e42715567a42cf696"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_diagnostic_stage_CPU_r1.json",
+    "original_sha256": "d6c2405bfab0cb57a0f973d5a4b97b17fd4c239d3a5681201e6fce66c1ac802b",
+    "sha256": "c5bda25954baa61c45b221ef7f1d8cb10c80ec694b361d88d1292e1eae26b18d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_fixed_graph_launch_r1.json",
+    "original_sha256": "9e894b33f4ea6745cf2882c96d7de214b4408f9a5bc20c53063bc1598636e419",
+    "sha256": "a02ee441f07416254b52270f219416b33f53b3a72827dee13af95cf5af776539"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_fourview_launch_r1.json",
+    "original_sha256": "3212411a1c699ea73f7c34326d55ca7d61a536ccd4be868d7346a316776fcea0",
+    "sha256": "d3b0730cc335a7b4f29c0e3c782d507897639d40e84b2bfa56b449a57912e68c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_fourview_recovery_observation_r1.json",
+    "original_sha256": "7c67d24fe0f2833d6e822432513fdad07d1268a353311ccd86b1da121889cf8c",
+    "sha256": "89dbdb05ef192f81f28a178bbbdb9206368922e4605599d53a7dad2ca322181f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_FULL_cuda_smoke_launch_r1.json",
+    "original_sha256": "32d09803a64f2cdca461ef7903f27c27bb0bd1e751705757f2909a5e5ef15999",
+    "sha256": "9420ba8628b3829dbc87db4d2843f77a56a69ab00739d1ad02ae58db59ff0af6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_FULL_final_writer_template_stage_CPU_r1.json",
+    "original_sha256": "a5dbc466f880e41629405463c9d8d15687b022da3411e761b81d9111b1a1e1b0",
+    "sha256": "57e1b93a9e1ef2a96cf28a6bb0e68dcb7843ad3d1f7d3189420bb63fb56ceb8d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_FULL_fresh_fixed20_launch_r1.json",
+    "original_sha256": "5242250958f13ca4e00c380e0f0f3a41076a1fc508526b41b8f3453905b26ba8",
+    "sha256": "60d0ea158d3a3f4111fc766cbbf27af0cc7bf933693eaf7dd08dc9801f6120e6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_FULL_terminal_observation.json",
+    "original_sha256": "26c6f0c9bf7c35a7ef5d68d1a05bda09b4328f1c57cf645f79eeeb233bd76f0a",
+    "sha256": "a794a30bb593e533bece771531e6033a293a8d00ba941d761524a924623e90e3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_independent_confirmation_and_FULL_bind_r1.json",
+    "original_sha256": "cf95b064b1566882f2450432cce5bf93a36a9dfc70f0af25a797483161f1343f",
+    "sha256": "bf4fb09e4a20b733432a0a925baf4f775437610ee5a8ae00cf55f328e89ae61b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_matched_control_metadata_for_L50_r1.json",
+    "original_sha256": "549fb69eb59124d78e0d8c56b8963af936a161243b3f732ed2db1f620088c3fa",
+    "sha256": "5712112a92c6e16751e6da7f3ed3c912f24233023911605517d59d40477bacca"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_new610_both_terminal20_r1.json",
+    "original_sha256": "918af542b23f9cf9497b032fb97666a308a40108786728c1e3c57b3a8e63f0ea",
+    "sha256": "363d2412600eb28e87901357fa0813ebf641905f86535e9f5cac2be6a4e425da"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_new610_control_metadata_for_L50_r1.json",
+    "original_sha256": "5f694e89176eac499668ceac79c5653b4146c340114bbb5266f682e1ea471f81",
+    "sha256": "bf77175a4731f6b787bd8027282df64834bc3198aae2e911936ca6c5be5bbe53"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_new610_fixed_graph_pair_launch_r1.json",
+    "original_sha256": "93f8f97fa057047df126379056f4e93b8bd5f1423acb5f4cad7ebaf4b90bb8c8",
+    "sha256": "6f72abd296c110444559d04de2a719de12ded3c3fd1338e7461479c436ef8e82"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_new610_H1100_launch_r1.json",
+    "original_sha256": "bf4cde5d01ffc03b72236a357b249ec97e513b1ca27165219d26cb33ceb7b2e9",
+    "sha256": "c236fa92e03d3c9d5c55751231c2f24436de4e350933e0caf8cfd200db120c9c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_new610_J5_fixed20_fourview_launch_r1.json",
+    "original_sha256": "d18368031e6b053ac9183e8be35e35ad4f9fc6f88d23417e53a77936a7622694",
+    "sha256": "d7e3162f77356f619634dddba06a24032e4395aa5eec25581ecc3aa4267317d1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_new610_L35_fixed20_fourview_launch_r1.json",
+    "original_sha256": "ab8ae60d9f19d2df00a44437ce131ff5a9135675dfcca8aa835582c04024ccdb",
+    "sha256": "3a4669f8814cf72e15c60083015b9619393e10f847bca28929575357bdceac89"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_new_instance_legal_FULL_asset_SHA_r1.json",
+    "original_sha256": "5b68f5e7193476df4476c9c22db9763d1620e9bcf8a479d8adde82d664a6c120",
+    "sha256": "c7d77e2dc1c68f2bf02c113ea748394565f2ad3852c7a8d0bfe03c4e15cd5a21"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_positive_independent_root_review_r1.json",
+    "original_sha256": "a0cd476f8bd5691f89765c4b81eab80a8a2d98a2a878792753f65fe90c320104",
+    "sha256": "efa59e5a0e855913edaa306ea2bcff42acc330f52181776c9af33d8fc7f87d71"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_positive_root_review_r1.json",
+    "original_sha256": "8bbbc86d4095c584892d2ef2a016df7a542ee4d076e67224cc270e225068df79",
+    "sha256": "ab8785f54c264a6b1098c29d86dd625cf8a38313a79648a09e10f06e59190168"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_R2_fixed20_launch_r1.json",
+    "original_sha256": "97782dfaf68760ed6ae01eb1f38c8675128f49fa1f1302a9980b753a8fa7136d",
+    "sha256": "621b5d7dedeb1ed16daf16637a1a6440fa307e317eb74030e97f1314f3f07c65"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_R2_stage_CUDA_smoke_r1.json",
+    "original_sha256": "00e8b3c16be8cf21ec30f089584b0ded76808dfaf051561e303295c039750da4",
+    "sha256": "fd71a426ba805a198648ca327ca66dbc4c66abcaebba3ac46afeb1908d1c865c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_remote_launch_bytes_r1.json",
+    "original_sha256": "f115e9ee29fa8e24fcdca1c600562dad05bf9b867992563b9653469dadfa7bd4",
+    "sha256": "4eda1192dc807d99d6caa5a64abbb7e0100c4b68a96f54fe078d075d7930e09b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_resource_and_scope_decision_r1.json",
+    "original_sha256": "0c80601c803260a94eba538706912e8610c909fb658d5bbecc8a26447063905a",
+    "sha256": "a4db775be61bf122d89a4595a9b010fdb5b1281edd11d9f8197d4dc51b8afc9a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_stage_CPU_r1.json",
+    "original_sha256": "5d04f4335c99e2c8ab0a6372b8a3805d13997c6ffaab95c76a617b707559fadc",
+    "sha256": "e6fc05b6570f54858ab31d860cee05f5e0a3ffc15f6d401ca86b8f296aedb946"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L35_terminal_observation_r1.json",
+    "original_sha256": "04cbe9f3ba8a1e53fe93c9a2e1355e4d01599ec89ecbf83a863f21c38749c177",
+    "sha256": "2d82ffd2b2996ca423a109b184b8cbaf08c9e66e247b376a716a73744029471a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_authorized_source_CPU_r1.json",
+    "original_sha256": "352031363e5b05bf2290d31b64fef95b5c2a7c541ab9dc4b433eb04ef419ec48",
+    "sha256": "372330311b5e071b6260c5c4d2adb286d2509ca7811371439fd2384ebb7a8ef5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_cgroup_health_r1.json",
+    "original_sha256": "ff9c0ad1cade9d994a73d73ec978459cb78f72433d81117ef73d47fb9c9ceadb",
+    "sha256": "fb5212fc2f5621f5532f5cee10e6581a343de7653e123704cccb2f07fa5470f2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_diagnostic_author_CPU_r1.json",
+    "original_sha256": "9a597b2cd9498049ef88fb5307ac11dc68dc4eab968ba16035c39a4be6087f0f",
+    "sha256": "e3263ad947e3c2699a523106b8ce271a97f5fce71e61a9be429bf605044ffe80"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_diagnostic_stage_CPU_r1.json",
+    "original_sha256": "ae284bde4aedf3941f143ca79ca501457e13a5f10575082e8ae803b9dfa2e5bf",
+    "sha256": "055c726558efa2b506915ffb373aae1160fe439cf8def499c9eea791837706af"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_final_bind_CPU_r1.json",
+    "original_sha256": "ee4d925b2ad33e191df2bbdeb31a1ab6e15652265d2f390f9184987b50a40d68",
+    "sha256": "f7bccb7da6fcb3c5d41cf7a5831c99a0c452629585fdd87e05ba1c8c12355187"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_final_launch_r1.json",
+    "original_sha256": "eb656cb8be0807792d4d4c029da60da54b328196293ed7b835bb58cc118aa9d8",
+    "sha256": "f339e6c732038b8e5d7c8343bdeaca1c3043df498b47004507283fa0f938a3d0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_first_reused_query_admission_r1.json",
+    "original_sha256": "8ef31ed965c076f3c0acaeaa6a0890657edd94b51b94e13e5808afe04503d8b5",
+    "sha256": "a5b399274b25db66506ef3bf540da4ddf66523ac95616170d9a925017c92ef3b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_first_reused_query_numpy_review_r1.json",
+    "original_sha256": "bd62185337cad196eb8b4a04eb6892a56dca0f15250e2a1e2d085312c310c24a",
+    "sha256": "2363520df1d56004f2cda8e31f3970eb51abdb8a3e27445292eded838aeb7c82"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_first_reused_query_root_review_r1.json",
+    "original_sha256": "af5014357dc7756d3405ccd69d6faabbd3f109c2b1acf307e5fb2c76b4e93c7d",
+    "sha256": "f498ab05912dc2be552accd48d5371fdf1f5e2bdf00280e8e46a3863adfc5a30"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_fixed20_launch_completed_r2.json",
+    "original_sha256": "02d495f789e98fbbc09f6e208554e5db9177009aa81728c297b26008b6fb72fc",
+    "sha256": "94c32a0c1f61847a32ffb8f6d756ea86a2805542c0fdfb8e16edc844a1c8298e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_fixed20_launch_r1.json",
+    "original_sha256": "ac2a8194ff44ebee16fed2db096f65fe3634c1130ac81b8897abc36a9074695b",
+    "sha256": "658c36aeb86a2efb3b7258a91da391ca07170b23a69e8517ec83d0da120381e4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_FULL_CPU_CUDA_smoke_r1.json",
+    "original_sha256": "faee679d5ac34820a9f292b5f97e8ab42362edc17298eb8584c1465f9d3df0e1",
+    "sha256": "9faa113a3b0a0b2499edaf164bf9747eb5f8818eca2456b2fd03597e65fcadf8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_FULL_epoch5_health_forecast_r1.json",
+    "original_sha256": "593f557b21aad7e5a8424b5600333dbfb8b3ae88e424e5c782e3ece25edeb064",
+    "sha256": "2deca437e91fe576ba1da83564c4d77d7e29a79662a501019cd63d155978a4ea"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_full_final_template_author_CPU_r1.json",
+    "original_sha256": "4cd5359ebe93962bbc5ff43a4a51ece88796f6e1ef3248f370d6cfd3339fabb9",
+    "sha256": "e06a3cecdb9b1da6cb7553fffb44ee1e270e0487971edf59c841d6a063d12948"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_full_final_template_author_CPU_r2.json",
+    "original_sha256": "204e8c21e27e70532046997e7f76a5d887eb70434a57870f90086b911ced6190",
+    "sha256": "9ec6c7d527bed2582e136b0e248cdf4a835b39dbc71d78e7645c47e1d0df73ae"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_full_final_template_stage_CPU_r2.json",
+    "original_sha256": "e4110aee97b24bc7e174640a0312f76760ba1c7d78edc222518b44a32cde3300",
+    "sha256": "c551f4fd7e70e16367a93e4b7f0f29db9c91e3af4f1d231193fdbb628e766763"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_FULL_first_evidence_refs_preparation_r1.json",
+    "original_sha256": "872b939b1151ccb0cb589fb23d7e62b5f258300cff2b9c57038b204cc6581ae7",
+    "sha256": "cb450fd0b43749e601392153d0736ba757d1d86077b16549681df52fbda0040e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_FULL_fresh_fixed20_launch_r1.json",
+    "original_sha256": "d2b26b311722c2e15a368e15c8ae9983e479349a79b02161bf5b44604fda4e64",
+    "sha256": "a8ba81f3419d88155a0d8a6feeff26f674ed621aec663ab7655f932da7a33ab2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_FULL_time_forecast_observation_r2.json",
+    "original_sha256": "5ad342769260660c90668da470c2a043e157a2589b835e9e0f747717e7f2bb35",
+    "sha256": "65ed60f5dd169ab98d034ad272ec54bd1e8ac626897bf5d78152139303047ccc"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_new610_reused_template_CPU_r1.json",
+    "original_sha256": "a98a0fea1d397c5e6ca3da7bed17464829218b84d9eb7e8286fc98bdf1e17d22",
+    "sha256": "b26ab8e2d6cc928a598bda0a477d484d2f6493dde49dcc813e7d68fb801f7222"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_new610_reused_template_stage_CPU_r1.json",
+    "original_sha256": "8bdcf1156bb081a976220d40b371d94a6af3fc20f68a6b839103a3a0adc7317c",
+    "sha256": "f0135b519318659c5556abfeb039756c694cb556b958a5555b9b16932baf14b5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_new_package_complete_delivery_r1.json",
+    "original_sha256": "ab855b85243fce89b24080569a10782f2cae951ea057c9de5d8dd10f8ce42cfa",
+    "sha256": "baf18507dd381c6f9a741226eba8f3efbe6601eee5254dc338c940c3b73a2e17"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_preparation_resource_and_control_probe_r1.json",
+    "original_sha256": "669e08ea2dda1891a153e219586ba08aa4b57e50cb823e8bc455bb6348cdb004",
+    "sha256": "d2927b17b8c46fcbda596d14b29bf004182999ad2f2b717b097d4e2d5ef0dbb1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_comparison_adapter_stage_and_fourview_status_r1.json",
+    "original_sha256": "529cd3f613fe2771a234114b1610d1feb7337fe84bb5ecbf4f3cdc83509d35b4",
+    "sha256": "af6bb79450d50a968c4b417e75dfbec31e04acd6b1b79eef270fb591359d0379"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_comparison_entry_adapter_CPU_r1.json",
+    "original_sha256": "f305eacdcdfc35a749c0bde0f8c73cf3ea4c57246bdfeebdc07342e9c0ffdae2",
+    "sha256": "a6083e2c156debb86ad9911689807ab2ce23b0237ba88dd51f4d7945c0ad9a69"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_fixed_graph_execution_r1.json",
+    "original_sha256": "9f1ffbd4bf95a6f08e571f44225d3ccda72be51d89f500558c8ba9265fe7b274",
+    "sha256": "2ec9799915bf22ae636f1338bf39b211081f0260b9e33d6949e5135e2c97fb03"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_budget_r1.json",
+    "original_sha256": "294083ca1b247e3d651324732eaca588362fa1521f8728a1b414546657992ed7",
+    "sha256": "c10c52cc313c2cd71c269c99590b300844a2d36d28815487d493d65643fe4351"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_diagnostic_author_CPU_r1.json",
+    "original_sha256": "c1c8259956dc2bf6527465b6765614aaba1584f74a8d1ee06f7e4f713f6e7603",
+    "sha256": "3653af4e16730fedacfe7d3dff3e8429cd3b12a5195d03f44850d8ce9a75e029"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_diagnostic_author_CPU_r2.json",
+    "original_sha256": "59547e4a7a2fdec0fd6b384991351d6034cf4709b514467561489220b6cf1260",
+    "sha256": "809111f45e521d7b9a115bdf978d8819cc1ab738955f82e814593554145eb1b3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_diagnostic_bind_CPU_r1.json",
+    "original_sha256": "84029fc966c63adb0560797dcd5b82e4d2ea8b9804d412748d1b8b9bd1b0bc66",
+    "sha256": "3bcf84cfe1361aa3d159b01fe8cf8b66845f21f82bf4c8650b4b614dda8c1bd1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_diagnostic_stage_CPU_r1.json",
+    "original_sha256": "ff36e005b468970b2fd2980a18253c34efa815a2c8be650466018d254edf175b",
+    "sha256": "ab6b7347eab70ecc9ec43759b7157b0c34c7c196b71d378c1afbf2cc519f6247"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_diagnostic_stage_CPU_r2.json",
+    "original_sha256": "0357aa9c8cfb72cb7a7f02af1585add530ac7a0e04810fe5628de401b03239d2",
+    "sha256": "12aaeddc0010309e44dcf6b35fa4a0a54a7f2a4476bf6a22af3918560fd30db3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_epoch10_health_forecast_r1.json",
+    "original_sha256": "9318eaa35c71ceec4ea3805a82ccdb9a3faa548c8276cbd370a76fa771aeef21",
+    "sha256": "a66b3379420b13e081f39298599a728da9098c56f5545a97c2eb7686379ccd19"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_epoch13_health_forecast_r1.json",
+    "original_sha256": "ba7226a86e1e6c4bc4f0b0db2862615278911a2cafa5e727ea13a84d589d96e2",
+    "sha256": "1e717eebea3cbf18885a76bb21b042636413b131acb697d75c45f2b10bcc5947"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_epoch16_health_forecast_r1.json",
+    "original_sha256": "e37a26d23ad7b9816403d7f4b67c187fca673786739d1cac3e8e6813845c6428",
+    "sha256": "366401de305fd173f9e59ba5b80c48213249106cb73daa84ac23ef6d05acf512"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_epoch3_health_r1.json",
+    "original_sha256": "0a336cd318a4cda4b22390fceb4ead1c94b3401c7cba92c0fe7cc77fce4c0195",
+    "sha256": "b95d2e054436ece1ab883763f7bcc2a42d734cb4851a0e0e5bb85919f4511f6c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_epoch6_health_r1.json",
+    "original_sha256": "dddd0aa4b2494ad04a2f7908b19a5183396e5281a3c37aec208c988253b4c1af",
+    "sha256": "ac913b14079f34b3dfbfc227b3e5a3b012dc819d038c63aefa6338de44e29977"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_fixed20_launch_r1.json",
+    "original_sha256": "ad0e88901545cccdabf538e78ddd9cfd8e892c100b3f55772c3c7ead7162f7cb",
+    "sha256": "afa7a277f32fa464e8666e90b08b085ef33e17e32c00e32623f984d138de1dc5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_query_numpy_review_r1.json",
+    "original_sha256": "b8f3502474aee9f2d6d55bf89418ffd1f045ac8480a2dd8a144dd927392e92b2",
+    "sha256": "b85e2a283cd86b82bb5d0189276dada8340e2310767a8cc333148d4c1eacc50e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_query_return_SHA_r1.json",
+    "original_sha256": "8bc3d964606500afb99d98116819555c89dc4f3dddbb2b483df58f5a48d15408",
+    "sha256": "bb40b67748abcd43f62da50a26b07c16a6b4b1c08297c9bd1ad6afadf5ef5e4d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_reused_query_root_review_r1.json",
+    "original_sha256": "4eedb0408c9d924ee407eb0554fedaeff1d7f1c2c170e89ca97bd6da63f85b17",
+    "sha256": "417816139140c958ed7ff8e40e758181f3f45da30022fd71295964a89e1c0ceb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_second_terminal20_fourview_launch_r1.json",
+    "original_sha256": "988cfb249f5e980b75c083ab711b0893b170dcabf3da2e7cf0588a9909fa669a",
+    "sha256": "b196d8421614d9c9e818a6290e009a9960727087d81899cc9b8a81c3949adf0c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_stage_preflight_smoke_launch_operator_r1.json",
+    "original_sha256": "c71ac80bd06c290e213cdff1d9b6ff645444cfd2c500bc5319563e028a38c426",
+    "sha256": "c97f3be035a92e6d362c5877c86f01de2a1b867e785f8facc1787988ebccfa96"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_terminal20_fourview_launch_r1.json",
+    "original_sha256": "1fc0cfb5dffc3c4f267f8b591bc66f6459a5fb53ffd167c9b8398ad5495b7f09",
+    "sha256": "ef396913d4f7390f7444326082ec06b0b7861037203f225c3d7256c62e8d06b1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_L50_two_reused_FULL_admission_bind_r1.json",
+    "original_sha256": "bab67df42d79993166a0e5526c414a7ca6a676f61c40ee6c01c30e52c470806d",
+    "sha256": "1de9aa45ebd92eb483756f0d5def039f14b1be41b6384154aa4877e6558412b9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_new_instance_CG25_1158_health_r1.json",
+    "original_sha256": "af3daad5f8b9db5a24d93867c18e0c388d7849fd2028308b26562621548bb8ad",
+    "sha256": "92a418870cd5246b2860dc9712f6197b9c2f9f01dad106d1dba0d91ca21eabe6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_new_instance_CG25_epoch6_progress_r1.json",
+    "original_sha256": "0e8af557f9222acae0195aef097bdc6391f6ef20171cb452a0b3adb2f8fa3607",
+    "sha256": "46781aa2ad9a32d437357644e698083aed424a6ef8e702e0545b287d6132f1c5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_new_instance_CG25_exactlast_resume_launch_r1.json",
+    "original_sha256": "1189853b0204d4e11b77fcda77ea8257c709986ea767102d584fdb03b80c15c1",
+    "sha256": "693edbf7bb8f0cb46b08a7d469ebc7f9bbee56c626c3c6f51d810e3b295d33c9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_new_instance_CG25_resume_progress_r1.json",
+    "original_sha256": "909f83852cb4c757f1c1b1fa00779a07edf998f35f0cae76fe9694b2538aadd2",
+    "sha256": "33f58018db926e89e2a429b50876d1a155f46154653ed0e7f6621f05838741c0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_new_instance_partial_CPU_recovery_r1.json",
+    "original_sha256": "f8e141e79ae0c3cf3e373a26a66dc46fd0b51595a072f8ee38f2775799ef035b",
+    "sha256": "518cc6ba47a458a4f26a5d20cbf2ccd94be015545f322c827dd1129b79e331c8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_new_weste_readonly_bootstrap_r1.json",
+    "original_sha256": "de5bdf8dfdab3598a9a838de33607b2d41b2249e53059b9e6e8f583b50129f28",
+    "sha256": "6a74e78aceac1ee251fc08d67a5a43961ad0043ed269c459b25de3577681b2e0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF2_budget_r1.json",
+    "original_sha256": "ab5edf6db05351732364a8ec6263dc1114d7dcf45ceee341d128a7f7f19a0049",
+    "sha256": "55803295d8b46006dee342ebb7326308de7e8f88a3a480661dbeddfcad4934d6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF2_resource_snapshot_r1.json",
+    "original_sha256": "518a282acaf1798ca8da18f8235fae0c3273cfdb53746131adeff4189826e3a7",
+    "sha256": "d7de599a12cf0e1fe3ff209ade22819944ab93c5c2dd1c9ee7bf10fcc115cb9f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_CUDA_smoke_r1.json",
+    "original_sha256": "5905f18e75e2db0e9d1db506f794126ab8f2b3c9a401545462bc728e975f7ea9",
+    "sha256": "4ace098303f2b6e4d3a4596ba1f95d0e07d6af05b138d56fd15bff2d7175fc12"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_epoch11_health_and_forecast_r1.json",
+    "original_sha256": "415b925cdaf08dcc409f409f70762c9e94ac0277b5db7dfc67a9de2970a7f3b7",
+    "sha256": "4a8b0b913a25641f8e4984c25dca3ea4e247440f545c8299e817e94b8c1c4a2c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_epoch6_health_and_forecast_r1.json",
+    "original_sha256": "1c125c549cc2942b8a642c2d15d3efdf417b3d51454966610959f3562de2a3c0",
+    "sha256": "ddbe9080d045018b0facddc7ee369f7f7debde58ebed76554b041682e0f76fc4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_first_epoch_CPU_metadata_audit_r1.json",
+    "original_sha256": "d9d7473b8022bed7a2e2605339ba9ab0c84ae128489b75c8c4df7662e8a2ae48",
+    "sha256": "fde943556c02175b92a1f0b6bfd3e6a474bb128f93a1648ca19425150d60fa74"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_first_runtime_status_r1.json",
+    "original_sha256": "d6f61cb5f9807a4b5a9d366ac9a7c40d6197d52be653e3690d6c2ab625a4c120",
+    "sha256": "45df7a95b38dfe2d644e342da2f3309c4fa4df1bcfab6b2b3d56bad90aa919d8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_fixed20_launch_r1.json",
+    "original_sha256": "1b13de4d63404598a469dcfeddea926f2d93983f9ac7a2e63912625234c6e683",
+    "sha256": "77a8b1c5a68fb27e62d0ef35d97c7e08889b3dd50a0d79b1841156a07521c714"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_fixed_graph_compare_launch_r1.json",
+    "original_sha256": "ec46493b1fcef671336c39cf44316520912f8367ddc3d7c2b9f4a28721589d53",
+    "sha256": "2a38c2f1bb2e9f596ddab2fbbb09f6b6566c4e9a3ec60db5b70c1f61091b6b74"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_fixed_graph_query_identity_failure_r1.json",
+    "original_sha256": "c9ebbdf96065cbe9103875abb99c1ec8f0e610f03bbea5b9e468f668510c2564",
+    "sha256": "07e35ea93ebe86c5d28bcf58aa0e3fb57b71029ed1c75962bb8906ae030a50da"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_frozen_4V_launch_r1.json",
+    "original_sha256": "65bd896896dcaced9c277f2e731e63e1775eda2c68dbe81cb0fbad648ed98d92",
+    "sha256": "dbd390585606143b92c71ed3f18f7a9a5b03fcce544139c3bf206946cba1b77a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_independent_CPU_review_r1.json",
+    "original_sha256": "aafb03abd5546937efa7a4348895b63ab9a6198f59c72d4c1d29fc3488c4f3e4",
+    "sha256": "6d057bd21d7f3f26b66d69c44e5ab1116c2d75c3d3cfb8e168f5da61f7074a90"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_negative_root_review_r1.json",
+    "original_sha256": "8e572590d9f9cfbf9aa465e9cd8f7e42bcefc6119f5a8ca9100f8524b4942c58",
+    "sha256": "448a3e26a51144c0fb7ef9288f46c39450029a38f6855424972353aa2a999472"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_query_binding_retry_stage_CPU_and_launch_r1.json",
+    "original_sha256": "c092d2f9ac6081ae557c0a90bfef1bab263aa62299c1c952b8f7b7343979b5c1",
+    "sha256": "5a3cc45e0cbb90899d33f38861919891c9e1f9886933efe243b22c4e09682521"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_query_retry_result_size_and_summary_r1.json",
+    "original_sha256": "157fef89f555e07542c401818757e777a69633e7f83e0ff6f68d0a3fa154c9ab",
+    "sha256": "7ce68b1e343a229102c9cb920da5ac4b88f79c65698e81d490e62443b51cef7e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_stage_and_CPU_preflight_r1.json",
+    "original_sha256": "9d16f7b5851c8a7fdf435174d5d9ee16ec0d4dd90094158032b1e159b6fc2ec9",
+    "sha256": "bff81623866bc262e3b6cf15e01caeb2bcfbe5ac9405670726aeae4ef843eb5c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_status_collector_derivation_r1.json",
+    "original_sha256": "2dc2d8875fbb633a77cce8af56fdad18a4b3188d9b106907ddb3f354e1a928a1",
+    "sha256": "82e676a648f7c7c63ae9e4bfe1e8036c27716d567fbdc51ad198c53782f10cbe"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_status_collector_derivation_r2.json",
+    "original_sha256": "82fdfcfbcaf3c9f002a8bdafe0caebd15cbc7c419bd300b553d4f259c5fc2d1e",
+    "sha256": "05b13ea08cd37a464a38755c65fc4f7c938ddd3c86c64b321365ff70cb061f55"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_status_independent_CPU_review_r1.json",
+    "original_sha256": "341b9bf4645cbad8312caa1429dbdb4fc2002af3288ec24e53e351080b0d43d1",
+    "sha256": "53192be8053f412a0905ed4b0aa59a9f0801be894a87d1a90c4b2c32b18de62c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF30_terminal_CPU154_and_applied_supervision_summary_r1.json",
+    "original_sha256": "242a1fe4fc8e403516b65985e4f6092f3d3099bdaf4d866cdd03c06079596bb9",
+    "sha256": "de8db81a47aa571abcee31056465b4314e6b780a7a6d4f6ea29f1397dacb433f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF_diagnostic_independent_CPU_review_r1.json",
+    "original_sha256": "1101aa27435223694547879d8729a4587a36968be0528ced1e889cea799b8a50",
+    "sha256": "06fc5a6839daa37010a9989519a5198c988716a119fd061caf4bdf97902bd7c5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF_diagnostic_metadata_bind_and_dependency_r1.json",
+    "original_sha256": "48954bd961d607ce0e375a13e8947b2d5faf29f97482085f246ba87ba78bcc12",
+    "sha256": "eb025d66df4bc741a1c4b7f6baf8717f7743c6ea3aa0c40675188a4b415acd72"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_PF_diagnostic_template_stage_r1.json",
+    "original_sha256": "8ec9747b3a9f05264c85c9323c4370222f355cf042216607d297af81a996d0a2",
+    "sha256": "078493b55c24a1e523f4abc702632595022831292091e1183ebe5220b0eca30c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/actual_remaining32h_priority_and_resource_review_r1.json",
+    "original_sha256": "e2235eacd9417cf3de30786512e6dddaf5a1fd35c1eb7bd58b061d5bd2d4c58a",
+    "sha256": "cfecf8256af24a3811f49ef84baff079c24c25a7ab92a450dd90d4f4e0d0d259"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/AFA_actual_terminal_returns_r1/FETCHED.json",
+    "original_sha256": "a97393cb9ba977c5cf25f8b7b38e8e366a47abfe3f9a6a585e6385dc9e8da05b",
+    "sha256": "510ee481efaaaa1a6a6338707c214f3766a72983136053a4ed18c8949fe41d73"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/AFA_actual_terminal_returns_r1/independent_integer_recount_r1.json",
+    "original_sha256": "c49bbfaea89105cb2a5b9663afe4d3569956473fde819043879cb91ed125d378",
+    "sha256": "bfbec9be377dfefc47e2378bb905f519f679bd834fa3cd213f9e06f7440e3b27"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/AFA_actual_terminal_returns_r1/report.json",
+    "original_sha256": "7ad74a0a435d517203cf7c7a06533e9c1fed215cb4d2a1903710b23b5bf4d811",
+    "sha256": "e05d58a872256626bbca94030808de841850d346075ef8435d50dcd40afa22ae"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/AFA_actual_terminal_returns_r1/result_manifest.json",
+    "original_sha256": "d17743688d5449639160ac0aac7da0c89721122e82f40d7596b63550d6ade463",
+    "sha256": "6646579ddfd5959459369cea47c75879cc01efc0c42734368a4d6c14d464d388"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B25/report.json",
+    "original_sha256": "5e0548ca3093ba7ec88dbd3361b07542b29a688213d88ff4152ee3067f59ced9",
+    "sha256": "691c0607a22994dc89b79a7712fb656a379076be62dd54e81150bd9a2ea46ca0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B25/result_manifest.json",
+    "original_sha256": "98f76fbcb552155fb74dd1939ae7da2fba799b40fd2f3c0daefe27524f267ff5",
+    "sha256": "b4290685454e30924506be5377a902ad455c07b50cba6dec06f95bc89dbb3b6b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B25_diagnostic/input_identity.json",
+    "original_sha256": "4d1532a7b6c2a7ff7b063ace69db6d64b999e822ed64d2d58f244322d3ddc50e",
+    "sha256": "f0f86def6dfca626a849fdddaf59405985e1f7fd4cc02b3cca73e3ed50e56b9e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B25_diagnostic/p1_checkpoint_audit.json",
+    "original_sha256": "31420481f55c4c482bb093fcfb659776906caa8d49c53f54c4699fe8c63d4798",
+    "sha256": "1fc6cf749b47b605bda5c6e242066cea863e06fae7f35973c8cb6a4df1877976"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B25_diagnostic/result_manifest.json",
+    "original_sha256": "4096e28e9b9ca3b8bb31b4d3a9f0af4989496281aea1b4dc3d6ca3b08e2204f4",
+    "sha256": "bf6b3dbbd318875efaa5189e8506ddf1f1059fb40247008210614a2e1d6090f0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B25_diagnostic/runtime_receipt.json",
+    "original_sha256": "8be05d29196ddf0e0ce6c57abeb5917c121b2f5c235872f798f895c5ff29240c",
+    "sha256": "d9aac3c7cbf25649fb0b826297dc9abeee03b2a1765007ac762a5500ccb0edba"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B50/report.json",
+    "original_sha256": "9d8039b07e289338cbe65b49fa02b7f223d88c2ad5cec822691cfc50db22676c",
+    "sha256": "d21a51b8b0385e2d005f38d500d50d6446fc62621dc151d76c5d86dcaeffb7a5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B50/result_manifest.json",
+    "original_sha256": "c3ef2900a25c4720913f797e2c12636f0a0eea6f76aef9bbf66e64bfa207d8eb",
+    "sha256": "07699de460596bb1e20801299faa9cfb37060a8ed3f90a41491b95cb5aa7f40b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B50_diagnostic/input_identity.json",
+    "original_sha256": "cc73b08f071ae7f4d41eb116197190814f7fdd28a84dddb0c58ca0cffc787c50",
+    "sha256": "fe428612aaa934832b11bb8d4905266f1060be20a89606332f632e493f6f330f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B50_diagnostic/p1_checkpoint_audit.json",
+    "original_sha256": "fd1eb1b4bb182b993d01f55d7db65d25552588fb8a759e3322ed15013ff0403c",
+    "sha256": "8235fa27e7168cd9c111d2189c2a88e876ecbb433eb0f002f12cfaa83b9f1d93"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B50_diagnostic/result_manifest.json",
+    "original_sha256": "9c1862b29ee1b0654ce3873eeaafb6b205d40316e1e2ba56c8252634bb8ec32d",
+    "sha256": "d57e27c421f61b575598795a96db6ab0a2da347cc1fd76cb45e935c832990629"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/B50_diagnostic/runtime_receipt.json",
+    "original_sha256": "21669994e1295c851ccdb2c5983e0ac78824641c7f2214e5359268454d9942db",
+    "sha256": "277cc36199d26bde8c7d04f10d90a7974e7582b9c4a90dd32cfe096161d7ace7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_actual_exploration_returns_r1/frozen_queries/query_identity.json",
+    "original_sha256": "a2c9c49607a5d21911e7d293485c15835eb594c76b1e16bf5da8a24861c2569a",
+    "sha256": "7ec27771a8ead3498476e1107c954e07fa10afb33fe211163d188ebe5b5c4571"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B25_EMA/control_import.json",
+    "original_sha256": "edff747523b22bfe6690d85cb5594ccbbf1bc75af3bd71374aaa1a105434ed1a",
+    "sha256": "cbdf93e5443fbed021a42243283abb62d5fc9d6133d4a59a9a3a49dacaa54f7c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B25_EMA/FETCHED.json",
+    "original_sha256": "17cf832b084688c6f27a1e040654217f4679f91fe20b20e20cd15beeae94bea5",
+    "sha256": "d1d118ab927065a8aab07d5e5db571de4c3bfbe6f1e2021fdbf295fb488d1cc6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B25_EMA/fourview_input_identity.json",
+    "original_sha256": "c48e2312b8ff5905f486d8dab917d5b32ce4cb2ce8e86bec5cb257aea9baad6c",
+    "sha256": "210037fcc36aa85b8f05b45787988b461b23c58ffdec384b53eeb6e37d160345"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B25_EMA/fourview_p1_checkpoint_audit.json",
+    "original_sha256": "bd01f8d71a1102b524ef088e4ea4a2eeb47b7aa3bf85655a4441566a06e13b66",
+    "sha256": "fd0ee068f350d47bb60afe8be4a56bb07381e314d9dc1372e8b87e66d9190613"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B25_EMA/fourview_result_manifest.json",
+    "original_sha256": "3b00e81028cfc0ba6e73316e627c6d93ef10eeda15af50cf7746ceda90f5663c",
+    "sha256": "18fdc48349d308198a386878ae82e580c2ba8bdaa040d52110683ec2b9561959"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B25_EMA/query_identity.json",
+    "original_sha256": "a2c9c49607a5d21911e7d293485c15835eb594c76b1e16bf5da8a24861c2569a",
+    "sha256": "1827329b4d37b7abd49ee4c541459e0ea72173cf40e40457c202324a5df57751"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B25_EMA/report.json",
+    "original_sha256": "22cd2b0ca57899febcc048c242d3b90e9b449318fc3a4c064436b0c5a92f1668",
+    "sha256": "833a8516fb953bccce1ee18144a624c5d3f411bf8eec7e504535393bf04f3395"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/control_import.json",
+    "original_sha256": "edff747523b22bfe6690d85cb5594ccbbf1bc75af3bd71374aaa1a105434ed1a",
+    "sha256": "ac54de9492cc8a55b7842eb112727df55ccf7285c1504ebe67bb326a5f20837f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/FETCHED.json",
+    "original_sha256": "817f951a5e13c723bfb6d7c638d66dc24f58855d268e9f95534c09e4e2ae5178",
+    "sha256": "a0aa26b4a561dc49d122adb80cabe8437b1db948f0e025a29add4f930ce1d01b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/fourview_input_identity.json",
+    "original_sha256": "f1674312eb310259d06fa62a210bed091401352ae391d0fd4c78329a7c3eac05",
+    "sha256": "3e9b1018ab13b3415454609af05051987e5e83b513e5f30123a2590918d0660a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/fourview_p1_checkpoint_audit.json",
+    "original_sha256": "757a70e8bd8bb113edd0fd958338286b8748453795466dcb7145d72ea7c5ffd3",
+    "sha256": "13207438a419c219ebcd30d8ba4a8bde6a088cb05c624f87d961596f3a6d98c9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/fourview_report.json",
+    "original_sha256": "f37e0454a574a22eec640201444198489d1a376920f01f2f6a730d87afd8a2aa",
+    "sha256": "ec803ecd10114a84ba4f3153c73499dddfec9b1fd75befe33f27489edcc3448c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/fourview_report_FETCHED.json",
+    "original_sha256": "433f76fefb9020cd4e7abb577374e8d3c9eeeaf4ec23ae95a18f7d786fe3c9fd",
+    "sha256": "14d42cf35141459bb730256e87e20257295236ea60066be68770c714b8319e92"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/fourview_result_manifest.json",
+    "original_sha256": "b58e8d72e23bd6bb9221deda20b5f535d984f4420efea264940d22816a5b9be2",
+    "sha256": "7b645f1c6e64a5619e51c501624e2c7deb796910818ca6453d19d8d52b9feed5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/query_identity.json",
+    "original_sha256": "a2c9c49607a5d21911e7d293485c15835eb594c76b1e16bf5da8a24861c2569a",
+    "sha256": "9baeea2d9cc4b10e9dfc0b49ddd2676d5d9bccac23021605b1feca663e590e5f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/report.json",
+    "original_sha256": "87a8e93bd89b767d55c973cce0c2ce3dba1524ad17da3f47c528e1675b0a5c75",
+    "sha256": "415c8d0be5b8558eb8b9b70801dd68c3d8f441587fb60aeee64dd156d0a17dc3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_profile_actual_budget_r1.json",
+    "original_sha256": "875c68b80733635a222021efe095b3b575029356d34ef49113b27ad9173c9fd5",
+    "sha256": "175c445a858755d60742f3a0dd6eb0ec1abc938ef3777bd0836d50d5ec0c6df9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_profile_actual_budget_r2.json",
+    "original_sha256": "4f965fe2c3f0182782daf3903167853267a1f1f02f749f4d69bff99afe33c3e0",
+    "sha256": "80170b76f1434fb09e873b45e889b65c46c263cd9aa0c4de73f5615e2a1f67e2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/B_train_actual_budget_r1.json",
+    "original_sha256": "10ceae4fe1a3f435e73db058955f414c3e00ded1dd38ffe52e928f094e541b73",
+    "sha256": "aec3fa0f0a4f3772d79bb2d966a03cad9dea1eecee74db7d54673329af5d5fb9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/CG25_actual_terminal_returns_r1/FETCHED.json",
+    "original_sha256": "736e092f8d01f80d1b23d030e43fa32ebfcf0fe821696eb66280bb90bbd94389",
+    "sha256": "340c28c7512d3e5767bcfe5cc71728dfda920172866c7caaa2577a1cfa650c97"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/CG25_actual_terminal_returns_r1/independent_integer_recount_r1.json",
+    "original_sha256": "9c4ba495689a7d56c247ea963ac0041bba5272b6c21e7859c7bff3ce705646fb",
+    "sha256": "7ed9dc31700ef6df2255f817c1cb74d19cf98fad373b54829f0f9fd476c6c88a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/CG25_actual_terminal_returns_r1/report.json",
+    "original_sha256": "2686edbf996397d6f4e180528fee1d871939f76a135d548078e0159318fddc5c",
+    "sha256": "b58ac2d913da87417fd0f9f14cd907fbc115cb45ffaae265ccf69f879519f308"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/CG25_actual_terminal_returns_r1/result_manifest.json",
+    "original_sha256": "2155cadd7415670f810841b3f350b98580f3c66b0a11ff8d3a163bc9ac5dcac2",
+    "sha256": "024cb83b50bd3a6d140f6cb2dcddb151fcb7aa09e1a750f1d6ad68fbead81ac7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/confirmation_visual_author_candidate_manifest_r1.json",
+    "original_sha256": "4db77949b75784dfb57a9084cc5936fda0488534b1f3d6e38f385c0dcd380763",
+    "sha256": "aaf79a57afb7b0c65f53929396c6ad41c68b045cc2c1c51cc85389ce4b78c5ec"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/confirmation_visual_author_CPU_receipt.json",
+    "original_sha256": "ed1be6703aad6cbbda9466b902f1247a9afaf1d095bd7a2d529877229861a3ae",
+    "sha256": "2ef4f6f21b755f0282b087e2762d95242a67c98bb1500a7bc23e1651ee6848d1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/confirmation_visual_author_CPU_receipt_r1.json",
+    "original_sha256": "08f32d6c43049f082cd52221b9af63665fafea84d6434e4c0bb807fdef410400",
+    "sha256": "a7768bf326cef53487269ecb73d185d2dfb9ba56eee49386898db79de8e64ded"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/diagnostic_author_candidate_manifest_r1.json",
+    "original_sha256": "4e882873a6502507ca7f145b89a6cc358c62927d00aff9043543153a707a8350",
+    "sha256": "c9bf72944b9b4ecc517c934467e9b3af94e4f832d47d50264d95afe6706892cf"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/diagnostic_author_CPU_receipt.json",
+    "original_sha256": "5d6761503164188ce5477b79fb3e819077ba69b8556cbe514ebaf9818f3324c8",
+    "sha256": "b86f37635023791b88ece7f4a027fa994646dd16a8103a6c274b60949470de82"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/diagnostic_author_CPU_receipt_r1.json",
+    "original_sha256": "472ec30fc12e34a56b457e640ad502b9d5ffcec9b7ac6a40c435aaab1487b12f",
+    "sha256": "9c60b4867dd14ccb6e4b43c2d855cf0ab2da7fc4d2f424290209b50e8ee4a915"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/comparisons/A3/report.json",
+    "original_sha256": "5d5127bbdd850dbee7e0001692ffa68fe842491c913a340f240b2b3576a208d6",
+    "sha256": "a8cd2fdd581efc38f2363f69c00825049761fcd7a8c9d8e355842e339d9c6a52"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/comparisons/A3/result_manifest.json",
+    "original_sha256": "3bff5e2a3348100fa027ee180b4cde35c92c48b64ab3dbaea547bfef80a71112",
+    "sha256": "f61798e169cece10bb57cc2bd89ec33455c94e8f58dd1179785ba19d02f23d18"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/comparisons/A5/report.json",
+    "original_sha256": "d7750af8dbeb279588bc2d55459d1c9849df2df674bb5cbe6e738c5474bbe2c7",
+    "sha256": "bfb9328d81ab140f7ea861f303d3d5ca3f95202c83dda95f1f13ae4964ece699"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/comparisons/A5/result_manifest.json",
+    "original_sha256": "98a9b2c145e36760927e6e1f3b41d8e8255d02d440d95dfb9f9098cb27a70daf",
+    "sha256": "63f5ecb70de8d5a13646fc1f36a0a7f6152ccd881347b81b901844faf991feda"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/diagnostics/JOINT_A3/input_identity.json",
+    "original_sha256": "1b2aa34ebfbca7131305961a0de51dc25e7ce8acc4a46eea8b922d97c7e39e38",
+    "sha256": "3fc7f5664cac40fe3c89bb85ac9af8cb5777c54803dbfc61e438ef15f75c7dd7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/diagnostics/JOINT_A3/p1_checkpoint_audit.json",
+    "original_sha256": "e75a1bfbf4dd58f507e10818d0b8836de1e0c6e007cb29da429be75058edb770",
+    "sha256": "e94d513056a13b1b237fbd443e7fb33e1d799b235a085d4e2d3f6c68451f375a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/diagnostics/JOINT_A3/result_manifest.json",
+    "original_sha256": "4df10a2f97d842c68c8c96abd90c1301fa1d86fda3d17bf80e973949def4876c",
+    "sha256": "5841df4bd1ca7b0d061a95e4dc4bb8d3a758f64450d2c2732ffdfdb79fdbfd26"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/diagnostics/JOINT_A3/runtime_receipt.json",
+    "original_sha256": "dfec210cf77dd7047bd3c45861e9180bd7475557d9b6aeef9b47d8d9cc802d1c",
+    "sha256": "fc3cc65c206c175432e9907c7354e0b82e4416a947decc42a996e514e4eb0feb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/diagnostics/JOINT_A5/input_identity.json",
+    "original_sha256": "0590f666275ec58de4707cb1ed612e62829ae7a87d9a71b6c81c0e0617ac19f6",
+    "sha256": "d5e2ae0f855c524c068d278dfe5d629eec096e9a97b025eb207f580250d0260b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/diagnostics/JOINT_A5/p1_checkpoint_audit.json",
+    "original_sha256": "587f0de3554e66d0ad982c0ebe6ae4a1663b1d5227364ffb0903eb8cbd290f11",
+    "sha256": "85271e2eb009ab55c7339b76610651baedae8e583c60997a7033c44ddf1c7a63"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/diagnostics/JOINT_A5/result_manifest.json",
+    "original_sha256": "65dbaca8594770a34bb5ad035163c85373c1664b99c2dde9e70c2007d905f83a",
+    "sha256": "fef433e4133065b6ce1c5a28f38edadce37db7009abce38b170acc0367ca19c8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/diagnostics/JOINT_A5/runtime_receipt.json",
+    "original_sha256": "6604a068cf70fea6c542b3db0bc7c8153106ca4af7c3f5099da354a272111106",
+    "sha256": "3e0c11f2b9c5c72ffc97d1d58c3fb0b1a9956b5a1c533e17d030bcb34766b5bc"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/joint_actual_graph_returns_r1/FETCHED.json",
+    "original_sha256": "93b516f3a5200c85a3566174ee543c38be4929d199c4c9b4ef309eec18aeee45",
+    "sha256": "1433d4601c79a386135b1188ccec6242f93d4b6d69536932b66a4459dd7d130f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/josrc_author_CPU_receipt.json",
+    "original_sha256": "982920526b8347146755900d4967c6ca169de0199164dd2408cca297fbb2a624",
+    "sha256": "b6d9f5557d9ccc54d6f0f6320e296f386f5074951aa5a2016134ebca39998420"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/josrc_author_CPU_receipt_r2.json",
+    "original_sha256": "e2c6ebb6301a65b104dae04fb8d4902e47550db6feb0ca90cc68d039c1fb7a4e",
+    "sha256": "0035f4008def4b1e661278bb264f44451a6e0c02eb65f0451c5fdafedb2d7a70"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/josrc_diagnostic_author_CPU_receipt.json",
+    "original_sha256": "bf8f3a93436c737fea70aeecd48d3362c252f214eae586d0da9f427fc6ad4f78",
+    "sha256": "1e23577f736845114b2854f479627c6132c594a716e4baa55146796fe8c76c88"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_independent_confirmation_returns_r1/_J5_input_identity.json",
+    "original_sha256": "924da1019e472d230ec08581c66f10f025abc382d5697a963cdca901cce2b6e1",
+    "sha256": "e008128bb63bbeb8ad40c543c9da01b8a942143f79a727419faeaf8b1dc2638b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_independent_confirmation_returns_r1/_J5_p1_checkpoint_audit.json",
+    "original_sha256": "bb25bb14e8dae8869df447fc264aa2263f75b11d5758169c08c17352b03ccc1a",
+    "sha256": "bc5042a943311fbc5ea39dc964d600b5d288c2567ae93ed039ca4a1f43793727"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_independent_confirmation_returns_r1/_L35_input_identity.json",
+    "original_sha256": "0abfbffc59ae23f73060f613e937c949a3462becaaf3ededb8a0e3d9a3abdeb3",
+    "sha256": "a6385921d38a52aebfe723f674a6d1da523168ef6c61a34b2a8f6139a8ebb8ea"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_independent_confirmation_returns_r1/_L35_p1_checkpoint_audit.json",
+    "original_sha256": "068dd5b71436c23c1d0c737334bdfbb6282190cd86252949c8eeb50b32ed78e9",
+    "sha256": "dfce97463c1773a928c4228555e28bdfd5e9a4a61a111bc9e705285075160f91"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_independent_confirmation_returns_r1/independent_numpy_recount_r1.json",
+    "original_sha256": "943eaf6df1fe75dada7b4da9a8d3f01c21d04a31cf8bca946039ffe71a0e5324",
+    "sha256": "67ddabe1906ecb76d809a45f7b9646ddea5940bf5f2dfdaeac801991814a1425"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_independent_confirmation_returns_r1/report.json",
+    "original_sha256": "76de092b4faee05e80b97cc556dd0ad29e03faaf49895f7c71e3950f76e8e88f",
+    "sha256": "8824f6a71f9a8591ea9184731638eaeb042f4482d7b0954934a8a089df3750c1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_independent_confirmation_returns_r1/result_manifest.json",
+    "original_sha256": "4c6d2b1ede76cefc0f25eb1fcd4079da4d7ba8cd7b923c9e392376ffb7055c1e",
+    "sha256": "714d3d6b5909221ba2d88e3d7b800127d02635e5b6db92eadf1e6f8eb6e3234f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_terminal_returns_r1/FETCHED.json",
+    "original_sha256": "cc7a66c5ac8bdf5672af5649468b080c5fa5f175a5bf449f4d02934f4796c9cc",
+    "sha256": "305d278af65b7477a27cbbda4465178d6ebbb293e0b3e0126cf28b417b909606"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_terminal_returns_r1/independent_integer_recount_r1.json",
+    "original_sha256": "397d67387ba43008aed8c65e4b7bb5250e46f9226f646c562abcefb98172b296",
+    "sha256": "49cbe357b89c6470a65ee9faebd09a877b62fbd92a43a16491d0330c85f50c41"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_terminal_returns_r1/report.json",
+    "original_sha256": "8e313f97979b086b39c6baa2fa7e18d6eb68ce80bdaf93b421536d7c49734e39",
+    "sha256": "26ccb4de5103ccc16958f8303a648b0524e573be9a62610ece785b4dfe6c68f2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_actual_terminal_returns_r1/result_manifest.json",
+    "original_sha256": "a51304d4ae043066b7f85173ac7c709613c27b638294256e4cb77a3355bdfddb",
+    "sha256": "78cc0e9bd2187686c6dfe71db76112ae9b171f957fbb5408a70a64cd5f1078ff"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/COMPLETE.json",
+    "original_sha256": "3796f8bf9ab96f29a41ad649f666984665ad4004e44e23efb5010ce532776c14",
+    "sha256": "a7667d8d0e30b16780eb0732948b885ce1d572f093bd7ce0dde6119b19d26e2c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/controller_result.json",
+    "original_sha256": "bfa808ce8e3555d6e5b49bef360d4df2343ccd27a71868da99138840b2eeb535",
+    "sha256": "c480e379a79d18671e615f1d51452945c204cecc13b6219a30bc478f6d4cebfe"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/FETCH_CLOSED_r1.json",
+    "original_sha256": "7238fcb7428cb5eb07c4bfd23e7f577651ac43036be941eaa10aa48aa0eeeeba",
+    "sha256": "44d759e75ed938e3d9c2e3d18cc1176656e18eaf0884d3ff75384e7f457898ca"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/FETCH_PHASE_r1.json",
+    "original_sha256": "983ae194c8351f61d8088c505206b8807bb8adf29bb636607bdb05bc81a3a368",
+    "sha256": "22fd142a1ad63ae1952b97a2aa5f0dce5e282375ac46c7b23d91d7681241ce0e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/FETCHED.json",
+    "original_sha256": "3db30a1dbd0d80e9b3580353947d250b54b52a5a412793c92fdfb99827643375",
+    "sha256": "4fad141f90d32adb5d5a5dc9d82ca16780f0324b3a2e3a093f84b797d3a41855"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/full/disk_expansion_recovery.json",
+    "original_sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52",
+    "sha256": "53414539622bf9161c8d8b20c45f894c0d043512199232a3ea97296c28564dba"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/full/full_budget.json",
+    "original_sha256": "90ad899b9110e96eb015b79bcdddf505560184215a67b540abfd0cd2aa07832e",
+    "sha256": "4176b9a80cc7ec5cbd13b6dc23341e5a5395a68f764d52ba6eee36f0fd8fd6d0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/full/full_source.json",
+    "original_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+    "sha256": "9c07646548eac24760e1f24ab6cce53eb2c55d1b60d68004576d1786d16d0d2d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/full/h1_receipt.json",
+    "original_sha256": "0e46cf54918bc152af34f7b3edb6b84fe7a9c3d2211bc3925f8b994a1dc144cf",
+    "sha256": "b851922b6c0473e192c8dba74db2f8e6c501c6c87b1d3803f0508e97b6d27013"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/full/launch_receipt.json",
+    "original_sha256": "390f9c65c05f651b032b73eae2ed5e0be4142bd82fd7c1ad0fe0f4015073c64e",
+    "sha256": "5a55786c1e37498502c916535cdfaa6ded1e347ef3ce9d8f6142ce139a375b6b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/full/metrics.json",
+    "original_sha256": "bee8d6712b5249b126f88f9f11eccd5d45ecfe21cf2065915ad985c4d0bdaa62",
+    "sha256": "1413d7774d949bdb782da963b3de2b9109db18ec400f3e3252f71b5ff587963c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/full/runtime_receipts/L35_160860d6ffc04c81adfe7e04ded020a4.json",
+    "original_sha256": "b10029082f660346b78aabbfd518af3cf81091340304a2589daaf1d50907a71b",
+    "sha256": "9a58b59bf269da738c917763019abcb96a46b87331c34202d5eb9b75b9dc2346"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/full/runtime_receipts/L35_1b3a0ef9c77745659c06955074b3275b.json",
+    "original_sha256": "c720373809059fced6ec83173a8930585f3a923d42a3c58b12b43784720eb06c",
+    "sha256": "439fe886df6a86cc83bb0739d5a816d8d78eb488378251b9cf7fe6e32c3e24f2"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/inference/artifacts/final_graph_budget.json",
+    "original_sha256": "837facc9b8fa0b6d1a05ea51ef3526fa9fd62dfe8924d4b0982fc8831b481c6b",
+    "sha256": "81de8abf69ef9bc40c9be16906b2d5fd5e5fd79cc1942fd029dbf1352577c2de"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/inference/artifacts/final_graph_result.json",
+    "original_sha256": "892bee1655df7522c2c5e320f114f011d690832b3c8b079c936698dfb9a2714d",
+    "sha256": "0babcdf41228c33147cfe741953282a598c83d091e3c2f69b3d0878d0e1851cb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/inference/artifacts/full_final_cpu_audit.json",
+    "original_sha256": "85e914240ebab9c8defa0167a65a899c3f168637c9b143c421f2d06105b0c6f1",
+    "sha256": "c95bc5fcd809b9208ea437707b2695722987dc15aa8b0ca1a0cec7dad73d8f5e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/inference/artifacts/inference_command.json",
+    "original_sha256": "21d97d733661a757a1d7beed1c0e4c2550a12d549a453c29ae4fab87a7963c5b",
+    "sha256": "4591af8a9dd0ceabe44b7347e84b821f60b3db1a3248ffe71b3205551533d1d9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/inference/artifacts/inference_freeze.json",
+    "original_sha256": "af67182b686e5f7bdce581e276c52c770dcefe3da3afa600ecf00fa91f5b65fc",
+    "sha256": "88cc77ecea55e253b0871237632b399172f34ea95f4775ea52d2691582a73d69"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/inference/artifacts/resource_policy.json",
+    "original_sha256": "a4fe70fa26d4c5c138bf8027e1bc51f910cf5d300efb3b73b6add7aad30a2ae0",
+    "sha256": "3845318c2b67544cbd0e6d567a61bbcaeb0b913415e9f8f9f6413b1a151d33c5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/inference_source/references/UPSTREAM_FULL_TEMPLATE.json",
+    "original_sha256": "4d857a625f8a09b4380ab64940bfbd1144fa60a20cd26d9f8628cc19d4b503e0",
+    "sha256": "cf726ef21339314f4d4389c8709de6074026bf3b71a6f3819ab5bd56a95f2b9f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/local_complete_CPU_acceptance_r1.json",
+    "original_sha256": "70dbc7b4920a83e3983c369910896ba89273a6297bae165d2b4f60ffcfb19b26",
+    "sha256": "82e71d9b01ab86f311f9771568ffe5d4c003fb5e8216123e2a6a191f6b177456"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/local_priority_package_acceptance_r1.json",
+    "original_sha256": "d7248f9afd611350351f8f8bdcaaf483976d90e8a7d8194018a9e88c2da75062",
+    "sha256": "f097f72898cdfe9128a3efcd13678771cbd489a8ba2226bd2127c86054e0ca4a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L35_final_actual_returns_r1/return_manifest.json",
+    "original_sha256": "ad086cc485fe42378835538ed2fb1179038cfb1baf5808f9f0bb93d96c44ded2",
+    "sha256": "36ce7cc237388be6ecb26d42a64f3c6e77fceb7a44911ca6e3f2b9c1d6fd1260"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_actual_first_reused_query_returns_r1/evidence_input_identity.json",
+    "original_sha256": "c3c3b4a105ab46d423677593f6ade08202d19e376c8475d7523ba64d38ce53ec",
+    "sha256": "d07cb425d5a37a24f90976f475f9689d345c31694d40ad3c25980d77a85a0089"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_actual_first_reused_query_returns_r1/evidence_p1_checkpoint_audit.json",
+    "original_sha256": "860f0d7292d89fed952c920ebe0f9751d967b4cdd784eeee684651503500e8ed",
+    "sha256": "45fb2d33ae81a2595a9b4994970b42a9ed6435d4053c6b8ad8edd5c5ddb8394b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_actual_first_reused_query_returns_r1/evidence_root_actual_query_registration_adapter_r1.json",
+    "original_sha256": "0fdebc193af48b3a716f9ddf53ed73a5528a4ab38fff768d56bf0b7230406a2a",
+    "sha256": "d9f92c884ac470c530fdff5ba79d98fe3ec70155647b54eda1d2d2d8881ceba0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_actual_first_reused_query_returns_r1/report.json",
+    "original_sha256": "ecc3efa7aacf66c2a4092714a009be8b4e04d85780df0da35192ca82138558bd",
+    "sha256": "b871428ed8e088a0927e0dff9bffb26e84eae0f14dfe28353887c7cd608babf7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_actual_first_reused_query_returns_r1/result_manifest.json",
+    "original_sha256": "46d5b6ad1768aa465c46220e609045daf41908890ef561277f826be152189cc0",
+    "sha256": "7414951a2d6953dec2819a81f469a96b6b019adb1a75d0424387df59c2a8d1b9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_actual_second_reused_query_returns_r1/input_identity.json",
+    "original_sha256": "f62f100059317af0abe4f29807e4b9e9f718a044337bfe8fff28ee9db1fc26f6",
+    "sha256": "082770db13be2526add57983fa6dc2127f009379c4367bf85cecf506db011074"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_actual_second_reused_query_returns_r1/p1_checkpoint_audit.json",
+    "original_sha256": "8fec9e8a70ebe0d2e7a67890eb645be0cc673e1bafe52fabf8a9da8bd4b42d34",
+    "sha256": "ac7202ece7d09208f211071fccfcac265f27bda4f4588297da91af4a42f05309"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_actual_second_reused_query_returns_r1/report.json",
+    "original_sha256": "ca57fc1424ffe3595a308af6399cea377e51d96f9d47c7094a44bbf4b164a472",
+    "sha256": "1bdc1e896d1167d1d61cf1e928a36422c81e18bfa5ce014d037b3f9daf03ccb8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_actual_second_reused_query_returns_r1/result_manifest.json",
+    "original_sha256": "8914379c2193304093db89d313a9706f30d28f6134f9adc2892c4397930bdd34",
+    "sha256": "0cf71018ff11c5a4f65ffc33ca4f4ba0c753f9c1f8fd7a4e91c96e7c4fa8d342"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/COMPLETE.json",
+    "original_sha256": "1904ff4bec4962accbc0ee9ef1073175f33577d034772c291de15be32aab3e50",
+    "sha256": "8cd59d3c3dc558ce3f91364e79e7563e002acd7f68fee3b7a36917537e565d3f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/controller_result.json",
+    "original_sha256": "c4c371a4af8c69a68a7420d81f5d5080d53c1939bc4e931d6c2f4c9822d36248",
+    "sha256": "7a65307e42f89954788327b701217bb35205454db48106e55cb0e11190ff70f5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/FETCH_CLOSED_r1.json",
+    "original_sha256": "712ad4e56cccee377b5f88c59777f0ecb9fe0e0ec2b0b18fbe6d2f6d0ea9eb06",
+    "sha256": "42c4151adca87025087450c964f83e0e668d9a2d3b17daa3fa8a3042e2e01703"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/FETCH_CLOSED_r2.json",
+    "original_sha256": "e7216b0aeb2d071a1200925ac6fd14271100c7948bf71ab1e2bc39b0c798a5ef",
+    "sha256": "ea92f878c9950b5b0a5fe09a203a389a20d9f34c810632c53ad9352f00efdbb1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/FETCH_OR_CPU_FAILED_r1.json",
+    "original_sha256": "86ec76cfb83be34235c8bd02755aac181de4cc792ffc7b806f27759bc0a2fd74",
+    "sha256": "672b7745bdb8bd30576e552b61f3dfaf3d5b6c2813cdae03bff60ffc27bfcd83"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/FETCH_PHASE_r1.json",
+    "original_sha256": "9439759894456f751acc8f4acef60d88551c34c376717dabaddbc079808608f1",
+    "sha256": "2e6f26332cc6a539a34c137d0ad09b71def1f1e71b14991e839a68fe5c9ff5e4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/FETCH_PHASE_r2.json",
+    "original_sha256": "8cc88795e278bdca0980ea65f4862f8d618d06f49b07f24f83c7e395a3fe7e19",
+    "sha256": "cf938cddb01bfca26c0b275bad72efcb126eb5d148067314bfeb8c383d2c73b3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/FETCHED.json",
+    "original_sha256": "d53e55c3738e603f1cb714efbadbc0e24d52f4e50397d0057968bafea4988e27",
+    "sha256": "fa4fb6250bf870688d4c85e50a0678119baf30d9fe00b66c41de629855eda95b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/full/disk_expansion_recovery.json",
+    "original_sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52",
+    "sha256": "170506e5dcd3c4614c7a56de37b6f162521bf0d8f9c68c079680092c2f2d2a2a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/full/full_budget.json",
+    "original_sha256": "1edccb01c54e50a7f83434da6974bf74233c5fab12296968047d559b579ec22e",
+    "sha256": "5e7a4c59bbeb294e6e85af06b20023a7c4b14639691a907e91753c524c8e60d8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/full/full_source.json",
+    "original_sha256": "3ebb8783263d63cead51e26a043d5990de5b9093da03394a5d6a17dbacd97df5",
+    "sha256": "7a2709df48fc273f6c971c2d3d0e82e9b55a77d5a5acdf8e1793b42b5064fcf6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/full/h1_receipt.json",
+    "original_sha256": "0e46cf54918bc152af34f7b3edb6b84fe7a9c3d2211bc3925f8b994a1dc144cf",
+    "sha256": "9e935c5e59923a22502a7c14cda397fd51fea744e60c89bf07b967aa800dcd64"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/full/launch_receipt.json",
+    "original_sha256": "c101b3a4d22360ff94de5bea0a56997c79acfb836d63135fdeb226278d68aa60",
+    "sha256": "7813eda687b23f44e08772a13d8a18923407d5ff769139b5bb09899ec1dd6ed8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/full/metrics.json",
+    "original_sha256": "9e9855663e0cfa408560744becb54c9f19a26a6a3f69a03fd8e6baee9dc73734",
+    "sha256": "85c34d410401a3e91b7de6d88f9040cf4118478e07b6d6db872468c70fb90a06"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/full/runtime_receipts/L50_044277e231f44ef687a4d122ad86fe8a.json",
+    "original_sha256": "459101c2c062c94e4bad07076c4cfa0e95c061eaff49e05d54fe15088513785b",
+    "sha256": "a399f188ee4090140a02c0d5782f3117b22de9078a07a14af6c68050dd2d0a26"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/full/runtime_receipts/L50_d44adf792706453f9beb0ed74864a111.json",
+    "original_sha256": "bc98bd6108860dc7601d0e61bbfdf0d983a7e015da27d8c999a73bcf23ecdca6",
+    "sha256": "58d0ed4461d02b8a9222f34c0c409389534722a597cf470e66bf117f82a7ff6f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/inference/artifacts/final_graph_budget.json",
+    "original_sha256": "16c7f948340d8f59da56ced10bc5dadaa9cea85d28e82e053e36933b82e04f23",
+    "sha256": "22cd91c2f5bf182772d380cf2755756374005ccc9bd5435c8949e7ba6a699d6f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/inference/artifacts/final_graph_result.json",
+    "original_sha256": "ed6314db4ac1b52e7508c0f8cc96c88ce1d4b1385d67365ddd0873f2fc9d92bb",
+    "sha256": "2dd175feb9990089ed7f8188bae5fc783a26275f27657b7b8b75d9b0b1fff90e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/inference/artifacts/full_final_cpu_audit.json",
+    "original_sha256": "20d890019655ae1fde7e1ad0d37f382c5865b18e9a27c7ffdf85e654a0fc13fd",
+    "sha256": "5abf0aab7414e3280063c1615201eb71725a08ab09de0bc7d5a4d5c3205d44fb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/inference/artifacts/inference_command.json",
+    "original_sha256": "0f948fecfbc8bf69ab54fa3955aa32220a9d40b876d1b34972fcf845b938ecb9",
+    "sha256": "125cdd4a75f620da23c0fda36bc0c4e1fce971b20bcca68e186c84a0ee90afd6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/inference/artifacts/inference_freeze.json",
+    "original_sha256": "815ef861fa8ea40d262757a1f431745e4701bcfdaa1d23aee21a3fc4906dc33d",
+    "sha256": "e62e8e76762ec7f6a2dac0a6b7711d05ecb64c5b1a6c63911f17dc50229a493b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/inference/artifacts/resource_policy.json",
+    "original_sha256": "539e7ff39c3aff4d7d4dfb9e110365dca427f8ed748e0401ff468221e52c5f10",
+    "sha256": "5128644620de26d6fc6d7f0df90fdd6249134cf16a4d563f372c37a103fe6a8e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/inference_source/references/UPSTREAM_FULL_TEMPLATE.json",
+    "original_sha256": "dc448025bd930632aca3a0fe45aa5e8486ce8375e73675bf8d91d6022437d885",
+    "sha256": "86f46263f06d63390205ecddc16f036799a2040097bfd43a1c16ef1dd895df10"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/local_complete_CPU_acceptance_r2.json",
+    "original_sha256": "16eec744cdd5eb12429e256e44d94019a8c77deb60ae8281ed31b2959cb8df4d",
+    "sha256": "d6ad12ae68331797eacb6951a98c4cbe4210d0c722d11eb22782d3d35e35e2a6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/local_priority_package_acceptance_r1.json",
+    "original_sha256": "882256279c09183f66af9df2c9fb3c80dc77440fd40d5a56c3f8bfcdd08479f3",
+    "sha256": "089fb919a2a2b5945a7449a8cd8d5e3565eaca3ddde49a08336bc20395ebea65"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/local_two_reused_query_provenance_return_r1.json",
+    "original_sha256": "022c52dc4e5b6779b825c4454c9bde21f1d026b67cc43177c633db1d4ae5a671",
+    "sha256": "03f0a284c2baa4ffff67df0ae40a5fc64e6f4a8df91ceff14bd7f632aadefbc7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/first/candidate_audit.json",
+    "original_sha256": "860f0d7292d89fed952c920ebe0f9751d967b4cdd784eeee684651503500e8ed",
+    "sha256": "3235f3f8bbf9623ff43e0e054bcf01ca4da763c9f3b39ac90f5a54c727b3c3f5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/first/candidate_identity.json",
+    "original_sha256": "c3c3b4a105ab46d423677593f6ade08202d19e376c8475d7523ba64d38ce53ec",
+    "sha256": "e941b5381424f34fe7ea95105c62ce717aef6eee0d70983501ce3b70e1bcebb5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/first/control_audit.json",
+    "original_sha256": "cc1ef2a0fbff94b25fc00e4374743657838a7f52f7f3d155db8a40bbd446e89d",
+    "sha256": "c37d141f366d2d5ff8ec149f7a04f495b0f0c1f59bab66ce45efcf9806bc6f48"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/first/numpy_review.json",
+    "original_sha256": "bd62185337cad196eb8b4a04eb6892a56dca0f15250e2a1e2d085312c310c24a",
+    "sha256": "779b120092e8048d6fc1566799905de7d36ffbd21f3e34e1dcff4a0ed818be9d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/first/paired_report.json",
+    "original_sha256": "ecc3efa7aacf66c2a4092714a009be8b4e04d85780df0da35192ca82138558bd",
+    "sha256": "7045a3cac87befb73d6ec006cd22baa9c34a12405c39521f42b2678c6b4bb8d8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/first/result_manifest.json",
+    "original_sha256": "46d5b6ad1768aa465c46220e609045daf41908890ef561277f826be152189cc0",
+    "sha256": "06ede5e3fddf26844032452275411da32d4e9ff567079e381683763288bdc7a3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/first/root_review.json",
+    "original_sha256": "af5014357dc7756d3405ccd69d6faabbd3f109c2b1acf307e5fb2c76b4e93c7d",
+    "sha256": "a945ee61b58730a392b7d7f2911c5f1e28eb0b1a3dc007848fbf8934165d47b6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/first/training_source.json",
+    "original_sha256": "4b3f0fe90d8ef5b138d05714526bc92e46dabbdd9254ae849416db61e16638fd",
+    "sha256": "1e661e7c924777e643f871853d08f11aa1a36ec246e7e51cf9f6a036af0a2851"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/second/candidate_audit.json",
+    "original_sha256": "8fec9e8a70ebe0d2e7a67890eb645be0cc673e1bafe52fabf8a9da8bd4b42d34",
+    "sha256": "f3d3b6c9dadc36acb4a1424088b56b0fc20367693aefec9651b6d3f71c9c6ce8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/second/candidate_identity.json",
+    "original_sha256": "f62f100059317af0abe4f29807e4b9e9f718a044337bfe8fff28ee9db1fc26f6",
+    "sha256": "b43b79b851407297699f458b79282606b6687edb3c88928d1a5b7be4b0b563ea"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/second/control_audit.json",
+    "original_sha256": "068dd5b71436c23c1d0c737334bdfbb6282190cd86252949c8eeb50b32ed78e9",
+    "sha256": "8967e9e15633f8e7e4c8a3769fda1c6a7f06e67c6c93c654bd45b465b8802f35"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/second/numpy_review.json",
+    "original_sha256": "b8f3502474aee9f2d6d55bf89418ffd1f045ac8480a2dd8a144dd927392e92b2",
+    "sha256": "5d644f7f3f66709d3e90174b1f02b4a915bcb3e62246e23a84eee51fe749172e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/second/paired_report.json",
+    "original_sha256": "ca57fc1424ffe3595a308af6399cea377e51d96f9d47c7094a44bbf4b164a472",
+    "sha256": "45d59929d74e45aba8f8ddd2d1e8d4190108f0db933f9b4fe848b849800ec679"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/second/result_manifest.json",
+    "original_sha256": "8914379c2193304093db89d313a9706f30d28f6134f9adc2892c4397930bdd34",
+    "sha256": "a8e361a0efbbff0820e2f6f35210972ea2150c6cd25afe76f45c3d9772c89562"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/second/root_review.json",
+    "original_sha256": "4eedb0408c9d924ee407eb0554fedaeff1d7f1c2c170e89ca97bd6da63f85b17",
+    "sha256": "3708a6a3fda3ee3cf2fa3060aa1d2a5cf59b70715601bce9e9521085aa2f2c4a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/provenance/second/training_source.json",
+    "original_sha256": "7699f9800d9bfff3265e7598c5ef5998e3bab8790ea6392da0fb67856c3365f0",
+    "sha256": "ef59998024a30a332076036af2e65e4c49c763789d37d469ddcf3aa11048a1cf"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/L50_final_actual_returns_r1/return_manifest.json",
+    "original_sha256": "4eb23dc2627848f949b026ed5c7c03739436c72e91aa374cbd4f284d7bb781e6",
+    "sha256": "88996d7623b0967bc17eb34afa945d2ff642d83f3f490fddb6c9b966da1d18fe"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_actual_B50_graph_compare_status.json",
+    "original_sha256": "95fada006593d44bfa3185a829b53fef61373153042bd49af70ec0f837c4778d",
+    "sha256": "f5aabae7974533d1789d03efb147d87931797915a517a627551413b58ccf78bb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_actual_B_diagnostic_status.json",
+    "original_sha256": "d28d64219634244ab7b45490eea92486440bfadde81e5f944ce1e1075ef81b18",
+    "sha256": "1d396279af5d93a94c25460c6944f7635b13e8661cf59c6851758b9412ff95cd"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_actual_CG25_append_status_r1.json",
+    "original_sha256": "1f20a4e3ff733d6062a17395141704a9e2f36420daf9c93ad03f78d5db69c219",
+    "sha256": "b8041cd2739efe1c59ae1df3b307d246c7e836f893ea99519e905e40fe7c42e3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_actual_PF30_comparison_status.json",
+    "original_sha256": "9853c930940afad416ed94a7a7fdb6c56a8edadba16261dcf22c97a4ca10016f",
+    "sha256": "e949791f2ccbaf76eb8e288c91e1f61cb77e2572efe959277e27e2de77d9abf5"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_actual_PF30_diagnostic_status.json",
+    "original_sha256": "a816776687a0708166a4289175848d649366ca22652b88187be43f1d81541dee",
+    "sha256": "e52b1f40994e7aa716ffa27092891336edfe520cebb6c0bfdd4c1bf36e7ceea8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_actual_PF30_query_retry_comparison_status.json",
+    "original_sha256": "0d6d2f115eb83311e8fe50b099aab25ecf112b0ae6489406b3d24d023854a66e",
+    "sha256": "243206841015b65f9e01d25aac957875139cc3d2996a56bfeb5a76d896206bb3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_AFA_actual_fourview_status_r1.json",
+    "original_sha256": "cf2e1e4609a3db137c74bab1f335e6c680103d2e051b10e347bff8cf9d17e0d0",
+    "sha256": "a17c1609271265d35e905ddbccedf04939f16716325e9466c0eefe54ac5b59d3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_AFA_actual_train_status_r1.json",
+    "original_sha256": "c9e9fe439766f3d2ddaf7c1efc7e1140b8b37c48f5c9d291ddc4666aa51b7a58",
+    "sha256": "e2fb271d180cbbe500619d49ebc219a3a86b7b10a1b46e15924e3c3ac1728d97"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_B25_EMA_frozen_4V_status_r1.json",
+    "original_sha256": "42a2601341ebeaa7a06d5f648924c53e845030fd0be0a4ca37c47dbda3da6b7a",
+    "sha256": "74ac5bba2bae79099a4795d621b3233a3d5a23adf5a3a926aec7260935384c2b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_B25_EMA_handoff_r1.json",
+    "original_sha256": "2f191a9193ea4afd52a24179deff8675f830150cad067e7dedb140b9211cad77",
+    "sha256": "2ed8dea3abfc4f0293dbe857140f3b5648c22fe0fc060d8358549bb989fc7be6"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_B50_EMA_handoff_r1.json",
+    "original_sha256": "c6bf4f84eab3769d55ed6c18bd9ace16df1adcc3ba31f69c976703d849757a7a",
+    "sha256": "a32a7fb6453812a3625736d0d283aa3835919d5e0c29682873c2ce842ca5dbb3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_B50_EMA_R3_compare_handoff_r1.json",
+    "original_sha256": "e74d401fe7c747babf664f0ce02c5d8e124865e2cde0da85f75c654b86246cf0",
+    "sha256": "cd86c810d49230034b27b23746cac720be82cb01e5902770f70141ff979e262a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_B50_EMA_R3_status_r1.json",
+    "original_sha256": "9443480e3220636f2445482f577bd84bdf8286b658bd05a83e946fd08c350c86",
+    "sha256": "f7e34801e5b7b77445fe1516c8587e9c6c4c22bca0d7d0cd51a87252436523eb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_CG25_actual_fourview_status_r1.json",
+    "original_sha256": "4b08aeb206b57e39964df13bc7c7aa5e985bbd021bfe882dcdd284d2a895096c",
+    "sha256": "f43e899fbed6405bf3a44649b4fb0cfa808336f9af9297de32e7cb0e05388608"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_CG25_actual_graph_status_r1.json",
+    "original_sha256": "02d99619933dea21178fd07634387e24e03a7214c69314a1dcda37b28a8368f6",
+    "sha256": "ff7bd5e23894f7e116d8ed52ae34ab274cb21143b08a6fce032e0abca35bb2b1"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_CG25_train_status_r5.json",
+    "original_sha256": "5466e8be3e70c5a5138d91d46fb9550ae6aec4addba336744d8c14d2d9f462d4",
+    "sha256": "00e4c36d6adcf2eae808ee8c51e19b539f0a9c6cf4b2636540bf20bf2c54fe7e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_EMA_B25_comparison_B50_handoff_r1.json",
+    "original_sha256": "c15edb25898ec58b56a91ab3fff6505653d6dd54bf5918f7db991a6935597cd4",
+    "sha256": "ea4dbe9fd9da68ce6cab26c434494e15b91cbdadbfc9dbbbb47ee85d4f8bd24e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_joint_diagnostic_r1_status.json",
+    "original_sha256": "3f1bff1442d7634c80ec1e588d8365d947bcb4a57525ea9481f559e5ed07beaf",
+    "sha256": "56d0f016c83839e0201544b6c68722af129bdea786012840cda9215562fc56bf"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_joint_r2_status.json",
+    "original_sha256": "3d703be00d2d3ecd97d845b26ddf4a5f664f2f37cf40f64a1217af3d18338d6c",
+    "sha256": "8b3921c72570973217fd18d330f2ac1d8b38c1aa49737b3e22d93c9135baa58a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_joint_r3_status.json",
+    "original_sha256": "229ac01a37f6aa33190b95bff18222a3ee96aa80a6d80e9a64aa7fb80eaef33c",
+    "sha256": "24587b6ba34be692ffe04b3d694603da00e74e7ca816b8b4b35c7b3823d4f202"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_josrc_profile_status.json",
+    "original_sha256": "f1d54dede335afaf443615ae61cdaa8c1ad25ead85b7bd95fc58cbe2c8ade1ce",
+    "sha256": "565efe759f953e391758f4dd0778ac39b2fc156e6e87a7a631c2d21773ee2e46"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_josrc_train_status.json",
+    "original_sha256": "7ddb684561436f632f7a61f6fb46fc4c3fbde9edb762adcef4e9a3113cb77107",
+    "sha256": "1138298191632134b52ea0d752d7a25518b14635ff59a735227e9e95b8f4bdb7"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_josrc_train_status_r3.json",
+    "original_sha256": "91a9d4a01469f740cbc7c5dfad4e613d639cfc5608e47e46a48485f2fc3a8bdf",
+    "sha256": "8ac5a605da1f39c0e81f27db86402a5e3b41cc35e74025d3465dd72c0b2c9e95"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_josrc_train_status_r4.json",
+    "original_sha256": "df0f4c5fad8e3331b6016c03d1ce7eebb11c66e96c26e254db6015e957e12555",
+    "sha256": "42e2b6c9b43f86f34dc9daac4c636bd2b4ff3754b90081e5de0f2616221d3b3d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_josrc_train_status_r5.json",
+    "original_sha256": "dd4d312775dfd0036ecd719de3e1746bc61d8b4cafb25d30f65b2f0358e5a453",
+    "sha256": "0fd80a5a4fbd5225d974056875722d87d3cb084f1228525e4f457c4fa255277c"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_actual_final_status_r1.json",
+    "original_sha256": "56969772abaf83fb6d571a402f2f44887a05fc2a02981f875c1e79967920a14e",
+    "sha256": "72fe4c1578fb10d28fcc7b88d4d89773b0e0736d8908e074c8a103daa76e9f5a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_actual_final_status_r2.json",
+    "original_sha256": "b183a28f75a5e24e140faa0ef94a954208cb2d40b025e596cc6538a021e13a1b",
+    "sha256": "3891639e7103ac4544e7522f09a5d2c1f448ddff10ce4e3d633d62affd05e65f"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_FULL_actual_status_r1.json",
+    "original_sha256": "3aac96fe362d6710795acdcaaca2de5bcaf4f008f67041ef9195bf861070e569",
+    "sha256": "439781e2ba6f93b6a3d5fe48255bad2e54f868d018a77648ac0aab658e9c7900"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_FULL_cuda_smoke_status_r1.json",
+    "original_sha256": "6e92f7468f2f5e2a7775b5a71b1eb026853b360ced180728271ec97907cc0204",
+    "sha256": "711dcb2eb6afec3f6c335c56a82ca03feba00f8c58341b33b284c02f28608f6d"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_new610_confirmation_R2_status.json",
+    "original_sha256": "d2750f8e2346410a6824ab1988f6c8d57172aaeb27805d4f74090abccd3b7a73",
+    "sha256": "d684651bf00c54fadd80a846eaa96980401adeb3ff6309c6eb00343e4418a1a0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_new610_confirmation_R2_status_r1.json",
+    "original_sha256": "0437aee4c9360f63164c5e69c6be3cb3409e2e8a0b41508c4577df1f1abd015a",
+    "sha256": "ecee4c66e199cd03ce725e7583d868f10f757c846e8ad178f9cbc32c546a9f6b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_new610_confirmation_R2_status_r2.json",
+    "original_sha256": "637888228b23d892b77cfa665e3dc2d2d7d494275e2cb45e0f9afb136908c731",
+    "sha256": "da3f1b2042f776b9d776c72a383249419cf3aca595e48812fc99693885205b46"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_new610_confirmation_status_r1.json",
+    "original_sha256": "090618c74700152a75a4e0425337f892181080ea9d5478affd1c35937c0c9ddf",
+    "sha256": "cd513cd0da021695ac8b14487e2f59b7ba52a70b53ea651d05ff7ed6787c5df4"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_new610_frozen_pair_status_r1.json",
+    "original_sha256": "afa263a0783088558562d4194f79251b03ad27aab79970fb3f2fab2f48d2ff06",
+    "sha256": "87a68e443eb9486600537c4749b309d328523f77ae5e9373d3741809ee25723e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_new610_frozen_pair_status_r2.json",
+    "original_sha256": "c1cec5882928c8141aaef55bb533be3d3cafb56c6e09f6e92a013170badef1f9",
+    "sha256": "11899e7379b50bdb4632ebace73010fe0b9589570708db7ce7158b9485deebac"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_new610_H1_status_r1.json",
+    "original_sha256": "3cede0e67e8ed4565267f1225d86c3e17502ad7805adbdba2b943ee31ddd6451",
+    "sha256": "002e3dfa8e690587470f92ff13b1e9999a09149f5dea6f34ad4d3f8c74f419a8"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_new610_H1_status_r2.json",
+    "original_sha256": "ac059dde69a9b2c80434811a9f1b7da3c4daac17be7ca1b2e1904633afb0c667",
+    "sha256": "ff5b7bd8334de91ad1d11011418763f206a2878b2a81d597d0d168c7e50d2c51"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_new610_J5_fourview_status_r1.json",
+    "original_sha256": "4191efaecd0b42b75880d043d480be085ab81761020e8f375da65ce8174a2161",
+    "sha256": "0bf485168479a58ff2ac2d3b9636df1e6543656b2d9aa9a7913454d6849c0f76"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L35_R2_actual_train_status_r1.json",
+    "original_sha256": "dff140d8cffa99208432ce380c8e9c28724d8a56223ddb76e373c89d881d6302",
+    "sha256": "bdd93b12c609aa34640875ebe912a2286dbae9609813a791d5bd6787b718da77"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L50_actual_fourview_status_r1.json",
+    "original_sha256": "22a056db4860971329f933475bac424fb0d8f1ea5f0171ed65267fdd0909dd33",
+    "sha256": "9b9445a2abe99b8ff791433265a0894b609214c66987b467997b0b1486055b9e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L50_actual_train_status_r1.json",
+    "original_sha256": "122efc8aa2a66054dd9a061fe4b0914a70b1fec098fdc0f111565fccdc588eb7",
+    "sha256": "c52ab1f63dea3fbe70f750ca1d03e0357bf858bc00bb451bd3e7322f5076535a"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L50_final_actual_status_r1.json",
+    "original_sha256": "b81fd0a0c7b600ef8b7c2f4e1955476af716f5bc058647616288d181e95a82c2",
+    "sha256": "549f4c74e132696b98cc40e708a6d9e985b7c5badca52dad1ffe5699408e7364"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L50_FULL_actual_status_r1.json",
+    "original_sha256": "81087b02d3c78b8801062b350faa52a3c70b7f673087dbf97c87d062f6f5bd4a",
+    "sha256": "d9387f19705613a19a8234821f495b6b191819712e4e24c835a8101165f6d902"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L50_second_actual_fourview_status_r1.json",
+    "original_sha256": "d5ed48eccefa76148968917185ffc6df6110dab62adc3d84fcdc5ee7ad9f819c",
+    "sha256": "b3e8c306011519a891b6fcb8be752a29bfb3ac0e318b1725b7d9b6be1f594360"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_L50_second_reused_actual_status_r1.json",
+    "original_sha256": "a10d1d27024f2c7f11d0ee1f0d2a0a50645500d8258eed3701dbf0100984350e",
+    "sha256": "470adca932606fb258c503090c75a5b6438f4c2167db6a013d79b1721ee9d1bb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_new_weste_CG25_status_r1.json",
+    "original_sha256": "da4c3951719f2c37f6c3a3ed4030e98509043fd0d31ced6d42604178df14942b",
+    "sha256": "d96ab4b27e3414fc776db48bad1a8c62df440d607a93f6f115215e1c57e0d186"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/latest_PF30_train_status_r5.json",
+    "original_sha256": "74f2116d44a38d7ed8af724d7f10cb860a068448ffbc907a1cdfe76371fbca82",
+    "sha256": "2fa7f31557018741a2d5b7bbc9a4dd752bb642f679f50683c28f0625dd0c874e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/ONLINE_SCORE_REPORT_20261011_L35.json",
+    "original_sha256": "16a3dbb009db6e01fec6682adab8f11ee86cfa2e2e174e15b5363fcdc4305dc5",
+    "sha256": "80eaa0e9b86bafff7c60f4f6221e9f62e0a4b08f11ce7e12f5d3252f910b0cc9"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/ONLINE_SCORE_REPORT_20261011_L50.json",
+    "original_sha256": "de3ddb367b71d0ecd99d49506d2856839bab21b15cef58b00de75ea651f1f74c",
+    "sha256": "ff3c9b8382ec3007defea33edcdfafda2c5c6fc9030bef711663eaf3621f3706"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/PF30_actual_exploration_returns_r1/FETCHED.json",
+    "original_sha256": "0d6d2f115eb83311e8fe50b099aab25ecf112b0ae6489406b3d24d023854a66e",
+    "sha256": "b3833d4c74ccad5fa88e0a9c5f7e1ed3f57a5412f3c8779f52287e326be2cab0"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/PF30_actual_exploration_returns_r1/input_identity.json",
+    "original_sha256": "574b11a1f99fd0a5cf741570ab3b2add24b24eec2b19ee3c2823ee903433bdc1",
+    "sha256": "08a7b31bffec8e48191cb2e189e4481a15e9019e82a7048dabad0860c1833279"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/PF30_actual_exploration_returns_r1/p1_checkpoint_audit.json",
+    "original_sha256": "3405011ad6e6315712871622ecfa7bc322211226beae865a98fa297621781644",
+    "sha256": "58856b905191d3b68752662c763548f826c4f7a608f151943e8350b03020055b"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/PF30_actual_exploration_returns_r1/query_identity.json",
+    "original_sha256": "02d2c5108617929d498e72d7058034a17d1ad9f0a602edca2b9ef10cc773f897",
+    "sha256": "b693f6d580769daf37af0bb64dcef1e9a1b157b085769249c91964cb7f743b1e"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/PF30_actual_exploration_returns_r1/report.json",
+    "original_sha256": "2d8b9e3d803d2fd04ab07b2460b39b9b265a0a6a3b4a5b1268fe89dfde5b44a0",
+    "sha256": "a26728fd3c9b5cbfe8084c0b978f82886f7c0c007fc298675f4ee9e9a7606cc3"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/PF30_actual_exploration_returns_r1/result_manifest.json",
+    "original_sha256": "b1f9cb21e416bed0dff25506ba369cac8516b6f40d930edc9b84426feff73541",
+    "sha256": "b5587acfff9cd8cbc458e6629eeb231c318492ed0d630598deadb0d5879679eb"
+  },
+  {
+    "path": "archives/competition_20261011/result_records/next_cycle_20261010/STATE.json",
+    "original_sha256": "bcef474c37d27fe037fd9e6b7a99684a46fd4f79b59458ec685ebcbe9056743b",
+    "sha256": "0e9881a820038f1ced9ff545dd8a8de9c96c39177d9a12b32378ed74f07563dd"
+  }
+]

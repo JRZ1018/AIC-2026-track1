@@ -1,0 +1,12 @@
+experiment:
+  head_checkpoint: head.pt
+  model_config: model.yaml
+  num_classes: 3
+  peft:
+    lora_blocks: 8
+    mode: full_visual
+  position_interpolation: bicubic_7x7_to_10x10
+  run_id: synthetic
+  training:
+    epochs: 20
+  visual_input_resolution: 336

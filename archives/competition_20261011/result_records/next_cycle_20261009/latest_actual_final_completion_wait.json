@@ -1,0 +1,44 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_actual_final_completion_wait.json",
+  "original_sha256": "f41c5eacf887510e873a2c8da76b7ffbefdb393902f0e64554639c614bd5022d",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791537013.7389827,
+    "return_manifest": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/artifacts/return_manifest.json",
+      "sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+      "bytes": 68640
+    },
+    "live_groups": [],
+    "canonical_present": false,
+    "root_actual_final_stdout.log": "{\n  \"schema\": \"aictrack1.fresh_route.final_controller_result.v1\",\n  \"complete\": true,\n  \"test_access\": true,\n  \"no_automatic_retry\": true,\n  \"status\": \"single_model_full20_P7_csv_zip_verified_local_restore_pending\",\n  \"hashes\": {\n    \"pred_results.csv\": \"7c9c816777b2b1e3b2eb165d155bec7a7635c0659c429d5a77ea68aafb2e9245\",\n    \"pred_results.zip\": \"5e65ba73e78c765e7fbd06ad9dbab485d6f8ad8a987d6662cd45bc31fc357ec3\",\n    \"submission_manifest.json\": \"85f54a6c03571f5d7004ca80b8ab7e068c994881cbbeac2e23074f0f70ee9288\"\n  },\n  \"final_sha256\": \"db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542\",\n  \"return_manifest_sha256\": \"a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b\",\n  \"finished_epoch\": 1791536928.5615916\n}\n",
+    "artifacts/inference.log": "{\n  \"csv_path\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/submissions/final/pred_results.csv\",\n  \"csv_sha256\": \"7c9c816777b2b1e3b2eb165d155bec7a7635c0659c429d5a77ea68aafb2e9245\",\n  \"inference_seconds\": 100.73173211794347,\n  \"manifest_path\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/submissions/final/submission_manifest.json\",\n  \"record_count\": 37444,\n  \"zip_path\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/submissions/final/pred_results.zip\",\n  \"zip_sha256\": \"5e65ba73e78c765e7fbd06ad9dbab485d6f8ad8a987d6662cd45bc31fc357ec3\"\n}\n",
+    "outputs": {
+      "submissions/final/pred_results.csv": {
+        "bytes": 1572648,
+        "mtime": 1791536918.6280515
+      },
+      "submissions/final/pred_results.zip": {
+        "bytes": 804829,
+        "mtime": 1791536919.0400577
+      },
+      "submissions/final/submission_manifest.json": {
+        "bytes": 8633,
+        "mtime": 1791536919.528065
+      },
+      "submissions/final/fused_logits.pt": {
+        "bytes": 60661033,
+        "mtime": 1791536919.6040661
+      },
+      "submissions/final/four_view_features.pt": {
+        "bytes": 81180265,
+        "mtime": 1791536919.724068
+      },
+      "submissions/final/inference_artifacts.json": {
+        "bytes": 771,
+        "mtime": 1791536919.796069
+      }
+    }
+  }
+}

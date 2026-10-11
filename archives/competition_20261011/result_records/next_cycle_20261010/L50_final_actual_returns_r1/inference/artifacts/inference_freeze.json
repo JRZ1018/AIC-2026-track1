@@ -1,0 +1,30 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/inference/artifacts/inference_freeze.json",
+  "original_sha256": "815ef861fa8ea40d262757a1f431745e4701bcfdaa1d23aee21a3fc4906dc33d",
+  "omitted_fields": [],
+  "record": {
+    "actual_cpu_audit_sha256": "20d890019655ae1fde7e1ad0d37f382c5865b18e9a27c7ffdf85e654a0fc13fd",
+    "classifier_head_source": "joint_fixed_last_state",
+    "complete": true,
+    "feature_export_enabled": true,
+    "final_sha256": "5a7db0752140e0b73bc923fe62951253dd97b0f6c347a0c8d6b588873d6027e9",
+    "frozen_epoch": 1791703365.519165,
+    "full_training_source_sha256": "3ebb8783263d63cead51e26a043d5990de5b9093da03394a5d6a17dbacd97df5",
+    "inference_source_sha256": "ad649293d58501840350e6760b1da54166a0e83709715cc8d4408456527cb2fb",
+    "last_sha256": "09347bbba10710e81ba1c5665b6dc7edbdf282f97a5c9214b322efec72233f36",
+    "model_parameter_updates": false,
+    "p7": {
+      "iterations": 60,
+      "strength": 0.75,
+      "temperature": 0.5
+    },
+    "p7_selection_sha256": "8122c9c96fb80823db9d19edb403d8d147d26a32c43b7b48fe7cca9db311d703",
+    "schema": "aictrack1.fresh_route.final_inference_freeze.v1",
+    "selected_arm": "L50",
+    "selected_route": "L50_GRAPH",
+    "test_access": false,
+    "test_manifest_expected_sha256": "576ff0f69e0a104ca5a0af7f190628074b572102c6bc8daf8cb653fb08054201",
+    "view_protocol": "native336_center_and_exact_flip_plus_resize_short_side384_center_crop336_and_exact_flip_equal_four_logits_single_checkpoint"
+  }
+}

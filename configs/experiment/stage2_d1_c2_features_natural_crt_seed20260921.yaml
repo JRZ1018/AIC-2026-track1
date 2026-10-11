@@ -1,7 +1,7 @@
 experiment:
   competition_stage: stage2
   run_id: 20260923-stage2-d1-c2-features-natural-crt-seed20260921
-  execution_enabled: false  # Enable only after the C2 feature cache and resource budget are approved.
+  execution_enabled: true  # C2 cache validated and local GPU budget approved on 2026-09-23.
   training_scope: fixed_split_validation
   dataset_config: ../data/stage2.yaml
   feature_cache: ../../artifacts/features/stage2/c2_fixed_last6_seed20260921

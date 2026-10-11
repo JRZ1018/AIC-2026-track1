@@ -1,0 +1,16 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_actual_PF30_comparison_status.json",
+  "original_sha256": "9853c930940afad416ed94a7a7fdb6c56a8edadba16261dcf22c97a4ca10016f",
+  "omitted_fields": [
+    "/groups"
+  ],
+  "record": {
+    "observed_unix": 1791595340.2977574,
+    "logs": {
+      "fixed_compare": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/compare_graph_vs_J5.py\", line 92, in <module>\n    if __name__=='__main__':raise SystemExit(main())\n                                             ^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/compare_graph_vs_J5.py\", line 83, in main\n    features=validate_features(payload,cache,candidate['identity']);queries,query_identity=load_queries(control,ROOT/'inputs/frozen_queries');baseline,import_proof=imported_graph_predictions(queries)\n                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/paired_metrics.py\", line 32, in load_queries\n    raise ValueError('frozen query identity mismatch')\nValueError: frozen query identity mismatch\n"
+    },
+    "canonical": null,
+    "complete": false
+  }
+}

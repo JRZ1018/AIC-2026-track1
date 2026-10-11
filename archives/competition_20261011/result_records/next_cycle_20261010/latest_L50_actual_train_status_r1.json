@@ -1,0 +1,88 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L50_actual_train_status_r1.json",
+  "original_sha256": "122efc8aa2a66054dd9a061fe4b0914a70b1fec098fdc0f111565fccdc588eb7",
+  "omitted_fields": [
+    "/launch/command"
+  ],
+  "record": {
+    "now_unix": 1791684549.9455345,
+    "launch": {
+      "schema": "aictrack1.learning_rate_L50.actual_launch.v1",
+      "controller": {
+        "pid": 41803,
+        "pgrp": 41803,
+        "session": 41803,
+        "start_ticks": "930507024",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_L50_20261011"
+      },
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_L50_20261011",
+      "source_manifest_sha256": "4b3f0fe90d8ef5b138d05714526bc92e46dabbdd9254ae849416db61e16638fd",
+      "budget_sha256": "f065cd86952c6de67588e264d43f060f26e57ff25bd1593726ee83fb6193d42b",
+      "launch_unix": 1791675267.1444137,
+      "preflight": {
+        "preflight": {
+          "return_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "CUDA_smoke": {
+          "return_code": 0,
+          "log_sha256": "9f2f2954f340659a7855582dc19e2e9aab22d348d06d4285c91f6d2436b732d7"
+        }
+      },
+      "stage_reused_files": 81,
+      "stage_uploaded_bytes": 19107,
+      "planned_arms": [
+        "L50"
+      ],
+      "epochs_each": 20,
+      "planned_pause": false,
+      "test_access": false,
+      "initialize_from_smoke": false,
+      "only_scientific_delta": "visual_learning_rate3.5e-6to5e-6_vs_L35",
+      "receipt_format_repair_only": true,
+      "original_receipt_sha256": "ed3f9f863bc28955df7ac22c8e5fef5649e149ad9713ebba32577fc6e6165bad"
+    },
+    "launch_path": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_L50_20261011/root_actual_fixed20_launch_completed_r2.json",
+    "launch_sha256": "5c99484c2974da64e2f1585fdf8fdd7ebd99af31ca6ff62d5724b72709d38a88",
+    "controller_owned_members": [],
+    "canonical": null,
+    "trainers": [
+      {
+        "owner": {
+          "pid": 41809,
+          "pgrp": 41809,
+          "session": 41809,
+          "start_ticks": "930507317"
+        },
+        "owned_members": [],
+        "exit_exists": true
+      }
+    ],
+    "logs": {
+      "root_actual_fixed20_stdout_r1.log": "[2026-10-11 07:34:30] 20261011-learning-rate-joint-L50 start\n[2026-10-11 07:34:30] L50: starting - single visualLR L50 vs L35 reused-query exploration fixedlast20\n[2026-10-11 10:03:24] L50: finished in 148.9 min; output validated\n[2026-10-11 10:03:24] 20261011-learning-rate-joint-L50 finished\n",
+      "artifacts/queues/71beafcdb0104eb88120a23100206056/L50.log": "{\"schema\": \"aictrack1.fresh_route.cuda_smoke.v1\", \"status\": \"passed\", \"synthetic_only\": true, \"candidate\": false, \"config_sha256\": \"5381d7e7055826277540a3e4495b3f8dc22866b2094b5ad6972ba88bc15f7326\", \"full_visual_tensors\": 152, \"trainable_tensors\": 154, \"trainable_parameters\": 88233966, \"head_gradient_norms\": {\"linear.weight\": 0.7872646450996399, \"linear.bias\": 0.7870043516159058}, \"head_frozen\": false, \"base_loss\": {\"kind\": \"sce\", \"alpha\": 0.1, \"beta\": 1.0, \"log_zero\": -4.0}, \"first_loss\": 4.786383628845215, \"uninterrupted_second_loss\": 3.3020095825195312, \"resumed_second_loss\": 3.3020095825195312, \"max_parameter_difference\": 4.656612873077393e-10, \"scheduler_T_max\": 20, \"amp_overflow_skips\": [{\"from_scale\": 65536.0, \"to_scale\": 32768.0}, {\"from_scale\": 32768.0, \"to_scale\": 16384.0}, {\"from_scale\": 16384.0, \"to_scale\": 8192.0}, {\"from_scale\": 8192.0, \"to_scale\": 4096.0}, {\"from_scale\": 4096.0, \"to_scale\": 2048.0}, {\"from_scale\": 16384.0, \"to_scale\": 8192.0}, {\"from_scale\": 8192.0, \"to_scale\": 4096.0}, {\"from_scale\": 4096.0, \"to_scale\": 2048.0}], \"successful_update_count\": 3, \"successful_updates\": [{\"loss\": 4.786383628845215, \"scale\": 16384.0, \"scheduler_epoch\": 1}, {\"loss\": 3.3020095825195312, \"scale\": 2048.0, \"scheduler_epoch\": 2}, {\"loss\": 3.3020095825195312, \"scale\": 2048.0, \"scheduler_epoch\": 2}], \"checkpoint_sha256\": \"63c13989def2e2e9ef5349226ef0328e7272dbce86fe767d937b051e2b00322f\", \"checkpoint_role\": \"synthetic_resume_only\"}\n",
+      "artifacts/queues/e344651b720647eba2a30a369c7bc3e0/L50.log": "\"class_count\": 375,\n          \"covered_class_count\": 369,\n          \"evaluated_class_count\": 375,\n          \"evaluated_class_mean_accuracy\": 0.6325241923332214,\n          \"recall_median\": 0.6764705777168274,\n          \"recall_p10\": 0.2777777910232544,\n          \"recall_p90\": 0.8963562846183777,\n          \"sample_count\": 12763,\n          \"sufficient_support\": true,\n          \"unevaluated_class_count\": 0,\n          \"worst_class_index\": 19,\n          \"worst_class_recall\": 0.0,\n          \"worst_class_support\": 6,\n          \"zero_recall_class_count\": 6\n        }\n      },\n      \"top1\": 0.6601876616477966,\n      \"unstable_strata\": [],\n      \"zero_recall_class_count\": 6\n    },\n    \"remaining\": {\n      \"macro_accuracy\": 0.6550626754760742,\n      \"predicted_classes\": 747,\n      \"prediction_count_max\": 71,\n      \"prediction_count_min\": 0,\n      \"present_target_classes\": 750,\n      \"recall_quantiles\": {\n        \"max\": 1.0,\n        \"median\": 0.699999988079071,\n        \"min\": 0.0,\n        \"p10\": 0.3214285671710968,\n        \"p90\": 0.9111111164093018\n      },\n      \"sample_count\": 28908,\n      \"top1\": 0.6716479659080505,\n      \"top_confusions\": [\n        {\n          \"count\": 15,\n          \"prediction\": 739,\n          \"target\": 716\n        },\n        {\n          \"count\": 13,\n          \"prediction\": 446,\n          \"target\": 39\n        },\n        {\n          \"count\": 13,\n          \"prediction\": 491,\n          \"target\": 665\n        },\n        {\n          \"count\": 12,\n          \"prediction\": 57,\n          \"target\": 519\n        },\n        {\n          \"count\": 11,\n          \"prediction\": 568,\n          \"target\": 541\n        },\n        {\n          \"count\": 10,\n          \"prediction\": 120,\n          \"target\": 615\n        },\n        {\n          \"count\": 10,\n          \"prediction\": 737,\n          \"target\": 420\n        },\n        {\n          \"count\": 10,\n          \"prediction\": 715,\n          \"target\": 424\n        },\n        {\n          \"count\": 10,\n          \"prediction\": 665,\n          \"target\": 491\n        },\n        {\n          \"count\": 9,\n          \"prediction\": 270,\n          \"target\": 612\n        },\n        {\n          \"count\": 9,\n          \"prediction\": 519,\n          \"target\": 57\n        },\n        {\n          \"count\": 9,\n          \"prediction\": 202,\n          \"target\": 535\n        },\n        {\n          \"count\": 9,\n          \"prediction\": 424,\n          \"target\": 715\n        },\n        {\n          \"count\": 9,\n          \"prediction\": 580,\n          \"target\": 504\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 439,\n          \"target\": 654\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 229,\n          \"target\": 662\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 460,\n          \"target\": 392\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 441,\n          \"target\": 316\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 253,\n          \"target\": 700\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 271,\n          \"target\": 161\n        }\n      ],\n      \"zero_recall_classes\": 7\n    }\n  },\n  \"label_smoothing\": 0.0,\n  \"last_checkpoint_sha256\": \"3eddc2770f2c5cf1681a4462d3d8f90d8d0bbeb278d4c6dce6cbb94a70bd6c66\",\n  \"logit_adjustment\": null,\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"peak_vram_mib\": 4017.94384765625,\n  \"peft\": {\n    \"lora_blocks\": 8,\n    \"mode\": \"full_visual\"\n  },\n  \"position_interpolation\": \"bicubic_7x7_to_10x10\",\n  \"run_id\": \"20261011-learning-rate-joint-L50-fixed20\",\n  \"runtime\": {\n    \"defer_epoch_metrics\": true,\n    \"reuse_validation_loader\": true\n  },\n  \"sampling\": {\n    \"mode\": \"natural\"\n  },\n  \"scope\": \"stage2 train/validation PEFT short screening; test data not accessed\",\n  \"selected_checkpoint\": \"final.pt\",\n  \"selected_checkpoint_sha256\": \"bfc67a07aff0e682cbe0b0eb414f2aa2c34cba9a37b39e55cf39968d279597f4\",\n  \"selection_rule\": \"fixed final epoch 20; no validation selection\",\n  \"split_sha256\": \"57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7\",\n  \"token_readout\": {\n    \"initialization_seed\": 20261005,\n    \"mode\": \"none\"\n  },\n  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}\n"
+    },
+    "last_stats_only": {
+      "last.pt": {
+        "size": 1418760999,
+        "mtime": 1791684199.5556967
+      },
+      "final.pt": {
+        "size": 352987755,
+        "mtime": 1791684200.0197272
+      },
+      "metrics.json": {
+        "size": 8153637,
+        "mtime": 1791684201.839847
+      }
+    },
+    "disk": {
+      "total": 128849018880,
+      "used": 119794008064,
+      "free": 9055010816
+    },
+    "gpu": "1 MiB, 0 %"
+  }
+}

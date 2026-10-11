@@ -1,0 +1,197 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L35_actual_independent_confirmation_returns_r1/_J5_input_identity.json",
+  "original_sha256": "924da1019e472d230ec08581c66f10f025abc382d5697a963cdca901cce2b6e1",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.p0_frozen_fold_input.v1",
+    "stage": 2,
+    "holdout_verified": true,
+    "test_access": false,
+    "training_validation_overlap_rows": 0,
+    "train_validation_exact_group_overlap": 0,
+    "train_validation_near_group_overlap": 0,
+    "checkpoint_role": "last",
+    "upstream_checkpoint_role": "final",
+    "checkpoint_epoch": 20,
+    "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/experiments/CONFIRM_J5/last.pt",
+    "checkpoint_sha256": "0be38e1247ebfeae7019b7cd77720625ae58682134b099961f1f38cc0f15efae",
+    "experiment_config_sha256": "f60b13689a2f0e95cf4b87d04129fe1b5b3e1a645e80550146d8b5f9b934f554",
+    "split_sha256": "610111665e1055bcda7157add15b16ade353138365e54ee87dc92316e6dfd6f1",
+    "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+    "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+    "view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+    "h1_sha256": "4073c5b58f5993373f1678f714342d829fdb6c2d092cf60cf1ebfa7aa0083980",
+    "training_count": 118958,
+    "validation_count": 29737,
+    "num_classes": 750,
+    "training_scope": "fixed_split_validation",
+    "bundle_path": "fused_logits.pt",
+    "bundle_sha256": "af37603d3d92df4c70a02c8e944cef70693f9bd749d328dda990ee80479c5f3f",
+    "logits_dtype": "float16",
+    "row_csv": "rows.csv",
+    "row_csv_sha256": "c59180b5137e6da47bd3701185a86a2edc5835f8329f7cca7882d6b5d6e85518",
+    "sample_ids_order_sha256": "3942736be798916505babc7427d593718698c400830f66edf48d77b4a6301c54",
+    "source_provenance_receipt": "p1_checkpoint_audit.json",
+    "source_receipt_sha256": "bb25bb14e8dae8869df447fc264aa2263f75b11d5758169c08c17352b03ccc1a",
+    "report_sha256": "91d300f2dafe8a5c7793278d847a2dac92dec34590cab2c9813f6312c4776f0a",
+    "p1_arm": "J5",
+    "model_arm": "J5",
+    "trainable_tensors": 154,
+    "trainable_numel": 88233966,
+    "joint_trainable_tensors": 154,
+    "joint_trainable_numel": 88233966,
+    "classifier_head_source": "joint_fixed_last_state",
+    "selected_arm": "J5",
+    "selected_route": "L35_GRAPH",
+    "admission_receipt_sha256": null,
+    "source_h1_manifest_sha256": "4c5f1cb814765d5e2307012dce8be07b7b9321380a90029327d1c453b8676fdd",
+    "training_source_manifest_sha256": "8c36fc02ecb58cd0290d13e38c43deeccef44e510cdf46f7c126bfc5fe68faf4",
+    "diagnostic_source_manifest_sha256": "af65db78d5151a286743ed430b2948fbd1625086ba2f0bdeadba77f528c7fe38",
+    "runtime": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "torch_num_threads": 4,
+      "torch_num_interop_threads": 64
+    },
+    "runtime_receipt": "runtime_receipt.json",
+    "runtime_receipt_sha256": "443f1435a7862ae78803e4191ff55312546362c25f4cdb0e130b077b6ff1d162",
+    "inference_optimizer_steps": 0,
+    "training_seed": 20261010,
+    "group_source": "connected exact SHA/exact-group/near-group union; new610 pre-result independent query",
+    "raw_student_only": true,
+    "teacher_used_for_inference": false,
+    "visual_learning_rate": 1.75e-06,
+    "head_learning_rate": 5e-06,
+    "confirmation_phase_context": {
+      "actual": true,
+      "training_source_manifest_sha256": "8c36fc02ecb58cd0290d13e38c43deeccef44e510cdf46f7c126bfc5fe68faf4",
+      "launch_path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/root_actual_fixed20_launch_r1.json",
+      "launch_sha256": "1e876231dd9fde585d5e582ae3839d079019e6f4619725b5ca3878f9ae4f9198",
+      "controller_owner": {
+        "pid": 19809,
+        "pgrp": 19809,
+        "session": 19809,
+        "start_ticks": "926391376"
+      },
+      "controller_and_all_arm_groups_closed": true,
+      "canonical_idle": true,
+      "checkpoints": {
+        "J5": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/experiments/CONFIRM_J5/last.pt",
+          "sha256": "0be38e1247ebfeae7019b7cd77720625ae58682134b099961f1f38cc0f15efae",
+          "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/experiments/CONFIRM_J5/metrics.json",
+          "metrics_sha256": "66275ba14240e99646bff8824c4fbf3050b33e1bc8cd287891e83dd6ddc0aade",
+          "epoch": 20,
+          "config_sha256": "f60b13689a2f0e95cf4b87d04129fe1b5b3e1a645e80550146d8b5f9b934f554",
+          "LR_method_audit": {
+            "LR_method_state_complete": true,
+            "visual_learning_rate": 1.75e-06,
+            "head_learning_rate": 5e-06,
+            "raw_student_only": true,
+            "teacher_used_for_inference": false,
+            "final_model": "single",
+            "successful_updates": 37163,
+            "full_class_support": true
+          }
+        },
+        "L35": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/experiments/CONFIRM_L35/last.pt",
+          "sha256": "91defbfa29b49b3c502c457a8a4c37b151a08ffdcf395de8b1793490f8162b56",
+          "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/experiments/CONFIRM_L35/metrics.json",
+          "metrics_sha256": "d24b6302ae63422c4f934aee1aae480da03037cd4bdae44f8fe6abed33cd39cb",
+          "epoch": 20,
+          "config_sha256": "35fc5b350f171c7ee7eb0a50e17f8960bce166045312877b9095d66fb01161dc",
+          "LR_method_audit": {
+            "LR_method_state_complete": true,
+            "visual_learning_rate": 3.5e-06,
+            "head_learning_rate": 5e-06,
+            "raw_student_only": true,
+            "teacher_used_for_inference": false,
+            "final_model": "single",
+            "successful_updates": 37163,
+            "full_class_support": true
+          }
+        }
+      },
+      "arm_closure_evidence": [
+        {
+          "arm": "J5",
+          "launch_attempts": [
+            {
+              "start_path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/launches/J5_11e6ab4d66ea48f1801562fded1988e9/START.json",
+              "start_sha256": "aaea6ec6e116d1435f8321136a0a5e577977b2af9160ed50c4c4317b9c0c516d",
+              "exit_path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/launches/J5_11e6ab4d66ea48f1801562fded1988e9/EXIT.json",
+              "exit_sha256": "059d4f0189dca7690f0b78d89337ba85ba8e0a5aef479f143e5238e0c815711e",
+              "return_code": 0,
+              "owner": {
+                "pid": 19814,
+                "pgrp": 19814,
+                "session": 19814,
+                "start_ticks": "926391683"
+              }
+            }
+          ]
+        },
+        {
+          "arm": "L35",
+          "launch_attempts": [
+            {
+              "start_path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/launches/L35_fbf116762f6044e0a3158327f3ab1b9d/START.json",
+              "start_sha256": "ad4d0b977981a60c81c54f4fdf46b973a27236b2f619ac811486c45e2779661a",
+              "exit_path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/launches/L35_fbf116762f6044e0a3158327f3ab1b9d/EXIT.json",
+              "exit_sha256": "f5c3949f3a598ce8df0e4129a239cd8cad704effb6ed066c46c94c7331f0e4bc",
+              "return_code": 0,
+              "owner": {
+                "pid": 24386,
+                "pgrp": 24386,
+                "session": 24386,
+                "start_ticks": "927203958"
+              }
+            }
+          ]
+        }
+      ],
+      "shared_phase_context": {
+        "budget": {
+          "schema": "aictrack1.next_cycle10.confirmation_budget.v1",
+          "root_authorized": true,
+          "phase_start_unix": 1791633418.782312,
+          "deadline_unix": 1791658618.782312,
+          "original_initial_free_bytes": 13013950464,
+          "capacity_added_bytes": 32212254720,
+          "adjusted_initial_free_bytes": 45226205184,
+          "actual_disk_total_bytes": 128849018880,
+          "disk_max_bytes": 38654705664,
+          "min_free_bytes": 3221225472,
+          "atomic_reserve_bytes": 2147483648,
+          "final_gpu_reserve_hours": 4,
+          "final_wall_reserve_hours": 8,
+          "competition_deadline_unix": 1791712738,
+          "capacity_evidence": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+            "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+          },
+          "purpose": "new legal610 H1100 plus commonseed20261010 matched freshJ5 and soleL35 each continuous20 and frozen confirmation; original cumulative36GiB no reset"
+        },
+        "budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/inputs/budget.json",
+        "budget_sha256": "697a43c1f97aa2e4348f8036b166df9e45e36b695ac71780392c83153304b6d2",
+        "training_source_manifest_sha256": "8c36fc02ecb58cd0290d13e38c43deeccef44e510cdf46f7c126bfc5fe68faf4",
+        "independent_confirmation": true,
+        "test_access": false
+      },
+      "test_access": false
+    },
+    "independent_confirmation": true,
+    "old_query_reused_for_exploration": false,
+    "save_features": true,
+    "feature_file": "fused_features.pt",
+    "feature_file_sha256": "54f6d4c2833f91a5a385a583d5d0c1a172f550257658d9fabc0a544198d76916",
+    "feature_dim": 512,
+    "feature_dtype": "float32",
+    "feature_construction_dtype": "float32",
+    "feature_protocol": "L2_normalize(mean(L2_normalize(raw_visual_each_of_four_views))) in float32 on CPU",
+    "additional_model_forwards": 0
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/supervision_actual_train_launch.json",
+  "original_sha256": "85450a40a6c3953e944a4b63102c362b25862c16925dbf555a7b52cf540e1235",
+  "omitted_fields": [
+    "/command",
+    "/controller/argv"
+  ],
+  "record": {
+    "schema": "aictrack1.supervision.root_train_launch.v1",
+    "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+    "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+    "actual_smoke_acceptance_sha256": "12a844b6a5bf36bd052ede064b4c5e6e3ed3bd28b6a30bb4850290c950a252d2",
+    "source_members": 85,
+    "phase_start_unix": 1791499672.7301335,
+    "deadline_unix": 1791521272.7301335,
+    "initial_free_bytes": 13013950464,
+    "disk_max_bytes": 6442450944,
+    "min_free_bytes": 3221225472,
+    "observed_data_free_bytes": 12611436544,
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+    "runtime_environment": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+    },
+    "initialization": "fresh officialCLIP plus exact originalfold H1",
+    "epochs": 20,
+    "selected_checkpoint": "last.pt",
+    "candidate_training_started": true,
+    "test_access": false,
+    "submission_ready": false,
+    "status": "launched_not_complete",
+    "controller": {
+      "pid": 230190,
+      "start_ticks": "307357000",
+      "pgrp": 230190,
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009"
+    },
+    "launch_epoch": 1791499917.3397636,
+    "plan_sha256": "47c475b073d03a59de832b7dbfa23269dfc659d29e3274c56aac74995ff37352"
+  }
+}

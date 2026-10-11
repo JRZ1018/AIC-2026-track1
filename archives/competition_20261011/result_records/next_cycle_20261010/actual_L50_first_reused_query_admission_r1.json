@@ -1,0 +1,20 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_first_reused_query_admission_r1.json",
+  "original_sha256": "8ef31ed965c076f3c0acaeaa6a0890657edd94b51b94e13e5808afe04503d8b5",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.L50.first_reused_query.admission.v1",
+    "selected_arm": "L50",
+    "root_risk_review_complete": true,
+    "independent_confirmation": false,
+    "paired_report": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_diagnostic_20261011/artifacts/comparisons/L50/report.json",
+      "sha256": "ecc3efa7aacf66c2a4092714a009be8b4e04d85780df0da35192ca82138558bd"
+    },
+    "root_review": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_diagnostic_20261011/root_actual_first_reused_query_review_r1.json",
+      "sha256": "af5014357dc7756d3405ccd69d6faabbd3f109c2b1acf307e5fb2c76b4e93c7d"
+    }
+  }
+}

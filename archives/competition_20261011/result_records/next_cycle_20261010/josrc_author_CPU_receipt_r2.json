@@ -1,0 +1,39 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/josrc_author_CPU_receipt_r2.json",
+  "original_sha256": "e2c6ebb6301a65b104dae04fb8d4902e47550db6feb0ca90cc68d039c1fb7a4e",
+  "omitted_fields": [],
+  "record": {
+    "GPU_started": false,
+    "SSH": false,
+    "actual_H1_metadata_source": "same byte SHA as e94 R3 frozen source",
+    "actual_p1_assets_and_both_config_metadata_closure_PASS": true,
+    "actual_profile_not_run": true,
+    "all_Python_AST_pass": true,
+    "complete": true,
+    "future_budget_sha256": null,
+    "future_checkpoint_sha256": null,
+    "log_hash_semantics": "raw captured bytes write_bytes",
+    "math_and_N1_and_profile_and_run_numeric_source_identical_to_R1": true,
+    "official_train_image_access": false,
+    "original_hard_AC_literal_preserved": true,
+    "original_stochastic_strong_synthetic_image_tensor_exact": true,
+    "profile_helpers_safe_disk_nextstep_CPU_PASS": true,
+    "provider_scope": "OpenAI clip deferred until actual loader; no weights initialized locally",
+    "real_CPU_CLI_imports": [
+      "train_n1_peft.py --help",
+      "bind_josrc_source.py --help",
+      "run_josrc.py --help"
+    ],
+    "revision": "R2",
+    "schema": "aictrack1.josrc_inspired.author_CPU.v1",
+    "source_bytes": 740495,
+    "source_files": 93,
+    "source_manifest_sha256": "8d9c229f645e20a306b11a69bc57a6f4c7141d0c90783bd7d616cb02e580a276",
+    "stderr_sha256": "05aa89fb6fec4f440cef512c6bc50afedb16548088929dd2754db546b54f17eb",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_exit_code": 0,
+    "test_image_access": false,
+    "tests": 12
+  }
+}

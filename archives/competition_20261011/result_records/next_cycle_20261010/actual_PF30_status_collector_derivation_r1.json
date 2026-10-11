@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_status_collector_derivation_r1.json",
+  "original_sha256": "2dc2d8875fbb633a77cce8af56fdad18a4b3188d9b106907ddb3f354e1a928a1",
+  "omitted_fields": [
+    "/network_identity_credentials_policy_unchanged"
+  ],
+  "record": {
+    "scope": "original audited R5 read-only collector: literal PF root/source and additive scalar PF applied-mask summaries only",
+    "source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+    "base_collector_sha256": "73b8848fdc09a3cb1f616ae4732290b58b91e8c76a9858447111ee09b1ba51fd",
+    "base_wrapper_sha256": "d6f34aa0b5fda0ad98dc2882aecac25f93fb7c20f1f1f84c5f1fdb753529a8e2",
+    "files": {
+      "PF30_status_r1.py": "215125745d181a136d2921eb284f3dfb5839dfc9d055f6a7312d9c4bbb21435e",
+      "PF30_status_fixed_host_public_dns_r1.py": "e89653702f3f83c8055880c78f07621c6fdfad5de8048a1923ea484ac4bb2e84"
+    },
+    "AST_compile_passed": true,
+    "remote_executed": false,
+    "checkpoint_read": false,
+    "new_waiter_or_execution_framework": false
+  }
+}

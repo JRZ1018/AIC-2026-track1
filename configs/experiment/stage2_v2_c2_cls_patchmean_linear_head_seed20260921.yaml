@@ -1,0 +1,24 @@
+experiment:
+  competition_stage: stage2
+  run_id: 20260924-stage2-v2-c2-cls-patchmean-linear-head-seed20260921
+  execution_enabled: true  # User approved the V2 train-only diagnostic batch on 2026-09-24.
+  training_scope: fixed_split_validation
+  dataset_config: ../data/stage2.yaml
+  feature_cache: ../../artifacts/features/stage2/v2_c2_cls_patchmean_seed20260921
+  expected_peft_checkpoint_sha256: ba25de5cfc381b913bd0da7c1f093255acbc663d2a2e9f6ff0eba651fe248e04
+  output_dir: ../../artifacts/experiments/20260924-stage2-v2-c2-cls-patchmean-linear-head-seed20260921
+  device: cuda
+  num_classes: 750
+  head:
+    kind: linear
+  training:
+    epochs: 100
+    batch_size: 4096
+    learning_rate: 0.01
+    weight_decay: 0.0
+    momentum: 0.9
+    gradient_clip_norm: null
+    seed: 20260921
+    optimizer: adam
+    scheduler: constant
+    amp: false

@@ -1,0 +1,48 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_append19_to20_launch_r1.json",
+  "original_sha256": "469537a5f3f65f40fbab4b2d49b1687e9c8e19b85939d74cb9e073b2713726f2",
+  "omitted_fields": [
+    "/canonical/command",
+    "/controller/argv",
+    "/trainer/argv"
+  ],
+  "record": {
+    "complete": true,
+    "controller": {
+      "pid": 5486,
+      "state": "S",
+      "ppid": 1,
+      "pgrp": 5486,
+      "session": 5486,
+      "start_ticks": "924031182",
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010"
+    },
+    "trainer": {
+      "pid": 5498,
+      "state": "S",
+      "ppid": 5486,
+      "pgrp": 5498,
+      "session": 5498,
+      "start_ticks": "924031924",
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010"
+    },
+    "canonical": {
+      "config": "configs/experiment/p1_CG25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_CG25",
+      "owner": "20261010-CG-explicit-append-only",
+      "queue_pid": 5486,
+      "schema_version": 1,
+      "started_at": "2026-10-10T13:35:16.136546+08:00",
+      "token": "bc6221ee50fe457ca6404212726f0418",
+      "trainer_pid": 5498
+    },
+    "append_budget_sha256": "5425b5852aa5e61c6b845b5ea43a69f2cdc47cf3d2581213d2bbc30346dd9f97",
+    "source_manifest_sha256": "e33a805cf254f6261e12415ad379c606487ad9bda2a7df685c06e3abb840da15",
+    "last19_sha256": "6846c0a412d2d88d7e3c7ed9607f8f1899fd956fa2d999f879b3251765467537",
+    "observed_unix": 1791610572.742944,
+    "launch_receipt_recovered_after_operator_snapshot_iteration_error": true,
+    "no_duplicate_launch": true,
+    "test_access": false
+  }
+}

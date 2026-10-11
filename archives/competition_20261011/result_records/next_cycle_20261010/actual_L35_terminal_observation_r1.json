@@ -1,0 +1,72 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_terminal_observation_r1.json",
+  "original_sha256": "04cbe9f3ba8a1e53fe93c9a2e1355e4d01599ec89ecbf83a863f21c38749c177",
+  "omitted_fields": [
+    "/launches/start/command",
+    "/stdout"
+  ],
+  "record": {
+    "now": "2026-10-10T19:43:20.853752",
+    "processes": {
+      "12547": false,
+      "12552": false
+    },
+    "canonical": null,
+    "launches": [
+      {
+        "start": {
+          "owner": {
+            "pid": 12552,
+            "pgrp": 12552,
+            "session": 12552,
+            "start_ticks": "925129114"
+          },
+          "source_manifest_sha256": "b2ad95ad6009516412ca1757ab64fd2b8820688da2c31b777ea3cd68d58207a1",
+          "config_sha256": "ab9ad09f7e09913f1792ecd5b1af71b4b807269b224740c036499ee6fb52457b",
+          "lease_token": "db0d9d38fbc44d0585c2e7d3deb673cd",
+          "test_access": false
+        },
+        "group": [],
+        "exit": {
+          "owner": {
+            "pid": 12552,
+            "pgrp": 12552,
+            "session": 12552,
+            "start_ticks": "925129114"
+          },
+          "return_code": 0,
+          "group_closed": true,
+          "test_access": false
+        }
+      }
+    ],
+    "epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "shas": {
+      "last.pt": "5278487b5e83fce8aad25dca2dae36ce796d7c33930ab2915cda27fc1d454edf",
+      "final.pt": "c980255b050f2ffd71de1ac0d5b2a535599226072e176115d86c5ca226caef43",
+      "metrics.json": "da4fa820b1f4da9bd0e81f33cd88d315bdc1da38d81fc37ebc0e5789908aa1cb"
+    }
+  }
+}

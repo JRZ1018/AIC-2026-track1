@@ -1,0 +1,56 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_diagnostic_actual_CPU_entry.json",
+  "original_sha256": "1ad7f697b31949c09868c15fd3e3e72c29c9ea5b30d090dd344d250e4e29ea34",
+  "omitted_fields": [
+    "/entries/command",
+    "/entries/stdout"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.diagnostic.actual_CPU_entry.v1",
+    "complete": true,
+    "source_manifest_sha256": "554d7c8f839d4ab6fee1ce427c5e2b9b73435d4766ac5347794ceecace53fbc2",
+    "verified_source_members": 32,
+    "entries": [
+      {
+        "entry": "run_fresh_route_diagnostic.py",
+        "return_code": 0
+      },
+      {
+        "entry": "compare_fresh_route.py",
+        "return_code": 0
+      },
+      {
+        "entry": "confirm_fixed_graph_vs_C.py",
+        "return_code": 0
+      },
+      {
+        "entry": "write_fresh_route_confirmation.py",
+        "return_code": 0
+      }
+    ],
+    "actual_path_resolution": [
+      {
+        "literal": "/root/autodl-tmp",
+        "resolved": "/root/autodl-tmp",
+        "exists": true
+      },
+      {
+        "literal": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "resolved": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "exists": false
+      },
+      {
+        "literal": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009",
+        "resolved": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009",
+        "exists": false
+      }
+    ],
+    "actual_bound_training_source_pending": true,
+    "actual_bound_dependency_check_performed": false,
+    "actual_model_restore_performed": false,
+    "gpu_started": false,
+    "test_access": false,
+    "collected_epoch": 1791503962.306954
+  }
+}

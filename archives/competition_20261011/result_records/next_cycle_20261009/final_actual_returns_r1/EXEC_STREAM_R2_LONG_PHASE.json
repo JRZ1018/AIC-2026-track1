@@ -1,0 +1,29 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R2_LONG_PHASE.json",
+  "original_sha256": "14318a642b54b9f5ed10e7e325167402ad5ed1f748ac537af8afd04e9a24a671",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.return.execstream.long_budget.v1",
+    "start_unix": 1791562323.372912,
+    "deadline_unix": 1791591123.372912,
+    "hard_seconds": 28800,
+    "source_sha256": "b2074df5dfa004d89ab9f8959aced78d1da94534c390230a60b488cee2229d9f",
+    "manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+    "original_300s_phase_sha256": "23f5d515776834fe3311bb13b02289fd4d473677313f594497960b544e7e45ac",
+    "original_probe_receipt_sha256": "52bb136558aa8070bfd6d97a1f3926079d5e3945fbaf2485d41ebcc6673c4f3c",
+    "local_reuse_receipt_sha256": "b542b8ab84cdec6f19eba61192e059dbf15d65bdfab9659d57f32be9523ae714",
+    "new_authorization": "Root relays user next seven hours autonomous authority; explicit independent 8-10h recoverable network budget; original 300s phase unchanged",
+    "GPU_budget_shared": false,
+    "GPU": false,
+    "original_part_bytes": 918519808,
+    "local_SHA_verified_files": 219,
+    "remaining_network_bytes": 298071247,
+    "baseline_reset": false,
+    "read_timeout_seconds": 45,
+    "keepalive_seconds": 15,
+    "chunksize": 32768,
+    "test_images_read": 0,
+    "can_resume_same_deadline_with_new_attempt_id": true
+  }
+}

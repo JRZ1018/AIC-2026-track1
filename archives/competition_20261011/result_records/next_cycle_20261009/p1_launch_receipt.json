@@ -1,0 +1,26 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/p1_launch_receipt.json",
+  "original_sha256": "2ac8fa66ea9974d7624b8a524e16b71ed0ff500c80110f59bfee3aa14185b13a",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "kind": "P1_J5_then_J20",
+    "pid": 218941,
+    "start_ticks": "305326864",
+    "source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+    "initial_free_bytes": 14418411520,
+    "launched_epoch": 1791479615.9837523,
+    "deadline_unix": 1791522815.9827363,
+    "cwd": "/root/AICtrack1_next_cycle_20261009",
+    "epochs_per_arm": 20,
+    "effective_batch_size": 64,
+    "minimum_disk_free_bytes": 3221225472,
+    "head_learning_rates": [
+      5e-06,
+      2e-05
+    ],
+    "visual_learning_rate": 1.75e-06
+  }
+}

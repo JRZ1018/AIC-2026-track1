@@ -1,0 +1,126 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_J5_pause19_and_append_budget_bind.json",
+  "original_sha256": "5c6a4fd3ad3196af7e5eeb454991cadd5a393ea681d6a36d71e062735cc18a3f",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_pause_and_append_budget_binding.v1",
+    "actual_observed_unix": 1791525764.671683,
+    "planned_pause_only": true,
+    "actual_partial_epoch": 19,
+    "checkpoint_contents_loaded": false,
+    "CPU_model_restore_passed": false,
+    "prior_whole_groups_closed": true,
+    "canonical_idle": true,
+    "screen_receipt": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/p1_screen_receipt.json",
+      "sha256": "1e7852c5362d92325f0739472448d582d5f42d22d9fb923cf4bb96ffba100ed5"
+    },
+    "checkpoints": {
+      "C": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_C/last.pt",
+        "sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca",
+        "epoch": 20
+      },
+      "J5": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt",
+        "sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+        "epoch": 19
+      }
+    },
+    "budget": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+      "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+    },
+    "budget_contents": {
+      "schema": "aictrack1.fresh_route.continuation.training_budget.v1",
+      "status": "root_authorized_append_only_budget",
+      "root_authorized": true,
+      "training_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+      "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+      "selected_route": "J5_GRAPH",
+      "selected_arm": "J5",
+      "test_access": false,
+      "new_fresh_training": false,
+      "scope": [
+        "exact_J5_resume_if_needed",
+        "fixed_last20_C_J5_4V_diagnostic",
+        "fixed_J5_graph_validation"
+      ],
+      "original_phase_start_unix": 1791497972.440027,
+      "original_deadline_unix": 1791526772.440027,
+      "phase_start_unix": 1791526772.440027,
+      "deadline_unix": 1791533972.440027,
+      "initial_free_bytes": 13013950464,
+      "disk_max_bytes": 8589934592,
+      "min_free_bytes": 3221225472,
+      "original_budget": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/queues/fresh_route_budget.json",
+        "sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941"
+      },
+      "training_source": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/source_manifest.json",
+        "sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482"
+      },
+      "configs": {
+        "C": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_C.yaml",
+          "sha256": "4cf0d7d79d81a256848f09347e2a18e400f5bb7c053a1240542850c54df93cd6"
+        },
+        "J5": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_J5.yaml",
+          "sha256": "a65f60e974c04842e2c86975ab3675aad8469bc1b0c0a27a98e8fa145b4b8562"
+        }
+      },
+      "checkpoints": {
+        "C": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_C/last.pt",
+          "sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca",
+          "epoch": 20
+        },
+        "J5": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt",
+          "sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+          "epoch": 19
+        }
+      },
+      "watched": [
+        {
+          "role": "C_controller",
+          "pid": 236091,
+          "pgrp": 236091,
+          "session": 236091,
+          "start_ticks": "308497119"
+        },
+        {
+          "role": "C_trainer",
+          "pid": 236098,
+          "pgrp": 236098,
+          "session": 236098,
+          "start_ticks": "308497585"
+        },
+        {
+          "role": "J5_controller",
+          "pid": 239865,
+          "pgrp": 239865,
+          "session": 239865,
+          "start_ticks": "309227901"
+        },
+        {
+          "role": "J5_trainer",
+          "pid": 239872,
+          "pgrp": 239872,
+          "session": 239872,
+          "start_ticks": "309228342"
+        }
+      ],
+      "created_at_unix": 1791525764.670445,
+      "rationale": "Actual stable J5 plannedpause19; remaining original window has insufficient conservative15min reserve for final resume plus both diagnostics. One append-only shared TRAIN and frozenVALIDATION window; old bytes and cumulative baseline unchanged."
+    },
+    "operator_source_manifest_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+    "original_source_and_budget_modified": false,
+    "test_access": false,
+    "GPU_started": false,
+    "disk_free_bytes": 7437381632
+  }
+}

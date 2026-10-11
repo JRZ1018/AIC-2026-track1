@@ -1,0 +1,149 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/provenance/second/root_review.json",
+  "original_sha256": "4eedb0408c9d924ee407eb0554fedaeff1d7f1c2c170e89ca97bd6da63f85b17",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.L50.actual_second_reused_query_root_review.v1",
+    "complete": true,
+    "root_authorized": true,
+    "decision": "allow_single_L50_full_training",
+    "selected_arm": "L50",
+    "paired_report_sha256": "ca57fc1424ffe3595a308af6399cea377e51d96f9d47c7094a44bbf4b164a472",
+    "numpy_review_sha256": "b8f3502474aee9f2d6d55bf89418ffd1f045ac8480a2dd8a144dd927392e92b2",
+    "primary_scope": "candidate_fixed_graph_P7_vs_actual_L35_GRAPH_P7",
+    "primary_delta_pp": 0.1964769647696477,
+    "natural_delta_pp": 0.25221105020681306,
+    "independent_confirmation": false,
+    "both_queries_previously_disclosed": true,
+    "risks": [
+      {
+        "protocol_family": "graph_combo_vs_L35_GRAPH",
+        "name": "natural_unique_images",
+        "count": 29737,
+        "wins": 590,
+        "losses": 515,
+        "net": 75,
+        "perclass_all_PASS": true,
+        "HMT_net": {
+          "head": 46,
+          "mid": 41,
+          "tail": -12
+        },
+        "new_zero_recall": [],
+        "worst_declines": [
+          {
+            "class_index": 141,
+            "stratum": "tail",
+            "support": 38,
+            "candidate_correct": 8,
+            "control_correct": 15,
+            "net": -7
+          },
+          {
+            "class_index": 533,
+            "stratum": "tail",
+            "support": 36,
+            "candidate_correct": 23,
+            "control_correct": 29,
+            "net": -6
+          },
+          {
+            "class_index": 438,
+            "stratum": "mid",
+            "support": 46,
+            "candidate_correct": 29,
+            "control_correct": 33,
+            "net": -4
+          },
+          {
+            "class_index": 23,
+            "stratum": "tail",
+            "support": 39,
+            "candidate_correct": 11,
+            "control_correct": 14,
+            "net": -3
+          },
+          {
+            "class_index": 30,
+            "stratum": "tail",
+            "support": 36,
+            "candidate_correct": 20,
+            "control_correct": 23,
+            "net": -3
+          }
+        ],
+        "ci95": [
+          0.040357725820972475,
+          0.5017527557733562
+        ]
+      },
+      {
+        "protocol_family": "graph_combo_vs_L35_GRAPH",
+        "name": "balanced_supported_unique",
+        "count": 14760,
+        "wins": 292,
+        "losses": 263,
+        "net": 29,
+        "perclass_all_PASS": true,
+        "HMT_net": {
+          "head": 21,
+          "mid": 10,
+          "tail": -2
+        },
+        "new_zero_recall": [],
+        "worst_declines": [
+          {
+            "class_index": 533,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 11,
+            "control_correct": 15,
+            "net": -4
+          },
+          {
+            "class_index": 97,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 13,
+            "control_correct": 16,
+            "net": -3
+          },
+          {
+            "class_index": 280,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 16,
+            "control_correct": 19,
+            "net": -3
+          },
+          {
+            "class_index": 139,
+            "stratum": "mid",
+            "support": 20,
+            "candidate_correct": 17,
+            "control_correct": 19,
+            "net": -2
+          },
+          {
+            "class_index": 141,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 3,
+            "control_correct": 5,
+            "net": -2
+          }
+        ],
+        "ci95": [
+          -0.16615853658536583,
+          0.481029810298103
+        ]
+      }
+    ],
+    "risk_judgment": "Two complete matched-L35 combos positive; modest single-seed/reused-query evidence, balanced CI crosses zero and tail slight negative. Allow one finite fresh FULL and frozen test; no stable71 or guaranteed leaderboard gain claim. No natural/CI/tail extra hard gate.",
+    "test_access": false,
+    "used_test_or_online_scores": false,
+    "engineering_entry_assignment_adapter_original_frozen_bytes_preserved": true,
+    "time": 1791694690.7500432
+  }
+}

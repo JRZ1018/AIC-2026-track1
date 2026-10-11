@@ -1,0 +1,27 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_append_bound19_CPU_r1.json",
+  "original_sha256": "a208e509e733e09bb3af1580ef10f0844961bfe9659dadf54bedbbb44f7c0ac0",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "stable_last_sha256": "6846c0a412d2d88d7e3c7ed9607f8f1899fd956fa2d999f879b3251765467537",
+    "epoch": 19,
+    "CPU_payload_audit": {
+      "CG25": {
+        "status": "partial",
+        "epoch": 19,
+        "last_sha256": "6846c0a412d2d88d7e3c7ed9607f8f1899fd956fa2d999f879b3251765467537",
+        "payload_CPU_audit": true,
+        "full_CLIP_CPU_forward_recovery": false
+      }
+    },
+    "all_old_groups_closed": true,
+    "canonical_idle": true,
+    "append_budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_CG_append_continuation_r2_20261010/actual_append_budget_r1.json",
+    "append_budget_sha256": "5425b5852aa5e61c6b845b5ea43a69f2cdc47cf3d2581213d2bbc30346dd9f97",
+    "operator_source_sha256": "e33a805cf254f6261e12415ad379c606487ad9bda2a7df685c06e3abb840da15",
+    "test_access": false,
+    "GPU": false
+  }
+}

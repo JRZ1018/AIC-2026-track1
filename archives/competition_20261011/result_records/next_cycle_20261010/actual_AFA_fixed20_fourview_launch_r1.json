@@ -1,0 +1,50 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_AFA_fixed20_fourview_launch_r1.json",
+  "original_sha256": "aa83e46e1769b0ccdc37fb8cdc88f9e2f21d3ec63be616dfe61f7badf6301631",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "launch_unix": 1791620239.8753424,
+    "controller": {
+      "pid": 11487,
+      "state": "R",
+      "ppid": 11421,
+      "pgrp": 11487,
+      "session": 11487,
+      "start_ticks": "925004297"
+    },
+    "actual_terminal_shas": {
+      "last.pt": "8a737e8acfac11a4f7ca61ed963b04c35e22b15a46068b42a837353f6efb7284",
+      "final.pt": "791ab9c50a7cda8df2ebfa311b4546698022953140673c1fe484c439c2468b15",
+      "metrics.json": "ca0772c5332f43f836ee1eaec74f1f80921fd76bdf8343a2e3f2f1c4c3b5a103"
+    },
+    "history_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "training_all_groups_closed": true,
+    "canonical_idle": true,
+    "checkpoint_recovery_by_original_diagnostic_pending": true,
+    "test_access": false
+  }
+}

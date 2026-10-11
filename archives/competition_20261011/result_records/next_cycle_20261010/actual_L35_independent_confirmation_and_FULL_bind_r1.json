@@ -1,0 +1,88 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_independent_confirmation_and_FULL_bind_r1.json",
+  "original_sha256": "cf95b064b1566882f2450432cce5bf93a36a9dfc70f0af25a797483161f1343f",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "confirmation": {
+      "balanced_count": 14760,
+      "candidate_last_sha256": "91defbfa29b49b3c502c457a8a4c37b151a08ffdcf395de8b1793490f8162b56",
+      "checkpoint_epoch": 20,
+      "checkpoint_role": "last",
+      "control_last_sha256": "0be38e1247ebfeae7019b7cd77720625ae58682134b099961f1f38cc0f15efae",
+      "diagnostic_source_manifest_sha256": "af65db78d5151a286743ed430b2948fbd1625086ba2f0bdeadba77f528c7fe38",
+      "evidence": {
+        "candidate_audit": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_confirmation_diagnostic_r2_20261010/artifacts/diagnostics/CONFIRM_L35/p1_checkpoint_audit.json",
+          "sha256": "068dd5b71436c23c1d0c737334bdfbb6282190cd86252949c8eeb50b32ed78e9"
+        },
+        "control_audit": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_confirmation_diagnostic_r2_20261010/artifacts/diagnostics/CONFIRM_J5/p1_checkpoint_audit.json",
+          "sha256": "bb25bb14e8dae8869df447fc264aa2263f75b11d5758169c08c17352b03ccc1a"
+        },
+        "paired_report": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_confirmation_diagnostic_r2_20261010/artifacts/comparisons/L35/report.json",
+          "sha256": "76de092b4faee05e80b97cc556dd0ad29e03faaf49895f7c71e3950f76e8e88f"
+        },
+        "root_review": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_confirmation_diagnostic_r2_20261010/root_actual_positive_review_r1.json",
+          "sha256": "ac34748df3641d5d2f80350ecbebc2ff2e262b3a65048f8c98fd20b4042c919a"
+        },
+        "training_source": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/source_manifest.json",
+          "sha256": "8c36fc02ecb58cd0290d13e38c43deeccef44e510cdf46f7c126bfc5fe68faf4"
+        }
+      },
+      "final_model": "single",
+      "natural_count": 29737,
+      "natural_delta_pp": 0.9819416888051922,
+      "new_H1_checkpoint_sha256": "4073c5b58f5993373f1678f714342d829fdb6c2d092cf60cf1ebfa7aa0083980",
+      "new_H1_source_sha256": "4c5f1cb814765d5e2307012dce8be07b7b9321380a90029327d1c453b8676fdd",
+      "primary_delta_pp": 1.029810298102981,
+      "primary_scope": "candidate_fixed_graph_P7_vs_fresh_J5_GRAPH_P7",
+      "query_definition_source_sha256": "51a79ffbaf94fbb333cdab49123e55ccc3fb5cf2fe78cfdb6b5ea86da8810e50",
+      "query_identity_sha256": "da90d50fca08e619ab577311059fad778d09960e23ddd8bcdb1b6ec6d4569663",
+      "root_risk_reviewed": true,
+      "schema": "aictrack1.next_cycle10.L35_confirmation.v1",
+      "selected_arm": "L35",
+      "selected_route": "L35_GRAPH",
+      "selection_rule": "fixed_final20",
+      "split_sha256": "610111665e1055bcda7157add15b16ade353138365e54ee87dc92316e6dfd6f1",
+      "status": "complete_positive_independent_L35_confirmation",
+      "test_access": false,
+      "train_count": 118958,
+      "training_seed": 20261010,
+      "training_source_manifest_sha256": "8c36fc02ecb58cd0290d13e38c43deeccef44e510cdf46f7c126bfc5fe68faf4",
+      "used_test_or_online_scores": false,
+      "visual_learning_rate": 3.5e-06
+    },
+    "confirmation_sha256": "15fd22f3c36b65dc90250692538ca0e2c3fe8a581f36be660fad05e72a061546",
+    "budget": {
+      "schema": "aictrack1.next_cycle10.L35_full.budget.v1",
+      "root_authorized": true,
+      "phase_start_unix": 1791651656.0802255,
+      "deadline_unix": 1791667856.0802255,
+      "initial_free_bytes": 13013950464,
+      "capacity_increase_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "actual_data_total_bytes": 128849018880,
+      "disk_max_bytes": 38654705664,
+      "min_free_bytes": 3221225472,
+      "atomic_reserve_bytes": 2147483648,
+      "disk_expansion_recovery": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+        "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+      },
+      "competition_deadline_unix": 1791712738,
+      "final_gpu_reserve_hours": 4,
+      "final_wall_reserve_hours": 8,
+      "purpose": "Actual independently positive sole L35; fresh official full148695 continuous20 fixedlast then frozen test; original ledger retained",
+      "actual_data_free_bytes": 12577538048
+    },
+    "budget_sha256": "90ad899b9110e96eb015b79bcdddf505560184215a67b540abfd0cd2aa07832e",
+    "bound_summary": "{\"status\": \"bound_single_full_recipe_not_launched\", \"root\": \"/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010\", \"selected_route\": \"L35_GRAPH\", \"source_manifest_sha256\": \"38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353\"}\n",
+    "bound_source_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+    "test_access": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_confirmation_diagnostic_CPU_dependency_r1.json",
+  "original_sha256": "1f39dede5eab90cba42ad916c49a55b4f8af32824d52385c1860de954a83ea91",
+  "omitted_fields": [
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "CPU_method_tests": [
+      "J5_valid",
+      "L35_valid",
+      "wrongLR_rejected",
+      "wrongHead_rejected",
+      "EMArecipe_rejected",
+      "EMAstate_rejected",
+      "PFstate_rejected",
+      "missingAMP_rejected",
+      "wrongSteps_rejected"
+    ],
+    "returncode": 0,
+    "checkpoint_read": false,
+    "GPU_started": false
+  }
+}

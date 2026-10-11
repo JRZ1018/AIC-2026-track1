@@ -1,0 +1,7 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_new_weste_readonly_bootstrap_r1.json",
+  "original_sha256": "de5bdf8dfdab3598a9a838de33607b2d41b2249e53059b9e6e8f583b50129f28",
+  "omitted_fields": [],
+  "record": "{\"observed_unix\": 1791603733.219966, \"boot_id\": \"8859ea30-45a8-475c-994a-7c6c61aa467e\", \"paths\": {\"/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/source_manifest.json\": {\"exists\": true, \"bytes\": 12180}, \"/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/inputs/budget.json\": {\"exists\": true, \"bytes\": 1547}, \"/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/experiments/JOINT_CG25/last.pt\": {\"exists\": true, \"bytes\": 1417252199}, \"/root/autodl-tmp/venvs/aictrack1/bin/python\": {\"exists\": true, \"bytes\": 30627224}, \"/root/autodl-tmp/AICtrack1/DataSetStage2/train\": {\"exists\": true, \"bytes\": null}, \"/root/autodl-tmp/AICtrack1/DataSetStage2/test\": {\"exists\": true, \"bytes\": null}, \"/root/AICtrack1_fullvisual_confirm_diagnostic_v6_20261008\": {\"exists\": true, \"bytes\": null}}, \"GPU\": \"NVIDIA GeForce RTX 4080 SUPER, 32760 MiB, 1 MiB, 0 %\", \"disk\": {\"/root\": {\"total\": 32212254720, \"free\": 10593738752}, \"/root/autodl-tmp\": {\"total\": 128849018880, \"free\": 22338830336}}, \"old_pid_exists\": {\"38683\": false, \"38688\": false}, \"clone_completion_not_claimed\": true, \"model_read\": false, \"images_read\": false, \"GPU_started\": false}\n"
+}

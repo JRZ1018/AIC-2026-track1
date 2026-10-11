@@ -1,0 +1,16 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_stage_CPU_r1.json",
+  "original_sha256": "5d04f4335c99e2c8ab0a6372b8a3805d13997c6ffaab95c76a617b707559fadc",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "preflight_returncode": 0,
+    "preflight_stdout": "",
+    "source_sha256": "2ac1f6c7cdecad8a09a0c1fd1d0a6e264814ab93888926d9b40a105cb0c29080",
+    "actual_members": 88,
+    "uploaded_bytes": 29228,
+    "reused_files": 82,
+    "GPU_started": false
+  }
+}

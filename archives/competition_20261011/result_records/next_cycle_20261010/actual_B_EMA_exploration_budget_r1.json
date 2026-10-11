@@ -1,0 +1,42 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B_EMA_exploration_budget_r1.json",
+  "original_sha256": "c905d9f877527f1878a3e9bb1f25c4585553234586cc9bc3a540be6834b0e60a",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.B_EMA.exploration.budget.v1",
+    "root_authorized": true,
+    "phase_start_unix": 1791597751.961033,
+    "deadline_unix": 1791599551.961033,
+    "original_initial_free_bytes": 13013950464,
+    "capacity_added_bytes": 32212254720,
+    "adjusted_initial_free_bytes": 45226205184,
+    "actual_disk_total_bytes": 128849018880,
+    "disk_max_bytes": 32212254720,
+    "min_free_bytes": 3221225472,
+    "atomic_reserve_bytes": 2147483648,
+    "final_gpu_reserve_hours": 4,
+    "test_access": false,
+    "capacity_evidence": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "source_sha256": "ccb80c64efcaad9a85951363cdcb9dfeb16bca5d47dd735e6fa5c04d8c50f34b",
+    "preregistration_sha256": "30f6c9f7644fb2d29ccca5e18e9cf459e45382ae938e689807437139b47932c6",
+    "stage_receipt_sha256": "b1d3bc0459a94820dc9b5e0476b21373b53323e9941d3268b8fc40e4ef7254bc",
+    "independent_CPU_evidence": [
+      "c35bc6",
+      "64c53f",
+      "3b03c8"
+    ],
+    "human_latest_message": "仅剩32小时，加速推进至下一提交包；全部既有服务器和训练测试权限持续有效",
+    "human_latest_deadline_anchor_unix": 1791597538.0,
+    "human_remaining_wall_seconds": 115200,
+    "old_training_clock_or_ledger_modified": false,
+    "model_roles": [
+      "B25_EMA",
+      "B50_EMA"
+    ],
+    "no_student_teacher_blend": true
+  }
+}

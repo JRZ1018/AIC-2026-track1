@@ -1,0 +1,962 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_old_diagnostic_r2_status.json",
+  "original_sha256": "6b2b38d863474744a9889a7e76ec8d4a0e0f340a730ded936ccc7069ab761b30",
+  "omitted_fields": [
+    "/identities/J20/expected/argv",
+    "/identities/J5/expected/argv",
+    "/identities/controller/expected/argv",
+    "/records/J20_exit.json/command",
+    "/records/J20_exit.json/process/argv",
+    "/records/J20_launch.json/command",
+    "/records/J20_launch.json/process/argv",
+    "/records/J20_plan.json/command",
+    "/records/J20_ready.json/process/argv",
+    "/records/J5_accepted.json/command",
+    "/records/J5_accepted.json/process/argv",
+    "/records/J5_exit.json/command",
+    "/records/J5_exit.json/process/argv",
+    "/records/J5_launch.json/command",
+    "/records/J5_launch.json/process/argv",
+    "/records/J5_plan.json/command",
+    "/records/J5_ready.json/process/argv",
+    "/records/controller_identity.json/command",
+    "/records/controller_identity.json/original_controller/argv",
+    "/records/controller_identity.json/process/argv",
+    "/records/failure.json/accepted_results/command",
+    "/records/failure.json/accepted_results/process/argv",
+    "/records/launch_receipt.json/admission/idle/original_controller/argv",
+    "/records/launch_receipt.json/command"
+  ],
+  "record": {
+    "schema": "aictrack1.old_diagnostic_resume.readonly_status.v1",
+    "observed_epoch": 1791497377.4010055,
+    "records": {
+      "launch_receipt.json": {
+        "schema": "aictrack1.old_diagnostic_resume.launch.v1",
+        "token": "6dc8c66bc0e343b7bd5175f3e858e11a",
+        "operator": {
+          "path": "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/old_diagnostic_resume_manifest.json",
+          "sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+          "script_sha256": "d9b3cac354958328ae474a4d10410b9e5579c5f2427534cb491417fefea1f06e",
+          "verified_files": 4
+        },
+        "admission": {
+          "schema": "aictrack1.old_diagnostic_resume.admission.v1",
+          "operator": {
+            "path": "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/old_diagnostic_resume_manifest.json",
+            "sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+            "script_sha256": "d9b3cac354958328ae474a4d10410b9e5579c5f2427534cb491417fefea1f06e",
+            "verified_files": 4
+          },
+          "training_source": {
+            "path": "/root/AICtrack1_next_cycle_20261009/source_manifest.json",
+            "sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+            "verified_files": 83
+          },
+          "diagnostic_source": {
+            "path": "/root/AICtrack1_next_cycle_diagnostic_20261009/source_manifest.json",
+            "sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+            "verified_files": 29
+          },
+          "original_chain_receipt": {
+            "path": "/root/AICtrack1_next_cycle_20261009/artifacts/queues/p1_chain_result.json",
+            "sha256": "34c54757123ce53c974cebeb4f54f916531efbd16eeea0b4a26b7bf0c176e076"
+          },
+          "idle": {
+            "original_controller": {
+              "pid": 218941,
+              "start_ticks": "305326864",
+              "cwd": "/root/AICtrack1_next_cycle_20261009"
+            },
+            "original_controller_pid_absent": true,
+            "busy_project_process_count": 0,
+            "canonical_lock_absent": true,
+            "observed_process_count": 12,
+            "probe_epoch": 1791496802.2348795
+          },
+          "candidates": {
+            "J5": {
+              "arm": "J5",
+              "checkpoint_role": "last",
+              "checkpoint_epoch": 20,
+              "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+              "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/last.pt",
+              "config_sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a",
+              "history_epochs": 20,
+              "early_stop": null,
+              "train_count": 118958,
+              "validation_count": 29737,
+              "trainable_numel": 88233966,
+              "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/metrics.json",
+              "metrics_sha256": "f75079d73c52b7f19958586dea1cc775dd0b866e775e634a2ea698b83ac05636",
+              "checkpoint_stat": {
+                "bytes": 1418755687,
+                "mtime_ns": 1791487758295627162,
+                "inode": 95560680,
+                "device": 59,
+                "admission_action": "stat_only; runner hashes and restores CPU154"
+              }
+            },
+            "J20": {
+              "arm": "J20",
+              "checkpoint_role": "last",
+              "checkpoint_epoch": 20,
+              "checkpoint_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+              "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/last.pt",
+              "config_sha256": "567d12e6a36daf01d5c20ec26bec238fd2aa735b11d6dfdb452fb92d4b33e1db",
+              "history_epochs": 20,
+              "early_stop": null,
+              "train_count": 118958,
+              "validation_count": 29737,
+              "trainable_numel": 88233966,
+              "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/metrics.json",
+              "metrics_sha256": "9b917ddd5bc93c02fb2070a39b17ff36f85a2a57e0d3c3eb5bb276e77903a2c1",
+              "checkpoint_stat": {
+                "bytes": 1418755751,
+                "mtime_ns": 1791495850086827740,
+                "inode": 8607091682,
+                "device": 59,
+                "admission_action": "stat_only; runner hashes and restores CPU154"
+              }
+            }
+          },
+          "disk": {
+            "original_initial_free_bytes": 14418411520,
+            "observed_free_bytes": 10832351232,
+            "cumulative_used_bytes": 3586060288,
+            "reserve_bytes": 536870912,
+            "minimum_free_bytes": 3221225472,
+            "cumulative_max_bytes": 21474836480,
+            "baseline_reset": false
+          },
+          "memory": {
+            "platform": "linux",
+            "total_bytes": 540662706176,
+            "host_available_bytes": 459275202560,
+            "effective_available_bytes": 28452556800,
+            "cgroup": {
+              "limit_bytes": 66571993088,
+              "used_bytes": 38119436288,
+              "available_bytes": 28452556800,
+              "source": "/sys/fs/cgroup/memory/memory.limit_in_bytes"
+            },
+            "gpu_probed": false
+          },
+          "test_access": false,
+          "checkpoint_loaded": false,
+          "checkpoint_hashed": false
+        },
+        "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+        "deadline_unix": 1791501451.920797,
+        "original_phase_start_unix": 1791496051.920797,
+        "child_hard_seconds": 1800,
+        "phase_max_seconds": 5400,
+        "launched_epoch": 1791496802.463986,
+        "original_initial_free_bytes": 14418411520,
+        "diagnostic_lease": "existing engine TrainingLease; no outer duplicate GPU lease",
+        "test_access": false,
+        "new_training": false,
+        "selection": false
+      },
+      "controller_identity.json": {
+        "process": {
+          "pid": 228494,
+          "start_ticks": "307045513",
+          "ppid": 228493,
+          "pgrp": 228494,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+        },
+        "source_sha256": "d9b3cac354958328ae474a4d10410b9e5579c5f2427534cb491417fefea1f06e",
+        "deadline_unix": 1791501451.920797,
+        "original_initial_free_bytes": 14418411520,
+        "original_controller": {
+          "pid": 218941,
+          "start_ticks": "305326864",
+          "cwd": "/root/AICtrack1_next_cycle_20261009"
+        }
+      },
+      "failure.json": {
+        "schema": "aictrack1.old_diagnostic_resume.failure.v1",
+        "complete": false,
+        "accepted_results": [
+          {
+            "arm": "J5",
+            "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+            "start_epoch": 1791496802.8641977,
+            "deadline_unix": 1791501451.920797,
+            "hard_seconds": 1800,
+            "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+            "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+            "original_initial_free_bytes": 14418411520,
+            "log_path": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2/J5.log",
+            "launcher_command": [
+              "/root/autodl-tmp/venvs/aictrack1/bin/python",
+              "-u",
+              "-B",
+              "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+              "--gated-child",
+              "--arm",
+              "J5",
+              "--expected-operator-manifest-sha256",
+              "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+              "--launch-token",
+              "6dc8c66bc0e343b7bd5175f3e858e11a"
+            ],
+            "candidate": {
+              "arm": "J5",
+              "checkpoint_role": "last",
+              "checkpoint_epoch": 20,
+              "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+              "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/last.pt",
+              "config_sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a",
+              "history_epochs": 20,
+              "early_stop": null,
+              "train_count": 118958,
+              "validation_count": 29737,
+              "trainable_numel": 88233966,
+              "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/metrics.json",
+              "metrics_sha256": "f75079d73c52b7f19958586dea1cc775dd0b866e775e634a2ea698b83ac05636",
+              "checkpoint_stat": {
+                "bytes": 1418755687,
+                "mtime_ns": 1791487758295627162,
+                "inode": 95560680,
+                "device": 59,
+                "admission_action": "stat_only; runner hashes and restores CPU154"
+              }
+            },
+            "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+            "token": "6dc8c66bc0e343b7bd5175f3e858e11a",
+            "process": {
+              "pid": 228495,
+              "start_ticks": "307045553",
+              "ppid": 228494,
+              "pgrp": 228495,
+              "state": "S",
+              "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+            },
+            "return_code": 0,
+            "end_epoch": 1791497058.9982996,
+            "result": {
+              "result_manifest_sha256": "4be4d2df0b3073065d117725cc59ab825a54a7ec1c00684295ce4c47e168d0e2",
+              "input_identity_sha256": "b500ae860f92b9b961c1b9a246733bb2436ef0981c11755e34fcd056ec983cf5",
+              "checkpoint_audit_sha256": "639e3b9d93efab51c35dc69f1dcc5dac093c6b7033df22a903419ce576b4c22e",
+              "feature_sha256": "2293bef2b06954320da6df6f277dff31711d5a30e1bfc9d5d5b25c78163c0b16",
+              "complete": true,
+              "test_access": false
+            }
+          }
+        ],
+        "error_type": "PermissionError",
+        "error": "[Errno 13] Permission denied: '/proc/228747/cwd'",
+        "end_epoch": 1791497317.5805688,
+        "test_access": false,
+        "automatic_retry": false,
+        "canonical_lock_cleanup": false
+      },
+      "J5_plan.json": {
+        "arm": "J5",
+        "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+        "start_epoch": 1791496802.8641977,
+        "deadline_unix": 1791501451.920797,
+        "hard_seconds": 1800,
+        "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "original_initial_free_bytes": 14418411520,
+        "log_path": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2/J5.log",
+        "launcher_command": [
+          "/root/autodl-tmp/venvs/aictrack1/bin/python",
+          "-u",
+          "-B",
+          "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+          "--gated-child",
+          "--arm",
+          "J5",
+          "--expected-operator-manifest-sha256",
+          "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+          "--launch-token",
+          "6dc8c66bc0e343b7bd5175f3e858e11a"
+        ],
+        "candidate": {
+          "arm": "J5",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/last.pt",
+          "config_sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/metrics.json",
+          "metrics_sha256": "f75079d73c52b7f19958586dea1cc775dd0b866e775e634a2ea698b83ac05636",
+          "checkpoint_stat": {
+            "bytes": 1418755687,
+            "mtime_ns": 1791487758295627162,
+            "inode": 95560680,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        },
+        "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "token": "6dc8c66bc0e343b7bd5175f3e858e11a"
+      },
+      "J5_ready.json": {
+        "process": {
+          "pid": 228495,
+          "start_ticks": "307045553",
+          "ppid": 228494,
+          "pgrp": 228495,
+          "state": "R",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+        },
+        "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "gpu_released": false
+      },
+      "J5_launch.json": {
+        "arm": "J5",
+        "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+        "start_epoch": 1791496802.8641977,
+        "deadline_unix": 1791501451.920797,
+        "hard_seconds": 1800,
+        "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "original_initial_free_bytes": 14418411520,
+        "log_path": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2/J5.log",
+        "launcher_command": [
+          "/root/autodl-tmp/venvs/aictrack1/bin/python",
+          "-u",
+          "-B",
+          "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+          "--gated-child",
+          "--arm",
+          "J5",
+          "--expected-operator-manifest-sha256",
+          "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+          "--launch-token",
+          "6dc8c66bc0e343b7bd5175f3e858e11a"
+        ],
+        "candidate": {
+          "arm": "J5",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/last.pt",
+          "config_sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/metrics.json",
+          "metrics_sha256": "f75079d73c52b7f19958586dea1cc775dd0b866e775e634a2ea698b83ac05636",
+          "checkpoint_stat": {
+            "bytes": 1418755687,
+            "mtime_ns": 1791487758295627162,
+            "inode": 95560680,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        },
+        "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "token": "6dc8c66bc0e343b7bd5175f3e858e11a",
+        "process": {
+          "pid": 228495,
+          "start_ticks": "307045553",
+          "ppid": 228494,
+          "pgrp": 228495,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+        }
+      },
+      "J5_exit.json": {
+        "arm": "J5",
+        "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+        "start_epoch": 1791496802.8641977,
+        "deadline_unix": 1791501451.920797,
+        "hard_seconds": 1800,
+        "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "original_initial_free_bytes": 14418411520,
+        "log_path": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2/J5.log",
+        "launcher_command": [
+          "/root/autodl-tmp/venvs/aictrack1/bin/python",
+          "-u",
+          "-B",
+          "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+          "--gated-child",
+          "--arm",
+          "J5",
+          "--expected-operator-manifest-sha256",
+          "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+          "--launch-token",
+          "6dc8c66bc0e343b7bd5175f3e858e11a"
+        ],
+        "candidate": {
+          "arm": "J5",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/last.pt",
+          "config_sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/metrics.json",
+          "metrics_sha256": "f75079d73c52b7f19958586dea1cc775dd0b866e775e634a2ea698b83ac05636",
+          "checkpoint_stat": {
+            "bytes": 1418755687,
+            "mtime_ns": 1791487758295627162,
+            "inode": 95560680,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        },
+        "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "token": "6dc8c66bc0e343b7bd5175f3e858e11a",
+        "process": {
+          "pid": 228495,
+          "start_ticks": "307045553",
+          "ppid": 228494,
+          "pgrp": 228495,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+        },
+        "return_code": 0,
+        "end_epoch": 1791497058.9982996
+      },
+      "J5_accepted.json": {
+        "arm": "J5",
+        "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+        "start_epoch": 1791496802.8641977,
+        "deadline_unix": 1791501451.920797,
+        "hard_seconds": 1800,
+        "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "original_initial_free_bytes": 14418411520,
+        "log_path": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2/J5.log",
+        "launcher_command": [
+          "/root/autodl-tmp/venvs/aictrack1/bin/python",
+          "-u",
+          "-B",
+          "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+          "--gated-child",
+          "--arm",
+          "J5",
+          "--expected-operator-manifest-sha256",
+          "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+          "--launch-token",
+          "6dc8c66bc0e343b7bd5175f3e858e11a"
+        ],
+        "candidate": {
+          "arm": "J5",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/last.pt",
+          "config_sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/metrics.json",
+          "metrics_sha256": "f75079d73c52b7f19958586dea1cc775dd0b866e775e634a2ea698b83ac05636",
+          "checkpoint_stat": {
+            "bytes": 1418755687,
+            "mtime_ns": 1791487758295627162,
+            "inode": 95560680,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        },
+        "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "token": "6dc8c66bc0e343b7bd5175f3e858e11a",
+        "process": {
+          "pid": 228495,
+          "start_ticks": "307045553",
+          "ppid": 228494,
+          "pgrp": 228495,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+        },
+        "return_code": 0,
+        "end_epoch": 1791497058.9982996,
+        "result": {
+          "result_manifest_sha256": "4be4d2df0b3073065d117725cc59ab825a54a7ec1c00684295ce4c47e168d0e2",
+          "input_identity_sha256": "b500ae860f92b9b961c1b9a246733bb2436ef0981c11755e34fcd056ec983cf5",
+          "checkpoint_audit_sha256": "639e3b9d93efab51c35dc69f1dcc5dac093c6b7033df22a903419ce576b4c22e",
+          "feature_sha256": "2293bef2b06954320da6df6f277dff31711d5a30e1bfc9d5d5b25c78163c0b16",
+          "complete": true,
+          "test_access": false
+        }
+      },
+      "J20_plan.json": {
+        "arm": "J20",
+        "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+        "start_epoch": 1791497059.4403787,
+        "deadline_unix": 1791501451.920797,
+        "hard_seconds": 1800,
+        "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "original_initial_free_bytes": 14418411520,
+        "log_path": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2/J20.log",
+        "launcher_command": [
+          "/root/autodl-tmp/venvs/aictrack1/bin/python",
+          "-u",
+          "-B",
+          "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+          "--gated-child",
+          "--arm",
+          "J20",
+          "--expected-operator-manifest-sha256",
+          "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+          "--launch-token",
+          "6dc8c66bc0e343b7bd5175f3e858e11a"
+        ],
+        "candidate": {
+          "arm": "J20",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/last.pt",
+          "config_sha256": "567d12e6a36daf01d5c20ec26bec238fd2aa735b11d6dfdb452fb92d4b33e1db",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/metrics.json",
+          "metrics_sha256": "9b917ddd5bc93c02fb2070a39b17ff36f85a2a57e0d3c3eb5bb276e77903a2c1",
+          "checkpoint_stat": {
+            "bytes": 1418755751,
+            "mtime_ns": 1791495850086827740,
+            "inode": 8607091682,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        },
+        "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "token": "6dc8c66bc0e343b7bd5175f3e858e11a"
+      },
+      "J20_ready.json": {
+        "process": {
+          "pid": 228640,
+          "start_ticks": "307071210",
+          "ppid": 228494,
+          "pgrp": 228640,
+          "state": "R",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+        },
+        "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "gpu_released": false
+      },
+      "J20_launch.json": {
+        "arm": "J20",
+        "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+        "start_epoch": 1791497059.4403787,
+        "deadline_unix": 1791501451.920797,
+        "hard_seconds": 1800,
+        "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "original_initial_free_bytes": 14418411520,
+        "log_path": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2/J20.log",
+        "launcher_command": [
+          "/root/autodl-tmp/venvs/aictrack1/bin/python",
+          "-u",
+          "-B",
+          "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+          "--gated-child",
+          "--arm",
+          "J20",
+          "--expected-operator-manifest-sha256",
+          "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+          "--launch-token",
+          "6dc8c66bc0e343b7bd5175f3e858e11a"
+        ],
+        "candidate": {
+          "arm": "J20",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/last.pt",
+          "config_sha256": "567d12e6a36daf01d5c20ec26bec238fd2aa735b11d6dfdb452fb92d4b33e1db",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/metrics.json",
+          "metrics_sha256": "9b917ddd5bc93c02fb2070a39b17ff36f85a2a57e0d3c3eb5bb276e77903a2c1",
+          "checkpoint_stat": {
+            "bytes": 1418755751,
+            "mtime_ns": 1791495850086827740,
+            "inode": 8607091682,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        },
+        "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "token": "6dc8c66bc0e343b7bd5175f3e858e11a",
+        "process": {
+          "pid": 228640,
+          "start_ticks": "307071210",
+          "ppid": 228494,
+          "pgrp": 228640,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+        }
+      },
+      "J20_exit.json": {
+        "arm": "J20",
+        "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+        "start_epoch": 1791497059.4403787,
+        "deadline_unix": 1791501451.920797,
+        "hard_seconds": 1800,
+        "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "original_initial_free_bytes": 14418411520,
+        "log_path": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2/J20.log",
+        "launcher_command": [
+          "/root/autodl-tmp/venvs/aictrack1/bin/python",
+          "-u",
+          "-B",
+          "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+          "--gated-child",
+          "--arm",
+          "J20",
+          "--expected-operator-manifest-sha256",
+          "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+          "--launch-token",
+          "6dc8c66bc0e343b7bd5175f3e858e11a"
+        ],
+        "candidate": {
+          "arm": "J20",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/last.pt",
+          "config_sha256": "567d12e6a36daf01d5c20ec26bec238fd2aa735b11d6dfdb452fb92d4b33e1db",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/metrics.json",
+          "metrics_sha256": "9b917ddd5bc93c02fb2070a39b17ff36f85a2a57e0d3c3eb5bb276e77903a2c1",
+          "checkpoint_stat": {
+            "bytes": 1418755751,
+            "mtime_ns": 1791495850086827740,
+            "inode": 8607091682,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        },
+        "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "token": "6dc8c66bc0e343b7bd5175f3e858e11a",
+        "process": {
+          "pid": 228640,
+          "start_ticks": "307071210",
+          "ppid": 228494,
+          "pgrp": 228640,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+        },
+        "return_code": 0,
+        "end_epoch": 1791497317.5756712
+      }
+    },
+    "identities": {
+      "controller": {
+        "expected": {
+          "pid": 228494,
+          "start_ticks": "307045513",
+          "ppid": 228493,
+          "pgrp": 228494,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+        },
+        "actual": null,
+        "exact_match": false
+      },
+      "J5": {
+        "expected": {
+          "pid": 228495,
+          "start_ticks": "307045553",
+          "ppid": 228494,
+          "pgrp": 228495,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+          "allowed_argv_after_gate": [
+            [
+              "/root/autodl-tmp/venvs/aictrack1/bin/python",
+              "-u",
+              "-B",
+              "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+              "--gated-child",
+              "--arm",
+              "J5",
+              "--expected-operator-manifest-sha256",
+              "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+              "--launch-token",
+              "6dc8c66bc0e343b7bd5175f3e858e11a"
+            ],
+            [
+              "/root/autodl-tmp/venvs/aictrack1/bin/python",
+              "-u",
+              "-B",
+              "/root/AICtrack1_next_cycle_diagnostic_20261009/run_p1_diagnostic.py",
+              "--training-root",
+              "/root/AICtrack1_next_cycle_20261009",
+              "--arm",
+              "J5",
+              "--expected-last-sha256",
+              "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+              "--deadline-unix",
+              "1791501451.920797",
+              "--hard-seconds",
+              "1800",
+              "--batch-size",
+              "64",
+              "--workers",
+              "4",
+              "--min-free-gib",
+              "3",
+              "--min-host-free-gib",
+              "4",
+              "--save-features",
+              "--run"
+            ]
+          ]
+        },
+        "actual": null,
+        "exact_match": false
+      },
+      "J20": {
+        "expected": {
+          "pid": 228640,
+          "start_ticks": "307071210",
+          "ppid": 228494,
+          "pgrp": 228640,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+          "allowed_argv_after_gate": [
+            [
+              "/root/autodl-tmp/venvs/aictrack1/bin/python",
+              "-u",
+              "-B",
+              "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+              "--gated-child",
+              "--arm",
+              "J20",
+              "--expected-operator-manifest-sha256",
+              "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+              "--launch-token",
+              "6dc8c66bc0e343b7bd5175f3e858e11a"
+            ],
+            [
+              "/root/autodl-tmp/venvs/aictrack1/bin/python",
+              "-u",
+              "-B",
+              "/root/AICtrack1_next_cycle_diagnostic_20261009/run_p1_diagnostic.py",
+              "--training-root",
+              "/root/AICtrack1_next_cycle_20261009",
+              "--arm",
+              "J20",
+              "--expected-last-sha256",
+              "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+              "--deadline-unix",
+              "1791501451.920797",
+              "--hard-seconds",
+              "1800",
+              "--batch-size",
+              "64",
+              "--workers",
+              "4",
+              "--min-free-gib",
+              "3",
+              "--min-host-free-gib",
+              "4",
+              "--save-features",
+              "--run"
+            ]
+          ]
+        },
+        "actual": null,
+        "exact_match": false
+      }
+    },
+    "checkpoint_audits": {
+      "J5": {
+        "checkpoint_role": "last",
+        "checkpoint_epoch": 20,
+        "fixed_last_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+        "train_count": 118958,
+        "validation_count": 29737,
+        "training_seed": 20261008,
+        "h1_initializer_sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753",
+        "test_access": false,
+        "history_epochs": 20,
+        "trainable_tensors": 154,
+        "trainable_numel": 88233966,
+        "visual_tensors": 152,
+        "head_tensors": 2,
+        "head_source": "complete jointly trained classifier state in fixed last.pt",
+        "optimizer_parameter_groups": [
+          152,
+          2
+        ],
+        "optimizer_moments_finite": true,
+        "scheduler_epoch": 20,
+        "ac_observation_epochs": 20,
+        "schema": "aictrack1.p1.fixed_last_diagnostic_audit.v1",
+        "p1_arm": "J5",
+        "classifier_head_source": "joint_fixed_last_state",
+        "classifier_parameters_restored_equal": true,
+        "model_frozen_eval": true,
+        "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "exact_ac_train_id_label_binding": true,
+        "train_validation_group_overlap": 0,
+        "model_initialization_official_clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+        "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/last.pt",
+        "config_path": "/root/AICtrack1_next_cycle_20261009/configs/experiment/p1_J5.yaml",
+        "inference_optimizer_steps": 0,
+        "historical_control_cache_reused": true
+      },
+      "J20": {
+        "checkpoint_role": "last",
+        "checkpoint_epoch": 20,
+        "fixed_last_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+        "train_count": 118958,
+        "validation_count": 29737,
+        "training_seed": 20261008,
+        "h1_initializer_sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753",
+        "test_access": false,
+        "history_epochs": 20,
+        "trainable_tensors": 154,
+        "trainable_numel": 88233966,
+        "visual_tensors": 152,
+        "head_tensors": 2,
+        "head_source": "complete jointly trained classifier state in fixed last.pt",
+        "optimizer_parameter_groups": [
+          152,
+          2
+        ],
+        "optimizer_moments_finite": true,
+        "scheduler_epoch": 20,
+        "ac_observation_epochs": 20,
+        "schema": "aictrack1.p1.fixed_last_diagnostic_audit.v1",
+        "p1_arm": "J20",
+        "classifier_head_source": "joint_fixed_last_state",
+        "classifier_parameters_restored_equal": true,
+        "model_frozen_eval": true,
+        "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "exact_ac_train_id_label_binding": true,
+        "train_validation_group_overlap": 0,
+        "model_initialization_official_clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+        "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/last.pt",
+        "config_path": "/root/AICtrack1_next_cycle_20261009/configs/experiment/p1_J20.yaml",
+        "inference_optimizer_steps": 0,
+        "historical_control_cache_reused": true
+      }
+    },
+    "result_manifests": {
+      "J5": {
+        "schema": "aictrack1.p1.diagnostic_result.v1",
+        "p1_arm": "J5",
+        "complete": true,
+        "test_access": false,
+        "files": {
+          "fused_features.pt": {
+            "bytes": 63342453,
+            "sha256": "2293bef2b06954320da6df6f277dff31711d5a30e1bfc9d5d5b25c78163c0b16"
+          },
+          "fused_logits.pt": {
+            "bytes": 47052393,
+            "sha256": "35764e25ad082dfb621ec3600b29dd53ebaf374c955bb47578ad4af351d96170"
+          },
+          "input_identity.json": {
+            "bytes": 2797,
+            "sha256": "b500ae860f92b9b961c1b9a246733bb2436ef0981c11755e34fcd056ec983cf5"
+          },
+          "p1_checkpoint_audit.json": {
+            "bytes": 1581,
+            "sha256": "639e3b9d93efab51c35dc69f1dcc5dac093c6b7033df22a903419ce576b4c22e"
+          },
+          "paired_predictions.csv": {
+            "bytes": 2391350,
+            "sha256": "49dbfc18d04b65752e6d84fd9468e77e85c26f0c81c0c661484f0fc305bfbd11"
+          },
+          "report.json": {
+            "bytes": 2682,
+            "sha256": "69dec91ca6d6dae0c869be0511c3926fcd96c1e1e5594ef98b17bbb3af6b6396"
+          },
+          "rows.csv": {
+            "bytes": 5604499,
+            "sha256": "7d48a89a73c70158deb0bd4bb1607666b677e5f0ef483035f5f9dc8600cec8f0"
+          }
+        }
+      },
+      "J20": {
+        "schema": "aictrack1.p1.diagnostic_result.v1",
+        "p1_arm": "J20",
+        "complete": true,
+        "test_access": false,
+        "files": {
+          "fused_features.pt": {
+            "bytes": 63342453,
+            "sha256": "9abafaedb3559dc1df4b37fd0514913df077e8dc3360b4c1797afc7c717ec72f"
+          },
+          "fused_logits.pt": {
+            "bytes": 47052393,
+            "sha256": "7fe479979f893a4cf1c49c27634d87b5037e18d72130a0fded5d3e3c71a86665"
+          },
+          "input_identity.json": {
+            "bytes": 2799,
+            "sha256": "187aea95b303e13fb95d624e15eadc3333183f36313e36d776ae70546cea936f"
+          },
+          "p1_checkpoint_audit.json": {
+            "bytes": 1584,
+            "sha256": "6292446808c3c480ba9b9c07e9cfe00ab3dfb3e61f257995c1ab3fb4e38b8bb2"
+          },
+          "paired_predictions.csv": {
+            "bytes": 2391340,
+            "sha256": "c983d3aa5809b7f282c30de8844e48e4b4d17550a1536ac71679c61e5f63b294"
+          },
+          "report.json": {
+            "bytes": 2682,
+            "sha256": "80add725345f38fd18bf2685f1f60ca94884e4293a8d73740f8f3a98b0018103"
+          },
+          "rows.csv": {
+            "bytes": 5604498,
+            "sha256": "ea534ede3a0376f2d4f0f1b44ad9af5462cfb1538a38750a76266e0d1062b92e"
+          }
+        }
+      }
+    },
+    "logs": {
+      "J5": {
+        "bytes": 4366,
+        "tail": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 2 bytes but only got 0. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read\n  warnings.warn(str(msg))\n{\n  \"scope\": \"Stage 2 train-derived fixed validation only; no test access\",\n  \"view_protocol\": \"native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint\",\n  \"visual_input_resolution\": 336,\n  \"smoke_only\": false,\n  \"full_validation_count\": 29737,\n  \"evaluated_count\": 29737,\n  \"experiment_config_sha256\": \"69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a\",\n  \"checkpoint_sha256\": \"989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17\",\n  \"split_sha256\": \"0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c\",\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"class_mapping_sha256\": \"811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879\",\n  \"elapsed_seconds\": 221.13723968714476,\n  \"center\": {\n    \"top1\": 0.7354474067687988,\n    \"macro_accuracy\": 0.7268278002738953,\n    \"zero_recall_classes\": 2,\n    \"tail_class_mean_recall\": 0.7072594165802002,\n    \"tail_sample_accuracy\": 0.7215388417243958\n  },\n  \"flip_tta\": {\n    \"top1\": 0.7394155263900757,\n    \"macro_accuracy\": 0.7305092811584473,\n    \"zero_recall_classes\": 3,\n    \"tail_class_mean_recall\": 0.7102771997451782,\n    \"tail_sample_accuracy\": 0.7249863147735596\n  },\n  \"delta_tta_minus_center\": {\n    \"top1\": 0.0039681196212768555,\n    \"macro_accuracy\": 0.003681480884552002,\n    \"tail_class_mean_recall\": 0.0030177831649780273,\n    \"tail_sample_accuracy\": 0.0034474730491638184\n  },\n  \"paired_wins\": 478,\n  \"paired_losses\": 360,\n  \"changed_predictions\": 1976,\n  \"checkpoint_role\": \"final\",\n  \"checkpoint_epoch\": 20,\n  \"four_view_protocol\": \"native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged\",\n  \"four_view_resize\": 384,\n  \"four_view\": {\n    \"top1\": 0.744056224822998,\n    \"macro_accuracy\": 0.7352858185768127,\n    \"zero_recall_classes\": 3,\n    \"tail_class_mean_recall\": 0.7159793376922607,\n    \"tail_sample_accuracy\": 0.7307842969894409\n  },\n  \"delta_four_minus_flip_tta\": {\n    \"top1\": 0.004640698432922363,\n    \"macro_accuracy\": 0.0047765374183654785,\n    \"tail_class_mean_recall\": 0.0057021379470825195,\n    \"tail_sample_accuracy\": 0.005797982215881348\n  },\n  \"four_view_changed_predictions\": 1778,\n  \"four_view_paired_wins\": 464,\n  \"four_view_paired_losses\": 326,\n  \"fused_logits\": {\n    \"path\": \"/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/diagnostics/P1_J5/fused_logits.pt\",\n    \"sha256\": \"35764e25ad082dfb621ec3600b29dd53ebaf374c955bb47578ad4af351d96170\",\n    \"dtype\": \"torch.float16\",\n    \"shape\": [\n      29737,\n      750\n    ],\n    \"weights_only_safe_load_verified\": true\n  }\n}\n{\"complete\": true, \"p1_arm\": \"J5\", \"identity\": \"/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/diagnostics/P1_J5/input_identity.json\", \"test_access\": false}\n"
+      },
+      "J20": {
+        "bytes": 4368,
+        "tail": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 2 bytes but only got 0. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read\n  warnings.warn(str(msg))\n{\n  \"scope\": \"Stage 2 train-derived fixed validation only; no test access\",\n  \"view_protocol\": \"native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint\",\n  \"visual_input_resolution\": 336,\n  \"smoke_only\": false,\n  \"full_validation_count\": 29737,\n  \"evaluated_count\": 29737,\n  \"experiment_config_sha256\": \"567d12e6a36daf01d5c20ec26bec238fd2aa735b11d6dfdb452fb92d4b33e1db\",\n  \"checkpoint_sha256\": \"7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da\",\n  \"split_sha256\": \"0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c\",\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"class_mapping_sha256\": \"811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879\",\n  \"elapsed_seconds\": 226.39780905190855,\n  \"center\": {\n    \"top1\": 0.7355819344520569,\n    \"macro_accuracy\": 0.7269561290740967,\n    \"zero_recall_classes\": 2,\n    \"tail_class_mean_recall\": 0.7072620391845703,\n    \"tail_sample_accuracy\": 0.7215388417243958\n  },\n  \"flip_tta\": {\n    \"top1\": 0.7396172881126404,\n    \"macro_accuracy\": 0.7306901216506958,\n    \"zero_recall_classes\": 3,\n    \"tail_class_mean_recall\": 0.7104990482330322,\n    \"tail_sample_accuracy\": 0.7252213358879089\n  },\n  \"delta_tta_minus_center\": {\n    \"top1\": 0.004035353660583496,\n    \"macro_accuracy\": 0.003733992576599121,\n    \"tail_class_mean_recall\": 0.003237009048461914,\n    \"tail_sample_accuracy\": 0.0036824941635131836\n  },\n  \"paired_wins\": 479,\n  \"paired_losses\": 359,\n  \"changed_predictions\": 1977,\n  \"checkpoint_role\": \"final\",\n  \"checkpoint_epoch\": 20,\n  \"four_view_protocol\": \"native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged\",\n  \"four_view_resize\": 384,\n  \"four_view\": {\n    \"top1\": 0.7438880801200867,\n    \"macro_accuracy\": 0.7350597381591797,\n    \"zero_recall_classes\": 3,\n    \"tail_class_mean_recall\": 0.7154815793037415,\n    \"tail_sample_accuracy\": 0.7303141951560974\n  },\n  \"delta_four_minus_flip_tta\": {\n    \"top1\": 0.004270792007446289,\n    \"macro_accuracy\": 0.004369616508483887,\n    \"tail_class_mean_recall\": 0.0049825310707092285,\n    \"tail_sample_accuracy\": 0.0050928592681884766\n  },\n  \"four_view_changed_predictions\": 1787,\n  \"four_view_paired_wins\": 461,\n  \"four_view_paired_losses\": 334,\n  \"fused_logits\": {\n    \"path\": \"/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/diagnostics/P1_J20/fused_logits.pt\",\n    \"sha256\": \"7fe479979f893a4cf1c49c27634d87b5037e18d72130a0fded5d3e3c71a86665\",\n    \"dtype\": \"torch.float16\",\n    \"shape\": [\n      29737,\n      750\n    ],\n    \"weights_only_safe_load_verified\": true\n  }\n}\n{\"complete\": true, \"p1_arm\": \"J20\", \"identity\": \"/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/diagnostics/P1_J20/input_identity.json\", \"test_access\": false}\n"
+      },
+      "controller": {
+        "bytes": 0,
+        "tail": ""
+      }
+    },
+    "canonical_lease": null,
+    "checkpoint_contents_loaded": false,
+    "checkpoint_hashes_computed": false,
+    "new_submission_ready": false
+  }
+}

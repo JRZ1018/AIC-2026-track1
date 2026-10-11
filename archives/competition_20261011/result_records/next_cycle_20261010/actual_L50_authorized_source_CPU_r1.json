@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_authorized_source_CPU_r1.json",
+  "original_sha256": "352031363e5b05bf2290d31b64fef95b5c2a7c541ab9dc4b433eb04ef419ec48",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "source_sha256": "4b3f0fe90d8ef5b138d05714526bc92e46dabbdd9254ae849416db61e16638fd",
+    "budget_sha256": "f065cd86952c6de67588e264d43f060f26e57ff25bd1593726ee83fb6193d42b",
+    "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_L50_20261011",
+    "config_only_scientific_delta": "visualLR3.5e-6to5e-6",
+    "science_trainer_src_unchanged": true,
+    "CPU_source_config_AST_checks_PASS": true,
+    "new_GPU_started": false,
+    "future_last_sha256": null,
+    "explicit_cumulative_cap_GiB": 40,
+    "previous_cap_GiB": 36,
+    "query_reuse_disclosed": true,
+    "phase_start_unix": 1791675186.0719318,
+    "deadline_unix": 1791685986.0719318
+  }
+}

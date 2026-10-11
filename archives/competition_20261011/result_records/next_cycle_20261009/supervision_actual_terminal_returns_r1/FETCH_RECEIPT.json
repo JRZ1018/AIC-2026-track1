@@ -1,0 +1,76 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/supervision_actual_terminal_returns_r1/FETCH_RECEIPT.json",
+  "original_sha256": "7338b355db7354720b0376047e9d49b51e6c14b8d31ba6b53a826f8536fc3e5c",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.S.actual_terminal.small_evidence_return.v1",
+    "complete": true,
+    "terminal": {
+      "checkpoint_role": "last",
+      "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+      "epoch": 20,
+      "last_bytes": 1412602235,
+      "last_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/experiments/P1_S/last.pt",
+      "last_sha256": "07dad01bcd8da762afef9883286bc9db1edce6390dea51c4c59b350e6f8c3e20",
+      "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/experiments/P1_S/metrics.json",
+      "metrics_sha256": "bb30e755b822dcba62ad0d22e074d403c017759fb802b1041dcecc1c61dcaa68",
+      "test_access": false,
+      "training_source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9"
+    },
+    "files": [
+      {
+        "local": "diagnostic/result_manifest.json",
+        "remote": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/artifacts/diagnostics/P1_S/result_manifest.json",
+        "bytes": 1145,
+        "sha256": "a50d906276302886ea346bf04a78512ef0ccb1aec830e809dfe14059579ba191"
+      },
+      {
+        "local": "diagnostic/report.json",
+        "remote": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/artifacts/diagnostics/P1_S/report.json",
+        "bytes": 2697,
+        "sha256": "990a9f1399cfac59c541fed945c040a76b05d7f07ae3888bdffa55f5a612209d"
+      },
+      {
+        "local": "diagnostic/input_identity.json",
+        "remote": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/artifacts/diagnostics/P1_S/input_identity.json",
+        "bytes": 4848,
+        "sha256": "bb1142079db0a4294d7edf74f02846892685b391b98785fd9b709dfffd768074"
+      },
+      {
+        "local": "diagnostic/supervision_checkpoint_audit.json",
+        "remote": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/artifacts/diagnostics/P1_S/supervision_checkpoint_audit.json",
+        "bytes": 3800,
+        "sha256": "d29742944303548121376450b3592d9855ad4dbf3b99b9548862333c8f40284e"
+      },
+      {
+        "local": "paired/result_manifest.json",
+        "remote": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/artifacts/paired/P1_S/result_manifest.json",
+        "bytes": 550,
+        "sha256": "3e148dd1084a884eeafcb4eb9ccfcd683472f11a265ea36161987269649343de"
+      },
+      {
+        "local": "paired/report.json",
+        "remote": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/artifacts/paired/P1_S/report.json",
+        "bytes": 821116,
+        "sha256": "776b1120fb75544ae5422b3960347c6a4f87c4881b4b16e0088d8ce86e216d66"
+      },
+      {
+        "local": "paired/balanced_supported_unique_predictions.npz",
+        "remote": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/artifacts/paired/P1_S/balanced_supported_unique_predictions.npz",
+        "bytes": 52242,
+        "sha256": "831526e387c368cff4c06c84069541c4b68efcb0950a69361d08058ddb64d232"
+      },
+      {
+        "local": "paired/natural_unique_images_predictions.npz",
+        "remote": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/artifacts/paired/P1_S/natural_unique_images_predictions.npz",
+        "bytes": 95958,
+        "sha256": "407237196a3edec84ce66c98ee62c093ebf0272d7582954b8772911b5e9ab3a8"
+      }
+    ],
+    "checkpoint_transferred": false,
+    "images_accessed": false,
+    "original_result_manifest": "a50d906276302886ea346bf04a78512ef0ccb1aec830e809dfe14059579ba191",
+    "original_paired_manifest": "3e148dd1084a884eeafcb4eb9ccfcd683472f11a265ea36161987269649343de"
+  }
+}

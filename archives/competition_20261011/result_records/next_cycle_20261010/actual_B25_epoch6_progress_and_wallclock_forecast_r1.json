@@ -1,0 +1,130 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B25_epoch6_progress_and_wallclock_forecast_r1.json",
+  "original_sha256": "18c8dfca5a41aff710cfab20ab5d3330281704a1e53d264a0dd5bb59a351f0d8",
+  "omitted_fields": [
+    "/actual_principals/argv",
+    "/canonical/command"
+  ],
+  "record": {
+    "schema": "aictrack1.next_cycle10.actual_B_warmup_to_soft_progress.v1",
+    "recorded_at_local": "2026-10-10T01:14:05.594801+08:00",
+    "status_observed_unix": 1791565894.7660165,
+    "status_snapshot_sha256": "e5e0afefbb2667829242f41b16a9f37a5d456e220ded44f93b9c03cdadbfeaa2",
+    "actual_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "actual_principals": [
+      {
+        "pid": 19633,
+        "ppid": 1,
+        "pgrp": 19633,
+        "session": 19633,
+        "start_ticks": "313580709",
+        "state": "S",
+        "cpu_user_ticks": 593,
+        "cpu_system_ticks": 208,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 8.01,
+        "rss_pages": 132676,
+        "rss_bytes": 543440896,
+        "virtual_bytes": 5042597888,
+        "threads": 4,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19640,
+        "ppid": 19633,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313580985",
+        "state": "S",
+        "cpu_user_ticks": 229000,
+        "cpu_system_ticks": 52973,
+        "child_cpu_user_ticks": 2028334,
+        "child_cpu_system_ticks": 211635,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 2819.73,
+        "rss_pages": 2225437,
+        "rss_bytes": 9115389952,
+        "virtual_bytes": 26965889024,
+        "threads": 27,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      }
+    ],
+    "canonical": {
+      "config": "configs/experiment/p1_B25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_B25",
+      "owner": "20261010-josrc-inspired-profile-or-selected20",
+      "queue_pid": 19633,
+      "schema_version": 1,
+      "started_at": "2026-10-10T00:09:17.182364+08:00",
+      "token": "83a0353ce2c442db94a9bbf656fdd8b7",
+      "trainer_pid": 19640
+    },
+    "observed_B25_stdout_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "latest_stdout_row": {
+      "epoch": 6,
+      "train_loss": 0.3241038112659,
+      "train_seconds": null,
+      "train_samples_per_second": null,
+      "learning_rates": null,
+      "sampling": null,
+      "top1": 0.7165820598602295,
+      "sampling_zero_class_count": 0,
+      "history_details_present": false,
+      "event_scope": "stdout_progress_only_not_checkpoint_recovery",
+      "EMA_successful_updates": null,
+      "EMA_skipped_updates": null,
+      "soft_active": null,
+      "additional_no_grad_forwards_per_batch": null,
+      "hard_seen_total": null,
+      "hard_unseen_classes": null,
+      "hard_branch_dropped_samples": null,
+      "active_teacher_observations": null,
+      "teacher_transitions_total": null,
+      "soft_mass_total": null,
+      "gradient_amp_successful_updates": null,
+      "gradient_amp_skipped_updates": null,
+      "preclip_norm_mean": null,
+      "clip_quantiles": null
+    },
+    "stdout_is_not_terminal_recovery_or_confirmation": true,
+    "atomic_last_stat": {
+      "bytes": 1774991917,
+      "mtime": 1791565751.0700955
+    },
+    "previous_observed_atomic_last5_mtime": 1791565196.917268,
+    "epoch5_to6_complete_atomic_interval_seconds": 554.152827501297,
+    "interval_is_not_train_seconds": true,
+    "conditional_B25_completion_unix": 1791573629.2096806,
+    "conditional_queue_completion_unix": 1791585163.9893541,
+    "conditional_queue_completion_local": "2026-10-10T06:32:43.989354+08:00",
+    "forecast_basis": "14 remaining B25 epochs; actual launch-to-last5 warmup including startup for B50 plus15 intervals; export allowances120/180 seconds. One actual soft-active interval only, to be recalibrated.",
+    "original_B_deadline_unix": 1791590892.8201556,
+    "deadline_slack_seconds": 5728.830801486969,
+    "additional_phase_budget_published": false,
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21616984064,
+        "free": 10595270656
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 99919544320,
+        "free": 28929474560
+      }
+    },
+    "cgroup_memory_failcnt": 0,
+    "active_checkpoint_loaded": false,
+    "new_training_or_inference_launched": false
+  }
+}

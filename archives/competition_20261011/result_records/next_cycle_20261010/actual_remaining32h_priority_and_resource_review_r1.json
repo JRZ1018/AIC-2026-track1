@@ -1,0 +1,63 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_remaining32h_priority_and_resource_review_r1.json",
+  "original_sha256": "e2235eacd9417cf3de30786512e6dddaf5a1fd35c1eb7bd58b061d5bd2d4c58a",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.remaining32h.execution_priority.v1",
+    "root_authorized": true,
+    "recorded_at_local": "2026-10-10T10:05:08.121433+08:00",
+    "human_message": "我们仅剩32小时，请加速推进；目标71以上，继续直到下一提交包",
+    "wall_anchor_unix": 1791597538.0,
+    "hard_remaining_wall_deadline_unix": 1791712738.0,
+    "total_remaining_wall_hours": 32,
+    "complete_20_direction_review": "docs240 section4; research_not_all_experiments",
+    "actual_next_cycle10_complete20_candidates": [
+      "A3",
+      "A5",
+      "B25",
+      "B50",
+      "PF30"
+    ],
+    "all_five_primary_combination_negative": true,
+    "current_baseline_user_reported_score": "69.24740946480077",
+    "target_score": 71,
+    "target_score_guaranteed": false,
+    "strictly_over71_remaining_net_correct": 657,
+    "priority": [
+      "Existing fixed20 B25_EMA/B50_EMA frozen exploration",
+      "One materially distinct AFA feature decomposition and controlled feature-generation training recipe",
+      "One train-only subject-preserving augmentation backup if needed"
+    ],
+    "CPU_parallel": true,
+    "GPU_serial": true,
+    "exploration_candidates_max": 4,
+    "independent_confirmation": "Fresh new610 legal train-only H1100 plus commonseed20261010 fresh J5_GRAPH control and unique selected candidate20; only actual main positive and root risk review then full",
+    "delivery_reserve_wall_hours_min": 8,
+    "independent_confirmation_reserved_wall_hours": [
+      5,
+      7
+    ],
+    "final_GPU_hours_reserved_min": 4,
+    "old_clocks_and_capacity_ledger_immutable": true,
+    "capacity": {
+      "original_free_bytes": 13013950464,
+      "capacity_added_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "total_bytes": 128849018880,
+      "cumulative_growth_max_bytes": 32212254720,
+      "min_free_bytes": 3221225472,
+      "atomic_reserve_bytes": 2147483648
+    },
+    "current_EMA_budget_sha256": "c905d9f877527f1878a3e9bb1f25c4585553234586cc9bc3a540be6834b0e60a",
+    "actual_measured_training_wall_hours": 11.6727443233783,
+    "training_wall_not_GPU_metering": true,
+    "new_32h_stage_does_not_reset_consumption": true,
+    "new_per_phase_budgets_require_actual_start_and_source": true,
+    "test_training": false,
+    "external_labels": false,
+    "final_model_single": true,
+    "online_score_used_for_parameter_selection": false,
+    "new_package_complete": false
+  }
+}

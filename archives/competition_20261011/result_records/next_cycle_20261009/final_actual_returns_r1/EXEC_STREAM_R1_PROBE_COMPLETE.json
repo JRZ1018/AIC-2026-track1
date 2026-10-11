@@ -1,0 +1,36 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R1_PROBE_COMPLETE.json",
+  "original_sha256": "52bb136558aa8070bfd6d97a1f3926079d5e3945fbaf2485d41ebcc6673c4f3c",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+    "pid": 30020,
+    "bytes_received": 2097152,
+    "seconds": 83.48987936973572,
+    "segments": [
+      {
+        "key": "full/last.pt",
+        "offset": 916422656,
+        "bytes": 2097152,
+        "segment_sha256": "823f8e38ec551baeb29ca6a39ff142aff8041dcfa063758a1e630ff9c133ca33",
+        "remote_exit": 0
+      }
+    ],
+    "skipped_SHA_verified": 7,
+    "transport": "exec_binary",
+    "SFTP": false,
+    "read_bytes": 32768,
+    "read_timeout_seconds": 45,
+    "keepalive_seconds": 15,
+    "shared_phase": {
+      "start_unix": 1791561886.8795202,
+      "deadline_unix": 1791562186.8795202,
+      "hard_seconds": 300,
+      "manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+      "shared_probe_and_full_return": true
+    },
+    "full_return_complete": false
+  }
+}

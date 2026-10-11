@@ -1,0 +1,108 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B_EMA_exploration_preregistration_and_cost_review_r1.json",
+  "original_sha256": "30f6c9f7644fb2d29ccca5e18e9cf459e45382ae938e689807437139b47932c6",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.B_EMA.exploration.preregistration.v1",
+    "complete": true,
+    "root_authorized": true,
+    "registered_at_local": "2026-10-10T09:48:15.374169+08:00",
+    "human_authorization": {
+      "message": "批准你继续推进",
+      "recorded_at_local": "2026-10-09T18:22:17+08:00",
+      "server": true,
+      "code": true,
+      "training": true,
+      "frozen_test_inference": true,
+      "tests": true,
+      "repeat_permission_required": false,
+      "latest_message": "后续我授予你全部权限，你想怎样向后推进、怎样修改方案都可以，只要能提分就行。接下来的7小时内，你保持工作，不要再问我任何问题或者问我要权限，我赋予你全部权限",
+      "autonomous_work_focus_start_unix": 1791562092.8201556,
+      "autonomous_work_focus_until_unix": 1791587292.8201556,
+      "plan_modification": true
+    },
+    "candidates": [
+      "B25_EMA",
+      "B50_EMA"
+    ],
+    "model_role": "successful_step_EMA_shadow_fixed20",
+    "parameter_field": "josrc_teacher.ema.shadow",
+    "epoch": 20,
+    "EMA_decay": 0.999,
+    "parent_training_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "parent_last_sha256": {
+      "B25": "733641e9197c5b8c9c967f8d69ce2ea20e5c455f28032533cd7131e9909591ed",
+      "B50": "5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78"
+    },
+    "primary_scope": "candidate_fixed_graph_P7_vs_actual_J5_GRAPH_P7",
+    "P7": {
+      "temperature": 0.5,
+      "strength": 0.75,
+      "iterations": 60
+    },
+    "graph": {
+      "k": 10,
+      "lambda_value": 0.3,
+      "iterations": 3,
+      "probability_temperature": 1,
+      "margin_protection": "ln4"
+    },
+    "query": "existing frozen57189 support-only exploratory query; no query reselection",
+    "single_model_no_student_teacher_blend": true,
+    "raw_student_negative_evidence_unchanged": true,
+    "no_training_exploration": true,
+    "test_access": false,
+    "used_test_or_online_scores": false,
+    "source_sha256": null,
+    "budget_sha256": null,
+    "actual_model_restore": false,
+    "actual_GPU_started": false,
+    "measured_completed_training_duration_seconds": {
+      "A3": 6616.876430384815,
+      "A5": 6716.810259738006,
+      "B25": 11246.669638925698,
+      "B50": 10963.875400551595,
+      "PF30": 6477.647834561765
+    },
+    "measured_training_wall_hours": 11.6727443233783,
+    "training_wall_not_GPU_metering": true,
+    "exploration_inference_cost_estimate": {
+      "two_4V_gpu_minutes": [
+        7,
+        10
+      ],
+      "shared_stage_wall_minutes": 30,
+      "based_on_actual_B50_frozen4V_seconds": 194.8,
+      "graph_seconds_per_candidate_estimate": 43
+    },
+    "confirmation_cost_if_positive": {
+      "new_H1_train100_and_two_fresh_visual20": true,
+      "control_visual_seconds_estimate": 6478,
+      "candidate_visual_seconds_estimate": 11247,
+      "visual_training_wall_hours_estimate": 4.923611111111111,
+      "independent_confirmation_required": true
+    },
+    "stop_rule": "At most two fixed20 EMA candidates; primary complete-combination delta>0 plus actual root risk review to nominate at most one; no natural>=0 or CI-lower>0 added gate; neither positive means no new610 H1/FULL/test",
+    "resource_envelope": {
+      "total_GPU_hours": 24,
+      "explore_H1_confirm_GPU_hours_max": 20,
+      "final_GPU_hours_reserved_min": 4,
+      "original_initial_free_bytes": 13013950464,
+      "capacity_added_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "actual_disk_total_bytes": 128849018880,
+      "cumulative_disk_max_bytes": 32212254720,
+      "min_free_bytes": 3221225472,
+      "atomic_reserve_bytes": 2147483648
+    },
+    "phase_clock": "New real30min budget after source freeze and independent CPU review; old A/B/PF clocks and ledger immutable",
+    "delivery_ETA": "No new ZIP ETA guaranteed before independent positive confirmation",
+    "scientific_risks": [
+      "EMA shadow may smooth useful head or tail adaptation",
+      "two candidates use revealed query for exploration only",
+      "canonical teacher parameters require explicit model role; raw-only gates not reused",
+      "student AdamW state is parent provenance only, not EMA optimizer recovery"
+    ]
+  }
+}

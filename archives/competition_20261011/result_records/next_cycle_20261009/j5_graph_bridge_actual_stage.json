@@ -1,0 +1,15 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/j5_graph_bridge_actual_stage.json",
+  "original_sha256": "a1d1167397d3b1562cb5efa1bd2f113b4026e5e039c284ebc300260580e85158",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "source_manifest_sha256": "b0cf92f64095f54c34dce5ce9ba895bb338afdf88b0f017f736413ccf2615850",
+    "remote_helper": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009/operator_tools/remote_run_j5_graph_explore.py",
+    "verified_files": 5,
+    "real_Linux_dry_run": true,
+    "actual_graph_started": false,
+    "test_access": false
+  }
+}

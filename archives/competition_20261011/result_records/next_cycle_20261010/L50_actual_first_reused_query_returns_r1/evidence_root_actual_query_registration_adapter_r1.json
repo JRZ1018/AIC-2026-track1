@@ -1,0 +1,16 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_actual_first_reused_query_returns_r1/evidence_root_actual_query_registration_adapter_r1.json",
+  "original_sha256": "0fdebc193af48b3a716f9ddf53ed73a5528a4ab38fff768d56bf0b7230406a2a",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.L50.historical_query_registration_adapter.v1",
+    "historical_root": "/root/autodl-tmp/AICtrack1_next_cycle_L35_diagnostic_20261010",
+    "historical_protocol_sha256": "f9a780b957d0325ed7afdf49185f9a4453d76f213cfaea3e52479fd4a08e7397",
+    "current_protocol_sha256": "8889cd9e52f7ef29ba1e3bb443514efbd443caad15762731d9a0efca6c53afcb",
+    "all_query_bytes_exact_historical": true,
+    "original_numeric_files_unchanged": true,
+    "model_forward_repeated": false,
+    "time": 1791685045.7854638
+  }
+}

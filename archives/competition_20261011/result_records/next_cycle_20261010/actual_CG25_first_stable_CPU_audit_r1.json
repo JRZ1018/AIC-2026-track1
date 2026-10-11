@@ -1,0 +1,66 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_first_stable_CPU_audit_r1.json",
+  "original_sha256": "2ccb3de3ca4c09d7178dff968dbc0d0091bf67191fca3df8e6ae961d1e9cbc0e",
+  "omitted_fields": [],
+  "record": {
+    "path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/root_actual_CG25_first_stable_CPU_audit_r1.json",
+    "sha256": "18470a177b9b07416ef907bbaf34e61bb622f82c2df4e39d4dfeac2be97f2264",
+    "value": {
+      "schema": "aictrack1.CG25.actual_first_stable_CPU_audit.v1",
+      "complete": true,
+      "scope": "stable atomic mmap CPU tensors/head/AdamW/Cos20/all train AC ID-label and exact augmentation identity; no full CLIP model forward or nextstep",
+      "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+      "checkpoint_sha256": "d7447f703322bc924125448dd01011ceba099a34c3c779a5731f478ff1879f92",
+      "checkpoint_epoch": 2,
+      "first_epoch_exact": false,
+      "bytes": 1417063399,
+      "mtime": 1791600443.0176492,
+      "trainable_tensors": 154,
+      "trainable_numel": 88233966,
+      "head_update_max_abs": {
+        "linear.weight": 0.004481315612792969,
+        "linear.bias": 0.002772033214569092
+      },
+      "optimizer_groups": [
+        152,
+        2
+      ],
+      "optimizer_steps": 3714.0,
+      "scheduler_Tmax": 20,
+      "scheduler_last_epoch": 2,
+      "AC_epochs_updated": 2,
+      "AC_train_binding_count": 118958,
+      "class_support_min": 4,
+      "sampling": {
+        "mode": "natural",
+        "sample_count": 118958,
+        "class_count_min": 4,
+        "class_count_median": 157.0,
+        "class_count_max": 198,
+        "zero_sample_class_count": 0
+      },
+      "augmentation": {
+        "schema": "aictrack1.center_guard.augmentation.v1",
+        "center_guard_fraction": 0.25,
+        "image_size": 336,
+        "resize_size": 336,
+        "train_crop_scale_min": 0.8,
+        "train_horizontal_flip_probability": 0.5,
+        "stochastic_seed_protocol": "SeedSequence[training_seed,epoch,original_sample_index]",
+        "random_draws": "original uniform scale, original left integer, original top integer, original flip; no extra RNG",
+        "dataset_config_sha256": "c6f99eb275a074aba0026bea7d577528b35571ed838be0a8ced9e25977161ac0",
+        "transform_source_sha256": "877d60117c376a6a1030b869b3dea3c38ac066915daefac581ce11c8bbef9174",
+        "confidence_observation": "same candidate strong logits; AC trajectory may differ",
+        "validation_transform": "unchanged shorter-side resize and center crop"
+      },
+      "train_seconds": 262.9019646900706,
+      "train_samples_per_second": 452.48045270501115,
+      "validation_top1": 0.6988936066627502,
+      "optimizer_updates_by_auditor": 0,
+      "GPU": false,
+      "test_image_reads": 0,
+      "observed_unix": 1791600536.7119398
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_C20_terminal_summary.json",
+  "original_sha256": "5b84c67f45e82ae8e3d78535d34c2239c2610dec14f951e99fff1ee7ca0d8c3b",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.C20.terminal_summary.v1",
+    "complete": true,
+    "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+    "source_members_verified": 91,
+    "metrics_sha256": "a24a675144de727c380e0e9b977781a85f2c00aea91cc6e547c57905db098e6a",
+    "last_checkpoint_sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca",
+    "final_checkpoint_sha256": "ef0c2ff284bd3ef8d14b10097fb7914c1b8032d64341341c1efbcab92fa008fe",
+    "selection_rule": "fixed final epoch 20; no validation selection",
+    "config_sha256": "4cf0d7d79d81a256848f09347e2a18e400f5bb7c053a1240542850c54df93cd6",
+    "history_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "duration_seconds": 6707.863286481239,
+    "train_seconds": [
+      273.6540989340283,
+      284.9874321860261,
+      242.58859926788136,
+      250.06893146317452,
+      256.76335380924866,
+      249.06012012902647,
+      254.33402487728745,
+      250.66548343701288,
+      250.4984628809616,
+      248.45123319001868,
+      257.6927845501341,
+      253.13136655185372,
+      256.2825838732533,
+      272.8145700059831,
+      267.4009019276127,
+      248.9980113171041,
+      241.54555087117478,
+      260.17385382717475,
+      248.2035858151503,
+      247.49021251732484
+    ],
+    "epoch_train_median": 251.8984249944333,
+    "train_count": 118958,
+    "validation_count": 29737,
+    "head_initializer": {
+      "kind": "linear",
+      "normalize_features": true,
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009/artifacts/experiments/confirmation_H1/last.pt",
+      "sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be"
+    },
+    "runtime": {
+      "defer_epoch_metrics": true,
+      "reuse_validation_loader": true
+    },
+    "checkpoint_provenance": {
+      "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+      "clip_weight_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+      "competition_stage": "stage2",
+      "num_classes": 750,
+      "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+      "train_manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d"
+    },
+    "old_C_groups_closed": true,
+    "canonical_idle": true,
+    "created_epoch": 1791518406.315346,
+    "last_history_keys": [
+      "bootstrap_curriculum",
+      "confidence_weighting",
+      "epoch",
+      "gradient_diagnostics",
+      "learning_rates",
+      "sampling",
+      "train_loss",
+      "train_samples_per_second",
+      "train_seconds",
+      "validation"
+    ],
+    "budget_files": [
+      "artifacts/queues/fresh_route_budget.json"
+    ],
+    "test_access": false
+  }
+}

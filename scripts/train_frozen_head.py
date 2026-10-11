@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import random
 import shutil
 import subprocess
@@ -36,6 +37,29 @@ from aictrack1.engine.environment_identity import (
     capture_environment_identity,
     environment_hash,
 )
+
+
+def _git_commit(root: Path) -> str:
+    """Return the source commit, with an explicit verified-archive fallback."""
+
+    try:
+        return subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+    except (FileNotFoundError, subprocess.CalledProcessError):
+        archived_commit = os.environ.get("AICTRACK1_GIT_COMMIT", "").strip().lower()
+        if len(archived_commit) != 40 or any(
+            character not in "0123456789abcdef" for character in archived_commit
+        ):
+            raise RuntimeError(
+                "source checkout has no readable git commit; set AICTRACK1_GIT_COMMIT "
+                "to the verified 40-character development commit when running from an archive"
+            ) from None
+        return archived_commit
 from aictrack1.engine.provenance import CheckpointProvenance
 from aictrack1.methods.long_tail_training import train_loss_class_weights
 from aictrack1.models.heads import build_classifier_head
@@ -221,6 +245,13 @@ def main() -> int:
 
     training = FrozenHeadConfig(**raw["training"])
     loss_config = FrozenLossConfig(**raw.get("loss", {}))
+    balanced_class_counts = None
+    if loss_config.kind == "balanced_softmax":
+        if training_scope != "fixed_split_validation":
+            raise ValueError("balanced_softmax screening requires a fixed train/validation split")
+        balanced_class_counts = torch.bincount(train_labels.long(), minlength=num_classes)
+        if bool((balanced_class_counts <= 0).any()):
+            raise ValueError("balanced_softmax requires every class in the train partition")
     class_weighting_raw = raw.get("class_weighting", {"enabled": False})
     if not isinstance(class_weighting_raw, dict):
         raise ValueError("class_weighting must be a mapping")
@@ -249,6 +280,8 @@ def main() -> int:
         num_classes,
         cosine_initial_scale=float(head_raw.get("initial_scale", 10.0)),
         cosine_learnable_scale=bool(head_raw.get("learnable_scale", True)),
+        residual_hidden_dim=int(head_raw.get("hidden_dim", 256)),
+        residual_dropout=float(head_raw.get("dropout", 0.1)),
     )
     device = torch.device(str(raw.get("device", "cuda")))
     if device.type == "cuda" and not torch.cuda.is_available():
@@ -260,6 +293,7 @@ def main() -> int:
         num_classes=num_classes,
         loss_config=loss_config,
         class_weights=class_weights,
+        class_counts=balanced_class_counts,
         provenance=provenance,
     )
     if args.resume is not None:
@@ -316,6 +350,10 @@ def main() -> int:
         "training_scope": training_scope,
         "training_record_count": len(train_labels),
     }
+    if balanced_class_counts is not None:
+        feature_metadata["training_class_support"] = [
+            int(value) for value in balanced_class_counts.tolist()
+        ]
     if training_scope in STRESS_SCOPES:
         # Record the exact per-class training support so evaluations can probe
         # starvation without guessing which rows the run consumed.
@@ -359,9 +397,7 @@ def main() -> int:
         device=device,
         clip_weight_sha256=cache.metadata.clip_weight_sha256,
     )
-    git = subprocess.run(
-        ["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True
-    ).stdout.strip()
+    git = _git_commit(ROOT)
     metrics = {
         "scope": scope_descriptions.get(
             training_scope, f"{stage_label} noisy-validation frozen-feature baseline"

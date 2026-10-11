@@ -1,0 +1,36 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_H1_actual_launch.json",
+  "original_sha256": "134dca0b161775b243dc96df0efa373b02e4af48e3f938d6f644e8285d0bb7fa",
+  "omitted_fields": [
+    "/command",
+    "/controller/argv",
+    "/environment"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_H1.root_launch_plan.v1",
+    "source_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009",
+    "source_verified_members": 102,
+    "recovery_receipt_sha256": "06d96716121481bb2a2d752aef326bba522d0e9adb962b1b66a20682f5857173",
+    "phase_budget_started_unix": 1791497972.440027,
+    "deadline_unix": 1791526772.440027,
+    "original_data_free_baseline_bytes": 13013950464,
+    "disk_max_bytes": 8589934592,
+    "min_free_bytes": 3221225472,
+    "observed_data_free_bytes": 12764856320,
+    "training_scope": "new_grouped_split_train_only_H1100_fixedlast",
+    "test_access": false,
+    "head_training_independent_of_visual_recipe_choice": true,
+    "new_submission_ready": false,
+    "controller": {
+      "pid": 229124,
+      "start_ticks": "307162510",
+      "pgrp": 229124,
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009"
+    },
+    "status": "launched_not_complete",
+    "launched_epoch": 1791497972.441773,
+    "plan_sha256": "add745586f8320ff33cc2a97ec4b95b979d3532d1f99292468e9bd41cd8098d9"
+  }
+}

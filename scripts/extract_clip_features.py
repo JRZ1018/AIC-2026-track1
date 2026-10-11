@@ -22,6 +22,8 @@ from aictrack1.data.feature_cache import FeatureCacheMetadata, FeatureCacheWrite
 from aictrack1.data.indexed_images import IndexedImageDataset, read_indexed_images
 from aictrack1.data.manifest import sha256_file
 from aictrack1.models.clip_vit_b32 import load_clip_vit_b32
+from aictrack1.models.clip_resolution import enable_interpolated_visual_resolution
+from aictrack1.data.transforms import build_split_transforms
 
 
 def main() -> int:
@@ -35,6 +37,7 @@ def main() -> int:
     parser.add_argument("--expected-weight-sha256")
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--device", default="cuda")
+    parser.add_argument("--visual-resolution", type=int, choices=(224, 320, 336), default=224)
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--shard-size", type=int, default=4096)
@@ -73,6 +76,10 @@ def main() -> int:
         raise RuntimeError("CUDA was requested but is not available")
 
     dataset_config = load_dataset_config(args.config)
+    if args.visual_resolution != dataset_config.transforms.image_size:
+        raise ValueError("visual resolution must match the dataset transform contract")
+    if args.visual_resolution in (320, 336) and args.source != "train":
+        raise ValueError("320/336 feature extraction is train-only; test is forbidden")
     output = ensure_output_path_is_safe(dataset_config, args.output)
     records = read_indexed_images(
         dataset_config,
@@ -86,6 +93,16 @@ def main() -> int:
     model, preprocess, clip_metadata = load_clip_vit_b32(
         weight_path, expected_weight_sha256, device
     )
+    preprocessing = clip_metadata.preprocessing
+    if args.visual_resolution in (320, 336):
+        enable_interpolated_visual_resolution(model.visual, target_resolution=args.visual_resolution)
+        preprocess = build_split_transforms(dataset_config.transforms)["validation"]
+        preprocessing = {
+            **preprocessing,
+            "resize": args.visual_resolution,
+            "center_crop": args.visual_resolution,
+            "position_interpolation": "bicubic_7x7_to_10x10",
+        }
     metadata = FeatureCacheMetadata(
         source=args.source,
         dataset_stage=dataset_config.stage,
@@ -95,7 +112,7 @@ def main() -> int:
         class_mapping_sha256=ClassMapping.from_csv(dataset_config.class_mapping).digest(),
         clip_weight_sha256=clip_metadata.weight_sha256,
         clip_upstream_commit=clip_metadata.upstream_commit,
-        preprocessing=clip_metadata.preprocessing,
+        preprocessing=preprocessing,
         feature_dim=clip_metadata.feature_dim,
         feature_dtype=args.feature_dtype,
         normalized=True,

@@ -1,0 +1,154 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_actual_final_bind_CPU_r1.json",
+  "original_sha256": "0585b9c5e9e5528fbccb908ca31752ef08068ea26f93c5afcc1965f35715b7e1",
+  "omitted_fields": [
+    "/actual_CPU_audit/training_runtime_receipts/receipt/environment"
+  ],
+  "record": {
+    "binding": {
+      "status": "bound_actual_full20_CPU_recovery_still_required",
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_L35_final_20261010",
+      "source_manifest_sha256": "92f2d96cee1b794989c916cad08267148ae00e96c65bb470c44d2b21e5bb96fa",
+      "selected_route": "L35_GRAPH"
+    },
+    "actual_CPU_audit": {
+      "ac_epochs": 20,
+      "ac_exact_full_global_ids_labels": true,
+      "actual_cpu_synthetic_forward": true,
+      "actual_real_image_forward": false,
+      "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+      "classifier_head_source": "joint_fixed_last_state",
+      "classifier_parameters_restored_equal": true,
+      "complete": true,
+      "completed_epoch": 1791664417.5518405,
+      "config_sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a",
+      "cuda_rng_serialized_only": true,
+      "epoch": 20,
+      "evidence": {
+        "config": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/configs/experiment/p1_full_L35.yaml",
+          "sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a"
+        },
+        "final": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/experiments/FULL_L35/final.pt",
+          "sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6"
+        },
+        "full_budget": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/inputs/full_budget.json",
+          "sha256": "90ad899b9110e96eb015b79bcdddf505560184215a67b540abfd0cd2aa07832e"
+        },
+        "full_source": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/source_manifest.json",
+          "sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353"
+        },
+        "h1": {
+          "path": "/root/AICtrack1_fullvisual_full_v5_20261008/artifacts/experiments/mainline-h1/last.pt",
+          "sha256": "fa4623670a6f48731cf54e62dfb5ce5df44b232f4530f6c13b886efe0579e605"
+        },
+        "h1_receipt": {
+          "path": "/root/AICtrack1_fullvisual_full_v5_20261008/artifacts/experiments/mainline-h1/h1_receipt.json",
+          "sha256": "0e46cf54918bc152af34f7b3edb6b84fe7a9c3d2211bc3925f8b994a1dc144cf"
+        },
+        "last": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/experiments/FULL_L35/last.pt",
+          "sha256": "5325982fad83513b11e6f2c9e94537272ae5f7ded295e46b80948bf9fea3532d"
+        },
+        "launch_receipt": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/queues/full_attempt_160860d6ffc04c81adfe7e04ded020a4.json",
+          "sha256": "390f9c65c05f651b032b73eae2ed5e0be4142bd82fd7c1ad0fe0f4015073c64e"
+        },
+        "metrics": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/experiments/FULL_L35/metrics.json",
+          "sha256": "bee8d6712b5249b126f88f9f11eccd5d45ecfe21cf2065915ad985c4d0bdaa62"
+        },
+        "selection": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/inputs/fresh_confirmation.json",
+          "sha256": "15fd22f3c36b65dc90250692538ca0e2c3fe8a581f36be660fad05e72a061546"
+        }
+      },
+      "final_last_all_tensors_equal": true,
+      "final_sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6",
+      "full_root": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010",
+      "full_training_source_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+      "gpu_access": false,
+      "head_initializer_max_abs_delta": {
+        "classifier.linear.bias": 0.0058959126472473145,
+        "classifier.linear.weight": 0.022552490234375
+      },
+      "head_initializer_sha256": "fa4623670a6f48731cf54e62dfb5ce5df44b232f4530f6c13b886efe0579e605",
+      "inference_source_sha256": "92f2d96cee1b794989c916cad08267148ae00e96c65bb470c44d2b21e5bb96fa",
+      "last_sha256": "5325982fad83513b11e6f2c9e94537272ae5f7ded295e46b80948bf9fea3532d",
+      "metrics_sha256": "bee8d6712b5249b126f88f9f11eccd5d45ecfe21cf2065915ad985c4d0bdaa62",
+      "official_clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+      "optimizer_each_moment_equal": true,
+      "rng_cpu_restored": true,
+      "runtime": {
+        "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+        "MKL_NUM_THREADS": "4",
+        "OMP_NUM_THREADS": "4",
+        "python": "3.12.3 | packaged by Anaconda, Inc. | (main, May  6 2024, 19:46:43) [GCC 11.2.0]",
+        "torch": "2.11.0+cu128",
+        "torch_num_interop_threads": 64,
+        "torch_num_threads": 4
+      },
+      "scaler_restored": true,
+      "scheduler20_restored": true,
+      "schema": "aictrack1.fresh_route.full_final_cpu_audit.v1",
+      "selected_arm": "L35",
+      "selected_route": "L35_GRAPH",
+      "split_sha256": "0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c",
+      "status": "complete_typed_full20_cpu_restore",
+      "test_access": false,
+      "train_count": 148695,
+      "train_manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+      "trainable_numel": 88233966,
+      "trainable_tensors": 154,
+      "training_runtime_receipts": [
+        {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/runtime_receipts/L35_160860d6ffc04c81adfe7e04ded020a4.json",
+          "receipt": {
+            "actual_torch_interop_threads": 64,
+            "actual_torch_threads": 4,
+            "arm": "L35",
+            "collected_at_unix": 1791651741.4548614,
+            "config_sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a",
+            "fresh_confirmation_receipt_sha256": "15fd22f3c36b65dc90250692538ca0e2c3fe8a581f36be660fad05e72a061546",
+            "full_budget_sha256": "90ad899b9110e96eb015b79bcdddf505560184215a67b540abfd0cd2aa07832e",
+            "pid": 30431,
+            "schema": "aictrack1.fresh_route.full.runtime.v1",
+            "selected_route": "L35_GRAPH",
+            "source_manifest_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+            "test_access": false
+          },
+          "sha256": "b10029082f660346b78aabbfd518af3cf81091340304a2589daaf1d50907a71b"
+        },
+        {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/runtime_receipts/L35_1b3a0ef9c77745659c06955074b3275b.json",
+          "receipt": {
+            "actual_torch_interop_threads": 64,
+            "actual_torch_threads": 4,
+            "arm": "L35",
+            "collected_at_unix": 1791651684.7867272,
+            "config_sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a",
+            "fresh_confirmation_receipt_sha256": "15fd22f3c36b65dc90250692538ca0e2c3fe8a581f36be660fad05e72a061546",
+            "full_budget_sha256": "90ad899b9110e96eb015b79bcdddf505560184215a67b540abfd0cd2aa07832e",
+            "pid": 30242,
+            "schema": "aictrack1.fresh_route.full.runtime.v1",
+            "selected_route": "L35_GRAPH",
+            "source_manifest_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+            "test_access": false
+          },
+          "sha256": "c720373809059fced6ec83173a8930585f3a923d42a3c58b12b43784720eb06c"
+        }
+      ],
+      "training_threads_evidence": "actual immutable full training runtime receipts",
+      "validation_count": 0
+    },
+    "CPU_audit_sha256": "85e914240ebab9c8defa0167a65a899c3f168637c9b143c421f2d06105b0c6f1",
+    "launch_receipt": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/queues/full_attempt_160860d6ffc04c81adfe7e04ded020a4.json",
+    "launch_sha256": "390f9c65c05f651b032b73eae2ed5e0be4142bd82fd7c1ad0fe0f4015073c64e",
+    "all_training_groups_closed": true,
+    "canonical_idle": true
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_R2_actual_train_status_r1.json",
+  "original_sha256": "dff140d8cffa99208432ce380c8e9c28724d8a56223ddb76e373c89d881d6302",
+  "omitted_fields": [
+    "/canonical/command",
+    "/stdout"
+  ],
+  "record": {
+    "canonical": {
+      "schema_version": 1,
+      "token": "db0d9d38fbc44d0585c2e7d3deb673cd",
+      "owner": "20261010-learning-rate-joint-L35",
+      "queue_pid": 12547,
+      "trainer_pid": 12552,
+      "config": "configs/experiment/p1_L35.yaml",
+      "output_dir": "artifacts/experiments/JOINT_L35",
+      "started_at": "2026-10-10T16:38:08.035223+08:00"
+    },
+    "processes": [
+      {
+        "pid": 12547,
+        "state": "S",
+        "ppid": 1,
+        "pgrp": 12547,
+        "session": 12547,
+        "start_ticks": "925128854"
+      },
+      {
+        "pid": 12552,
+        "state": "S",
+        "ppid": 12547,
+        "pgrp": 12552,
+        "session": 12552,
+        "start_ticks": "925129114"
+      }
+    ],
+    "datafree": 18719105024
+  }
+}

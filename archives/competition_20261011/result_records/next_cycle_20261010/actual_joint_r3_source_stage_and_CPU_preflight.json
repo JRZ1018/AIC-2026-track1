@@ -1,0 +1,32 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_joint_r3_source_stage_and_CPU_preflight.json",
+  "original_sha256": "fa9cd117b35e94381e5cc13221bb4a3a9dd29b2697f3048de2d477e44a9dd938",
+  "omitted_fields": [
+    "/preflight/stderr",
+    "/preflight/stdout"
+  ],
+  "record": {
+    "deployment": {
+      "prepare": {
+        "created": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010"
+      },
+      "verify": {
+        "verified_files": 89
+      }
+    },
+    "preflight": {
+      "stage_complete": true,
+      "actual_server_CPU_preflight": true,
+      "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+      "preflight_files": [
+        "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/preflight/733b91ba14b54641addbf360e12273b9.json"
+      ],
+      "disk_free": 36135469056,
+      "observed_unix": 1791542833.385065,
+      "GPU_training_started": false
+    },
+    "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010",
+    "actual_source_SHA": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524"
+  }
+}

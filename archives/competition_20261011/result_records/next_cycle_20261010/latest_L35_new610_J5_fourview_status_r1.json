@@ -1,0 +1,21 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_new610_J5_fourview_status_r1.json",
+  "original_sha256": "4191efaecd0b42b75880d043d480be085ab81761020e8f375da65ce8174a2161",
+  "omitted_fields": [],
+  "record": {
+    "time_unix": 1791650837.3159761,
+    "process": {
+      "pid": 28965,
+      "state": "S",
+      "start_ticks": "928040246",
+      "cpu_ticks": 14659
+    },
+    "log_tail": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n",
+    "outputs": {
+      "runtime_receipt.json": 1619,
+      "p1_checkpoint_audit.json": 3426
+    },
+    "gpu": "1300 MiB, 0 %\n"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/old_diagnostic_actual_admission.json",
+  "original_sha256": "365c59178bd172b52965b7d7b7cbd63a57bc2aeb0263cb85203e78b45ada4c11",
+  "omitted_fields": [
+    "/admission/idle/original_controller/argv"
+  ],
+  "record": {
+    "schema": "aictrack1.old_diagnostic_resume.root_admission.v1",
+    "status": "passed",
+    "observed_epoch": 1791495999.5228987,
+    "admission": {
+      "schema": "aictrack1.old_diagnostic_resume.admission.v1",
+      "operator": {
+        "path": "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r1/old_diagnostic_resume_manifest.json",
+        "sha256": "d229ecdbb3e4a4e23f30c4637a3bebc3737e35cf3b0dc2eb9ef572191fd4e96c",
+        "script_sha256": "f0b52809be92455f6feb905947f99458e22da0c46709a56f21fbac23a7f25510",
+        "verified_files": 4
+      },
+      "training_source": {
+        "path": "/root/AICtrack1_next_cycle_20261009/source_manifest.json",
+        "sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "verified_files": 83
+      },
+      "diagnostic_source": {
+        "path": "/root/AICtrack1_next_cycle_diagnostic_20261009/source_manifest.json",
+        "sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "verified_files": 29
+      },
+      "original_chain_receipt": {
+        "path": "/root/AICtrack1_next_cycle_20261009/artifacts/queues/p1_chain_result.json",
+        "sha256": "34c54757123ce53c974cebeb4f54f916531efbd16eeea0b4a26b7bf0c176e076"
+      },
+      "idle": {
+        "original_controller": {
+          "pid": 218941,
+          "start_ticks": "305326864",
+          "cwd": "/root/AICtrack1_next_cycle_20261009"
+        },
+        "original_controller_pid_absent": true,
+        "busy_project_process_count": 0,
+        "canonical_lock_absent": true,
+        "observed_process_count": 12,
+        "probe_epoch": 1791495999.0464814
+      },
+      "candidates": {
+        "J5": {
+          "arm": "J5",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/last.pt",
+          "config_sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/metrics.json",
+          "metrics_sha256": "f75079d73c52b7f19958586dea1cc775dd0b866e775e634a2ea698b83ac05636",
+          "checkpoint_stat": {
+            "bytes": 1418755687,
+            "mtime_ns": 1791487758295627162,
+            "inode": 95560680,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        },
+        "J20": {
+          "arm": "J20",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/last.pt",
+          "config_sha256": "567d12e6a36daf01d5c20ec26bec238fd2aa735b11d6dfdb452fb92d4b33e1db",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/metrics.json",
+          "metrics_sha256": "9b917ddd5bc93c02fb2070a39b17ff36f85a2a57e0d3c3eb5bb276e77903a2c1",
+          "checkpoint_stat": {
+            "bytes": 1418755751,
+            "mtime_ns": 1791495850086827740,
+            "inode": 8607091682,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        }
+      },
+      "disk": {
+        "original_initial_free_bytes": 14418411520,
+        "observed_free_bytes": 10832465920,
+        "cumulative_used_bytes": 3585945600,
+        "reserve_bytes": 536870912,
+        "minimum_free_bytes": 3221225472,
+        "cumulative_max_bytes": 21474836480,
+        "baseline_reset": false
+      },
+      "memory": {
+        "platform": "linux",
+        "total_bytes": 540662706176,
+        "host_available_bytes": 460541595648,
+        "effective_available_bytes": 28451708928,
+        "cgroup": {
+          "limit_bytes": 66571993088,
+          "used_bytes": 38120284160,
+          "available_bytes": 28451708928,
+          "source": "/sys/fs/cgroup/memory/memory.limit_in_bytes"
+        },
+        "gpu_probed": false
+      },
+      "test_access": false,
+      "checkpoint_loaded": false,
+      "checkpoint_hashed": false
+    },
+    "terminal_observations": {
+      "J5": {
+        "completed_epochs": 20,
+        "duration_seconds": 8032.259205374401,
+        "metrics_sha256": "f75079d73c52b7f19958586dea1cc775dd0b866e775e634a2ea698b83ac05636",
+        "last_checkpoint_sha256_declared": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+        "checkpoint_stat": {
+          "bytes": 1418755687,
+          "mtime_ns": 1791487758295627162,
+          "inode": 95560680,
+          "device": 59,
+          "admission_action": "stat_only; runner hashes and restores CPU154"
+        },
+        "actual_checkpoint_hash_verified": false,
+        "actual_final_model_restored": false,
+        "four_view_completed": false
+      },
+      "J20": {
+        "completed_epochs": 20,
+        "duration_seconds": 7988.20198336523,
+        "metrics_sha256": "9b917ddd5bc93c02fb2070a39b17ff36f85a2a57e0d3c3eb5bb276e77903a2c1",
+        "last_checkpoint_sha256_declared": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+        "checkpoint_stat": {
+          "bytes": 1418755751,
+          "mtime_ns": 1791495850086827740,
+          "inode": 8607091682,
+          "device": 59,
+          "admission_action": "stat_only; runner hashes and restores CPU154"
+        },
+        "actual_checkpoint_hash_verified": false,
+        "actual_final_model_restored": false,
+        "four_view_completed": false
+      }
+    },
+    "GPU_started": false,
+    "new_submission_ready": false
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B25_epoch18_progress_r1.json",
+  "original_sha256": "412ab596bd16b13dedcc50afbd2829f852c443f8f87931eaff4e9ea58fbc431a",
+  "omitted_fields": [
+    "/canonical/command",
+    "/principal_processes/argv"
+  ],
+  "record": {
+    "B25_stdout_completed_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "GPU": "5196 MiB, 27 %",
+    "append_budget_published": false,
+    "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "canonical": {
+      "config": "configs/experiment/p1_B25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_B25",
+      "owner": "20261010-josrc-inspired-profile-or-selected20",
+      "queue_pid": 19633,
+      "schema_version": 1,
+      "started_at": "2026-10-10T00:09:17.182364+08:00",
+      "token": "83a0353ce2c442db94a9bbf656fdd8b7",
+      "trainer_pid": 19640
+    },
+    "cgroup_memory_failcnt": "0",
+    "checkpoint_opened": false,
+    "conditional_queue_finish_local": "2026-10-10T06:32:33.435062+08:00",
+    "data_free_bytes": 28892348416,
+    "interval_scope": "mean atomically saved actual epochs6..18 wallclock, not train_seconds",
+    "last_stat_only": {
+      "bytes": 1776232109,
+      "mtime": 1791572396.3304992
+    },
+    "model_recovery_performed": false,
+    "observed_at_local": "2026-10-10T03:07:49.776686+08:00",
+    "original_deadline_slack_seconds": 5739.385093212128,
+    "principal_processes": [
+      {
+        "child_cpu_system_ticks": 0,
+        "child_cpu_user_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 17.26,
+        "cpu_system_ticks": 508,
+        "cpu_user_ticks": 1218,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010",
+        "pgrp": 19633,
+        "pid": 19633,
+        "ppid": 1,
+        "rss_bytes": 543440896,
+        "rss_pages": 132676,
+        "session": 19633,
+        "start_ticks": "313580709",
+        "state": "S",
+        "threads": 4,
+        "virtual_bytes": 5042597888
+      },
+      {
+        "child_cpu_system_ticks": 553355,
+        "child_cpu_user_ticks": 5937191,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 10557.1,
+        "cpu_system_ticks": 156661,
+        "cpu_user_ticks": 899049,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010",
+        "pgrp": 19640,
+        "pid": 19640,
+        "ppid": 19633,
+        "rss_bytes": 9052364800,
+        "rss_pages": 2210050,
+        "session": 19640,
+        "start_ticks": "313580985",
+        "state": "S",
+        "threads": 27,
+        "virtual_bytes": 26901860352
+      }
+    ],
+    "schema": "aictrack1.josrc.actual_progress.v1",
+    "snapshot_sha256": "a2a651f3f356650b054f1fb958fc2c9cf8dce5259604dd12e9b313d53b4dc213",
+    "soft_active_atomic_wallclock_interval_seconds": 553.8010177795703,
+    "stage_conclusion": "healthy_progress_only_no_accuracy_or_final_recovery_conclusion",
+    "test_access": false
+  }
+}

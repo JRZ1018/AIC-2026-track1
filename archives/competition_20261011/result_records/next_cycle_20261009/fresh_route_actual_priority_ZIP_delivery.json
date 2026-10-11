@@ -1,0 +1,20 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_priority_ZIP_delivery.json",
+  "original_sha256": "51de1ee2f65e74c4b6fcb9dc24e9bc8ff238b1211720dd3a819c3103240c04c9",
+  "omitted_fields": [],
+  "record": {
+    "status": "priority_ZIP_and_CSV_verified_model_return_and_local_CPU_acceptance_continue",
+    "zip_path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\priority_delivery_20261009\\pred_results.zip",
+    "csv_path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\priority_delivery_20261009\\pred_results.csv",
+    "row_count": 37444,
+    "zip_sha256": "5e65ba73e78c765e7fbd06ad9dbab485d6f8ad8a987d6662cd45bc31fc357ec3",
+    "csv_sha256": "7c9c816777b2b1e3b2eb165d155bec7a7635c0659c429d5a77ea68aafb2e9245",
+    "single_root_CSV_and_byte_equal": true,
+    "remote_full_CPU_restore_PASS": true,
+    "remote_official750_mapping_PASS": true,
+    "source_manifest_sha256": "f7e3a64ed65631d84d91fe8fbaea3b2830638f9085ad7cce9a8e7b2f0ed39174",
+    "final_model_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+    "observed_unix": 1791537246.1060376
+  }
+}

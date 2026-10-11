@@ -1,0 +1,97 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/supervision_actual_terminal_returns_r1/diagnostic/input_identity.json",
+  "original_sha256": "bb1142079db0a4294d7edf74f02846892685b391b98785fd9b709dfffd768074",
+  "omitted_fields": [
+    "/diagnostic_runtime/environment",
+    "/training_runtime_receipts/runtime/environment"
+  ],
+  "record": {
+    "schema": "aictrack1.p0_frozen_fold_input.v1",
+    "stage": 2,
+    "holdout_verified": true,
+    "test_access": false,
+    "training_validation_overlap_rows": 0,
+    "train_validation_exact_group_overlap": 0,
+    "train_validation_near_group_overlap": 0,
+    "checkpoint_role": "last",
+    "upstream_checkpoint_role": "final",
+    "checkpoint_epoch": 20,
+    "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/experiments/P1_S/last.pt",
+    "checkpoint_sha256": "07dad01bcd8da762afef9883286bc9db1edce6390dea51c4c59b350e6f8c3e20",
+    "experiment_config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+    "split_sha256": "0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c",
+    "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+    "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+    "view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+    "h1_sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753",
+    "training_count": 118958,
+    "validation_count": 29737,
+    "num_classes": 750,
+    "training_scope": "fixed_split_validation",
+    "bundle_path": "fused_logits.pt",
+    "bundle_sha256": "e0b69349111e3c1b49d13d30d14b76af6802e2b930e0c89911e3ca7a608a336c",
+    "logits_dtype": "float16",
+    "row_csv": "rows.csv",
+    "row_csv_sha256": "f84dffe7fdfff433a1924386927fac402b29c9d3e0b4e82abf60d1976d44404f",
+    "sample_ids_order_sha256": "6650ba2b3ec04af733c049b57fb936b7c2ffe126dea155584a86abc3b1f7d08a",
+    "source_provenance_receipt": "supervision_checkpoint_audit.json",
+    "source_receipt_sha256": "d29742944303548121376450b3592d9855ad4dbf3b99b9548862333c8f40284e",
+    "report_sha256": "990a9f1399cfac59c541fed945c040a76b05d7f07ae3888bdffa55f5a612209d",
+    "model_arm": "S",
+    "p1_arm": "S",
+    "sce_alpha": 0.5,
+    "trainable_tensors": 152,
+    "trainable_numel": 87849216,
+    "classifier_head_source": "old_fold_h1_frozen",
+    "training_source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+    "diagnostic_source_manifest_sha256": "b04925892404fc37a0c81f4d044752248f4d30bd1f379fec9f60b73531ddead0",
+    "inference_optimizer_steps": 0,
+    "training_seed": 20261008,
+    "group_source": "official manifest near_duplicate_group, then duplicate_group; sample ID only for true singleton",
+    "diagnostic_runtime": {
+      "torch_num_threads": 4,
+      "torch_num_interop_threads": 64
+    },
+    "training_runtime_receipts": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/runtime_receipts/S_239b1703b3a0427cba1e2e8c72cdbf45.json",
+        "sha256": "d6626da50a385b209f55fb6646d6dec8327e9deb180ff90a885422733c13136f",
+        "runtime": {
+          "schema": "aictrack1.supervision.runtime.v1",
+          "arm": "S",
+          "pid": 230023,
+          "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+          "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+          "collected_at_unix": 1791499679.2745595,
+          "test_access": false,
+          "actual_torch_threads": 4,
+          "actual_torch_interop_threads": 64
+        }
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/runtime_receipts/S_f833853d0f9d4e139099ebd5143f2e7d.json",
+        "sha256": "c0e8a266344973b3a336045c49900bb9d2735a276a7a0178f8e266ade5043a49",
+        "runtime": {
+          "schema": "aictrack1.supervision.runtime.v1",
+          "arm": "S",
+          "pid": 230195,
+          "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+          "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+          "collected_at_unix": 1791499924.0620782,
+          "test_access": false,
+          "actual_torch_threads": 4,
+          "actual_torch_interop_threads": 64
+        }
+      }
+    ],
+    "save_features": true,
+    "feature_file": "fused_features.pt",
+    "feature_file_sha256": "bb3925c104a7bdc2cc4e33c5dc93605e2836ff30aee7d0ac13d75e2e9fd5230e",
+    "feature_dim": 512,
+    "feature_dtype": "float32",
+    "feature_construction_dtype": "float32",
+    "feature_protocol": "L2_normalize(mean(L2_normalize(raw_visual_each_of_four_views))) in float32 on CPU",
+    "additional_model_forwards": 0
+  }
+}

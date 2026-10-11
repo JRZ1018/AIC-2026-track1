@@ -1,0 +1,140 @@
+{
+  "schema": "aictrack1.p1.diagnostic_source.v1",
+  "files": {
+    "compare_p1.py": "25a204a3dfd3e58c5b9dd44b692f53e495c6a0dbc45925694e07896d8cc9e85a",
+    "CPU_FULL_CACHE_SELFCHECK.json": "94fd885a0ab347ac6cea45f135a2e361ad0459996ce01cd0350dab328f2b0648",
+    "CPU_TEST_RECEIPT.json": "a200a9c915a497eddc57f5ea04b89f67642c06f0154906b0641b3266b4234839",
+    "DEPLOYMENT_CONTRACT.json": "a80185c540df4b1bbf0edbfebce1950b4e243e91bc2f4f59c62260a9763d4ca5",
+    "diagnostic_resources.py": "822978cd0c16424014b8180a2e42a7f4c9c2178eb2a7b17d8d92818498212f5e",
+    "freeze_source.py": "7a1e64d76c5ef6f3882d59893c0474d16bc33176e65cf24513bee46e8f2c95b4",
+    "inputs/frozen_queries/balanced_supported_unique_queries.csv": "5782adffd1df8a6a6e998fc93786b4715eb8d820330ab026dcbbc20a03008ad5",
+    "inputs/frozen_queries/natural_unique_images_queries.csv": "db4d690db46f4a8ab3b8b8c24589c67fe6b7ed2a1c22d37d89534ac134fd1882",
+    "inputs/frozen_queries/query_identity.json": "e3506533b04af309e25fe2230142240927ba54365dba427f8c48edbea9e208ec",
+    "inputs/frozen_queries/query_indices.npz": "79cf35b3a8778dbcf20c220693df64585dc02a61c209a9e4ca0cf2bd5bf7604b",
+    "inputs/p1_assets.json": "070e533a4da0bb11f4d2fcb57a6f0990f75dd94e4d66d45dbc3e381493bb61df",
+    "p1_diag_contract.py": "d8cd3714ea1612d48949bd5308961d12390434e545e0e409e941c3b7ac3e1a9a",
+    "README.md": "c251d2c48adfb36b7270475b1700b8ab9e44238527da1023e553e10bfc359987",
+    "reference/diagnose_stage2_tta.py": "7fd977bb31678bdf1d9e1ef302f232fa99803deb0f4fcb90409e1494da68ad96",
+    "reference/fv2_single_model.py": "4315a435dd7bdf3b9c3856d1b68120fb3994e0dfec32e33f9168543fb26e3439",
+    "reference/fv2_v6_wrapper.py": "bb64f87d224b04ccbc95c872479c3d2aeeded520263c7c47ae8fd341020a1d2b",
+    "reference/p0_core.py": "4030dfbb1602859e8787bfe321c42bb68b45e10dafb63cb5929d4ad482b81481",
+    "revision_history/r1_f11dc784/CPU_TEST_RECEIPT.json": "7f9cf25ff87fa84c84252c663ca08a564ec52626c890fa9b5762f06a79e6f5b5",
+    "revision_history/r1_f11dc784/freeze_source.py": "f5ee05535db5f4f1024fe1c24feff3354729b062593f944098b7f8c3c0a3cef2",
+    "revision_history/r1_f11dc784/README.md": "48d9866308ed653c0b7207b141403130d2bba05c52a60ae380ebdb619a4b7df5",
+    "revision_history/r1_f11dc784/run_p1_diagnostic.py": "f818e5cc97d7119d5c9f68e87c5a25fb5bf27b735b203894f7d5be95e5e0a501",
+    "revision_history/r1_f11dc784/source_manifest.json": "f11dc78480c74e6aba8c6fc15b426591df4bac44c554ee40d965e4c2623f20c0",
+    "revision_history/r1_f11dc784/test_diagnostic.py": "84dba54ed67348253fc1c1d79b2f0c6563032a2b7214ad906e307b16905cd826",
+    "REVISION_R2.md": "9fa69ccaedc2b1769ebb4824647149e2299dd839350671440d28a380593f796c",
+    "run_p1_diagnostic.py": "8584dde985cac6eb15573f50687ea8815c56f1b9b125ca8b0bb05ce96da2ef4d",
+    "selection_protocol.json": "b60a39fc5e966b45f97a04bae30e5d2b67fe70b83f96c01c1d97799622cd2a02",
+    "tests/full_cache_selfcheck.py": "e74aad524f3f9313c5e7e35b388797ea35bef0e5c0f203ab591288634af32bec",
+    "tests/test_diagnostic.py": "29e834c4998c8cc268a595c09ba1388320d927a4d86acefc034c85b4f4428d57",
+    "view_features.py": "bab0a6ca1d05f7a9e4406f0f6416f2539a433637c78b160f5d339901a0936e6d"
+  },
+  "file_metadata": {
+    "compare_p1.py": {
+      "bytes": 13442
+    },
+    "CPU_FULL_CACHE_SELFCHECK.json": {
+      "bytes": 691330
+    },
+    "CPU_TEST_RECEIPT.json": {
+      "bytes": 1771
+    },
+    "DEPLOYMENT_CONTRACT.json": {
+      "bytes": 2842
+    },
+    "diagnostic_resources.py": {
+      "bytes": 3380
+    },
+    "freeze_source.py": {
+      "bytes": 3564
+    },
+    "inputs/frozen_queries/balanced_supported_unique_queries.csv": {
+      "bytes": 2155193
+    },
+    "inputs/frozen_queries/natural_unique_images_queries.csv": {
+      "bytes": 4344283
+    },
+    "inputs/frozen_queries/query_identity.json": {
+      "bytes": 66965
+    },
+    "inputs/frozen_queries/query_indices.npz": {
+      "bytes": 72634
+    },
+    "inputs/p1_assets.json": {
+      "bytes": 3034
+    },
+    "p1_diag_contract.py": {
+      "bytes": 15666
+    },
+    "README.md": {
+      "bytes": 11814
+    },
+    "reference/diagnose_stage2_tta.py": {
+      "bytes": 27758
+    },
+    "reference/fv2_single_model.py": {
+      "bytes": 12068
+    },
+    "reference/fv2_v6_wrapper.py": {
+      "bytes": 11356
+    },
+    "reference/p0_core.py": {
+      "bytes": 12687
+    },
+    "revision_history/r1_f11dc784/CPU_TEST_RECEIPT.json": {
+      "bytes": 1245
+    },
+    "revision_history/r1_f11dc784/freeze_source.py": {
+      "bytes": 2799
+    },
+    "revision_history/r1_f11dc784/README.md": {
+      "bytes": 9860
+    },
+    "revision_history/r1_f11dc784/run_p1_diagnostic.py": {
+      "bytes": 16065
+    },
+    "revision_history/r1_f11dc784/source_manifest.json": {
+      "bytes": 4058
+    },
+    "revision_history/r1_f11dc784/test_diagnostic.py": {
+      "bytes": 13635
+    },
+    "REVISION_R2.md": {
+      "bytes": 2600
+    },
+    "run_p1_diagnostic.py": {
+      "bytes": 27012
+    },
+    "selection_protocol.json": {
+      "bytes": 2797
+    },
+    "tests/full_cache_selfcheck.py": {
+      "bytes": 2186
+    },
+    "tests/test_diagnostic.py": {
+      "bytes": 18870
+    },
+    "view_features.py": {
+      "bytes": 3050
+    }
+  },
+  "revision": 2,
+  "previous_manifest_sha256": "f11dc78480c74e6aba8c6fc15b426591df4bac44c554ee40d965e4c2623f20c0",
+  "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+  "prepared_only": true,
+  "frozen_before_complete_p1_results": true,
+  "test_access": false,
+  "source_inventory_excludes": [
+    "__pycache__",
+    "tests/fixtures",
+    "source_manifest.json (self)"
+  ],
+  "immutable_references": [
+    "reference/fv2_single_model.py",
+    "reference/diagnose_stage2_tta.py",
+    "reference/fv2_v6_wrapper.py",
+    "reference/p0_core.py"
+  ]
+}
