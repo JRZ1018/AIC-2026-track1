@@ -1,0 +1,85 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_CUDA_smoke_r1.json",
+  "original_sha256": "5905f18e75e2db0e9d1db506f794126ab8f2b3c9a401545462bc728e975f7ea9",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "scope": "actual synthetic CUDA full154/learnedhead/three successful updates/disk nextstep recovery; not candidate initialization or official data epoch",
+    "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+    "owner": {
+      "pid": 31866,
+      "pgrp": 31866,
+      "session": 31866,
+      "start_ticks": 316029820
+    },
+    "return_code": 0,
+    "owned_group_closed": true,
+    "canonical_idle": true,
+    "elapsed_seconds": 13.703367948532104,
+    "receipts": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010/artifacts/smoke/PF30_d237acb24d564db39c4bdedb5e0b74a8/receipt.json",
+        "sha256": "c3015320f1900a16f54debc26641d0dee8603ccb840320bdc03610b1ecf0e8fd",
+        "value": {
+          "schema": "aictrack1.fresh_route.cuda_smoke.v1",
+          "status": "passed",
+          "synthetic_only": true,
+          "candidate": false,
+          "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+          "full_visual_tensors": 152,
+          "trainable_tensors": 154,
+          "trainable_parameters": 88233966,
+          "head_gradient_norms": {
+            "linear.weight": 0.10411300510168076,
+            "linear.bias": 0.10410420596599579
+          },
+          "head_frozen": false,
+          "base_loss": {
+            "kind": "sce",
+            "alpha": 0.1,
+            "beta": 1.0,
+            "log_zero": -4.0
+          },
+          "first_loss": 4.786383628845215,
+          "uninterrupted_second_loss": 4.676631927490234,
+          "resumed_second_loss": 4.676631927490234,
+          "max_parameter_difference": 1.1641532182693481e-10,
+          "scheduler_T_max": 20,
+          "amp_overflow_skips": [
+            {
+              "from_scale": 65536.0,
+              "to_scale": 32768.0
+            },
+            {
+              "from_scale": 32768.0,
+              "to_scale": 16384.0
+            }
+          ],
+          "successful_update_count": 3,
+          "successful_updates": [
+            {
+              "loss": 4.786383628845215,
+              "scale": 16384.0,
+              "scheduler_epoch": 1
+            },
+            {
+              "loss": 4.676631927490234,
+              "scale": 16384.0,
+              "scheduler_epoch": 2
+            },
+            {
+              "loss": 4.676631927490234,
+              "scale": 16384.0,
+              "scheduler_epoch": 2
+            }
+          ],
+          "checkpoint_sha256": "478993282b57e7df9003f1e89c19347391655a6c0c18e908850e681b041bbfa4",
+          "checkpoint_role": "synthetic_resume_only"
+        }
+      }
+    ],
+    "test_access": false,
+    "candidate_initialized_from_smoke": false
+  }
+}

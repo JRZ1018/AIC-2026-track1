@@ -1,0 +1,31 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_new610_confirmation_status_r1.json",
+  "original_sha256": "090618c74700152a75a4e0425337f892181080ea9d5478affd1c35937c0c9ddf",
+  "omitted_fields": [
+    "/starts/command",
+    "/stdout"
+  ],
+  "record": {
+    "time_unix": 1791633987.8761873,
+    "processes": [],
+    "canonical": null,
+    "starts": [
+      {
+        "owner": {
+          "pid": 19313,
+          "pgrp": 19313,
+          "session": 19313,
+          "start_ticks": "926376407"
+        },
+        "source_manifest_sha256": "39ee976aa28643cc86dde75cc118338d96fdf84aae8957bbae8628e18751aae4",
+        "config_sha256": "f60b13689a2f0e95cf4b87d04129fe1b5b3e1a645e80550146d8b5f9b934f554",
+        "lease_token": "ceb359048bc049cd9c0469b5b9b22a61",
+        "test_access": false
+      }
+    ],
+    "budget_paths": [
+      "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_20261010/inputs/budget.json"
+    ]
+  }
+}

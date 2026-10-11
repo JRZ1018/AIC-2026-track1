@@ -329,6 +329,67 @@ def test_queue_halts_on_partial_output_without_launch(tmp_path: Path) -> None:
     ).read_text(encoding="utf-8")
 
 
+def test_queue_allows_only_explicit_exact_peft_last_checkpoint_resume(
+    tmp_path: Path,
+) -> None:
+    output = "artifacts/experiments/run-a"
+    checkpoint = f"{output}/last.pt"
+    item = QueueItem("A", "configs/a.yaml", output, "resume A", resume_checkpoint=checkpoint)
+    path = tmp_path / checkpoint
+    path.parent.mkdir(parents=True)
+    path.write_bytes(b"synthetic complete epoch checkpoint")
+    launched: list[tuple[str, ...]] = []
+
+    def launcher(command, root, _handle, on_start) -> int:
+        launched.append(tuple(command))
+        on_start(888)
+        _write_complete_output(root, item)
+        return 0
+
+    assert run_serial_queue(
+        root=tmp_path,
+        python=Path("python"),
+        logs=tmp_path / "logs",
+        queue_name="resume-test",
+        items=[item],
+        process_probe=lambda: [],
+        launcher=launcher,
+        lock_path=tmp_path / "training.lock.json",
+    ) == 0
+    assert len(launched) == 1
+    assert launched[0][-2:] == ("--resume", str(path.resolve()))
+    assert not (tmp_path / "training.lock.json").exists()
+
+
+def test_queue_rejects_ambiguous_resume_before_launch(tmp_path: Path) -> None:
+    output = "artifacts/experiments/run-a"
+    checkpoint = tmp_path / output / "last.pt"
+    checkpoint.parent.mkdir(parents=True)
+    checkpoint.write_bytes(b"synthetic checkpoint")
+    bad = QueueItem(
+        "A",
+        "configs/a.yaml",
+        output,
+        "unsafe resume",
+        resume_checkpoint="artifacts/experiments/other/last.pt",
+    )
+
+    def forbidden_launcher(*_args):
+        raise AssertionError("unsafe resume must not launch")
+
+    assert run_serial_queue(
+        root=tmp_path,
+        python=Path("python"),
+        logs=tmp_path / "logs",
+        queue_name="unsafe-resume-test",
+        items=[bad],
+        process_probe=lambda: [],
+        launcher=forbidden_launcher,
+        lock_path=tmp_path / "training.lock.json",
+    ) == 2
+    assert not (tmp_path / "training.lock.json").exists()
+
+
 def test_queue_halts_after_abnormal_exit_and_does_not_advance(
     tmp_path: Path,
 ) -> None:
@@ -412,6 +473,36 @@ def test_queue_success_requires_validated_artifacts(tmp_path: Path) -> None:
     assert "output validated" in (tmp_path / "logs/chain.log").read_text(
         encoding="utf-8"
     )
+
+
+def test_serial_queue_can_guard_frozen_head_training(tmp_path: Path) -> None:
+    item = QueueItem(
+        tag="head",
+        config="configs/head.yaml",
+        output_dir="artifacts/experiments/head",
+        purpose="synthetic frozen head",
+        trainer_entrypoint="scripts/train_frozen_head.py",
+    )
+    captured: list[str] = []
+
+    def launcher(command, root, _handle, on_start) -> int:
+        captured.extend(command)
+        on_start(889)
+        _write_complete_output(root, item)
+        return 0
+
+    result = run_serial_queue(
+        root=tmp_path,
+        python=Path("python"),
+        logs=tmp_path / "logs",
+        queue_name="head-queue",
+        items=[item],
+        process_probe=lambda: [],
+        launcher=launcher,
+    )
+    assert result == 0
+    assert captured == ["python", "scripts/train_frozen_head.py", "--config", item.config]
+    assert not (tmp_path / "artifacts/queues/training.lock.json").exists()
 
 
 def test_all_historical_queue_entries_use_the_shared_guard() -> None:

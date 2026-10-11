@@ -1,0 +1,17 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R2_LONG_RUN_A1_CLOSED.json",
+  "original_sha256": "502fd4e3aea96d96d72c282704bda1d14a3177ee57e61c14d96d2dcfc0c2889d",
+  "omitted_fields": [
+    "/argv"
+  ],
+  "record": {
+    "pid": 29960,
+    "start": 1791562370.42058,
+    "manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+    "mode": "RUN_A1",
+    "source_sha256": "b2074df5dfa004d89ab9f8959aced78d1da94534c390230a60b488cee2229d9f",
+    "budget_sha256": "14318a642b54b9f5ed10e7e325167402ad5ed1f748ac537af8afd04e9a24a671",
+    "deadline_unix": 1791591123.372912
+  }
+}

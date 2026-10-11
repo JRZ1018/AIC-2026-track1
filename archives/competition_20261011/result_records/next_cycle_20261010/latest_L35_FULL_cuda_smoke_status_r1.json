@@ -1,0 +1,81 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_FULL_cuda_smoke_status_r1.json",
+  "original_sha256": "6e92f7468f2f5e2a7775b5a71b1eb026853b360ced180728271ec97907cc0204",
+  "omitted_fields": [
+    "/stdout"
+  ],
+  "record": {
+    "group": [],
+    "canonical": null,
+    "receipts": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/smoke/L35_1b3a0ef9c77745659c06955074b3275b/receipt.json",
+        "value": {
+          "schema": "aictrack1.fresh_route.full.cuda_smoke.v1",
+          "status": "passed",
+          "synthetic_only": true,
+          "candidate": false,
+          "config_sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a",
+          "full_visual_tensors": 152,
+          "trainable_tensors": 154,
+          "trainable_parameters": 88233966,
+          "head_gradient_norms": {
+            "linear.weight": 0.165335550904274,
+            "linear.bias": 0.16535156965255737
+          },
+          "head_frozen": false,
+          "base_loss": {
+            "kind": "sce",
+            "alpha": 0.1,
+            "beta": 1.0,
+            "log_zero": -4.0
+          },
+          "first_loss": 4.832684516906738,
+          "uninterrupted_second_loss": 4.358562469482422,
+          "resumed_second_loss": 4.358562469482422,
+          "max_parameter_difference": 7.450580596923828e-09,
+          "scheduler_T_max": 20,
+          "amp_overflow_skips": [
+            {
+              "from_scale": 65536.0,
+              "to_scale": 32768.0
+            },
+            {
+              "from_scale": 32768.0,
+              "to_scale": 16384.0
+            },
+            {
+              "from_scale": 16384.0,
+              "to_scale": 8192.0
+            },
+            {
+              "from_scale": 16384.0,
+              "to_scale": 8192.0
+            }
+          ],
+          "successful_update_count": 3,
+          "successful_updates": [
+            {
+              "loss": 4.832684516906738,
+              "scale": 16384.0,
+              "scheduler_epoch": 1
+            },
+            {
+              "loss": 4.358562469482422,
+              "scale": 8192.0,
+              "scheduler_epoch": 2
+            },
+            {
+              "loss": 4.358562469482422,
+              "scale": 8192.0,
+              "scheduler_epoch": 2
+            }
+          ],
+          "checkpoint_sha256": "087c72604914a7bf74e15357dba4adf37f510b2875327a3217e204bf94653407",
+          "checkpoint_role": "synthetic_resume_only"
+        }
+      }
+    ]
+  }
+}

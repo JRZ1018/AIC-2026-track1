@@ -1,0 +1,57 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_AFA_diagnostic_new_instance_template_stage_r1.json",
+  "original_sha256": "2be85dbfbe0c895da8666d0da5b2031dd4d4f6b42208fd011826036e9c093e87",
+  "omitted_fields": [
+    "/CLI_entries/command",
+    "/members"
+  ],
+  "record": {
+    "schema": "aictrack1.AFA_CLS_anchored.diagnostic.actual_CPU_template_stage.v1",
+    "complete": true,
+    "remote_template_root": "/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_diagnostic_template_20261010",
+    "source_manifest_sha256": "9a8bffd8e8167fd8a403e0f724a74d1b232513eb7aac6dc09239ba254232451d",
+    "all_source_SHA_AST_PASS": true,
+    "closed_list_PASS": true,
+    "python_AST_count": 14,
+    "reused_same_SHA_members": 26,
+    "uploaded_members": 12,
+    "CLI_entries": [
+      {
+        "returncode": 0,
+        "stdout_sha256": "f2629e00e4eaec3734b4209acdde8003cade24a0f83e4b386f41025f8df9c787",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_tail": "usage: run_exploration_diagnostic.py [-h] --training-root TRAINING_ROOT\n                                     --expected-training-source-sha256\n                                     EXPECTED_TRAINING_SOURCE_SHA256\n                                     [--actual-training-launch ACTUAL_TRAINING_LAUNCH]\n                                     [--expected-training-launch-sha256 EXPECTED_TRAINING_LAUNCH_SHA256]\n                                     [--arm {AFA}]\n                                     [--expected-last-sha256 EXPECTED_LAST_SHA256]\n                                     [--hard-seconds HARD_SECONDS]\n                                     [--workers {0,4}] [--dependency-check]\n                                     [--run]\n\nRoot-run AFA exploration diagnostic; immutable numerical4V engine, no model\nupdates.\n\noptions:\n  -h, --help            show this help message and exit\n  --training-root TRAINING_ROOT\n  --expected-training-source-sha256 EXPECTED_TRAINING_SOURCE_SHA256\n  --actual-training-launch ACTUAL_TRAINING_LAUNCH\n  --expected-training-launch-sha256 EXPECTED_TRAINING_LAUNCH_SHA256\n  --arm {AFA}\n  --expected-last-sha256 EXPECTED_LAST_SHA256\n  --hard-seconds HARD_SECONDS\n  --workers {0,4}\n  --dependency-check\n  --run\n",
+        "stderr_tail": ""
+      },
+      {
+        "returncode": 0,
+        "stdout_sha256": "1bbe4f11d1f81a43ffe8d0c8ce7eea9a07f539897e2ebedc7986963debf1e5c9",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_tail": "usage: compare_graph_vs_J5.py [-h] --arm {AFA}\n\nFixed graph+P7 AFA candidate versus the actual old J5_GRAPH prediction, no\ngrid.\n\noptions:\n  -h, --help   show this help message and exit\n  --arm {AFA}\n",
+        "stderr_tail": ""
+      },
+      {
+        "returncode": 0,
+        "stdout_sha256": "aa80ef84125a9d35fa2bd9e26e480e883366b7ce973fab52fa8448906b56f3d2",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_tail": "usage: bind_diagnostic.py [-h] --training-root TRAINING_ROOT\n                          --expected-training-source-sha256\n                          EXPECTED_TRAINING_SOURCE_SHA256\n                          --actual-training-launch ACTUAL_TRAINING_LAUNCH\n                          --expected-launch-sha256 EXPECTED_LAUNCH_SHA256\n                          --output-root OUTPUT_ROOT\n\nBind actual AFA metadata only; active last/model/image is never opened.\n\noptions:\n  -h, --help            show this help message and exit\n  --training-root TRAINING_ROOT\n  --expected-training-source-sha256 EXPECTED_TRAINING_SOURCE_SHA256\n  --actual-training-launch ACTUAL_TRAINING_LAUNCH\n  --expected-launch-sha256 EXPECTED_LAUNCH_SHA256\n  --output-root OUTPUT_ROOT\n",
+        "stderr_tail": ""
+      }
+    ],
+    "GPU_started": false,
+    "training_started": false,
+    "images_decoded": false,
+    "test_access": false,
+    "actual_future_bind_performed": false,
+    "future_budget_sha256": null,
+    "future_admission_sha256": null,
+    "future_H1_checkpoint_sha256": null,
+    "observed_unix": 1791604520.7059188,
+    "disk": {
+      "total": 128849018880,
+      "used": 106619944960,
+      "free": 22229073920
+    }
+  }
+}

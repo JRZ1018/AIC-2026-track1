@@ -30,6 +30,7 @@ from aictrack1.data.feature_cache import FeatureCacheMetadata, FeatureCacheWrite
 from aictrack1.data.indexed_images import IndexedImageDataset, read_indexed_images  # noqa: E402
 from aictrack1.data.transforms import build_split_transforms  # noqa: E402
 from aictrack1.models.clip_vit_b32 import CLIP_MEAN, CLIP_STD, OPENAI_CLIP_COMMIT  # noqa: E402
+from aictrack1.models.patch_readout import encode_global_and_patch_mean  # noqa: E402
 from aictrack1.models.single_model import (  # noqa: E402
     load_diagnostic_model,
     resolve_relative,
@@ -48,6 +49,12 @@ def main() -> int:
     parser.add_argument("--shard-size", type=int, default=4096)
     parser.add_argument("--max-samples", type=int)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument(
+        "--feature-readout",
+        choices=("cls", "cls_patch_mean"),
+        default="cls",
+        help="Single CLIP forward; optional mean of final patch tokens for train-only diagnosis",
+    )
     args = parser.parse_args()
     if args.batch_size < 1 or args.workers < 0 or args.shard_size < args.batch_size:
         raise ValueError("batch size/workers/shard size configuration is invalid")
@@ -101,6 +108,16 @@ def main() -> int:
     if not diagnostic.normalized_features:
         raise ValueError("C2 classifier expects normalized visual features")
     transform = build_split_transforms(dataset_config.transforms)["validation"]
+    preprocessing = {
+        "resize": 224,
+        "center_crop": 224,
+        "interpolation": "bicubic",
+        "convert_rgb": True,
+        "mean": list(CLIP_MEAN),
+        "std": list(CLIP_STD),
+    }
+    if args.feature_readout == "cls_patch_mean":
+        preprocessing["feature_readout"] = "normalized_cls_concat_normalized_final_patch_mean"
     metadata = FeatureCacheMetadata(
         source="train",
         dataset_stage=dataset_config.stage,
@@ -110,17 +127,10 @@ def main() -> int:
         class_mapping_sha256=mapping.digest(),
         clip_weight_sha256=diagnostic.clip_weight_sha256,
         clip_upstream_commit=OPENAI_CLIP_COMMIT,
-        preprocessing={
-            "resize": 224,
-            "center_crop": 224,
-            "interpolation": "bicubic",
-            "convert_rgb": True,
-            "mean": list(CLIP_MEAN),
-            "std": list(CLIP_STD),
-        },
-        feature_dim=diagnostic.feature_dim,
+        preprocessing=preprocessing,
+        feature_dim=diagnostic.feature_dim * (2 if args.feature_readout == "cls_patch_mean" else 1),
         feature_dtype="float16",
-        normalized=True,
+        normalized=args.feature_readout == "cls",
         expected_record_count=len(records),
         peft_checkpoint_sha256=diagnostic.checkpoint_sha256,
         peft_config_sha256=diagnostic.config_sha256,
@@ -148,8 +158,18 @@ def main() -> int:
         for batch in loader:
             images = batch["image"].to(device, non_blocking=True)
             with torch.autocast(device_type=device.type, dtype=torch.float16, enabled=device.type == "cuda"):
-                features = visual(images).float()
-            features = F.normalize(features, dim=-1).half().cpu()
+                if args.feature_readout == "cls_patch_mean":
+                    global_features, patch_mean = encode_global_and_patch_mean(visual, images)
+                    features = torch.cat(
+                        (
+                            F.normalize(global_features.float(), dim=-1),
+                            F.normalize(patch_mean.float(), dim=-1),
+                        ),
+                        dim=-1,
+                    )
+                else:
+                    features = F.normalize(visual(images).float(), dim=-1)
+            features = features.half().cpu()
             pending_features.append(features)
             pending_records.extend(records[cursor : cursor + len(features)])
             cursor += len(features)
@@ -164,6 +184,7 @@ def main() -> int:
         "duration_seconds": time.perf_counter() - started,
         "resumed_record_count": completed,
         "peft_checkpoint_sha256": diagnostic.checkpoint_sha256,
+        "feature_readout": args.feature_readout,
         "scope": "Stage 2 train manifest only; test was not accessed",
     }
     (output / "extraction_stats.json").write_text(json.dumps(stats, indent=2, sort_keys=True) + "\n", encoding="utf-8")

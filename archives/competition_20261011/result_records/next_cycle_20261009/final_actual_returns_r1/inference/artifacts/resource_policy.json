@@ -1,0 +1,21 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/inference/artifacts/resource_policy.json",
+  "original_sha256": "5cf323f7d69907d7fcd6862dbace9780cbc7c84da560d1dde6a1692d118b4702",
+  "omitted_fields": [],
+  "record": {
+    "actual_data_total_bytes": 128849018880,
+    "adjusted_initial_free_bytes": 45226205184,
+    "capacity_increase_bytes": 32212254720,
+    "deadline_unix": 1791544003.3146317,
+    "disk_expansion_recovery": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "disk_max_bytes": 21474836480,
+    "initial_free_bytes": 13013950464,
+    "min_available_memory_bytes": 2147483648,
+    "min_free_bytes": 3221225472,
+    "phase_start_unix": 1791536803.4264827
+  }
+}

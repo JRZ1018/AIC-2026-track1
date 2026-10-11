@@ -1,0 +1,36 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_template_actual_CPU_entry.json",
+  "original_sha256": "06fb490fe188ce0ffd184ca4f0b79c51fb58366e8f4d8d13881446050888ae8b",
+  "omitted_fields": [
+    "/entries/command",
+    "/entries/stdout"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.template.actual_CPU_entry.v1",
+    "complete": true,
+    "template_manifest_sha256": "05df2bbd14af808847a430bb4a23ba22483774dad00e6724026ea37dd633bf88",
+    "inventory_sha256": "0ad27a0fec1b73c1c7e2c7fd93c456f485206dfa1498b019e8a130209fd2232c",
+    "verified_original_members": 87,
+    "entries": [
+      {
+        "entry": "scripts/prepare_fresh_route.py",
+        "return_code": 0
+      },
+      {
+        "entry": "scripts/run_fresh_route_arm.py",
+        "return_code": 0
+      },
+      {
+        "entry": "scripts/run_fresh_route_pair.py",
+        "return_code": 0
+      }
+    ],
+    "unbound": true,
+    "actual_asset_preflight_performed": false,
+    "actual_model_restore_performed": false,
+    "gpu_started": false,
+    "test_access": false,
+    "collected_epoch": 1791501503.635838
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/fourview_report.json",
+  "original_sha256": "f37e0454a574a22eec640201444198489d1a376920f01f2f6a730d87afd8a2aa",
+  "omitted_fields": [],
+  "record": {
+    "scope": "Stage 2 train-derived fixed validation only; no test access",
+    "view_protocol": "native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint",
+    "visual_input_resolution": 336,
+    "smoke_only": false,
+    "full_validation_count": 29737,
+    "evaluated_count": 29737,
+    "experiment_config_sha256": "6c36e78905abd066aed966ea25a70190c177f521f509b57921acf6939905530e",
+    "checkpoint_sha256": "5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78",
+    "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+    "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+    "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+    "elapsed_seconds": 191.18543742597103,
+    "center": {
+      "top1": 0.7327908277511597,
+      "macro_accuracy": 0.7237484455108643,
+      "zero_recall_classes": 5,
+      "tail_class_mean_recall": 0.7034595012664795,
+      "tail_sample_accuracy": 0.7191882729530334
+    },
+    "flip_tta": {
+      "top1": 0.738743007183075,
+      "macro_accuracy": 0.7296891212463379,
+      "zero_recall_classes": 5,
+      "tail_class_mean_recall": 0.709928035736084,
+      "tail_sample_accuracy": 0.7259265184402466
+    },
+    "delta_tta_minus_center": {
+      "top1": 0.005952179431915283,
+      "macro_accuracy": 0.005940675735473633,
+      "tail_class_mean_recall": 0.006468534469604492,
+      "tail_sample_accuracy": 0.006738245487213135
+    },
+    "paired_wins": 507,
+    "paired_losses": 330,
+    "changed_predictions": 1947,
+    "checkpoint_role": "final",
+    "checkpoint_epoch": 20,
+    "four_view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+    "four_view_resize": 384,
+    "four_view": {
+      "top1": 0.7427111268043518,
+      "macro_accuracy": 0.7337744832038879,
+      "zero_recall_classes": 4,
+      "tail_class_mean_recall": 0.7158893346786499,
+      "tail_sample_accuracy": 0.7321946024894714
+    },
+    "delta_four_minus_flip_tta": {
+      "top1": 0.0039681196212768555,
+      "macro_accuracy": 0.004085361957550049,
+      "tail_class_mean_recall": 0.005961298942565918,
+      "tail_sample_accuracy": 0.0062680840492248535
+    },
+    "four_view_changed_predictions": 1754,
+    "four_view_paired_wins": 449,
+    "four_view_paired_losses": 331,
+    "fused_logits": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/diagnostics/B50_EMA/fused_logits.pt",
+      "sha256": "7fe9dd1584d6f36711444394516ef631a3af855df8d3ca7a5c0b9ea8bffe7b7c",
+      "dtype": "torch.float16",
+      "shape": [
+        29737,
+        750
+      ],
+      "weights_only_safe_load_verified": true
+    },
+    "model_role": "successful_step_EMA_shadow_fixed20",
+    "parameter_field": "josrc_teacher.ema.shadow",
+    "origin_arm": "B50",
+    "candidate_id": "B50_EMA",
+    "parent_checkpoint_sha256": "5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78",
+    "shadow_tensor_sha256": "1ed8e3024e30180661f009afe5943b43ae85532d32d924aeadd9db8fe1820da5",
+    "EMA_decay": 0.999,
+    "EMA_successful_updates": 37164,
+    "EMA_skipped_updates": 16,
+    "EMA_parameter_count": 154,
+    "EMA_parameter_numel": 88233966,
+    "raw_student_only": false,
+    "teacher_used_for_inference": true,
+    "EMA_optimizer_restored": false,
+    "raw_student_optimizer_audited_as_parent_only": true,
+    "model_updates": 0,
+    "inference_optimizer_steps": 0,
+    "test_access": false,
+    "diagnostic_source_manifest_sha256": "7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045",
+    "training_source_manifest_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "parent_diagnostic_source_manifest_sha256": "24aa7656811de9027162a20f8de6c5f4a015123ee41aeafc2602c653bda40013",
+    "model_role_parity": {
+      "schema": "aictrack1.B_EMA.parity_role_metadata.v1",
+      "parent_raw_report_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/artifacts/diagnostics/JOINT_B50/report.json",
+      "parent_raw_report_sha256": "fb21654330639b8a188b1e29d9ce2b36dfd5063813328639909adbeecdc91bf5",
+      "parent_student_terminal_validation_top1": 0.7330934405326843,
+      "parent_raw_center_top1": 0.7330934405326843,
+      "parent_raw_parity_tolerance": 0.0002,
+      "parent_raw_diagnostic_parity_passed": true,
+      "EMA_oneview_top1": 0.7327908277511597,
+      "EMA_oneview_minus_parent_student_top1": -0.0003026127815246582,
+      "raw_student_terminal_parity_applicable_to_EMA": false,
+      "EMA_against_student_parity_passed": null,
+      "EMA_observation_is_not_an_expected_value": true,
+      "model_role": "successful_step_EMA_shadow_fixed20",
+      "parent_checkpoint_sha256": "5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78",
+      "shadow_tensor_sha256": "1ed8e3024e30180661f009afe5943b43ae85532d32d924aeadd9db8fe1820da5"
+    }
+  }
+}

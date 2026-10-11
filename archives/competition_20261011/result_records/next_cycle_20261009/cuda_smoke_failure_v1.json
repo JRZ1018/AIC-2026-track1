@@ -1,0 +1,33 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/cuda_smoke_failure_v1.json",
+  "original_sha256": "7622ee10d00f7f712476ededc56fbd256a4d8d6c5fcd78783270f807ea18fa41",
+  "omitted_fields": [
+    "/old_launch/command"
+  ],
+  "record": {
+    "status": "failed_smoke_then_repaired",
+    "source_manifest_sha256": "c66e47b2f21a450905865c55d5900e195e070b61a887417e5eff580b7ff53421",
+    "error": "RuntimeError: missing/nonfinite gradient visual.transformer.resblocks.4.mlp.c_fc.weight",
+    "location": "scripts/p1_smoke.py first synthetic step before checkpoint save",
+    "interpretation": "Known possible initial AMP overflow was incorrectly rejected by smoke. Formal training source unchanged.",
+    "old_launch": {
+      "kind": "locked_cuda_smoke",
+      "pid": 218344,
+      "start_ticks": "305308125",
+      "source_manifest_sha256": "c66e47b2f21a450905865c55d5900e195e070b61a887417e5eff580b7ff53421",
+      "initial_free_bytes": 14419030016,
+      "launched_epoch": 1791479428.59436,
+      "deadline_unix": 1791481228.593325,
+      "cwd": "/root/AICtrack1_next_cycle_20261009"
+    },
+    "repair": {
+      "fix": "finite AMP backoff in smoke only",
+      "previous_source_sha256": "c66e47b2f21a450905865c55d5900e195e070b61a887417e5eff580b7ff53421",
+      "source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+      "verified_files": 83
+    },
+    "failed_controller_log": "[2026-10-09 01:10:31] 20261009-P1-J20 start\n[2026-10-09 01:10:31] J20: starting - full-visual + task head, original20 cosine\n[2026-10-09 01:10:41] J20: STOPPED after 0.2 min with return code 1; output status=ready: output directory does not exist; halting queue. Log: /root/AICtrack1_next_cycle_20261009/artifacts/queues/P1_J20/J20.log\n",
+    "note": "Canonical per-arm child log was overwritten by its retry; failure string and old controller log were captured before retry, original remote source retained as .before_amp_fix."
+  }
+}

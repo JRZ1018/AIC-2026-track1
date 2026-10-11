@@ -1,0 +1,124 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_FULL_fresh_fixed20_launch_r1.json",
+  "original_sha256": "d2b26b311722c2e15a368e15c8ae9983e479349a79b02161bf5b44604fda4e64",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.L50.FULL.actual_launch.v1",
+    "actual_Popen_pid": 54349,
+    "launch_unix": 1791694823.475465,
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011",
+    "source_manifest_sha256": "3ebb8783263d63cead51e26a043d5990de5b9093da03394a5d6a17dbacd97df5",
+    "budget_sha256": "1edccb01c54e50a7f83434da6974bf74233c5fab12296968047d559b579ec22e",
+    "config_sha256": "7214f98e096a7e00fbaefced617e8d7261234412c6619d72909d32c10a916431",
+    "smoke_actual_receipt": {
+      "schema": "aictrack1.fresh_route.full.cuda_smoke.v1",
+      "status": "passed",
+      "synthetic_only": true,
+      "candidate": false,
+      "config_sha256": "7214f98e096a7e00fbaefced617e8d7261234412c6619d72909d32c10a916431",
+      "full_visual_tensors": 152,
+      "trainable_tensors": 154,
+      "trainable_parameters": 88233966,
+      "head_gradient_norms": {
+        "linear.weight": 1.055886149406433,
+        "linear.bias": 1.0554399490356445
+      },
+      "head_frozen": false,
+      "base_loss": {
+        "kind": "sce",
+        "alpha": 0.1,
+        "beta": 1.0,
+        "log_zero": -4.0
+      },
+      "first_loss": 4.832684516906738,
+      "uninterrupted_second_loss": 1.837775468826294,
+      "resumed_second_loss": 1.837775468826294,
+      "max_parameter_difference": 2.3283064365386963e-10,
+      "scheduler_T_max": 20,
+      "amp_overflow_skips": [
+        {
+          "from_scale": 65536.0,
+          "to_scale": 32768.0
+        },
+        {
+          "from_scale": 32768.0,
+          "to_scale": 16384.0
+        },
+        {
+          "from_scale": 16384.0,
+          "to_scale": 8192.0
+        },
+        {
+          "from_scale": 8192.0,
+          "to_scale": 4096.0
+        },
+        {
+          "from_scale": 4096.0,
+          "to_scale": 2048.0
+        },
+        {
+          "from_scale": 16384.0,
+          "to_scale": 8192.0
+        },
+        {
+          "from_scale": 8192.0,
+          "to_scale": 4096.0
+        },
+        {
+          "from_scale": 4096.0,
+          "to_scale": 2048.0
+        }
+      ],
+      "successful_update_count": 3,
+      "successful_updates": [
+        {
+          "loss": 4.832684516906738,
+          "scale": 16384.0,
+          "scheduler_epoch": 1
+        },
+        {
+          "loss": 1.837775468826294,
+          "scale": 2048.0,
+          "scheduler_epoch": 2
+        },
+        {
+          "loss": 1.837775468826294,
+          "scale": 2048.0,
+          "scheduler_epoch": 2
+        }
+      ],
+      "checkpoint_sha256": "40a528bb7f3dddc493b2401b466b63485a22042d09722b5ffe406d4355f5e367",
+      "checkpoint_role": "synthetic_resume_only"
+    },
+    "smoke_owned_groups_closed": [
+      {
+        "owner": {
+          "pid": 54234,
+          "pgrp": 54234,
+          "session": 54234,
+          "start_ticks": "932455566"
+        },
+        "return_code": 0,
+        "group_closed": true,
+        "test_access": false
+      }
+    ],
+    "fresh_official_CLIP_legal_fullH1": true,
+    "smoke_not_initialization": true,
+    "validation_count": 0,
+    "train_count": 148695,
+    "planned_epochs": 20,
+    "planned_pause": false,
+    "test_access": false,
+    "controller": {
+      "pid": 54349,
+      "pgrp": 54349,
+      "session": 54349,
+      "start_ticks": "932462657"
+    },
+    "canonical": null
+  }
+}

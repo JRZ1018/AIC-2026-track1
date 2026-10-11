@@ -1,0 +1,9 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L35_final_actual_returns_r1/inference/artifacts/inference_command.json",
+  "original_sha256": "21d97d733661a757a1d7beed1c0e4c2550a12d549a453c29ae4fab87a7963c5b",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {}
+}

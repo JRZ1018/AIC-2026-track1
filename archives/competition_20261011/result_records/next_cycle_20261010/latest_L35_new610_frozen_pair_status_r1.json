@@ -1,0 +1,31 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_new610_frozen_pair_status_r1.json",
+  "original_sha256": "afa263a0783088558562d4194f79251b03ad27aab79970fb3f2fab2f48d2ff06",
+  "omitted_fields": [],
+  "record": {
+    "time_unix": 1791650923.18808,
+    "arms": {
+      "J5": {
+        "outputs": {
+          "runtime_receipt.json": 1619,
+          "p1_checkpoint_audit.json": 3426,
+          "fused_logits.pt": 47052393,
+          "paired_predictions.csv": 2390955,
+          "report.json": 2714,
+          "rows.csv": 5437009,
+          "fused_features.pt": 63342453,
+          "input_identity.json": 9418,
+          "result_manifest.json": 1258
+        },
+        "owned_group": [],
+        "log_tail": "/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n{\n  \"scope\": \"Stage 2 train-derived fixed validation only; no test access\",\n  \"view_protocol\": \"native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint\",\n  \"visual_input_resolution\": 336,\n  \"smoke_only\": false,\n  \"full_validation_count\": 29737,\n  \"evaluated_count\": 29737,\n  \"experiment_config_sha256\": \"f60b13689a2f0e95cf4b87d04129fe1b5b3e1a645e80550146d8b5f9b934f554\",\n  \"checkpoint_sha256\": \"0be38e1247ebfeae7019b7cd77720625ae58682134b099961f1f38cc0f15efae\",\n  \"split_sha256\": \"610111665e1055bcda7157add15b16ade353138365e54ee87dc92316e6dfd6f1\",\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"class_mapping_sha256\": \"811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879\",\n  \"elapsed_seconds\": 208.9330330453813,\n  \"center\": {\n    \"top1\": 0.735951840877533,\n    \"macro_accuracy\": 0.7284374833106995,\n    \"zero_recall_classes\": 2,\n    \"tail_class_mean_recall\": 0.7096757888793945,\n    \"tail_sample_accuracy\": 0.7219305634498596\n  },\n  \"flip_tta\": {\n    \"top1\": 0.7416350245475769,\n    \"macro_accuracy\": 0.7339780330657959,\n    \"zero_recall_classes\": 1,\n    \"tail_class_mean_recall\": 0.7149899005889893,\n    \"tail_sample_accuracy\": 0.7274152040481567\n  },\n  \"delta_tta_minus_center\": {\n    \"top1\": 0.005683183670043945,\n    \"macro_accuracy\": 0.0055405497550964355,\n    \"tail_class_mean_recall\": 0.0053141117095947266,\n    \"tail_sample_accuracy\": 0.005484640598297119\n  },\n  \"paired_wins\": 510,\n  \"paired_losses\": 341,\n  \"changed_predictions\": 1985,\n  \"checkpoint_role\": \"final\",\n  \"checkpoint_epoch\": 20,\n  \"four_view_protocol\": \"native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged\",\n  \"four_view_resize\": 384,\n  \"four_view\": {\n    \"top1\": 0.7454686164855957,\n    \"macro_accuracy\": 0.7379893660545349,\n    \"zero_recall_classes\": 1,\n    \"tail_class_mean_recall\": 0.7198914289474487,\n    \"tail_sample_accuracy\": 0.7320379018783569\n  },\n  \"delta_four_minus_flip_tta\": {\n    \"top1\": 0.003833591938018799,\n    \"macro_accuracy\": 0.004011332988739014,\n    \"tail_class_mean_recall\": 0.004901528358459473,\n    \"tail_sample_accuracy\": 0.004622697830200195\n  },\n  \"four_view_changed_predictions\": 1785,\n  \"four_view_paired_wins\": 430,\n  \"four_view_paired_losses\": 316,\n  \"fused_logits\": {\n    \"path\": \"/root/autodl-tmp/AICtrack1_next_cycle_L35_confirmation_diagnostic_r2_20261010/artifacts/diagnostics/CONFIRM_J5/fused_logits.pt\",\n    \"sha256\": \"af37603d3d92df4c70a02c8e944cef70693f9bd749d328dda990ee80479c5f3f\",\n    \"dtype\": \"torch.float16\",\n    \"shape\": [\n      29737,\n      750\n    ],\n    \"weights_only_safe_load_verified\": true\n  }\n}\n{\"complete\": true, \"arm\": \"J5\", \"identity\": \"/root/autodl-tmp/AICtrack1_next_cycle_L35_confirmation_diagnostic_r2_20261010/artifacts/diagnostics/CONFIRM_J5/input_identity.json\", \"independent_confirmation\": true, \"test_access\": false}\n"
+      },
+      "L35": {
+        "outputs": {}
+      }
+    },
+    "canonical": null,
+    "gpu": "1 MiB, 0 %\n"
+  }
+}

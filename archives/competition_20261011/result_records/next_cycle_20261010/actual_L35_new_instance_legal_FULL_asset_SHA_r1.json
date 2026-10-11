@@ -1,0 +1,67 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_new_instance_legal_FULL_asset_SHA_r1.json",
+  "original_sha256": "5b68f5e7193476df4476c9c22db9763d1620e9bcf8a479d8adde82d664a6c120",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "status": "legal_full_assets_actual_SHA_PASS",
+    "assets": [
+      {
+        "name": "class_mapping",
+        "path": "/root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/audits/stage2/metadata/classes.csv",
+        "sha256": "0f54c471945f356177c885ba2f9edc943d669a61f12c73503fd4632c91ef40be",
+        "bytes": 7440
+      },
+      {
+        "name": "clip",
+        "path": "/root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/weights/ViT-B-32.pt",
+        "sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+        "bytes": 353976522
+      },
+      {
+        "name": "h1",
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/artifacts/experiments/mainline-h1/last.pt",
+        "sha256": "fa4623670a6f48731cf54e62dfb5ce5df44b232f4530f6c13b886efe0579e605",
+        "bytes": 4641602
+      },
+      {
+        "name": "h1_receipt",
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/artifacts/experiments/mainline-h1/h1_receipt.json",
+        "sha256": "0e46cf54918bc152af34f7b3edb6b84fe7a9c3d2211bc3925f8b994a1dc144cf",
+        "bytes": 1237
+      },
+      {
+        "name": "label_conflicts",
+        "path": "/root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/audits/stage2/train/label_conflicts.csv",
+        "sha256": "b1afe084e654aeac5d431501657734c168a3cfc1f928defacac219dcf84c430a",
+        "bytes": 145175
+      },
+      {
+        "name": "manifest",
+        "path": "/root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/audits/stage2/train/samples.csv",
+        "sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+        "bytes": 34822018
+      },
+      {
+        "name": "split",
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/inputs/split.csv",
+        "sha256": "0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c",
+        "bytes": 10706046
+      }
+    ],
+    "all_train_H1_sha256": "fa4623670a6f48731cf54e62dfb5ce5df44b232f4530f6c13b886efe0579e605",
+    "template_sha256": "4d857a625f8a09b4380ab64940bfbd1144fa60a20cd26d9f8628cc19d4b503e0",
+    "observed_unix": 1791650761.7500384,
+    "disk": {
+      "total": 128849018880,
+      "used": 116032856064,
+      "free": 12816162816
+    },
+    "GPU_used": false,
+    "model_loaded": false,
+    "images_decoded": false,
+    "test_access": false,
+    "actual_confirmation_passed": false
+  }
+}

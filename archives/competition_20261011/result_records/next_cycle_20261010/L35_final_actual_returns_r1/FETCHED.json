@@ -1,0 +1,334 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L35_final_actual_returns_r1/FETCHED.json",
+  "original_sha256": "3db30a1dbd0d80e9b3580353947d250b54b52a5a412793c92fdfb99827643375",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "files": 210,
+    "total_bytes": 1985389068,
+    "all_SHA_verified": true,
+    "manifest_sha256": "ad086cc485fe42378835538ed2fb1179038cfb1baf5808f9f0bb93d96c44ded2",
+    "preexisting_or_reused": 165,
+    "new_bytes_received": 1569765073,
+    "seconds": 119.5848708152771,
+    "segments": [
+      {
+        "key": "full_source/inputs/FUTURE_INPUTS.json",
+        "offset": 0,
+        "bytes": 436,
+        "segment_sha256": "6c5c8c34d0c968788eb6fb0dcb41294954b998c4f30a2001aabc2aac1216f178",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/README.md",
+        "offset": 0,
+        "bytes": 552,
+        "segment_sha256": "5b06092d69c500a5a9ca6787c9fa8ea86f2ac8bb233f9f9ce3d3a3967676fba2",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/inference.log",
+        "offset": 0,
+        "bytes": 578,
+        "segment_sha256": "a9f916be0a975f2914b725b81c26ad2ce7f0cf4754744aa6af1c0feaad3ea2ae",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/launch_receipt.json",
+        "offset": 0,
+        "bytes": 585,
+        "segment_sha256": "390f9c65c05f651b032b73eae2ed5e0be4142bd82fd7c1ad0fe0f4015073c64e",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/resource_policy.json",
+        "offset": 0,
+        "bytes": 613,
+        "segment_sha256": "a4fe70fa26d4c5c138bf8027e1bc51f910cf5d300efb3b73b6add7aad30a2ae0",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/runtime_receipts/L35_160860d6ffc04c81adfe7e04ded020a4.json",
+        "offset": 0,
+        "bytes": 758,
+        "segment_sha256": "b10029082f660346b78aabbfd518af3cf81091340304a2589daaf1d50907a71b",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/runtime_receipts/L35_1b3a0ef9c77745659c06955074b3275b.json",
+        "offset": 0,
+        "bytes": 758,
+        "segment_sha256": "c720373809059fced6ec83173a8930585f3a923d42a3c58b12b43784720eb06c",
+        "remote_exit": 0
+      },
+      {
+        "key": "submission/inference_artifacts.json",
+        "offset": 0,
+        "bytes": 772,
+        "segment_sha256": "23b6540b04d0b231904c8ce7a0b3d732c445c021675b490960b5e8a5325379ee",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/README.md",
+        "offset": 0,
+        "bytes": 823,
+        "segment_sha256": "62b0bd510bb5533e1c0ba0a4599070294ed85702eae8e15305bd7ee4c2ad78c9",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/full_budget.json",
+        "offset": 0,
+        "bytes": 988,
+        "segment_sha256": "90ad899b9110e96eb015b79bcdddf505560184215a67b540abfd0cd2aa07832e",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/inputs/full_budget.json",
+        "offset": 0,
+        "bytes": 988,
+        "segment_sha256": "90ad899b9110e96eb015b79bcdddf505560184215a67b540abfd0cd2aa07832e",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/launch_gate.py",
+        "offset": 0,
+        "bytes": 1064,
+        "segment_sha256": "60d0bd62374bddea162fbf1cb45d9b80416dc2a77d17b3f9841d906dc81aa4c8",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/config.yaml",
+        "offset": 0,
+        "bytes": 1675,
+        "segment_sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/configs/experiment/p1_full_L35.yaml",
+        "offset": 0,
+        "bytes": 1675,
+        "segment_sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/inputs/baseline_J5.yaml",
+        "offset": 0,
+        "bytes": 1685,
+        "segment_sha256": "a65f60e974c04842e2c86975ab3675aad8469bc1b0c0a27a98e8fa145b4b8562",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/inference_command.json",
+        "offset": 0,
+        "bytes": 1901,
+        "segment_sha256": "21d97d733661a757a1d7beed1c0e4c2550a12d549a453c29ae4fab87a7963c5b",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/fixed_final_graph.py",
+        "offset": 0,
+        "bytes": 1967,
+        "segment_sha256": "f54fa70be9411e082f95edb04998c3976b58d702aba578be8a566c34463b4589",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/inputs/actual_full_binding.json",
+        "offset": 0,
+        "bytes": 2403,
+        "segment_sha256": "dddb61ea7dae7a4bd3cb59c6842f331cdc5889b355838bdd2e3b61c706e197b0",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/inputs/actual_full_binding.json",
+        "offset": 0,
+        "bytes": 2403,
+        "segment_sha256": "dddb61ea7dae7a4bd3cb59c6842f331cdc5889b355838bdd2e3b61c706e197b0",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/selection.json",
+        "offset": 0,
+        "bytes": 2833,
+        "segment_sha256": "15fd22f3c36b65dc90250692538ca0e2c3fe8a581f36be660fad05e72a061546",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/inputs/fresh_confirmation.json",
+        "offset": 0,
+        "bytes": 2833,
+        "segment_sha256": "15fd22f3c36b65dc90250692538ca0e2c3fe8a581f36be660fad05e72a061546",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/inputs/full_assets.json",
+        "offset": 0,
+        "bytes": 2987,
+        "segment_sha256": "91584c39520cadd175ce11f4f681839e75a5165c5d9e12beb30176a5c548520e",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/view_features.py",
+        "offset": 0,
+        "bytes": 3114,
+        "segment_sha256": "39a3eb5e899ab1c394515d2bc09a45442c073407ffe93d96e82bc74f9a1b2342",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/check_full_provider.py",
+        "offset": 0,
+        "bytes": 3878,
+        "segment_sha256": "54433fd6277472353c6188ba20b0b5c1eb4031d208b78088a645ca99fc41c84c",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/full_route_runtime.py",
+        "offset": 0,
+        "bytes": 4745,
+        "segment_sha256": "f0d4f53dad79956289a650b846925689d8338f378fcb441f23bfe78ac73f83c5",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/prepare_full_route.py",
+        "offset": 0,
+        "bytes": 5450,
+        "segment_sha256": "a9a54fa7b56a4f4dccff0b878600ba743b9885c59fa81356656eec2a207b1560",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/owned_launch.py",
+        "offset": 0,
+        "bytes": 5790,
+        "segment_sha256": "bd86d2e80f31a02e81505ac647f3d8283b11d4f46e082bfb295a397280c7acd8",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/run_full.py",
+        "offset": 0,
+        "bytes": 5900,
+        "segment_sha256": "a797d4bf8ce6aa6eff0c86218d57764223eaf0fb587d61cae6de340ad33214b0",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/prepare_final_source.py",
+        "offset": 0,
+        "bytes": 7166,
+        "segment_sha256": "0398fada6f23281c9a59a422a356281489938ef198c08e52b1263703684ba01c",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/p1_smoke.py",
+        "offset": 0,
+        "bytes": 7200,
+        "segment_sha256": "1b6ab0303b32aaa0c29c77b2d3ab7b5ba7481bac01610b6b7d6465fd1d369fe9",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/p3_graph.py",
+        "offset": 0,
+        "bytes": 8765,
+        "segment_sha256": "d0fada9fb561915ef055de29b7a4707ad49404ac26ec5c9639fc5651ff6c20fb",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/references/UPSTREAM_FULL_TEMPLATE.json",
+        "offset": 0,
+        "bytes": 10208,
+        "segment_sha256": "4d857a625f8a09b4380ab64940bfbd1144fa60a20cd26d9f8628cc19d4b503e0",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/accept_return.py",
+        "offset": 0,
+        "bytes": 10999,
+        "segment_sha256": "d6470be30a543dd1d559d3269b954e822b0f5952371b41f33664dc4483992d8a",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/full_source.json",
+        "offset": 0,
+        "bytes": 11561,
+        "segment_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/full_route_contract.py",
+        "offset": 0,
+        "bytes": 13015,
+        "segment_sha256": "83408f9bb0b9a25703e88d3f2a879ecccac55ce0119a892028437d84692d1329",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/run_final.py",
+        "offset": 0,
+        "bytes": 13088,
+        "segment_sha256": "b7f50db627064cbb48aed49b15421f242eab066011e063805fd4e82c195d6ebc",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/audit_full_checkpoint.py",
+        "offset": 0,
+        "bytes": 13381,
+        "segment_sha256": "3441ad74b5312a1c32919d340b670d782628e1d531da928e2b20358fda240156",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/tests/test_L35_final_contract.py",
+        "offset": 0,
+        "bytes": 15394,
+        "segment_sha256": "978510e48733ef9d8c4d8c247e30f20a4a10a4c7426a2a7c5a0736e0e5f03d24",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/final_contract.py",
+        "offset": 0,
+        "bytes": 18784,
+        "segment_sha256": "aac474ecf86999f99bafc06b74aa6295bf14d1342d37def5a7dbef925a0b17cb",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/infer_and_build_submission.py",
+        "offset": 0,
+        "bytes": 31563,
+        "segment_sha256": "68fc86cec580be94af907a0068a125bef2a18f46473e93d7bd98cfc8613d1084",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/metrics.json",
+        "offset": 0,
+        "bytes": 7815643,
+        "segment_sha256": "bee8d6712b5249b126f88f9f11eccd5d45ecfe21cf2065915ad985c4d0bdaa62",
+        "remote_exit": 0
+      },
+      {
+        "key": "submission/fused_logits.pt",
+        "offset": 0,
+        "bytes": 60661033,
+        "segment_sha256": "e413ad1d49433f1df39072a1ecee0be13c97906562cff55c3ee2dd9a8318b0eb",
+        "remote_exit": 0
+      },
+      {
+        "key": "submission/four_view_features.pt",
+        "offset": 0,
+        "bytes": 81180265,
+        "segment_sha256": "0b35770bd6b7f76399a16997073e16811019cd85b1548ec9d2650f47a97c2c57",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/final.pt",
+        "offset": 0,
+        "bytes": 352988267,
+        "segment_sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/last.pt",
+        "offset": 0,
+        "bytes": 1066898587,
+        "segment_sha256": "5325982fad83513b11e6f2c9e94537272ae5f7ded295e46b80948bf9fea3532d",
+        "remote_exit": 0
+      }
+    ],
+    "local_CPU_acceptance_pending": true
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_josrc_train_status_r5.json",
+  "original_sha256": "dd4d312775dfd0036ecd719de3e1746bc61d8b4cafb25d30f65b2f0358e5a453",
+  "omitted_fields": [
+    "/receipts/artifacts/launches/B25_48e80f7518724b72b13b2ed3bd54b1cd/START.json/value/command",
+    "/receipts/artifacts/launches/B50_47b8c5462da34a4d8d895a0edcd017be/START.json/value/command",
+    "/receipts/root_actual_CPU_preflight.json/value/stderr",
+    "/receipts/root_actual_CPU_preflight.json/value/stdout",
+    "/receipts/root_actual_launch.json/value/command",
+    "/receipts/root_actual_launch.json/value/process/argv"
+  ],
+  "record": {
+    "observed_unix": 1791584776.8169465,
+    "execution_root": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010",
+    "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "processes": [],
+    "canonical": null,
+    "logs": {
+      "root_stdout.log": "[2026-10-10 00:09:17] 20261010-josrc-inspired-profile-or-selected20 start\n[2026-10-10 00:09:17] B25: starting - JoSRC-inspired B true-data profile100 or selected full20 student\n[2026-10-10 03:18:16] B25: finished in 189.0 min; output validated\n[2026-10-10 03:18:16] B50: starting - JoSRC-inspired B true-data profile100 or selected full20 student\n[2026-10-10 06:22:32] B50: finished in 184.3 min; output validated\n[2026-10-10 06:22:32] 20261010-josrc-inspired-profile-or-selected20 finished",
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/chain.log": "[2026-10-10 00:09:17] 20261010-josrc-inspired-profile-or-selected20 start\n[2026-10-10 00:09:17] B25: starting - JoSRC-inspired B true-data profile100 or selected full20 student\n[2026-10-10 03:18:16] B25: finished in 189.0 min; output validated\n[2026-10-10 03:18:16] B50: starting - JoSRC-inspired B true-data profile100 or selected full20 student\n[2026-10-10 06:22:32] B50: finished in 184.3 min; output validated\n[2026-10-10 06:22:32] 20261010-josrc-inspired-profile-or-selected20 finished",
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/B25.log": "  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}",
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/B50.log": "  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}"
+    },
+    "epoch_summaries": {
+      "root_stdout.log": {
+        "read_full_log": true,
+        "total_bytes": 491,
+        "incomplete_or_nonjson_lines": 6,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/chain.log": {
+        "read_full_log": true,
+        "total_bytes": 491,
+        "incomplete_or_nonjson_lines": 6,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/B25.log": {
+        "read_full_log": false,
+        "total_bytes": 8872938,
+        "incomplete_or_nonjson_lines": 113928,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/B50.log": {
+        "read_full_log": false,
+        "total_bytes": 8872907,
+        "incomplete_or_nonjson_lines": 113935,
+        "observed_epochs": [],
+        "latest": []
+      }
+    },
+    "checkpoint_stats": {
+      "artifacts/experiments/JOINT_B25/last.pt": {
+        "bytes": 1776438829,
+        "mtime": 1791573490.4566822
+      },
+      "artifacts/experiments/JOINT_B50/last.pt": {
+        "bytes": 1776438893,
+        "mtime": 1791584547.5047662
+      },
+      "artifacts/experiments/JOINT_B25/final.pt": {
+        "bytes": 352987755,
+        "mtime": 1791573491.152688
+      },
+      "artifacts/experiments/JOINT_B50/final.pt": {
+        "bytes": 352987755,
+        "mtime": 1791584548.0007637
+      }
+    },
+    "receipts": {
+      "root_actual_CPU_preflight.json": {
+        "sha256": "1b000fbf1142472c648a174de22978b85aca80396ef232462585fd44a7af1a73",
+        "value": {
+          "complete": true,
+          "actual_server_CPU_preflight": true,
+          "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "GPU_started": false,
+          "observed_unix": 1791562142.0709138
+        }
+      },
+      "root_actual_launch.json": {
+        "sha256": "00e09eccdd25c854848cd9dbbc817799bb3a913a2137984ce27517b91f76fb19",
+        "value": {
+          "mode": "train",
+          "process": {
+            "pid": 19633,
+            "ppid": 19632,
+            "pgrp": 19633,
+            "session": 19633,
+            "start_ticks": "313580709",
+            "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+          },
+          "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "launch_unix": 1791562154.430007,
+          "test_access": false
+        }
+      },
+      "artifacts/launches/B25_48e80f7518724b72b13b2ed3bd54b1cd/START.json": {
+        "sha256": "d6c14134d2e1ec2b1fc5fcf16344851a1b910486df028d2ad06075661d4977ca",
+        "value": {
+          "owner": {
+            "pid": 19640,
+            "pgrp": 19640,
+            "session": 19640,
+            "start_ticks": "313580985"
+          },
+          "source_manifest_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "config_sha256": "41ee96e1e912e7e8f4cbf73d17518a29eeda91751657da47e075cfb10df3ac41",
+          "lease_token": "83a0353ce2c442db94a9bbf656fdd8b7",
+          "test_access": false
+        }
+      },
+      "artifacts/launches/B50_47b8c5462da34a4d8d895a0edcd017be/START.json": {
+        "sha256": "aa420c68d4cd5cb73f52a5274370c48ec09c4c55289d43784be507b6ef1a7fa8",
+        "value": {
+          "owner": {
+            "pid": 25343,
+            "pgrp": 25343,
+            "session": 25343,
+            "start_ticks": "314714900"
+          },
+          "source_manifest_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "config_sha256": "6c36e78905abd066aed966ea25a70190c177f521f509b57921acf6939905530e",
+          "lease_token": "8ac717ab9cd4459b8ca30bceab47b233",
+          "test_access": false
+        }
+      },
+      "artifacts/launches/B25_48e80f7518724b72b13b2ed3bd54b1cd/EXIT.json": {
+        "sha256": "e122ab3195441db59ebd1db0d7ab090b2555b451ece0aac2537c906ddaf271ec",
+        "value": {
+          "owner": {
+            "pid": 19640,
+            "pgrp": 19640,
+            "session": 19640,
+            "start_ticks": "313580985"
+          },
+          "return_code": 0,
+          "group_closed": true,
+          "test_access": false
+        }
+      },
+      "artifacts/launches/B50_47b8c5462da34a4d8d895a0edcd017be/EXIT.json": {
+        "sha256": "71e28e0d3558e651384c59ef8486c679f9144d385a66ea3c4b86ff96e680314d",
+        "value": {
+          "owner": {
+            "pid": 25343,
+            "pgrp": 25343,
+            "session": 25343,
+            "start_ticks": "314714900"
+          },
+          "return_code": 0,
+          "group_closed": true,
+          "test_access": false
+        }
+      }
+    },
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21616992256,
+        "free": 10595262464
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 102474563584,
+        "free": 26374455296
+      }
+    },
+    "cgroup": {
+      "/proc/self/cgroup": "12:perf_event:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n11:devices:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n10:hugetlb:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n9:freezer:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n8:memory:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n7:rdma:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n6:blkio:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n5:net_cls,net_prio:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n4:pids:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n3:cpu,cpuacct:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n2:cpuset:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n1:name=systemd:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n0::/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+      "resolved_mounts": {
+        "perf_event": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/perf_event",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/perf_event"
+        },
+        "devices": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/devices",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/devices"
+        },
+        "hugetlb": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/hugetlb",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/hugetlb"
+        },
+        "freezer": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/freezer",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/freezer"
+        },
+        "memory": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/memory",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/memory"
+        },
+        "rdma": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/rdma",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/rdma"
+        },
+        "blkio": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/blkio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/blkio"
+        },
+        "net_cls": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/net_cls,net_prio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/net_cls,net_prio"
+        },
+        "net_prio": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/net_cls,net_prio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/net_cls,net_prio"
+        },
+        "pids": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/pids",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/pids"
+        },
+        "cpu": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpu,cpuacct",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpu,cpuacct"
+        },
+        "cpuacct": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpu,cpuacct",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpu,cpuacct"
+        },
+        "cpuset": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpuset",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpuset"
+        },
+        "name=systemd": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/systemd",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/systemd"
+        }
+      },
+      "/sys/fs/cgroup/memory/memory.usage_in_bytes": "37713330176",
+      "/sys/fs/cgroup/memory/memory.limit_in_bytes": "66571993088",
+      "/sys/fs/cgroup/memory/memory.max_usage_in_bytes": "64386166784",
+      "/sys/fs/cgroup/memory/memory.failcnt": "0",
+      "/sys/fs/cgroup/memory/memory.stat": "cache 37035298816\nrss 336220160\nrss_huge 0\nshmem 0\nmapped_file 5541888\ndirty 1216512\nwriteback 4730880\nswap 0\npgpgin 8736652452\npgpgout 8727529239\npgfault 15397220124\npgmajfault 2211\ninactive_anon 3784704\nactive_anon 334135296\ninactive_file 5015273472\nactive_file 32019406848\nunevictable 0\nhierarchical_memory_limit 66571993088\nhierarchical_memsw_limit 66571993088\ntotal_cache 37035298816\ntotal_rss 336220160\ntotal_rss_huge 0\ntotal_shmem 0\ntotal_mapped_file 5541888\ntotal_dirty 1216512\ntotal_writeback 4730880\ntotal_swap 0\ntotal_pgpgin 8736652452\ntotal_pgpgout 8727529239\ntotal_pgfault 15397220124\ntotal_pgmajfault 2211\ntotal_inactive_anon 3784704\ntotal_active_anon 334135296\ntotal_inactive_file 5015273472\ntotal_active_file 32019406848\ntotal_unevictable 0",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.cfs_quota_us": "1600000",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.cfs_period_us": "100000",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.stat": "nr_periods 575506\nnr_throttled 9\nthrottled_time 34356714724",
+      "/sys/fs/cgroup/cpu,cpuacct/cpuacct.usage": "350795481813583",
+      "/sys/fs/cgroup/pids/pids.current": "205",
+      "/sys/fs/cgroup/pids/pids.max": "20480"
+    },
+    "gpu": "1 MiB, 0 %"
+  }
+}

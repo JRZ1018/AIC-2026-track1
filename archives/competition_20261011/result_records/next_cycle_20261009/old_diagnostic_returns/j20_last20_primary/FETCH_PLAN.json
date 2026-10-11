@@ -1,0 +1,47 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/old_diagnostic_returns/j20_last20_primary/FETCH_PLAN.json",
+  "original_sha256": "6601f0e5a5503963425ba5ad06a9894b784e466eabb4eb1fda8853b5d52021d1",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.old_diagnostic_return_plan.v1",
+    "arm": "J20",
+    "remote_root": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/diagnostics/P1_J20",
+    "checkpoint_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+    "remote_manifest_sha256": "7abebe4f0a917c6efba3ea925e343f55e19d34967250e6f500021ca813ec5417",
+    "remote_manifest_bytes": 1109,
+    "files": {
+      "fused_features.pt": {
+        "bytes": 63342453,
+        "sha256": "9abafaedb3559dc1df4b37fd0514913df077e8dc3360b4c1797afc7c717ec72f"
+      },
+      "fused_logits.pt": {
+        "bytes": 47052393,
+        "sha256": "7fe479979f893a4cf1c49c27634d87b5037e18d72130a0fded5d3e3c71a86665"
+      },
+      "input_identity.json": {
+        "bytes": 2799,
+        "sha256": "187aea95b303e13fb95d624e15eadc3333183f36313e36d776ae70546cea936f"
+      },
+      "p1_checkpoint_audit.json": {
+        "bytes": 1584,
+        "sha256": "6292446808c3c480ba9b9c07e9cfe00ab3dfb3e61f257995c1ab3fb4e38b8bb2"
+      },
+      "paired_predictions.csv": {
+        "bytes": 2391340,
+        "sha256": "c983d3aa5809b7f282c30de8844e48e4b4d17550a1536ac71679c61e5f63b294"
+      },
+      "report.json": {
+        "bytes": 2682,
+        "sha256": "80add725345f38fd18bf2685f1f60ca94884e4293a8d73740f8f3a98b0018103"
+      },
+      "rows.csv": {
+        "bytes": 5604498,
+        "sha256": "ea534ede3a0376f2d4f0f1b44ad9af5462cfb1538a38750a76266e0d1062b92e"
+      }
+    },
+    "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+    "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+    "max_aggregate_increment_bytes": 536870912
+  }
+}

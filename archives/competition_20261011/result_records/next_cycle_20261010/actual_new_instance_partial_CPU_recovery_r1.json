@@ -1,0 +1,27 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_new_instance_partial_CPU_recovery_r1.json",
+  "original_sha256": "f8e141e79ae0c3cf3e373a26a66dc46fd0b51595a072f8ee38f2775799ef035b",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "epoch": 4,
+    "last_sha256": "5746377e902ff67ded3d3cf91748378044b64b8095ed4c719740c06a53af54aa",
+    "source_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+    "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+    "budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+    "CPU_model_tensors": 154,
+    "CPU_exact_model_restore": true,
+    "optimizer_groups": [
+      152,
+      2
+    ],
+    "scheduler_epoch": 4,
+    "AC_exact_ID_label_count": 118958,
+    "RNG_restore_CPU": true,
+    "cuda_rng_structural_only": true,
+    "GPU": false,
+    "test_image_reads": 0,
+    "observed_unix": 1791604273.354101
+  }
+}

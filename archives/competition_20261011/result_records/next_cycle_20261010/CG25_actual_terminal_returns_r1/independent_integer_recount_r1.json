@@ -1,0 +1,106 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/CG25_actual_terminal_returns_r1/independent_integer_recount_r1.json",
+  "original_sha256": "9c4ba495689a7d56c247ea963ac0041bba5272b6c21e7859c7bff3ce705646fb",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "independent_numpy_recount": true,
+    "all6_NPZ_query_and_perclass_PASS": true,
+    "comparisons": [
+      {
+        "section": "protocols",
+        "name": "natural_unique_images",
+        "rows": 29737,
+        "candidate_correct": 22109,
+        "control_correct": 22120,
+        "net": -11,
+        "win": 266,
+        "loss": 277,
+        "head_mid_tail_net": {
+          "head": -3,
+          "mid": 0,
+          "tail": -8
+        }
+      },
+      {
+        "section": "protocols",
+        "name": "balanced_supported_unique",
+        "rows": 14760,
+        "candidate_correct": 11053,
+        "control_correct": 11091,
+        "net": -38,
+        "win": 116,
+        "loss": 154,
+        "head_mid_tail_net": {
+          "head": -11,
+          "mid": -9,
+          "tail": -18
+        }
+      },
+      {
+        "section": "raw_model_P7_vs_J5_P7",
+        "name": "natural_unique_images",
+        "rows": 29737,
+        "candidate_correct": 22065,
+        "control_correct": 22075,
+        "net": -10,
+        "win": 262,
+        "loss": 272,
+        "head_mid_tail_net": {
+          "head": -7,
+          "mid": 4,
+          "tail": -7
+        }
+      },
+      {
+        "section": "raw_model_P7_vs_J5_P7",
+        "name": "balanced_supported_unique",
+        "rows": 14760,
+        "candidate_correct": 11043,
+        "control_correct": 11057,
+        "net": -14,
+        "win": 123,
+        "loss": 137,
+        "head_mid_tail_net": {
+          "head": -2,
+          "mid": -6,
+          "tail": -6
+        }
+      },
+      {
+        "section": "candidate_graph_increment",
+        "name": "natural_unique_images",
+        "rows": 29737,
+        "candidate_correct": 22109,
+        "control_correct": 22065,
+        "net": 44,
+        "win": 168,
+        "loss": 124,
+        "head_mid_tail_net": {
+          "head": 6,
+          "mid": 14,
+          "tail": 24
+        }
+      },
+      {
+        "section": "candidate_graph_increment",
+        "name": "balanced_supported_unique",
+        "rows": 14760,
+        "candidate_correct": 11053,
+        "control_correct": 11043,
+        "net": 10,
+        "win": 93,
+        "loss": 83,
+        "head_mid_tail_net": {
+          "head": -12,
+          "mid": 10,
+          "tail": 12
+        }
+      }
+    ],
+    "CI_recomputed": false,
+    "test_access": false,
+    "model_forwards": 0
+  }
+}

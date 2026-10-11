@@ -1,0 +1,11 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_AFA_diagnostic_metadata_bind_CPU_r1.json",
+  "original_sha256": "f8b7b01c008cce92f7cc7471265a2374ae8b29448c74ed16cb406701af108408",
+  "omitted_fields": [],
+  "record": {
+    "bind_returncode": 1,
+    "bind_stdout": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_diagnostic_template_20261010/bind_diagnostic.py\", line 33, in <module>\n    if __name__=='__main__':raise SystemExit(main())\n                                             ^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_diagnostic_template_20261010/bind_diagnostic.py\", line 15, in main\n    launch=json.loads(a.actual_training_launch.read_text(encoding='utf-8'));controller=validate_actual_launch(launch,a.expected_training_source_sha256,budget_sha=sha(a.training_root/'inputs/budget.json'))\n                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_diagnostic_template_20261010/phase_guard.py\", line 104, in validate_actual_launch\n    if not actual or any(v!=source_sha for v in actual):raise ValueError('actual AFA launch source')\n                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: actual AFA launch source\n",
+    "launch_sha256": "4955757a627097827239ae01947a9ad58b95e91a26cbf87f980392d557c54429"
+  }
+}

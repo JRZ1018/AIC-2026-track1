@@ -1,0 +1,42 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_terminal20_fourview_launch_r1.json",
+  "original_sha256": "1fc0cfb5dffc3c4f267f8b591bc66f6459a5fb53ffd167c9b8398ad5495b7f09",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.L50.actual_terminal_fourview_launch.v1",
+    "launch_unix": 1791684602.4937854,
+    "terminal_SHA": {
+      "last.pt": "3eddc2770f2c5cf1681a4462d3d8f90d8d0bbeb278d4c6dce6cbb94a70bd6c66",
+      "final.pt": "bfc67a07aff0e682cbe0b0eb414f2aa2c34cba9a37b39e55cf39968d279597f4",
+      "metrics.json": "aaef0fc9a2f00c4d9b8ffd6c09e81106ca902230a051c2b1d1ecacd581e54480"
+    },
+    "history_epochs": 20,
+    "original_groups_closed": [
+      {
+        "owner": {
+          "pid": 41809,
+          "pgrp": 41809,
+          "session": 41809,
+          "start_ticks": "930507317"
+        },
+        "exit_sha256": "59d770c86cc5c5725d347c6267e056149b911e71e9fabd4392e78a9df57d9873"
+      }
+    ],
+    "canonical_idle_before_launch": true,
+    "controller": {
+      "pid": 47107,
+      "pgrp": 47107,
+      "session": 47107,
+      "start_ticks": "931440559"
+    },
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_diagnostic_20261011",
+    "diagnostic_source_sha256": "36bf63c7605ed0256a8e52936d0c3cb43faf743625ed68adb4df00295fd0c69a",
+    "original_budget_sha256": "f065cd86952c6de67588e264d43f060f26e57ff25bd1593726ee83fb6193d42b",
+    "model_restoration_complete": false,
+    "comparison_complete": false,
+    "test_access": false
+  }
+}

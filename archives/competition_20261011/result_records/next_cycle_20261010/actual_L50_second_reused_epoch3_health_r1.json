@@ -1,0 +1,37 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_reused_epoch3_health_r1.json",
+  "original_sha256": "0a336cd318a4cda4b22390fceb4ead1c94b3401c7cba92c0fe7cc77fce4c0195",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.L50.second_reused.health.v1",
+    "now": 1791686972.5950992,
+    "actual_epoch_stdout": 3,
+    "trainer": {
+      "pid": 48115,
+      "state": "R",
+      "ppid": 48050,
+      "pgrp": 48115,
+      "session": 48115,
+      "start_ticks": "931519786"
+    },
+    "trainer_cpu_ticks": 139823,
+    "canonical_token": "c0e81e28cca94c759c4a928bdccefb57",
+    "disk": {
+      "total": 128849018880,
+      "used": 121409777664,
+      "free": 7439241216
+    },
+    "gpu_snapshot": "4838 MiB, 0 %",
+    "cgroup_memory_events": "low 0\nhigh 2039\nmax 0\noom 0\noom_kill 0",
+    "checkpoint_stat_only": {
+      "size": 1417156903,
+      "mtime": 1791686689.5836182
+    },
+    "active_checkpoint_read": false,
+    "training_restart": false,
+    "FULL_started": false,
+    "future_second_terminal_SHA": null,
+    "evidence": "bounded queue stdout and process/state/stat; no checkpoint read"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_josrc_r2_train_preflight.json",
+  "original_sha256": "b9ad10057ed516156d7677cc31c54fa96fcd043bc61508f248e8d3fcdce615f8",
+  "omitted_fields": [
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "complete": true,
+    "actual_server_CPU_preflight": true,
+    "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "GPU_started": false,
+    "observed_unix": 1791562142.0709138
+  }
+}

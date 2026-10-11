@@ -1,0 +1,58 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_J5_pause19_launch.json",
+  "original_sha256": "599df70a494a09e129372a2a19eb80c6e434bb80178732b879133e94172b18ef",
+  "omitted_fields": [
+    "/canonical_lease/command",
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_J5_pause19_launch.v1",
+    "complete": true,
+    "controller": {
+      "pid": 239865,
+      "pgrp": 239865,
+      "session": 239865,
+      "start_ticks": "309227901"
+    },
+    "trainer": {
+      "pid": 239872,
+      "state": "R",
+      "ppid": 239865,
+      "pgrp": 239872,
+      "session": 239872,
+      "start_ticks": "309228342"
+    },
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+    "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+    "selected_route": "J5_GRAPH",
+    "canonical_lease": {
+      "config": "configs/experiment/p1_J5.yaml",
+      "output_dir": "artifacts/experiments/FRESH_J5",
+      "owner": "20261009-P1-J5",
+      "queue_pid": 239865,
+      "schema_version": 1,
+      "started_at": "2026-10-09T12:03:50.753322+08:00",
+      "token": "2006e5a7247146958cf74538f618173b",
+      "trainer_pid": 239872
+    },
+    "actual_two_arm_smoke_sha256": "57430b06da5c8a88248f238e787f3ca90d2fbe04f362618f90e1cfdb54339895",
+    "original_phase_start_unix": 1791497972.440027,
+    "deadline_unix": 1791526772.440027,
+    "original_data_baseline_bytes": 13013950464,
+    "disk_max_bytes": 8589934592,
+    "min_free_bytes": 3221225472,
+    "candidate_scope": "selected J5 only on matched new grouped split; plannedpause19 is not completed20",
+    "planned_pause_epoch": 19,
+    "scheduler_T_max": 20,
+    "actual_C_terminal_metrics_sha256": "a24a675144de727c380e0e9b977781a85f2c00aea91cc6e547c57905db098e6a",
+    "actual_C_terminal_last_sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca",
+    "conservative_cycle_seconds": 356,
+    "projected_seconds_including_900s_reserve": 7844,
+    "test_access": false,
+    "trained_epochs_complete": false,
+    "new_submission_ready": false,
+    "created_epoch": 1791518633.0344365,
+    "local_launch_source_sha256": "91778056dcd184099de8e95ad482679833928a3de12c5e102735f2eaadcea999"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_FULL_terminal_observation.json",
+  "original_sha256": "26c6f0c9bf7c35a7ef5d68d1a05bda09b4328f1c57cf645f79eeeb233bd76f0a",
+  "omitted_fields": [
+    "/stdout"
+  ],
+  "record": {
+    "now": 1791664322.3597662,
+    "controller_group": [],
+    "canonical": null,
+    "log": "  ],\n      \"sampling\": {\n        \"class_count_max\": 248,\n        \"class_count_median\": 196.0,\n        \"class_count_min\": 5,\n        \"mode\": \"natural\",\n        \"sample_count\": 148695,\n        \"zero_sample_class_count\": 0\n      },\n      \"train_loss\": 0.08141238181255381,\n      \"train_samples_per_second\": 375.2019879495059,\n      \"train_seconds\": 396.3065356146544\n    }\n  ],\n  \"initial_validation\": null,\n  \"label_smoothing\": 0.0,\n  \"last_checkpoint_sha256\": \"5325982fad83513b11e6f2c9e94537272ae5f7ded295e46b80948bf9fea3532d\",\n  \"logit_adjustment\": null,\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"peak_vram_mib\": 4017.77880859375,\n  \"peft\": {\n    \"lora_blocks\": 8,\n    \"mode\": \"full_visual\"\n  },\n  \"position_interpolation\": \"bicubic_7x7_to_10x10\",\n  \"run_id\": \"20261010-L35-full-L35-fixed20\",\n  \"runtime\": {\n    \"defer_epoch_metrics\": true,\n    \"reuse_validation_loader\": true\n  },\n  \"sampling\": {\n    \"mode\": \"natural\"\n  },\n  \"scope\": \"stage2 full official train PEFT final retrain; test data not accessed\",\n  \"selected_checkpoint\": \"final.pt\",\n  \"selected_checkpoint_sha256\": \"ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6\",\n  \"selected_route\": \"L35_GRAPH\",\n  \"selection_rule\": \"fixed final epoch 20; no validation selection\",\n  \"split_sha256\": \"0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c\",\n  \"token_readout\": {\n    \"initialization_seed\": 20261005,\n    \"mode\": \"none\"\n  },\n  \"total_visual_parameters\": 87849216,\n  \"train_count\": 148695,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"full_train_fixed_epochs\",\n  \"validation_count\": 0,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}\n",
+    "files": {
+      "last.pt": {
+        "size": 1066898587,
+        "mtime": 1791659417.4811106,
+        "sha256": "5325982fad83513b11e6f2c9e94537272ae5f7ded295e46b80948bf9fea3532d"
+      },
+      "final.pt": {
+        "size": 352988267,
+        "mtime": 1791659418.0531394,
+        "sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6"
+      },
+      "metrics.json": {
+        "size": 7815643,
+        "mtime": 1791659420.1052434,
+        "sha256": "bee8d6712b5249b126f88f9f11eccd5d45ecfe21cf2065915ad985c4d0bdaa62"
+      }
+    },
+    "exits": [
+      {
+        "owner": {
+          "pid": 30242,
+          "pgrp": 30242,
+          "session": 30242,
+          "start_ticks": "928148423"
+        },
+        "return_code": 0,
+        "group_closed": true,
+        "test_access": false
+      },
+      {
+        "owner": {
+          "pid": 30431,
+          "pgrp": 30431,
+          "session": 30431,
+          "start_ticks": "928154110"
+        },
+        "return_code": 0,
+        "group_closed": true,
+        "test_access": false
+      }
+    ],
+    "free": 11139817472
+  }
+}

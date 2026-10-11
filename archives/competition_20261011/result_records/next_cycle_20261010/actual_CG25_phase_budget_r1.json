@@ -1,0 +1,39 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_phase_budget_r1.json",
+  "original_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.center_guard_joint.budget.v1",
+    "root_authorized": true,
+    "phase_start_unix": 1791599402.1390533,
+    "deadline_unix": 1791610202.1390533,
+    "initial_free_bytes": 13013950464,
+    "capacity_increase_bytes": 32212254720,
+    "adjusted_initial_free_bytes": 45226205184,
+    "data_total_bytes": 128849018880,
+    "disk_max_bytes": 32212254720,
+    "min_free_bytes": 3221225472,
+    "atomic_reserve_bytes": 2147483648,
+    "final_gpu_reserve_hours": 4,
+    "test_access": false,
+    "capacity_evidence": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "source_template_sha256": "7175b378a3ff67c907bea49de75cab3429f4f8aa63b072ba562f3bfe527c65d5",
+    "actual_stage_sha256": "486e90476c1ebaabe183c946a79de03b30eb7104f3078a44fabe60f60d6f3e6d",
+    "actual_independent_CPU_chunks": [
+      "e50930",
+      "021520",
+      "222e8d"
+    ],
+    "scientific_scope": "Only center_guard_fraction.25; one fresh CG25 fixedlast20 officialCLIP/e88a/split57189, then frozen4V/graph/P7 compared directly to actual J5_GRAPH",
+    "initialization": "fresh official OpenAI CLIP plus legal oldfold e88a H1; no candidate checkpoint",
+    "human_latest_wall_deadline_unix": 1791712738.0,
+    "remaining32h_plan_sha256": "e2235eacd9417cf3de30786512e6dddaf5a1fd35c1eb7bd58b061d5bd2d4c58a",
+    "old_phase_clocks_sources_ledgers_modified": false,
+    "final_wall_reserve_hours_min": 8,
+    "planned_pause19": false
+  }
+}

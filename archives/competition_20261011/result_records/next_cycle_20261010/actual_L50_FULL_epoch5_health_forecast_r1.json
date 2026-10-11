@@ -1,0 +1,42 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_FULL_epoch5_health_forecast_r1.json",
+  "original_sha256": "593f557b21aad7e5a8424b5600333dbfb8b3ae88e424e5c782e3ece25edeb064",
+  "omitted_fields": [],
+  "record": {
+    "now": 1791696776.1499949,
+    "trainer": {
+      "pid": 54356,
+      "state": "S",
+      "ppid": 54349,
+      "pgrp": 54356,
+      "session": 54356,
+      "start_ticks": "932462958"
+    },
+    "trainer_cpu_ticks": 210908,
+    "gpu": "4718 MiB, 63 %",
+    "disk": {
+      "total": 128849018880,
+      "used": 122968834048,
+      "free": 5880184832
+    },
+    "last_stat_only": {
+      "size": 1065551131,
+      "mtime": 1791696618.930678
+    },
+    "memory.events": "low 0\nhigh 3337\nmax 0\noom 0\noom_kill 0\n",
+    "bounded_stdout_epochs_complete": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "actual_epoch_complete": 5,
+    "active_checkpoint_read": false,
+    "training_restarted": false,
+    "launch_to_epoch5_atomic_last_wallclock_seconds_per_epoch": 359.09104256629945,
+    "conditional_terminal20_unix": 1791702005.2963164,
+    "forecast_scope": "single initial aggregate actual wallclock projection; not train_seconds or ZIP ETA"
+  }
+}

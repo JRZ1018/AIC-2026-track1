@@ -1,0 +1,23 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_new610_L35_fixed20_fourview_launch_r1.json",
+  "original_sha256": "ab8ae60d9f19d2df00a44437ce131ff5a9135675dfcca8aa835582c04024ccdb",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "actual": true,
+    "arm": "L35",
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L35_confirmation_diagnostic_r2_20261010",
+    "owner": {
+      "pid": 29394,
+      "pgrp": 29394,
+      "session": 29394,
+      "start_ticks": "928075964"
+    },
+    "started_unix": 1791650956.5443747,
+    "J5_all_files_SHA_PASS": true,
+    "J5_all_groups_closed": true,
+    "test_access": false
+  }
+}

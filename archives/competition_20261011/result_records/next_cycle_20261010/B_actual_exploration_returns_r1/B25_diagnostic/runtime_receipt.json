@@ -1,0 +1,43 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/B_actual_exploration_returns_r1/B25_diagnostic/runtime_receipt.json",
+  "original_sha256": "8be05d29196ddf0e0ce6c57abeb5917c121b2f5c235872f798f895c5ff29240c",
+  "omitted_fields": [
+    "/upstream_receipts/receipt/environment"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.diagnostic_runtime.v1",
+    "arm": "B25",
+    "source_manifest_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "config_sha256": "41ee96e1e912e7e8f4cbf73d17518a29eeda91751657da47e075cfb10df3ac41",
+    "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+    "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+    "selected_route": "J5_GRAPH",
+    "runtime": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "torch_num_threads": 4,
+      "torch_num_interop_threads": 64
+    },
+    "upstream_receipts": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/artifacts/runtime_receipts/B25_48e80f7518724b72b13b2ed3bd54b1cd.json",
+        "sha256": "90303e828647edc59411c14b80ee80be070a58944d53fb9f53a5e469aa762beb",
+        "receipt": {
+          "schema": "aictrack1.fresh_route.runtime.v1",
+          "arm": "B25",
+          "selected_route": "J5_GRAPH",
+          "pid": 19640,
+          "config_sha256": "41ee96e1e912e7e8f4cbf73d17518a29eeda91751657da47e075cfb10df3ac41",
+          "source_manifest_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "collected_at_unix": 1791562159.939363,
+          "test_access": false,
+          "actual_torch_threads": 4,
+          "actual_torch_interop_threads": 64
+        }
+      }
+    ],
+    "test_access": false
+  }
+}

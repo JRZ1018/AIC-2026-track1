@@ -1,0 +1,38 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_new610_confirmation_R2_status_r1.json",
+  "original_sha256": "0437aee4c9360f63164c5e69c6be3cb3409e2e8a0b41508c4577df1f1abd015a",
+  "omitted_fields": [
+    "/canonical/command",
+    "/start/command",
+    "/stdout"
+  ],
+  "record": {
+    "time_unix": 1791634162.7897549,
+    "canonical": {
+      "schema_version": 1,
+      "token": "cb66ba7bdfc9419992c105d7d84c88f6",
+      "owner": "20261010-independent-confirmation-J5-plus-selected",
+      "queue_pid": 19809,
+      "trainer_pid": 19814,
+      "config": "configs/experiment/p1_J5.yaml",
+      "output_dir": "artifacts/experiments/CONFIRM_J5",
+      "started_at": "2026-10-10T20:08:33.720399+08:00"
+    },
+    "start": {
+      "owner": {
+        "pid": 19814,
+        "pgrp": 19814,
+        "session": 19814,
+        "start_ticks": "926391683"
+      },
+      "source_manifest_sha256": "8c36fc02ecb58cd0290d13e38c43deeccef44e510cdf46f7c126bfc5fe68faf4",
+      "config_sha256": "f60b13689a2f0e95cf4b87d04129fe1b5b3e1a645e80550146d8b5f9b934f554",
+      "lease_token": "cb66ba7bdfc9419992c105d7d84c88f6",
+      "test_access": false
+    },
+    "queue_log": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n",
+    "disk_free": 16530321408,
+    "gpu": "1198 MiB, 0 %\n"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_confirmation_templates_CPU_r1.json",
+  "original_sha256": "7ad21b250ec6da22a526f1d9931809d54d9b6e6263e5c005de64c264854be2fc",
+  "omitted_fields": [],
+  "record": {
+    "H1": "93b273ae0c4120b613365f106fb55671a7590625cfe89eb10e0c4f47db375dfd",
+    "visual": "dbe8e6dbd017d2fc1921f94cf84486d38893bde85117de233d2824fc26961bab",
+    "actual_admission_CPU_PASS": true,
+    "source_query_binding_PASS": true,
+    "visual_pair_only_LR_delta_PASS": true,
+    "original_trainer_transforms_unchanged": true,
+    "typed_bad_admission_rejections": 7,
+    "initial_CPU_newline_byte_assertion_failed_and_restored_original_bytes": true
+  }
+}

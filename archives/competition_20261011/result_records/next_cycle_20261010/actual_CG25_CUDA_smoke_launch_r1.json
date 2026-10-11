@@ -1,0 +1,29 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_CUDA_smoke_launch_r1.json",
+  "original_sha256": "c836fd207a7dea9d30578afd58589d4085ab39f6d3865945992f4dfab648e01b",
+  "omitted_fields": [
+    "/receipt/command",
+    "/receipt/owner/argv"
+  ],
+  "record": {
+    "receipt": {
+      "schema": "aictrack1.CG25.actual_CUDA_smoke_launch.v1",
+      "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+      "budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+      "owner": {
+        "pid": 38622,
+        "pgrp": 38622,
+        "session": 38622,
+        "start_ticks": "317324690",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010"
+      },
+      "launch_unix": 1791599594.4886649,
+      "log_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/root_actual_CG25_smoke_stdout_r1.log",
+      "candidate_training_started": false,
+      "smoke_used_for_candidate_initialization": false,
+      "test_access": false
+    },
+    "remote_receipt_sha256": "37adfa82249d34d8ec16f0ff8785b0a2f52c9098759857270b9dcc5c59098e37"
+  }
+}

@@ -1,0 +1,53 @@
+experiment:
+  competition_stage: stage2
+  run_id: 20261010-confirmation-L35-fixed20
+  execution_enabled: true
+  training_scope: fixed_split_validation
+  selection_rule: fixed_final
+  confidence_observation_view: strong
+  dataset_config: ../data/p1_336.yaml
+  model_config: ../model/p1_clip.yaml
+  manifest: /root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/audits/stage2/train/samples.csv
+  split: /root/autodl-tmp/AICtrack1_next_cycle_confirmation_h1_L35_20261010/inputs/confirmation_split.csv
+  label_conflicts: /root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/audits/stage2/train/label_conflicts.csv
+  head_checkpoint: /root/autodl-tmp/AICtrack1_next_cycle_confirmation_h1_L35_20261010/artifacts/experiments/confirmation_H1/last.pt
+  output_dir: ../../artifacts/experiments/CONFIRM_L35
+  device: cuda
+  visual_input_resolution: 336
+  position_interpolation: bicubic_7x7_to_10x10
+  initial_top1_tolerance: 0.002
+  base_loss:
+    kind: sce
+    alpha: 0.1
+    beta: 1.0
+    log_zero: -4.0
+  runtime:
+    defer_epoch_metrics: true
+    reuse_validation_loader: true
+    record_gradient_diagnostics: true
+    safe_numpy_rng_checkpoint: true
+  peft:
+    mode: full_visual
+    lora_blocks: 8
+  confidence_weighting:
+    enabled: true
+    warmup_epochs: 1
+    momentum: 0.8
+    history_mix: 0.5
+    min_weight: 0.02
+    magnitude_mix: 0.75
+    stop_on_effective_quality_l2: true
+  training:
+    epochs: 20
+    batch_size: 64
+    workers: 8
+    prefetch_factor: 2
+    persistent_workers: true
+    seed: 20261010
+    visual_learning_rate: 3.5e-06
+    head_learning_rate: 5.0e-06
+    weight_decay: 0.01
+    gradient_clip_norm: 1.0
+  token_readout:
+    mode: none
+    initialization_seed: 20261005

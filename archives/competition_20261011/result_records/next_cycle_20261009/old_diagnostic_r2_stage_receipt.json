@@ -1,0 +1,31 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/old_diagnostic_r2_stage_receipt.json",
+  "original_sha256": "1f096d18d055bd6f014a72272e43dbc499c97d1d9936207b499dbf7854e107bf",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.next-cycle.exclusive-stage.v1",
+    "source_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+    "input_manifest": "old_diagnostic_resume_manifest.json",
+    "files": {
+      "remote_launch_old_diagnostics.py": "d9b3cac354958328ae474a4d10410b9e5579c5f2427534cb491417fefea1f06e",
+      "test_old_diagnostic_resume.py": "89e68dc2d9bcd057abb6e1a284ac0f9d9d8f249cc908a2141378bdb89bb3f111",
+      "OLD_DIAGNOSTIC_RESUME_README.md": "bab26b976383e8cc0b3ee65c87e2def2df92c1f30c8450e02f47763fa329f688",
+      "old_diagnostic_resume_cpu_receipt.json": "a8ed69a33edf8372f73d3ed61e8608657abd363cd7f8fe2bd5019c1bb8b07c86",
+      "old_diagnostic_resume_manifest.json": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074"
+    },
+    "created_epoch": 1791496777.177739,
+    "remote_root": "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2",
+    "source_only": true,
+    "gpu_started": false,
+    "prepared": {
+      "created": "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2"
+    },
+    "verified": {
+      "verified_files": 5,
+      "source_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+      "remote_root": "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2",
+      "gpu_started": false
+    }
+  }
+}

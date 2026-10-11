@@ -1,0 +1,20 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/ONLINE_SCORE_REPORT_20261011_L50.json",
+  "original_sha256": "de3ddb367b71d0ecd99d49506d2856839bab21b15cef58b00de75ea651f1f74c",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.user_reported_online_score.v1",
+    "recorded_at": "2026-10-11T18:42:43.533017+08:00",
+    "score_text": "69.53049887832496",
+    "evidence": "direct_user_report_not_independently_platform_verified",
+    "route": "L50_GRAPH",
+    "submission_manifest": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L50_final_actual_returns_r1\\submission\\submission_manifest.json",
+    "csv_sha256": "908850887577f16302ce5fabd2656051b25eb0b8446c1fd90f0504d4bd0c8ba9",
+    "zip_sha256": "6d06027999c68074f8232426c0fbe3e3475b804f35457b9f04561957557b45fe",
+    "checkpoint_sha256": "5a7db0752140e0b73bc923fe62951253dd97b0f6c347a0c8d6b588873d6027e9",
+    "test_labels_obtained": false,
+    "used_to_tune_parameters": false,
+    "human_decision": "Stop L50 competition material preparation and rebuild with already delivered L35 score69.6773848947762."
+  }
+}

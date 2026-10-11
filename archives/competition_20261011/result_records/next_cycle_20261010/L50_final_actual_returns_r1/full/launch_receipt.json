@@ -1,0 +1,19 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/full/launch_receipt.json",
+  "original_sha256": "c101b3a4d22360ff94de5bea0a56997c79acfb836d63135fdeb226278d68aa60",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.full.launch_result.v1",
+    "arm": "L50",
+    "selected_route": "L50_GRAPH",
+    "return_code": 0,
+    "source_manifest_sha256": "3ebb8783263d63cead51e26a043d5990de5b9093da03394a5d6a17dbacd97df5",
+    "config_sha256": "7214f98e096a7e00fbaefced617e8d7261234412c6619d72909d32c10a916431",
+    "fresh_confirmation_receipt_sha256": "1b3a28bb3f55b08506ccc888c62498cc87a7bd1d47d5902186c0bd02022016b7",
+    "full_budget_sha256": "1edccb01c54e50a7f83434da6974bf74233c5fab12296968047d559b579ec22e",
+    "synthetic_smoke": false,
+    "resumed": false,
+    "test_access": false
+  }
+}

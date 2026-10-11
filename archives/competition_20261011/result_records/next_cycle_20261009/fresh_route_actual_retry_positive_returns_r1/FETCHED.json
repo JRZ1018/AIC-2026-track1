@@ -1,0 +1,106 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/FETCHED.json",
+  "original_sha256": "d69a7c7e0b7a6edec62ddc81ffa60ba466b13fdea8d3a96f399771feca632bfe",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791529638.0629535,
+    "files": {
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/combo_vs_C_balanced_supported_unique_predictions.npz": {
+        "sha256": "406c2365293b7ec50c204a5fd3740ebf44d5dc5e7c1a275db641228176a1f075",
+        "bytes": 51152,
+        "local_name": "graph/combo_vs_C_balanced_supported_unique_predictions.npz"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/combo_vs_C_natural_unique_images_predictions.npz": {
+        "sha256": "2e92a864c38f6f95c31857f76470f5558726b2ae64275e6e23b7607049090814",
+        "bytes": 93825,
+        "local_name": "graph/combo_vs_C_natural_unique_images_predictions.npz"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/graph_increment_vs_J5_balanced_supported_unique_predictions.npz": {
+        "sha256": "2de7900645b61f5c51892ba060cd40965a620ec4ae2a8108a5b566f69a5070ae",
+        "bytes": 51118,
+        "local_name": "graph/graph_increment_vs_J5_balanced_supported_unique_predictions.npz"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/graph_increment_vs_J5_natural_unique_images_predictions.npz": {
+        "sha256": "cd2e696efea0e7fe6b4245765bbe8af893b7db07f7e5ac39ec40fbb032508b84",
+        "bytes": 93830,
+        "local_name": "graph/graph_increment_vs_J5_natural_unique_images_predictions.npz"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/raw_j5_vs_C_balanced_supported_unique_predictions.npz": {
+        "sha256": "127692bfef71bb79e00641ac981182d61db6b3f21c2c8a4db1c3f3afe5678c9a",
+        "bytes": 51294,
+        "local_name": "graph/raw_j5_vs_C_balanced_supported_unique_predictions.npz"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/raw_j5_vs_C_natural_unique_images_predictions.npz": {
+        "sha256": "f462262f98ab47802a84a73e250252732764b948425b82054de3352ba566a89a",
+        "bytes": 94117,
+        "local_name": "graph/raw_j5_vs_C_natural_unique_images_predictions.npz"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/report.json": {
+        "sha256": "e59d9972dcdc4f37be8e51882f087c03c660aa744e9b0f947dd88e1412cf8cd8",
+        "bytes": 2304009,
+        "local_name": "graph/report.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/graph_budget_snapshot.json": {
+        "sha256": "32774e6d6e377d95af10378c99bc6fd39bbeed7e252d420c2198113919262561",
+        "bytes": 256,
+        "local_name": "graph/graph_budget_snapshot.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/result_manifest.json": {
+        "sha256": "1466013cf8e06a973478c9fa9800576a2b1c2381b5b09b57e089f54972e938ce",
+        "bytes": 1454,
+        "local_name": "graph/result_manifest.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C/runtime_receipt.json": {
+        "sha256": "30673762a26e89a27f6b86b25556c6697947fef3301195bd9f235cc170300d91",
+        "bytes": 8149,
+        "local_name": "C/runtime_receipt.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C/p1_checkpoint_audit.json": {
+        "sha256": "1779aa21d0692db8bb323845be0724ee96c905514453f7733915ee63029fa8af",
+        "bytes": 8116,
+        "local_name": "C/p1_checkpoint_audit.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C/report.json": {
+        "sha256": "be9f4ead9578e51c1dd262aed89d510ed9db5f5804478191236f854330ba34c4",
+        "bytes": 7330,
+        "local_name": "C/report.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C/input_identity.json": {
+        "sha256": "cfdd57601bb6d28b00b2343b2dfbe9d341963576f2ddd29c07e81d69ad83834a",
+        "bytes": 8759,
+        "local_name": "C/input_identity.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C/result_manifest.json": {
+        "sha256": "ae8955a86637a60710929b9dae37e6b06828dda248e6a6c9e095b6582514c9ee",
+        "bytes": 1115,
+        "local_name": "C/result_manifest.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/runtime_receipt.json": {
+        "sha256": "a1a79377ea0e3c6e7eabfe8b1f21a5b0bba87be6325d5ac7f2cf30733af9f3f1",
+        "bytes": 9966,
+        "local_name": "J5/runtime_receipt.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/p1_checkpoint_audit.json": {
+        "sha256": "051b0d32b4197ef79d250cdff57fd9d0983a052e9ea39f20c598cdef995183af",
+        "bytes": 8131,
+        "local_name": "J5/p1_checkpoint_audit.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/report.json": {
+        "sha256": "2b6e637e67364fd5120148c9212e3a79aca291a25f015ca2ade8f1f8cff44478",
+        "bytes": 7325,
+        "local_name": "J5/report.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/input_identity.json": {
+        "sha256": "1d23b0729dadfbfb37fcf1807601b1e73c22cdf8c5ee270fb74d5306750ba6df",
+        "bytes": 9133,
+        "local_name": "J5/input_identity.json"
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/result_manifest.json": {
+        "sha256": "8daa70eb1412807475eacbe6bd0548f28c5b07ba1b80a8043f6276a2d7d614e8",
+        "bytes": 1258,
+        "local_name": "J5/result_manifest.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_bound_554d_dependency_check.json",
+  "original_sha256": "e057c6969f2294d35661f513f5c35c6a2a1abccc3aa64fe20b0ddf3da76295c5",
+  "omitted_fields": [
+    "/command",
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_bound_diagnostic_dependency.v1",
+    "complete": true,
+    "training_source_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+    "diagnostic_source_sha256": "554d7c8f839d4ab6fee1ce427c5e2b9b73435d4766ac5347794ceecace53fbc2",
+    "CPU_only": true,
+    "model_checkpoint_contents_loaded": false,
+    "CUDA_inference": false,
+    "canonical_training_unchanged": true,
+    "created_epoch": 1791519362.3303797,
+    "test_access": false
+  }
+}

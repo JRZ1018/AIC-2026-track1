@@ -1,0 +1,23 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/confirmation_visual_author_CPU_receipt_r1.json",
+  "original_sha256": "08f32d6c43049f082cd52221b9af63665fafea84d6434e4c0bb807fdef410400",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.next_cycle10.confirmation.visual.author_CPU.v1",
+    "complete": false,
+    "source_manifest_sha256": "4db77949b75784dfb57a9084cc5936fda0488534b1f3d6e38f385c0dcd380763",
+    "return_code": 1,
+    "wall_seconds": 10.22850251197815,
+    "stdout_file_raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_file_raw_sha256": "14e668595ce6cf37677df8161f9548dda207e6dc4df1f47a83029372d29eb9df",
+    "real_checkpoint_opened": false,
+    "actual_model_loaded": false,
+    "synthetic_CPU_disk_model_fixture": true,
+    "SSH": false,
+    "GPU": false,
+    "test_access": false
+  }
+}

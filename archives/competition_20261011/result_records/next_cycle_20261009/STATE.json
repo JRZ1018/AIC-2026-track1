@@ -1,0 +1,2367 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/STATE.json",
+  "original_sha256": "10b9a27ec6de5dd6bb10fbb4263fb86a93377d8c0a7c6d881770b55252fa4e34",
+  "omitted_fields": [
+    "/completed_remote_jobs/canonical_lease/command",
+    "/completed_remote_jobs/command",
+    "/completed_remote_jobs/controller/argv",
+    "/completed_remote_jobs/controller/command",
+    "/completed_remote_jobs/processes_at_snapshot/argv",
+    "/completed_remote_jobs/trainer/argv",
+    "/completed_remote_jobs/training_lock/command",
+    "/credentials_source",
+    "/failed_remote_jobs/command",
+    "/failed_remote_jobs/controller/argv",
+    "/failed_remote_jobs/remote_launch_receipt/contents/command",
+    "/failed_remote_jobs/training_lock/command",
+    "/fresh_H1_actual_launch/command",
+    "/fresh_H1_actual_launch/controller/argv",
+    "/fresh_H1_actual_launch/environment",
+    "/last_observation/canonical_lease/command",
+    "/paused_remote_jobs/canonical_lease/command",
+    "/paused_remote_jobs/command",
+    "/preparation/supervision/members",
+    "/preparation/supervision_diagnostic/members",
+    "/supervision_exploration/canonical_lease/command",
+    "/supervision_exploration/controller/argv",
+    "/supervision_exploration/trainer/argv"
+  ],
+  "record": {
+    "schema": "aictrack1.next-cycle-state.v1",
+    "objective": "Produce the next verified submission-ready pred_results.csv and ZIP through the approved score-improvement plan.",
+    "status": "complete_new_package_full_model_source_return_and_local_CPU_accepted",
+    "authorization_date_local": "2026-10-09",
+    "authorization": {
+      "project_takeover": true,
+      "code_edits": true,
+      "server_access": true,
+      "training_and_large_exploration": true,
+      "frozen_test_inference_for_final_submission": true,
+      "duration_may_exceed_24_hours": true,
+      "repeat_user_approval_required": false,
+      "heartbeat_minutes": 40,
+      "tests_explicitly_authorized": true,
+      "tests_authorization_message": "我明确授予你所有权限，包括测试授权",
+      "tests_authorization_recorded_epoch": 1791519184.134986
+    },
+    "ssh_runner": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\cycle_ops.py",
+    "server_python": "/root/autodl-tmp/venvs/aictrack1/bin/python",
+    "planned_remote_root": "/root/AICtrack1_next_cycle_20261009",
+    "server_inventory": "server_inventory.json",
+    "initial_stage": "P0 current-FV2 train-only postprocessing; P1 joint-head candidates on matched FV2 fold",
+    "agents": {
+      "training": "recent_audit",
+      "postprocessing": "history_audit",
+      "acceptance": "literature_audit"
+    },
+    "active_remote_jobs": [],
+    "submission_ready": true,
+    "next_step": "Cycle09 package/model/source completely accepted; continue user-authorized docs242 next_cycle20261010 work and keep aictrack1 active.",
+    "automation": {
+      "id": "aictrack1",
+      "status": "ACTIVE",
+      "interval_minutes": 40,
+      "target_thread_id": "01a11c26-cf24-7f01-8c17-358cf71cb8f4",
+      "last_updated_for_actual_launch": true,
+      "last_updated_for_actual_S_first_epoch": true,
+      "last_updated_for_route_sources": true,
+      "last_updated_for_actual_R3_waiter": true,
+      "last_updated_for_actual_fresh_C20": true,
+      "saved_cadence_verified_from_TOML": true,
+      "last_updated_for_actual_J5_pause19": true,
+      "last_updated_for_actual_J5_epoch11": true,
+      "last_updated_for_c5dabc_2304_actual_remote_CPU": true,
+      "cadence_reason": "User-authorized30-50min range;40min catches imminent plannedpause19 and avoids missing original14:19 handoff",
+      "upcoming_collector": "operator_tools/phase_status_routes_expanded.py",
+      "upcoming_collector_sha256": "7818d814902cafee64078e263c7cb54f48406507c79454e962c6eed6cb5c1fa4",
+      "upcoming_collector_actual_server_preflight": true,
+      "collector": "operator_tools/phase_status_routes_expanded.py",
+      "collector_sha256": "7818d814902cafee64078e263c7cb54f48406507c79454e962c6eed6cb5c1fa4",
+      "last_updated_for_actual_positive_FULL20": true
+    },
+    "p0": {
+      "completed_initial_candidates": 12,
+      "capacity_improvement_confirmed": false,
+      "default_algorithm": "P7(.5,.75,60)",
+      "temperature_boundary_extensions": 2,
+      "results_dir": "p0_fv2_capacity_audit_v1",
+      "completed_total_candidates": 15,
+      "search_closed": true,
+      "best_new_balanced_unique_delta_pp": 0.135685,
+      "best_new_balanced_unique_ci_pp": [
+        -0.02035,
+        0.27815
+      ],
+      "new_test_decoder_frozen": false,
+      "source": "postprocess_source/SOURCE_MANIFEST.json",
+      "literal_quota_endpoint": {
+        "reason": "Original 2 LP variants were relaxed bands, literal equal-count endpoint was not covered; exactly one separately preregistered endpoint",
+        "report": "p0_literal_quota_extension_v1/report.json",
+        "balanced_delta_pp": -0.644504748982361,
+        "natural_delta_pp": -1.8831758415442041,
+        "balanced_ci_pp": [
+          -0.9397896879240162,
+          -0.34209633649932203
+        ],
+        "decision": "negative on current-C proxy; keep P7; no test freeze/no new grid",
+        "registration": "p0_literal_quota_extension_v1/registration.json"
+      }
+    },
+    "bound_fold": {
+      "remote_root": "/root/AICtrack1_fullvisual_confirm_v5_20261008",
+      "training_seed": 20261008,
+      "split_sha256": "0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c",
+      "h1_sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753",
+      "shared_control": "fullvisual20 head LR0"
+    },
+    "remote_root": "/root/AICtrack1_next_cycle_20261009",
+    "source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+    "cuda_smoke": {
+      "schema": "aictrack1.p1.cuda_smoke.v1",
+      "status": "passed",
+      "synthetic_only": true,
+      "candidate": false,
+      "config_sha256": "567d12e6a36daf01d5c20ec26bec238fd2aa735b11d6dfdb452fb92d4b33e1db",
+      "full_visual_tensors": 152,
+      "trainable_tensors": 154,
+      "trainable_parameters": 88233966,
+      "head_gradient_norms": {
+        "linear.weight": 0.10218054801225662,
+        "linear.bias": 0.1021941751241684
+      },
+      "first_loss": 4.865089416503906,
+      "uninterrupted_second_loss": 4.761048793792725,
+      "resumed_second_loss": 4.761048793792725,
+      "max_parameter_difference": 1.862645149230957e-09,
+      "scheduler_T_max": 20,
+      "amp_overflow_skips": [
+        {
+          "from_scale": 65536.0,
+          "to_scale": 32768.0
+        },
+        {
+          "from_scale": 32768.0,
+          "to_scale": 16384.0
+        }
+      ],
+      "successful_update_count": 3,
+      "successful_updates": [
+        {
+          "loss": 4.865089416503906,
+          "scale": 16384.0,
+          "scheduler_epoch": 1
+        },
+        {
+          "loss": 4.761048793792725,
+          "scale": 16384.0,
+          "scheduler_epoch": 2
+        },
+        {
+          "loss": 4.761048793792725,
+          "scale": 16384.0,
+          "scheduler_epoch": 2
+        }
+      ],
+      "checkpoint_sha256": "651976926d867225b647a23cdff2f36e01355b6a797a92d185f52347aa6888b6",
+      "checkpoint_role": "synthetic_resume_only"
+    },
+    "acceptance": {
+      "current_fv2_cpu_restore": "passed",
+      "receipt": "acceptance_source/cpu_restore_549bd5ce336bba4c.json",
+      "new_submission_ready": true
+    },
+    "resource_policy": {
+      "candidate_queue_deadline_unix": 1791522815.9827363,
+      "initial_system_free_bytes": 14418411520,
+      "minimum_free_bytes": 3221225472,
+      "epochs_per_candidate": 20,
+      "candidates": [
+        "J5",
+        "J20"
+      ],
+      "previous_expected_candidate_hours": [
+        2.0,
+        2.5
+      ],
+      "note": "Actual epoch throughput supersedes historical estimate. User permits extension and exploration; reserve final training/inference capacity.",
+      "original_confirmation_data_free_bytes": 13013950464,
+      "confirmation_baseline_source": "initial server_inventory data disk; retain staging/cache cost in original cumulative baseline"
+    },
+    "first_epoch_audit": {
+      "head_actually_updated": true,
+      "status": "passed",
+      "cpu_only": true,
+      "repeat": "reuse completion receipt; do not reload each wake",
+      "receipt": "P1_J5_first_observed_epoch_audit.json",
+      "epoch": 1,
+      "train_seconds": 336.46136675123125
+    },
+    "continuation_sources": {
+      "diagnostic": "p1_diagnostic_source (R2 7bb deployed and CPU preflight passed)",
+      "cuda_smoke_failure": "cuda_smoke_failure_v1.json",
+      "full_training": "full_training_source (677 deployed, CPU actual fullH1 passed)",
+      "acceptance": "acceptance_source/p1_export_acceptance_contract.md",
+      "confirmation": "confirmation_source (b41a bootstrap deployed, 448a actual bound H1 source)",
+      "stage_receipts": "remote_preflight_receipts/FETCHED.json",
+      "upcoming_fresh_diagnostic": "confirmation_diagnostic_source (2e0 deployed; actual new-source dependency check still required)",
+      "upcoming_graph": "graph_source5748 actual exploration complete, graph_root_exploratory_review.json; fixed-point fresh confirmation pending",
+      "upcoming_final_inference": "final_inference_source (27e deployed, actual677 dependency PASS, actualFULL checkpoint audit pending)",
+      "old_diagnostic_resume_operator": "operator_tools/old_diagnostic_resume_r2/old_diagnostic_resume_manifest.json (31e5 actual Linux state replay/admission PASS; once R2 launched; R1 preserved failed beforeGPU)",
+      "fresh_route_diagnostic": "554d actual bound4fc8 server CPU dependency PASS; same source both arms if safely within original window; no actual models/4V yet"
+    },
+    "last_observation": {
+      "epoch": 1791529098.0039525,
+      "phase": "actual_fixed_last20_C4V_running",
+      "canonical_lease": {
+        "config": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_C.yaml",
+        "output_dir": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C",
+        "owner": "stage2-single-checkpoint-tta-diagnostic",
+        "queue_pid": 1988,
+        "schema_version": 1,
+        "started_at": "2026-10-09T14:56:12.960245+08:00",
+        "token": "03e13a2fa0e04dbd80ab1542f9f76fa8",
+        "trainer_pid": null
+      },
+      "both_fixed20_actual_CPU_restore_complete": true,
+      "future_graph_report_pending": true
+    },
+    "runtime_comparison": {
+      "current_process_threads": 87,
+      "proof": "fullvisual_confirm_v5_ops_20261008.py:87 and fullvisual_full_v5_ops_20261008.py:117",
+      "current_torch_default_threads": 64,
+      "next_formal_full_runtime": "OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 CUBLAS_WORKSPACE_CONFIG=:4096:8",
+      "classification": "same fold and algorithm; runtime not completely matched, exploration only",
+      "old_control_cublas_workspace": ":4096:8",
+      "allocated_cpu_cores": 16,
+      "current_omp_env": "unset",
+      "decision": "continue both healthy current J arms unchanged; fresh C/J confirmation use OMP4/MKL4/CUBLAS4096:8 from launch",
+      "old_control_omp_threads": 4,
+      "current_cublas_workspace": "not explicitly set by launch"
+    },
+    "preparation": {
+      "confirmation": {
+        "status": "fresh_H1100_actual_complete_CPU_restored",
+        "local_source": "confirmation_source",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009",
+        "bootstrap_manifest_sha256": "b41a38578160e49718d406e7c234be7f6b9cbc2b2e14c7a2c31802f4f1a7b38a",
+        "bound_H1_source_manifest_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+        "bound_source_files": 102,
+        "CPU_preflight": "remote_preflight_receipts/confirmation_CPU_bound.json",
+        "actual_H1_deployment": "remote_preflight_receipts/confirmation_h1_deployment.json",
+        "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+        "counts": {
+          "train": 118958,
+          "validation": 29737
+        },
+        "GPU_training_started": true,
+        "next": "use actual e88a head for fresh matched C and selected S or J5-plus-fixed-graph confirmation; adapters must record raw model and graph combo separately",
+        "actual_H1_complete": true,
+        "actual_H1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+        "next_execution_checklist": "operator_tools/fresh_route_execution_checklist.md (local read-only contract audit by recent_audit; no actual route selection or admission yet)",
+        "typed_review_required": "Existing graph narrative review is preserved; after actual S report root must write independent typed oldfold route root_review with selected_route and decision proceed_to_fresh_confirmation, evidence must be actual absolute remote path plus SHA."
+      },
+      "full_training": {
+        "status": "deployed_frozen_source_CPU_assets_passed_requires_actual_fresh_confirmation",
+        "local_source": "full_training_source",
+        "remote_root": "/root/AICtrack1_next_cycle_full_20261009",
+        "source_manifest_sha256": "677578ba379652d8b0277f8fe3055a2dba4dbe914f76f321ff6161f2c5838262",
+        "source_files": 84,
+        "CPU_receipt": "remote_preflight_receipts/full_CPU_assets.json",
+        "stage_receipt": "full_stage_receipt.json",
+        "actual_full_H1_epoch": 100,
+        "actual_full_H1_counts": {
+          "train": 148695,
+          "validation": 0
+        },
+        "admitted_to_full_GPU_training": false,
+        "next": "Old-fold writer --stage confirmation_recipe only. Final writer --stage full requires independent positive fresh C/J receipt; run_full.py allows only confirmed J5/J20."
+      },
+      "diagnostic": {
+        "status": "deployed_source_and_remote_CPU_entry_preflight_passed",
+        "source": "p1_diagnostic_source",
+        "remote_root": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+        "source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "staging_receipt": "diagnostic_stage_receipt.json",
+        "remote_CPU_receipt": "entry_dependency_receipt.json",
+        "supported_fold": "0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c",
+        "save_features": true,
+        "extra_forwards": 0,
+        "GPU_inference_started": false,
+        "previous_R1_status": "ImportError identified before deployment; explicit archived R2 revision",
+        "actual_sequence_launched": true,
+        "actual_four_view_complete": false,
+        "actual_launch_attempt_before_GPU_failed": true
+      },
+      "confirmation_feature_cache": {
+        "status": "restored_and_all_real_rows_CPU_verified",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009/inputs/official_feature_cache",
+        "verified_files": 39,
+        "shards": 37,
+        "bytes": 175675988,
+        "identity_sha256": "96f5786e6b75e99d5bbc308d89c769fbc25daf8c7bc636297bda041d05e0c3e9",
+        "receipt": "official_cache_restore_receipt.json",
+        "original_partial_unchanged": true,
+        "repeat_restore_required": false
+      },
+      "fresh_receipt_source": {
+        "status": "deployed_frozen_only_no_actual_PASS_generated",
+        "source_manifest_sha256": "12cc3964353d1d1b2d4ec486c7cb98e114035ccb611b63cb97c0944e9946d596",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009/receipt_source",
+        "stage_receipt": "fresh_receipt_source_stage_receipt.json"
+      },
+      "final_inference": {
+        "status": "deployed_CPU_engineering_and_actual_677_entry_preflight_passed_actual_full_pending",
+        "source_manifest_sha256": "27e634fdcb6d6d4c616a48e15f966cd652d2c6300352a35f996d9e65c4da6cf8",
+        "remote_root": "/root/AICtrack1_next_cycle_final_inference_20261009",
+        "files": 79,
+        "stage_receipt": "final_inference_stage_receipt.json",
+        "CPU_preflight": "remote_preflight_receipts/final_graph_CPU_entries.json",
+        "real_training_source_dependency": "677 verified84files and real train_n1 --help",
+        "next": "actual FULL20 complete then audit_full_checkpoint.py synthetic CPU restore, run_final.py one frozen4V/P7, exact return manifest download, accept_return.py --cpu-model-recovery",
+        "future_checkpoint_SHA": null,
+        "GPU_test_inference_started": false,
+        "graph_admitted_to_final": false
+      },
+      "confirmation_diagnostic": {
+        "status": "deployed_frozen_source_CPU_tests_pass_actual_prepared_source_pending",
+        "source_manifest_sha256": "2e0a600cf953bfa964198f6920edc01b08c77b62639f7d530953a169e6d4df87",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_diagnostic_20261009",
+        "stage_receipt": "confirmation_diagnostic_stage_receipt.json",
+        "actual_remote_dependency_check": "pending actual fresh H1 and prepared_visual source",
+        "new_balanced_classes": 738,
+        "new_balanced_independent_rows": 14760,
+        "GPU_inference_started": false,
+        "remote_CLI_only_preflight": "passed runner+compare --help; artifacts/preflight/CLI_only_receipt.json"
+      },
+      "graph": {
+        "status": "actual_four_point_explore_complete_root_review_pass_fresh_confirmation_pending",
+        "source_manifest_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009",
+        "files": 10,
+        "protocol_sha256": "f48211db3716faaf45255dcc96e0b614bf42c1673791406bf9d7457c1a50b30d",
+        "stage_receipt": "graph_stage_receipt.json",
+        "actual_graph_started": true,
+        "candidates": 4,
+        "parameters": {
+          "k": [
+            10,
+            20
+          ],
+          "lambda": [
+            0.1,
+            0.3
+          ],
+          "iterations": 3,
+          "probability_temperature": 1
+        },
+        "ranking": "frozen balanced unique P7",
+        "P7": {
+          "temperature": 0.5,
+          "strength": 0.75,
+          "iterations": 60
+        },
+        "aggregate_seconds": 7200,
+        "CPU_threads": 2,
+        "root_risk_review_required": true,
+        "risk": "raw ln4/zero-degree protected; graph+P7 bias can change protected predictions; report correct-to-wrong/wrong-to-correct and net error increase/group concentration",
+        "next": "no repeated grid; one fixed point on independent57189 grouped split and samecheckpoint4V features/logits; compatible separate combination receipt required",
+        "actual_explore_complete": true,
+        "actual_evidence": "graph_returns/J5_explore_r1_evidence",
+        "root_review": "graph_root_exploratory_review.json",
+        "selected_point": {
+          "k": 10,
+          "lambda": 0.3,
+          "iterations": 3
+        },
+        "spent_wall_seconds": 64.37051040213555
+      },
+      "official_test_path": {
+        "receipt": "official_test_path_receipt.json",
+        "metadata_sha256": "576ff0f69e0a104ca5a0af7f190628074b572102c6bc8daf8cb653fb08054201",
+        "official_root": "/root/autodl-tmp/AICtrack1/DataSetStage2",
+        "filenames_exact_match": true,
+        "rows": 37444,
+        "image_bytes_opened": false,
+        "q0_train_root_has_test": false,
+        "no_symlink_created": true
+      },
+      "supervision": {
+        "status": "deployed_actual_CPU_and_CUDA_resume_PASS_training_launched",
+        "local_source": "supervision_source",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+        "CPU_tests": 12,
+        "independent_CPU_tests": 12,
+        "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+        "old_fold_comparison_status": "exploratory; formal actual MKL/CUBLAS control ledger not fully verified",
+        "algorithm_change": "SCE alpha.1 to.5 on C; headLR0;152visual;fixed20;freshofficialCLIP+oldfoldH1",
+        "CUDA_smoke_successful_updates": 3,
+        "CUDA_resume_max_parameter_difference": 9.313225746154785e-10,
+        "CPU_preflight": "supervision_actual_CPU_preflight.json",
+        "stage_receipt": "supervision_actual_stage.json"
+      },
+      "supervision_diagnostic": {
+        "status": "deployed_source_and_actual_training_dependency_CPU_PASS_model_pending",
+        "source_manifest_sha256": "b04925892404fc37a0c81f4d044752248f4d30bd1f379fec9f60b73531ddead0",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009",
+        "CPU_tests": 17,
+        "independent_CPU_tests": 17,
+        "CPU_entry_receipt": "supervision_diagnostic_actual_CPU_entry.json",
+        "control_cache": {
+          "path": "/root/AICtrack1_fullvisual_confirm_diagnostic_v6_20261008/artifacts/diagnostics/fullvisual/fused_logits.pt",
+          "sha256": "4813ad6727624f3072ff6e5d28d8ecaa9b4a9e919a5e0b489946dfeea08180b9",
+          "bytes": 47052393
+        },
+        "next": "only S fixedlast20 and allgroups closed/canonicalidle; actual last SHA/152 frozenhead CPU restoration then same4V/features+fixedP7/b60 compare; no repeated decoder grid",
+        "GPU_inference_started": false,
+        "test_access": false
+      },
+      "fresh_route_training_template": {
+        "status": "actual_server_template_staged_unbound_admission_pending",
+        "local_source": "fresh_route_training_source",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_template_20261009",
+        "template_manifest_sha256": "05df2bbd14af808847a430bb4a23ba22483774dad00e6724026ea37dd633bf88",
+        "deployment_inventory_sha256": "0ad27a0fec1b73c1c7e2c7fd93c456f485206dfa1498b019e8a130209fd2232c",
+        "actual_stage_receipt": "fresh_route_template_actual_stage.json",
+        "actual_stage_receipt_sha256": "2d3e329bc75806b5bf065371f05b50e1f641b46a498eb357cb1fb100c20495b7",
+        "actual_verified_files": 89,
+        "CPU_tests": 11,
+        "CPU_receipt": "operator_tools/fresh_route_training_cpu_test_receipt.json",
+        "CPU_receipt_sha256": "72a243ed48745cf3e2b91b9228c01b38f624c6400b8c04bf683bbb9109755a94",
+        "independent_receipt": "operator_tools/fresh_route_independent_review_ed4b131d/INDEPENDENT_REVIEW_RECEIPT.json",
+        "independent_receipt_sha256": "e8af50fef6f75a2f9408a50509306aac7eb05fe25fd5a58a59702cee268febc5",
+        "independent_static_review": "operator_tools/fresh_route_independent_review_ed4b131d/STATIC_REVIEW.json",
+        "independent_static_review_sha256": "eb80e9096c0e82ccd0e5840505c69c2ac0bb598aa2c3b1fbb731df0c04026d70",
+        "source_members_verified": 87,
+        "allowed_pair": "C + one selected S or J5_GRAPH; no third arm",
+        "actual_admission_pending": true,
+        "actual_bound_source_pending": true,
+        "actual_asset_CPU_preflight_pending": true,
+        "fresh_visual_training_started": false,
+        "reuse_actual_new_H1100": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+        "fresh_confirmation_deadline_unix": 1791526772.440027,
+        "original_data_free_baseline_bytes": 13013950464,
+        "graph_shared_seconds_already_spent": 64.37051040213555,
+        "diagnostic_engineering": "554d deployed33 SHA plus4 actualCPUCLI PASS; bound source dependency and futuremodels pending",
+        "full_or_test_admission": false,
+        "actual_template_CPU_entry": "fresh_route_template_actual_CPU_entry.json",
+        "actual_template_CPU_entry_sha256": "06fb490fe188ce0ffd184ca4f0b79c51fb58366e8f4d8d13881446050888ae8b",
+        "actual_template_CPU_entry_status": "passed_three_real_CLI_entries_only",
+        "actual_bound_asset_preflight_pending": true
+      },
+      "fresh_route_full_training": {
+        "status": "actual_template_deployed95_CPU_CLI_PASS_unbound_confirmation_budget_pending",
+        "local_source": "fresh_route_full_training_source",
+        "owner_agent": "recent_audit",
+        "selected_route_pending": true,
+        "GPU_started": false,
+        "test_access": false,
+        "template_manifest_sha256": "d0c7ccbc2276b300a758bbbab992a36c4a5652fca47648bc80dccd797f5c8291",
+        "source_members": 93,
+        "CPU_tests": 10,
+        "CPU_receipt": "operator_tools/fresh_route_full_training_cpu_tests.json",
+        "CPU_receipt_sha256": "3e95f342f568a83e5ee50acf1b484495840011751efbdae050b614578d996daf",
+        "freeze_receipt": "operator_tools/fresh_route_full_training_finalfreeze_receipt.json",
+        "freeze_receipt_sha256": "d9db6bf5cfa12c74c03c0d2ae1f53aa4c59bd0ceaca4469aa8c3d863c0b1be0f",
+        "actual_confirmation_pending": true,
+        "actual_full_budget_pending": true,
+        "actual_full_model_pending": true,
+        "actual_deployed": true,
+        "author_capacity_interruption": "same-model retry completed source verification and external receipt; no source/model restart",
+        "remote_template_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_template_20261009",
+        "deployment_inventory_sha256": "bb36ec9f6e8b4d7989e6e47defe61563e3fb1a69d941efd9eaac1a3865610a72",
+        "actual_verified_files": 95,
+        "actual_stage_receipt": "fresh_route_full_template_actual_stage.json",
+        "actual_stage_receipt_sha256": "b033626a1e9475908ac97beedce713006a47e5e00c1b036fc4613fc1308adb44",
+        "actual_template_CPU_entry": "fresh_route_full_template_actual_CPU_entry.json",
+        "actual_template_CPU_entry_sha256": "923d848b9b7efa7390b5403cc9eec6875a4dee4d5cbed70f52490bbde01f5dd7",
+        "actual_bound_asset_preflight_pending": true,
+        "independent_CPU_tests": 10,
+        "independent_receipt": "operator_tools/full_route_independent_review_c6f2880d/INDEPENDENT_REVIEW_RECEIPT.json",
+        "independent_receipt_sha256": "f6b81a77435cce1ffbc16d50208622de6bdeee9ad7b572a23aebd107a5fe1457",
+        "independent_static_review": "operator_tools/full_route_independent_review_c6f2880d/STATIC_REVIEW.json",
+        "independent_static_review_sha256": "e960f10f2e1122d0aefecfbb31084e750ec255ce23b404a091278bd802c3e957"
+      },
+      "fresh_route_final_inference": {
+        "status": "R2_template_independent20CPU_actual_stage_and4CPU_entries_PASS_unbound",
+        "local_source": "fresh_route_final_inference_r2_source",
+        "owner_agent": "literature_audit",
+        "actual_full_checkpoint_pending": true,
+        "GPU_started": false,
+        "test_access": false,
+        "original_preserved_template": "fresh_route_final_inference_source",
+        "original_template_manifest_sha256": "62367dcd6d87f4df39da0d6bb8217559a880ae45165b45e303ec88882f795861",
+        "actual_current_server_path_resolution": [
+          {
+            "literal": "/root/autodl-tmp",
+            "resolved": "/root/autodl-tmp",
+            "exists": true
+          },
+          {
+            "literal": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+            "resolved": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+            "exists": false
+          },
+          {
+            "literal": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009",
+            "resolved": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009",
+            "exists": false
+          }
+        ],
+        "revision_reason": "two asymmetric resolve comparisons; currentserver literal==resolved, conditional portability bug, not observed production failure",
+        "actual_R2_freeze_pending": false,
+        "actual_deployed": true,
+        "template_manifest_sha256": "b51766e051ab4f384b7dd0428ab08f0a70c37dd12910cd353592b839d8383048",
+        "source_members": 89,
+        "CPU_tests": 20,
+        "CPU_receipt": "operator_tools/fresh_route_final_inference_r2_CPU_review.json",
+        "CPU_receipt_sha256": "34c411c22e40acbda7fccfe16278e2dcffd3b03b2d9c9d57a945596fd7880ae7",
+        "independent_review_pending": false,
+        "remote_template_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_template_20261009",
+        "independent_review": "operator_tools/final_r2_independent_review_eb7b59063b2f/INDEPENDENT_REVIEW_RECEIPT.json",
+        "independent_review_sha256": "f924cd9b05c07f47ab6fd65bf2b93ca5fe34d0c08ea7d43c7abd41bc71981700",
+        "deployment_inventory_sha256": "a03c5a2d78b5ede7d57eae84202fd3bfafd9de6673e4497856e0ac6e50245f65",
+        "deployed_files": 93,
+        "actual_stage_receipt": "fresh_route_final_R2_template_actual_stage.json",
+        "actual_CPU_entry_receipt": "fresh_route_final_R2_template_actual_CPU_entry.json",
+        "actual_CPU_entry_receipt_sha256": "4bc2ce2788a004834cd4294d2a07e27a72b44e1433c1592ced40a88bab714d6c",
+        "actual_CPU_CLI_entries": 4,
+        "actual_full_model_CPU_restore_performed": false,
+        "actual_inference_performed": false
+      },
+      "fresh_route_diagnostic": {
+        "status": "actual_server_source_deployed_CLI_PASS_bound_dependency_pending",
+        "local_source": "fresh_route_diagnostic_source",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_diagnostic_20261009",
+        "source_manifest_sha256": "554d7c8f839d4ab6fee1ce427c5e2b9b73435d4766ac5347794ceecace53fbc2",
+        "source_members": 32,
+        "actual_verified_files": 33,
+        "CPU_tests": 20,
+        "CPU_receipt": "fresh_route_diagnostic_source/CPU_TEST_RECEIPT.json",
+        "CPU_receipt_sha256": "641d29a97fd78e11b7be929af2246d0e88e3f60bf64fbadd4d22c892e8d7c2be",
+        "independent_CPU_tests": 20,
+        "independent_receipt": "operator_tools/fresh_diag_independent_review_c04ea898/INDEPENDENT_REVIEW_RECEIPT_FINAL.json",
+        "independent_receipt_sha256": "5b35974bd8205f2833309a717fd3ab8043f5490f195ca83fc114c2bce9bb2ba9",
+        "actual_stage_receipt": "fresh_route_diagnostic_actual_stage.json",
+        "actual_stage_receipt_sha256": "01db483f59368ea739861de4f453de1321d5fa362577b292641ecccf68568b8e",
+        "actual_CPU_entry": "fresh_route_diagnostic_actual_CPU_entry.json",
+        "actual_CPU_entry_sha256": "1ad7f697b31949c09868c15fd3e3e72c29c9ea5b30d090dd344d250e4e29ea34",
+        "actual_bound_dependency_check_pending": true,
+        "actual_checkpoint_restore_pending": true,
+        "actual_inference_pending": true,
+        "typed_confirmation_schema": "aictrack1.fresh_route.confirmation.v1",
+        "original_deadline_unix": 1791526772.440027,
+        "test_access": false
+      },
+      "supervision_terminal_followon": {
+        "status": "actual_R3_complete_original_b049_results_verified",
+        "local_source": "operator_tools/S_terminal_followon_r3",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_followon_20261009",
+        "owner_agent": "recent_audit",
+        "source_freeze_pending": false,
+        "independent_review_pending": false,
+        "actual_launch_performed": true,
+        "scope": "wait exactS20 naturalgroupclosure/canonicalidle then dynamicfixedlastSHA originalb049 one4V+P7; no recipe selection/fresh/full/test",
+        "original_S_deadline_unix": 1791521272.7301335,
+        "source_manifest_sha256": "9d8c681a4c8052d05c5b26b9242a4990b0596955b2442b292a7165c9abf929dd",
+        "controller": {
+          "pid": 233741,
+          "pgrp": 233741,
+          "session": 233741,
+          "start_ticks": "307995942"
+        },
+        "CPU_tests": 17,
+        "independent_review": "operator_tools/S_followon_r3_independent_review_f67e9b6991da/INDEPENDENT_REVIEW_RECEIPT.json",
+        "independent_review_sha256": "f81b9daf4533ac9638e7cd128badcb750e990ae2ddffc291971711938040c7ea",
+        "source_stage_receipt": "S_terminal_followon_R3_actual_stage.json",
+        "actual_CPU_wait_entry_receipt": "S_terminal_followon_R3_actual_CPU_wait_entry.json",
+        "actual_sessions_preflight": "S_terminal_followon_actual_sessions_preflight.json",
+        "launch_receipt": "S_terminal_followon_R3_actual_launch.json",
+        "launch_receipt_sha256": "01f9606de0e6fcff1abb813a52f22392ef96ec4269fe5325f96e3302788327dd",
+        "root_launch_static_review": "operator_tools\\S_terminal_followon_R3_launch_static_review.json",
+        "revision_reason": "R2 metrics selection_rule string did not match real frozen producer; R3 actual-producer AST regression passes17 tests. R1/R2 preserved. This was an operator gate mismatch, not model outcome.",
+        "diagnostic_launched": true,
+        "recipe_selection_performed": false,
+        "fresh_or_full_admitted": false,
+        "read_only_status_helper": "remote_status_S_terminal_followon_R3.py",
+        "read_only_status_helper_sha256": "164c4bace83b34f556a1cc5235579388793a18c8dc050f17e532868ae6f14bda",
+        "read_only_status_receipt": "latest_S_terminal_followon_R3_status.json",
+        "complete": true,
+        "actual_complete_receipt": "latest_S_terminal_followon_R3_status.json",
+        "actual_terminal_CPU152_restore": true,
+        "actual_oldfold_pair_complete": true,
+        "return_small_evidence": "supervision_actual_terminal_returns_r1/FETCH_RECEIPT.json"
+      },
+      "fresh_route_training": {
+        "status": "actual_C20_and_J519_strict_CPU_pass_exact_continuation_waiting",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+        "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+        "source_members": 91,
+        "selected_route": "J5_GRAPH",
+        "selected_arm": "J5",
+        "template_sha256": "05df2bbd14af808847a430bb4a23ba22483774dad00e6724026ea37dd633bf88",
+        "actual_prepare_CPU_receipt": "fresh_route_J5_GRAPH_actual_prepare_CPU.json",
+        "CPU_scope": "actual source/config/assets file SHA and legal newH1100 weights_only restore; no complete CLIP CPU forward beforeGPU",
+        "actual_two_arm_smoke": "fresh_route_actual_two_arm_smoke.json",
+        "actual_CUDA_C_tensors": 152,
+        "actual_CUDA_J5_tensors": 154,
+        "actual_launch": "fresh_route_actual_C20_launch.json",
+        "new_split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+        "new_H1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+        "first_epoch_CPU_audit_performed": false,
+        "both_visual20_complete": false,
+        "fresh_confirmation_positive": false,
+        "full_admitted": false,
+        "test_access": false,
+        "actual_C20_terminal_summary": "fresh_route_actual_C20_terminal_summary.json",
+        "actual_C20_last_sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca",
+        "actual_C20_metrics_sha256": "a24a675144de727c380e0e9b977781a85f2c00aea91cc6e547c57905db098e6a",
+        "actual_C20_duration_seconds": 6707.863286481239,
+        "actual_C20_CPU_model_restore_pending": false,
+        "actual_J5_launch": "fresh_route_actual_J5_pause19_launch.json",
+        "actual_J5_controller": {
+          "pid": 239865,
+          "pgrp": 239865,
+          "session": 239865,
+          "start_ticks": "309227901"
+        },
+        "actual_J5_trainer": {
+          "pid": 239872,
+          "state": "R",
+          "ppid": 239865,
+          "pgrp": 239872,
+          "session": 239872,
+          "start_ticks": "309228342"
+        },
+        "actual_J5_planned_pause_epoch": 19,
+        "actual_J5_conservative_cycle_seconds": 356,
+        "actual_J5_projected_with_900s_reserve": 7844,
+        "actual_C20_CPU_model_restore_passed": true,
+        "actual_J5_partial_epoch": 19,
+        "actual_J5_partial_last_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+        "actual_C_J_CPU_preflight": "fresh_route_actual_append_CPU_preflight_return.json"
+      },
+      "fresh_route_appended_phase": {
+        "status": "actual_budget_bound_CPU_restore_passed_production_controller_waiting_before_phase_start",
+        "reason": "late original phase leaves insufficient conservative margin for both20+diagnostic; preserve original budget and append explicit finite phase if needed, no reset",
+        "original_budget_unchanged": true,
+        "explicit_root_planned_append_start_unix": 1791526772.440027,
+        "explicit_root_max_append_deadline_unix": 1791533972.440027,
+        "shared_training_and_validation_seconds": 7200,
+        "original_data_baseline_bytes": 13013950464,
+        "disk_max_bytes": 8589934592,
+        "min_free_bytes": 3221225472,
+        "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+        "continuation_training_source": "operator_tools/fresh_route_continuation_train_r1",
+        "appended_diagnostic_source": "fresh_route_append_diagnostic_r1_source",
+        "actual_budget_sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed",
+        "actual_resume_checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+        "GPU_admitted": true,
+        "old_frozen_source_and_budget_not_modified": true,
+        "next": "At shared14:19:32 original reviewed c5dabc controller repeats guards then resumes exact original J519→20; inspect real attempt COMPLETE/failure/HALT and exact groups. Only actual terminal20 chain allows2304 same-source C/J4V+fixedgraph within same16:19:32 budget; root typed positive review required beforefull/test.",
+        "active_CPU_agents": {},
+        "continuation_CPU_prepared_source_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+        "continuation_CPU_tests": 10,
+        "continuation_independent_review_status": "PASS_new_c5dabc_revision_after_actual_R1_BLOCK",
+        "continuation_review_note": "independent launch_j5_review checked all18 source hashes and10 CPU tests; GO lifecycle retains canonical lease if owned process-group closure unconfirmed; original04f56 BLOCK archive preserved",
+        "appended_diagnostic_tests_auto_review_rejected_twice": true,
+        "appended_diagnostic_explicit_user_test_authorization_now_resolves_rejection": true,
+        "appended_diagnostic_status": "frozen_source_independent_review_PASS_actual_remote_CPU_dependency_entries_PASS_no_GPU",
+        "continuation_CPU_receipt_sha256": "0dcafc965bda116fe6614b4e8feeac67d9fa427cb62e336ebcfc5a299b8e6fb6",
+        "continuation_remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009",
+        "continuation_actual_stage_and_CPU_entry_receipt": "continuation_actual_stage_and_CPU_entry_r2.json",
+        "continuation_actual_POSIX_core_receipt": "continuation_actual_POSIX_GO_core_CPU_preflight_r2.json",
+        "continuation_actual_POSIX_core_scope": "safe CPU fixtures G/EOF/X only; real exec preserves PID birth and all fixture groups closed; production launch_gate.main/trainer not invoked; no actual checkpoint/budget/GPU admission",
+        "appended_diagnostic_source_sha256": "2304b44aa944938677bc8c4ddd96bdc5270c4f65c92019a5a1fc1b99b4a8a714",
+        "appended_diagnostic_CPU_tests": 36,
+        "appended_diagnostic_CPU_receipt_sha256": "597622cd37311fb0970cbe595bc731b9f9edd15063bc7d447237b737f991aa34",
+        "appended_diagnostic_remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_append_diagnostic_r1_20261009",
+        "appended_diagnostic_actual_stage_and_CPU_entry_receipt": "append_diagnostic_actual_stage_and_CPU_entry_r2.json",
+        "actual_deployed": true,
+        "independent_review_record": "operator_tools/continuation_append_R2_independent_actual_review_record.json",
+        "actual_budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+        "actual_original_budget_sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941",
+        "GPU_actual_started": false,
+        "actual_controller": {
+          "pid": 243711,
+          "pgrp": 243711,
+          "session": 243711,
+          "start_ticks": "309965381"
+        },
+        "actual_cpu_preflight": "fresh_route_actual_append_CPU_preflight_return.json",
+        "actual_launch": "fresh_route_actual_append_continuation_controller_launch.json",
+        "diagnostic_GPU_admitted": false
+      }
+    },
+    "selection_policy": {
+      "primary": "frozen unique-balanced P7",
+      "fresh_primary_required": "strictly positive delta",
+      "natural750": "fully report prior mismatch; no added natural>=0 hard gate",
+      "bootstrap_CI": "fully report; no added lowerCI>0 hard gate; do not claim stable gain when CI crosses zero",
+      "root_risk_review": "review actual broad tail collapse/high-margin mistaken flips; low-support class flips alone do not veto"
+    },
+    "first_epoch_audits": {
+      "J5": {
+        "head_actually_updated": true,
+        "status": "passed",
+        "cpu_only": true,
+        "repeat": "reuse completion receipt; do not reload each wake",
+        "receipt": "P1_J5_first_observed_epoch_audit.json",
+        "epoch": 1,
+        "train_seconds": 336.46136675123125
+      },
+      "J20": {
+        "status": "passed",
+        "cpu_only": true,
+        "head_actually_updated": true,
+        "receipt": "P1_J20_first_observed_epoch_audit.json",
+        "epoch": 1,
+        "train_seconds": 263.5361054027453,
+        "repeat": "reuse receipt; do not reload each wake"
+      },
+      "S": {
+        "status": "passed_first_epoch_not_final",
+        "receipt": "supervision_actual_first_epoch_CPU_audit.json",
+        "local_receipt_sha256": "74e17d3c4d4e16aad687899c4b220956510ca92fba0c62ceb5bab5c543d78925",
+        "epoch": 1,
+        "actual_checkpoint_sha256": "5153dc1ae495e628422db05ace1ac1892becf9dd3a017665b087f74c54757b06",
+        "trainable_tensors": 152,
+        "trainable_numel": 87849216,
+        "optimizer_groups": 1,
+        "classifier_frozen_source_assertion_verified": true,
+        "ac_global_rows": 118958,
+        "actual_runtime_receipt": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/runtime_receipts/S_f833853d0f9d4e139099ebd5143f2e7d.json",
+        "train_seconds": 324.5194366881624,
+        "successful_optimizer_updates": 1855,
+        "normal_amp_skips": 4,
+        "gradient_diagnostics": {
+          "pre_clip_finite_norm_mean": 96.01358032226562,
+          "pre_clip_finite_norm_max": 171.5902099609375,
+          "finite_norm_clip_fraction": 1.0,
+          "all_finite": false,
+          "nonfinite_norm_count": 4,
+          "initial_scaler_scale": 65536.0,
+          "final_scaler_scale": 4096.0,
+          "note": "raw nonfinite gradients may be normal AMP overflow; scaler skips such optimizer steps; inspect separately",
+          "batch_count": 1859,
+          "diagnostic_only": true,
+          "clip_coefficient_quantiles": {
+            "0.0": 0.005827838089317083,
+            "0.1": 0.009072119370102882,
+            "0.25": 0.009703786112368107,
+            "0.5": 0.010468529537320137,
+            "0.75": 0.01130896620452404,
+            "0.9": 0.01219247467815876,
+            "1.0": 0.017971254885196686
+          },
+          "clip_coefficient_definition": "min(1, max_norm/(pre_clip_total_l2_norm+1e-6))",
+          "clip_coefficient_finite_norm_count": 1855,
+          "clip_coefficient_nonfinite_excluded": 4,
+          "amp_successful_optimizer_updates": 1855,
+          "amp_skipped_optimizer_updates": 4,
+          "amp_step_observation": "public GradScaler before/after scale; decrease means skipped update; no algorithm change",
+          "epoch_scheduler_policy": "original FV2 once per epoch, unchanged by AMP skips"
+        },
+        "repeat": "reuse receipt; never repeatedly load evolving last"
+      }
+    },
+    "completed_training_observations": {
+      "J5": {
+        "completed_epochs": 20,
+        "duration_seconds": 8032.259205374401,
+        "metrics_sha256": "f75079d73c52b7f19958586dea1cc775dd0b866e775e634a2ea698b83ac05636",
+        "last_checkpoint_sha256_declared": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+        "checkpoint_stat": {
+          "bytes": 1418755687,
+          "mtime_ns": 1791487758295627162,
+          "inode": 95560680,
+          "device": 59,
+          "admission_action": "stat_only; runner hashes and restores CPU154"
+        },
+        "actual_checkpoint_hash_verified": true,
+        "actual_final_model_restored": true,
+        "four_view_completed": true,
+        "status": "fixed20_metadata_passed_actual_model_restore_and_four_view_pending",
+        "receipt": "old_diagnostic_actual_admission.json",
+        "receipt_sha256": "365c59178bd172b52965b7d7b7cbd63a57bc2aeb0263cb85203e78b45ada4c11",
+        "selected_for_confirmation": false,
+        "terminal154_CPU_audit_observed": true,
+        "terminal_audit_source": "latest_old_diagnostic_r2_status.json",
+        "result_manifest_sha256": "4be4d2df0b3073065d117725cc59ab825a54a7ec1c00684295ce4c47e168d0e2",
+        "four_view_recovery_receipt": "old_diagnostic_completed_producers_recovery.json"
+      },
+      "J20": {
+        "completed_epochs": 20,
+        "duration_seconds": 7988.20198336523,
+        "metrics_sha256": "9b917ddd5bc93c02fb2070a39b17ff36f85a2a57e0d3c3eb5bb276e77903a2c1",
+        "last_checkpoint_sha256_declared": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+        "checkpoint_stat": {
+          "bytes": 1418755751,
+          "mtime_ns": 1791495850086827740,
+          "inode": 8607091682,
+          "device": 59,
+          "admission_action": "stat_only; runner hashes and restores CPU154"
+        },
+        "actual_checkpoint_hash_verified": true,
+        "actual_final_model_restored": true,
+        "four_view_completed": true,
+        "status": "fixed20_metadata_passed_actual_model_restore_and_four_view_pending",
+        "receipt": "old_diagnostic_actual_admission.json",
+        "receipt_sha256": "365c59178bd172b52965b7d7b7cbd63a57bc2aeb0263cb85203e78b45ada4c11",
+        "selected_for_confirmation": false,
+        "terminal154_CPU_audit_observed": true,
+        "terminal_audit_source": "latest_old_diagnostic_r2_status.json",
+        "result_manifest_sha256": "7abebe4f0a917c6efba3ea925e343f55e19d34967250e6f500021ca813ec5417",
+        "four_view_recovery_receipt": "old_diagnostic_completed_producers_recovery.json"
+      }
+    },
+    "monitoring": {
+      "entry": "operator_tools/phase_status_routes.py --connect --compact --timeout 60",
+      "wrapper_sha256": "c7ee1ace8d170e5b0cbdb637ae108cef2a2b74468a90eaeb5b084d022ec9af85",
+      "base_collector_sha256": "71542f9ed6bbefd660b42ce4ff79b04cc626bf4f62081086a390746e64a41528",
+      "root_count": 15,
+      "independent_static_review": "history_audit message, literalroots and pinned715/4de unchanged; no added mirror tests",
+      "actual_server_collector_preflight": "latest_phase_status.json",
+      "checkpoint_contents_loaded": false,
+      "mutates_remote_state": false,
+      "current_wrapper": "operator_tools/phase_status_routes_append.py",
+      "current_wrapper_sha256": "8fe92a22eb4517d77ffa8af1475e571ace7db50b06c1dfddef6ec8731c600ca9",
+      "literal_root_count": 18,
+      "actual_server_wrapper_passed": true
+    },
+    "background_engineering_tasks": {
+      "old_diagnostic_launcher": {
+        "agent": "history_audit",
+        "status": "both_producers_complete_root_recovery_validated",
+        "operator": "operator_tools/old_diagnostic_resume_r2/remote_launch_old_diagnostics.py",
+        "manifest": "operator_tools/old_diagnostic_resume_r2/old_diagnostic_resume_manifest.json",
+        "source_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "script_sha256": "d9b3cac354958328ae474a4d10410b9e5579c5f2427534cb491417fefea1f06e",
+        "CPU_tests": 23,
+        "independent_review_passed": true,
+        "stage_receipt": "old_diagnostic_r2_stage_receipt.json",
+        "actual_remote_CPU_receipt": "old_diagnostic_resume_remote_CPU_receipt.json",
+        "remote_root": "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2",
+        "exclusive_output_root": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2",
+        "remote_run_started": true,
+        "GPU_admitted": false,
+        "next": "Both original arms fixed20 closed, original controller absent and canonical idle -> explicit --check, then one --launch with actual d229 manifest / 1800-second children / phase <=90min. Never retry existing exclusive output; inspect exact receipts and results. No GPU initialization before positive ready/go. This is diagnostics only, not a selection or new submission.",
+        "actual_admission_receipt": "old_diagnostic_r2_actual_admission.json",
+        "launch_receipt": "old_diagnostic_r2_actual_launch.json",
+        "controller_pid": 228494,
+        "controller_start_ticks": "307045513",
+        "actual_four_view_complete": true,
+        "R1_failure_receipt": "old_diagnostic_r1_gate_failure.json",
+        "R1_controller_exited_verified": true,
+        "actual_child_GPU_started": false,
+        "original_phase_deadline_unix": 1791501451.920797,
+        "repair": "Independent literalr2 source/output; stable PID/start/cwd/argv/pgrp identity excludes transient state/PPID. Preserve d229/r1 logs and source,7bb/2fee and original deadline/baselines.",
+        "actual_child_GPU_stage_entered": true,
+        "real_terminal154_audited_arms": [
+          "J5",
+          "J20"
+        ],
+        "supervisor_complete": false,
+        "recovery_receipt": "old_diagnostic_completed_producers_recovery.json"
+      },
+      "old_diagnostic_fetch": {
+        "agent": "recent_audit",
+        "status": "both8file_returns_and_both_fixed_CPU_pairs_complete",
+        "operator": "operator_tools/fetch_old_diagnostics.py",
+        "manifest": "operator_tools/fetch_old_diagnostics_source_manifest.json",
+        "source_manifest_sha256": "5d87cceed91293183e3b29158e8f5605e7ffa8775388af9a31da0632032de563",
+        "script_sha256": "75251a1b998afe5d9dbd29246fbf2aab2afacac72f13efe07d67484315977aef",
+        "CPU_receipt": "operator_tools/fetch_old_diagnostics_cpu_receipt.json",
+        "CPU_tests": 14,
+        "independent_review": {
+          "agent": "literature_audit",
+          "actual_CPU_tests": 14,
+          "elapsed_seconds": 2.686,
+          "passed": true
+        },
+        "actual_remote_files_per_arm": 8,
+        "same_checkpoint_features_required": true,
+        "explicit_fetch_python": "C:\\Users\\JRZha\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "fixed_pair_python": "D:\\aicomp\\python312\\python.exe",
+        "aggregate_local_increment_bytes": 536870912,
+        "CPU_threads": 2,
+        "remote_connection_attempted": true,
+        "real_payloads_returned": [
+          "J5",
+          "J20"
+        ],
+        "real_CPU_pair_run": [
+          "J5",
+          "J20"
+        ],
+        "next": "After true7bb complete, exact last20 SHA from actual runner/identity -> --arm J5|J20 --return-name newname --fetch --expected-checkpoint-sha256 actual. Each8-file SHA/byte return receipt precedes separate --compare --pair-name newname. Actual frozenP7 comparisons must complete before root selects recipe. Partial errors preserve existing files and local operator lease; no unknown/stale lock cleanup. Source5d87 replaces draft519c review.",
+        "J5_return": "old_diagnostic_returns/j5_last20_primary/FETCH_RECEIPT.json",
+        "J5_pair": "old_diagnostic_cpu_pairs/j5_fixed_p7_primary/result/report.json",
+        "J20_return": "old_diagnostic_returns/j20_last20_primary/FETCH_RECEIPT.json",
+        "J20_pair": "old_diagnostic_cpu_pairs\\j20_fixed_p7_primary\\result\\report.json"
+      },
+      "supervision_source": {
+        "agent": "recent_audit",
+        "status": "local_independent_CPU_implementation_in_progress",
+        "recipe": "parentC headLR0/fullvisual152; alpha.1->.5 only; fixedfresh20",
+        "remote_training_started": false
+      },
+      "supervision_diagnostic_source": {
+        "agent": "history_audit",
+        "status": "local_CPU_independent152_diagnostic_preparation",
+        "remote_diagnostic_started": false
+      },
+      "graph_actual_explore": {
+        "agent": "literature_audit",
+        "status": "root_literal_bridge_preparation",
+        "model": "J5 actualsamecheckpoint4Vfeature/logits",
+        "actual_exploration_started": false,
+        "same_grid": "k10/20 lambda.1/.3 3round P7",
+        "shared_budget_seconds": 7200,
+        "test_access": false
+      },
+      "supervision": {
+        "training_source_status": "f473_deployed_actual_started",
+        "diagnostic_source_status": "b049_deployed_actual_CPU_entry_passed",
+        "first_epoch_operator": "operator_tools/supervision_first_epoch",
+        "fresh_route_training": "recent_audit localCPU independent engineering only",
+        "fresh_route_diagnostic_receipt": "history_audit localCPU independent engineering only",
+        "independent_review": "literature_audit localCPU only",
+        "server_GPU_owner": "root"
+      },
+      "fresh_append_followon_r1": {
+        "status": "local_CPU_preparation_not_deployed_not_launched",
+        "agent": "/root/append_diagnostic_audit_now",
+        "scope": "wait exact CONTclosure and terminal20 chain, then same2304 C/J4V+fixedgraph only; no route selection/full/test",
+        "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_append_followon_20261009"
+      }
+    },
+    "completed_remote_jobs": [
+      {
+        "stage": "P1_serial_J5_then_J20",
+        "controller": {
+          "kind": "P1_J5_then_J20",
+          "pid": 218941,
+          "start_ticks": "305326864",
+          "source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+          "initial_free_bytes": 14418411520,
+          "launched_epoch": 1791479615.9837523,
+          "deadline_unix": 1791522815.9827363,
+          "cwd": "/root/AICtrack1_next_cycle_20261009",
+          "epochs_per_arm": 20,
+          "effective_batch_size": 64,
+          "minimum_disk_free_bytes": 3221225472,
+          "head_learning_rates": [
+            5e-06,
+            2e-05
+          ],
+          "visual_learning_rate": 1.75e-06
+        },
+        "training_lock": {
+          "schema_version": 1,
+          "owner": "20261009-P1-J20",
+          "token": "aec91e5b972345479a2d1196ab180228",
+          "queue_pid": 223700,
+          "trainer_pid": 223767,
+          "config": "configs/experiment/p1_J20.yaml",
+          "output_dir": "artifacts/experiments/P1_J20",
+          "started_at": "2026-10-09T03:29:30.820155+08:00",
+          "command_redacted": false
+        },
+        "processes_at_snapshot": [
+          {
+            "pid": 218941,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "305326864"
+          },
+          {
+            "pid": 223700,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306142076"
+          },
+          {
+            "pid": 223767,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306142349"
+          },
+          {
+            "pid": 223906,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306144277"
+          },
+          {
+            "pid": 223907,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306144279"
+          },
+          {
+            "pid": 223908,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306144280"
+          },
+          {
+            "pid": 223909,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306144282"
+          },
+          {
+            "pid": 223910,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306144288"
+          },
+          {
+            "pid": 223911,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306144290"
+          },
+          {
+            "pid": 223912,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306144292"
+          },
+          {
+            "pid": 223913,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306144293"
+          },
+          {
+            "pid": 227802,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306911544"
+          },
+          {
+            "pid": 227803,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306911548"
+          },
+          {
+            "pid": 227804,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306911552"
+          },
+          {
+            "pid": 227805,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306911556"
+          },
+          {
+            "pid": 227806,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306911560"
+          },
+          {
+            "pid": 227807,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306911564"
+          },
+          {
+            "pid": 227808,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306911568"
+          },
+          {
+            "pid": 227809,
+            "cwd": "/root/AICtrack1_next_cycle_20261009",
+            "start_ticks": "306911572"
+          }
+        ],
+        "snapshot_epoch": 1791495808.6547687,
+        "status": "both_fixed20_original_chain_closed",
+        "completion_receipt": "old_diagnostic_actual_admission.json",
+        "canonical_lock_released": true
+      },
+      {
+        "stage": "fresh_grouped_H1100_train_only",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009",
+        "controller": {
+          "pid": 229124,
+          "start_ticks": "307162510",
+          "pgrp": 229124,
+          "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009"
+        },
+        "launch_receipt": "fresh_H1_actual_launch.json",
+        "launch_receipt_sha256": "134dca0b161775b243dc96df0efa373b02e4af48e3f938d6f644e8285d0bb7fa",
+        "deadline_unix": 1791526772.440027,
+        "initial_data_free_bytes": 13013950464,
+        "disk_max_bytes": 8589934592,
+        "complete": true,
+        "exact_controller_and_trainer_absent": true,
+        "canonical_lock_absent": true,
+        "actual_CPU_receipt": "fresh_H1_actual_CPU_complete.json",
+        "actual_CPU_receipt_sha256": "0e83f79655fa32f3672a51a95c1505802f2a8e476aca0ef20213fac636b08767",
+        "checkpoint_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be"
+      },
+      {
+        "phase": "supervision_explore_S20",
+        "status": "actual_complete_all_groups_closed",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+        "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+        "controller": {
+          "pid": 230190,
+          "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python -u -B /root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/scripts/run_supervision.py --phase-start-unix 1791499672.7301335 --deadline-unix 1791521272.7301335 --initial-free-bytes 13013950464 --disk-max-bytes 6442450944 --min-free-bytes 3221225472",
+          "argv_redacted": false,
+          "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+          "start_ticks": "307357000",
+          "ppid": 1,
+          "state": "S",
+          "matched_roots": [
+            "supervision"
+          ],
+          "canonical_queue_pid": true,
+          "canonical_trainer_pid": false,
+          "state_controller_matches": []
+        },
+        "trainer": {
+          "pid": 230195,
+          "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_S.yaml",
+          "argv_redacted": false,
+          "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+          "start_ticks": "307357244",
+          "ppid": 230190,
+          "state": "S",
+          "matched_roots": [
+            "supervision"
+          ],
+          "canonical_queue_pid": false,
+          "canonical_trainer_pid": true,
+          "state_controller_matches": []
+        },
+        "canonical_lease": {
+          "schema_version": 1,
+          "owner": "20261009-P1-S",
+          "token": "9aab271ffdf542c787ff95f052d8e0b5",
+          "queue_pid": 230190,
+          "trainer_pid": 230195,
+          "config": "configs/experiment/p1_S.yaml",
+          "output_dir": "artifacts/experiments/P1_S",
+          "started_at": "2026-10-09T06:51:59.770657+08:00",
+          "command_redacted": false
+        },
+        "phase_start_unix": 1791499672.7301335,
+        "deadline_unix": 1791521272.7301335,
+        "initial_free_bytes": 13013950464,
+        "disk_max_bytes": 6442450944,
+        "min_free_bytes": 3221225472,
+        "launch_receipt": "supervision_actual_train_launch.json",
+        "CPU_preflight": "supervision_actual_CPU_preflight.json",
+        "actual_cuda_smoke": "supervision_actual_smoke_complete.json",
+        "first_epoch_audit": {
+          "status": "passed_first_epoch_not_final",
+          "receipt": "supervision_actual_first_epoch_CPU_audit.json",
+          "local_receipt_sha256": "74e17d3c4d4e16aad687899c4b220956510ca92fba0c62ceb5bab5c543d78925",
+          "epoch": 1,
+          "actual_checkpoint_sha256": "5153dc1ae495e628422db05ace1ac1892becf9dd3a017665b087f74c54757b06",
+          "trainable_tensors": 152,
+          "trainable_numel": 87849216,
+          "optimizer_groups": 1,
+          "classifier_frozen_source_assertion_verified": true,
+          "ac_global_rows": 118958,
+          "actual_runtime_receipt": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/runtime_receipts/S_f833853d0f9d4e139099ebd5143f2e7d.json",
+          "train_seconds": 324.5194366881624,
+          "successful_optimizer_updates": 1855,
+          "normal_amp_skips": 4,
+          "gradient_diagnostics": {
+            "pre_clip_finite_norm_mean": 96.01358032226562,
+            "pre_clip_finite_norm_max": 171.5902099609375,
+            "finite_norm_clip_fraction": 1.0,
+            "all_finite": false,
+            "nonfinite_norm_count": 4,
+            "initial_scaler_scale": 65536.0,
+            "final_scaler_scale": 4096.0,
+            "note": "raw nonfinite gradients may be normal AMP overflow; scaler skips such optimizer steps; inspect separately",
+            "batch_count": 1859,
+            "diagnostic_only": true,
+            "clip_coefficient_quantiles": {
+              "0.0": 0.005827838089317083,
+              "0.1": 0.009072119370102882,
+              "0.25": 0.009703786112368107,
+              "0.5": 0.010468529537320137,
+              "0.75": 0.01130896620452404,
+              "0.9": 0.01219247467815876,
+              "1.0": 0.017971254885196686
+            },
+            "clip_coefficient_definition": "min(1, max_norm/(pre_clip_total_l2_norm+1e-6))",
+            "clip_coefficient_finite_norm_count": 1855,
+            "clip_coefficient_nonfinite_excluded": 4,
+            "amp_successful_optimizer_updates": 1855,
+            "amp_skipped_optimizer_updates": 4,
+            "amp_step_observation": "public GradScaler before/after scale; decrease means skipped update; no algorithm change",
+            "epoch_scheduler_policy": "original FV2 once per epoch, unchanged by AMP skips"
+          },
+          "repeat": "reuse receipt; never repeatedly load evolving last"
+        },
+        "expected_epochs": 20,
+        "fresh_initialization": true,
+        "selected_checkpoint": "last.pt",
+        "test_access": false,
+        "complete": true,
+        "latest_observed_completed_epoch": 17,
+        "terminal_evidence": "latest_S_terminal_followon_R3_status.json"
+      },
+      {
+        "phase": "S_terminal_followon_R3_CPU_waiter",
+        "status": "actual_complete_all_groups_closed",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_followon_20261009",
+        "source_manifest_sha256": "9d8c681a4c8052d05c5b26b9242a4990b0596955b2442b292a7165c9abf929dd",
+        "controller": {
+          "pid": 233741,
+          "pgrp": 233741,
+          "session": 233741,
+          "start_ticks": "307995942"
+        },
+        "launch_receipt": "S_terminal_followon_R3_actual_launch.json",
+        "launch_receipt_sha256": "01f9606de0e6fcff1abb813a52f22392ef96ec4269fe5325f96e3302788327dd",
+        "deadline_unix": 1791521272.7301335,
+        "original_data_baseline_bytes": 13013950464,
+        "disk_max_bytes": 6442450944,
+        "min_free_bytes": 3221225472,
+        "GPU_started": false,
+        "test_access": false,
+        "complete": true,
+        "output_root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_followon_20261009/run",
+        "next": "Read run/complete.json or failure.json and latest progress; do not launch another S b049 diagnostic.",
+        "latest_process_observation_epoch": 1791506577.8245413,
+        "actual_controller_alive_exact_identity": true,
+        "latest_progress_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_followon_20261009/run/progress_00009.json",
+        "failure": null,
+        "diagnostic_launched": false,
+        "terminal_evidence": "latest_S_terminal_followon_R3_status.json"
+      },
+      {
+        "phase": "fresh_route_C20_matched_control",
+        "status": "actual_fixedlast20_training_complete_not_yet_fourview",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+        "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+        "controller": {
+          "pid": 236091,
+          "pgrp": 236091,
+          "session": 236091,
+          "start_ticks": "308497119"
+        },
+        "trainer": {
+          "pid": 236098,
+          "state": "R",
+          "ppid": 236091,
+          "pgrp": 236098,
+          "session": 236098,
+          "start_ticks": "308497585"
+        },
+        "canonical_lease": {
+          "config": "configs/experiment/p1_C.yaml",
+          "output_dir": "artifacts/experiments/FRESH_C",
+          "owner": "20261009-P1-C",
+          "queue_pid": 236091,
+          "schema_version": 1,
+          "started_at": "2026-10-09T10:02:03.137691+08:00",
+          "token": "0289a3cc42dc4a0db1f51cfb6dbb3fae",
+          "trainer_pid": 236098
+        },
+        "launch_receipt": "fresh_route_actual_C20_launch.json",
+        "launch_receipt_sha256": "1ba90a054815bfc9ed6224f9c14b7fe52c1fcf9731a489d47316eeb18fe9aff6",
+        "original_phase_start_unix": 1791497972.440027,
+        "deadline_unix": 1791526772.440027,
+        "original_data_baseline_bytes": 13013950464,
+        "disk_max_bytes": 8589934592,
+        "min_free_bytes": 3221225472,
+        "expected_epochs": 20,
+        "selected_checkpoint": "last.pt",
+        "selected_route": "J5_GRAPH",
+        "selected_J5_training_started": false,
+        "test_access": false,
+        "complete": true,
+        "latest_process_observation_epoch": 1791516821.6348577,
+        "latest_observed_completed_epoch": 20,
+        "latest_observed_train_loss": 0.1472586824254644,
+        "completed_epochs": 20,
+        "terminal_checkpoint_sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca",
+        "terminal_metrics_sha256": "a24a675144de727c380e0e9b977781a85f2c00aea91cc6e547c57905db098e6a",
+        "terminal_summary_receipt": "fresh_route_actual_C20_terminal_summary.json",
+        "terminal_summary_receipt_sha256": "5b84c67f45e82ae8e3d78535d34c2239c2610dec14f951e99fff1ee7ca0d8c3b",
+        "exact_groups_closed": true,
+        "canonical_naturally_idle_before_J5": true,
+        "CPU_complete_CLIP_restore_pending": false,
+        "CPU_complete_CLIP_restore_passed": true,
+        "CPU_restore_receipt": "fresh_route_actual_append_CPU_preflight_return.json"
+      },
+      {
+        "phase": "fresh_route_expanded_retry_exact_last_epoch",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009",
+        "source_manifest_sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2",
+        "training_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+        "training_source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+        "controller": {
+          "pid": 1505,
+          "pgrp": 1505,
+          "session": 1505,
+          "start_ticks": "310182306"
+        },
+        "trainer": {
+          "pgrp": 1524,
+          "pid": 1524,
+          "session": 1524,
+          "start_ticks": "310184367"
+        },
+        "canonical_lease": {
+          "config": "configs/experiment/p1_J5.yaml",
+          "output_dir": "artifacts/experiments/FRESH_J5",
+          "owner": "fresh-route-exact-continuation-a936682615554db799f374d0bb0753bb",
+          "queue_pid": 1505,
+          "schema_version": 1,
+          "started_at": "2026-10-09T14:43:10.997354+08:00",
+          "token": "1b15c1da6c5243cab7ff5f4f904bf008",
+          "trainer_pid": 1524
+        },
+        "launched_at_unix": 1791528191.0070586,
+        "shared_budget": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/shared_retry_append_budget.json",
+          "sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571"
+        },
+        "launch_receipt": "fresh_route_actual_retry_continuation_launch.json",
+        "CPU_audit": "4ba583041669742a85c98697834069cbe2fe4a56ac05e53ba25ceae63837b11d",
+        "strict_actual_CPU_restore_passed": true,
+        "resume_checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+        "latest_completed_epoch": 19,
+        "expected_final_epoch": 20,
+        "scheduler_T_max": 20,
+        "actual_trainer_started": true,
+        "complete": true,
+        "test_access": false,
+        "actual_completed_epoch": 20,
+        "actual_last_sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c",
+        "CPU_terminal_restore_passed": true,
+        "terminal_CPU_audit": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/TERMINAL_CPU_AUDIT.json",
+          "sha256": "205c1b3841daff38a9ff5a102728f6cb041a2d53da6b253dc28daeb74eeca5ee"
+        },
+        "actual_complete_receipt": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/COMPLETE.json",
+          "sha256": "f4790240a236750769aa3f0c44850c19340d364a5ee8b99504321dc26889b79b",
+          "contents": {
+            "actual_runtime_receipts": [
+              {
+                "attempt_id": "a936682615554db799f374d0bb0753bb",
+                "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/runtime_receipts/J5_a936682615554db799f374d0bb0753bb.json",
+                "sha256": "a26ac5a4f6fc5c363fd42fda1aef4e7093ed84e1343a8645902883b8cff3a08d"
+              }
+            ],
+            "adjusted_initial_free_bytes": 45226205184,
+            "capacity_increase_bytes": 32212254720,
+            "complete": true,
+            "completed_at_unix": 1791528564.206582,
+            "completed_epoch": 20,
+            "completed_last_sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c",
+            "cpu_checkpoint_audit": {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/CPU_CHECKPOINT_AUDIT.json",
+              "sha256": "4ba583041669742a85c98697834069cbe2fe4a56ac05e53ba25ceae63837b11d"
+            },
+            "deadline_unix": 1791533972.440027,
+            "disk_expansion_recovery": {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+              "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+            },
+            "disk_expansion_recovery_sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52",
+            "disk_max_bytes": 12884901888,
+            "initial_free_bytes": 13013950464,
+            "min_free_bytes": 3221225472,
+            "new_fresh_training": false,
+            "operator_source_manifest_sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2",
+            "operator_started_at_unix": 1791528170.4818254,
+            "original_budget_sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941",
+            "original_data_initial_free_bytes": 13013950464,
+            "original_deadline_unix": 1791526772.440027,
+            "original_phase_start_unix": 1791497972.440027,
+            "original_shared_budget": {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+              "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+            },
+            "original_shared_budget_sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed",
+            "owner": {
+              "pgrp": 1524,
+              "pid": 1524,
+              "session": 1524,
+              "start_ticks": "310184367"
+            },
+            "phase_start_unix": 1791526772.440027,
+            "prior_failure": {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/FAILURE.json",
+              "sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32"
+            },
+            "prior_failure_sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32",
+            "resume_checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+            "retry_after_disk_expansion": true,
+            "schema": "aictrack1.fresh_route.continuation.training.complete.v1",
+            "shared_budget_sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571",
+            "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+            "started_at_unix": 1791528186.7327847,
+            "status": "complete_exact_resume_to_fixed_last20",
+            "terminal_cpu_checkpoint_audit": {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/TERMINAL_CPU_AUDIT.json",
+              "sha256": "205c1b3841daff38a9ff5a102728f6cb041a2d53da6b253dc28daeb74eeca5ee"
+            },
+            "test_access": false,
+            "total_elapsed_from_original_phase_start_seconds": 30591.766555070877
+          }
+        },
+        "exact_whole_groups_closed": true,
+        "canonical_naturally_idle": true
+      },
+      {
+        "phase": "fresh_route_frozen_fixedlast20_C_J5_fixedgraph_validation",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009",
+        "source_manifest_sha256": "01949375a866775cd141ded72e06afdb0b1922dd5aa60702cb7fea3b5fbc5ec1",
+        "controller": {
+          "pid": 1987,
+          "pgrp": 1987,
+          "session": 1987,
+          "start_ticks": "310260395"
+        },
+        "producer": {
+          "pid": 1988,
+          "stage": "C4V"
+        },
+        "canonical_lease": {
+          "config": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_C.yaml",
+          "output_dir": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C",
+          "owner": "stage2-single-checkpoint-tta-diagnostic",
+          "queue_pid": 1988,
+          "schema_version": 1,
+          "started_at": "2026-10-09T14:56:12.960245+08:00",
+          "token": "03e13a2fa0e04dbd80ab1542f9f76fa8",
+          "trainer_pid": null
+        },
+        "launch_receipt": "fresh_route_actual_serial_fixed_validation_launch.json",
+        "plan": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_fixed_validation_plan.json",
+          "sha256": "eb3b1b7e5929fea09126b7e5d5d03374241390f77212ba70fa24edbc92875e1c"
+        },
+        "chain": {
+          "continuation_operator_source": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/source_manifest.json",
+            "sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2"
+          },
+          "partial_restore_audit": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/CPU_CHECKPOINT_AUDIT.json",
+            "sha256": "4ba583041669742a85c98697834069cbe2fe4a56ac05e53ba25ceae63837b11d"
+          },
+          "terminal_restore_audit": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/TERMINAL_CPU_AUDIT.json",
+            "sha256": "205c1b3841daff38a9ff5a102728f6cb041a2d53da6b253dc28daeb74eeca5ee"
+          },
+          "continuation_completion": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/COMPLETE.json",
+            "sha256": "f4790240a236750769aa3f0c44850c19340d364a5ee8b99504321dc26889b79b"
+          }
+        },
+        "stages": [
+          "C4V",
+          "J54V_features",
+          "fixed_graph_vs_C"
+        ],
+        "shared_deadline_unix": 1791533972.440027,
+        "actual_started_unix": 1791528951.286706,
+        "complete": true,
+        "test_access": false,
+        "full_training_admitted": false,
+        "completed_at_local": "2026-10-09 15:04:36"
+      },
+      {
+        "operation": "fresh_official_FULL20_J5_GRAPH",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "source_manifest_sha256": "be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54",
+        "controller": {
+          "pid": 2818,
+          "pgrp": 2818,
+          "session": 2818,
+          "start_ticks": "310391512"
+        },
+        "actual_launch_unix": 1791530262.458432,
+        "log": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/root_actual_FULL_stdout.log",
+        "candidate_training": true,
+        "test_access": false,
+        "synthetic_smoke_receipt": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/smoke/J5_4e55925291244704b94345f61cd01423/receipt.json",
+          "sha256": "c76fad79031c65e79d35a57eb427edfe9586d745dde61d0e900ba3ad641926a4"
+        },
+        "synthetic_smoke_result": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/queues/full_attempt_4e55925291244704b94345f61cd01423.json",
+          "sha256": "74840612b3b268915e03a79a41b6bf9fa547b6874a623aa8105b5ff6157d950b"
+        },
+        "confirmation_sha256": "dc3232619e394b4528454f155711d9b88366ac7066f594886860e31a340d8e5f",
+        "full_budget_sha256": "62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517",
+        "phase": "fresh_single_J5_GRAPH_official_full_train20",
+        "trainer": {
+          "pid": 2825,
+          "pgrp": 2825,
+          "session": 2825,
+          "start_ticks": "310392174"
+        },
+        "canonical_lease": {
+          "owner": "20261009-fresh-route-full-J5",
+          "token": "2aead879a4194ece88103d64b94c4d4d",
+          "queue_pid": 2818,
+          "trainer_pid": 2825
+        },
+        "budget": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_full_budget.json",
+          "sha256": "62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517"
+        },
+        "deadline_unix": 1791544532.8899467,
+        "full_train_count": 148695,
+        "fixed_last_epoch": 20,
+        "synthetic_smoke_PASS": true,
+        "last_actual_health_receipt": "latest_FULL_monitor_summary.json",
+        "last_observed_unix": 1791530576.8717184,
+        "complete": true,
+        "full_terminal": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/queues/full_attempt_fc6a85bf3def4fdab045ac18fb0c43e9.json",
+          "sha256": "595eb16ec635944af3ab569e691360d87519334364a48bf65ac130a1db9463eb"
+        }
+      },
+      {
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009",
+        "source_manifest_sha256": "f7e3a64ed65631d84d91fe8fbaea3b2830638f9085ad7cce9a8e7b2f0ed39174",
+        "actual_CPU_audit": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/artifacts/full_final_cpu_audit.json",
+          "sha256": "9fa62244fbaf27b5a64ed6869c06e2665c558a21874019eec3d9ce616e00e604"
+        },
+        "controller": {
+          "pid": 6595,
+          "pgrp": 6595,
+          "session": 6595,
+          "start_ticks": "311045598"
+        },
+        "actual_launch_unix": 1791536803.3146317,
+        "deadline_unix": 1791544003.3146317,
+        "log": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/root_actual_final_stdout.log",
+        "test_used_for_training": false,
+        "model_parameter_updates": 0,
+        "checkpoint_selection": "fixed FULL20 final",
+        "selected_route": "J5_GRAPH",
+        "source_git_commit": "b278f5bfa370fe3fb121f16e2baca3f24d8ecd62",
+        "phase": "single_model_frozen_test_fourview_fixedgraph_P7",
+        "last_actual_status": "latest_actual_final_status.json",
+        "canonical_lease": {
+          "config": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/configs/experiment/p1_full_J5.yaml",
+          "output_dir": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/submissions/final",
+          "owner": "stage2-final-single-checkpoint-inference",
+          "queue_pid": 6598,
+          "schema_version": 1,
+          "started_at": "2026-10-09T17:06:51.374523+08:00",
+          "token": "d2a7da6be2664ebc8574cabe275afdc2",
+          "trainer_pid": null
+        },
+        "complete": true,
+        "controller_result": {
+          "schema": "aictrack1.fresh_route.final_controller_result.v1",
+          "complete": true,
+          "test_access": true,
+          "no_automatic_retry": true,
+          "status": "single_model_full20_P7_csv_zip_verified_local_restore_pending",
+          "hashes": {
+            "pred_results.csv": "7c9c816777b2b1e3b2eb165d155bec7a7635c0659c429d5a77ea68aafb2e9245",
+            "pred_results.zip": "5e65ba73e78c765e7fbd06ad9dbab485d6f8ad8a987d6662cd45bc31fc357ec3",
+            "submission_manifest.json": "85f54a6c03571f5d7004ca80b8ab7e068c994881cbbeac2e23074f0f70ee9288"
+          },
+          "final_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+          "return_manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+          "finished_epoch": 1791536928.5615916
+        }
+      }
+    ],
+    "failed_remote_jobs": [
+      {
+        "stage": "old_fold_frozen_four_view_J5_then_J20",
+        "controller": {
+          "pid": 228128,
+          "start_ticks": "306970493",
+          "ppid": 228127,
+          "pgrp": 228128,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+          "source_manifest_sha256": "d229ecdbb3e4a4e23f30c4637a3bebc3737e35cf3b0dc2eb9ef572191fd4e96c",
+          "deadline_unix": 1791501451.920797
+        },
+        "root": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r1",
+        "launch_receipt": "old_diagnostic_actual_launch.json",
+        "launch_receipt_sha256": "c822447916b1e0c7645d8648a0c919015a50cd8ee746ce07b55f27ecbab99687",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "fixed_final_epoch": 20,
+        "child_hard_seconds": 1800,
+        "original_system_free_baseline_bytes": 14418411520,
+        "status": "gate_before_GPU_engineering_failure",
+        "failure_receipt": "old_diagnostic_r1_gate_failure.json",
+        "failure_receipt_sha256": "78be46c4f537553a15965700b02e9b5f33c7addeff520428a87285454ee18d7b",
+        "process_exited_verified": true,
+        "canonical_lock_absent_verified": true,
+        "child_diagnostics_started": false
+      },
+      {
+        "stage": "R2_old_fold_frozen_four_view_J5_then_J20",
+        "controller": {
+          "pid": 228494,
+          "start_ticks": "307045513",
+          "ppid": 228493,
+          "pgrp": 228494,
+          "state": "S",
+          "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+          "source_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+          "deadline_unix": 1791501451.920797
+        },
+        "root": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2",
+        "launch_receipt": "old_diagnostic_r2_actual_launch.json",
+        "launch_receipt_sha256": "7b34d1d2a4e1dff3979cfeb9f81a7604113a20a96d5e90cd6e2a28f71c079a0f",
+        "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "fixed_final_epoch": 20,
+        "child_hard_seconds": 1800,
+        "original_system_free_baseline_bytes": 14418411520,
+        "snapshot_epoch": 1791497157.0600567,
+        "training_lock": {
+          "config": "/root/AICtrack1_next_cycle_20261009/configs/experiment/p1_J20.yaml",
+          "output_dir": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/diagnostics/P1_J20",
+          "owner": "stage2-single-checkpoint-tta-diagnostic",
+          "queue_pid": 228640,
+          "schema_version": 1,
+          "started_at": "2026-10-09T06:04:36.625686+08:00",
+          "token": "0fdafd38946845f0be2a70f90b39bcc7",
+          "trainer_pid": null
+        },
+        "supervisor_complete": false,
+        "producer_outputs_complete": true,
+        "failure_class": "supervisor_closure_scan_cwd_PermissionError_after_both_exit0",
+        "failure_evidence": "latest_old_diagnostic_r2_status.json",
+        "root_recovery_receipt": "old_diagnostic_completed_producers_recovery.json",
+        "root_recovery_receipt_sha256": "bd51972e26577e6fdfdd6eac373ea1b497e99dc57228ac3915566264962eb7b0",
+        "safe_group_closure_verified": true
+      },
+      {
+        "phase": "fresh_route_append_exact_J5_resume",
+        "status": "failed_during_atomic_last_save_cumulative_disk_peak",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009",
+        "source_manifest_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+        "training_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+        "training_source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+        "controller": {
+          "pid": 243711,
+          "pgrp": 243711,
+          "session": 243711,
+          "start_ticks": "309965381"
+        },
+        "trainer": {
+          "pgrp": 244056,
+          "pid": 244056,
+          "session": 244056,
+          "start_ticks": "310043026"
+        },
+        "launch_receipt": "fresh_route_actual_append_continuation_controller_launch.json",
+        "remote_launch_receipt": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_launch.json",
+          "sha256": "9a1318c75cfe341ff57e5cb6369072bdb1f4ca5e409132c6c3a0bb811414c12b",
+          "contents": {
+            "CPU_audit": {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/preflight/CPU_CHECKPOINT_AUDIT.json",
+              "sha256": "28ff4b1e9a5bf4047a9ec115efc1ca249b28e9f47a2b03b9b5106fa9c51bb80f"
+            },
+            "CPU_preflight": {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/preflight/PREFLIGHT.json",
+              "sha256": "71d563c8a65ced328be6427a006f56eb29dd92114201f22c9322892b38b3d179"
+            },
+            "actual_gpu_trainer_started": false,
+            "controller": {
+              "pgrp": 243711,
+              "pid": 243711,
+              "session": 243711,
+              "start_ticks": "309965381"
+            },
+            "controller_waits_for_shared_phase_start": true,
+            "deadline_unix": 1791533972.440027,
+            "launched_at_unix": 1791526001.1457894,
+            "operator_source_manifest_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+            "phase_start_unix": 1791526772.440027,
+            "prior_whole_groups_closed": true,
+            "schema": "aictrack1.fresh_route.actual_append_continuation_controller_launch.v1",
+            "scope": [
+              "exact_J5_resume_if_needed",
+              "fixed_last20_C_J5_4V_diagnostic",
+              "fixed_J5_graph_validation"
+            ],
+            "shared_budget": {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+              "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+            },
+            "source_or_old_budget_modified": false,
+            "test_access": false
+          }
+        },
+        "original_phase_start_unix": 1791497972.440027,
+        "original_deadline_unix": 1791526772.440027,
+        "phase_start_unix": 1791526772.440027,
+        "deadline_unix": 1791533972.440027,
+        "original_data_baseline_bytes": 13013950464,
+        "disk_max_bytes": 8589934592,
+        "min_free_bytes": 3221225472,
+        "shared_budget": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+          "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+        },
+        "resume_checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+        "selected_route": "J5_GRAPH",
+        "expected_epochs": 20,
+        "latest_observed_completed_epoch": 19,
+        "CPU_restore_passed": true,
+        "actual_GPU_trainer_started": true,
+        "test_access": false,
+        "complete": false,
+        "canonical_naturally_idle_after_failure": true,
+        "exact_whole_groups_closed": true,
+        "failure": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/FAILURE.json",
+          "sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32",
+          "contents": {
+            "canonical_lock_manually_modified": false,
+            "cleanup_error": null,
+            "complete": false,
+            "error": "ValueError: original exact resume queue failed ValueError: original cumulative8GiB/min3GiB exceeded",
+            "failed_at_unix": 1791527129.7950768,
+            "launch_error": "ValueError: original cumulative8GiB/min3GiB exceeded",
+            "new_fresh_training": false,
+            "operator_source_manifest_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+            "original_budget_sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941",
+            "owner": {
+              "pgrp": 244056,
+              "pid": 244056,
+              "session": 244056,
+              "start_ticks": "310043026"
+            },
+            "schema": "aictrack1.fresh_route.continuation.training.failure.v1",
+            "shared_budget_sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed",
+            "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+            "stopped_prior_training": false,
+            "test_access": false
+          }
+        },
+        "last_valid_completed_epoch": 19,
+        "last_valid_checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe"
+      }
+    ],
+    "old_fold_pairs": {
+      "J5": {
+        "report": "old_diagnostic_cpu_pairs\\j5_fixed_p7_primary\\result\\report.json",
+        "report_sha256": "e712cd82b6de831edab53e4432c4ee1fc1a5ac71c1a771e903798a83d2bd8b15",
+        "eligibility": {
+          "status": "registered_continuation_threshold_not_met",
+          "primary_delta_pp": 0.06784260515603799,
+          "primary_metric": "balanced_supported_unique P7 observed-label agreement",
+          "stable_gain_claim": false,
+          "formal_test_frozen": false,
+          "natural_p7_delta_pp": 0.020176884016545046,
+          "registered_rule": ">=.20pp exploratory; >=.10pp requires positive fresh grouped-split confirmation",
+          "low_support_classes_do_not_alone_veto": true
+        },
+        "risk_review": "J5 primary +10/14740; conditional CI crosses0; no supportedlarge decline; below registered .10pp; not eligible for full"
+      },
+      "J20": {
+        "report": "old_diagnostic_cpu_pairs\\j20_fixed_p7_primary\\result\\report.json",
+        "report_sha256": "00872667d2a72aee5836ffa0c20ab9d3bc6bf3692ab85b0767d4dd9db967aefa",
+        "eligibility": {
+          "status": "registered_continuation_threshold_not_met",
+          "primary_delta_pp": 0.06105834464043419,
+          "primary_metric": "balanced_supported_unique P7 observed-label agreement",
+          "stable_gain_claim": false,
+          "formal_test_frozen": false,
+          "natural_p7_delta_pp": 0.04035376803309009,
+          "registered_rule": ">=.20pp exploratory; >=.10pp requires positive fresh grouped-split confirmation",
+          "low_support_classes_do_not_alone_veto": true
+        }
+      }
+    },
+    "fresh_H1_actual_launch": {
+      "schema": "aictrack1.fresh_H1.root_launch_plan.v1",
+      "source_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009",
+      "source_verified_members": 102,
+      "recovery_receipt_sha256": "06d96716121481bb2a2d752aef326bba522d0e9adb962b1b66a20682f5857173",
+      "phase_budget_started_unix": 1791497972.440027,
+      "deadline_unix": 1791526772.440027,
+      "original_data_free_baseline_bytes": 13013950464,
+      "disk_max_bytes": 8589934592,
+      "min_free_bytes": 3221225472,
+      "observed_data_free_bytes": 12764856320,
+      "training_scope": "new_grouped_split_train_only_H1100_fixedlast",
+      "test_access": false,
+      "head_training_independent_of_visual_recipe_choice": true,
+      "new_submission_ready": false,
+      "controller": {
+        "pid": 229124,
+        "start_ticks": "307162510",
+        "pgrp": 229124,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009"
+      },
+      "status": "launched_not_complete",
+      "launched_epoch": 1791497972.441773,
+      "plan_sha256": "add745586f8320ff33cc2a97ec4b95b979d3532d1f99292468e9bd41cd8098d9"
+    },
+    "old_fold_recipe_decision": {
+      "J5_primary_delta_pp": 0.06784260515603799,
+      "J20_primary_delta_pp": 0.06105834464043419,
+      "J_recipe_selected_for_confirmation": false,
+      "next_training_recipe": "S_on_C_SCEalpha0.5_only",
+      "reason": "Both complete20/frozenP7 below .10pp registered continuation; nearzero, not stable gain. Test stronger supervised gradients via alpha0.5; do not continue parentfinal."
+    },
+    "fresh_H1_actual_CPU_complete": {
+      "schema": "aictrack1.fresh_H1100.actual_CPU_restore.v1",
+      "complete": true,
+      "observed_epoch": 1791498200.394464,
+      "source_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+      "checkpoint_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+      "checkpoint_bytes": 4641602,
+      "producer_receipt_sha256": "06c762c1828915fd579fcc338ade3177f5eff96be742c9650e265845ce6f7d73",
+      "producer_receipt": {
+        "actual_cpu_optimizer_scheduler_scaler_model_rng_restored": true,
+        "checkpoint_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+        "complete": true,
+        "cuda_rng_serialized": true,
+        "epoch": 100,
+        "fresh_feature_extraction": false,
+        "original_feature_identity_sha256": "96f5786e6b75e99d5bbc308d89c769fbc25daf8c7bc636297bda041d05e0c3e9",
+        "row_binding": {
+          "all_rows_sha256": "37b23205175174328fafbcfe18e9893df7eacc36a0580d56064281ce3eda7065",
+          "counts": {
+            "train": 118958,
+            "validation": 29737
+          },
+          "schema": "aictrack1.mainline.h1.rows.v1",
+          "train_rows_sha256": "1196a5653fcacd1f1387f0be84b540dedc2ae4f85b585d118655b73cb206f524",
+          "validation_rows_sha256": "42c7e7fe4931152790e726d866eb758542f21b61c8115769f8f7f78daa57d767",
+          "validation_used_for_optimization_or_selection": false
+        },
+        "runtime": {
+          "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+          "MKL_NUM_THREADS": "4",
+          "OMP_NUM_THREADS": "4",
+          "torch_num_threads": 4
+        },
+        "scope": "fold_train_fixed_final_epochs",
+        "source_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+        "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+        "terminal_cache_parity_top1": 0.6604230403900146,
+        "test_access": false,
+        "train_count": 118958,
+        "training_seed": 20261008,
+        "validation_count": 29737,
+        "validation_selection": false
+      },
+      "head_tensor_count": 2,
+      "numel": 384750,
+      "strict_state_restore": true,
+      "synthetic_cpu_forward": true,
+      "fixed_epoch": 100,
+      "new_split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+      "optimizer_scheduler_scaler_rng_restored": true,
+      "query_validation_selection": false,
+      "actual_torch_threads": 4,
+      "exact_controller_and_trainer_absent": true,
+      "canonical_lock_absent": true,
+      "test_access": false,
+      "new_submission_ready": false
+    },
+    "supervision_exploration": {
+      "status": "actual_fixedlast20_CPU152_and_frozen4V_fixedP7_complete",
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+      "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+      "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+      "controller": {
+        "pid": 230190,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python -u -B /root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/scripts/run_supervision.py --phase-start-unix 1791499672.7301335 --deadline-unix 1791521272.7301335 --initial-free-bytes 13013950464 --disk-max-bytes 6442450944 --min-free-bytes 3221225472",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307357000",
+        "ppid": 1,
+        "state": "S",
+        "matched_roots": [
+          "supervision"
+        ],
+        "canonical_queue_pid": true,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      "trainer": {
+        "pid": 230195,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_S.yaml",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307357244",
+        "ppid": 230190,
+        "state": "S",
+        "matched_roots": [
+          "supervision"
+        ],
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": true,
+        "state_controller_matches": []
+      },
+      "canonical_lease": {
+        "schema_version": 1,
+        "owner": "20261009-P1-S",
+        "token": "9aab271ffdf542c787ff95f052d8e0b5",
+        "queue_pid": 230190,
+        "trainer_pid": 230195,
+        "config": "configs/experiment/p1_S.yaml",
+        "output_dir": "artifacts/experiments/P1_S",
+        "started_at": "2026-10-09T06:51:59.770657+08:00",
+        "command_redacted": false
+      },
+      "phase_start_unix": 1791499672.7301335,
+      "deadline_unix": 1791521272.7301335,
+      "initial_free_bytes": 13013950464,
+      "disk_max_bytes": 6442450944,
+      "min_free_bytes": 3221225472,
+      "launch_receipt": "supervision_actual_train_launch.json",
+      "CPU_preflight": "supervision_actual_CPU_preflight.json",
+      "actual_cuda_smoke": "supervision_actual_smoke_complete.json",
+      "first_epoch_audit": {
+        "status": "passed_first_epoch_not_final",
+        "receipt": "supervision_actual_first_epoch_CPU_audit.json",
+        "local_receipt_sha256": "74e17d3c4d4e16aad687899c4b220956510ca92fba0c62ceb5bab5c543d78925",
+        "epoch": 1,
+        "actual_checkpoint_sha256": "5153dc1ae495e628422db05ace1ac1892becf9dd3a017665b087f74c54757b06",
+        "trainable_tensors": 152,
+        "trainable_numel": 87849216,
+        "optimizer_groups": 1,
+        "classifier_frozen_source_assertion_verified": true,
+        "ac_global_rows": 118958,
+        "actual_runtime_receipt": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/runtime_receipts/S_f833853d0f9d4e139099ebd5143f2e7d.json",
+        "train_seconds": 324.5194366881624,
+        "successful_optimizer_updates": 1855,
+        "normal_amp_skips": 4,
+        "gradient_diagnostics": {
+          "pre_clip_finite_norm_mean": 96.01358032226562,
+          "pre_clip_finite_norm_max": 171.5902099609375,
+          "finite_norm_clip_fraction": 1.0,
+          "all_finite": false,
+          "nonfinite_norm_count": 4,
+          "initial_scaler_scale": 65536.0,
+          "final_scaler_scale": 4096.0,
+          "note": "raw nonfinite gradients may be normal AMP overflow; scaler skips such optimizer steps; inspect separately",
+          "batch_count": 1859,
+          "diagnostic_only": true,
+          "clip_coefficient_quantiles": {
+            "0.0": 0.005827838089317083,
+            "0.1": 0.009072119370102882,
+            "0.25": 0.009703786112368107,
+            "0.5": 0.010468529537320137,
+            "0.75": 0.01130896620452404,
+            "0.9": 0.01219247467815876,
+            "1.0": 0.017971254885196686
+          },
+          "clip_coefficient_definition": "min(1, max_norm/(pre_clip_total_l2_norm+1e-6))",
+          "clip_coefficient_finite_norm_count": 1855,
+          "clip_coefficient_nonfinite_excluded": 4,
+          "amp_successful_optimizer_updates": 1855,
+          "amp_skipped_optimizer_updates": 4,
+          "amp_step_observation": "public GradScaler before/after scale; decrease means skipped update; no algorithm change",
+          "epoch_scheduler_policy": "original FV2 once per epoch, unchanged by AMP skips"
+        },
+        "repeat": "reuse receipt; never repeatedly load evolving last"
+      },
+      "expected_epochs": 20,
+      "fresh_initialization": true,
+      "selected_checkpoint": "last.pt",
+      "test_access": false,
+      "complete": true,
+      "terminal_checkpoint_sha256": "07dad01bcd8da762afef9883286bc9db1edce6390dea51c4c59b350e6f8c3e20",
+      "actual_terminal_audit": "supervision_actual_terminal_returns_r1/diagnostic/supervision_checkpoint_audit.json",
+      "paired_report": "supervision_actual_terminal_returns_r1/paired/report.json",
+      "paired_report_sha256": "776b1120fb75544ae5422b3960347c6a4f87c4881b4b16e0088d8ce86e216d66",
+      "primary_delta_pp": 0.10854816824966079,
+      "natural_delta_pp": -0.0033628140027575078,
+      "continuation_threshold_met": true,
+      "selected_for_fresh_confirmation": false,
+      "stable_gain_claim": false,
+      "formal_test_frozen": false
+    },
+    "old_fold_route_selection": {
+      "selected_route": "J5_GRAPH",
+      "selected_arm": "J5",
+      "actual_root_review_sha256": "463a006bff29f3cf05adb21870c9b4bf54c2c04faf6019ccd2d303c922ed2ba5",
+      "publication_receipt": "actual_J5_GRAPH_admission_publication.json",
+      "admission_sha256": "25391e7f14d38ca39f27d5475ccdd5519389b1e8fe20f88415991de410fe64af",
+      "primary_direct_delta_pp": 0.25101763907734054,
+      "raw_J5_delta_pp": 0.06784260515603799,
+      "S_primary_delta_pp": 0.10854816824966079,
+      "classification": "old-fold exploration only; select one untouched grouped-split matched-runtime confirmation",
+      "independent_S_vs_graph_review": "recent_audit: NPZ/query SHA/C predictions and perclass integer recount PASS; graphstronger; Sweakpositive reserve; no natural>=0 veto",
+      "full_admitted": false,
+      "test_access": false
+    },
+    "delivery_forecast": {
+      "recorded_epoch": 1791522551.140608,
+      "forecast_local_date": "2026-10-09",
+      "independent_validation_estimate_local": [
+        "14:00",
+        "15:00"
+      ],
+      "submission_estimate_local": [
+        "18:00",
+        "20:00"
+      ],
+      "conditional": "Only if fresh direct fixed graph+P7 versus C positive and root review passes; full20/inference/acceptance remain; negative result extends schedule",
+      "actual_train_epoch": 11,
+      "not_a_score_guarantee": true,
+      "late_confirmation_risk": "If fresh confirmation finishes near16:19, conservative full training and acceptance3-4hours can extend delivery beyond20:00.",
+      "latest_issue": "Actual last-epoch save interrupted by original cumulative8GiB disk guard; effective last19 remains valid. User has expanded disk30GiB; exact final epoch recovery preparing;18-20 remains conditional and not a promise."
+    },
+    "paused_remote_jobs": [
+      {
+        "phase": "fresh_route_J5_planned_pause19",
+        "status": "actual_plannedpause19_not_training_complete",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+        "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+        "controller": {
+          "pid": 239865,
+          "pgrp": 239865,
+          "session": 239865,
+          "start_ticks": "309227901"
+        },
+        "trainer": {
+          "pid": 239872,
+          "state": "R",
+          "ppid": 239865,
+          "pgrp": 239872,
+          "session": 239872,
+          "start_ticks": "309228342"
+        },
+        "canonical_lease": {
+          "config": "configs/experiment/p1_J5.yaml",
+          "output_dir": "artifacts/experiments/FRESH_J5",
+          "owner": "20261009-P1-J5",
+          "queue_pid": 239865,
+          "schema_version": 1,
+          "started_at": "2026-10-09T12:03:50.753322+08:00",
+          "token": "2006e5a7247146958cf74538f618173b",
+          "trainer_pid": 239872
+        },
+        "launch_receipt": "fresh_route_actual_J5_pause19_launch.json",
+        "launch_receipt_sha256": "599df70a494a09e129372a2a19eb80c6e434bb80178732b879133e94172b18ef",
+        "original_phase_start_unix": 1791497972.440027,
+        "deadline_unix": 1791526772.440027,
+        "original_data_baseline_bytes": 13013950464,
+        "disk_max_bytes": 8589934592,
+        "min_free_bytes": 3221225472,
+        "expected_epochs": 20,
+        "planned_pause_epoch": 19,
+        "scheduler_T_max": 20,
+        "selected_checkpoint": "last.pt",
+        "selected_route": "J5_GRAPH",
+        "selected_J5_training_started": true,
+        "test_access": false,
+        "complete": false,
+        "latest_process_observation_epoch": 1791522551.140608,
+        "latest_observed_completed_epoch": 11,
+        "completed_epochs": 19,
+        "exact_groups_closed": true,
+        "canonical_naturally_idle": true,
+        "checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+        "actual_pause_and_budget_receipt": "fresh_route_actual_J5_pause19_and_append_budget_bind.json",
+        "strict_CPU_restorable": true
+      }
+    ],
+    "disk_expansion_recovery": {
+      "actual_receipt": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+        "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+      },
+      "local_receipt": "fresh_route_actual_disk_expansion_recovery_receipt.json",
+      "data_capacity_increase_bytes": 32212254720,
+      "original_initial_free_bytes": 13013950464,
+      "capacity_adjusted_initial_free_bytes": 45226205184,
+      "proposed_explicit_retry_disk_max_bytes": 12884901888,
+      "same_shared_deadline_unix": 1791533972.440027,
+      "old_failure_preserved": true,
+      "tmp_archived": {
+        "original_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt.tmp",
+        "sha256": "d800258448a73c7f5637a8647fe25edbfeeb66c76b45df72d169a14e4ba1bb83",
+        "bytes": 1346168189,
+        "mtime": 1791527127.7730381,
+        "valid_atomic_checkpoint": false,
+        "reason": "Interrupted during original torch.save before atomic replace; actual last19 unchanged",
+        "archived_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt.tmp.failure_20261009_142529"
+      },
+      "retry_source_preparing": true,
+      "new_actual_GPU_started": false,
+      "submission_ready": false,
+      "retry_source_manifest_sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2",
+      "new_actual_trainer_started": false,
+      "actual_retry_budget": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/shared_retry_append_budget.json",
+        "sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571"
+      },
+      "actual_launch": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/root_actual_launch.json",
+        "sha256": "144413ec175115164bf0289545db50f0e2c02cc4c2c6fca4f01eaa45682c33da"
+      },
+      "actual_retry_fixed20_completed": true,
+      "actual_terminal_receipt": "f4790240a236750769aa3f0c44850c19340d364a5ee8b99504321dc26889b79b",
+      "actual_terminal_last_sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c",
+      "new_training_complete": true
+    },
+    "fresh_route_expanded_full_template": {
+      "manifest_sha256": "578eb15ce02421e16e3476b063c406fdf0322d8cc63233e740c29d9f51ab4d71",
+      "actual_template_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_expanded_template_20261009",
+      "actual_stage_CPU_receipt": "fresh_route_actual_expanded_full_template_stage_and_CPU_entry.json",
+      "independent_review": "launch_j5_review PASS102members/9CPU/threecapacitypaths/typed34",
+      "bound": false,
+      "actual_training_started": false
+    },
+    "fresh_route_actual_positive_confirmation": {
+      "complete": true,
+      "root_review": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_positive_review.json",
+        "sha256": "2f0d386d4bde7cb99b21750eb09d66719417da4fd7f0c42238605e5e2074cde5"
+      },
+      "evidence": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_positive_evidence.json",
+        "sha256": "0044006254b4727070f3743cbf0455a5bdecda152eaec3df30b2da5ff535aea4"
+      },
+      "confirmation": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_positive_confirmation.json",
+        "sha256": "dc3232619e394b4528454f155711d9b88366ac7066f594886860e31a340d8e5f"
+      },
+      "confirmation_summary": {
+        "selected_route": "J5_GRAPH",
+        "primary_delta_vs_C_pp": 0.1897018970189702,
+        "natural_delta_vs_C_pp": 0.12442411810202779,
+        "raw_J5_P7_delta_vs_C_pp": -0.04065040650406504
+      },
+      "budget": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_full_budget.json",
+        "sha256": "62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517"
+      },
+      "budget_value": {
+        "schema": "aictrack1.fresh_route.full.budget.v1",
+        "root_authorized": true,
+        "phase_start_unix": 1791530132.8899467,
+        "deadline_unix": 1791544532.8899467,
+        "initial_free_bytes": 13013950464,
+        "capacity_increase_bytes": 32212254720,
+        "adjusted_initial_free_bytes": 45226205184,
+        "actual_data_total_bytes": 128849018880,
+        "disk_expansion_recovery": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+          "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+        },
+        "disk_max_bytes": 21474836480,
+        "min_free_bytes": 3221225472,
+        "reason": "Human grants all training/resources and actual data disk expansion. New FULL phase4h with same original baseline plus exact30GiB capacity, cumulative20GiB accounting, at least3GiB reserve; no old clock/receipt rewrite."
+      },
+      "full_prepare": {
+        "status": "bound_single_full_recipe_not_launched",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "selected_route": "J5_GRAPH",
+        "source_manifest_sha256": "be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54"
+      },
+      "disk": {
+        "free": 37721194496,
+        "total": 128849018880
+      },
+      "independent_integer_review_PASS": true,
+      "selected_route": "J5_GRAPH",
+      "balanced_net_correct": 28,
+      "natural_net_correct": 37,
+      "rawJ5_balanced_net_correct": -6,
+      "rawJ5_natural_net_correct": -8,
+      "balanced_head_mid_tail_net": [
+        -3,
+        8,
+        23
+      ],
+      "class_risks": "694 loses3;329/487/556/667 lose2 of20. Natural413 newzero has4images/3groups and exists in rawJ.",
+      "local_returns": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\fresh_route_actual_positive_FULL_returns_r1",
+      "stable_gain_claim": false,
+      "test_score_known": false
+    },
+    "updated_at_local": "2026-10-10T01:19:26.310122+08:00",
+    "fresh_route_retry_final_template_actual": {
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_final_template_r1_20261009",
+      "template_manifest_sha256": "b2824f319f5fa659b5c9a6d66c5cbd4161bdcf4ba12bcfa38b1972f8f3ca1396",
+      "source_members": 95,
+      "exclusive_deployment_SHA_verified": true,
+      "actual_CPU_CLI_4_PASS": true,
+      "stage_receipt": "fresh_route_retry_final_R1_actual_stage.json",
+      "stage_receipt_sha256": "c7e8c6d2d3e32c50a47ff309e3cdb0eccbf37876d19cbd69f1c46f6d534f86cd",
+      "CPU_receipt": "fresh_route_retry_final_R1_actual_CPU_entry.json",
+      "CPU_receipt_sha256": "0efebb14aba00a150a3d6aa37f5ebcf2619f0eea63d7c873aae995e8e839d5fd",
+      "status": "actual_template_deployed_CPU_PASS_UNBOUND_future_FULL_checkpoint_not_generated",
+      "test_access": false
+    },
+    "actual_FULL20_terminal": {
+      "complete": true,
+      "full_result": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/queues/full_attempt_fc6a85bf3def4fdab045ac18fb0c43e9.json",
+        "sha256": "595eb16ec635944af3ab569e691360d87519334364a48bf65ac130a1db9463eb"
+      },
+      "full_last": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/experiments/FULL_J5/last.pt",
+        "sha256": "2ab642181cdb724902feb4f9de5fda0238b1551395d35e7a5852ecbdec386cdc"
+      },
+      "full_final": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/experiments/FULL_J5/final.pt",
+        "sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542"
+      },
+      "full_metrics": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/experiments/FULL_J5/metrics.json",
+        "sha256": "5518a02131f987ed786063ad612b79302227b77e7e5f15c0f598bcd052b5b608"
+      },
+      "final_binding": {
+        "status": "bound_actual_full20_CPU_recovery_still_required",
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009",
+        "source_manifest_sha256": "f7e3a64ed65631d84d91fe8fbaea3b2830638f9085ad7cce9a8e7b2f0ed39174",
+        "selected_route": "J5_GRAPH"
+      },
+      "final_source": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/source_manifest.json",
+        "sha256": "f7e3a64ed65631d84d91fe8fbaea3b2830638f9085ad7cce9a8e7b2f0ed39174"
+      },
+      "actual_CPU_audit": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/artifacts/full_final_cpu_audit.json",
+        "sha256": "9fa62244fbaf27b5a64ed6869c06e2665c558a21874019eec3d9ce616e00e604"
+      },
+      "audit_summary": {
+        "complete": true,
+        "selected_route": "J5_GRAPH",
+        "selected_arm": "J5",
+        "trainable_tensors": 154,
+        "train_count": 148695,
+        "validation_count": 0,
+        "last_sha256": "2ab642181cdb724902feb4f9de5fda0238b1551395d35e7a5852ecbdec386cdc",
+        "final_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+        "runtime": {
+          "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+          "MKL_NUM_THREADS": "4",
+          "OMP_NUM_THREADS": "4",
+          "python": "3.12.3 | packaged by Anaconda, Inc. | (main, May  6 2024, 19:46:43) [GCC 11.2.0]",
+          "torch": "2.11.0+cu128",
+          "torch_num_interop_threads": 64,
+          "torch_num_threads": 4
+        }
+      },
+      "completed_unix": 1791536781.2625513,
+      "test_forward": false,
+      "data_free_bytes": 36282863616
+    },
+    "actual_new_package_remote": {
+      "controller_result": {
+        "schema": "aictrack1.fresh_route.final_controller_result.v1",
+        "complete": true,
+        "test_access": true,
+        "no_automatic_retry": true,
+        "status": "single_model_full20_P7_csv_zip_verified_local_restore_pending",
+        "hashes": {
+          "pred_results.csv": "7c9c816777b2b1e3b2eb165d155bec7a7635c0659c429d5a77ea68aafb2e9245",
+          "pred_results.zip": "5e65ba73e78c765e7fbd06ad9dbab485d6f8ad8a987d6662cd45bc31fc357ec3",
+          "submission_manifest.json": "85f54a6c03571f5d7004ca80b8ab7e068c994881cbbeac2e23074f0f70ee9288"
+        },
+        "final_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+        "return_manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+        "finished_epoch": 1791536928.5615916
+      },
+      "return_manifest": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/artifacts/return_manifest.json",
+        "sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+        "bytes": 68640
+      },
+      "source": "f7e3a64ed65631d84d91fe8fbaea3b2830638f9085ad7cce9a8e7b2f0ed39174",
+      "row_count": 37444,
+      "class_mapping_count": 750,
+      "local_return_root": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\final_actual_returns_r1",
+      "local_CPU_acceptance_complete": false
+    },
+    "priority_ZIP_delivery": {
+      "status": "priority_ZIP_and_CSV_verified_model_return_and_local_CPU_acceptance_continue",
+      "zip_path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\priority_delivery_20261009\\pred_results.zip",
+      "csv_path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\priority_delivery_20261009\\pred_results.csv",
+      "row_count": 37444,
+      "zip_sha256": "5e65ba73e78c765e7fbd06ad9dbab485d6f8ad8a987d6662cd45bc31fc357ec3",
+      "csv_sha256": "7c9c816777b2b1e3b2eb165d155bec7a7635c0659c429d5a77ea68aafb2e9245",
+      "single_root_CSV_and_byte_equal": true,
+      "remote_full_CPU_restore_PASS": true,
+      "remote_official750_mapping_PASS": true,
+      "source_manifest_sha256": "f7e3a64ed65631d84d91fe8fbaea3b2830638f9085ad7cce9a8e7b2f0ed39174",
+      "final_model_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+      "observed_unix": 1791537246.1060376
+    },
+    "complete_full_return_acceptance": true,
+    "user_latest_steering": "Explicitly approved docs242 execution; launch alpha .3/.5 experiments while prior return CPU acceptance continues.",
+    "reported_online_score": {
+      "schema": "aictrack1.user_reported_online_score.v1",
+      "recorded_at_local": "2026-10-09T17:40:27+08:00",
+      "status": "user_reported_corrected_individual_submission_score",
+      "independently_read_from_platform": false,
+      "user_message": "很抱歉，我刚刚看错了，这次的得分是 69.24740946480077，请你记录。然后规划后续工作",
+      "score_percent": "69.24740946480077",
+      "supersedes_mistaken_new_submission_score_percent": "68.46223694049782",
+      "old_baseline_score_percent": "68.46223694049782",
+      "old_baseline_package": "D:\\aicomp\\AICtrack1\\submissions\\fv2_full_exploratory_20261008\\pred_results.zip",
+      "current_package": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\priority_delivery_20261009\\pred_results.zip",
+      "current_zip_sha256": "5e65ba73e78c765e7fbd06ad9dbab485d6f8ad8a987d6662cd45bc31fc357ec3",
+      "current_csv_sha256": "7c9c816777b2b1e3b2eb165d155bec7a7635c0659c429d5a77ea68aafb2e9245",
+      "current_model_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+      "current_inference_source_manifest_sha256": "f7e3a64ed65631d84d91fe8fbaea3b2830638f9085ad7cce9a8e7b2f0ed39174",
+      "rows": 37444,
+      "delta_percentage_points": "0.78517252430295",
+      "correct_count_equivalent_under_37444_top1": 25929,
+      "baseline_correct_count_equivalent_under_37444_top1": 25635,
+      "net_additional_correct_count_equivalent": 294,
+      "strictly_above_71_required_correct": 26586,
+      "strictly_above_71_required_net_additional_correct": 657,
+      "gap_to_71_percentage_points": "1.75259053519923",
+      "count_note": "Arithmetic equivalents of the user-reported score assuming ordinary Top-1 over all 37444 rows; no test labels were recovered.",
+      "attribution_note": "Different end-to-end single-model recipes; this online difference does not isolate joint head, graph or training seed contributions. No parameters are selected using the reported test score.",
+      "prediction_diff_audit": "same_score_package_audit/prediction_diff.json",
+      "full_model_and_source_local_acceptance_complete": false
+    },
+    "next_cycle_plan": {
+      "status": "approved_preparing_actual_execution",
+      "document": "D:\\aicomp\\AICtrack1\\docs\\242_线上69点247记录与下一轮提分执行计划_20261009.md",
+      "document_sha256": "16064c644fb39543f68847ac759e2ab60adb19b873b3f5a53c8ce260aa445e25",
+      "plan": "NEXT_CYCLE_PLAN_20261009.json",
+      "plan_sha256": "a3af8b547e061ce69200283850263b347d92a2cfc11861d31702a3ed3ba9aca4",
+      "priority_routes": [
+        "joint J5 SCE alpha .3/.5",
+        "Jo-SRC-inspired EMA soft repair .25/.5"
+      ],
+      "new_GPU_experiment_started": false,
+      "prior_online_score_corrected": true,
+      "human_approval": "批准你继续推进",
+      "execution_state": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\STATE.json"
+    },
+    "current_return_observation": {
+      "at_local": "2026-10-09T17:46:36+08:00",
+      "download_session": 11959,
+      "status": "actively_receiving_original_return",
+      "partial_bytes": 337641472,
+      "do_not_restart": true,
+      "acceptance_pending": true
+    },
+    "actual_local_full_return_acceptance": {
+      "complete": true,
+      "local_CPU_recovery_PASS": true,
+      "acceptance_receipt": "artifacts\\next_cycle_20261009\\fresh_route_actual_local_CPU_acceptance_retry_r2.json",
+      "acceptance_sha256": "5dc7a1244ff88361c0513aa2646129c3a8a6726801bcdbd95478f808309b5e85",
+      "retry_receipt": "artifacts\\next_cycle_20261009\\operator_tools\\actual_local_final_acceptance_dependency_retry_r2_receipt.json",
+      "retry_sha256": "de1cb904d18c377ac68946e51caca3631c5e012fe4e7c473559ad69897c222fc",
+      "actual_sha_file_count": 238,
+      "actual_trainable_tensors_restored": 154,
+      "actual_optimizer_parameters_restored": 154,
+      "actual_full_AC20_restored": true,
+      "actual_final_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+      "actual_last_sha256": "2ab642181cdb724902feb4f9de5fda0238b1551395d35e7a5852ecbdec386cdc",
+      "CSV_ZIP_SHA_verified": true,
+      "test_image_reads": 0,
+      "GPU": false,
+      "completed_at_local": "2026-10-10T01:19:26.310122+08:00",
+      "scope": "Cycle09 complete; current authorized next_cycle10 B work continues; no online accuracy guarantee."
+    }
+  }
+}

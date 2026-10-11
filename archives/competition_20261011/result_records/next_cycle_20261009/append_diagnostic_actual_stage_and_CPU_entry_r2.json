@@ -1,0 +1,45 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/append_diagnostic_actual_stage_and_CPU_entry_r2.json",
+  "original_sha256": "3215d3ba219fd18aa3f89add9182e1e8c25c17b9b375b58136a80d48988be5bb",
+  "omitted_fields": [
+    "/entries/command",
+    "/entries/stderr",
+    "/entries/stdout"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.independent_source.actual_stage_and_CPU_entry.v1",
+    "source_name": "append_diagnostic",
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_append_diagnostic_r1_20261009",
+    "source_manifest_sha256": "2304b44aa944938677bc8c4ddd96bdc5270c4f65c92019a5a1fc1b99b4a8a714",
+    "verified_files": 45,
+    "uploaded_bytes": 33929654,
+    "entries": [
+      {
+        "returncode": 0
+      },
+      {
+        "returncode": 0
+      },
+      {
+        "returncode": 0
+      },
+      {
+        "returncode": 0
+      },
+      {
+        "returncode": 0
+      }
+    ],
+    "complete": true,
+    "CPU_entry_only": true,
+    "model_restored": false,
+    "actual_checkpoint_bound": false,
+    "append_budget_bound": false,
+    "CUDA_started": false,
+    "GPU_admitted": false,
+    "canonical_J5_unchanged": true,
+    "created_epoch": 1791522235.2069874,
+    "test_access": false
+  }
+}

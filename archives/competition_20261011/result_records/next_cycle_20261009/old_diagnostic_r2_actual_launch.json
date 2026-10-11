@@ -1,0 +1,30 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/old_diagnostic_r2_actual_launch.json",
+  "original_sha256": "7b34d1d2a4e1dff3979cfeb9f81a7604113a20a96d5e90cd6e2a28f71c079a0f",
+  "omitted_fields": [
+    "/command",
+    "/launch/controller/argv"
+  ],
+  "record": {
+    "schema": "aictrack1.old_diagnostic_resume.root_R2_launch.v1",
+    "observed_epoch": 1791496802.5917354,
+    "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+    "launch": {
+      "status": "launched_not_complete",
+      "operator_root": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/operator_old_diagnostics_r2",
+      "controller": {
+        "pid": 228494,
+        "start_ticks": "307045513",
+        "ppid": 228493,
+        "pgrp": 228494,
+        "state": "S",
+        "cwd": "/root/AICtrack1_next_cycle_diagnostic_20261009"
+      },
+      "deadline_unix": 1791501451.920797,
+      "source_sha256": "d9b3cac354958328ae474a4d10410b9e5579c5f2427534cb491417fefea1f06e"
+    },
+    "completed": false,
+    "new_submission_ready": false
+  }
+}

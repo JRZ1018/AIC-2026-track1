@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L35_final_actual_returns_r1/local_priority_package_acceptance_r1.json",
+  "original_sha256": "d7248f9afd611350351f8f8bdcaaf483976d90e8a7d8194018a9e88c2da75062",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.next_cycle10.L35_local_priority_package_acceptance.v1",
+    "complete": true,
+    "rows": 37444,
+    "classes": 750,
+    "all_unique_test_JPGs_exact_order": true,
+    "four_digit_mapping": true,
+    "root_single_CSV_zip_exact_bytes_CRC": true,
+    "CSV_sha256": "e02a214cc0ba4476501698b75a546d3d29bc5ee1942f5c91dccf6751a78a7d7f",
+    "ZIP_sha256": "767ace16352bdb35474df443eb3285d35e2ba832622fcfa3424b4ccbe9b922d8",
+    "return_manifest_sha256": "ad086cc485fe42378835538ed2fb1179038cfb1baf5808f9f0bb93d96c44ded2",
+    "model_final_sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6",
+    "remote_full_CPU_restore_PASS": true,
+    "local_full_model_restore_pending": true,
+    "actual_frozen_graph_no_label_no_update": true
+  }
+}

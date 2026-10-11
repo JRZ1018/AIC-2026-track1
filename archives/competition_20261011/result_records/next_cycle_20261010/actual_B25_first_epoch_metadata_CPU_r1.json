@@ -1,0 +1,51 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B25_first_epoch_metadata_CPU_r1.json",
+  "original_sha256": "c9f8dea94d151de55199902c539e3aaba3cdaac90b5cc529ff99470b4eaa48be",
+  "omitted_fields": [],
+  "record": {
+    "receipt": {
+      "schema": "aictrack1.josrc_inspired.actual_first_epoch_metadata.v1",
+      "complete": true,
+      "scope": "CPU mmap metadata and tensor shapes; not full model recovery/nextstep or accuracy confirmation",
+      "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/artifacts/experiments/JOINT_B25/last.pt",
+      "checkpoint_sha256": "b625a7565c157ab3b980136491f906910efab8ca997ead088d29877cf66fbd21",
+      "checkpoint_bytes": 1774475437,
+      "checkpoint_mtime": 1791562848.1899512,
+      "source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+      "config_sha256": "41ee96e1e912e7e8f4cbf73d17518a29eeda91751657da47e075cfb10df3ac41",
+      "math_protocol_sha256": "3c273802ce085f2d6e629743e0b120df13bd1761d29f9e91c4ba83908f317f19",
+      "epoch": 1,
+      "train_seconds": 522.967588993255,
+      "train_samples_per_second": 227.46725132431536,
+      "train_loss": 1.3975038230173642,
+      "validation_top1": 0.6867202520370483,
+      "sampling": {
+        "mode": "natural",
+        "sample_count": 118958,
+        "class_count_min": 4,
+        "class_count_median": 157.0,
+        "class_count_max": 198,
+        "zero_sample_class_count": 0
+      },
+      "trainable_tensors": 154,
+      "trainable_parameters": 88233966,
+      "optimizer_groups": [
+        152,
+        2
+      ],
+      "scheduler_Tmax": 20,
+      "EMA_successful_updates": 1856,
+      "EMA_skips": 3,
+      "hard_class_support_min": 4,
+      "hard_seen_total": 118958,
+      "active_teacher_observations": 0,
+      "soft_warmup_is_real_epoch1": true,
+      "test_access": false,
+      "optimizer_updates_by_auditor": 0,
+      "observed_unix": 1791563117.0457957
+    },
+    "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_first_epoch_meta_20261010/receipt.json",
+    "remote_receipt_sha256": "c3ed0c433b114a8e149f6a5a5688959b050b896d13be241d26e7485b3fbb0eae"
+  }
+}

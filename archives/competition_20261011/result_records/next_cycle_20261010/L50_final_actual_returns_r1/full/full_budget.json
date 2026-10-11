@@ -1,0 +1,26 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/full/full_budget.json",
+  "original_sha256": "1edccb01c54e50a7f83434da6974bf74233c5fab12296968047d559b579ec22e",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.next_cycle10.L50_full.budget.v1",
+    "root_authorized": true,
+    "phase_start_unix": 1791694732.4714105,
+    "deadline_unix": 1791705532.4714105,
+    "initial_free_bytes": 13013950464,
+    "capacity_increase_bytes": 32212254720,
+    "adjusted_initial_free_bytes": 45226205184,
+    "actual_data_total_bytes": 128849018880,
+    "disk_expansion_recovery": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "disk_max_bytes": 42949672960,
+    "min_free_bytes": 3221225472,
+    "atomic_reserve_bytes": 2147483648,
+    "competition_deadline_unix": 1791712738,
+    "new_explicit_phase": "one fresh L50 FULL20 after two actual positive reused combos/root review; original clocks unchanged",
+    "test_access": false
+  }
+}

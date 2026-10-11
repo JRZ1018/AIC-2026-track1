@@ -1,0 +1,26 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_joint_diagnostic_r2_compare_A5.json",
+  "original_sha256": "da226cbf287b4c6e207ca400fbdb51f46def5703a4f4de83725c8681339894ed",
+  "omitted_fields": [
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "arm": "A5",
+    "return_code": 0,
+    "source_sha256": "ad9902c28f7d32026db335843c7ab365793d6a369c218c8b7c9b852f6b6f705a",
+    "result_files": [
+      "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/comparisons/A5/raw_model_P7_vs_J5_P7_natural_unique_images_predictions.npz",
+      "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/comparisons/A5/raw_model_P7_vs_J5_P7_balanced_supported_unique_predictions.npz",
+      "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/comparisons/A5/graph_combo_vs_J5_GRAPH_natural_unique_images_predictions.npz",
+      "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/comparisons/A5/graph_combo_vs_J5_GRAPH_balanced_supported_unique_predictions.npz",
+      "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/comparisons/A5/candidate_graph_increment_natural_unique_images_predictions.npz",
+      "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/comparisons/A5/candidate_graph_increment_balanced_supported_unique_predictions.npz",
+      "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/comparisons/A5/report.json",
+      "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/comparisons/A5/result_manifest.json"
+    ],
+    "observed_unix": 1791559143.5977275,
+    "test_access": false
+  }
+}

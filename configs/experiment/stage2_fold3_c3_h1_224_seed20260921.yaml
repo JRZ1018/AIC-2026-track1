@@ -1,0 +1,23 @@
+experiment:
+  competition_stage: stage2
+  run_id: 20260925-stage2-fold3-c3-h1-224-seed20260921
+  execution_enabled: true
+  training_scope: fixed_split_validation
+  dataset_config: ../data/stage2_fold3_224.yaml
+  feature_cache: ../../artifacts/features/stage2/train_openai_vit_b32_fold3_224_20260925
+  output_dir: ../../artifacts/experiments/20260925-stage2-fold3-c3-h1-224-seed20260921
+  device: cuda
+  num_classes: 750
+  head:
+    kind: linear
+  training:
+    epochs: 100
+    batch_size: 4096
+    learning_rate: 0.01
+    weight_decay: 0.0
+    momentum: 0.9
+    gradient_clip_norm: null
+    seed: 20260921
+    optimizer: adam
+    scheduler: constant
+    amp: false

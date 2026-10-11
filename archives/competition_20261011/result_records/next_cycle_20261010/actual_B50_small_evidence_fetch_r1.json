@@ -1,0 +1,61 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B50_small_evidence_fetch_r1.json",
+  "original_sha256": "0037d6877a5322b623c96eeb25fb554192ac67a4a6abc9c9ca4df6abd9e67725",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "scope": "real B50 fixed comparison and CPU diagnostic metadata only",
+    "test_access": false,
+    "files": {
+      "B50/result_manifest.json": {
+        "bytes": 1309,
+        "sha256": "c3ef2900a25c4720913f797e2c12636f0a0eea6f76aef9bbf66e64bfa207d8eb"
+      },
+      "B50/candidate_graph_increment_balanced_supported_unique_predictions.npz": {
+        "bytes": 51300,
+        "sha256": "4bbb5b710df5f7b2c37cd5e4a8cc435ee226bd09ce3740795185b8ca6164eb8e"
+      },
+      "B50/candidate_graph_increment_natural_unique_images_predictions.npz": {
+        "bytes": 94181,
+        "sha256": "ff9f2ce101b3575ba5c82d6b9d4a3286027d066695231528d1139e9a068092c4"
+      },
+      "B50/graph_combo_vs_J5_GRAPH_balanced_supported_unique_predictions.npz": {
+        "bytes": 25577,
+        "sha256": "49f2a9bbf5d28453b60a590e4ecebd9542628aebd633deacca47dc4ec7770164"
+      },
+      "B50/graph_combo_vs_J5_GRAPH_natural_unique_images_predictions.npz": {
+        "bytes": 47126,
+        "sha256": "a49f9a4fa796b1498d85f387a0a9d0a2ad9c5d3a8396d97019396ea3bcc3162e"
+      },
+      "B50/raw_model_P7_vs_J5_P7_balanced_supported_unique_predictions.npz": {
+        "bytes": 51332,
+        "sha256": "72bfcf29b53f8c758f1bad4771dd6f67f3963bb1db4f3f2c6161fdc48cfc3dee"
+      },
+      "B50/raw_model_P7_vs_J5_P7_natural_unique_images_predictions.npz": {
+        "bytes": 94305,
+        "sha256": "02a4a67c3d864e8e074e12540d16677c7efe81fdfcbc5f1f85f1efb2929e3924"
+      },
+      "B50/report.json": {
+        "bytes": 2249189,
+        "sha256": "9d8039b07e289338cbe65b49fa02b7f223d88c2ad5cec822691cfc50db22676c"
+      },
+      "B50_diagnostic/p1_checkpoint_audit.json": {
+        "bytes": 3205,
+        "sha256": "fd1eb1b4bb182b993d01f55d7db65d25552588fb8a759e3322ed15013ff0403c"
+      },
+      "B50_diagnostic/input_identity.json": {
+        "bytes": 11761,
+        "sha256": "cc73b08f071ae7f4d41eb116197190814f7fdd28a84dddb0c58ca0cffc787c50"
+      },
+      "B50_diagnostic/runtime_receipt.json": {
+        "bytes": 1604,
+        "sha256": "21669994e1295c851ccdb2c5983e0ac78824641c7f2214e5359268454d9942db"
+      },
+      "B50_diagnostic/result_manifest.json": {
+        "bytes": 1260,
+        "sha256": "9c1862b29ee1b0654ce3873eeaafb6b205d40316e1e2ba56c8252634bb8ec32d"
+      }
+    }
+  }
+}

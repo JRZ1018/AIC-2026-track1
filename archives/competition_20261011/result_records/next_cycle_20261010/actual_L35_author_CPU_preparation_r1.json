@@ -1,0 +1,46 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_author_CPU_preparation_r1.json",
+  "original_sha256": "2c9350717cc67e961c08fde0c24198aa2f110bf1ab253b6b8ed96ea0669978e7",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "CPU_source_and_config_contract_PASS": true,
+    "scientific_single_delta_verified": true,
+    "trainer_bytes_unchanged": true,
+    "changed_files": [
+      "configs/experiment/p1_L35.yaml",
+      "inputs/budget.json",
+      "scripts/fresh_route_runtime.py",
+      "scripts/p1_contract.py",
+      "scripts/run_supervision_joint.py"
+    ],
+    "source_sha256": "2ac1f6c7cdecad8a09a0c1fd1d0a6e264814ab93888926d9b40a105cb0c29080",
+    "budget": {
+      "schema": "aictrack1.learning_rate_joint.budget.v1",
+      "phase_start_unix": 1791621285.9171858,
+      "deadline_unix": 1791635685.9171858,
+      "initial_free_bytes": 13013950464,
+      "capacity_increase_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "data_total_bytes": 128849018880,
+      "disk_max_bytes": 38654705664,
+      "min_free_bytes": 3221225472,
+      "atomic_reserve_bytes": 2147483648,
+      "final_gpu_reserve_hours": 4,
+      "root_authorized": true,
+      "test_access": false,
+      "capacity_evidence": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+        "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+      },
+      "deadline_competition_unix": 1791712738,
+      "final_wall_reserve_hours": 8,
+      "confirmation_reserve_hours": 7,
+      "change_reason": "AFA actual primary negative; one visual learning rate point; same cumulative original expansion baseline, explicit cap increase30to36GiB, no ledger reset"
+    },
+    "GPU_started": false,
+    "remote_deployed": false,
+    "test_access": false
+  }
+}

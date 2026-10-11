@@ -1,0 +1,24 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L50_second_actual_fourview_status_r1.json",
+  "original_sha256": "d5ed48eccefa76148968917185ffc6df6110dab62adc3d84fcdc5ee7ad9f819c",
+  "omitted_fields": [
+    "/stdout"
+  ],
+  "record": {
+    "now": 1791694485.8728888,
+    "group": [],
+    "canonical_idle": true,
+    "files": {
+      "runtime_receipt.json": 2549,
+      "p1_checkpoint_audit.json": 3432,
+      "fused_logits.pt": 47052393,
+      "paired_predictions.csv": 2390873,
+      "report.json": 2715,
+      "rows.csv": 5436960,
+      "fused_features.pt": 63342453,
+      "input_identity.json": 7663,
+      "result_manifest.json": 1259
+    }
+  }
+}

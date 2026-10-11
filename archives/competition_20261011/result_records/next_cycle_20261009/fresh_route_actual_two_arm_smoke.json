@@ -1,0 +1,162 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_two_arm_smoke.json",
+  "original_sha256": "3e5d9b944b5453dabc0e01a49248e64d5f68acb06715204ee4287f1fc9e6e7c6",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_two_arm_CUDA_smoke.v1",
+    "complete": true,
+    "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+    "selected_route": "J5_GRAPH",
+    "results": [
+      {
+        "arm": "C",
+        "owner": {
+          "pid": 236005,
+          "pgrp": 236005,
+          "session": 236005,
+          "start_ticks": "308487012"
+        },
+        "receipt_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/smoke/C_18cf4c649d02497aa3d13b20d73a3a2c/receipt.json",
+        "receipt_sha256": "b0a6872c839317b4beae96928a25a95ebed1ebf0097450a46ffe2b108aac20d7",
+        "receipt": {
+          "schema": "aictrack1.fresh_route.cuda_smoke.v1",
+          "status": "passed",
+          "synthetic_only": true,
+          "candidate": false,
+          "config_sha256": "4cf0d7d79d81a256848f09347e2a18e400f5bb7c053a1240542850c54df93cd6",
+          "full_visual_tensors": 152,
+          "trainable_tensors": 152,
+          "trainable_parameters": 87849216,
+          "head_gradient_norms": {
+            "linear.weight": 0.0,
+            "linear.bias": 0.0
+          },
+          "head_frozen": true,
+          "base_loss": {
+            "kind": "sce",
+            "alpha": 0.1,
+            "beta": 1.0,
+            "log_zero": -4.0
+          },
+          "first_loss": 4.786383628845215,
+          "uninterrupted_second_loss": 4.676736831665039,
+          "resumed_second_loss": 4.676736831665039,
+          "max_parameter_difference": 9.313225746154785e-10,
+          "scheduler_T_max": 20,
+          "amp_overflow_skips": [
+            {
+              "from_scale": 65536.0,
+              "to_scale": 32768.0
+            },
+            {
+              "from_scale": 32768.0,
+              "to_scale": 16384.0
+            }
+          ],
+          "successful_update_count": 3,
+          "successful_updates": [
+            {
+              "loss": 4.786383628845215,
+              "scale": 16384.0,
+              "scheduler_epoch": 1
+            },
+            {
+              "loss": 4.676736831665039,
+              "scale": 16384.0,
+              "scheduler_epoch": 2
+            },
+            {
+              "loss": 4.676736831665039,
+              "scale": 16384.0,
+              "scheduler_epoch": 2
+            }
+          ],
+          "checkpoint_sha256": "3bf1cd56c84c664901b9fef5cea4e987c2c8487b600b09a13bd6efccc302f314",
+          "checkpoint_role": "synthetic_resume_only"
+        },
+        "return_code": 0,
+        "canonical_idle_after": true
+      },
+      {
+        "arm": "J5",
+        "owner": {
+          "pid": 236028,
+          "pgrp": 236028,
+          "session": 236028,
+          "start_ticks": "308488688"
+        },
+        "receipt_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/smoke/J5_dbe4d5c8667c421ca3545879ec08d5e2/receipt.json",
+        "receipt_sha256": "4efbb24dfa7365f5df9d005ab3eaa7a18542afcf19796a21bfb6ebd6d4f78bd2",
+        "receipt": {
+          "schema": "aictrack1.fresh_route.cuda_smoke.v1",
+          "status": "passed",
+          "synthetic_only": true,
+          "candidate": false,
+          "config_sha256": "a65f60e974c04842e2c86975ab3675aad8469bc1b0c0a27a98e8fa145b4b8562",
+          "full_visual_tensors": 152,
+          "trainable_tensors": 154,
+          "trainable_parameters": 88233966,
+          "head_gradient_norms": {
+            "linear.weight": 0.10411300510168076,
+            "linear.bias": 0.10410420596599579
+          },
+          "head_frozen": false,
+          "base_loss": {
+            "kind": "sce",
+            "alpha": 0.1,
+            "beta": 1.0,
+            "log_zero": -4.0
+          },
+          "first_loss": 4.786383628845215,
+          "uninterrupted_second_loss": 4.676631927490234,
+          "resumed_second_loss": 4.676631927490234,
+          "max_parameter_difference": 1.1641532182693481e-10,
+          "scheduler_T_max": 20,
+          "amp_overflow_skips": [
+            {
+              "from_scale": 65536.0,
+              "to_scale": 32768.0
+            },
+            {
+              "from_scale": 32768.0,
+              "to_scale": 16384.0
+            }
+          ],
+          "successful_update_count": 3,
+          "successful_updates": [
+            {
+              "loss": 4.786383628845215,
+              "scale": 16384.0,
+              "scheduler_epoch": 1
+            },
+            {
+              "loss": 4.676631927490234,
+              "scale": 16384.0,
+              "scheduler_epoch": 2
+            },
+            {
+              "loss": 4.676631927490234,
+              "scale": 16384.0,
+              "scheduler_epoch": 2
+            }
+          ],
+          "checkpoint_sha256": "017083e8f0185a9317e09c07fa098d4e27f2f974671efd65c7ff2125794394dd",
+          "checkpoint_role": "synthetic_resume_only"
+        },
+        "return_code": 0,
+        "canonical_idle_after": true
+      }
+    ],
+    "original_phase_start_unix": 1791497972.440027,
+    "original_deadline_unix": 1791526772.440027,
+    "original_data_baseline_bytes": 13013950464,
+    "disk_max_bytes": 8589934592,
+    "min_free_bytes": 3221225472,
+    "actual_model_CUDA_disk_resume_passed": true,
+    "candidate_training_started": false,
+    "test_access": false,
+    "new_submission_ready": false,
+    "created_epoch": 1791511248.3739266
+  }
+}

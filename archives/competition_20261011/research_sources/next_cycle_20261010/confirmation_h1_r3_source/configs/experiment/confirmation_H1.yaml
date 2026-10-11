@@ -1,0 +1,17 @@
+experiment:
+  run_id: 20261010-confirmation-H1
+  execution_enabled: false
+  training_scope: fold_train_fixed_final_epochs
+  training:
+    epochs: 100
+    batch_size: 4096
+    learning_rate: 0.01
+    weight_decay: 0.0
+    momentum: 0.9
+    gradient_clip_norm: null
+    seed: 20261008
+    optimizer: adam
+    scheduler: constant
+    amp: false
+  output_dir: ../../artifacts/experiments/confirmation_H1
+  device: cuda

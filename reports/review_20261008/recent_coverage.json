@@ -1,0 +1,2446 @@
+{
+  "review_time_local": "2026-10-09T00:06:52+08:00",
+  "scope": "根目录141以上全部实际文件；同事递归79件；AGENTS旧版和Desktop后续指令；HANDOFF指定后半359-716",
+  "method": "全文分批通读；54份同事副本逐SHA匹配已全文读root原文后复用，不代表79次独立实验。truncation回读142/161/162/179/202/colleague180，其他长文件分块。",
+  "root_count": 99,
+  "colleague_count": 79,
+  "colleague_distinct_full_read": 25,
+  "colleague_sha_reuse": 54,
+  "files": [
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\141_复赛损失优化与75分冲刺计划_20260927.md",
+      "relative_path": "docs\\141_复赛损失优化与75分冲刺计划_20260927.md",
+      "bytes": 13669,
+      "lines": 84,
+      "sha256": "e1e85f4daa7619780e6dafd55e16743421cfc4627587846d9b05a59541e17507",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "SCE/CIFAR配方迁移；梯度尺度及750类最优仍未辨识。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\142_P5本机4060首折损失配对启动与值守_20260927.md",
+      "relative_path": "docs\\142_P5本机4060首折损失配对启动与值守_20260927.md",
+      "bytes": 14921,
+      "lines": 109,
+      "sha256": "bf150ea970c00229df625b4f831d9c60e911c536be7c3d151e9525d649ae4eb5",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "首折SCE+0.013451pp CI跨零，不足否定损失族。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\143_P5探索门槛调整与本机第二折预算_20260927.md",
+      "relative_path": "docs\\143_P5探索门槛调整与本机第二折预算_20260927.md",
+      "bytes": 6799,
+      "lines": 57,
+      "sha256": "a8623e9d1596bb0193f481ec802104a0f24f2c129194186189661ec8dda71bb6",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "用户放宽探索点门槛，CI报告风险；正式三seed门保留。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\144_阿里云新服务器接入与安全迁移_20260927.md",
+      "relative_path": "docs\\144_阿里云新服务器接入与安全迁移_20260927.md",
+      "bytes": 8158,
+      "lines": 52,
+      "sha256": "2502a8eecba7cfe75c73362a013f42611b379b2bebcf70fcb1c1f4308c7c690a",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "A10接入/安全迁移工程，不是算法提分。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\145_A10资源验收与P5折2启动_20260928.md",
+      "relative_path": "docs\\145_A10资源验收与P5折2启动_20260928.md",
+      "bytes": 5103,
+      "lines": 61,
+      "sha256": "9166c02f644da1b220bd859255093d89387b2c12cd8da63c909592d7aefe76dd",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "A10 CPU加载瓶颈；workers增加无稳定提速。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\146_P5_A10全量训练与最终出包验收_20260928.md",
+      "relative_path": "docs\\146_P5_A10全量训练与最终出包验收_20260928.md",
+      "bytes": 4802,
+      "lines": 24,
+      "sha256": "7a98b48e275d1eeaa3e87298398271f98a66e623aa46faee514a0003c57c1d41",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P5全量65.74351较GCE+0.15490pp，非单损失因果。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\147_P5增益瓶颈诊断与70分后续门禁_20260928.md",
+      "relative_path": "docs\\147_P5增益瓶颈诊断与70分后续门禁_20260928.md",
+      "bytes": 9521,
+      "lines": 62,
+      "sha256": "74eeb2149edc7ff36994c50f4bf6021cf69558d73f8747d3c973ead890ac8404",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "冲突富集/低AC支持诊断；折难度、噪声影响评估。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\148_P6_AC单变量验证预注册与资源预算_20260928.md",
+      "relative_path": "docs\\148_P6_AC单变量验证预注册与资源预算_20260928.md",
+      "bytes": 8830,
+      "lines": 44,
+      "sha256": "6d0b1b91368e89174398d1c1dc0de5d095bf0e9b2379cceec868b44713029562",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P6 AC off+0.0101pp CI跨零，仅近零。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\149_主办方测试先验公告影响与后续计划修订_20260928.md",
+      "relative_path": "docs\\149_主办方测试先验公告影响与后续计划修订_20260928.md",
+      "bytes": 5439,
+      "lines": 66,
+      "sha256": "8507b84a352a8cd77e3ff61bd3f62e9602062339fa56b15911da0c686bd10031",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "官方允许仅推理类别均衡先验，旧全部后处理禁令过时。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\150_P7类别均衡推理旁路与下一包预注册_20260928.md",
+      "relative_path": "docs\\150_P7类别均衡推理旁路与下一包预注册_20260928.md",
+      "bytes": 3559,
+      "lines": 29,
+      "sha256": "e2922d0abafdfc2c744ff7b410545ba309064e237315a1802027c952d01cdb7f",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P7已扫18候选选uniform .5/.75/60；每类50有放回代理。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\151_P7类别均衡推理包验收_20260928.md",
+      "relative_path": "docs\\151_P7类别均衡推理包验收_20260928.md",
+      "bytes": 2748,
+      "lines": 39,
+      "sha256": "f3cb482bc4484b083def4328cc7ae66f8c41463d73aea0f6a76e7e20936a1657",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "同P5检查点P7线上+2.4543318pp，已用。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\152_P8残差分类头两折短筛预注册_20260928.md",
+      "relative_path": "docs\\152_P8残差分类头两折短筛预注册_20260928.md",
+      "bytes": 7289,
+      "lines": 41,
+      "sha256": "989b6e92e09fd8b9b92d1eb15f52745c762eccf3f20eb8021389e0dfa153ccbe",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P8残差MLP两折约-4.42pp，非端到端联合头。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\153_P9梯度裁剪阈值两折筛选与预算_20260928.md",
+      "relative_path": "docs\\153_P9梯度裁剪阈值两折筛选与预算_20260928.md",
+      "bytes": 4683,
+      "lines": 37,
+      "sha256": "20b34db92f6de7fd68de198f638a43e59715dc21428010516a02d6ab6fa20547",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P9 clipnorm10平均+0.0084pp近零，固定阈值。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\154_A10产物迁回本机与关机验收_20260928.md",
+      "relative_path": "docs\\154_A10产物迁回本机与关机验收_20260928.md",
+      "bytes": 4712,
+      "lines": 25,
+      "sha256": "c99797feeca3bc22d550e013c715a46cd04d1ee70a82c78b65ef16fc06aa2c9d",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "A10迁回/停机历史工程，不授权未来预算。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\155_P10硬类别容量分配旁路预注册_20260929.md",
+      "relative_path": "docs\\155_P10硬类别容量分配旁路预注册_20260929.md",
+      "bytes": 5296,
+      "lines": 36,
+      "sha256": "52388e3ed5cb2866190c662fdb8806b15a81956f096585012516af6808c595df",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P10一次贪心迁移不保证全局最优；平均-0.819556pp。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\156_P11_NCE_RCE同折配对预注册_20260929.md",
+      "relative_path": "docs\\156_P11_NCE_RCE同折配对预注册_20260929.md",
+      "bytes": 5850,
+      "lines": 46,
+      "sha256": "71e3cd98d209c3a6b5246f5b672ff6fba66a1066734a22b3efb80d136a506c96",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P11固定NCE+RCE+0.08743pp CI跨零，insufficient。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\157_P12_ELR复赛单折配对短筛预注册_20260929.md",
+      "relative_path": "docs\\157_P12_ELR复赛单折配对短筛预注册_20260929.md",
+      "bytes": 6936,
+      "lines": 53,
+      "sha256": "0ad0438ee59acef95515fb31cc193b273d7e215d5e68b615ba10703e2af724f7",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P12 ELR+0.016814pp CI跨零，固定配方。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\158_P13_折3同机8对14轮日程匹配预注册_20260929.md",
+      "relative_path": "docs\\158_P13_折3同机8对14轮日程匹配预注册_20260929.md",
+      "bytes": 4213,
+      "lines": 31,
+      "sha256": "7b93cfa33c297d9b0216c1c3dd83e25499057b493e332974fb3c50e3b09a3915",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P13完整8/14余弦配对，不能以20前缀替代14。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\159_P13_折3日程匹配筛选结项_20260929.md",
+      "relative_path": "docs\\159_P13_折3日程匹配筛选结项_20260929.md",
+      "bytes": 5799,
+      "lines": 42,
+      "sha256": "ea32a3cde0515985e88a0c37d8448b9a85d3517e8ea04b743c50743d2cba1a75",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P13 fold3+0.76336pp CI正；best/final需校正。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\160_P13_折2服务器确认运行交接_20260929.md",
+      "relative_path": "docs\\160_P13_折2服务器确认运行交接_20260929.md",
+      "bytes": 12982,
+      "lines": 88,
+      "sha256": "48d76d47c78d13ed7367aa18706e94b9e127ebb3b6d8b282fce065df417f0274",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P13 fold2+0.6625pp CI正，批准完整恢复。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\161_P13同配方全量复现与单次出包执行单_20260930.md",
+      "relative_path": "docs\\161_P13同配方全量复现与单次出包执行单_20260930.md",
+      "bytes": 6130,
+      "lines": 38,
+      "sha256": "30052530e27897b09d5dcbb11f4aafe33a80002e063c8c5914ec55c8707cdeb4",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P13同配方全量主动停止，部分产物非算法失败。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\162_P14权重起点锚定单变量短筛预注册_20260930.md",
+      "relative_path": "docs\\162_P14权重起点锚定单变量短筛预注册_20260930.md",
+      "bytes": 8858,
+      "lines": 41,
+      "sha256": "b73a24b83667c557e7b3af5476b984d9cd188b1d664ad720c45ac9468bb0b1f9",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P14 lambda.1起点锚定-0.4372pp CI全负。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\163_P15长尾视觉OT可行性审计预注册_20260930.md",
+      "relative_path": "docs\\163_P15长尾视觉OT可行性审计预注册_20260930.md",
+      "bytes": 4566,
+      "lines": 23,
+      "sha256": "526debcb2af6beef17962951105b187a5764730806c722421d8a362ac08b37c5",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P15 OT代理富集不是真噪声precision。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\164_P15视觉OT加权折2短筛预注册_20260930.md",
+      "relative_path": "docs\\164_P15视觉OT加权折2短筛预注册_20260930.md",
+      "bytes": 7567,
+      "lines": 31,
+      "sha256": "fd9b8678d91535375753b9bc06dec9deaa80480efb7b2118c126d5cc9759f28f",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P15-0.0168pp CI跨零，不否定JoSRC。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\165_P16单检查点固定六视图跨折短筛预注册_20260930.md",
+      "relative_path": "docs\\165_P16单检查点固定六视图跨折短筛预注册_20260930.md",
+      "bytes": 8291,
+      "lines": 43,
+      "sha256": "6a32665192dc945b95d4c2c9eae00f1de7e7f1b1053e3d15cdf73dbe6796faff",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P16六视图+0.0101pp CI跨零，不否定TTA族。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\166_P17训练权重EMA折2单变量短筛预注册_20260930.md",
+      "relative_path": "docs\\166_P17训练权重EMA折2单变量短筛预注册_20260930.md",
+      "bytes": 5942,
+      "lines": 38,
+      "sha256": "a826cdc8db94c67254a08e697e71a67344452afedf788ddfa434b22b68d46670",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P17 EMA合规冻结历史，后续实际完成。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\167_P18温和训练裁剪折2短筛预注册_20260930.md",
+      "relative_path": "docs\\167_P18温和训练裁剪折2短筛预注册_20260930.md",
+      "bytes": 6734,
+      "lines": 37,
+      "sha256": "5afb7a7be6384345ad0536c8ca0ed838b32e78ca0189997e37b589b3a4c2fa7a",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P18方形crop.95非完整纵横比；来源有改动。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\168_20260929_30训练成果与队友交接_20260930.md",
+      "relative_path": "docs\\168_20260929_30训练成果与队友交接_20260930.md",
+      "bytes": 10230,
+      "lines": 49,
+      "sha256": "8e6fa59ca7025fd16da5ec7afd69e2f8e074a7d058eb693cb228684967ed4b1e",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "9/29-30交接历史快照，不当最新状态。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\169_P19_BalancedSoftmax分类头条件短筛预注册_20260930.md",
+      "relative_path": "docs\\169_P19_BalancedSoftmax分类头条件短筛预注册_20260930.md",
+      "bytes": 11322,
+      "lines": 61,
+      "sha256": "1cd5602dbfc94da6d317e02730aa42436f0aaaedc2f8a21d2afc7dbae4df3972",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P19 BalancedSoftmax头top1负但tail约+1.9pp。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\170_P18产物只读验收与门禁缺口_20261001.md",
+      "relative_path": "docs\\170_P18产物只读验收与门禁缺口_20261001.md",
+      "bytes": 7354,
+      "lines": 35,
+      "sha256": "6804e3db916eab72d865bb315e1462bc221fa0af5284c5d34187823804d2434b",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P18完整四视图约-0.1715pp；硬链接源码问题真实。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\171_P20高置信保护均衡先验本机短筛预注册_20261001.md",
+      "relative_path": "docs\\171_P20高置信保护均衡先验本机短筛预注册_20261001.md",
+      "bytes": 5153,
+      "lines": 28,
+      "sha256": "3db5b506d2d7b41b8d0e327361483ac6801f526744a4a37734007a68cd0f74b5",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P20 margin保护零预测改变，近于无操作。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\172_P17_EMA合规更新与执行计划_20261001.md",
+      "relative_path": "docs\\172_P17_EMA合规更新与执行计划_20261001.md",
+      "bytes": 11967,
+      "lines": 44,
+      "sha256": "8d24809035f3a0f8a50c6931da9a9d8c827b843f30b9d59abfecf394ee6eb127",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P17真正完成，固定EMA轻微负CI跨零。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\173_P21二十轮折2日程短筛_20261001.md",
+      "relative_path": "docs\\173_P21二十轮折2日程短筛_20261001.md",
+      "bytes": 4107,
+      "lines": 25,
+      "sha256": "7c9d76a83bcbea465eed090362f79a2372458b594e1f4d4d24a7f1eeb7358dd2",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P21完整20轮，旧best/final及选择依赖。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\174_P21折2二十轮实验性提交包与限制_20261001.md",
+      "relative_path": "docs\\174_P21折2二十轮实验性提交包与限制_20261001.md",
+      "bytes": 4646,
+      "lines": 34,
+      "sha256": "a42754eb8f1b98d8ac495b55e3ef916aff7bfd69143f04b0895ee75180393d6f",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P21折探索包与旧全量不匹配，不判因果。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\175_P21同源码十四轮对照与后续门禁_20261001.md",
+      "relative_path": "docs\\175_P21同源码十四轮对照与后续门禁_20261001.md",
+      "bytes": 4152,
+      "lines": 24,
+      "sha256": "d67a37d7925c8e1d1ca9498b3c66435053ff9e87dcebbf775ee89795d1c7450a",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P21同源码14/20支持日程，best不等于终轮。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\176_P21折3匹配确认执行预注册_20261001.md",
+      "relative_path": "docs\\176_P21折3匹配确认执行预注册_20261001.md",
+      "bytes": 5909,
+      "lines": 35,
+      "sha256": "55453d6efcf6644f392913198a6a7ffe1b41d601553cb2e50af83cd88dfba44b",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P21 fold3匹配+0.42035pp，来源独立性有限。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\177_P21全量二十轮独立复训预注册_20261001.md",
+      "relative_path": "docs\\177_P21全量二十轮独立复训预注册_20261001.md",
+      "bytes": 8473,
+      "lines": 43,
+      "sha256": "fafb970e4ec082eefe8e25b468b340a897999119bb560cea7b7532f9160ca517",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P21 fresh全量20，不从14续20。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\178_P21全量新包验收与交付_20261002.md",
+      "relative_path": "docs\\178_P21全量新包验收与交付_20261002.md",
+      "bytes": 6169,
+      "lines": 64,
+      "sha256": "0788f3503eccd9a965fdd2f22908ed6ba880219bb4e7f350ef9ebb72a66c2172",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P21全量68.35541，较P7+0.15757pp。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\179_独立技术审视与新提分计划_20261002.md",
+      "relative_path": "docs\\179_独立技术审视与新提分计划_20261002.md",
+      "bytes": 66410,
+      "lines": 359,
+      "sha256": "631795f036ed5a101a5f207d0d309b07300bed1ab4908e0d069572eaf063ec4e",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "完整技术审视；代理/噪声真值/冻结头是关键缺口。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\180_20261001至1002当日工作及两次提交总结.md",
+      "relative_path": "docs\\180_20261001至1002当日工作及两次提交总结.md",
+      "bytes": 7217,
+      "lines": 62,
+      "sha256": "6443b5c930a7c2eaa29bda0d0c578ea72dff4fc8615cf7bafbb4bff455946450",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "日程与两次提交总结，旧/新按时间区分。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\181_同事接手详细交接与服务器入口_20261002.md",
+      "relative_path": "docs\\181_同事接手详细交接与服务器入口_20261002.md",
+      "bytes": 15237,
+      "lines": 119,
+      "sha256": "855e06e0c40e482e95bf708f08894715d1bc6f1395eb4c19d4cf4ff55e5c8133",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "同事交接服务器历史，不复用旧预算。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\182_179建议交叉审查与后续实验执行单_20261002.md",
+      "relative_path": "docs\\182_179建议交叉审查与后续实验执行单_20261002.md",
+      "bytes": 12681,
+      "lines": 92,
+      "sha256": "5e78a754a5bb9d33ff3a89613678e7e86387d500bf133ef58df2b29e96342c9e",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "179交叉审查，草案不冒称完成。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\183_离岗交接服务器交付验收_20261002.md",
+      "relative_path": "docs\\183_离岗交接服务器交付验收_20261002.md",
+      "bytes": 4452,
+      "lines": 49,
+      "sha256": "00649094cd8262e3ae432b2ca70f88e47c9692140430f2c70a44b9ff4d7a17cf",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "离岗资产交付工程，非提分效果。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\184_同事两日服务器成果恢复与接续建议_20261004.md",
+      "relative_path": "docs\\184_同事两日服务器成果恢复与接续建议_20261004.md",
+      "bytes": 12893,
+      "lines": 162,
+      "sha256": "90f04b426e10e5edc4d3153b155f271abd57f1ab616d89f0d51606326cb2ce17",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "N1/N2近零，N4 raw负而P7未算。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\185_新划分主线十四二十轮配对恢复执行_20261005.md",
+      "relative_path": "docs\\185_新划分主线十四二十轮配对恢复执行_20261005.md",
+      "bytes": 8596,
+      "lines": 64,
+      "sha256": "d3df54dc8d76cccd53aac0fa43351e54396cce9ab5cabc7671059aff66b012a2",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "新划分恢复工程守卫误判，非算法负。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\186_群聊线索审查与全视觉微调优先计划_20261005.md",
+      "relative_path": "docs\\186_群聊线索审查与全视觉微调优先计划_20261005.md",
+      "bytes": 8360,
+      "lines": 63,
+      "sha256": "a2bdd33d6adfffe9e09310019c836d3ea75c7777b01b6c0c5c9570abb67ba93f",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "全视觉152张量、H1/text冻结，非全任务参数解冻。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\187_监测误判修复与持续推进执行单_20261005.md",
+      "relative_path": "docs\\187_监测误判修复与持续推进执行单_20261005.md",
+      "bytes": 17882,
+      "lines": 83,
+      "sha256": "8a473aacfaa076a72f0b853008f2d51727b469e9037593d6e35385308c0a4534",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "observer argv/新生worker误判工程修复。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\188_新划分配对终点验收与固定诊断执行_20261005.md",
+      "relative_path": "docs\\188_新划分配对终点验收与固定诊断执行_20261005.md",
+      "bytes": 7973,
+      "lines": 64,
+      "sha256": "dd63efdfe347bceb4a2a86271908d5c269b5dc33eeba6771f492bc4d01f094dd",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "新split P21 P7+0.33422pp CI正，单seed。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\189_全视觉容量二十轮匹配执行单_20261005.md",
+      "relative_path": "docs\\189_全视觉容量二十轮匹配执行单_20261005.md",
+      "bytes": 11347,
+      "lines": 69,
+      "sha256": "2da5b461401d4b6e9a5e5f29e9f05f186dc6d55eb6460712dc71f3244497f124",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "旧全视觉20同LR冻结头配对。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\190_容量筛选结果与主线训练种子确认_20261005.md",
+      "relative_path": "docs\\190_容量筛选结果与主线训练种子确认_20261005.md",
+      "bytes": 7559,
+      "lines": 43,
+      "sha256": "cde2e2ac9d7114dcea2927b2216591665cee1ac5a5aee910c482888ee9c1b0af",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "旧全视觉P7+0.164444pp CI跨零，raw正。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\191_新服务器迁移恢复与种子确认验证_20261005.md",
+      "relative_path": "docs\\191_新服务器迁移恢复与种子确认验证_20261005.md",
+      "bytes": 4979,
+      "lines": 37,
+      "sha256": "3ef210d8be5e4fc5cef51b7d39d0a82e74eda7783a2ac014dec723789dbd9957",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "实际4080 SUPER，跨硬件精度需分开。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\192_迁移数值验收与第三训练种子确认_20261005.md",
+      "relative_path": "docs\\192_迁移数值验收与第三训练种子确认_20261005.md",
+      "bytes": 7003,
+      "lines": 39,
+      "sha256": "cdb8d507da8a03c6e6b5dd6a9c9e5eb8ac29138ba8902b85ca4e136d55d65082",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "第三seed/parity，近ties非算法变化。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\193_群聊方法全量审查与后续实验路线_20261005.md",
+      "relative_path": "docs\\193_群聊方法全量审查与后续实验路线_20261005.md",
+      "bytes": 11169,
+      "lines": 67,
+      "sha256": "9dccb061b8bd180b7b9ba06444f53121a7de3285800f4aeb76f3b8f25f2622b5",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "群聊旧严合规门需用户新证据覆盖。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\194_第三种子内存保护中断诊断_20261005.md",
+      "relative_path": "docs\\194_第三种子内存保护中断诊断_20261005.md",
+      "bytes": 3445,
+      "lines": 28,
+      "sha256": "45096b7a4543289ca43dad34fb7c4ff65750254abc79222ac1d71bdf1d2f3846",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "seed5内存守卫中断，非方法无效。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\195_第三种子第十四轮断点独立恢复执行单_20261005.md",
+      "relative_path": "docs\\195_第三种子第十四轮断点独立恢复执行单_20261005.md",
+      "bytes": 5095,
+      "lines": 34,
+      "sha256": "d5b0b70b9fc3a4a477ff4cbe0ad333a5c2ec9657110f2a5b90c7850f9a6273b4",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "seed5完整状态恢复，原日程/AC保持。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\196_第三种子二次中断与低内存恢复_20261006.md",
+      "relative_path": "docs\\196_第三种子二次中断与低内存恢复_20261006.md",
+      "bytes": 9909,
+      "lines": 59,
+      "sha256": "9a72606f90bddb576103cefe5fb6caf0527b7b46f3b1b494325f62f9a9ce2328",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "seed5二次中断低内存工程修复。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\197_三训练种子确认与全量单模型执行_20261006.md",
+      "relative_path": "docs\\197_三训练种子确认与全量单模型执行_20261006.md",
+      "bytes": 6857,
+      "lines": 41,
+      "sha256": "d38e63aabde5c59c9c62c3cd114dacfba5e801203ace4a01b9267e0e3479b618",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "P21三seed P7平均约+0.48pp，日程有效。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\198_全量终点自动推理接续_20261006.md",
+      "relative_path": "docs\\198_全量终点自动推理接续_20261006.md",
+      "bytes": 6320,
+      "lines": 32,
+      "sha256": "65fdc7e445e2c4362421d68d8fde12df3a8b09bb673be13830f1763c23a04268",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "全量终点接续，fresh固定last单模型。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\199_全量主线新提交包验收与暂停_20261006.md",
+      "relative_path": "docs\\199_全量主线新提交包验收与暂停_20261006.md",
+      "bytes": 6151,
+      "lines": 55,
+      "sha256": "386e5747d6d2f28665e3e3c411459eed7a2f5bc07e6f95254db7d0c2681c5afa",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "新全量68.31268回落，单seed/H1未匹配。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\200_新包回落诊断与前层受控适配配对_20261006.md",
+      "relative_path": "docs\\200_新包回落诊断与前层受控适配配对_20261006.md",
+      "bytes": 10082,
+      "lines": 66,
+      "sha256": "9e78573d9a08763f4452d0a30061cff68ea049b9f1fefcba5f7b62d9a77af8db",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "前4块LR.1策略P7+0.07378pp CI跨零。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\201_自动筛样优先与结构损失候选修订_20261006.md",
+      "relative_path": "docs\\201_自动筛样优先与结构损失候选修订_20261006.md",
+      "bytes": 11286,
+      "lines": 86,
+      "sha256": "5dbbc3b3bb8a198bd2c7952b2cfc804f969bb8b69cee695825fb5a9b64988075",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "PF1筛样定义严格，结构/损失候选准备。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\202_注意力重点路线与单骨干残差读出准备_20261006.md",
+      "relative_path": "docs\\202_注意力重点路线与单骨干残差读出准备_20261006.md",
+      "bytes": 7767,
+      "lines": 50,
+      "sha256": "609db5fbfea7a9579bfceaa2ef37cf326a7fc93dcb9f20964e575cdd48c97467",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "A1仅513参数、.10tanh限制，非全面注意力。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\203_服务器离线接续注意力对照执行_20261006.md",
+      "relative_path": "docs\\203_服务器离线接续注意力对照执行_20261006.md",
+      "bytes": 4983,
+      "lines": 35,
+      "sha256": "5da61c9c033837e5ea4dd0b6709721178f7190d44e5019febca9487593755521",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "A1匹配对照来源/截止准备。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\204_注意力磁盘恢复与截止前探索包_20261006.md",
+      "relative_path": "docs\\204_注意力磁盘恢复与截止前探索包_20261006.md",
+      "bytes": 4536,
+      "lines": 35,
+      "sha256": "2deec6162a02d3edc33d9de167116001b3ddf82ad1aecf02e6224c7b0332abb9",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "A1磁盘恢复，不是中途算法负。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\205_同事成果同步去重与PF1后继_20261006.md",
+      "relative_path": "docs\\205_同事成果同步去重与PF1后继_20261006.md",
+      "bytes": 8773,
+      "lines": 56,
+      "sha256": "9d2b6e4f5432646f5292347e198d4808a0e14c77c59fef7cda94bee0753a82e0",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "A1 P7-0.01156pp近零，旧同事吸收不完整。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\206_PF1独立诊断等待器与固定验收_20261006.md",
+      "relative_path": "docs\\206_PF1独立诊断等待器与固定验收_20261006.md",
+      "bytes": 4878,
+      "lines": 34,
+      "sha256": "e7b5213f5b64af7da87809920143f42014106da8e40045826c6a6b80a45e0e13",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "PF1固定诊断等待，非真噪声验证。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\207_PF1完成止损与后继机制审计_20261007.md",
+      "relative_path": "docs\\207_PF1完成止损与后继机制审计_20261007.md",
+      "bytes": 6152,
+      "lines": 39,
+      "sha256": "b8a22b06283777d9f641d28df123af4d753beb69a6506f6d6a897ee58a1a9f07",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "PF1筛2.195%却仅移除0.22594%AC质量。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\208_BC1首轮可信监督课程预注册_20261007.md",
+      "relative_path": "docs\\208_BC1首轮可信监督课程预注册_20261007.md",
+      "bytes": 7424,
+      "lines": 45,
+      "sha256": "f4e267875012a9940c662724d1a96c1c480a6b56ba1772d85a87c0849a99c03c",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "BC1仅首轮课程，非完整JoSRC。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\209_BC1完整止损与损失信号审计_20261007.md",
+      "relative_path": "docs\\209_BC1完整止损与损失信号审计_20261007.md",
+      "bytes": 7278,
+      "lines": 63,
+      "sha256": "cc5f4915bc21fe2d79cb7fc9e8beda5bc14b9391d4a62b5cff2a015d8ee17d94",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "BC1 P7-0.03733pp CI跨零；SCE/置信度高度重叠。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\210_VC0训练视图审计与VC1单步一致性候选_20261007.md",
+      "relative_path": "docs\\210_VC0训练视图审计与VC1单步一致性候选_20261007.md",
+      "bytes": 7863,
+      "lines": 59,
+      "sha256": "fa84ef26ea5e96aff94689327642d22dd4af16eea43c48be3ac971189232e0aa",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "VC0 JS/不一致代理不是真标签。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\211_VC1独立预检修复与正式启动_20261007.md",
+      "relative_path": "docs\\211_VC1独立预检修复与正式启动_20261007.md",
+      "bytes": 9052,
+      "lines": 65,
+      "sha256": "6df3d3e1c6c8428fefc399b5dc8aeca2619a07016c7abe0362caab0b00f88764",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "VC1同step JS/T1+SCE+AC固定训练。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\212_VC1止损与MX0混合监督可行性_20261007.md",
+      "relative_path": "docs\\212_VC1止损与MX0混合监督可行性_20261007.md",
+      "bytes": 11906,
+      "lines": 76,
+      "sha256": "18f431c09bf16429e575bb9d6a512328babd2f5870c833ade2b881d188bad3c3",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "VC1 P7-0.06578pp CI跨零，不否定整个对比族。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\213_MX1止损与SAM0训练邻域审计_20261007.md",
+      "relative_path": "docs\\213_MX1止损与SAM0训练邻域审计_20261007.md",
+      "bytes": 6729,
+      "lines": 39,
+      "sha256": "351cfd433a5924461b1fb70fe0dac1cfd9900adef43f87b5af8248758258b1e3",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "MX1 alpha.2 P7+0.03111pp CI跨零，单点混合。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\214_SAM1独立训练与有限诊断_20261007.md",
+      "relative_path": "docs\\214_SAM1独立训练与有限诊断_20261007.md",
+      "bytes": 6661,
+      "lines": 37,
+      "sha256": "65af07e8eb0289c5d49337a856ff2120a8177768ae2134ae16279d592cdefca0",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "SAM1 rho.05额外双反传，AMP/成本明示。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\215_阶段止损计划与MX1单次探索授权_20261007.md",
+      "relative_path": "docs\\215_阶段止损计划与MX1单次探索授权_20261007.md",
+      "bytes": 9837,
+      "lines": 57,
+      "sha256": "27c05586581cbbdc94c968982dc20a3495dcd40dab1a185501479431f1aff3ee",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "MX1折与全量训练量不同，线上回落非因果。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\216_SAM1完整止损与独立监督审计续接_20261007.md",
+      "relative_path": "docs\\216_SAM1完整止损与独立监督审计续接_20261007.md",
+      "bytes": 4802,
+      "lines": 35,
+      "sha256": "ae4ca33343f4344bb0b9d265132e5b1228061130d699a1962c87e6539297e051",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "SAM1 P7-1.86578pp CI全负，固定方向明确负。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\217_持出监督信号审计固定协议_20261007.md",
+      "relative_path": "docs\\217_持出监督信号审计固定协议_20261007.md",
+      "bytes": 6895,
+      "lines": 38,
+      "sha256": "0b3de56dfd83648cbb64b04bd4169bcf78e5439bb91353f75c4c7862d0ba5d82",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "持出三头仅审计，支持/拟合步数须检查。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\218_持出监督审计完整验收与支持风险_20261007.md",
+      "relative_path": "docs\\218_持出监督审计完整验收与支持风险_20261007.md",
+      "bytes": 3357,
+      "lines": 28,
+      "sha256": "37d98956043da318fd9fee7c45590ff3d08f33a65bbb719d1fd0b20720794999",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "持出支持1/4/3，750类全降，训练量减少混淆。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\219_训练局部组支持审计预注册_20261007.md",
+      "relative_path": "docs\\219_训练局部组支持审计预注册_20261007.md",
+      "bytes": 6607,
+      "lines": 41,
+      "sha256": "4c8343297660dee35df879797621e8f073b67a6a45a72ead26a7588a386841f2",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "局部750query/k16/最大组相似度有大组机会偏置。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\220_局部支持独立查询覆盖审计_20261007.md",
+      "relative_path": "docs\\220_局部支持独立查询覆盖审计_20261007.md",
+      "bytes": 7047,
+      "lines": 39,
+      "sha256": "ce3613de6c39d2bd7874e95db6c316f4f80bbb620266776a9ac814e78ed3039b",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "2999query仅4组/类，常数与ties可假造非冗余。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\221_监督信号审计止损与训练范围对照提案_20261007.md",
+      "relative_path": "docs\\221_监督信号审计止损与训练范围对照提案_20261007.md",
+      "bytes": 4431,
+      "lines": 25,
+      "sha256": "8110c06b0ed82d2cbcc98bd18c22f85629b549e609bcf8bf7532d3fb69ae1a90",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "审计预算止损，未建立噪声真值。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\222_整组70与100视觉监督配对冻结_20261007.md",
+      "relative_path": "docs\\222_整组70与100视觉监督配对冻结_20261007.md",
+      "bytes": 11687,
+      "lines": 58,
+      "sha256": "58540552532c632c0c04af7487fed4d266bb49dee3c71de3a82dd3586a192580",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "盲随机70%对100%、同曝光，非质量筛选。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\223_整组配对终点来源修复与正式结果_20261008.md",
+      "relative_path": "docs\\223_整组配对终点来源修复与正式结果_20261008.md",
+      "bytes": 6336,
+      "lines": 44,
+      "sha256": "13e93e5ebc0bc43cb19888b946d8c693227a4cd098a1e7bb78694c1a760c7ac6",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "70% P7-0.900444pp CI全负，不否定质量筛样。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\224_放宽探索交付与LR1低秩视觉配方冻结_20261008.md",
+      "relative_path": "docs\\224_放宽探索交付与LR1低秩视觉配方冻结_20261008.md",
+      "bytes": 9914,
+      "lines": 45,
+      "sha256": "3f932d8a229372e61c22a983e0ae1fa5ebc0f5cc5553433edf5fcbcbe8bdb54b",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "LoRA rank8/alpha16/786432参数，LR与全参不同。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\225_LR1低秩终点验证与探索门失败_20261008.md",
+      "relative_path": "docs\\225_LR1低秩终点验证与探索门失败_20261008.md",
+      "bytes": 4203,
+      "lines": 31,
+      "sha256": "20386c80fb2992e693b8895b588c188140d3a65eed61559ff2a65c5a6c4b8e3a",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "LoRA P7-0.588444pp CI全负，仅此rank/LR配方负。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\226_LR1后集中复盘与全视觉独立确认提案_20261008.md",
+      "relative_path": "docs\\226_LR1后集中复盘与全视觉独立确认提案_20261008.md",
+      "bytes": 8584,
+      "lines": 73,
+      "sha256": "cf2a4257e9771a198ebaaa26921f1d7cc1df52685aa421fde7bf5c68ef12bf0c",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "FV2 fresh全视觉确认，不含联合头搜索。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\227_全视觉独立确认配对执行单_20261008.md",
+      "relative_path": "docs\\227_全视觉独立确认配对执行单_20261008.md",
+      "bytes": 9284,
+      "lines": 47,
+      "sha256": "ecefa422724d7eb09c3b10da2d162dfa0794da45a2e9fa8902271c268671fbaa",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "FV2 v1-v5拒绝均首优化前，工程分类。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\228_同事成果吸收与重复实验避坑清单_20261008.md",
+      "relative_path": "docs\\228_同事成果吸收与重复实验避坑清单_20261008.md",
+      "bytes": 16498,
+      "lines": 98,
+      "sha256": "231f0a82a83bd7691b9f28e3ec0edfa4b1e4ce7089af0a029d7f84ff58fd7f79",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "旧同事吸收只标题/关键段，本轮补全。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\229_同事成果逐篇索引与本仓实验映射_20261008.md",
+      "relative_path": "docs\\229_同事成果逐篇索引与本仓实验映射_20261008.md",
+      "bytes": 25533,
+      "lines": 125,
+      "sha256": "6d449d82b9a9b93176f6d91b524dc49b7886ce91786b560bf5a184cedfc90ba4",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "同事75索引SHA，编号冲突独立映射。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\230_全视觉独立确认完成与探索门止损_20261008.md",
+      "relative_path": "docs\\230_全视觉独立确认完成与探索门止损_20261008.md",
+      "bytes": 5616,
+      "lines": 44,
+      "sha256": "864d8e6ebc858ecffb4e46c7742a843489eefaf5c46bb02caffd98721c07cf55",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "FV2 P7+0.0426667 CI跨零，raw+0.235397 CI正。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\231_全视觉小增益全量风险探索批准与执行_20261008.md",
+      "relative_path": "docs\\231_全视觉小增益全量风险探索批准与执行_20261008.md",
+      "bytes": 10931,
+      "lines": 49,
+      "sha256": "3a9bdcc65b0fd766d154df6326e2b581fc5d48b400945d51abb35565e9406262",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "用户明确风险探索全量，不是统计门PASS。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\232_全量出包首步前工程拒绝与验收记录_20261008.md",
+      "relative_path": "docs\\232_全量出包首步前工程拒绝与验收记录_20261008.md",
+      "bytes": 7772,
+      "lines": 58,
+      "sha256": "7bf09db2324c33bf3f6997d6da193996118fdc086669f86b8bb2a8c332f4ab94",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "全量首步前工程拒绝，未训练。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\233_全量源码字节修复与同轮H1复用执行_20261008.md",
+      "relative_path": "docs\\233_全量源码字节修复与同轮H1复用执行_20261008.md",
+      "bytes": 9376,
+      "lines": 63,
+      "sha256": "a902f538914bfde8e7d49e3a4c9cbeb5349d072cfdc796073666490fa8751c39",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "LF修复与fresh全量H1严格同SHA复用。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\234_全量出包时点估计与数据盘定向清理_20261008.md",
+      "relative_path": "docs\\234_全量出包时点估计与数据盘定向清理_20261008.md",
+      "bytes": 5047,
+      "lines": 38,
+      "sha256": "a84c926d20ad11c00283c426bf80049717ae86702a53511a1104fdc00c989fd8",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "全量时点和定向清理历史具体授权。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\235_全量完成与跨盘交付工程修复_20261008.md",
+      "relative_path": "docs\\235_全量完成与跨盘交付工程修复_20261008.md",
+      "bytes": 7631,
+      "lines": 48,
+      "sha256": "6b48ec209f4c732e6ae5db3320cf6cc85e0023e1ecdd494d23533a45316c4fb1",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "全量152视觉20轮完整，server恢复/train前向通过。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\236_FV2全量探索包优先本机交付_20261008.md",
+      "relative_path": "docs\\236_FV2全量探索包优先本机交付_20261008.md",
+      "bytes": 3296,
+      "lines": 27,
+      "sha256": "10939c83f5f0e36db2f33054606b33d9778514861aeb60fe185505c1887fee07",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "37444四视图/P7包完成，模型回传当时未结束。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\237_模型回传传输失败与有界后继提案_20261008.md",
+      "relative_path": "docs\\237_模型回传传输失败与有界后继提案_20261008.md",
+      "bytes": 3669,
+      "lines": 25,
+      "sha256": "539a2c4826bfc25fa092539f51dc9ed08976a5979fbb06a8ce9de4225c6365f9",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "稀疏逻辑size不等于传输完成，工程失败。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\238_FV2用户新高回报与模型回传批准执行_20261008.md",
+      "relative_path": "docs\\238_FV2用户新高回报与模型回传批准执行_20261008.md",
+      "bytes": 4405,
+      "lines": 29,
+      "sha256": "aa575bee96bc35df113124fb71d083d0fe7c55535cc4a5a1522db540d6418cf0",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "FV2用户新高68.46223694净+40，稳定因果未确。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\239_手动last验签与剩余模型回传接手_20261008.md",
+      "relative_path": "docs\\239_手动last验签与剩余模型回传接手_20261008.md",
+      "bytes": 2558,
+      "lines": 15,
+      "sha256": "c114d9b0206ab54f41a6dac994d32f68b9d2fd6215fc43dc2440fe89050214cc",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "手动last验签旧现场，Desktop23:10已覆盖等待。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\LOCAL_SYNC_RECEIPT.json",
+      "relative_path": "docs\\colleague_results_20261006\\LOCAL_SYNC_RECEIPT.json",
+      "bytes": 46416,
+      "lines": 767,
+      "sha256": "4b1637b3ed3f906ba6d451023ab6b27d613f269c709277d58d22294c503bdfae",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "767行逐件回传大小/SHA原文全读，只证明文档非大资产。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\106_复赛D2_D4头部与表征诊断预注册_20260923.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\106_复赛D2_D4头部与表征诊断预注册_20260923.md",
+      "bytes": 11182,
+      "lines": 72,
+      "sha256": "00111b1731f2c10693212de2e423634a2a8382255475991f33ac93b46f7ac7e0",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\106_复赛D2_D4头部与表征诊断预注册_20260923.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\107_复赛V1联合头末六块单变量实验_20260923.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\107_复赛V1联合头末六块单变量实验_20260923.md",
+      "bytes": 6589,
+      "lines": 50,
+      "sha256": "bf0f7e9ee9b111aae052769991a5632f4f5791969f729d558df50e826468188e",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\107_复赛V1联合头末六块单变量实验_20260923.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\108_复赛V2局部patch读出诊断预注册_20260924.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\108_复赛V2局部patch读出诊断预注册_20260924.md",
+      "bytes": 6990,
+      "lines": 46,
+      "sha256": "90bbaf20c83557bb74281d995d3ec3a4c1aa4b3f7e54bcd57275907636a5187c",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\108_复赛V2局部patch读出诊断预注册_20260924.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\109_复赛云端实例缺货与迁移记录_20260924.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\109_复赛云端实例缺货与迁移记录_20260924.md",
+      "bytes": 10043,
+      "lines": 53,
+      "sha256": "88c02404f29feee7febd4145cb0f978243344982484aa5a7e3aa1b0f3b484273",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "脱敏独特原文全读，不按同编号root覆盖。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\110_复赛V2输入裁剪单变量诊断预注册_20260924.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\110_复赛V2输入裁剪单变量诊断预注册_20260924.md",
+      "bytes": 5231,
+      "lines": 45,
+      "sha256": "85d749f1d5150e2110aba34c974f9e6ab6b1a9ebb902951a1ebad32625543efb",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\110_复赛V2输入裁剪单变量诊断预注册_20260924.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\111_复赛C3末八视觉块短筛预注册_20260924.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\111_复赛C3末八视觉块短筛预注册_20260924.md",
+      "bytes": 7278,
+      "lines": 54,
+      "sha256": "e065affff96cc8f4c0b7e3bd3a549ca099ff5d3c86eb3455a753b6f49d8b8c4f",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\111_复赛C3末八视觉块短筛预注册_20260924.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\112_复赛C3第二折独立确认预注册_20260924.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\112_复赛C3第二折独立确认预注册_20260924.md",
+      "bytes": 22792,
+      "lines": 111,
+      "sha256": "a79601b47720ed9dfff46a0c36a6b7647f782211b60ba2db9cd864acf1c1719d",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "脱敏独特原文全读，不按同编号root覆盖。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\113_复赛C4末十二块容量试验预注册_20260924.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\113_复赛C4末十二块容量试验预注册_20260924.md",
+      "bytes": 5028,
+      "lines": 27,
+      "sha256": "73d32202f7c801fa79a80ecda2a7461d0370b11e846496e5b82116fbe6e5d6f7",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\113_复赛C4末十二块容量试验预注册_20260924.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\114_复赛单模型TTA与336输入试验门槛_20260924.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\114_复赛单模型TTA与336输入试验门槛_20260924.md",
+      "bytes": 7250,
+      "lines": 34,
+      "sha256": "e20f96dfc63c34b2476502fbd4733da06f6db726dfd430720a3c070281f8d3f2",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\114_复赛单模型TTA与336输入试验门槛_20260924.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\115_复赛C5匹配336分辨率折2试验预注册_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\115_复赛C5匹配336分辨率折2试验预注册_20260925.md",
+      "bytes": 7726,
+      "lines": 33,
+      "sha256": "41a9a11ee4401cf489e63c6a2c749e920dc6aaa3440e1cce18b4609b39a92878",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\115_复赛C5匹配336分辨率折2试验预注册_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\116_复赛C6匹配336加固定翻转TTA双折验证预注册_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\116_复赛C6匹配336加固定翻转TTA双折验证预注册_20260925.md",
+      "bytes": 4518,
+      "lines": 30,
+      "sha256": "047aa7d6a3ffd7cc37b091113f2ba8c5e81335d9a089ab83690f35227d7c9bda",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\116_复赛C6匹配336加固定翻转TTA双折验证预注册_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\117_复赛C3固定翻转TTA回退包冻结_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\117_复赛C3固定翻转TTA回退包冻结_20260925.md",
+      "bytes": 3692,
+      "lines": 21,
+      "sha256": "73818df26cb85be0a745445ac69b8ce5e0e373923c697821f7ea1c9db032d86b",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\117_复赛C3固定翻转TTA回退包冻结_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\118_复赛C7同权重双尺度四视图TTA预注册_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\118_复赛C7同权重双尺度四视图TTA预注册_20260925.md",
+      "bytes": 2961,
+      "lines": 20,
+      "sha256": "4cc738bb47b61325a8ced909556242a431f56a33ad59f54c30e0eef5d4876e22",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\118_复赛C7同权重双尺度四视图TTA预注册_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\119_复赛Top1与零召回取舍复盘及下一轮门槛建议_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\119_复赛Top1与零召回取舍复盘及下一轮门槛建议_20260925.md",
+      "bytes": 5612,
+      "lines": 28,
+      "sha256": "0015ce28d15e8b05d8443332f8e06bf9da3c97c2f1473b51650b6fadc7217aa7",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\119_复赛Top1与零召回取舍复盘及下一轮门槛建议_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\120_复赛Top1优先_336与TTA新折确认及今日出包计划_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\120_复赛Top1优先_336与TTA新折确认及今日出包计划_20260925.md",
+      "bytes": 16268,
+      "lines": 80,
+      "sha256": "bb8e479d07cb1d9ac176c4958a246a293603b95e6629d54d512426d0db68aef2",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\120_复赛Top1优先_336与TTA新折确认及今日出包计划_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\121_复赛61分后冲分计划_注意力分辨率TTA与损失_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\121_复赛61分后冲分计划_注意力分辨率TTA与损失_20260925.md",
+      "bytes": 11071,
+      "lines": 62,
+      "sha256": "bb3728067bb9dff1d9c6722248a6b2727c971548df5769a991fc0b98ed732a69",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\121_复赛61分后冲分计划_注意力分辨率TTA与损失_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\122_零上下文AI接手复赛完整交接_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\122_零上下文AI接手复赛完整交接_20260925.md",
+      "bytes": 31983,
+      "lines": 163,
+      "sha256": "45184a021e2d5a52866a44a79e43871f79e256a654113f91aa895a0eb099bf7d",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\122_零上下文AI接手复赛完整交接_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\123_异机接手迁移清单与验收_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\123_异机接手迁移清单与验收_20260925.md",
+      "bytes": 15235,
+      "lines": 100,
+      "sha256": "a18c95c3074663221be53a901c59d5c581533af07930acc47f0d44f7b52c5deb",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\123_异机接手迁移清单与验收_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\124_复赛P0_C8-336同权重双尺度四视图TTA预注册_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\124_复赛P0_C8-336同权重双尺度四视图TTA预注册_20260925.md",
+      "bytes": 21622,
+      "lines": 240,
+      "sha256": "d237e5d6753e02a404ad351f6a8213152bc296f8be47da2d4120402bbc2c8f35",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\124_复赛P0_C8-336同权重双尺度四视图TTA预注册_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\124_C6_336固定四视图P0预注册与B机任务交接_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\124_C6_336固定四视图P0预注册与B机任务交接_20260925.md",
+      "bytes": 4269,
+      "lines": 52,
+      "sha256": "7e492026460d71fd6291b8bdb6515f7aae636752d1ff71f7d87f9817bc470ccb",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\124_C6_336固定四视图P0预注册与B机任务交接_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\125_A机C6_336四视图P0预注册与B机任务交接_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\125_A机C6_336四视图P0预注册与B机任务交接_20260925.md",
+      "bytes": 4878,
+      "lines": 61,
+      "sha256": "33227e0831eab0c254cda44c1a5a2b0f38a2a223ae8a19aa846e0a8d1269367b",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\125_A机C6_336四视图P0预注册与B机任务交接_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\125_P0_C6_336四视图通过与新提交包_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\125_P0_C6_336四视图通过与新提交包_20260926.md",
+      "bytes": 1836,
+      "lines": 23,
+      "sha256": "2514b203a65674cfbbbd891c1b457b89bff163c14d5c840b075550341cf47501",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\125_P0_C6_336四视图通过与新提交包_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\126_B机fold2_C8四视图验证结果与回传_20260925.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\126_B机fold2_C8四视图验证结果与回传_20260925.md",
+      "bytes": 13545,
+      "lines": 186,
+      "sha256": "54e409338765d091e87b56641e940f6ea4051ed3244ff3385f376dc40d5f4cc6",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\126_B机fold2_C8四视图验证结果与回传_20260925.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\126_B机P2-GCE折2任务单_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\126_B机P2-GCE折2任务单_20260926.md",
+      "bytes": 3476,
+      "lines": 71,
+      "sha256": "f922d152ff55595b69da21f055ce74a5f0630d21eff2fa9c71f03f24c7acf3c5",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\126_B机P2-GCE折2任务单_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\127_B机P2_GCE折2验签缺件清单_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\127_B机P2_GCE折2验签缺件清单_20260926.md",
+      "bytes": 10447,
+      "lines": 137,
+      "sha256": "3c1e56d736ca21c99a82da9a441fe11f99c3319ea6d2835a2f0236d643ff597a",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\127_B机P2_GCE折2验签缺件清单_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\127_P1_320分辨率折1筛选止损_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\127_P1_320分辨率折1筛选止损_20260926.md",
+      "bytes": 1720,
+      "lines": 29,
+      "sha256": "48ad71a15046ada81e435aaeb95e54bc1f3887155494eaaa9bdb97a629c128fd",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\127_P1_320分辨率折1筛选止损_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\128_A机P2-GCE折2任务单_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\128_A机P2-GCE折2任务单_20260926.md",
+      "bytes": 3933,
+      "lines": 79,
+      "sha256": "b38ebf8ed36ae4f15898b84fed623b0e6f56940c14a3e12ef3b3da075ebbbd93",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\128_A机P2-GCE折2任务单_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\128_P2_GCE折1首折门禁通过_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\128_P2_GCE折1首折门禁通过_20260926.md",
+      "bytes": 1630,
+      "lines": 28,
+      "sha256": "7d44e9eef59701dc28fcd7f0c13bf6239b8736a2e27de51e3939f2cbc12199fe",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\128_P2_GCE折1首折门禁通过_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\129_A机P1_320分辨率折1筛选止损_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\129_A机P1_320分辨率折1筛选止损_20260926.md",
+      "bytes": 2229,
+      "lines": 37,
+      "sha256": "cb2987b8ba6acf398f6c3d63066b467a966e5e664c74411f9eb8ec1b717620cf",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\129_A机P1_320分辨率折1筛选止损_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\129_P2_GCE双折确认通过与全量重训_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\129_P2_GCE双折确认通过与全量重训_20260926.md",
+      "bytes": 2038,
+      "lines": 27,
+      "sha256": "25cbaf588bf9c320acd5de7526c32817fd258826faab239ac7a9afde1983d6ab",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\129_P2_GCE双折确认通过与全量重训_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\130_20260926_全天工作交接与B接替清单.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\130_20260926_全天工作交接与B接替清单.md",
+      "bytes": 7211,
+      "lines": 91,
+      "sha256": "5f0feefd1f4aa51ca2984796698be194bc453d51f3681c6170b7cb8541b86944",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\130_20260926_全天工作交接与B接替清单.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\130_B机P2-GCE折2同步验签与开跑记录_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\130_B机P2-GCE折2同步验签与开跑记录_20260926.md",
+      "bytes": 8322,
+      "lines": 100,
+      "sha256": "abdea09cdda7b773c2c3121ad9557cdd81ce0c2510a2fecfb3a7e3a95677f056",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\130_B机P2-GCE折2同步验签与开跑记录_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\131_B机P2-GCE折2完成回传_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\131_B机P2-GCE折2完成回传_20260926.md",
+      "bytes": 9067,
+      "lines": 126,
+      "sha256": "ea9432123baad079b5da29dbc6927bb2d41448e97b01f77df86a50d291faade8",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\131_B机P2-GCE折2完成回传_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\132_本机唯一开发环境同步验收与后续入口_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\132_本机唯一开发环境同步验收与后续入口_20260926.md",
+      "bytes": 7096,
+      "lines": 55,
+      "sha256": "614f94c4ed117907fa210139bb177d67d92b09ab83c00af261ce373de49dbc66",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\132_本机唯一开发环境同步验收与后续入口_20260926.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\133_新远端3090连接与资源验收_20260926.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\133_新远端3090连接与资源验收_20260926.md",
+      "bytes": 3639,
+      "lines": 31,
+      "sha256": "f5013b85493e56c699b61caf4f2b9175983c4b223179749bb2325119855f12d8",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "脱敏独特原文全读，不按同编号root覆盖。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\134_3090首批P4_GCE强度单变量预注册_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\134_3090首批P4_GCE强度单变量预注册_20260927.md",
+      "bytes": 3788,
+      "lines": 27,
+      "sha256": "f1b42b7dc9a5d1e2e071f6bdecf69fa48f922940f20a15b50106b20d9bb803a7",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\134_3090首批P4_GCE强度单变量预注册_20260927.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\135_3090云盘安全清理记录_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\135_3090云盘安全清理记录_20260927.md",
+      "bytes": 1950,
+      "lines": 16,
+      "sha256": "9b3d809743b305ac4a5e85b648c96dbf4d9c6cfdaa3fc0db16fbd9993aae15a8",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\135_3090云盘安全清理记录_20260927.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\136_3090大批训练与每小时回传及15点交付计划_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\136_3090大批训练与每小时回传及15点交付计划_20260927.md",
+      "bytes": 9440,
+      "lines": 48,
+      "sha256": "9ddeb7b88a21a4bd094a5c715660cbfdf0a3a235a34c51fd28dc1665081c6125",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\136_3090大批训练与每小时回传及15点交付计划_20260927.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\137_P4折1q05候选验收与回传清理记录_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\137_P4折1q05候选验收与回传清理记录_20260927.md",
+      "bytes": 4465,
+      "lines": 45,
+      "sha256": "50af3fa9716942433fe2f11f1216fbac26c50d27b9e390314f5ee88bfa3c9acb",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\137_P4折1q05候选验收与回传清理记录_20260927.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\138_P4_q07固定种子回退折1启动记录_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\138_P4_q07固定种子回退折1启动记录_20260927.md",
+      "bytes": 10423,
+      "lines": 73,
+      "sha256": "18b729ec4b125a53f89187dda0a4d62069173a3df2e873ff9335b27c56f8a906",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\138_P4_q07固定种子回退折1启动记录_20260927.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\139_P4_q07固定种子回退折2同机配对预注册_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\139_P4_q07固定种子回退折2同机配对预注册_20260927.md",
+      "bytes": 10431,
+      "lines": 65,
+      "sha256": "7aa4cde37ae275a32bc8eb5122d5883784ddb7aa3d4f1369397f1fc70c72e46a",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\139_P4_q07固定种子回退折2同机配对预注册_20260927.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\140_3090资源180秒采样与训练后性能优化计划_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\140_3090资源180秒采样与训练后性能优化计划_20260927.md",
+      "bytes": 18909,
+      "lines": 185,
+      "sha256": "37af753b067e07aa50191e32281aa2506f37aa2eb77ae9a3e2c8d440ac66f0f2",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/history_audit",
+      "identical_text_source": "docs\\140_3090资源180秒采样与训练后性能优化计划_20260927.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\141_复赛损失优化与75分冲刺计划_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\141_复赛损失优化与75分冲刺计划_20260927.md",
+      "bytes": 13669,
+      "lines": 84,
+      "sha256": "e1e85f4daa7619780e6dafd55e16743421cfc4627587846d9b05a59541e17507",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\141_复赛损失优化与75分冲刺计划_20260927.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\142_P5本机4060首折损失配对启动与值守_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\142_P5本机4060首折损失配对启动与值守_20260927.md",
+      "bytes": 14921,
+      "lines": 109,
+      "sha256": "bf150ea970c00229df625b4f831d9c60e911c536be7c3d151e9525d649ae4eb5",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\142_P5本机4060首折损失配对启动与值守_20260927.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\143_P5探索门槛调整与本机第二折预算_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\143_P5探索门槛调整与本机第二折预算_20260927.md",
+      "bytes": 6799,
+      "lines": 57,
+      "sha256": "a8623e9d1596bb0193f481ec802104a0f24f2c129194186189661ec8dda71bb6",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\143_P5探索门槛调整与本机第二折预算_20260927.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\144_阿里云新服务器接入与安全迁移_20260927.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\144_阿里云新服务器接入与安全迁移_20260927.md",
+      "bytes": 8170,
+      "lines": 52,
+      "sha256": "a421276c8f6fc6fa06e36d75c5abb706dc0840a67abd7348320cf2b76297ec8a",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "脱敏独特原文全读，不按同编号root覆盖。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\145_A10资源验收与P5折2启动_20260928.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\145_A10资源验收与P5折2启动_20260928.md",
+      "bytes": 5103,
+      "lines": 61,
+      "sha256": "9166c02f644da1b220bd859255093d89387b2c12cd8da63c909592d7aefe76dd",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\145_A10资源验收与P5折2启动_20260928.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\146_P5_A10全量训练与最终出包验收_20260928.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\146_P5_A10全量训练与最终出包验收_20260928.md",
+      "bytes": 4802,
+      "lines": 24,
+      "sha256": "7a98b48e275d1eeaa3e87298398271f98a66e623aa46faee514a0003c57c1d41",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\146_P5_A10全量训练与最终出包验收_20260928.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\147_P5增益瓶颈诊断与70分后续门禁_20260928.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\147_P5增益瓶颈诊断与70分后续门禁_20260928.md",
+      "bytes": 9521,
+      "lines": 62,
+      "sha256": "74eeb2149edc7ff36994c50f4bf6021cf69558d73f8747d3c973ead890ac8404",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\147_P5增益瓶颈诊断与70分后续门禁_20260928.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\148_P6_AC单变量验证预注册与资源预算_20260928.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\148_P6_AC单变量验证预注册与资源预算_20260928.md",
+      "bytes": 8842,
+      "lines": 44,
+      "sha256": "f5ebb598e64e39850744d6982ef776a62d10bba056f68944cc06e09e992e46f6",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "脱敏独特原文全读，不按同编号root覆盖。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\149_主办方测试先验公告影响与后续计划修订_20260928.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\149_主办方测试先验公告影响与后续计划修订_20260928.md",
+      "bytes": 5439,
+      "lines": 66,
+      "sha256": "8507b84a352a8cd77e3ff61bd3f62e9602062339fa56b15911da0c686bd10031",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\149_主办方测试先验公告影响与后续计划修订_20260928.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\150_P7类别均衡推理旁路与下一包预注册_20260928.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\150_P7类别均衡推理旁路与下一包预注册_20260928.md",
+      "bytes": 3559,
+      "lines": 29,
+      "sha256": "e2922d0abafdfc2c744ff7b410545ba309064e237315a1802027c952d01cdb7f",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\150_P7类别均衡推理旁路与下一包预注册_20260928.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\151_P7类别均衡推理包验收_20260928.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\151_P7类别均衡推理包验收_20260928.md",
+      "bytes": 2748,
+      "lines": 39,
+      "sha256": "f3cb482bc4484b083def4328cc7ae66f8c41463d73aea0f6a76e7e20936a1657",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\151_P7类别均衡推理包验收_20260928.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\152_P8残差分类头两折短筛预注册_20260928.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\152_P8残差分类头两折短筛预注册_20260928.md",
+      "bytes": 7289,
+      "lines": 41,
+      "sha256": "989b6e92e09fd8b9b92d1eb15f52745c762eccf3f20eb8021389e0dfa153ccbe",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\152_P8残差分类头两折短筛预注册_20260928.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\153_P9梯度裁剪阈值两折筛选与预算_20260928.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\153_P9梯度裁剪阈值两折筛选与预算_20260928.md",
+      "bytes": 4683,
+      "lines": 37,
+      "sha256": "20b34db92f6de7fd68de198f638a43e59715dc21428010516a02d6ab6fa20547",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\153_P9梯度裁剪阈值两折筛选与预算_20260928.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\154_A10产物迁回本机与关机验收_20260928.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\154_A10产物迁回本机与关机验收_20260928.md",
+      "bytes": 4712,
+      "lines": 25,
+      "sha256": "c99797feeca3bc22d550e013c715a46cd04d1ee70a82c78b65ef16fc06aa2c9d",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\154_A10产物迁回本机与关机验收_20260928.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\155_P10硬类别容量分配旁路预注册_20260929.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\155_P10硬类别容量分配旁路预注册_20260929.md",
+      "bytes": 5296,
+      "lines": 36,
+      "sha256": "52388e3ed5cb2866190c662fdb8806b15a81956f096585012516af6808c595df",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\155_P10硬类别容量分配旁路预注册_20260929.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\156_P11_NCE_RCE同折配对预注册_20260929.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\156_P11_NCE_RCE同折配对预注册_20260929.md",
+      "bytes": 5850,
+      "lines": 46,
+      "sha256": "71e3cd98d209c3a6b5246f5b672ff6fba66a1066734a22b3efb80d136a506c96",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\156_P11_NCE_RCE同折配对预注册_20260929.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\157_P12_ELR复赛单折配对短筛预注册_20260929.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\157_P12_ELR复赛单折配对短筛预注册_20260929.md",
+      "bytes": 6936,
+      "lines": 53,
+      "sha256": "0ad0438ee59acef95515fb31cc193b273d7e215d5e68b615ba10703e2af724f7",
+      "read_status": "read_full_identical_sha_reuse",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": "docs\\157_P12_ELR复赛单折配对短筛预注册_20260929.md",
+      "conclusion": "与已阅读全文root文档逐SHA相同，复用完整正文覆盖；同事编号按来源隔离。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\171_20261001_EMA冻结期间的替代方向审计.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\171_20261001_EMA冻结期间的替代方向审计.md",
+      "bytes": 3507,
+      "lines": 22,
+      "sha256": "21194aef212a4a8382698ae9131e4120aba0ca542f3b7058621b446d013b3d68",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "EMA冻结期间审计；小幅正容量仍被固定门槛停止。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\172_P21折2训练侧只读来源审计_20261001.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\172_P21折2训练侧只读来源审计_20261001.md",
+      "bytes": 5063,
+      "lines": 21,
+      "sha256": "aabd6e987eb0a94aa30fc457c6368ce229c3c1c8b18b37a2313d2636c88e5a3b",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "P21训练与来源独立性审查，非全盲验证。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\173_P21折3同机14对20轮确认观察与验证冻结_20261001.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\173_P21折3同机14对20轮确认观察与验证冻结_20261001.md",
+      "bytes": 6989,
+      "lines": 36,
+      "sha256": "95db499d2c01e25909e7bc38395972869b28bcfe698471afdb46cb998440c009",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "P21训练与来源独立性审查，非全盲验证。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\174_P21数据加载workers16_24_32限时基准_20261001.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\174_P21数据加载workers16_24_32限时基准_20261001.md",
+      "bytes": 3527,
+      "lines": 22,
+      "sha256": "5ede2319415ad0a6c5ed73a1c8f0383f8a73f947757d390b391273f469cca1cf",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "workers工程基准，24/2两轮未稳定提速。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\175_P21折3workers端到端两轮性能对照_20261001.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\175_P21折3workers端到端两轮性能对照_20261001.md",
+      "bytes": 5207,
+      "lines": 30,
+      "sha256": "7553fb5d739781bb1cec097c95288072efed1f6b7dad489b0c74e04b69e31845",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "workers工程基准，24/2两轮未稳定提速。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\180_参考179的Q0与N1前瞻方案_20261002.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\180_参考179的Q0与N1前瞻方案_20261002.md",
+      "bytes": 80205,
+      "lines": 323,
+      "sha256": "47e58cd1e3f76e25288e96d2df79f15e84b5b6a853514419b1611827ffa57e7f",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "Q0固定last P7两折正；N1完整20+20近零CI跨零。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\181_N2受约束暖头可行性草案_20261003.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\181_N2受约束暖头可行性草案_20261003.md",
+      "bytes": 12195,
+      "lines": 67,
+      "sha256": "5370e79b4febdff69068e4416ba08d210c537f8dddcfd4b75f1a8d5e9dd3dc1b",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "N2冻结终轮视觉+lambda1锚定暖头，P7-0.03022pp CI跨零，非联合头。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\182_N2暖头开发预注册与执行_20261003.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\182_N2暖头开发预注册与执行_20261003.md",
+      "bytes": 36274,
+      "lines": 149,
+      "sha256": "a445b5b5bb5fb064c8c122d879c94118769c389d11298e9666fcd7c4ccbd479f",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "N2冻结终轮视觉+lambda1锚定暖头，P7-0.03022pp CI跨零，非联合头。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\183_N4层别学习率新试验准备与待授权预算_20261003.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\183_N4层别学习率新试验准备与待授权预算_20261003.md",
+      "bytes": 26006,
+      "lines": 178,
+      "sha256": "5d0fdec0b8c86bce6f29816a031cb93989d22869b577afe934714845260a5d05",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "N4完整20/20四视图，raw-0.867606pp；P7/CI未完成。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\184_主线20轮前瞻确认与资源预算_20261003.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\184_主线20轮前瞻确认与资源预算_20261003.md",
+      "bytes": 19247,
+      "lines": 120,
+      "sha256": "dadc59515049610820639c6e093094421d6638da96c25aefe885f0e6796fe094",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "新划分主线守卫/SSH工程停止，非完整日程负。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\185_主线工程守卫修复草案与连接阻塞_20261004.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\185_主线工程守卫修复草案与连接阻塞_20261004.md",
+      "bytes": 6846,
+      "lines": 48,
+      "sha256": "8b92f0055ab92c62a1116b32219e856e90724996b44b13f49869a8caeb373a89",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "新划分主线守卫/SSH工程停止，非完整日程负。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\186_主线本机4060迁移预算_20261004.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\186_主线本机4060迁移预算_20261004.md",
+      "bytes": 33134,
+      "lines": 180,
+      "sha256": "9eb6935842f374221ea8c25498e5261dcb62b98ec4456488f3123bdcaf0ca069",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "4060多版本工程失败，只有2/14，v8图形GPU门阻塞。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\187_主线中断恢复与新资源预算待批_20261006.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\187_主线中断恢复与新资源预算待批_20261006.md",
+      "bytes": 10205,
+      "lines": 73,
+      "sha256": "233b2f38d70dd750efb8d06563b483ae2bfc77d5f77514b22cf83ec4ad311193",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "4060多版本工程失败，只有2/14，v8图形GPU门阻塞。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\local_snapshots_20261006\\166_P17训练权重EMA折2单变量短筛预注册_20260930.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\local_snapshots_20261006\\166_P17训练权重EMA折2单变量短筛预注册_20260930.md",
+      "bytes": 21684,
+      "lines": 76,
+      "sha256": "1fb2ead1b5ac8c15e4c91ec5c583e53346523bf44420ee8d1ea4486d9667eb99",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "独特EMA.999快照完整8轮；四视图-0.06726pp CI跨零，合规冻结/预算停止是历史。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\local_snapshots_20261006\\167_P18温和训练裁剪折2短筛预注册_20260930.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\local_snapshots_20261006\\167_P18温和训练裁剪折2短筛预注册_20260930.md",
+      "bytes": 12053,
+      "lines": 57,
+      "sha256": "f6f8746fc74ca0eaee13f6e5cacdb74b64ae27eb6895bd2e4d53dedca6a9d776",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "历史P18恢复/硬链接改写快照，非当前状态。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\raw\\local_snapshots_20261006\\168_20260929_30训练成果与队友交接_20260930.md",
+      "relative_path": "docs\\colleague_results_20261006\\raw\\local_snapshots_20261006\\168_20260929_30训练成果与队友交接_20260930.md",
+      "bytes": 12639,
+      "lines": 61,
+      "sha256": "5fb9e92cde3883cb901b41f939e9dd038918db56850e806b58d5ecce7316f6be",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "历史P18恢复/硬链接改写快照，非当前状态。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\README.md",
+      "relative_path": "docs\\colleague_results_20261006\\README.md",
+      "bytes": 1559,
+      "lines": 19,
+      "sha256": "cab7416b901b186dee91f15b3e886a25f21ec7d92e596ea5139dcb636b9cbf3b",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "同步索引/范围全读，不以标题代替独特原文。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\RESULTS_SYNC_20261006.md",
+      "relative_path": "docs\\colleague_results_20261006\\RESULTS_SYNC_20261006.md",
+      "bytes": 4258,
+      "lines": 36,
+      "sha256": "92ed7380d2db9d01c917c2c0b9b5970945b55365e0650e3288a945cd3575b5a5",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "同步索引/范围全读，不以标题代替独特原文。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\colleague_results_20261006\\RESULTS_SYNC_MANIFEST_20261006.json",
+      "relative_path": "docs\\colleague_results_20261006\\RESULTS_SYNC_MANIFEST_20261006.json",
+      "bytes": 23782,
+      "lines": 464,
+      "sha256": "032bff7cacfd41d806bb3b46d7f8d72aefe57f336f119d3d5f2e3104c4d1ea81",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "identical_text_source": null,
+      "conclusion": "75原文清单逐项全读，编号冲突/快照/脱敏独立处理。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\AGENTS.md",
+      "bytes": 29617,
+      "lines": 305,
+      "sha256": null,
+      "current_sha256": "722ec340cbf11755b1bc7c4208cfd6418db8ec6d598d5e8997cd99f46bc5c57b",
+      "metadata_note": "AGENTS旧版确已全文读取，但未保存可证明的读时SHA；bytes/lines/current_sha256为root修改后磁盘版本，仅root当前阅读全文记录可覆盖新版。",
+      "read_status": "read_full_before_root_revision",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "旧版已读；旧版SHA unknown，不把当前hash冒充旧读时快照。root负责新版。"
+    },
+    {
+      "path": "C:\\Users\\JRZha\\Desktop\\后续指令.txt",
+      "bytes": 7727,
+      "lines": 83,
+      "sha256": "5c560324149146ff6be2b6464efd674ddbb69767220c0beae41751938d920279",
+      "current_sha256": "5c560324149146ff6be2b6464efd674ddbb69767220c0beae41751938d920279",
+      "metadata_note": "读时正文未改",
+      "read_status": "read_full",
+      "read_ranges": [
+        "1-end"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "最新23:10模型回传完成但LOCAL恢复缺psutil，覆盖239等待状态。"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\HANDOFF.md",
+      "bytes": 227849,
+      "lines": 716,
+      "sha256": "71ddb2b5fd01f8ff88069788a47fee92b7512e39d4b392cc19329633799a624b",
+      "current_sha256": "71ddb2b5fd01f8ff88069788a47fee92b7512e39d4b392cc19329633799a624b",
+      "metadata_note": "读时正文未改",
+      "read_status": "read_partial_assigned_range_full",
+      "read_ranges": [
+        "359-716"
+      ],
+      "reader": "/root/recent_audit",
+      "conclusion": "后半逐字全读；前半history负责。379后处理禁令/末尾FV2在训状态已过时。"
+    }
+  ]
+}

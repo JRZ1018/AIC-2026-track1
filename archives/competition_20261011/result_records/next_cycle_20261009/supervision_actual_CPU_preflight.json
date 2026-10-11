@@ -1,0 +1,41 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/supervision_actual_CPU_preflight.json",
+  "original_sha256": "f0d86b0dbe935c814197a21c698611c73bdedef8079c8bbfea8f820490fbd8cd",
+  "omitted_fields": [
+    "/runtime/environment"
+  ],
+  "record": {
+    "schema": "aictrack1.supervision.actual_CPU_preflight.v1",
+    "complete": true,
+    "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+    "source_members": 85,
+    "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+    "split_sha256": "0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c",
+    "h1_sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753",
+    "h1_epoch": 100,
+    "clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+    "trainable_tensors": 152,
+    "trainable_parameters": 87849216,
+    "classifier_frozen": true,
+    "classifier_exact_old_H1": true,
+    "base_loss": {
+      "kind": "sce",
+      "alpha": 0.5,
+      "beta": 1.0,
+      "log_zero": -4.0
+    },
+    "runtime": {
+      "actual_torch_threads": 4,
+      "actual_torch_interop_threads": 64
+    },
+    "synthetic_CPU_forward_shape": [
+      1,
+      750
+    ],
+    "train_images_opened": 0,
+    "test_access": false,
+    "gpu_started": false,
+    "collected_epoch": 1791499555.7588904
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/confirmation_visual_author_CPU_receipt.json",
+  "original_sha256": "ed1be6703aad6cbbda9466b902f1247a9afaf1d095bd7a2d529877229861a3ae",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.next_cycle10.confirmation.visual.author_CPU.v1",
+    "complete": true,
+    "source_manifest_sha256": "5b4c357ca8e2676e896b1a6fd4265dd0efcba242e248576e5b54e1250d803126",
+    "return_code": 0,
+    "wall_seconds": 10.270307064056396,
+    "stdout_file_raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_file_raw_sha256": "980ac13e525f2b7d097374ea14013b2214062e85110009814b42fc79d635ee75",
+    "real_checkpoint_opened": false,
+    "actual_model_loaded": false,
+    "synthetic_CPU_disk_model_fixture": true,
+    "SSH": false,
+    "GPU": false,
+    "test_access": false,
+    "local_deferred_OpenAI_clip_import_not_verified": true,
+    "server_preflight_and_real_CUDA_smokes_required": true
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_B50_EMA_R3_status_r1.json",
+  "original_sha256": "9443480e3220636f2445482f577bd84bdf8286b658bd05a83e946fd08c350c86",
+  "omitted_fields": [
+    "/canonical/command"
+  ],
+  "record": {
+    "observed_unix": 1791599124.7122846,
+    "owned_rows": [
+      {
+        "pid": 38248,
+        "state": "S",
+        "pgrp": 38248,
+        "session": 38248,
+        "start_ticks": "317267333",
+        "cpu_ticks": 7483
+      },
+      {
+        "pid": 38275,
+        "state": "R",
+        "pgrp": 38248,
+        "session": 38248,
+        "start_ticks": "317270018",
+        "cpu_ticks": 7076
+      },
+      {
+        "pid": 38279,
+        "state": "R",
+        "pgrp": 38248,
+        "session": 38248,
+        "start_ticks": "317270020",
+        "cpu_ticks": 7350
+      },
+      {
+        "pid": 38283,
+        "state": "R",
+        "pgrp": 38248,
+        "session": 38248,
+        "start_ticks": "317270021",
+        "cpu_ticks": 7427
+      },
+      {
+        "pid": 38287,
+        "state": "S",
+        "pgrp": 38248,
+        "session": 38248,
+        "start_ticks": "317270022",
+        "cpu_ticks": 7341
+      }
+    ],
+    "canonical": {
+      "config": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/configs/experiment/p1_B50.yaml",
+      "output_dir": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/diagnostics/B50_EMA",
+      "owner": "stage2-single-checkpoint-tta-diagnostic",
+      "queue_pid": 38248,
+      "schema_version": 1,
+      "started_at": "2026-10-10T10:23:58.946814+08:00",
+      "token": "c52ab42964764a0186e85063f0e29bcf",
+      "trainer_pid": null
+    },
+    "run_complete": false,
+    "log_tail": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n",
+    "audit_sha256": "757a70e8bd8bb113edd0fd958338286b8748453795466dcb7145d72ea7c5ffd3",
+    "EMA_CPU_audit": {
+      "complete": true,
+      "model_role": "successful_step_EMA_shadow_fixed20",
+      "EMA_parameters_restored_equal": true,
+      "trainable_tensors": 154,
+      "shadow_tensor_sha256": "1ed8e3024e30180661f009afe5943b43ae85532d32d924aeadd9db8fe1820da5",
+      "teacher_used_for_inference": true,
+      "EMA_successful_updates": 37164,
+      "EMA_skipped_updates": 16
+    }
+  }
+}

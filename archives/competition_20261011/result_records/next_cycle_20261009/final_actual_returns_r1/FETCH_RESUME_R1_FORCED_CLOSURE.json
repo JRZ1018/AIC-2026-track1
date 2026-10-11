@@ -1,0 +1,16 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R1_FORCED_CLOSURE.json",
+  "original_sha256": "50b19851caa1bfde2c5146bd5c608082a13172361459ceee19c182b90c6eb5d3",
+  "omitted_fields": [],
+  "record": {
+    "pid": 31304,
+    "birth_unix": 1791557001,
+    "exact_command": "\"C:\\Users\\JRZha\\AppData\\Local\\Programs\\Python\\Python313\\python.exe\" D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\operator_tools\\actual_final_fetch_resume_r1.py",
+    "stale_seconds": 846.5538691,
+    "partial_bytes": 916127744,
+    "reason": "own transfer stalled after relay disconnection; retain partial and resume with bounded channel timeout",
+    "stopped_at": "2026-10-09T23:02:01.4895082+08:00",
+    "closed": true
+  }
+}

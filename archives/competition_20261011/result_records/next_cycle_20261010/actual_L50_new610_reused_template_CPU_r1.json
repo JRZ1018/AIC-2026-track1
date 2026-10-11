@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_new610_reused_template_CPU_r1.json",
+  "original_sha256": "a98a0fea1d397c5e6ca3da7bed17464829218b84d9eb7e8286fc98bdf1e17d22",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "scope": "CPU UNBOUND template/config/AST only",
+    "source_sha256": "ffa827d08e9689eafed604bc7abbd8050a7d0db0fbe2d4ccb8cecb3cbb8ef2c2",
+    "files": 98,
+    "science_delta_only_visualLR": true,
+    "trainer_smoke_src_bytes_unchanged": true,
+    "old_L35_admission_rejected": true,
+    "future_budget_sha256": null,
+    "future_admission_sha256": null,
+    "future_last_sha256": null,
+    "remote_deployed": false,
+    "GPU_started": false,
+    "independent_confirmation": false,
+    "two_reused_queries_disclosed": true
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_S_terminal_followon_R3_status.json",
+  "original_sha256": "54ebffc51018fc5fc10271fba59024e6c677448f1f42a03b4fea35f224c763d2",
+  "omitted_fields": [
+    "/diagnostic_launch/command"
+  ],
+  "record": {
+    "schema": "aictrack1.S.terminal_followon.R3.read_only_status.v1",
+    "observed_epoch": 1791510573.4466965,
+    "source_manifest_sha256": "9d8c681a4c8052d05c5b26b9242a4990b0596955b2442b292a7165c9abf929dd",
+    "owner": {
+      "pgrp": 233741,
+      "pid": 233741,
+      "session": 233741,
+      "start_ticks": "307995942"
+    },
+    "owner_group_members": [],
+    "exact_controller_alive": false,
+    "original_S_groups_closed": true,
+    "canonical_idle": true,
+    "latest_progress_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_followon_20261009/run/progress_00038.json",
+    "latest_progress": {
+      "S_closed": true,
+      "canonical_idle": true,
+      "observed_epoch": 1791507447.1005862,
+      "owned_S_group_members": [],
+      "test_access": false,
+      "watched": {
+        "230190": null,
+        "230195": null
+      }
+    },
+    "complete": {
+      "complete": true,
+      "completed_epoch": 1791507735.3937402,
+      "diagnostic": {
+        "files": {
+          "fused_features.pt": {
+            "bytes": 63342453,
+            "sha256": "bb3925c104a7bdc2cc4e33c5dc93605e2836ff30aee7d0ac13d75e2e9fd5230e"
+          },
+          "fused_logits.pt": {
+            "bytes": 47052393,
+            "sha256": "e0b69349111e3c1b49d13d30d14b76af6802e2b930e0c89911e3ca7a608a336c"
+          },
+          "input_identity.json": {
+            "bytes": 4848,
+            "sha256": "bb1142079db0a4294d7edf74f02846892685b391b98785fd9b709dfffd768074"
+          },
+          "paired_predictions.csv": {
+            "bytes": 2391298,
+            "sha256": "640cc7677e76cd80603f0e92983b8583aeaec5eefa33ddc7310762917c99a976"
+          },
+          "report.json": {
+            "bytes": 2697,
+            "sha256": "990a9f1399cfac59c541fed945c040a76b05d7f07ae3888bdffa55f5a612209d"
+          },
+          "rows.csv": {
+            "bytes": 5604471,
+            "sha256": "f84dffe7fdfff433a1924386927fac402b29c9d3e0b4e82abf60d1976d44404f"
+          },
+          "supervision_checkpoint_audit.json": {
+            "bytes": 3800,
+            "sha256": "d29742944303548121376450b3592d9855ad4dbf3b99b9548862333c8f40284e"
+          }
+        },
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/artifacts/diagnostics/P1_S/result_manifest.json",
+        "sha256": "a50d906276302886ea346bf04a78512ef0ccb1aec830e809dfe14059579ba191"
+      },
+      "new_training_started": false,
+      "owner": {
+        "pgrp": 234345,
+        "pid": 234345,
+        "session": 234345,
+        "start_ticks": "308110207"
+      },
+      "paired": {
+        "files": {
+          "balanced_supported_unique_predictions.npz": {
+            "bytes": 52242,
+            "sha256": "831526e387c368cff4c06c84069541c4b68efcb0950a69361d08058ddb64d232"
+          },
+          "natural_unique_images_predictions.npz": {
+            "bytes": 95958,
+            "sha256": "407237196a3edec84ce66c98ee62c093ebf0272d7582954b8772911b5e9ab3a8"
+          },
+          "report.json": {
+            "bytes": 821116,
+            "sha256": "776b1120fb75544ae5422b3960347c6a4f87c4881b4b16e0088d8ce86e216d66"
+          }
+        },
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/artifacts/paired/P1_S/result_manifest.json",
+        "sha256": "3e148dd1084a884eeafcb4eb9ccfcd683472f11a265ea36161987269649343de"
+      },
+      "recipe_selected": false,
+      "schema": "aictrack1.S.terminal_followon.complete.v1",
+      "terminal": {
+        "checkpoint_role": "last",
+        "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+        "epoch": 20,
+        "last_bytes": 1412602235,
+        "last_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/experiments/P1_S/last.pt",
+        "last_sha256": "07dad01bcd8da762afef9883286bc9db1edce6390dea51c4c59b350e6f8c3e20",
+        "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/experiments/P1_S/metrics.json",
+        "metrics_sha256": "bb30e755b822dcba62ad0d22e074d403c017759fb802b1041dcecc1c61dcaa68",
+        "test_access": false,
+        "training_source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9"
+      },
+      "test_access": false
+    },
+    "failure": null,
+    "diagnostic_launch": {
+      "diagnostic_source_manifest_sha256": "b04925892404fc37a0c81f4d044752248f4d30bd1f379fec9f60b73531ddead0",
+      "launch_epoch": 1791507449.411446,
+      "owner": {
+        "pgrp": 234345,
+        "pid": 234345,
+        "session": 234345,
+        "start_ticks": "308110207"
+      },
+      "source_manifest_sha256": "9d8c681a4c8052d05c5b26b9242a4990b0596955b2442b292a7165c9abf929dd",
+      "terminal": {
+        "checkpoint_role": "last",
+        "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+        "epoch": 20,
+        "last_bytes": 1412602235,
+        "last_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/experiments/P1_S/last.pt",
+        "last_sha256": "07dad01bcd8da762afef9883286bc9db1edce6390dea51c4c59b350e6f8c3e20",
+        "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/experiments/P1_S/metrics.json",
+        "metrics_sha256": "bb30e755b822dcba62ad0d22e074d403c017759fb802b1041dcecc1c61dcaa68",
+        "test_access": false,
+        "training_source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9"
+      },
+      "test_access": false
+    },
+    "diagnostic_progress": null,
+    "controller_log_tail": "{\"complete\": true, \"receipt\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_followon_20261009/run/complete.json\", \"recipe_selected\": false}\n",
+    "checkpoint_loaded": false,
+    "checkpoint_hashed": false,
+    "GPU_started_by_observer": false,
+    "process_signals_sent": false,
+    "lock_modified": false,
+    "test_access": false
+  }
+}

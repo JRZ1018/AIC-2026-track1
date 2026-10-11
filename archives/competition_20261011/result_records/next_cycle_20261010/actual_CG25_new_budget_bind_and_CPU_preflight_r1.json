@@ -1,0 +1,64 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_new_budget_bind_and_CPU_preflight_r1.json",
+  "original_sha256": "ddbd1d8fa4b0f20afd37bedf2bff71a7b263d79793543f767377d672aaa2be8c",
+  "omitted_fields": [
+    "/bind/command",
+    "/bind/stderr",
+    "/bind/stdout",
+    "/preflight/command",
+    "/preflight/stderr",
+    "/preflight/stdout"
+  ],
+  "record": {
+    "schema": "aictrack1.CG25.actual_budget_bound_CPU_preflight.v1",
+    "budget": {
+      "schema": "aictrack1.center_guard_joint.budget.v1",
+      "root_authorized": true,
+      "phase_start_unix": 1791599402.1390533,
+      "deadline_unix": 1791610202.1390533,
+      "initial_free_bytes": 13013950464,
+      "capacity_increase_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "data_total_bytes": 128849018880,
+      "disk_max_bytes": 32212254720,
+      "min_free_bytes": 3221225472,
+      "atomic_reserve_bytes": 2147483648,
+      "final_gpu_reserve_hours": 4,
+      "test_access": false,
+      "capacity_evidence": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+        "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+      },
+      "source_template_sha256": "7175b378a3ff67c907bea49de75cab3429f4f8aa63b072ba562f3bfe527c65d5",
+      "actual_stage_sha256": "486e90476c1ebaabe183c946a79de03b30eb7104f3078a44fabe60f60d6f3e6d",
+      "actual_independent_CPU_chunks": [
+        "e50930",
+        "021520",
+        "222e8d"
+      ],
+      "scientific_scope": "Only center_guard_fraction.25; one fresh CG25 fixedlast20 officialCLIP/e88a/split57189, then frozen4V/graph/P7 compared directly to actual J5_GRAPH",
+      "initialization": "fresh official OpenAI CLIP plus legal oldfold e88a H1; no candidate checkpoint",
+      "human_latest_wall_deadline_unix": 1791712738.0,
+      "remaining32h_plan_sha256": "e2235eacd9417cf3de30786512e6dddaf5a1fd35c1eb7bd58b061d5bd2d4c58a",
+      "old_phase_clocks_sources_ledgers_modified": false,
+      "final_wall_reserve_hours_min": 8,
+      "planned_pause19": false
+    },
+    "budget_text": "{\n  \"schema\": \"aictrack1.center_guard_joint.budget.v1\",\n  \"root_authorized\": true,\n  \"phase_start_unix\": 1791599402.1390533,\n  \"deadline_unix\": 1791610202.1390533,\n  \"initial_free_bytes\": 13013950464,\n  \"capacity_increase_bytes\": 32212254720,\n  \"adjusted_initial_free_bytes\": 45226205184,\n  \"data_total_bytes\": 128849018880,\n  \"disk_max_bytes\": 32212254720,\n  \"min_free_bytes\": 3221225472,\n  \"atomic_reserve_bytes\": 2147483648,\n  \"final_gpu_reserve_hours\": 4,\n  \"test_access\": false,\n  \"capacity_evidence\": {\n    \"path\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json\",\n    \"sha256\": \"ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52\"\n  },\n  \"source_template_sha256\": \"7175b378a3ff67c907bea49de75cab3429f4f8aa63b072ba562f3bfe527c65d5\",\n  \"actual_stage_sha256\": \"486e90476c1ebaabe183c946a79de03b30eb7104f3078a44fabe60f60d6f3e6d\",\n  \"actual_independent_CPU_chunks\": [\n    \"e50930\",\n    \"021520\",\n    \"222e8d\"\n  ],\n  \"scientific_scope\": \"Only center_guard_fraction.25; one fresh CG25 fixedlast20 officialCLIP/e88a/split57189, then frozen4V/graph/P7 compared directly to actual J5_GRAPH\",\n  \"initialization\": \"fresh official OpenAI CLIP plus legal oldfold e88a H1; no candidate checkpoint\",\n  \"human_latest_wall_deadline_unix\": 1791712738.0,\n  \"remaining32h_plan_sha256\": \"e2235eacd9417cf3de30786512e6dddaf5a1fd35c1eb7bd58b061d5bd2d4c58a\",\n  \"old_phase_clocks_sources_ledgers_modified\": false,\n  \"final_wall_reserve_hours_min\": 8,\n  \"planned_pause19\": false\n}\n",
+    "budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+    "budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_template_20261010/root_actual_CG25_phase_budget_r1.json",
+    "bind": {
+      "returncode": 0
+    },
+    "GPU_started": false,
+    "test_access": false,
+    "bound_source_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+    "execution_root": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010",
+    "preflight": {
+      "returncode": 0
+    },
+    "complete": true,
+    "remote_receipt_sha256": "7d7dae4341b8e409ca9bd9262bcfc1e4f8e9f947cb583fc89ccbf9af369bacf8"
+  }
+}

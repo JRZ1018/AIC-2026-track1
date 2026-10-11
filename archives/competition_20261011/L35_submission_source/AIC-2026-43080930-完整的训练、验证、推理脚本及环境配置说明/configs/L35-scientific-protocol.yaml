@@ -1,0 +1,58 @@
+protocol:
+  competition_stage: stage2
+  backbone: OpenAI CLIP ViT-B/32
+  official_weight_sha256: 40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af
+  resolution: 336
+  position_interpolation: bicubic_7x7_to_10x10
+  h1:
+    model: normalized_512d_linear_750
+    epochs: 100
+    batch_size: 4096
+    optimizer: Adam
+    learning_rate: 0.01
+    weight_decay: 0.0
+    scheduler: constant
+    seed: 20261008
+    amp: false
+    selection: fixed_final_epoch100
+  joint:
+    tensors: 154
+    visual_tensors: 152
+    classifier_tensors: 2
+    trainable_parameters: 88233966
+    visual_learning_rate: 3.5e-6
+    classifier_learning_rate: 5.0e-6
+    epochs: 20
+    batch_size: 64
+    optimizer: AdamW
+    weight_decay: 0.01
+    scheduler: CosineAnnealingLR_Tmax20
+    gradient_clip_norm: 1.0
+    seed_full_and_second_query: 20261010
+    seed_first_query: 20261008
+    selection: fixed_final_epoch20
+    loss: {kind: SCE, alpha: 0.1, beta: 1.0, log_zero: -4.0}
+    confidence_weighting: {enabled: true, warmup_epochs: 1, momentum: 0.8, history_mix: 0.5, min_weight: 0.02, magnitude_mix: 0.75}
+    augmentation: {crop_scale_min: 0.8, horizontal_flip_probability: 0.5}
+  inference:
+    single_checkpoint: true
+    views: [native336, native336_flip, short_side384_center_crop336, scaled_flip]
+    logits: equally_averaged_float32_then_float16_storage_float32_decode
+    feature: L2_normalize_mean_of_four_L2_normalized_visual_features
+    graph: {k: 10, lambda: 0.3, iterations: 3, probability_temperature: 1.0, protection_raw_margin: 1.3862943611198906}
+    P7: {temperature_multiplier: 0.5, bias_strength: 0.75, Sinkhorn_iterations: 60}
+    parameter_updates: 0
+    additional_feature_forwards: 0
+  full_training:
+    train_count: 148695
+    validation_count: 0
+    full_scope_merges_historical_split_partitions: true
+  validation:
+    train_count: 118958
+    natural_query_count: 29737
+    balanced_query_count: 14760
+    balanced_supported_classes: 738
+    control: cached_J5_GRAPH_predictions_from_L35_vs_J5_pairing
+    first_query: exploration_split
+    second_query: independent_confirmation_split
+    confirmation_receipt_sha256: 15fd22f3c36b65dc90250692538ca0e2c3fe8a581f36be660fad05e72a061546

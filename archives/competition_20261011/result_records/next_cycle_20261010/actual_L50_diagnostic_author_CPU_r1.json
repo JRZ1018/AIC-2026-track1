@@ -1,0 +1,24 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_diagnostic_author_CPU_r1.json",
+  "original_sha256": "9a597b2cd9498049ef88fb5307ac11dc68dc4eab968ba16035c39a4be6087f0f",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "scope": "CPU source/config/frozen query and actual control metadata only",
+    "source_sha256": "36bf63c7605ed0256a8e52936d0c3cb43faf743625ed68adb4df00295fd0c69a",
+    "actual_L35_control_NPZ_SHA_verified": true,
+    "query_order_SHA_verified": true,
+    "counts": [
+      29737,
+      14760
+    ],
+    "budget_metadata_PASS": true,
+    "checkpoint_reads": 0,
+    "image_reads": 0,
+    "GPU": false,
+    "future_last_sha256": null,
+    "final_source_SHA_reverified": true,
+    "remote_CPU_dependency_receipt": "actual_L50_diagnostic_stage_CPU_r1.json"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/B_train_actual_budget_r1.json",
+  "original_sha256": "10ceae4fe1a3f435e73db058955f414c3e00ded1dd38ffe52e928f094e541b73",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.josrc_inspired.budget.v1",
+    "root_authorized": true,
+    "authorization": "Human explicitly all authority and plan modification; autonomous work next7h without questions. Root measured actual100/recovery PASS and selected both registered B25/B50.",
+    "phase_start_unix": 1791562092.8201556,
+    "deadline_unix": 1791590892.8201556,
+    "phase": "continuous_fresh_B25_then_B50_each20_exploration_only",
+    "test_access": false,
+    "final_gpu_reserve_hours": 4,
+    "total_GPU_hours": 24,
+    "explore_H1_confirmation_GPU_hours_max": 20,
+    "initial_free_bytes": 13013950464,
+    "capacity_increase_bytes": 32212254720,
+    "adjusted_initial_free_bytes": 45226205184,
+    "data_total_bytes": 128849018880,
+    "disk_max_bytes": 32212254720,
+    "min_free_bytes": 3221225472,
+    "atomic_reserve_bytes": 2147483648,
+    "prior_A_budget_sha256": "f6bc19c3978ef75db18ac61915425bbfb5de77b8d121cb8497477536dfff073b",
+    "disk_cap_change_reason": "Retain complete negative-A evidence plus training-only EMA/checkpoint atomic peaks, independent confirmation and final state on user-expanded data disk. No historical file deletion and no cumulative baseline reset.",
+    "capacity_evidence": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "previous_total_GPU_hours": 20,
+    "previous_explore_H1_confirmation_GPU_hours_max": 16,
+    "profile_budget_sha256": "4f965fe2c3f0182782daf3903167853267a1f1f02f749f4d69bff99afe33c3e0",
+    "profile_receipt_reference": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_profile_20261010/artifacts/profiles/B25_ee99892b7ed043cc935df753b2a83080/profile_receipt.json",
+      "sha256": "197e5c6360d7140744d15886c94974eb294f02810e65135b3ba40a35ff1b50a3"
+    },
+    "profile_cost_review_sha256": "ff575999463f7c51aa7da4d98a5f97ffebcfe5b62161b42963defbbb3684bee0",
+    "planned_arms": [
+      "B25",
+      "B50"
+    ],
+    "continuous_epochs_each": 20,
+    "initialize_from_profile": false,
+    "initialization": "fresh prescribed official CLIP + legal oldfold H1100 e88a each arm",
+    "autonomous_work_focus_start_unix": 1791562092.8201556,
+    "autonomous_work_focus_until_unix": 1791587292.8201556,
+    "clock_revision": "New explicit B phase only. Original A/profile clocks remain byte-identical, no baseline reset.",
+    "future_candidate_checkpoint_sha256": {
+      "B25": null,
+      "B50": null
+    }
+  }
+}

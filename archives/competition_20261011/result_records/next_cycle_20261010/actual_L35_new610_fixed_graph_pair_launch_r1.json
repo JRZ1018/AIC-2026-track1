@@ -1,0 +1,24 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_new610_fixed_graph_pair_launch_r1.json",
+  "original_sha256": "93f8f97fa057047df126379056f4e93b8bd5f1423acb5f4cad7ebaf4b90bb8c8",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "actual": true,
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L35_confirmation_diagnostic_r2_20261010",
+    "owner": {
+      "pid": 29887,
+      "pgrp": 29887,
+      "session": 29887,
+      "start_ticks": "928109143"
+    },
+    "started_unix": 1791651288.3350697,
+    "both_fourview_all_files_SHA_PASS": true,
+    "all_owned_groups_closed": true,
+    "model_updates": 0,
+    "additional_model_forwards": 0,
+    "test_access": false
+  }
+}

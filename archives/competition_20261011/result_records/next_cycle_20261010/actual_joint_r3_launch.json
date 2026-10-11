@@ -1,0 +1,29 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_joint_r3_launch.json",
+  "original_sha256": "88e309010c8e37b37e8d20d22ca62fd55da5a68c3b7e4c904a7489f01a83130f",
+  "omitted_fields": [
+    "/command",
+    "/controller/argv"
+  ],
+  "record": {
+    "schema": "aictrack1.supervision_joint.actual_launch.v1",
+    "controller": {
+      "pid": 9475,
+      "ppid": 9474,
+      "pgrp": 9475,
+      "session": 9475,
+      "start_ticks": "311656925",
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010"
+    },
+    "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+    "launch_unix": 1791542916.5938463,
+    "test_access": false,
+    "planned_arms": [
+      "A3",
+      "A5"
+    ],
+    "epochs_each": 20,
+    "planned_pause": false
+  }
+}

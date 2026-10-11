@@ -1,0 +1,14 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_fixed_graph_execution_r1.json",
+  "original_sha256": "9f1ffbd4bf95a6f08e571f44225d3ccda72be51d89f500558c8ba9265fe7b274",
+  "omitted_fields": [],
+  "record": {
+    "return_code": 0,
+    "log_sha256": "43d6b9b52160572384dcc45e504db23513f606a3b1dc18a4a4843c2e9e55234a",
+    "log_tail": "{\"complete\": true, \"selected_arm\": \"L50\", \"report\": \"/root/autodl-tmp/AICtrack1_next_cycle_L50_second_reused_diagnostic_20261011/artifacts/comparisons/L50/report.json\", \"primary_delta_pp\": 0.1964769647696477, \"independent_confirmation\": false}\n",
+    "actual_fourview_manifest_SHA_PASS": true,
+    "fourview_groups_closed": true,
+    "fixed_graph_no_extra_model_forward": true
+  }
+}

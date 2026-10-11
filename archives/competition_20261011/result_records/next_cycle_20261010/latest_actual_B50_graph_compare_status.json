@@ -1,0 +1,198 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_actual_B50_graph_compare_status.json",
+  "original_sha256": "95fada006593d44bfa3185a829b53fef61373153042bd49af70ec0f837c4778d",
+  "omitted_fields": [],
+  "record": {
+    "now": 1791585876.0856564,
+    "owned_group": [],
+    "canonical": null,
+    "report_exists": true,
+    "report_sha": "9d8039b07e289338cbe65b49fa02b7f223d88c2ad5cec822691cfc50db22676c",
+    "manifest": {
+      "complete": true,
+      "files": {
+        "candidate_graph_increment_balanced_supported_unique_predictions.npz": {
+          "bytes": 51300,
+          "sha256": "4bbb5b710df5f7b2c37cd5e4a8cc435ee226bd09ce3740795185b8ca6164eb8e"
+        },
+        "candidate_graph_increment_natural_unique_images_predictions.npz": {
+          "bytes": 94181,
+          "sha256": "ff9f2ce101b3575ba5c82d6b9d4a3286027d066695231528d1139e9a068092c4"
+        },
+        "graph_combo_vs_J5_GRAPH_balanced_supported_unique_predictions.npz": {
+          "bytes": 25577,
+          "sha256": "49f2a9bbf5d28453b60a590e4ecebd9542628aebd633deacca47dc4ec7770164"
+        },
+        "graph_combo_vs_J5_GRAPH_natural_unique_images_predictions.npz": {
+          "bytes": 47126,
+          "sha256": "a49f9a4fa796b1498d85f387a0a9d0a2ad9c5d3a8396d97019396ea3bcc3162e"
+        },
+        "raw_model_P7_vs_J5_P7_balanced_supported_unique_predictions.npz": {
+          "bytes": 51332,
+          "sha256": "72bfcf29b53f8c758f1bad4771dd6f67f3963bb1db4f3f2c6161fdc48cfc3dee"
+        },
+        "raw_model_P7_vs_J5_P7_natural_unique_images_predictions.npz": {
+          "bytes": 94305,
+          "sha256": "02a4a67c3d864e8e074e12540d16677c7efe81fdfcbc5f1f85f1efb2929e3924"
+        },
+        "report.json": {
+          "bytes": 2249189,
+          "sha256": "9d8039b07e289338cbe65b49fa02b7f223d88c2ad5cec822691cfc50db22676c"
+        }
+      },
+      "test_access": false
+    },
+    "report_brief": {
+      "schema": "aictrack1.josrc_inspired.exploration_paired_graph.v1",
+      "complete": true,
+      "arm": "B50",
+      "hard_alpha": 0.1,
+      "soft_coefficient": 0.5,
+      "math_source_sha256": "0096f4c8352e28eae4373485c45e4e6e4f54dfa750ae4b4ddeca8bd8a068df18",
+      "primary_scope": "candidate_fixed_graph_P7_vs_actual_J5_GRAPH_P7",
+      "independent_confirmation": false,
+      "old_query_reused_for_exploration": true,
+      "stable_gain_claim": false,
+      "used_test_or_online_scores": false,
+      "test_access": false,
+      "diagnostic_source_manifest_sha256": "24aa7656811de9027162a20f8de6c5f4a015123ee41aeafc2602c653bda40013",
+      "training_source_manifest_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+      "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+      "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+      "query_identity": {
+        "confirmation_rows_sha256": "ba299a60bf7cf7150e050d551d52e1979c5577a15ffd781ae874e7137f396954",
+        "control_ids_sha256": "88fbf1a88145ae0b58e95d1487bd5809c2a943aa1d01d2c1eebd7dfd865f12d1",
+        "query_indices_sha256": "215662c1e8712e1d97f46f72c5268065f3ee65ce8f647e066adfd38bf475baf5",
+        "registration_note": "Original019493 query NPZ and CSV bytes retained unchanged; only current exploration protocol registration rebound before any alpha diagnostic prediction",
+        "schema": "aictrack1.confirmation.frozen_queries.v1",
+        "seed": 20261009,
+        "selection_protocol_sha256": "05ee7feb99395199702e9188e3c44a085149bbff833cb508187a0f0b029b7d59",
+        "selection_uses_predictions": false,
+        "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+        "test_access": false
+      },
+      "candidate": {
+        "identity_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/artifacts/diagnostics/JOINT_B50/input_identity.json",
+        "identity_sha256": "cc73b08f071ae7f4d41eb116197190814f7fdd28a84dddb0c58ca0cffc787c50",
+        "bundle_sha256": "6f35fc870875aa89da38df6a07e7ed2ef13a76a51c234558566e7fa237d792a2",
+        "checkpoint_sha256": "5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78",
+        "checkpoint_audit_sha256": "fd1eb1b4bb182b993d01f55d7db65d25552588fb8a759e3322ed15013ff0403c",
+        "cached_logits_dtype": "torch.float16",
+        "decode_dtype": "float32",
+        "fp16_argmax_mismatches_vs_original_fp32": 10,
+        "precision_note": "FP32 conversion cannot restore discarded FP16 precision"
+      },
+      "control": {
+        "identity_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/input_identity.json",
+        "identity_sha256": "1d23b0729dadfbfb37fcf1807601b1e73c22cdf8c5ee270fb74d5306750ba6df",
+        "bundle_sha256": "03ac09bf83b534cd70a231084ed3c209ddeee9f494541c2b5efffb7b8c8ca0d0",
+        "checkpoint_sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c",
+        "checkpoint_audit_sha256": "051b0d32b4197ef79d250cdff57fd9d0983a052e9ea39f20c598cdef995183af",
+        "cached_logits_dtype": "torch.float16",
+        "decode_dtype": "float32",
+        "fp16_argmax_mismatches_vs_original_fp32": 4,
+        "precision_note": "FP32 conversion cannot restore discarded FP16 precision"
+      },
+      "control_graph_import": {
+        "import_registration": {
+          "schema": "aictrack1.joint_alpha.legacy_J5_GRAPH.import.v1",
+          "checkpoint_sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c",
+          "training_source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+          "diagnostic_source_manifest_sha256": "01949375a866775cd141ded72e06afdb0b1922dd5aa60702cb7fea3b5fbc5ec1",
+          "cache_bundle": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/fused_logits.pt",
+            "sha256": "03ac09bf83b534cd70a231084ed3c209ddeee9f494541c2b5efffb7b8c8ca0d0"
+          },
+          "cache_identity": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/input_identity.json",
+            "sha256": "1d23b0729dadfbfb37fcf1807601b1e73c22cdf8c5ee270fb74d5306750ba6df"
+          },
+          "local_identity": "inputs/legacy_control/J5/input_identity.json",
+          "graph_report": "inputs/legacy_control/graph/report.json",
+          "graph_result_manifest": "inputs/legacy_control/graph/result_manifest.json",
+          "graph_prediction_field": "candidate_p7",
+          "primary_control": "actual J5_GRAPH output; never plain J5 P7",
+          "model_updates": 0,
+          "additional_model_forwards": 0,
+          "test_access": false
+        },
+        "actual_graph_report_sha256": "e59d9972dcdc4f37be8e51882f087c03c660aa744e9b0f947dd88e1412cf8cd8",
+        "legacy_source_identity_preserved": true,
+        "new_source_identity_not_claimed": true
+      },
+      "fixed_graph": {
+        "k": 10,
+        "lambda_value": 0.3,
+        "iterations": 3,
+        "probability_temperature": 1.0,
+        "margin_protection": 1.3862943611198906
+      },
+      "frozen_P7": {
+        "temperature": 0.5,
+        "strength": 0.75,
+        "iterations": 60
+      },
+      "primary_delta_pp": -0.16937669376693767,
+      "natural_delta_pp": -0.09415879207721022,
+      "direction": "exploratory_not_positive",
+      "natural_nonnegative_hard_gate": false,
+      "ci_lower_positive_hard_gate": false,
+      "model_updates": 0,
+      "additional_model_forwards": 0,
+      "graph_wall_seconds": 43.029854042921215,
+      "shared_phase_context": {
+        "budget": {
+          "schema": "aictrack1.josrc_inspired.budget.v1",
+          "root_authorized": true,
+          "authorization": "Human explicitly all authority and plan modification; autonomous work next7h without questions. Root measured actual100/recovery PASS and selected both registered B25/B50.",
+          "phase_start_unix": 1791562092.8201556,
+          "deadline_unix": 1791590892.8201556,
+          "phase": "continuous_fresh_B25_then_B50_each20_exploration_only",
+          "test_access": false,
+          "final_gpu_reserve_hours": 4,
+          "total_GPU_hours": 24,
+          "explore_H1_confirmation_GPU_hours_max": 20,
+          "initial_free_bytes": 13013950464,
+          "capacity_increase_bytes": 32212254720,
+          "adjusted_initial_free_bytes": 45226205184,
+          "data_total_bytes": 128849018880,
+          "disk_max_bytes": 32212254720,
+          "min_free_bytes": 3221225472,
+          "atomic_reserve_bytes": 2147483648,
+          "prior_A_budget_sha256": "f6bc19c3978ef75db18ac61915425bbfb5de77b8d121cb8497477536dfff073b",
+          "disk_cap_change_reason": "Retain complete negative-A evidence plus training-only EMA/checkpoint atomic peaks, independent confirmation and final state on user-expanded data disk. No historical file deletion and no cumulative baseline reset.",
+          "capacity_evidence": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+            "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+          },
+          "previous_total_GPU_hours": 20,
+          "previous_explore_H1_confirmation_GPU_hours_max": 16,
+          "profile_budget_sha256": "4f965fe2c3f0182782daf3903167853267a1f1f02f749f4d69bff99afe33c3e0",
+          "profile_receipt_reference": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_profile_20261010/artifacts/profiles/B25_ee99892b7ed043cc935df753b2a83080/profile_receipt.json",
+            "sha256": "197e5c6360d7140744d15886c94974eb294f02810e65135b3ba40a35ff1b50a3"
+          },
+          "profile_cost_review_sha256": "ff575999463f7c51aa7da4d98a5f97ffebcfe5b62161b42963defbbb3684bee0",
+          "continuous_epochs_each": 20,
+          "initialize_from_profile": false,
+          "initialization": "fresh prescribed official CLIP + legal oldfold H1100 e88a each arm",
+          "autonomous_work_focus_start_unix": 1791562092.8201556,
+          "autonomous_work_focus_until_unix": 1791587292.8201556,
+          "clock_revision": "New explicit B phase only. Original A/profile clocks remain byte-identical, no baseline reset.",
+          "future_candidate_checkpoint_sha256": {
+            "B25": null,
+            "B50": null
+          }
+        },
+        "budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/inputs/budget.json",
+        "budget_sha256": "10ceae4fe1a3f435e73db058955f414c3e00ded1dd38ffe52e928f094e541b73",
+        "training_source_manifest_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+        "old_query_reused_for_exploration": true,
+        "independent_confirmation": false
+      },
+      "control_margin_reference": "pregraph raw J5 logits, kept explicit; control decisions from actual fixed graph NPZ"
+    },
+    "log_tail": "{\"complete\": true, \"arm\": \"B50\", \"report\": \"/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/artifacts/comparisons/B50/report.json\", \"primary_delta_pp\": -0.16937669376693767, \"exploration_only\": true}\n"
+  }
+}

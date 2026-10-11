@@ -35,6 +35,20 @@ class PersistentTrainingGate:
         self.streak = torch.zeros_like(labels)
         self.keep = torch.ones_like(labels, dtype=torch.bool)
         self.epochs_updated = 0
+        self._lookup = torch.full((int(sample_indices.max()) + 1,), -1, dtype=torch.long)
+        self._lookup[self.sample_indices] = torch.arange(len(labels))
+
+    def keep_for(self, sample_indices):
+        """Lookup only known train identities; validation/test IDs are rejected."""
+        indices = sample_indices.detach().long().cpu()
+        if indices.ndim != 1 or not len(indices):
+            raise ValueError('nonempty training batch identities required')
+        if bool((indices < 0).any()) or int(indices.max()) >= len(self._lookup):
+            raise ValueError('unknown training identity')
+        positions = self._lookup[indices]
+        if bool((positions < 0).any()):
+            raise ValueError('identity is outside training partition')
+        return self.keep[positions]
 
     def update(self, sample_indices, weights, agreement, stability) -> dict[str, Any]:
         if not torch.equal(sample_indices, self.sample_indices):

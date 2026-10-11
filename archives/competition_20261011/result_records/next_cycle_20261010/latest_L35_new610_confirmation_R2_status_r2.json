@@ -1,0 +1,73 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_new610_confirmation_R2_status_r2.json",
+  "original_sha256": "637888228b23d892b77cfa665e3dc2d2d7d494275e2cb45e0f9afb136908c731",
+  "omitted_fields": [
+    "/canonical/command",
+    "/stdout"
+  ],
+  "record": {
+    "time_unix": 1791634441.8730147,
+    "processes": [
+      {
+        "pid": 19809,
+        "state": "S",
+        "ppid": 1,
+        "pgrp": 19809,
+        "session": 19809,
+        "start_ticks": "926391376",
+        "cpu_ticks": 388,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010"
+      },
+      {
+        "pid": 19814,
+        "state": "S",
+        "ppid": 19809,
+        "pgrp": 19814,
+        "session": 19814,
+        "start_ticks": "926391683",
+        "cpu_ticks": 26661,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010"
+      }
+    ],
+    "canonical": {
+      "schema_version": 1,
+      "token": "cb66ba7bdfc9419992c105d7d84c88f6",
+      "owner": "20261010-independent-confirmation-J5-plus-selected",
+      "queue_pid": 19809,
+      "trainer_pid": 19814,
+      "config": "configs/experiment/p1_J5.yaml",
+      "output_dir": "artifacts/experiments/CONFIRM_J5",
+      "started_at": "2026-10-10T20:08:33.720399+08:00"
+    },
+    "logs": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/queues/1f8d5838deaf467eb42bf0fb63c9619c/chain.log",
+        "tail": "[2026-10-10 20:08:33] 20261010-independent-confirmation-J5-plus-selected start\n[2026-10-10 20:08:33] J5: starting - new610111 independent confirmation J5 versus one alpha candidate fixedlast20\n"
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/queues/1f8d5838deaf467eb42bf0fb63c9619c/J5.log",
+        "tail": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read\n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 2 bytes but only got 0. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n"
+      }
+    ],
+    "laststat": [],
+    "disk": {
+      "data": {
+        "total": 128849018880,
+        "used": 112387743744,
+        "free": 16461275136
+      },
+      "system": {
+        "total": 32212254720,
+        "used": 21618520064,
+        "free": 10593734656
+      }
+    },
+    "v2memory": {
+      "memory.max": "66571993088\n",
+      "memory.current": "50563739648\n",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\n"
+    },
+    "gpu": "4836 MiB, 0 %\n"
+  }
+}

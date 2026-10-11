@@ -1,0 +1,86 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_B50_EMA_R3_compare_handoff_r1.json",
+  "original_sha256": "e74d401fe7c747babf664f0ce02c5d8e124865e2cde0da85f75c654b86246cf0",
+  "omitted_fields": [
+    "/receipt/command",
+    "/receipt/owner/argv"
+  ],
+  "record": {
+    "observed_unix": 1791599312.7471771,
+    "owned_rows": [],
+    "canonical": null,
+    "run_complete": true,
+    "compare_launched": true,
+    "log_tail": "y\": false,\n  \"teacher_used_for_inference\": true,\n  \"EMA_optimizer_restored\": false,\n  \"raw_student_optimizer_audited_as_parent_only\": true,\n  \"model_updates\": 0,\n  \"inference_optimizer_steps\": 0,\n  \"test_access\": false,\n  \"diagnostic_source_manifest_sha256\": \"7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045\",\n  \"training_source_manifest_sha256\": \"f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9\",\n  \"parent_diagnostic_source_manifest_sha256\": \"24aa7656811de9027162a20f8de6c5f4a015123ee41aeafc2602c653bda40013\",\n  \"model_role_parity\": {\n    \"schema\": \"aictrack1.B_EMA.parity_role_metadata.v1\",\n    \"parent_raw_report_path\": \"/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/artifacts/diagnostics/JOINT_B50/report.json\",\n    \"parent_raw_report_sha256\": \"fb21654330639b8a188b1e29d9ce2b36dfd5063813328639909adbeecdc91bf5\",\n    \"parent_student_terminal_validation_top1\": 0.7330934405326843,\n    \"parent_raw_center_top1\": 0.7330934405326843,\n    \"parent_raw_parity_tolerance\": 0.0002,\n    \"parent_raw_diagnostic_parity_passed\": true,\n    \"EMA_oneview_top1\": 0.7327908277511597,\n    \"EMA_oneview_minus_parent_student_top1\": -0.0003026127815246582,\n    \"raw_student_terminal_parity_applicable_to_EMA\": false,\n    \"EMA_against_student_parity_passed\": null,\n    \"EMA_observation_is_not_an_expected_value\": true,\n    \"model_role\": \"successful_step_EMA_shadow_fixed20\",\n    \"parent_checkpoint_sha256\": \"5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78\",\n    \"shadow_tensor_sha256\": \"1ed8e3024e30180661f009afe5943b43ae85532d32d924aeadd9db8fe1820da5\"\n  }\n}\n{\"complete\": true, \"arm\": \"B50_EMA\", \"output\": \"/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/diagnostics/B50_EMA\", \"model_updates\": 0}\n",
+    "receipt": {
+      "schema": "aictrack1.B_EMA.actual_fixed_comparison_launch.v1",
+      "arm": "B50_EMA",
+      "owner": {
+        "pid": 38435,
+        "pgrp": 38435,
+        "session": 38435,
+        "start_ticks": "317296560",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010"
+      },
+      "source_manifest_sha256": "7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045",
+      "budget_sha256": "57dd9a03a74155a90e92fa100ac3972fad853cb53f7060da1438c2ae2981870e",
+      "launch_unix": 1791599313.1914957,
+      "fourview_result_manifest_sha256": "b58e8d72e23bd6bb9221deda20b5f535d984f4420efea264940d22816a5b9be2",
+      "fourview_owned_groups_closed": true,
+      "canonical_idle": true,
+      "test_access": false,
+      "model_updates": 0
+    },
+    "receipt_sha256": "37715fe34dd6d0c318ec7b0998f7abfc44a85e99e6eaa4c63ad2a56ce05fad75",
+    "fourview_manifest": {
+      "schema": "aictrack1.fresh_route.diagnostic_result.v1",
+      "p1_arm": "B50",
+      "complete": true,
+      "test_access": false,
+      "files": {
+        "fused_features.pt": {
+          "bytes": 63343605,
+          "sha256": "32a81f1667751a49d0f903d226bec90c2c61098e72d570a10331c86648d80312"
+        },
+        "fused_logits.pt": {
+          "bytes": 47053545,
+          "sha256": "7fe9dd1584d6f36711444394516ef631a3af855df8d3ca7a5c0b9ea8bffe7b7c"
+        },
+        "input_identity.json": {
+          "bytes": 15132,
+          "sha256": "f1674312eb310259d06fa62a210bed091401352ae391d0fd4c78329a7c3eac05"
+        },
+        "metadata_adaptations.json": {
+          "bytes": 1821,
+          "sha256": "92eb7e6c18fe9dee8784fa6001391cb23222971ddf1baac8417702e576e5c29b"
+        },
+        "p1_checkpoint_audit.json": {
+          "bytes": 7336,
+          "sha256": "757a70e8bd8bb113edd0fd958338286b8748453795466dcb7145d72ea7c5ffd3"
+        },
+        "paired_predictions.csv": {
+          "bytes": 2390895,
+          "sha256": "6b103a41e135a001075eb7d12d5730c81d0cb340848668461b9debcaad6e12b2"
+        },
+        "report.json": {
+          "bytes": 4848,
+          "sha256": "f37e0454a574a22eec640201444198489d1a376920f01f2f6a730d87afd8a2aa"
+        },
+        "rows.csv": {
+          "bytes": 5434566,
+          "sha256": "9c2ae1fd91962d9dd4b8014476a7a4df3f4826e6bf2735c66bf9f9328659c94e"
+        },
+        "runtime_receipt.json": {
+          "bytes": 1604,
+          "sha256": "21669994e1295c851ccdb2c5983e0ac78824641c7f2214e5359268454d9942db"
+        }
+      },
+      "model_role": "successful_step_EMA_shadow_fixed20",
+      "candidate_id": "B50_EMA",
+      "parent_checkpoint_sha256": "5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78",
+      "shadow_tensor_sha256": "1ed8e3024e30180661f009afe5943b43ae85532d32d924aeadd9db8fe1820da5",
+      "source_manifest_sha256": "7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045"
+    }
+  }
+}

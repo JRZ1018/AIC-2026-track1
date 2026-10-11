@@ -1,0 +1,29 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_actual_final_launch_r1.json",
+  "original_sha256": "b664edb772176b3a7d0c907efd4884d13d301ed5ca50386edb6289e52e175736",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.next_cycle10.L35_final.actual_launch.v1",
+    "controller": {
+      "pid": 36944,
+      "pgrp": 36944,
+      "session": 36944,
+      "start_ticks": "929425085"
+    },
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L35_final_20261010",
+    "launch_unix": 1791664447.7547703,
+    "deadline_unix": 1791675247.7547703,
+    "graph_budget_seconds": 3600,
+    "source_manifest_sha256": "92f2d96cee1b794989c916cad08267148ae00e96c65bb470c44d2b21e5bb96fa",
+    "CPU_audit_sha256": "85e914240ebab9c8defa0167a65a899c3f168637c9b143c421f2d06105b0c6f1",
+    "final_sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6",
+    "last_sha256": "5325982fad83513b11e6f2c9e94537272ae5f7ded295e46b80948bf9fea3532d",
+    "same_checkpoint": true,
+    "model_updates": false,
+    "automatic_retry": false,
+    "actual_data_free": 11139272704
+  }
+}

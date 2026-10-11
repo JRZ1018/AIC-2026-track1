@@ -1,0 +1,78 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B25_EMA_4V_launch_r1.json",
+  "original_sha256": "c595fb0d63f42e6ca3eed7f60fe587e0558404413d08d070533770996d5d8345",
+  "omitted_fields": [
+    "/receipt/command",
+    "/receipt/owner/argv"
+  ],
+  "record": {
+    "receipt": {
+      "schema": "aictrack1.B_EMA.actual_frozen_4V_launch.v1",
+      "complete": true,
+      "source_manifest_sha256": "ccb80c64efcaad9a85951363cdcb9dfeb16bca5d47dd735e6fa5c04d8c50f34b",
+      "owner": {
+        "pid": 37514,
+        "ppid": 37513,
+        "pgrp": 37514,
+        "session": 37514,
+        "start_ticks": "317140462",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010"
+      },
+      "arm": "B25_EMA",
+      "budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010/root_actual_EMA_exploration_budget_r1.json",
+      "budget_sha256": "c905d9f877527f1878a3e9bb1f25c4585553234586cc9bc3a540be6834b0e60a",
+      "launch_unix": 1791597752.2659323,
+      "log_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010/root_B25_EMA_4V_stdout_r1.log",
+      "test_access": false,
+      "training_steps": 0,
+      "actual_teacher_restore_complete": false,
+      "actual_4V_complete": false,
+      "resource_at_launch": {
+        "data_free_bytes": 24038154240,
+        "data_total_bytes": 128849018880
+      }
+    },
+    "remote_receipt_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010/root_actual_B25_EMA_4V_launch_r1.json",
+    "remote_receipt_sha256": "2a4ec16875ae09734afbf77a7517a02fdf6ff386e0cd769b8fcf51dbfa3309d7",
+    "budget": {
+      "schema": "aictrack1.B_EMA.exploration.budget.v1",
+      "root_authorized": true,
+      "phase_start_unix": 1791597751.961033,
+      "deadline_unix": 1791599551.961033,
+      "original_initial_free_bytes": 13013950464,
+      "capacity_added_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "actual_disk_total_bytes": 128849018880,
+      "disk_max_bytes": 32212254720,
+      "min_free_bytes": 3221225472,
+      "atomic_reserve_bytes": 2147483648,
+      "final_gpu_reserve_hours": 4,
+      "test_access": false,
+      "capacity_evidence": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+        "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+      },
+      "source_sha256": "ccb80c64efcaad9a85951363cdcb9dfeb16bca5d47dd735e6fa5c04d8c50f34b",
+      "preregistration_sha256": "30f6c9f7644fb2d29ccca5e18e9cf459e45382ae938e689807437139b47932c6",
+      "stage_receipt_sha256": "b1d3bc0459a94820dc9b5e0476b21373b53323e9941d3268b8fc40e4ef7254bc",
+      "independent_CPU_evidence": [
+        "c35bc6",
+        "64c53f",
+        "3b03c8"
+      ],
+      "human_latest_message": "仅剩32小时，加速推进至下一提交包；全部既有服务器和训练测试权限持续有效",
+      "human_latest_deadline_anchor_unix": 1791597538.0,
+      "human_remaining_wall_seconds": 115200,
+      "old_training_clock_or_ledger_modified": false,
+      "model_roles": [
+        "B25_EMA",
+        "B50_EMA"
+      ],
+      "no_student_teacher_blend": true
+    },
+    "budget_text": "{\n  \"schema\": \"aictrack1.B_EMA.exploration.budget.v1\",\n  \"root_authorized\": true,\n  \"phase_start_unix\": 1791597751.961033,\n  \"deadline_unix\": 1791599551.961033,\n  \"original_initial_free_bytes\": 13013950464,\n  \"capacity_added_bytes\": 32212254720,\n  \"adjusted_initial_free_bytes\": 45226205184,\n  \"actual_disk_total_bytes\": 128849018880,\n  \"disk_max_bytes\": 32212254720,\n  \"min_free_bytes\": 3221225472,\n  \"atomic_reserve_bytes\": 2147483648,\n  \"final_gpu_reserve_hours\": 4,\n  \"test_access\": false,\n  \"capacity_evidence\": {\n    \"path\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json\",\n    \"sha256\": \"ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52\"\n  },\n  \"source_sha256\": \"ccb80c64efcaad9a85951363cdcb9dfeb16bca5d47dd735e6fa5c04d8c50f34b\",\n  \"preregistration_sha256\": \"30f6c9f7644fb2d29ccca5e18e9cf459e45382ae938e689807437139b47932c6\",\n  \"stage_receipt_sha256\": \"b1d3bc0459a94820dc9b5e0476b21373b53323e9941d3268b8fc40e4ef7254bc\",\n  \"independent_CPU_evidence\": [\n    \"c35bc6\",\n    \"64c53f\",\n    \"3b03c8\"\n  ],\n  \"human_latest_message\": \"仅剩32小时，加速推进至下一提交包；全部既有服务器和训练测试权限持续有效\",\n  \"human_latest_deadline_anchor_unix\": 1791597538.0,\n  \"human_remaining_wall_seconds\": 115200,\n  \"old_training_clock_or_ledger_modified\": false,\n  \"model_roles\": [\n    \"B25_EMA\",\n    \"B50_EMA\"\n  ],\n  \"no_student_teacher_blend\": true\n}\n",
+    "budget_sha256": "c905d9f877527f1878a3e9bb1f25c4585553234586cc9bc3a540be6834b0e60a",
+    "initial_return_code": null
+  }
+}

@@ -1,0 +1,4 @@
+L35-only FULL20 CPU template, UNBOUND. Requires actual positive independent new610 confirmation and five SHA-bound report/review/source/two restoration audit refs.
+Original accepted FULL trainer and baseline0758 are retained byte-for-byte. Sole scientific change from J5 is visual LR3.5e-6; head5e-6, SCEalpha.1, AC, 336, AdamW, Cos20 unchanged. Fresh official CLIP+legal full-train H1100fa462, all148695 train/validation0, commonseed20261010, fixedlast20, single model.
+No old B/alpha/CG/PF/AFA admission is accepted. No future FULL checkpoint or budget is supplied. Current shared capacity baseline/real32GiB expansion/cumulative36GiB/min3/atomic2 and final reserve continue without resetting old ledgers.
+CPU preparation is not GPU preflight, actual new FULL training, complete model recovery, or score improvement.

@@ -1,0 +1,54 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_actual_final_status_r1.json",
+  "original_sha256": "56969772abaf83fb6d571a402f2f44887a05fc2a02981f875c1e79967920a14e",
+  "omitted_fields": [
+    "/canonical/command",
+    "/stdout"
+  ],
+  "record": {
+    "now": 1791664487.84729,
+    "controller_group": [
+      {
+        "pid": 36944,
+        "state": "S",
+        "ppid": 1,
+        "pgrp": 36944,
+        "session": 36944,
+        "start_ticks": "929425085"
+      }
+    ],
+    "current_processes": [
+      {
+        "pid": 36944,
+        "state": "S",
+        "ppid": 1,
+        "pgrp": 36944,
+        "session": 36944,
+        "start_ticks": "929425085"
+      },
+      {
+        "pid": 36945,
+        "state": "S",
+        "ppid": 36944,
+        "pgrp": 36945,
+        "session": 36945,
+        "start_ticks": "929425309"
+      }
+    ],
+    "canonical": {
+      "schema_version": 1,
+      "token": "7003354a1c794af780b00bc5719e17f4",
+      "owner": "stage2-final-single-checkpoint-inference",
+      "queue_pid": 36945,
+      "trainer_pid": null,
+      "config": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/configs/experiment/p1_full_L35.yaml",
+      "output_dir": "/root/autodl-tmp/AICtrack1_next_cycle_L35_final_20261010/submissions/final",
+      "started_at": "2026-10-11T04:34:14.963295+08:00"
+    },
+    "inference_log": "",
+    "controller_result": null,
+    "free": 11139235840,
+    "GPU": "1340, 0"
+  }
+}

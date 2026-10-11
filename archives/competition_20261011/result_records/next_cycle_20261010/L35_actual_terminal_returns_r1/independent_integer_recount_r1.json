@@ -1,0 +1,69 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L35_actual_terminal_returns_r1/independent_integer_recount_r1.json",
+  "original_sha256": "397d67387ba43008aed8c65e4b7bb5250e46f9226f646c562abcefb98172b296",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "all6_NPZ_query_perclass_PASS": true,
+    "comparisons": [
+      {
+        "section": "protocols",
+        "name": "natural_unique_images",
+        "candidate_correct": 22358,
+        "control_correct": 22120,
+        "net": 238,
+        "win": 672,
+        "loss": 434
+      },
+      {
+        "section": "protocols",
+        "name": "balanced_supported_unique",
+        "candidate_correct": 11189,
+        "control_correct": 11091,
+        "net": 98,
+        "win": 318,
+        "loss": 220
+      },
+      {
+        "section": "raw_model_P7_vs_J5_P7",
+        "name": "natural_unique_images",
+        "candidate_correct": 22295,
+        "control_correct": 22075,
+        "net": 220,
+        "win": 671,
+        "loss": 451
+      },
+      {
+        "section": "raw_model_P7_vs_J5_P7",
+        "name": "balanced_supported_unique",
+        "candidate_correct": 11179,
+        "control_correct": 11057,
+        "net": 122,
+        "win": 335,
+        "loss": 213
+      },
+      {
+        "section": "candidate_graph_increment",
+        "name": "natural_unique_images",
+        "candidate_correct": 22358,
+        "control_correct": 22295,
+        "net": 63,
+        "win": 173,
+        "loss": 110
+      },
+      {
+        "section": "candidate_graph_increment",
+        "name": "balanced_supported_unique",
+        "candidate_correct": 11189,
+        "control_correct": 11179,
+        "net": 10,
+        "win": 73,
+        "loss": 63
+      }
+    ],
+    "CI_recomputed": false,
+    "model_forwards": 0,
+    "test_access": false
+  }
+}

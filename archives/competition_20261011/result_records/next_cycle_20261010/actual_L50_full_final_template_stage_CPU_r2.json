@@ -1,0 +1,75 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_full_final_template_stage_CPU_r2.json",
+  "original_sha256": "e4110aee97b24bc7e174640a0312f76760ba1c7d78edc222518b44a32cde3300",
+  "omitted_fields": [],
+  "record": [
+    {
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_template_r2_20261011",
+      "template_sha256": "dc448025bd930632aca3a0fe45aa5e8486ce8375e73675bf8d91d6022437d885",
+      "files_SHA_PASS": 91,
+      "reused_files": 84,
+      "uploaded_bytes": 46018,
+      "CPU_CLI_checks": [
+        {
+          "entry": "prepare_full_route.py",
+          "return_code": 0,
+          "output_sha256": "c84ef2add4e289d75aa982a603e95133b3ed123b75fed061cf18516633fcd2ba"
+        },
+        {
+          "entry": "run_full.py",
+          "return_code": 0,
+          "output_sha256": "0469d94b47e20f1d546cdbcd3cd18890c33f974f14cbb62b40b90ea473672871"
+        }
+      ],
+      "UNBOUND": true,
+      "future_admission": null,
+      "future_budget": null,
+      "future_last": null,
+      "GPU_started": false,
+      "test_images_read": false,
+      "time": 1791686071.7592318
+    },
+    {
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_L50_final_template_r2_20261011",
+      "template_sha256": "ff7e807e4119b06c86ebe7b251cdc8c32bf09fe72d40a7650cde77f528d9ed50",
+      "files_SHA_PASS": 83,
+      "reused_files": 73,
+      "uploaded_bytes": 139181,
+      "CPU_CLI_checks": [
+        {
+          "entry": "prepare_final_source.py",
+          "return_code": 0,
+          "output_sha256": "92d380dd27a771c9a7e4e559e5c21899654a800a10b3eb592d444f05c2e122aa"
+        },
+        {
+          "entry": "audit_full_checkpoint.py",
+          "return_code": 0,
+          "output_sha256": "df369f360200fa02f7e46c69a5deee69e4973d4e0bb0e57182efe5aa1fd8d72d"
+        },
+        {
+          "entry": "run_final.py",
+          "return_code": 0,
+          "output_sha256": "4cc47bc2ee11ed4792c11bee8f08d98f01b442f5bcfdf224360e65f80aaf8868"
+        },
+        {
+          "entry": "infer_and_build_submission.py",
+          "return_code": 0,
+          "output_sha256": "529dd410abb0fdc3900e464fa9b07696c1907127e3fc0a5bb893074143d6ba82"
+        },
+        {
+          "entry": "accept_return.py",
+          "return_code": 0,
+          "output_sha256": "a2f1459dc7c58c0fe29cc8f18b3523f189340dc320b3b02470e7ffe2396e67aa"
+        }
+      ],
+      "UNBOUND": true,
+      "future_admission": null,
+      "future_budget": null,
+      "future_last": null,
+      "GPU_started": false,
+      "test_images_read": false,
+      "time": 1791686077.9111195
+    }
+  ]
+}

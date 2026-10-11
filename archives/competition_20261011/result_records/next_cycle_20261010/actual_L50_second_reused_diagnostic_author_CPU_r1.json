@@ -1,0 +1,51 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_reused_diagnostic_author_CPU_r1.json",
+  "original_sha256": "c1c8259956dc2bf6527465b6765614aaba1584f74a8d1ee06f7e4f713f6e7603",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "source_sha256": "55d70da919395c6fff708ccdeabe18eed83465cefe506d5f7738ba3797d5d1da",
+    "CPU_dependency": {
+      "schema": "aictrack1.fresh_route.cpu_entry_dependency_check.v1",
+      "complete": true,
+      "frozen_training_source_sha256": "ffa827d08e9689eafed604bc7abbd8050a7d0db0fbe2d4ccb8cecb3cbb8ef2c2",
+      "static_imports": {
+        "__future__": "C:\\Users\\JRZha\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\__future__.py",
+        "pathlib": "C:\\Users\\JRZha\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pathlib\\__init__.py",
+        "fresh_diag_contract": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L50_second_reused_diagnostic_template_20261011\\fresh_diag_contract.py",
+        "diagnostic_resources": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L50_second_reused_diagnostic_template_20261011\\diagnostic_resources.py",
+        "view_features": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L50_second_reused_diagnostic_template_20261011\\view_features.py",
+        "phase_guard": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L50_second_reused_diagnostic_template_20261011\\phase_guard.py",
+        "p1_contract": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L50_new610_reused_validation_template_20261011\\scripts\\p1_contract.py",
+        "mainline_h1_contract": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L50_new610_reused_validation_template_20261011\\scripts\\mainline_h1_contract.py",
+        "aictrack1.engine.training_queue": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L50_new610_reused_validation_template_20261011\\src\\aictrack1\\engine\\training_queue.py",
+        "aictrack1.models.heads": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L50_new610_reused_validation_template_20261011\\src\\aictrack1\\models\\heads.py"
+      },
+      "real_vendor_cli_help_passed": true,
+      "real_vendor_production_argv_parsed": true,
+      "imports_and_signatures_verified": true,
+      "remote_assets_opened": false,
+      "independent_host_memory_snapshot": {
+        "platform": "windows",
+        "total_bytes": 34024747008,
+        "host_available_bytes": 18929516544,
+        "effective_available_bytes": 18929516544,
+        "cgroup": null,
+        "gpu_probed": false
+      },
+      "model_loaded": false,
+      "checkpoint_opened": false,
+      "gpu_probed": false,
+      "images_opened": false,
+      "training_steps": 0,
+      "test_access": false
+    },
+    "actual_control_prediction_order_SHA_PASS": true,
+    "future_training_source_sha256": null,
+    "future_budget_sha256": null,
+    "future_last_sha256": null,
+    "remote_deployed": false,
+    "independent_confirmation": false
+  }
+}

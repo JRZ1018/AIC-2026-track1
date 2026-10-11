@@ -1,0 +1,58 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_positive_confirmation_and_FULL_binding.json",
+  "original_sha256": "f1f837a632aa8d447dcae5890b16d1e72d82d78e5b823aacbd6ce1e2706ad3bf",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "root_review": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_positive_review.json",
+      "sha256": "2f0d386d4bde7cb99b21750eb09d66719417da4fd7f0c42238605e5e2074cde5"
+    },
+    "evidence": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_positive_evidence.json",
+      "sha256": "0044006254b4727070f3743cbf0455a5bdecda152eaec3df30b2da5ff535aea4"
+    },
+    "confirmation": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_positive_confirmation.json",
+      "sha256": "dc3232619e394b4528454f155711d9b88366ac7066f594886860e31a340d8e5f"
+    },
+    "confirmation_summary": {
+      "selected_route": "J5_GRAPH",
+      "primary_delta_vs_C_pp": 0.1897018970189702,
+      "natural_delta_vs_C_pp": 0.12442411810202779,
+      "raw_J5_P7_delta_vs_C_pp": -0.04065040650406504
+    },
+    "budget": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_full_budget.json",
+      "sha256": "62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517"
+    },
+    "budget_value": {
+      "schema": "aictrack1.fresh_route.full.budget.v1",
+      "root_authorized": true,
+      "phase_start_unix": 1791530132.8899467,
+      "deadline_unix": 1791544532.8899467,
+      "initial_free_bytes": 13013950464,
+      "capacity_increase_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "actual_data_total_bytes": 128849018880,
+      "disk_expansion_recovery": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+        "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+      },
+      "disk_max_bytes": 21474836480,
+      "min_free_bytes": 3221225472,
+      "reason": "Human grants all training/resources and actual data disk expansion. New FULL phase4h with same original baseline plus exact30GiB capacity, cumulative20GiB accounting, at least3GiB reserve; no old clock/receipt rewrite."
+    },
+    "full_prepare": {
+      "status": "bound_single_full_recipe_not_launched",
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+      "selected_route": "J5_GRAPH",
+      "source_manifest_sha256": "be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54"
+    },
+    "disk": {
+      "free": 37721194496,
+      "total": 128849018880
+    }
+  }
+}

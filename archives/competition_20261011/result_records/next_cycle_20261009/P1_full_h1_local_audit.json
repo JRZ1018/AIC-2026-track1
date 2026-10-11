@@ -1,0 +1,40 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/P1_full_h1_local_audit.json",
+  "original_sha256": "c6e6766c38850bfc8421f256b755f54b501fd836ed5f5bd168ef98043f0e4a2e",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.p1.full_h1_local_audit.v1",
+    "status": "passed",
+    "checkpoint_path": "D:\\aicomp\\stage2-server-transfer\\fv2_full_results_20261008\\full\\artifacts\\experiments\\mainline-h1\\last.pt",
+    "checkpoint_sha256": "fa4623670a6f48731cf54e62dfb5ce5df44b232f4530f6c13b886efe0579e605",
+    "epoch": 100,
+    "training_scope": "full_train_fixed_epochs",
+    "row_binding": {
+      "schema": "aictrack1.mainline.h1.rows.v1",
+      "counts": {
+        "train": 148695,
+        "validation": 0
+      },
+      "historical_cache_partition_counts": {
+        "train": 118958,
+        "validation": 29737
+      },
+      "all_rows_sha256": "5d746ffd5dec45b94f2a8dab27702f4d7c2767a16c58652f7f02ec209b6b8521",
+      "train_rows_sha256": "5d746ffd5dec45b94f2a8dab27702f4d7c2767a16c58652f7f02ec209b6b8521",
+      "validation_used_for_optimization_or_selection": false,
+      "historical_validation_rows_now_part_of_full_official_train": true,
+      "historical_split_used_only_for_cache_provenance": true
+    },
+    "validation_selection": false,
+    "selection_rule": "fixed epoch100 last; full official train148695; no validation selection",
+    "head": {
+      "kind": "linear"
+    },
+    "parameters": 384750,
+    "cpu_only": true,
+    "test_access": false,
+    "strict_contract_source_sha256": "bed115ab782e30373400b8add2d2d3b711746a636d6cc8f7662a57d17175164c",
+    "note": "Local full H1 exact source contract validates100 history, optimizer/scaler/RNG fields and full-only positive binding; remote enablement still requires root hash match"
+  }
+}

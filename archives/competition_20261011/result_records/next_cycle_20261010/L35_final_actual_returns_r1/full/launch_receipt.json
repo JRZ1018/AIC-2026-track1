@@ -1,0 +1,19 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L35_final_actual_returns_r1/full/launch_receipt.json",
+  "original_sha256": "390f9c65c05f651b032b73eae2ed5e0be4142bd82fd7c1ad0fe0f4015073c64e",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.full.launch_result.v1",
+    "arm": "L35",
+    "selected_route": "L35_GRAPH",
+    "return_code": 0,
+    "source_manifest_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+    "config_sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a",
+    "fresh_confirmation_receipt_sha256": "15fd22f3c36b65dc90250692538ca0e2c3fe8a581f36be660fad05e72a061546",
+    "full_budget_sha256": "90ad899b9110e96eb015b79bcdddf505560184215a67b540abfd0cd2aa07832e",
+    "synthetic_smoke": false,
+    "resumed": false,
+    "test_access": false
+  }
+}

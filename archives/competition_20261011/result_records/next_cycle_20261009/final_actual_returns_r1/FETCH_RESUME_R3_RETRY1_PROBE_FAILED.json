@@ -1,0 +1,15 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R3_RETRY1_PROBE_FAILED.json",
+  "original_sha256": "6176d07660d7b9f6f173d0ec23eb4ce35e24fd611b791ee43bd6c6c927af5838",
+  "omitted_fields": [],
+  "record": {
+    "error_type": "TimeoutError",
+    "error": "",
+    "at": 1791560027.325065,
+    "done": 7,
+    "new_bytes_received": 0,
+    "partials_preserved": true,
+    "prefetch": false
+  }
+}

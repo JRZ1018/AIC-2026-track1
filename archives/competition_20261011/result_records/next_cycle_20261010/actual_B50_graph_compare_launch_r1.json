@@ -1,0 +1,25 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B50_graph_compare_launch_r1.json",
+  "original_sha256": "74089a9a29da38b688cfbe1b5fc782ebee96896e4aa8404989e49dd89ce559c0",
+  "omitted_fields": [
+    "/receipt/command"
+  ],
+  "record": {
+    "receipt": {
+      "mode": "existing_frozen_B50_graph_compare_CLI",
+      "process": {
+        "pid": 31366,
+        "pgrp": 31366,
+        "session": 31366,
+        "start_ticks": "315924807",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010"
+      },
+      "launch_unix": 1791585595.4066596,
+      "test_access": false,
+      "new_waiter_or_framework_created": false
+    },
+    "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/root_actual_B50_compare_launch.json",
+    "sha256": "0fb58e42b70dd8f45c57d3b5c2a313019a30ff12b44f56a65599ee4f02a59557"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_actual_CG25_append_status_r1.json",
+  "original_sha256": "1f20a4e3ff733d6062a17395141704a9e2f36420daf9c93ad03f78d5db69c219",
+  "omitted_fields": [
+    "/stdout"
+  ],
+  "record": {
+    "observed_unix": 1791610946.4679203,
+    "owners": {
+      "5486": null,
+      "5498": null
+    },
+    "logs": {
+      "artifacts/1be994eb7398405c802bbce890855888/queue/chain.log": "[2026-10-10 13:35:16] 20261010-CG-explicit-append-only start\n[2026-10-10 13:35:16] CG25: starting - explicit append-only unchanged B student fixed20\n[2026-10-10 13:42:22] CG25: finished in 7.1 min; output validated\n[2026-10-10 13:42:22] 20261010-CG-explicit-append-only finished\n",
+      "artifacts/1be994eb7398405c802bbce890855888/queue/CG25.log": "12b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"peak_vram_mib\": 4010.33935546875,\n  \"peft\": {\n    \"lora_blocks\": 8,\n    \"mode\": \"full_visual\"\n  },\n  \"position_interpolation\": \"bicubic_7x7_to_10x10\",\n  \"run_id\": \"20261010-center-guard-joint-CG25-fixed20\",\n  \"runtime\": {\n    \"defer_epoch_metrics\": true,\n    \"reuse_validation_loader\": true\n  },\n  \"sampling\": {\n    \"mode\": \"natural\"\n  },\n  \"scope\": \"stage2 train/validation PEFT short screening; test data not accessed\",\n  \"selected_checkpoint\": \"final.pt\",\n  \"selected_checkpoint_sha256\": \"bab3d3f250ae836a2bf8e38af3a412d51f9de3c24a6e94acc57c27bdc2e2f9cf\",\n  \"selection_rule\": \"fixed final epoch 20; no validation selection\",\n  \"split_sha256\": \"57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7\",\n  \"token_readout\": {\n    \"initialization_seed\": 20261005,\n    \"mode\": \"none\"\n  },\n  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}\n"
+    },
+    "results": {
+      "artifacts/1be994eb7398405c802bbce890855888/RESULT.json": {
+        "return_code": 0,
+        "append_budget_sha256": "5425b5852aa5e61c6b845b5ea43a69f2cdc47cf3d2581213d2bbc30346dd9f97",
+        "original_source_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+        "test_access": false
+      }
+    },
+    "exits": {
+      "artifacts/1be994eb7398405c802bbce890855888/CG25/EXIT.json": {
+        "owner": {
+          "pid": 5498,
+          "pgrp": 5498,
+          "session": 5498,
+          "start_ticks": "924031924"
+        },
+        "return_code": 0,
+        "group_closed": true
+      }
+    },
+    "exports": {
+      "last.pt": {
+        "bytes": 1418769191,
+        "mtime": 1791610936.6888123
+      },
+      "final.pt": {
+        "bytes": 352988587,
+        "mtime": 1791610937.4048617
+      },
+      "metrics.json": {
+        "bytes": 8157868,
+        "mtime": 1791610940.1210492
+      },
+      "config.yaml": {
+        "bytes": 1696,
+        "mtime": 1791599402.2554107
+      },
+      "command.txt": {
+        "bytes": 248,
+        "mtime": 1791610940.1250494
+      }
+    },
+    "canonical": null
+  }
+}

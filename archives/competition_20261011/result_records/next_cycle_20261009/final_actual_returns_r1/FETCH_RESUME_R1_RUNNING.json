@@ -1,0 +1,11 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R1_RUNNING.json",
+  "original_sha256": "3a1075779c7d87b31d8a0a4ddd769beb0be57781af59546d6d97cd7ca862701b",
+  "omitted_fields": [],
+  "record": {
+    "pid": 31304,
+    "start": 1791557002.2441063,
+    "manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_joint_diagnostic_r1_preflight.json",
+  "original_sha256": "e9fcda2ccfa30b63c0883a0778002bffc4640fc04f6abb224215094b5f8a7474",
+  "omitted_fields": [
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "actual_server_CPU_dependency_check": true,
+    "source_sha256": "ad9902c28f7d32026db335843c7ab365793d6a369c218c8b7c9b852f6b6f705a",
+    "training_source_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+    "GPU_started": false,
+    "observed_unix": 1791558072.797549
+  }
+}

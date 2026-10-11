@@ -1,0 +1,36 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_new_instance_CG25_resume_progress_r1.json",
+  "original_sha256": "909f83852cb4c757f1c1b1fa00779a07edf998f35f0cae76fe9694b2538aadd2",
+  "omitted_fields": [
+    "/canonical/command"
+  ],
+  "record": {
+    "observed_unix": 1791604598.5111248,
+    "canonical": {
+      "config": "configs/experiment/p1_CG25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_CG25",
+      "owner": "20261010-center-guard-joint-CG25",
+      "queue_pid": 2070,
+      "schema_version": 1,
+      "started_at": "2026-10-10T11:52:02.491998+08:00",
+      "token": "1a6f0a4e2968405d8c161cf5c2bc6941",
+      "trainer_pid": 2077
+    },
+    "trainer_cpu_seconds": 240.61,
+    "epochs_from_new_resume_stdout": [],
+    "new_queue_log_bytes": 2681,
+    "bounded_last_logs": [
+      "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images",
+      "  warnings.warn(",
+      "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images",
+      "  warnings.warn(",
+      "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images",
+      "  warnings.warn(",
+      "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images",
+      "  warnings.warn("
+    ],
+    "GPU": "5038 MiB, 74 %",
+    "checkpoint_read": false
+  }
+}

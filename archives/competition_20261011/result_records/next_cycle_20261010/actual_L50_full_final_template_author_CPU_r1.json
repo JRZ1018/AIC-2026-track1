@@ -1,0 +1,44 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_full_final_template_author_CPU_r1.json",
+  "original_sha256": "4cd5359ebe93962bbc5ff43a4a51ece88796f6e1ef3248f370d6cfd3339fabb9",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.L50.full_final_template.author_CPU.v1",
+    "complete": true,
+    "scope": "UNBOUND engineering templates only",
+    "checks": [
+      {
+        "root": "artifacts\\next_cycle_20261010\\L50_full_training_template_r1_20261011",
+        "compile_PASS": 80
+      },
+      {
+        "root": "artifacts\\next_cycle_20261010\\L50_final_inference_template_r1_20261011",
+        "compile_PASS": 76
+      },
+      {
+        "all_scientific_src_original_bytes_PASS": true
+      },
+      {
+        "full_original_trainer_smoke_owned_lifecycle_original_bytes_PASS": true
+      },
+      {
+        "final_fixed_math_and_fourview_original_bytes_PASS": true
+      },
+      {
+        "old_L35_B_empty_typed_gates_rejected_PASS": true
+      },
+      {
+        "full_expected_config_only_scientific_delta_visualLR3_5_to5e_6_PASS": true
+      }
+    ],
+    "full_template_sha256": "5cb02f122910bd282887d90494c9ea571c296e913aca8abe5d38ececbfb37b5f",
+    "final_template_sha256": "8912abbb1a5bf832c5bcf552bd73df31c3149a0714830b22d258a89576b0982f",
+    "new_admission_verifier_future_actual_validation_pending": true,
+    "future_full_budget": null,
+    "future_full_last_sha256": null,
+    "GPU_started": false,
+    "server_deployed": false,
+    "test_images_read": false
+  }
+}
