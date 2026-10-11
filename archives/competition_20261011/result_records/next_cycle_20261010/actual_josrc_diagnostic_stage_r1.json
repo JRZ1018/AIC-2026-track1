@@ -1,0 +1,44 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_josrc_diagnostic_stage_r1.json",
+  "original_sha256": "ed0bf337dd286602a42f3074b8a8031957a20f0bc17e66aa557863bae73efe8b",
+  "omitted_fields": [
+    "/canonical_after/command",
+    "/canonical_before/command"
+  ],
+  "record": {
+    "CPU_preparation_permitted_while_training_active": true,
+    "GPU_started": false,
+    "action": "CPU_stage",
+    "all_SHA_AST_PASS": true,
+    "candidate_checkpoint_opened": false,
+    "canonical_after": {
+      "config": "configs/experiment/p1_B25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_B25",
+      "owner": "20261010-josrc-inspired-profile-or-selected20",
+      "queue_pid": 19633,
+      "schema_version": 1,
+      "started_at": "2026-10-10T00:09:17.182364+08:00",
+      "token": "83a0353ce2c442db94a9bbf656fdd8b7",
+      "trainer_pid": 19640
+    },
+    "canonical_before": {
+      "config": "configs/experiment/p1_B25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_B25",
+      "owner": "20261010-josrc-inspired-profile-or-selected20",
+      "queue_pid": 19633,
+      "schema_version": 1,
+      "started_at": "2026-10-10T00:09:17.182364+08:00",
+      "token": "83a0353ce2c442db94a9bbf656fdd8b7",
+      "trainer_pid": 19640
+    },
+    "complete": true,
+    "observed_unix": 1791563693.1925535,
+    "registered_files": 36,
+    "reused_exact_ad990_files": 21,
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_template_20261010",
+    "template_source_sha256": "35c191ef449d141e4a0df9cdac9a99dadcc78378bba29514545419ea4e0af589",
+    "test_access": false,
+    "uploaded_changed_files": 16
+  }
+}

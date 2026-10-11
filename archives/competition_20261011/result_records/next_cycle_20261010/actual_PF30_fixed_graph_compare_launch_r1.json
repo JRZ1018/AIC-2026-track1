@@ -1,0 +1,34 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_fixed_graph_compare_launch_r1.json",
+  "original_sha256": "ec46493b1fcef671336c39cf44316520912f8367ddc3d7c2b9f4a28721589d53",
+  "omitted_fields": [
+    "/command",
+    "/owner/argv"
+  ],
+  "record": {
+    "schema": "aictrack1.next_cycle10.PF30.actual_fixed_graph_comparison_launch.v1",
+    "actual": true,
+    "launch_unix": 1791595285.8276248,
+    "owner": {
+      "pid": 36415,
+      "pgrp": 36415,
+      "session": 36415,
+      "start_ticks": "316893849",
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010"
+    },
+    "diagnostic_source_manifest_sha256": "56a002e541ef281b17dc478cd129e8ff03b8a132f2743ba872dd89c0ce88d5f5",
+    "fourview_result": {
+      "result_manifest_sha256": "a23a946b920d0c1519e379a9af3ed30dd37764c4de696262fa9ebe0ab5a54045",
+      "identity_sha256": "574b11a1f99fd0a5cf741570ab3b2add24b24eec2b19ee3c2823ee903433bdc1",
+      "files_verified": 9
+    },
+    "fourview_groups_closed": true,
+    "canonical_idle": true,
+    "test_access": false,
+    "model_updates": 0,
+    "additional_model_forwards": 0,
+    "stdout_path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/root_actual_PF30_fixed_graph_compare_stdout_r1.log",
+    "remote_receipt_path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/root_actual_PF30_fixed_graph_compare_launch_r1.json"
+  }
+}

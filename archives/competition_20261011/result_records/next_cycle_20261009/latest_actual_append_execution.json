@@ -1,0 +1,82 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_actual_append_execution.json",
+  "original_sha256": "e7df45a04fb1429b6e0372278c50a552bd04cc17b65f4940322d389f43449f96",
+  "omitted_fields": [
+    "/files/attempt/LAUNCH.json/contents/command"
+  ],
+  "record": {
+    "observed_unix": 1791527153.3935647,
+    "files": {
+      "attempt/LAUNCH.json": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/LAUNCH.json",
+        "sha256": "b81d59264b03fad5b26ab1028db5d1006837c5aa8b8de6fe945b299bb8a83e92",
+        "contents": {
+          "GO_policy": "stdin G only after exact identity, lease attach and launch receipt",
+          "attempt_id": "c36dbb779c5d49ffb7f12df7a6b9e535",
+          "cpu_checkpoint_audit": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/CPU_CHECKPOINT_AUDIT.json",
+            "sha256": "28ff4b1e9a5bf4047a9ec115efc1ca249b28e9f47a2b03b9b5106fa9c51bb80f"
+          },
+          "deadline_unix": 1791533972.440027,
+          "gate_command": [
+            "/root/autodl-tmp/venvs/aictrack1/bin/python",
+            "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/launch_gate.py",
+            "--",
+            "/root/autodl-tmp/venvs/aictrack1/bin/python",
+            "scripts/train_n1_peft.py",
+            "--config",
+            "configs/experiment/p1_J5.yaml",
+            "--resume",
+            "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt"
+          ],
+          "launch_at_unix": 1791526777.600741,
+          "new_fresh_training": false,
+          "operator_source_manifest_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+          "original_budget_sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941",
+          "owner": {
+            "pgrp": 244056,
+            "pid": 244056,
+            "session": 244056,
+            "start_ticks": "310043026"
+          },
+          "phase_start_unix": 1791526772.440027,
+          "resume_checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+          "schema": "aictrack1.fresh_route.continuation.training.launch.v1",
+          "shared_budget_sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed",
+          "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+          "test_access": false
+        }
+      },
+      "attempt/FAILURE.json": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/FAILURE.json",
+        "sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32",
+        "contents": {
+          "canonical_lock_manually_modified": false,
+          "cleanup_error": null,
+          "complete": false,
+          "error": "ValueError: original exact resume queue failed ValueError: original cumulative8GiB/min3GiB exceeded",
+          "failed_at_unix": 1791527129.7950768,
+          "launch_error": "ValueError: original cumulative8GiB/min3GiB exceeded",
+          "new_fresh_training": false,
+          "operator_source_manifest_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+          "original_budget_sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941",
+          "owner": {
+            "pgrp": 244056,
+            "pid": 244056,
+            "session": 244056,
+            "start_ticks": "310043026"
+          },
+          "schema": "aictrack1.fresh_route.continuation.training.failure.v1",
+          "shared_budget_sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed",
+          "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+          "stopped_prior_training": false,
+          "test_access": false
+        }
+      }
+    },
+    "controller": null,
+    "root_controller_stdout.log": "[2026-10-09 14:19:37] fresh-route-exact-continuation-c36dbb779c5d49ffb7f12df7a6b9e535 start\n[2026-10-09 14:19:37] C: already complete, skipping (strictly audited completed C20 skip)\n[2026-10-09 14:19:37] J5: starting - root approved exact partial J5 resume to original20 cosine\n[2026-10-09 14:25:29] J5: STOPPED after 5.9 min with return code 1; output status=partial: output directory exists without metrics.json; halting queue. Log: /root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/canonical_queue/J5.log\n{\"complete\": false, \"error\": \"original exact resume queue failed ValueError: original cumulative8GiB/min3GiB exceeded\", \"cleanup_error\": null}\n",
+    "canonical_lock": null
+  }
+}

@@ -1,0 +1,644 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_new_weste_CG25_status_r1.json",
+  "original_sha256": "da4c3951719f2c37f6c3a3ed4030e98509043fd0d31ced6d42604178df14942b",
+  "omitted_fields": [
+    "/canonical/command",
+    "/receipts/artifacts/launches/CG25_769f12fe4ea54b56819a7bef41e4c0d1/START.json/value/command",
+    "/receipts/artifacts/launches/CG25_944e1fddba0340c7897138f2f764401b/START.json/value/command",
+    "/receipts/artifacts/launches/CG25_e548e51fd9b34cc7990cbf42e85584e2/START.json/value/command",
+    "/receipts/root_actual_CG25_fixed20_launch_r1.json/value/command",
+    "/receipts/root_actual_CG25_fixed20_launch_r1.json/value/owner/argv",
+    "/receipts/root_actual_CG25_smoke_launch_r1.json/value/command",
+    "/receipts/root_actual_CG25_smoke_launch_r1.json/value/owner/argv",
+    "/receipts/root_actual_new_instance_exactlast_resume_launch_r1.json/value/command",
+    "/receipts/root_actual_new_instance_old_lease_before_clear_r1.json/value/command"
+  ],
+  "record": {
+    "observed_unix": 1791610371.3116603,
+    "execution_root": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010",
+    "bound_source_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+    "processes": [],
+    "canonical": {
+      "config": "configs/experiment/p1_CG25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_CG25",
+      "owner": "20261010-center-guard-joint-CG25",
+      "queue_pid": 2070,
+      "schema_version": 1,
+      "started_at": "2026-10-10T11:52:02.491998+08:00",
+      "token": "1a6f0a4e2968405d8c161cf5c2bc6941",
+      "trainer_pid": 2077
+    },
+    "logs": {
+      "root_actual_CG25_fixed20_stdout_r1.log": "[2026-10-10 10:34:34] 20261010-center-guard-joint-CG25 start\n[2026-10-10 10:34:34] CG25: starting - J5 center-guard .25 only exploration fixedlast20",
+      "root_actual_CG25_smoke_stdout_r1.log": "[2026-10-10 10:33:17] 20261010-center-guard-joint-CG25 start\n[2026-10-10 10:33:17] CG25: starting - J5 center-guard .25 only exploration fixedlast20\n[2026-10-10 10:33:33] CG25: finished in 0.3 min; output validated\n[2026-10-10 10:33:33] 20261010-center-guard-joint-CG25 finished",
+      "root_actual_new_instance_resume_stdout_r1.log": "[2026-10-10 11:52:02] 20261010-center-guard-joint-CG25 start\n[2026-10-10 11:52:02] CG25: starting - J5 center-guard .25 only exploration fixedlast20\n[2026-10-10 13:30:04] CG25: STOPPED after 98.0 min; launch_error=TimeoutExpired(('/root/autodl-tmp/venvs/aictrack1/bin/python', '/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/scripts/launch_gate.py', '--', '/root/autodl-tmp/venvs/aictrack1/bin/python', 'scripts/train_n1_peft.py', '--config', 'configs/experiment/p1_CG25.yaml', '--resume', '/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/experiments/JOINT_CG25/last.pt'), 5879.63369178772), release_error=TrainingLockHeld('trainer was started but its exit was not confirmed; lock retained'); manual inspection required",
+      "artifacts/queues/b1d486e23a9b4056a4a34cf541a86c93/CG25.log": "{\"schema\": \"aictrack1.fresh_route.cuda_smoke.v1\", \"status\": \"passed\", \"synthetic_only\": true, \"candidate\": false, \"config_sha256\": \"8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811\", \"full_visual_tensors\": 152, \"trainable_tensors\": 154, \"trainable_parameters\": 88233966, \"head_gradient_norms\": {\"linear.weight\": 0.10411300510168076, \"linear.bias\": 0.10410420596599579}, \"head_frozen\": false, \"base_loss\": {\"kind\": \"sce\", \"alpha\": 0.1, \"beta\": 1.0, \"log_zero\": -4.0}, \"first_loss\": 4.786383628845215, \"uninterrupted_second_loss\": 4.676631927490234, \"resumed_second_loss\": 4.676631927490234, \"max_parameter_difference\": 1.1641532182693481e-10, \"scheduler_T_max\": 20, \"amp_overflow_skips\": [{\"from_scale\": 65536.0, \"to_scale\": 32768.0}, {\"from_scale\": 32768.0, \"to_scale\": 16384.0}], \"successful_update_count\": 3, \"successful_updates\": [{\"loss\": 4.786383628845215, \"scale\": 16384.0, \"scheduler_epoch\": 1}, {\"loss\": 4.676631927490234, \"scale\": 16384.0, \"scheduler_epoch\": 2}, {\"loss\": 4.676631927490234, \"scale\":",
+      "artifacts/queues/b1d486e23a9b4056a4a34cf541a86c93/chain.log": "[2026-10-10 10:33:17] 20261010-center-guard-joint-CG25 start\n[2026-10-10 10:33:17] CG25: starting - J5 center-guard .25 only exploration fixedlast20\n[2026-10-10 10:33:33] CG25: finished in 0.3 min; output validated\n[2026-10-10 10:33:33] 20261010-center-guard-joint-CG25 finished",
+      "artifacts/queues/fef12bc0ab874f74b9f9ddb9f6d8505a/CG25.log": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(",
+      "artifacts/queues/fef12bc0ab874f74b9f9ddb9f6d8505a/chain.log": "[2026-10-10 10:34:34] 20261010-center-guard-joint-CG25 start\n[2026-10-10 10:34:34] CG25: starting - J5 center-guard .25 only exploration fixedlast20",
+      "artifacts/queues/f5213e05e5b1443584b2c66614080fbc/chain.log": "[2026-10-10 11:52:02] 20261010-center-guard-joint-CG25 start\n[2026-10-10 11:52:02] CG25: starting - J5 center-guard .25 only exploration fixedlast20\n[2026-10-10 13:30:04] CG25: STOPPED after 98.0 min; launch_error=TimeoutExpired(('/root/autodl-tmp/venvs/aictrack1/bin/python', '/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/scripts/launch_gate.py', '--', '/root/autodl-tmp/venvs/aictrack1/bin/python', 'scripts/train_n1_peft.py', '--config', 'configs/experiment/p1_CG25.yaml', '--resume', '/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/experiments/JOINT_CG25/last.pt'), 5879.63369178772), release_error=TrainingLockHeld('trainer was started but its exit was not confirmed; lock retained'); manual inspection required",
+      "artifacts/queues/f5213e05e5b1443584b2c66614080fbc/CG25.log": "                    ^^^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/torch/utils/data/dataloader.py\", line 1310, in _try_get_data\n    data = self._data_queue.get(timeout=timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/lib/python3.12/queue.py\", line 180, in get\n    self.not_empty.wait(remaining)\n  File \"/root/miniconda3/lib/python3.12/threading.py\", line 359, in wait\n    gotit = waiter.acquire(True, timeout)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyboardInterrupt"
+    },
+    "epoch_summaries": {
+      "root_actual_CG25_fixed20_stdout_r1.log": {
+        "read_full_log": true,
+        "total_bytes": 149,
+        "incomplete_or_nonjson_lines": 2,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "root_actual_CG25_smoke_stdout_r1.log": {
+        "read_full_log": true,
+        "total_bytes": 279,
+        "incomplete_or_nonjson_lines": 4,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "root_actual_new_instance_resume_stdout_r1.log": {
+        "read_full_log": true,
+        "total_bytes": 767,
+        "incomplete_or_nonjson_lines": 3,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/b1d486e23a9b4056a4a34cf541a86c93/CG25.log": {
+        "read_full_log": true,
+        "total_bytes": 1191,
+        "incomplete_or_nonjson_lines": 0,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/b1d486e23a9b4056a4a34cf541a86c93/chain.log": {
+        "read_full_log": true,
+        "total_bytes": 279,
+        "incomplete_or_nonjson_lines": 4,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/fef12bc0ab874f74b9f9ddb9f6d8505a/CG25.log": {
+        "read_full_log": true,
+        "total_bytes": 17254,
+        "incomplete_or_nonjson_lines": 162,
+        "observed_epochs": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "latest": [
+          {
+            "epoch": 1,
+            "train_loss": 1.3813823252872743,
+            "train_seconds": null,
+            "train_samples_per_second": null,
+            "learning_rates": null,
+            "sampling": null,
+            "top1": 0.6871237754821777,
+            "sampling_zero_class_count": 0,
+            "history_details_present": false,
+            "event_scope": "stdout_progress_only_not_checkpoint_recovery",
+            "EMA_successful_updates": null,
+            "EMA_skipped_updates": null,
+            "soft_active": null,
+            "additional_no_grad_forwards_per_batch": null,
+            "hard_seen_total": null,
+            "hard_unseen_classes": null,
+            "hard_branch_dropped_samples": null,
+            "active_teacher_observations": null,
+            "teacher_transitions_total": null,
+            "soft_mass_total": null,
+            "gradient_amp_successful_updates": null,
+            "gradient_amp_skipped_updates": null,
+            "preclip_norm_mean": null,
+            "clip_quantiles": null,
+            "persistent_filter_summary": {},
+            "persistent_filter_actual_summary": {}
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.49910019062174243,
+            "train_seconds": null,
+            "train_samples_per_second": null,
+            "learning_rates": null,
+            "sampling": null,
+            "top1": 0.6988936066627502,
+            "sampling_zero_class_count": 0,
+            "history_details_present": false,
+            "event_scope": "stdout_progress_only_not_checkpoint_recovery",
+            "EMA_successful_updates": null,
+            "EMA_skipped_updates": null,
+            "soft_active": null,
+            "additional_no_grad_forwards_per_batch": null,
+            "hard_seen_total": null,
+            "hard_unseen_classes": null,
+            "hard_branch_dropped_samples": null,
+            "active_teacher_observations": null,
+            "teacher_transitions_total": null,
+            "soft_mass_total": null,
+            "gradient_amp_successful_updates": null,
+            "gradient_amp_skipped_updates": null,
+            "preclip_norm_mean": null,
+            "clip_quantiles": null,
+            "persistent_filter_summary": {},
+            "persistent_filter_actual_summary": {}
+          },
+          {
+            "epoch": 3,
+            "train_loss": 0.4152007036027704,
+            "train_seconds": null,
+            "train_samples_per_second": null,
+            "learning_rates": null,
+            "sampling": null,
+            "top1": 0.7052157521247864,
+            "sampling_zero_class_count": 0,
+            "history_details_present": false,
+            "event_scope": "stdout_progress_only_not_checkpoint_recovery",
+            "EMA_successful_updates": null,
+            "EMA_skipped_updates": null,
+            "soft_active": null,
+            "additional_no_grad_forwards_per_batch": null,
+            "hard_seen_total": null,
+            "hard_unseen_classes": null,
+            "hard_branch_dropped_samples": null,
+            "active_teacher_observations": null,
+            "teacher_transitions_total": null,
+            "soft_mass_total": null,
+            "gradient_amp_successful_updates": null,
+            "gradient_amp_skipped_updates": null,
+            "preclip_norm_mean": null,
+            "clip_quantiles": null,
+            "persistent_filter_summary": {},
+            "persistent_filter_actual_summary": {}
+          },
+          {
+            "epoch": 4,
+            "train_loss": 0.3592237676087263,
+            "train_seconds": null,
+            "train_samples_per_second": null,
+            "learning_rates": null,
+            "sampling": null,
+            "top1": 0.7104617357254028,
+            "sampling_zero_class_count": 0,
+            "history_details_present": false,
+            "event_scope": "stdout_progress_only_not_checkpoint_recovery",
+            "EMA_successful_updates": null,
+            "EMA_skipped_updates": null,
+            "soft_active": null,
+            "additional_no_grad_forwards_per_batch": null,
+            "hard_seen_total": null,
+            "hard_unseen_classes": null,
+            "hard_branch_dropped_samples": null,
+            "active_teacher_observations": null,
+            "teacher_transitions_total": null,
+            "soft_mass_total": null,
+            "gradient_amp_successful_updates": null,
+            "gradient_amp_skipped_updates": null,
+            "preclip_norm_mean": null,
+            "clip_quantiles": null,
+            "persistent_filter_summary": {},
+            "persistent_filter_actual_summary": {}
+          }
+        ]
+      },
+      "artifacts/queues/fef12bc0ab874f74b9f9ddb9f6d8505a/chain.log": {
+        "read_full_log": true,
+        "total_bytes": 149,
+        "incomplete_or_nonjson_lines": 2,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/f5213e05e5b1443584b2c66614080fbc/chain.log": {
+        "read_full_log": true,
+        "total_bytes": 767,
+        "incomplete_or_nonjson_lines": 3,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/f5213e05e5b1443584b2c66614080fbc/CG25.log": {
+        "read_full_log": true,
+        "total_bytes": 57949,
+        "incomplete_or_nonjson_lines": 546,
+        "observed_epochs": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "latest": [
+          {
+            "epoch": 16,
+            "train_loss": 0.13522038781240464,
+            "train_seconds": null,
+            "train_samples_per_second": null,
+            "learning_rates": null,
+            "sampling": null,
+            "top1": 0.7329589128494263,
+            "sampling_zero_class_count": 0,
+            "history_details_present": false,
+            "event_scope": "stdout_progress_only_not_checkpoint_recovery",
+            "EMA_successful_updates": null,
+            "EMA_skipped_updates": null,
+            "soft_active": null,
+            "additional_no_grad_forwards_per_batch": null,
+            "hard_seen_total": null,
+            "hard_unseen_classes": null,
+            "hard_branch_dropped_samples": null,
+            "active_teacher_observations": null,
+            "teacher_transitions_total": null,
+            "soft_mass_total": null,
+            "gradient_amp_successful_updates": null,
+            "gradient_amp_skipped_updates": null,
+            "preclip_norm_mean": null,
+            "clip_quantiles": null,
+            "persistent_filter_summary": {},
+            "persistent_filter_actual_summary": {}
+          },
+          {
+            "epoch": 17,
+            "train_loss": 0.1308463631932578,
+            "train_seconds": null,
+            "train_samples_per_second": null,
+            "learning_rates": null,
+            "sampling": null,
+            "top1": 0.7322527766227722,
+            "sampling_zero_class_count": 0,
+            "history_details_present": false,
+            "event_scope": "stdout_progress_only_not_checkpoint_recovery",
+            "EMA_successful_updates": null,
+            "EMA_skipped_updates": null,
+            "soft_active": null,
+            "additional_no_grad_forwards_per_batch": null,
+            "hard_seen_total": null,
+            "hard_unseen_classes": null,
+            "hard_branch_dropped_samples": null,
+            "active_teacher_observations": null,
+            "teacher_transitions_total": null,
+            "soft_mass_total": null,
+            "gradient_amp_successful_updates": null,
+            "gradient_amp_skipped_updates": null,
+            "preclip_norm_mean": null,
+            "clip_quantiles": null,
+            "persistent_filter_summary": {},
+            "persistent_filter_actual_summary": {}
+          },
+          {
+            "epoch": 18,
+            "train_loss": 0.12713472719176291,
+            "train_seconds": null,
+            "train_samples_per_second": null,
+            "learning_rates": null,
+            "sampling": null,
+            "top1": 0.7327908277511597,
+            "sampling_zero_class_count": 0,
+            "history_details_present": false,
+            "event_scope": "stdout_progress_only_not_checkpoint_recovery",
+            "EMA_successful_updates": null,
+            "EMA_skipped_updates": null,
+            "soft_active": null,
+            "additional_no_grad_forwards_per_batch": null,
+            "hard_seen_total": null,
+            "hard_unseen_classes": null,
+            "hard_branch_dropped_samples": null,
+            "active_teacher_observations": null,
+            "teacher_transitions_total": null,
+            "soft_mass_total": null,
+            "gradient_amp_successful_updates": null,
+            "gradient_amp_skipped_updates": null,
+            "preclip_norm_mean": null,
+            "clip_quantiles": null,
+            "persistent_filter_summary": {},
+            "persistent_filter_actual_summary": {}
+          },
+          {
+            "epoch": 19,
+            "train_loss": 0.1266115964885522,
+            "train_seconds": null,
+            "train_samples_per_second": null,
+            "learning_rates": null,
+            "sampling": null,
+            "top1": 0.7324208617210388,
+            "sampling_zero_class_count": 0,
+            "history_details_present": false,
+            "event_scope": "stdout_progress_only_not_checkpoint_recovery",
+            "EMA_successful_updates": null,
+            "EMA_skipped_updates": null,
+            "soft_active": null,
+            "additional_no_grad_forwards_per_batch": null,
+            "hard_seen_total": null,
+            "hard_unseen_classes": null,
+            "hard_branch_dropped_samples": null,
+            "active_teacher_observations": null,
+            "teacher_transitions_total": null,
+            "soft_mass_total": null,
+            "gradient_amp_successful_updates": null,
+            "gradient_amp_skipped_updates": null,
+            "preclip_norm_mean": null,
+            "clip_quantiles": null,
+            "persistent_filter_summary": {},
+            "persistent_filter_actual_summary": {}
+          }
+        ]
+      }
+    },
+    "checkpoint_stats": {
+      "artifacts/experiments/JOINT_CG25/last.pt": {
+        "bytes": 1418671463,
+        "mtime": 1791609973.506079
+      }
+    },
+    "receipts": {
+      "root_actual_CG25_first_stable_CPU_audit_r1.json": {
+        "sha256": "18470a177b9b07416ef907bbaf34e61bb622f82c2df4e39d4dfeac2be97f2264",
+        "value": {
+          "schema": "aictrack1.CG25.actual_first_stable_CPU_audit.v1",
+          "complete": true,
+          "scope": "stable atomic mmap CPU tensors/head/AdamW/Cos20/all train AC ID-label and exact augmentation identity; no full CLIP model forward or nextstep",
+          "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+          "checkpoint_sha256": "d7447f703322bc924125448dd01011ceba099a34c3c779a5731f478ff1879f92",
+          "checkpoint_epoch": 2,
+          "first_epoch_exact": false,
+          "bytes": 1417063399,
+          "mtime": 1791600443.0176492,
+          "trainable_tensors": 154,
+          "trainable_numel": 88233966,
+          "head_update_max_abs": {
+            "linear.weight": 0.004481315612792969,
+            "linear.bias": 0.002772033214569092
+          },
+          "optimizer_groups": [
+            152,
+            2
+          ],
+          "optimizer_steps": 3714.0,
+          "scheduler_Tmax": 20,
+          "scheduler_last_epoch": 2,
+          "AC_epochs_updated": 2,
+          "AC_train_binding_count": 118958,
+          "class_support_min": 4,
+          "sampling": {
+            "mode": "natural",
+            "sample_count": 118958,
+            "class_count_min": 4,
+            "class_count_median": 157.0,
+            "class_count_max": 198,
+            "zero_sample_class_count": 0
+          },
+          "augmentation": {
+            "schema": "aictrack1.center_guard.augmentation.v1",
+            "center_guard_fraction": 0.25,
+            "image_size": 336,
+            "resize_size": 336,
+            "train_crop_scale_min": 0.8,
+            "train_horizontal_flip_probability": 0.5,
+            "stochastic_seed_protocol": "SeedSequence[training_seed,epoch,original_sample_index]",
+            "random_draws": "original uniform scale, original left integer, original top integer, original flip; no extra RNG",
+            "dataset_config_sha256": "c6f99eb275a074aba0026bea7d577528b35571ed838be0a8ced9e25977161ac0",
+            "transform_source_sha256": "877d60117c376a6a1030b869b3dea3c38ac066915daefac581ce11c8bbef9174",
+            "confidence_observation": "same candidate strong logits; AC trajectory may differ",
+            "validation_transform": "unchanged shorter-side resize and center crop"
+          },
+          "train_seconds": 262.9019646900706,
+          "train_samples_per_second": 452.48045270501115,
+          "validation_top1": 0.6988936066627502,
+          "optimizer_updates_by_auditor": 0,
+          "GPU": false,
+          "test_image_reads": 0,
+          "observed_unix": 1791600536.7119398
+        }
+      },
+      "root_actual_CG25_fixed20_launch_r1.json": {
+        "sha256": "2bbb3a57950d7e65f9cca2d14aef5bcbfe35bca490e6e24655f21740a31540a8",
+        "value": {
+          "schema": "aictrack1.CG25.actual_fixed20_launch.v1",
+          "owner": {
+            "pid": 38683,
+            "pgrp": 38683,
+            "session": 38683,
+            "start_ticks": "317332444",
+            "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010"
+          },
+          "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+          "template_source_sha256": "7175b378a3ff67c907bea49de75cab3429f4f8aa63b072ba562f3bfe527c65d5",
+          "budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+          "launch_unix": 1791599672.0817852,
+          "smoke_receipt_sha256": "791869b8916422c2766ccc0677ac286183d95b68bb3f3ae86bd7d8cc20167414",
+          "smoke_all_owned_groups_closed": true,
+          "canonical_idle_before_launch": true,
+          "initialization": "fresh officialCLIP plus legal e88a oldfold H1100",
+          "smoke_initialized_candidate": false,
+          "training_rows": 118958,
+          "query_rows": 29737,
+          "epochs": 20,
+          "fixed_last": true,
+          "planned_pause": false,
+          "center_guard_fraction": 0.25,
+          "test_access": false,
+          "log_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/root_actual_CG25_fixed20_stdout_r1.log"
+        }
+      },
+      "root_actual_CG25_smoke_launch_r1.json": {
+        "sha256": "37adfa82249d34d8ec16f0ff8785b0a2f52c9098759857270b9dcc5c59098e37",
+        "value": {
+          "schema": "aictrack1.CG25.actual_CUDA_smoke_launch.v1",
+          "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+          "budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+          "owner": {
+            "pid": 38622,
+            "pgrp": 38622,
+            "session": 38622,
+            "start_ticks": "317324690",
+            "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010"
+          },
+          "launch_unix": 1791599594.4886649,
+          "log_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/root_actual_CG25_smoke_stdout_r1.log",
+          "candidate_training_started": false,
+          "smoke_used_for_candidate_initialization": false,
+          "test_access": false
+        }
+      },
+      "root_actual_new_instance_partial_CPU_recovery_r1.json": {
+        "sha256": "9478c75edc2e19f5041d5cfe805d80ea4b6c9020af2b7666a3f6707478e07d6a",
+        "value": {
+          "complete": true,
+          "epoch": 4,
+          "last_sha256": "5746377e902ff67ded3d3cf91748378044b64b8095ed4c719740c06a53af54aa",
+          "source_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+          "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+          "budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+          "CPU_model_tensors": 154,
+          "CPU_exact_model_restore": true,
+          "optimizer_groups": [
+            152,
+            2
+          ],
+          "scheduler_epoch": 4,
+          "AC_exact_ID_label_count": 118958,
+          "RNG_restore_CPU": true,
+          "cuda_rng_structural_only": true,
+          "GPU": false,
+          "test_image_reads": 0,
+          "observed_unix": 1791604273.354101
+        }
+      },
+      "root_actual_new_instance_old_lease_before_clear_r1.json": {
+        "sha256": "83f573a2c40be9c0f0156e7fc33069109cbd1ba8c2436c69e5490884432f94b5",
+        "value": {
+          "schema_version": 1,
+          "token": "b35b41d3b96b429dac66c51fca67174f",
+          "owner": "20261010-center-guard-joint-CG25",
+          "queue_pid": 38683,
+          "trainer_pid": 38688,
+          "config": "configs/experiment/p1_CG25.yaml",
+          "output_dir": "artifacts/experiments/JOINT_CG25",
+          "started_at": "2026-10-10T10:34:34.575915+08:00"
+        }
+      },
+      "root_actual_new_instance_exactlast_resume_launch_r1.json": {
+        "sha256": "c92b2dd926becfec65262f087f1c89c604445ce75c27daf70a1742bfcb6355b1",
+        "value": {
+          "schema": "aictrack1.CG25.new_instance.exactlast_resume.v1",
+          "boot_id": "8859ea30-45a8-475c-994a-7c6c61aa467e",
+          "controller": {
+            "pid": 2070,
+            "pgrp": 2070,
+            "session": 2070,
+            "start_ticks": "923412302"
+          },
+          "actual_partial_sha256": "5746377e902ff67ded3d3cf91748378044b64b8095ed4c719740c06a53af54aa",
+          "actual_partial_epoch": 4,
+          "original_source_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+          "original_budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+          "original_deadline_unix": 1791610202.1390533,
+          "old_all_owned_groups_closed": true,
+          "old_lease_cleared_by_original_API": true,
+          "CPU_partial_recovery": {
+            "complete": true,
+            "epoch": 4,
+            "last_sha256": "5746377e902ff67ded3d3cf91748378044b64b8095ed4c719740c06a53af54aa",
+            "source_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+            "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+            "budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+            "CPU_model_tensors": 154,
+            "CPU_exact_model_restore": true,
+            "optimizer_groups": [
+              152,
+              2
+            ],
+            "scheduler_epoch": 4,
+            "AC_exact_ID_label_count": 118958,
+            "RNG_restore_CPU": true,
+            "cuda_rng_structural_only": true,
+            "GPU": false,
+            "test_image_reads": 0,
+            "observed_unix": 1791604273.354101
+          },
+          "started_unix": 1791604319.926126,
+          "GPU_runtime": "RTX4080SUPER clone migration; exploratory runtime change disclosed"
+        }
+      },
+      "artifacts/launches/CG25_769f12fe4ea54b56819a7bef41e4c0d1/START.json": {
+        "sha256": "17af4f8c61c54aded406e4da97c01e990c358b8db5aa5b9e5812d3af1fd1c71e",
+        "value": {
+          "owner": {
+            "pid": 38688,
+            "pgrp": 38688,
+            "session": 38688,
+            "start_ticks": "317332725"
+          },
+          "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+          "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+          "lease_token": "b35b41d3b96b429dac66c51fca67174f",
+          "test_access": false
+        }
+      },
+      "artifacts/launches/CG25_944e1fddba0340c7897138f2f764401b/START.json": {
+        "sha256": "8f6bc030e639d62fbf242efd86d8cbc8d82c2a497aa569611660645b3b37356b",
+        "value": {
+          "owner": {
+            "pid": 38629,
+            "pgrp": 38629,
+            "session": 38629,
+            "start_ticks": "317324981"
+          },
+          "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+          "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+          "lease_token": "26f774c57d5a49859295a46c85f97528",
+          "test_access": false
+        }
+      },
+      "artifacts/launches/CG25_e548e51fd9b34cc7990cbf42e85584e2/START.json": {
+        "sha256": "2e616a513c9abf9ddd6c7055a33f1912c465bd94b660b761b7f5ba907161e16e",
+        "value": {
+          "owner": {
+            "pid": 2077,
+            "pgrp": 2077,
+            "session": 2077,
+            "start_ticks": "923412560"
+          },
+          "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+          "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+          "lease_token": "1a6f0a4e2968405d8c161cf5c2bc6941",
+          "test_access": false
+        }
+      },
+      "artifacts/launches/CG25_944e1fddba0340c7897138f2f764401b/EXIT.json": {
+        "sha256": "e9745a3400d9e53dd680e825a443b5b81e04abe6d0bc5b8a22902ecfabbd6e96",
+        "value": {
+          "owner": {
+            "pid": 38629,
+            "pgrp": 38629,
+            "session": 38629,
+            "start_ticks": "317324981"
+          },
+          "return_code": 0,
+          "group_closed": true,
+          "test_access": false
+        }
+      }
+    },
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21618515968,
+        "free": 10593738752
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 106621661184,
+        "free": 22227357696
+      }
+    },
+    "cgroup": {
+      "/proc/self/cgroup": "0::/",
+      "resolved_mounts": {
+        "unified": {
+          "version": 2,
+          "path": "/sys/fs/cgroup",
+          "membership": "/",
+          "mount_root": "/",
+          "mount_point": "/sys/fs/cgroup"
+        }
+      },
+      "/sys/fs/cgroup/memory.current": "33967489024",
+      "/sys/fs/cgroup/memory.max": "66571993088",
+      "/sys/fs/cgroup/memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0",
+      "/sys/fs/cgroup/cpu.max": "1200000 100000",
+      "/sys/fs/cgroup/cpu.stat": "usage_usec 47300963107\nuser_usec 42219737594\nsystem_usec 5081225513\nnr_periods 75978\nnr_throttled 7\nthrottled_usec 7755263",
+      "/sys/fs/cgroup/pids.current": "415",
+      "/sys/fs/cgroup/pids.max": "20480"
+    },
+    "gpu": "1 MiB, 0 %"
+  }
+}

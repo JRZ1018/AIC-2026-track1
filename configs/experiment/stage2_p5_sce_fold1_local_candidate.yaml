@@ -1,0 +1,39 @@
+experiment:
+  competition_stage: stage2
+  run_id: 20260927-stage2-p5-fold1-local-sce-candidate
+  execution_enabled: true
+  training_scope: fixed_split_validation
+  dataset_config: ../data/stage2_fold1_336.yaml
+  model_config: ../model/openai_clip_vit_b32.yaml
+  manifest: ../../artifacts/audits/stage2/train/samples.csv
+  split: ../../artifacts/audits/stage2/train/split.csv
+  label_conflicts: ../../artifacts/audits/stage2/train/label_conflicts.csv
+  head_checkpoint: ../../artifacts/experiments/20260925-stage2-fold1-c5-h1-336-seed20260921/best.pt
+  output_dir: ../../artifacts/experiments/20260927-stage2-p5-fold1-local-sce-candidate
+  device: cuda
+  visual_input_resolution: 336
+  position_interpolation: bicubic_7x7_to_10x10
+  expected_initial_top1: 0.6553115844726562
+  initial_top1_tolerance: 0.002
+  base_loss: {kind: sce, alpha: 0.1, beta: 1.0, log_zero: -4.0}
+  runtime: {defer_epoch_metrics: true, reuse_validation_loader: true, record_gradient_diagnostics: true, safe_numpy_rng_checkpoint: true}
+  peft: {mode: last_n_blocks, lora_blocks: 8}
+  confidence_weighting:
+    enabled: true
+    warmup_epochs: 1
+    momentum: 0.8
+    history_mix: 0.5
+    min_weight: 0.02
+    magnitude_mix: 0.75
+    stop_on_effective_quality_l2: true
+  training:
+    epochs: 8
+    batch_size: 64
+    workers: 4
+    prefetch_factor: 4
+    persistent_workers: true
+    seed: 20260921
+    visual_learning_rate: 0.00000175
+    head_learning_rate: 0.0
+    weight_decay: 0.01
+    gradient_clip_norm: 1.0

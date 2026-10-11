@@ -1,0 +1,34 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_confirmation_initial_J5_failure_r1.json",
+  "original_sha256": "edc0bd8def117391dedda7e57ef14fbf4ab26dd8a01e11473fb2c885dae80b71",
+  "omitted_fields": [],
+  "record": {
+    "log": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_20261010/scripts/train_n1_peft.py\", line 1463, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_20261010/scripts/train_n1_peft.py\", line 496, in main\n    raise ValueError(\"N1 frozen P21 baseline trainer SHA mismatch\")\nValueError: N1 frozen P21 baseline trainer SHA mismatch\n",
+    "exit": [
+      {
+        "owner": {
+          "pid": 19102,
+          "pgrp": 19102,
+          "session": 19102,
+          "start_ticks": "926354293"
+        },
+        "return_code": 0,
+        "group_closed": true,
+        "test_access": false
+      },
+      {
+        "owner": {
+          "pid": 19313,
+          "pgrp": 19313,
+          "session": 19313,
+          "start_ticks": "926376407"
+        },
+        "return_code": 1,
+        "group_closed": true,
+        "test_access": false
+      }
+    ],
+    "files": []
+  }
+}

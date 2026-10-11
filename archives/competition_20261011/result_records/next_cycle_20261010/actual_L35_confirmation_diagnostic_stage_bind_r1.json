@@ -1,0 +1,15 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_confirmation_diagnostic_stage_bind_r1.json",
+  "original_sha256": "427a53a7bdb69ae4f244ba9fa68674ec5750e9f9d91c0fc129ec01fea44005e8",
+  "omitted_fields": [
+    "/command",
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "returncode": 0,
+    "launch_sha256": "1e876231dd9fde585d5e582ae3839d079019e6f4619725b5ca3878f9ae4f9198",
+    "uploaded_bytes": 96239
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/S_terminal_followon_R3_actual_CPU_wait_entry.json",
+  "original_sha256": "b73e69e1e32ef5e1b873408783ad59a3005c151940df120d254222f104c7a2d6",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.S.terminal_followon.R3.actual_CPU_wait_entry.v1",
+    "complete": true,
+    "source_manifest_sha256": "9d8c681a4c8052d05c5b26b9242a4990b0596955b2442b292a7165c9abf929dd",
+    "verified_members": 4,
+    "actual_plan": {
+      "schema": "aictrack1.S.terminal_followon.plan.v1",
+      "operator_root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_followon_20261009",
+      "training_root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+      "diagnostic_root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009",
+      "watched": {
+        "230190": {
+          "start_ticks": "307357000",
+          "pgrp": 230190,
+          "session": 230190
+        },
+        "230195": {
+          "start_ticks": "307357244",
+          "pgrp": 230195,
+          "session": 230195
+        }
+      },
+      "training_source_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+      "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+      "diagnostic_source_sha256": "b04925892404fc37a0c81f4d044752248f4d30bd1f379fec9f60b73531ddead0",
+      "control_bundle": "/root/AICtrack1_fullvisual_confirm_diagnostic_v6_20261008/artifacts/diagnostics/fullvisual/fused_logits.pt",
+      "control_bundle_sha256": "4813ad6727624f3072ff6e5d28d8ecaa9b4a9e919a5e0b489946dfeea08180b9",
+      "control_identity_sha256": "2adf0b2efb97aa81da7f40c133bada6798f2c7af3b15e5647931949a61d857ce",
+      "deadline_unix": 1791521272.7301335,
+      "hard_seconds": 1800,
+      "complete_pair_reserve_seconds": 120,
+      "poll_seconds": 30,
+      "initial_free_bytes": 13013950464,
+      "disk_max_bytes": 6442450944,
+      "min_free_bytes": 3221225472,
+      "exactly_once": true,
+      "stops_or_restarts_S": false,
+      "lock_modified": false,
+      "recipe_selection": false,
+      "fresh_or_full_training": false,
+      "test_access": false
+    },
+    "actual_watched_processes": [
+      {
+        "pid": 230190,
+        "state": "S",
+        "ppid": 1,
+        "pgrp": 230190,
+        "session": 230190,
+        "start_ticks": "307357000"
+      },
+      {
+        "pid": 230195,
+        "state": "S",
+        "ppid": 230190,
+        "pgrp": 230195,
+        "session": 230195,
+        "start_ticks": "307357244"
+      }
+    ],
+    "actual_proc_stat_count": 29,
+    "S_groups_closed": false,
+    "canonical_idle": false,
+    "data_free_bytes": 11162316800,
+    "old_deadline_fits": true,
+    "checkpoint_contents_loaded": false,
+    "checkpoint_hash_computed": false,
+    "diagnostic_launched": false,
+    "GPU_started": false,
+    "stopped_or_restarted_S": false,
+    "lock_modified": false,
+    "test_access": false,
+    "collected_epoch": 1791505852.3034492
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/supervision_actual_terminal_returns_r1/diagnostic/result_manifest.json",
+  "original_sha256": "a50d906276302886ea346bf04a78512ef0ccb1aec830e809dfe14059579ba191",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.supervision.diagnostic_result.v1",
+    "model_arm": "S",
+    "p1_arm": "S",
+    "complete": true,
+    "test_access": false,
+    "files": {
+      "fused_features.pt": {
+        "bytes": 63342453,
+        "sha256": "bb3925c104a7bdc2cc4e33c5dc93605e2836ff30aee7d0ac13d75e2e9fd5230e"
+      },
+      "fused_logits.pt": {
+        "bytes": 47052393,
+        "sha256": "e0b69349111e3c1b49d13d30d14b76af6802e2b930e0c89911e3ca7a608a336c"
+      },
+      "input_identity.json": {
+        "bytes": 4848,
+        "sha256": "bb1142079db0a4294d7edf74f02846892685b391b98785fd9b709dfffd768074"
+      },
+      "paired_predictions.csv": {
+        "bytes": 2391298,
+        "sha256": "640cc7677e76cd80603f0e92983b8583aeaec5eefa33ddc7310762917c99a976"
+      },
+      "report.json": {
+        "bytes": 2697,
+        "sha256": "990a9f1399cfac59c541fed945c040a76b05d7f07ae3888bdffa55f5a612209d"
+      },
+      "rows.csv": {
+        "bytes": 5604471,
+        "sha256": "f84dffe7fdfff433a1924386927fac402b29c9d3e0b4e82abf60d1976d44404f"
+      },
+      "supervision_checkpoint_audit.json": {
+        "bytes": 3800,
+        "sha256": "d29742944303548121376450b3592d9855ad4dbf3b99b9548862333c8f40284e"
+      }
+    }
+  }
+}

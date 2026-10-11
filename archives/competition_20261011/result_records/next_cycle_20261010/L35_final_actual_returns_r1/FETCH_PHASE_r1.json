@@ -1,0 +1,14 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L35_final_actual_returns_r1/FETCH_PHASE_r1.json",
+  "original_sha256": "983ae194c8351f61d8088c505206b8807bb8adf29bb636607bdb05bc81a3a368",
+  "omitted_fields": [],
+  "record": {
+    "start_unix": 1791665507.3325586,
+    "deadline_unix": 1791687107.3325589,
+    "hard_seconds": 21600,
+    "manifest_sha256": "ad086cc485fe42378835538ed2fb1179038cfb1baf5808f9f0bb93d96c44ded2",
+    "network_only": true,
+    "no_GPU_or_forward": true
+  }
+}

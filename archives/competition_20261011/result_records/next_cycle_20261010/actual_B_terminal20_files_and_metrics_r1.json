@@ -1,0 +1,105 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B_terminal20_files_and_metrics_r1.json",
+  "original_sha256": "0d76afbc25a64b30274cb9905d802b8220ab180d7df4f51a03eab3df8ed3f670",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791584842.1117802,
+    "source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "diagnostic_source_sha256": "24aa7656811de9027162a20f8de6c5f4a015123ee41aeafc2602c653bda40013",
+    "canonical_idle": true,
+    "old_owned_groups_closed": true,
+    "arms": {
+      "B25": {
+        "metrics_sha256": "422a0ad072ffdf13ac9c0d58cbbb3486f472438eb8cc0e391fac2f952cddb64e",
+        "metrics_bytes": 8801811,
+        "history_epochs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "duration_seconds": 11246.669638925698,
+        "selection_rule": "fixed final epoch 20; no validation selection",
+        "config_sha256": "41ee96e1e912e7e8f4cbf73d17518a29eeda91751657da47e075cfb10df3ac41",
+        "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+        "train_count": 118958,
+        "validation_count": 29737,
+        "files": {
+          "last.pt": {
+            "sha256": "733641e9197c5b8c9c967f8d69ce2ea20e5c455f28032533cd7131e9909591ed",
+            "bytes": 1776438829,
+            "mtime": 1791573490.4566822
+          },
+          "final.pt": {
+            "sha256": "f14a7fc98d29e2a9c7cad6e2081bf6a750e5200e1449f37c34235d29e4e813ff",
+            "bytes": 352987755,
+            "mtime": 1791573491.152688
+          }
+        }
+      },
+      "B50": {
+        "metrics_sha256": "ae36c61d388098c643281ab67b25d628e798d9a5f9a53b207e951ee5794bb5df",
+        "metrics_bytes": 8801786,
+        "history_epochs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "duration_seconds": 10963.875400551595,
+        "selection_rule": "fixed final epoch 20; no validation selection",
+        "config_sha256": "6c36e78905abd066aed966ea25a70190c177f521f509b57921acf6939905530e",
+        "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+        "train_count": 118958,
+        "validation_count": 29737,
+        "files": {
+          "last.pt": {
+            "sha256": "5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78",
+            "bytes": 1776438893,
+            "mtime": 1791584547.5047662
+          },
+          "final.pt": {
+            "sha256": "2b14ec9672538c4d84052ad07c221a6cbbc63491294a4914c617782b2f28b878",
+            "bytes": 352987755,
+            "mtime": 1791584548.0007637
+          }
+        }
+      }
+    },
+    "scope": "actual terminal files SHA and bounded metrics, CPU model recovery deferred to frozen diagnostic",
+    "test_access": false
+  }
+}

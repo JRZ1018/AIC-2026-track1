@@ -1,0 +1,25 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_new_package_complete_delivery_r1.json",
+  "original_sha256": "ab855b85243fce89b24080569a10782f2cae951ea057c9de5d8dd10f8ce42cfa",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.L50.actual_delivery_complete.v1",
+    "complete": true,
+    "package_delivered": true,
+    "ZIP_sha256": "6d06027999c68074f8232426c0fbe3e3475b804f35457b9f04561957557b45fe",
+    "CSV_sha256": "908850887577f16302ce5fabd2656051b25eb0b8446c1fd90f0504d4bd0c8ba9",
+    "return_manifest_sha256": "4eb23dc2627848f949b026ed5c7c03739436c72e91aa374cbd4f284d7bb781e6",
+    "all211_return_SHA_PASS": true,
+    "additional16_actual_provenance_refs_SHA_PASS": true,
+    "local_CPU_acceptance_sha256": "16eec744cdd5eb12429e256e44d94019a8c77deb60ae8281ed31b2959cb8df4d",
+    "remote_CPU_acceptance_sha256": "20d890019655ae1fde7e1ad0d37f382c5865b18e9a27c7ffdf85e654a0fc13fd",
+    "actual_local_model_CPU_restore_PASS": true,
+    "CPU154_optimizer_AC20_RNG_synthetic336_PASS": true,
+    "test_image_reads_local": 0,
+    "automation_id_deleted": "aictrack1-l50",
+    "completed_unix": 1791704086.6087534,
+    "local_root": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L50_final_actual_returns_r1",
+    "online_score_not_yet_reported": true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_diagnostic_metadata_bind_dependency_r1.json",
+  "original_sha256": "a20615ac0bd00e79e052302522a5d35242d81ea14cee5005561cb53fbe37faf1",
+  "omitted_fields": [
+    "/value/CLI/command",
+    "/value/CLI/stderr",
+    "/value/CLI/stdout"
+  ],
+  "record": {
+    "path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_diagnostic_template_20261010/root_actual_metadata_bind_CPU_r1.json",
+    "sha256": "2ed82743206257723fe4a0c98425ce2a6a7c8a6684c2c8bf01016f2a19725350",
+    "value": {
+      "schema": "aictrack1.CG25.actual_diagnostic_metadata_bind_dependency.v1",
+      "complete": false,
+      "source_template_sha256": "b26dacae3db3bbb0665c5e1c898330dbf350cfa5e484b65e02c14461f6a52d57",
+      "bound_source_sha256": null,
+      "registered_members": null,
+      "actual_training_source_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+      "actual_budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+      "actual_launch_sha256": "2bbb3a57950d7e65f9cca2d14aef5bcbfe35bca490e6e24655f21740a31540a8",
+      "CLI": [
+        {
+          "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_diagnostic_template_20261010",
+          "returncode": 1
+        }
+      ],
+      "GPU_started": false,
+      "checkpoint_read": false,
+      "model_loaded": false,
+      "images_opened": false,
+      "test_access": false,
+      "future_checkpoint_sha256": null,
+      "observed_unix": 1791600838.968777
+    }
+  }
+}

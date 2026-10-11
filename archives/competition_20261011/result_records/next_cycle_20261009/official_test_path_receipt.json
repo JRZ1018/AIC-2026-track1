@@ -1,0 +1,29 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/official_test_path_receipt.json",
+  "original_sha256": "61403bf40bd651e7a002f7e08f4e655230a1d8034b31e12d7ae8c5ec5d63cf12",
+  "omitted_fields": [],
+  "record": {
+    "test_manifest_sha256": "576ff0f69e0a104ca5a0af7f190628074b572102c6bc8daf8cb653fb08054201",
+    "unlabeled_metadata_rows": 37444,
+    "image_bytes_opened": false,
+    "model_trained": false,
+    "roots": [
+      {
+        "dataset_root": "/root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/DataSetStage2",
+        "test_exists": false,
+        "resolved_test": "/root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/DataSetStage2/test"
+      },
+      {
+        "dataset_root": "/root/autodl-tmp/AICtrack1/DataSetStage2",
+        "test_exists": true,
+        "resolved_test": "/root/autodl-tmp/AICtrack1/DataSetStage2/test",
+        "flat_jpg_count": 37444,
+        "missing_from_manifest": 0,
+        "missing_from_directory": 0,
+        "exact_metadata_filename_match": true
+      }
+    ],
+    "data_disk_free_bytes": 12764852224
+  }
+}

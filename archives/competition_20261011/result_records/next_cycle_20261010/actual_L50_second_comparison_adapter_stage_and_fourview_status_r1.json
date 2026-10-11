@@ -1,0 +1,70 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_comparison_adapter_stage_and_fourview_status_r1.json",
+  "original_sha256": "529cd3f613fe2771a234114b1610d1feb7337fe84bb5ecbf4f3cdc83509d35b4",
+  "omitted_fields": [
+    "/canonical/command",
+    "/stdout"
+  ],
+  "record": {
+    "now": 1791694295.42724,
+    "adapter_stage_SHA_PASS": true,
+    "remote_adapter": "/root/autodl-tmp/AICtrack1_L50_second_comparison_entry_adapter_r1_20261011/run_comparison.py",
+    "controller_group": [
+      {
+        "pid": 53515,
+        "state": "S",
+        "ppid": 1,
+        "pgrp": 53515,
+        "session": 53515,
+        "start_ticks": "932396875"
+      },
+      {
+        "pid": 53618,
+        "state": "R",
+        "ppid": 53515,
+        "pgrp": 53515,
+        "session": 53515,
+        "start_ticks": "932400220"
+      },
+      {
+        "pid": 53622,
+        "state": "R",
+        "ppid": 53515,
+        "pgrp": 53515,
+        "session": 53515,
+        "start_ticks": "932400228"
+      },
+      {
+        "pid": 53626,
+        "state": "R",
+        "ppid": 53515,
+        "pgrp": 53515,
+        "session": 53515,
+        "start_ticks": "932400238"
+      },
+      {
+        "pid": 53630,
+        "state": "R",
+        "ppid": 53515,
+        "pgrp": 53515,
+        "session": 53515,
+        "start_ticks": "932400248"
+      }
+    ],
+    "canonical": {
+      "schema_version": 1,
+      "token": "4969af3f35064a8d86c9c5de4c8d2a00",
+      "owner": "stage2-single-checkpoint-tta-diagnostic",
+      "queue_pid": 53515,
+      "trainer_pid": null,
+      "config": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/configs/experiment/p1_L50.yaml",
+      "output_dir": "/root/autodl-tmp/AICtrack1_next_cycle_L50_second_reused_diagnostic_20261011/artifacts/diagnostics/CONFIRM_L50",
+      "started_at": "2026-10-11T12:49:47.044837+08:00"
+    },
+    "files": {
+      "runtime_receipt.json": 2549,
+      "p1_checkpoint_audit.json": 3432
+    }
+  }
+}

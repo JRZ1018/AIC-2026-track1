@@ -1,0 +1,108 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_negative_root_review_r1.json",
+  "original_sha256": "8e572590d9f9cfbf9aa465e9cd8f7e42bcefc6119f5a8ca9100f8524b4942c58",
+  "omitted_fields": [
+    "/natural/new_zero_recall_classes/groups"
+  ],
+  "record": {
+    "schema": "aictrack1.PF_exploration.root_review.v1",
+    "complete": true,
+    "root_authorized": true,
+    "reviewed_at_local": "2026-10-10T09:39:48.783008+08:00",
+    "paired": {
+      "path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\PF30_actual_exploration_returns_r1\\report.json",
+      "sha256": "2d8b9e3d803d2fd04ab07b2460b39b9b265a0a6a3b4a5b1268fe89dfde5b44a0"
+    },
+    "remote_paired": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_PF_fixed_graph_query_binding_retry_20261010/artifacts/comparison/report.json",
+      "sha256": "2d8b9e3d803d2fd04ab07b2460b39b9b265a0a6a3b4a5b1268fe89dfde5b44a0"
+    },
+    "independent_recount": {
+      "agent": "ops_final_cycle_review",
+      "tool_evidence": "cbb12c",
+      "result": "PASS_NEGATIVE",
+      "files_verified": 12,
+      "NPZ_verified": 6,
+      "query_and_actual_control_predictions_equal": true,
+      "model_or_CI_or_graph_rerun": false
+    },
+    "scope": "candidate_fixed_graph_P7_vs_actual_J5_GRAPH_P7",
+    "balanced": {
+      "candidate_correct": 11057,
+      "control_correct": 11091,
+      "net": -34,
+      "delta_pp": -0.23035230352303526,
+      "wrong_to_correct": 51,
+      "correct_to_wrong": 85,
+      "head_mid_tail_net": [
+        -13,
+        -7,
+        -14
+      ],
+      "CI95_pp": [
+        -0.38296070460704607,
+        -0.07452574525745258
+      ],
+      "new_zero_recall_classes": []
+    },
+    "natural": {
+      "candidate_correct": 22108,
+      "control_correct": 22120,
+      "net": -12,
+      "delta_pp": -0.04035376803309009,
+      "wrong_to_correct": 125,
+      "correct_to_wrong": 137,
+      "head_mid_tail_net": [
+        -13,
+        -7,
+        8
+      ],
+      "CI95_pp": [
+        -0.14980983725926683,
+        0.06901746496133133
+      ],
+      "new_zero_recall_classes": [
+        {
+          "original_class_index": 324,
+          "images": 25,
+          "control_correct": 1,
+          "candidate_correct": 0,
+          "graph_caused": true
+        }
+      ]
+    },
+    "raw_model_net": {
+      "balanced": -1,
+      "natural": -15
+    },
+    "own_graph_increment_net": {
+      "balanced": 1,
+      "natural": 48
+    },
+    "large_balanced_declines": {
+      "original_class_indices": [
+        147,
+        179,
+        181,
+        186,
+        203,
+        218,
+        232,
+        545,
+        612,
+        677,
+        695
+      ],
+      "query_support_each": 20,
+      "net_each": -2
+    },
+    "admit_independent_confirmation": false,
+    "admit_FULL_or_test": false,
+    "reason": "complete fixed graph+P7 combination below actual J5_GRAPH control on primary balanced protocol; own graph increment not admission evidence",
+    "test_access": false,
+    "comparison_retry_source_sha256": "17e71ef515e8ef657ae9642517613e8ad8f579a484287445c4d06c88d74802ab",
+    "diagnostic_source_sha256": "56a002e541ef281b17dc478cd129e8ff03b8a132f2743ba872dd89c0ce88d5f5",
+    "scientific_source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4"
+  }
+}

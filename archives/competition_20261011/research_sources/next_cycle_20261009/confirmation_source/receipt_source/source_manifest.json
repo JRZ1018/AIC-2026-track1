@@ -1,0 +1,19 @@
+{
+  "bootstrap_deployment_inventory_sha256": "b41a38578160e49718d406e7c234be7f6b9cbc2b2e14c7a2c31802f4f1a7b38a",
+  "files": {
+    "CPU_TESTS_5761a3155b235d93.json": "ff1536a4e69eeb9f563a5a6f3fa6880cf048c9ba59c2657ccee267e0ae31be14",
+    "README.md": "bee38d10aef2d2e1c0ee84b1a6655a3f982e0bdbe5336a01df1634d9415c9c77",
+    "freeze_source.py": "03e3d478005f34fe0abdc6555b99ea89bf610cb0e807933b868cb4e2081b7ed4",
+    "test_confirmation_receipt.py": "5761a3155b235d93c2c4389de387f279fc37310338a24b0bca222556d2d3e8b6",
+    "write_confirmation_receipt.py": "114bede70fa69bf679db8ac772d88a57aaaece15b417e954c853167a82ba9e35"
+  },
+  "full_source_metadata_schema_integration_sha256": "677578ba379652d8b0277f8fe3055a2dba4dbe914f76f321ff6161f2c5838262",
+  "latest_cpu_tests": "CPU_TESTS_5761a3155b235d93.json",
+  "no_gpu": true,
+  "no_mutation_to_bootstrap": true,
+  "positive_receipt_not_yet_generated": true,
+  "schema": "aictrack1.confirmation.receipt_source.v1",
+  "status": "CPU_gate_tests_pass_actual_models_not_yet_available",
+  "test_access": false,
+  "tests_run": 10
+}

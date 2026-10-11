@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L35_final_actual_returns_r1/full/runtime_receipts/L35_160860d6ffc04c81adfe7e04ded020a4.json",
+  "original_sha256": "b10029082f660346b78aabbfd518af3cf81091340304a2589daaf1d50907a71b",
+  "omitted_fields": [
+    "/environment"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.full.runtime.v1",
+    "arm": "L35",
+    "selected_route": "L35_GRAPH",
+    "pid": 30431,
+    "config_sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a",
+    "source_manifest_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+    "full_budget_sha256": "90ad899b9110e96eb015b79bcdddf505560184215a67b540abfd0cd2aa07832e",
+    "fresh_confirmation_receipt_sha256": "15fd22f3c36b65dc90250692538ca0e2c3fe8a581f36be660fad05e72a061546",
+    "collected_at_unix": 1791651741.4548614,
+    "test_access": false,
+    "actual_torch_threads": 4,
+    "actual_torch_interop_threads": 64
+  }
+}

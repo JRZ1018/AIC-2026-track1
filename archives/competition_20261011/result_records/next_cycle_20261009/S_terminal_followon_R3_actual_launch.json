@@ -1,0 +1,204 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/S_terminal_followon_R3_actual_launch.json",
+  "original_sha256": "01f9606de0e6fcff1abb813a52f22392ef96ec4269fe5325f96e3302788327dd",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.S.terminal_followon.R3.actual_CPU_waiter_launch.v1",
+    "complete": true,
+    "controller": {
+      "pid": 233741,
+      "pgrp": 233741,
+      "session": 233741,
+      "start_ticks": "307995942"
+    },
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_followon_20261009",
+    "source_manifest_sha256": "9d8c681a4c8052d05c5b26b9242a4990b0596955b2442b292a7165c9abf929dd",
+    "preflight_sha256": "6b68fa832046e138ed9867e12a846c93ab61ee34bab75d2aa3a50739c1223c6f",
+    "actual_plan_sha256": "8066ec414c27e58e2f0eaedf40c5ddd61e830868e7958aefc61a372a2bbb7e8e",
+    "first_progress_sha256": "2a1e1cade48589af639332facfc795b2efcd50a602996c2429c06fb0e9f6bcad",
+    "first_progress": {
+      "S_closed": false,
+      "canonical_idle": false,
+      "observed_epoch": 1791506306.9290555,
+      "owned_S_group_members": [
+        {
+          "pgrp": 230190,
+          "pid": 230190,
+          "ppid": 1,
+          "session": 230190,
+          "start_ticks": "307357000",
+          "state": "S"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 230195,
+          "ppid": 230190,
+          "session": 230195,
+          "start_ticks": "307357244",
+          "state": "S"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 230216,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307359502",
+          "state": "R"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 230217,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307359504",
+          "state": "R"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 230218,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307359506",
+          "state": "R"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 230219,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307359508",
+          "state": "R"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 230220,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307359524",
+          "state": "R"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 230221,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307359526",
+          "state": "R"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 230222,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307359528",
+          "state": "R"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 230223,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307359530",
+          "state": "R"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 233562,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307966059",
+          "state": "S"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 233563,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307966063",
+          "state": "S"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 233564,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307966067",
+          "state": "S"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 233565,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307966070",
+          "state": "S"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 233566,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307966073",
+          "state": "S"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 233567,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307966077",
+          "state": "S"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 233568,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307966080",
+          "state": "S"
+        },
+        {
+          "pgrp": 230195,
+          "pid": 233569,
+          "ppid": 230195,
+          "session": 230195,
+          "start_ticks": "307966084",
+          "state": "S"
+        }
+      ],
+      "test_access": false,
+      "watched": {
+        "230190": {
+          "pgrp": 230190,
+          "pid": 230190,
+          "ppid": 1,
+          "session": 230190,
+          "start_ticks": "307357000",
+          "state": "S"
+        },
+        "230195": {
+          "pgrp": 230195,
+          "pid": 230195,
+          "ppid": 230190,
+          "session": 230195,
+          "start_ticks": "307357244",
+          "state": "S"
+        }
+      }
+    },
+    "deadline_unix": 1791521272.7301335,
+    "original_data_baseline_bytes": 13013950464,
+    "disk_max_bytes": 6442450944,
+    "min_free_bytes": 3221225472,
+    "CPU_waiter_started": true,
+    "diagnostic_launched": false,
+    "GPU_started": false,
+    "stopped_or_restarted_S": false,
+    "canonical_lock_modified": false,
+    "test_access": false,
+    "created_epoch": 1791506306.970679
+  }
+}

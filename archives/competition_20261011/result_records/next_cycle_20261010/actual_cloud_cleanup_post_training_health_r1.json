@@ -1,0 +1,34 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_cloud_cleanup_post_training_health_r1.json",
+  "original_sha256": "72677ef71e8b765bc929de7f7ee482d7eb7aa3cf943446e945026a8047a4d86b",
+  "omitted_fields": [],
+  "record": {
+    "now": 1791699806.9829643,
+    "controller": {
+      "pid": 54349,
+      "state": "S",
+      "ppid": 1,
+      "pgrp": 54349,
+      "session": 54349,
+      "start_ticks": "932462657",
+      "cpu_ticks": 967
+    },
+    "trainer": {
+      "pid": 54356,
+      "state": "S",
+      "ppid": 54349,
+      "pgrp": 54356,
+      "session": 54356,
+      "start_ticks": "932462958",
+      "cpu_ticks": 521804
+    },
+    "bounded_epochs": [],
+    "disk": {
+      "total": 128849018880,
+      "used": 118783647744,
+      "free": 10065371136
+    },
+    "checkpoint_read": false
+  }
+}

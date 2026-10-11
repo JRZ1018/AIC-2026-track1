@@ -1,0 +1,65 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/P3_graph_delivery.json",
+  "original_sha256": "6a98a49a40717ced7e656736d3e96b904064b0dd39f582f78e9f39bf5de1acf3",
+  "omitted_fields": [],
+  "record": {
+    "cpu_test_receipt": {
+      "max_synthetic_rows": 80,
+      "path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\graph_source\\CPU_TEST_RECEIPT.json",
+      "real_29737_graph_executed": false,
+      "sha256": "6bb9d907c16b803f937ac2ea057f17f6083e693aecc01ffad1eb273418a87816",
+      "status": "passed",
+      "tests": 9
+    },
+    "cuda_used": false,
+    "entrypoints": [
+      "bind_graph_assets.py",
+      "run_graph.py"
+    ],
+    "graph_protocol_sha256": "f48211db3716faaf45255dcc96e0b614bf42c1673791406bf9d7457c1a50b30d",
+    "independent_review": {
+      "blocking_findings": 0,
+      "real_cache_execution": false,
+      "reviewer": "history_audit",
+      "scope": "p3_graph/p3_contract/run_graph and fresh cache-field compatibility"
+    },
+    "local_source_root": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\graph_source",
+    "proposed_remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009",
+    "protected_sources": {
+      "confirmation_diagnostic_source": {
+        "all_frozen_files_match": true,
+        "matches_expected_manifest": true,
+        "source_manifest_sha256": "2e0a600cf953bfa964198f6920edc01b08c77b62639f7d530953a169e6d4df87"
+      },
+      "full_training_source": {
+        "all_frozen_files_match": true,
+        "matches_expected_manifest": true,
+        "source_manifest_sha256": "677578ba379652d8b0277f8fe3055a2dba4dbe914f76f321ff6161f2c5838262"
+      },
+      "p1_diagnostic_source": {
+        "all_frozen_files_match": true,
+        "matches_expected_manifest": true,
+        "source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6"
+      },
+      "training_source": {
+        "all_frozen_files_match": true,
+        "matches_expected_manifest": true,
+        "source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe"
+      }
+    },
+    "resource": {
+      "aggregate_exploration_confirmation_wall_seconds": 7200,
+      "cpu_threads": 2,
+      "dense_N_by_N_matrix": false,
+      "similarity_block_max_bytes": 67108864
+    },
+    "schema": "aictrack1.p3.engineering_delivery.v1",
+    "server_access": false,
+    "source_bytes": 61506,
+    "source_file_count": 10,
+    "source_manifest_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+    "status": "cpu_engineering_pass_real_graph_not_executed",
+    "test_access": false
+  }
+}

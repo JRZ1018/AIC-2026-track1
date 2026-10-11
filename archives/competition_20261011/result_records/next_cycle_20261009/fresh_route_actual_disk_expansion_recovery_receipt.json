@@ -1,0 +1,100 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_disk_expansion_recovery_receipt.json",
+  "original_sha256": "b4f43cb4af8a6768fbe2351e466ad221bdf11826a19828352a1f6763d45284ea",
+  "omitted_fields": [],
+  "record": {
+    "receipt": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "contents": {
+      "schema": "aictrack1.fresh_route.actual_disk_expansion_recovery.v1",
+      "observed_unix": 1791527456.5600545,
+      "root_authorized": true,
+      "user_statement": "Data disk expanded by user",
+      "original_data_total_bytes": 96636764160,
+      "actual_data_total_bytes": 128849018880,
+      "data_capacity_increase_bytes": 32212254720,
+      "actual_data_free_bytes": 38303313920,
+      "original_initial_free_bytes": 13013950464,
+      "adjusted_initial_free_bytes": 45226205184,
+      "effective_old_capacity_free_bytes": 6091059200,
+      "original_inventory_ref": {
+        "path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\server_inventory.json",
+        "sha256": "df9bc8eb574cbe80fc703814ce4ff860de5c94ba33b121ced7c438b70caefdc5"
+      },
+      "original_shared_budget": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+        "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+      },
+      "prior_failure": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/FAILURE.json",
+        "sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32"
+      },
+      "watched": [
+        {
+          "pgrp": 236091,
+          "pid": 236091,
+          "role": "C_controller",
+          "session": 236091,
+          "start_ticks": "308497119"
+        },
+        {
+          "pgrp": 236098,
+          "pid": 236098,
+          "role": "C_trainer",
+          "session": 236098,
+          "start_ticks": "308497585"
+        },
+        {
+          "pgrp": 239865,
+          "pid": 239865,
+          "role": "J5_controller",
+          "session": 239865,
+          "start_ticks": "309227901"
+        },
+        {
+          "pgrp": 239872,
+          "pid": 239872,
+          "role": "J5_trainer",
+          "session": 239872,
+          "start_ticks": "309228342"
+        },
+        {
+          "role": "failed_append_controller",
+          "pid": 243711,
+          "pgrp": 243711,
+          "session": 243711,
+          "start_ticks": "309965381"
+        },
+        {
+          "role": "failed_append_trainer",
+          "pgrp": 244056,
+          "pid": 244056,
+          "session": 244056,
+          "start_ticks": "310043026"
+        }
+      ],
+      "exact_prior_groups_closed": true,
+      "canonical_naturally_idle": true,
+      "actual_retained_last": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt",
+        "sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+        "epoch_from_previous_strict_audit": 19
+      },
+      "incomplete_temporary": {
+        "original_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt.tmp",
+        "sha256": "d800258448a73c7f5637a8647fe25edbfeeb66c76b45df72d169a14e4ba1bb83",
+        "bytes": 1346168189,
+        "mtime": 1791527127.7730381,
+        "valid_atomic_checkpoint": false,
+        "reason": "Interrupted during original torch.save before atomic replace; actual last19 unchanged",
+        "archived_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt.tmp.failure_20261009_142529"
+      },
+      "old_source_or_budget_modified": false,
+      "test_access": false,
+      "new_GPU_started": false
+    }
+  }
+}

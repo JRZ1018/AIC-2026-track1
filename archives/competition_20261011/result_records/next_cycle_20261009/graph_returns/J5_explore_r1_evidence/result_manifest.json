@@ -1,0 +1,30 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/result_manifest.json",
+  "original_sha256": "958b724975c0a57c9e4f9959a6fbe6aed1b66527c7ecdb5a7ef5e405ab70b219",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.p3.graph_result.v1",
+    "complete": true,
+    "files": {
+      "natural_unique_images_selected_scores.npy": {
+        "sha256": "b6af7862b55f86e06de263ac4783a852759c83053756ed6f1cd4f0fc76892c6c",
+        "bytes": 89211128
+      },
+      "balanced_supported_unique_selected_scores.npy": {
+        "sha256": "62d695641c830a9b09e3e7effac2dee9ff0950e765162cb4b6a1ce72a6abaabc",
+        "bytes": 43453648
+      },
+      "predictions.npz": {
+        "sha256": "e122403b24f3cb26af59af4330a2693901cfb18a96c37b1e536c077a00c3855f",
+        "bytes": 369996
+      },
+      "report.json": {
+        "sha256": "548d1e7a230585eb5634db959ea5ff7ff341fefbfe3d480d3967e9961bde8a27",
+        "bytes": 1491158
+      }
+    },
+    "source_manifest_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+    "test_access": false
+  }
+}

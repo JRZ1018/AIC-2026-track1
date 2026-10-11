@@ -1,0 +1,58 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_actual_B_diagnostic_status.json",
+  "original_sha256": "d28d64219634244ab7b45490eea92486440bfadde81e5f944ce1e1075ef81b18",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791585578.6565948,
+    "owned_processes": [],
+    "root_actual_B50_run_stdout.log": {
+      "sha256": "d0ce4865177b195407d9b7f8d48c1ceb1ae8756f49d455e617234d24b2d7f65c",
+      "value": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n{\n  \"scope\": \"Stage 2 train-derived fixed validation only; no test access\",\n  \"view_protocol\": \"native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint\",\n  \"visual_input_resolution\": 336,\n  \"smoke_only\": false,\n  \"full_validation_count\": 29737,\n  \"evaluated_count\": 29737,\n  \"experiment_config_sha256\": \"6c36e78905abd066aed966ea25a70190c177f521f509b57921acf6939905530e\",\n  \"checkpoint_sha256\": \"5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78\",\n  \"split_sha256\": \"57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7\",\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"class_mapping_sha256\": \"811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879\",\n  \"elapsed_seconds\": 194.7818990983069,\n  \"center\": {\n    \"top1\": 0.7330934405326843,\n    \"macro_accuracy\": 0.7241064310073853,\n    \"zero_recall_classes\": 5,\n    \"tail_class_mean_recall\": 0.704214870929718,\n    \"tail_sample_accuracy\": 0.719971776008606\n  },\n  \"flip_tta\": {\n    \"top1\": 0.7388438582420349,\n    \"macro_accuracy\": 0.7298001050949097,\n    \"zero_recall_classes\": 5,\n    \"tail_class_mean_recall\": 0.7101453542709351,\n    \"tail_sample_accuracy\": 0.726161539554596\n  },\n  \"delta_tta_minus_center\": {\n    \"top1\": 0.005750417709350586,\n    \"macro_accuracy\": 0.005693674087524414,\n    \"tail_class_mean_recall\": 0.005930483341217041,\n    \"tail_sample_accuracy\": 0.00618976354598999\n  },\n  \"paired_wins\": 502,\n  \"paired_losses\": 331,\n  \"changed_predictions\": 1933,\n  \"checkpoint_role\": \"final\",\n  \"checkpoint_epoch\": 20,\n  \"four_view_protocol\": \"native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged\",\n  \"four_view_resize\": 384,\n  \"four_view\": {\n    \"top1\": 0.7425093054771423,\n    \"macro_accuracy\": 0.7335957288742065,\n    \"zero_recall_classes\": 4,\n    \"tail_class_mean_recall\": 0.715825617313385,\n    \"tail_sample_accuracy\": 0.7321162819862366\n  },\n  \"delta_four_minus_flip_tta\": {\n    \"top1\": 0.003665447235107422,\n    \"macro_accuracy\": 0.003795623779296875,\n    \"tail_class_mean_recall\": 0.005680263042449951,\n    \"tail_sample_accuracy\": 0.005954742431640625\n  },\n  \"four_view_changed_predictions\": 1749,\n  \"four_view_paired_wins\": 441,\n  \"four_view_paired_losses\": 332,\n  \"fused_logits\": {\n    \"path\": \"/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/artifacts/diagnostics/JOINT_B50/fused_logits.pt\",\n    \"sha256\": \"6f35fc870875aa89da38df6a07e7ed2ef13a76a51c234558566e7fa237d792a2\",\n    \"dtype\": \"torch.float16\",\n    \"shape\": [\n      29737,\n      750\n    ],\n    \"weights_only_safe_load_verified\": true\n  }\n}\n{\"complete\": true, \"arm\": \"B50\", \"identity\": \"/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/artifacts/diagnostics/JOINT_B50/input_identity.json\", \"exploration_only\": true, \"test_access\": false}\n"
+    },
+    "artifacts/diagnostics/JOINT_B50/result_manifest.json": {
+      "sha256": "9c1862b29ee1b0654ce3873eeaafb6b205d40316e1e2ba56c8252634bb8ec32d",
+      "value": {
+        "schema": "aictrack1.fresh_route.diagnostic_result.v1",
+        "p1_arm": "B50",
+        "complete": true,
+        "test_access": false,
+        "files": {
+          "fused_features.pt": {
+            "bytes": 63342453,
+            "sha256": "0cf64a3b40f3cd4327ac9d67317729dfb983b338f365ecf76c3ccd5c62bc7a0a"
+          },
+          "fused_logits.pt": {
+            "bytes": 47052393,
+            "sha256": "6f35fc870875aa89da38df6a07e7ed2ef13a76a51c234558566e7fa237d792a2"
+          },
+          "input_identity.json": {
+            "bytes": 11761,
+            "sha256": "cc73b08f071ae7f4d41eb116197190814f7fdd28a84dddb0c58ca0cffc787c50"
+          },
+          "p1_checkpoint_audit.json": {
+            "bytes": 3205,
+            "sha256": "fd1eb1b4bb182b993d01f55d7db65d25552588fb8a759e3322ed15013ff0403c"
+          },
+          "paired_predictions.csv": {
+            "bytes": 2390899,
+            "sha256": "547c8f3a242611fc83b773caf95232aebc6e0be8feb85dd26f273a6bfdf3e43a"
+          },
+          "report.json": {
+            "bytes": 2698,
+            "sha256": "fb21654330639b8a188b1e29d9ce2b36dfd5063813328639909adbeecdc91bf5"
+          },
+          "rows.csv": {
+            "bytes": 5434568,
+            "sha256": "858394204483f65ac6e326ff5b3844a951ca151f79a091b92fec8d773d971914"
+          },
+          "runtime_receipt.json": {
+            "bytes": 1604,
+            "sha256": "21669994e1295c851ccdb2c5983e0ac78824641c7f2214e5359268454d9942db"
+          }
+        }
+      }
+    },
+    "canonical_idle": true
+  }
+}

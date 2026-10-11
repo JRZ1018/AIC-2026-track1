@@ -1,0 +1,89 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_actual_FULL_status.json",
+  "original_sha256": "2ca2ee357a98a016a6e96cb1c5a76bd4fa9392be7c749c8549b38b367cfbe5e2",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791530226.6036313,
+    "processes": [],
+    "receipts": {
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/queues/full_attempt_4e55925291244704b94345f61cd01423.json": {
+        "schema": "aictrack1.fresh_route.full.launch_result.v1",
+        "arm": "J5",
+        "selected_route": "J5_GRAPH",
+        "return_code": 0,
+        "source_manifest_sha256": "be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54",
+        "config_sha256": "04e13ffde658a7c532e59767d445e3ba58db20b6e7e7d2232282ed3a8c350d75",
+        "fresh_confirmation_receipt_sha256": "dc3232619e394b4528454f155711d9b88366ac7066f594886860e31a340d8e5f",
+        "full_budget_sha256": "62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517",
+        "synthetic_smoke": true,
+        "resumed": false,
+        "test_access": false
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/smoke/J5_4e55925291244704b94345f61cd01423/receipt.json": {
+        "schema": "aictrack1.fresh_route.full.cuda_smoke.v1",
+        "status": "passed",
+        "synthetic_only": true,
+        "candidate": false,
+        "config_sha256": "04e13ffde658a7c532e59767d445e3ba58db20b6e7e7d2232282ed3a8c350d75",
+        "full_visual_tensors": 152,
+        "trainable_tensors": 154,
+        "trainable_parameters": 88233966,
+        "head_gradient_norms": {
+          "linear.weight": 0.1055307611823082,
+          "linear.bias": 0.10552094876766205
+        },
+        "head_frozen": false,
+        "base_loss": {
+          "kind": "sce",
+          "alpha": 0.1,
+          "beta": 1.0,
+          "log_zero": -4.0
+        },
+        "first_loss": 4.805048942565918,
+        "uninterrupted_second_loss": 4.6826581954956055,
+        "resumed_second_loss": 4.6826581954956055,
+        "max_parameter_difference": 4.656612873077393e-10,
+        "scheduler_T_max": 20,
+        "amp_overflow_skips": [
+          {
+            "from_scale": 65536.0,
+            "to_scale": 32768.0
+          },
+          {
+            "from_scale": 32768.0,
+            "to_scale": 16384.0
+          }
+        ],
+        "successful_update_count": 3,
+        "successful_updates": [
+          {
+            "loss": 4.805048942565918,
+            "scale": 16384.0,
+            "scheduler_epoch": 1
+          },
+          {
+            "loss": 4.6826581954956055,
+            "scale": 16384.0,
+            "scheduler_epoch": 2
+          },
+          {
+            "loss": 4.6826581954956055,
+            "scale": 16384.0,
+            "scheduler_epoch": 2
+          }
+        ],
+        "checkpoint_sha256": "0805d39e867841b30df0f6a80829dd23d19b2f0e47f04a3e92c6df4aced4f469",
+        "checkpoint_role": "synthetic_resume_only"
+      }
+    },
+    "canonical": null,
+    "root_log": "[2026-10-09 15:16:31] 20261009-fresh-route-full-J5 start\n[2026-10-09 15:16:31] J5: starting - one positively confirmed fresh official FULL20 fixed final\n[2026-10-09 15:16:43] J5: finished in 0.2 min; output validated\n[2026-10-09 15:16:43] 20261009-fresh-route-full-J5 finished\n{\"schema\": \"aictrack1.fresh_route.full.launch_result.v1\", \"arm\": \"J5\", \"selected_route\": \"J5_GRAPH\", \"return_code\": 0, \"source_manifest_sha256\": \"be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54\", \"config_sha256\": \"04e13ffde658a7c532e59767d445e3ba58db20b6e7e7d2232282ed3a8c350d75\", \"fresh_confirmation_receipt_sha256\": \"dc3232619e394b4528454f155711d9b88366ac7066f594886860e31a340d8e5f\", \"full_budget_sha256\": \"62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517\", \"synthetic_smoke\": true, \"resumed\": false, \"test_access\": false}\n",
+    "queue_logs": {
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/queues/FULL_J5/chain.log": "[2026-10-09 15:16:31] 20261009-fresh-route-full-J5 start\n[2026-10-09 15:16:31] J5: starting - one positively confirmed fresh official FULL20 fixed final\n[2026-10-09 15:16:43] J5: finished in 0.2 min; output validated\n[2026-10-09 15:16:43] 20261009-fresh-route-full-J5 finished\n",
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/queues/FULL_J5/J5.log": "{\"schema\": \"aictrack1.fresh_route.full.cuda_smoke.v1\", \"status\": \"passed\", \"synthetic_only\": true, \"candidate\": false, \"config_sha256\": \"04e13ffde658a7c532e59767d445e3ba58db20b6e7e7d2232282ed3a8c350d75\", \"full_visual_tensors\": 152, \"trainable_tensors\": 154, \"trainable_parameters\": 88233966, \"head_gradient_norms\": {\"linear.weight\": 0.1055307611823082, \"linear.bias\": 0.10552094876766205}, \"head_frozen\": false, \"base_loss\": {\"kind\": \"sce\", \"alpha\": 0.1, \"beta\": 1.0, \"log_zero\": -4.0}, \"first_loss\": 4.805048942565918, \"uninterrupted_second_loss\": 4.6826581954956055, \"resumed_second_loss\": 4.6826581954956055, \"max_parameter_difference\": 4.656612873077393e-10, \"scheduler_T_max\": 20, \"amp_overflow_skips\": [{\"from_scale\": 65536.0, \"to_scale\": 32768.0}, {\"from_scale\": 32768.0, \"to_scale\": 16384.0}], \"successful_update_count\": 3, \"successful_updates\": [{\"loss\": 4.805048942565918, \"scale\": 16384.0, \"scheduler_epoch\": 1}, {\"loss\": 4.6826581954956055, \"scale\": 16384.0, \"scheduler_epoch\": 2}, {\"loss\": 4.6826581954956055, \"scale\": 16384.0, \"scheduler_epoch\": 2}], \"checkpoint_sha256\": \"0805d39e867841b30df0f6a80829dd23d19b2f0e47f04a3e92c6df4aced4f469\", \"checkpoint_role\": \"synthetic_resume_only\"}\n"
+    },
+    "free": 37720457216,
+    "gpu": "0 %, 1 MiB"
+  }
+}

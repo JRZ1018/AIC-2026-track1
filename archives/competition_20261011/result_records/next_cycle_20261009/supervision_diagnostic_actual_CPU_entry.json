@@ -1,0 +1,26 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/supervision_diagnostic_actual_CPU_entry.json",
+  "original_sha256": "41a60b1a8d6c71fa238c7fcbb1c4d090fe5231a22f1fd0d20435cc0e86e3f02a",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.supervision.diagnostic.actual_CPU_entry.v1",
+    "complete": true,
+    "source_manifest_sha256": "b04925892404fc37a0c81f4d044752248f4d30bd1f379fec9f60b73531ddead0",
+    "training_source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+    "actual_entry_stdout": "{\n  \"schema\": \"aictrack1.supervision.cpu_entry_dependency_check.v1\",\n  \"complete\": true,\n  \"frozen_training_source_sha256\": \"f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9\",\n  \"static_imports\": {\n    \"__future__\": \"/root/miniconda3/lib/python3.12/__future__.py\",\n    \"pathlib\": \"/root/miniconda3/lib/python3.12/pathlib.py\",\n    \"supervision_diag_contract\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/supervision_diag_contract.py\",\n    \"diagnostic_resources\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/diagnostic_resources.py\",\n    \"view_features\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009/view_features.py\",\n    \"p1_contract\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/scripts/p1_contract.py\",\n    \"mainline_h1_contract\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/scripts/mainline_h1_contract.py\",\n    \"aictrack1.engine.training_queue\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/src/aictrack1/engine/training_queue.py\",\n    \"aictrack1.models.heads\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/src/aictrack1/models/heads.py\"\n  },\n  \"real_vendor_cli_help_passed\": true,\n  \"real_vendor_production_argv_parsed\": true,\n  \"imports_and_signatures_verified\": true,\n  \"remote_assets_opened\": false,\n  \"independent_host_memory_snapshot\": {\n    \"platform\": \"linux\",\n    \"total_bytes\": 540662706176,\n    \"host_available_bytes\": 449107877888,\n    \"effective_available_bytes\": 27669950464,\n    \"cgroup\": {\n      \"limit_bytes\": 66571993088,\n      \"used_bytes\": 38902042624,\n      \"available_bytes\": 27669950464,\n      \"source\": \"/sys/fs/cgroup/memory/memory.limit_in_bytes\"\n    },\n    \"gpu_probed\": false\n  },\n  \"model_loaded\": false,\n  \"checkpoint_opened\": false,\n  \"gpu_probed\": false,\n  \"images_opened\": false,\n  \"training_steps\": 0,\n  \"test_access\": false,\n  \"diagnostic_source_manifest_sha256\": \"b04925892404fc37a0c81f4d044752248f4d30bd1f379fec9f60b73531ddead0\"\n}\n",
+    "existing_C_cache_matches": [
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_diagnostic_v6_20261008/artifacts/diagnostics/fullvisual/fused_logits.pt",
+        "sha256": "4813ad6727624f3072ff6e5d28d8ecaa9b4a9e919a5e0b489946dfeea08180b9",
+        "bytes": 47052393
+      }
+    ],
+    "model_checkpoint_loaded": false,
+    "gpu_started": false,
+    "test_access": false,
+    "collected_epoch": 1791499746.4944565
+  }
+}

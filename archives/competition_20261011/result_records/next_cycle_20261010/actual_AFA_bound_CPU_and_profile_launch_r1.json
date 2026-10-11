@@ -1,0 +1,36 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_AFA_bound_CPU_and_profile_launch_r1.json",
+  "original_sha256": "05912713b747873ef0b5cb00608a4a19c83cd8e49cbf1ffbed4e5de6940ad32d",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.AFA.actual_profile_launch.v1",
+    "controller": {
+      "pid": 6562,
+      "state": "R",
+      "ppid": 6551,
+      "pgrp": 6562,
+      "session": 6562,
+      "start_ticks": "924187841"
+    },
+    "binding": {
+      "complete": true,
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_20261010",
+      "bound_source_sha256": "8544f9c70cd320699803bad848e95df1c1a36282bb79f40c1a3f7b3f3d77398f",
+      "budget_sha256": "b21140ba952fcdb3095239958e5cb4d0bc25e9e704772b41cec2ab7335785e0c",
+      "model_loaded": false,
+      "GPU_started": false,
+      "test_access": false
+    },
+    "budget_sha256": "b21140ba952fcdb3095239958e5cb4d0bc25e9e704772b41cec2ab7335785e0c",
+    "launch_unix": 1791612075.311025,
+    "CPU_preflight_PASS": true,
+    "profile_successful_updates_target": 100,
+    "virtual_epoch_index": 10,
+    "candidate_initialization": false,
+    "full_candidate_started": false,
+    "test_access": false
+  }
+}

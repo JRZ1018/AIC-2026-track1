@@ -1,0 +1,35 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_full_template_actual_CPU_entry.json",
+  "original_sha256": "923d848b9b7efa7390b5403cc9eec6875a4dee4d5cbed70f52490bbde01f5dd7",
+  "omitted_fields": [
+    "/entries/stdout"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.full.template.actual_CPU_entry.v1",
+    "complete": true,
+    "template_manifest_sha256": "d0c7ccbc2276b300a758bbbab992a36c4a5652fca47648bc80dccd797f5c8291",
+    "verified_source_members": 93,
+    "entries": [
+      {
+        "entry": "scripts/prepare_full_route.py",
+        "return_code": 0
+      },
+      {
+        "entry": "scripts/run_full.py",
+        "return_code": 0
+      },
+      {
+        "entry": "scripts/train_n1_peft.py",
+        "return_code": 0
+      }
+    ],
+    "unbound": true,
+    "actual_positive_confirmation_pending": true,
+    "actual_full_budget_pending": true,
+    "actual_asset_model_preflight_performed": false,
+    "gpu_started": false,
+    "test_access": false,
+    "collected_epoch": 1791504357.0005383
+  }
+}

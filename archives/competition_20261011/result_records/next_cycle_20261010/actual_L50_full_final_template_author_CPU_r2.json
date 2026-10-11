@@ -1,0 +1,29 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_full_final_template_author_CPU_r2.json",
+  "original_sha256": "204e8c21e27e70532046997e7f76a5d887eb70434a57870f90086b911ced6190",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.L50.full_final_template.author_CPU.v2",
+    "complete": true,
+    "scope": "UNBOUND CPU engineering only; not model/gain admission",
+    "checks": [
+      "CPU fixture valid shape only, no actual refs/admission written",
+      "reject independent_confirmation",
+      "reject visual_learning_rate",
+      "reject schema",
+      "reject nonpositive second combo",
+      "reject missing actual refs even valid positive fixture",
+      "all full/final scientific src bytes same",
+      "final original16 CPU tests PASS; new LR optimizer/restoration/4V/features/graph/package corruption"
+    ],
+    "full_template_sha256": "dc448025bd930632aca3a0fe45aa5e8486ce8375e73675bf8d91d6022437d885",
+    "final_template_sha256": "ff7e807e4119b06c86ebe7b251cdc8c32bf09fe72d40a7650cde77f528d9ed50",
+    "future_actual_two_query_gate": null,
+    "future_full_budget": null,
+    "future_full_last": null,
+    "R1_preserved": true,
+    "GPU_started": false,
+    "test_read": false
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/FETCHED.json",
+  "original_sha256": "d612c9587f09662f16d3854d2ee0662bb0c71ad89015b6284284b896dbce80a5",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "return_root": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\final_actual_returns_r1",
+    "manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+    "files": 238,
+    "total_bytes": 1985682747,
+    "seconds": 2640.072276830673,
+    "all_SHA_verified": true,
+    "local_CPU_acceptance_pending": true,
+    "resumed": [
+      {
+        "key": "full/last.pt",
+        "offset": 918519808
+      }
+    ],
+    "preexisting_verified": 219,
+    "original_interrupted_fetch_preserved": true,
+    "transport": "exec_binary",
+    "segments": [
+      {
+        "key": "full/last.pt",
+        "offset": 918519808,
+        "bytes": 148378779,
+        "segment_sha256": "49a68aa18f9a0f4ca52390c4b614af609ac43b4a8cdc30d5db5cf47ff6375f87",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/launch_receipt.json",
+        "offset": 0,
+        "bytes": 583,
+        "segment_sha256": "595eb16ec635944af3ab569e691360d87519334364a48bf65ac130a1db9463eb",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/metrics.json",
+        "offset": 0,
+        "bytes": 7815045,
+        "segment_sha256": "5518a02131f987ed786063ad612b79302227b77e7e5f15c0f598bcd052b5b608",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/runtime_receipts/J5_4e55925291244704b94345f61cd01423.json",
+        "offset": 0,
+        "bytes": 755,
+        "segment_sha256": "5d2c6edb81d0edfc0ef1ca5b3e9adf2fbc2a1371a9062563832adba23d37ecc9",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/runtime_receipts/J5_fc6a85bf3def4fdab045ac18fb0c43e9.json",
+        "offset": 0,
+        "bytes": 754,
+        "segment_sha256": "af341776002b6a787075527665a08884f8ecd32c2c254f7e327d838d2518341b",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/final_graph_budget.json",
+        "offset": 0,
+        "bytes": 1418,
+        "segment_sha256": "da89651c9173539e67fbd5fe9c31f4251d5a1df17bf77b4b5b159cf10b88faa1",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/final_graph_result.json",
+        "offset": 0,
+        "bytes": 3006,
+        "segment_sha256": "86c48b2c29660ff8a7e395410585dd293e2e17327c024bf99fe886f519708677",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/full_final_cpu_audit.json",
+        "offset": 0,
+        "bytes": 7054,
+        "segment_sha256": "9fa62244fbaf27b5a64ed6869c06e2665c558a21874019eec3d9ce616e00e604",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/inference.log",
+        "offset": 0,
+        "bytes": 603,
+        "segment_sha256": "56450f079c938cfff3ce9a9284b9118284baeaaa6a9191df94a90f8f6f9b0b36",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/inference_command.json",
+        "offset": 0,
+        "bytes": 1924,
+        "segment_sha256": "b64c515e84f56e02f0b03d3f90a2729727c0312af031d585107b403e33390ae4",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/inference_dataset.yaml",
+        "offset": 0,
+        "bytes": 1087,
+        "segment_sha256": "7df480962196f54522937e9d233aea5a376892941f27e474155c3a7fa9774d97",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/inference_freeze.json",
+        "offset": 0,
+        "bytes": 1219,
+        "segment_sha256": "3e16f7f8504880dbb11e4d65021992cdfa73087f5ce8759ec09cc9371645f6b7",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/resource_policy.json",
+        "offset": 0,
+        "bytes": 614,
+        "segment_sha256": "5cf323f7d69907d7fcd6862dbace9780cbc7c84da560d1dde6a1692d118b4702",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/inputs/actual_full_binding.json",
+        "offset": 0,
+        "bytes": 2499,
+        "segment_sha256": "7c2e0732a33d34a121750bae6c2b6be63a32faa9b8f6997233173dc636008be7",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/source_manifest.json",
+        "offset": 0,
+        "bytes": 11339,
+        "segment_sha256": "f7e3a64ed65631d84d91fe8fbaea3b2830638f9085ad7cce9a8e7b2f0ed39174",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/inputs/actual_full_binding.json",
+        "offset": 0,
+        "bytes": 2499,
+        "segment_sha256": "7c2e0732a33d34a121750bae6c2b6be63a32faa9b8f6997233173dc636008be7",
+        "remote_exit": 0
+      },
+      {
+        "key": "submission/four_view_features.pt",
+        "offset": 0,
+        "bytes": 81180265,
+        "segment_sha256": "ac807fd6e8f624ddbc32a0322d99be069334850f64e809abadf12822f5390be1",
+        "remote_exit": 0
+      },
+      {
+        "key": "submission/fused_logits.pt",
+        "offset": 0,
+        "bytes": 60661033,
+        "segment_sha256": "9506d5b4753c77d09a9a2d18167a48df90e54c6977c9f4c92f6470265b36283a",
+        "remote_exit": 0
+      },
+      {
+        "key": "submission/inference_artifacts.json",
+        "offset": 0,
+        "bytes": 771,
+        "segment_sha256": "35f917edc5a3d4b340c8e1178266831e6dcbfee0d9578f7441d1cfeac0d4253b",
+        "remote_exit": 0
+      }
+    ],
+    "shared_phase": {
+      "schema": "aictrack1.return.execstream.long_budget.v1",
+      "start_unix": 1791562323.372912,
+      "deadline_unix": 1791591123.372912,
+      "hard_seconds": 28800,
+      "source_sha256": "b2074df5dfa004d89ab9f8959aced78d1da94534c390230a60b488cee2229d9f",
+      "manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+      "original_300s_phase_sha256": "23f5d515776834fe3311bb13b02289fd4d473677313f594497960b544e7e45ac",
+      "original_probe_receipt_sha256": "52bb136558aa8070bfd6d97a1f3926079d5e3945fbaf2485d41ebcc6673c4f3c",
+      "local_reuse_receipt_sha256": "b542b8ab84cdec6f19eba61192e059dbf15d65bdfab9659d57f32be9523ae714",
+      "new_authorization": "Root relays user next seven hours autonomous authority; explicit independent 8-10h recoverable network budget; original 300s phase unchanged",
+      "GPU_budget_shared": false,
+      "GPU": false,
+      "original_part_bytes": 918519808,
+      "local_SHA_verified_files": 219,
+      "remaining_network_bytes": 298071247,
+      "baseline_reset": false,
+      "read_timeout_seconds": 45,
+      "keepalive_seconds": 15,
+      "chunksize": 32768,
+      "test_images_read": 0,
+      "can_resume_same_deadline_with_new_attempt_id": true
+    }
+  }
+}

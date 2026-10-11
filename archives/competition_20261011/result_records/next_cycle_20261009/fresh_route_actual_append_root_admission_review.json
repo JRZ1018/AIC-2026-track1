@@ -1,0 +1,72 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_append_root_admission_review.json",
+  "original_sha256": "9d8d320f6be72c79746502a389d6a503f3103836f9298d5739cc75524cc10b16",
+  "omitted_fields": [
+    "/actual_remote_launch/contents/command"
+  ],
+  "record": {
+    "schema": "aictrack1.root_exact_resume_admission_review.v1",
+    "decision": "proceed_only_exact_partial19_to_original_fixed20_and_shared_frozen_validation",
+    "budget": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+      "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+    },
+    "actual_original_budget_sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941",
+    "resume_checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+    "actual_CPU_restore_receipt": "fresh_route_actual_append_CPU_preflight_return.json",
+    "actual_CPU_audit_sha256": "28ff4b1e9a5bf4047a9ec115efc1ca249b28e9f47a2b03b9b5106fa9c51bb80f",
+    "independent_static_reviewer": "/root/launch_j5_review",
+    "budget_helper_sha256": "b2b0d2e7df817c3240c6cba4e684bec84a9686414e645314b60d450fa2551b13",
+    "launch_helper_sha256": "8226db97a3522d729969f3bfa6ca146afb6206843e7a2057f7de9af59377843e",
+    "operator_manifest_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+    "actual_remote_launch": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_launch.json",
+      "sha256": "9a1318c75cfe341ff57e5cb6369072bdb1f4ca5e409132c6c3a0bb811414c12b",
+      "contents": {
+        "CPU_audit": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/preflight/CPU_CHECKPOINT_AUDIT.json",
+          "sha256": "28ff4b1e9a5bf4047a9ec115efc1ca249b28e9f47a2b03b9b5106fa9c51bb80f"
+        },
+        "CPU_preflight": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/preflight/PREFLIGHT.json",
+          "sha256": "71d563c8a65ced328be6427a006f56eb29dd92114201f22c9322892b38b3d179"
+        },
+        "actual_gpu_trainer_started": false,
+        "controller": {
+          "pgrp": 243711,
+          "pid": 243711,
+          "session": 243711,
+          "start_ticks": "309965381"
+        },
+        "controller_waits_for_shared_phase_start": true,
+        "deadline_unix": 1791533972.440027,
+        "launched_at_unix": 1791526001.1457894,
+        "operator_source_manifest_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+        "phase_start_unix": 1791526772.440027,
+        "prior_whole_groups_closed": true,
+        "schema": "aictrack1.fresh_route.actual_append_continuation_controller_launch.v1",
+        "scope": [
+          "exact_J5_resume_if_needed",
+          "fixed_last20_C_J5_4V_diagnostic",
+          "fixed_J5_graph_validation"
+        ],
+        "shared_budget": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+          "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+        },
+        "source_or_old_budget_modified": false,
+        "test_access": false
+      }
+    },
+    "exact_controller": {
+      "pid": 243711,
+      "pgrp": 243711,
+      "session": 243711,
+      "start_ticks": "309965381"
+    },
+    "completed_training_claim": false,
+    "fresh_confirmation_positive": false,
+    "full_or_test_admitted": false
+  }
+}

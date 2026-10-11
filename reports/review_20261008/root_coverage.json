@@ -1,0 +1,64 @@
+{
+  "files": [
+    {
+      "path": "docs/compliance_questions.md",
+      "bytes": 16691,
+      "sha256": "5f8279e0fb90a996d0a925fa18e538762d38572647d77130ca94b05966e7fb95",
+      "lines": 86,
+      "reader": "/root",
+      "read_status": "read_full",
+      "method": "full text",
+      "note": "original read before revision; C27-C33 authored and new full text inspected"
+    },
+    {
+      "path": "docs/HANDOFF_FOR_NEW_AI_20260929.md",
+      "bytes": 33801,
+      "sha256": "b2121827f454ae2b6742eff8a49dd2b56b20b32660919171140deb927cd737f8",
+      "lines": 264,
+      "reader": "/root",
+      "read_status": "read_full",
+      "method": "full text",
+      "note": ""
+    },
+    {
+      "path": "docs/upstream_registry.yaml",
+      "bytes": 13162,
+      "sha256": "8b389bc9acd56bd158a04b87ad553f8589d71efaa7dcfc7cfe0b71cbb3bb6472",
+      "lines": 274,
+      "reader": "/root",
+      "read_status": "read_full",
+      "method": "full text",
+      "note": ""
+    },
+    {
+      "path": "docs/技术报告.docx",
+      "bytes": 34184,
+      "sha256": "8539bdd45aa0148e0a58fe7f5d7f67df462a8ddde4df8a9419b6c7607ed0481f",
+      "lines": null,
+      "reader": "/root",
+      "read_status": "read_full",
+      "method": "all OOXML paragraphs/header/footer/notes extracted; sole embedded logo inspected",
+      "note": ""
+    },
+    {
+      "path": "docs/群通知1.txt",
+      "bytes": 1096,
+      "sha256": "17feb8b2b02da21346142694b19f017b9361eb47d2a8eb936fefcb85b243c99e",
+      "lines": 10,
+      "reader": "/root",
+      "read_status": "read_full",
+      "method": "full text",
+      "note": ""
+    },
+    {
+      "path": "docs/赛题规则.pdf",
+      "bytes": 295549,
+      "sha256": "5f0a071d5a6c30e04e3e8beb62a50c789d9eeee9c1261242afe7ae723b37e903",
+      "lines": null,
+      "reader": "/root",
+      "read_status": "read_full",
+      "method": "all six PDF pages text and rendered pages inspected",
+      "note": ""
+    }
+  ]
+}

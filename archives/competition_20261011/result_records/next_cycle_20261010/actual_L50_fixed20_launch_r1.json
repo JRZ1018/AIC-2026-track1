@@ -1,0 +1,41 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_fixed20_launch_r1.json",
+  "original_sha256": "ac2a8194ff44ebee16fed2db096f65fe3634c1130ac81b8897abc36a9074695b",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.learning_rate_L50.actual_launch.v1",
+    "controller": {
+      "pid": 41803,
+      "pgrp": 41803,
+      "session": 41803,
+      "start_ticks": "930507024"
+    },
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_L50_20261011",
+    "source_manifest_sha256": "4b3f0fe90d8ef5b138d05714526bc92e46dabbdd9254ae849416db61e16638fd",
+    "budget_sha256": "f065cd86952c6de67588e264d43f060f26e57ff25bd1593726ee83fb6193d42b",
+    "launch_unix": 1791675267.1444137,
+    "preflight": {
+      "preflight": {
+        "return_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "CUDA_smoke": {
+        "return_code": 0,
+        "log_sha256": "9f2f2954f340659a7855582dc19e2e9aab22d348d06d4285c91f6d2436b732d7"
+      }
+    },
+    "stage_reused_files": 81,
+    "stage_uploaded_bytes": 19107,
+    "planned_arms": [
+      "L50"
+    ],
+    "epochs_each": 20,
+    "planned_pause": false,
+    "test_access": false,
+    "initialize_from_smoke": false,
+    "only_scientific_delta": "visual_learning_rate3.5e-6to5e-6_vs_L35"
+  }
+}

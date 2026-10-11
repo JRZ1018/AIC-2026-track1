@@ -1,0 +1,13 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/graph_budget.json",
+  "original_sha256": "75632df7571d5b975cc9515feae1d8d300a2b6bd6783f83a3767f83259cb5821",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.p3.aggregate_budget.v1",
+    "source_manifest_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+    "total_wall_seconds": 7200.0,
+    "spent_wall_seconds": 64.37051040213555,
+    "last_run_status": "complete"
+  }
+}

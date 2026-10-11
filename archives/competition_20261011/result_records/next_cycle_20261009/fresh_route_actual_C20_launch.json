@@ -1,0 +1,51 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_C20_launch.json",
+  "original_sha256": "1ba90a054815bfc9ed6224f9c14b7fe52c1fcf9731a489d47316eeb18fe9aff6",
+  "omitted_fields": [
+    "/canonical_lease/command",
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_C20_launch.v1",
+    "complete": true,
+    "controller": {
+      "pid": 236091,
+      "pgrp": 236091,
+      "session": 236091,
+      "start_ticks": "308497119"
+    },
+    "trainer": {
+      "pid": 236098,
+      "state": "R",
+      "ppid": 236091,
+      "pgrp": 236098,
+      "session": 236098,
+      "start_ticks": "308497585"
+    },
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+    "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+    "selected_route": "J5_GRAPH",
+    "canonical_lease": {
+      "config": "configs/experiment/p1_C.yaml",
+      "output_dir": "artifacts/experiments/FRESH_C",
+      "owner": "20261009-P1-C",
+      "queue_pid": 236091,
+      "schema_version": 1,
+      "started_at": "2026-10-09T10:02:03.137691+08:00",
+      "token": "0289a3cc42dc4a0db1f51cfb6dbb3fae",
+      "trainer_pid": 236098
+    },
+    "actual_two_arm_smoke_sha256": "57430b06da5c8a88248f238e787f3ca90d2fbe04f362618f90e1cfdb54339895",
+    "original_phase_start_unix": 1791497972.440027,
+    "deadline_unix": 1791526772.440027,
+    "original_data_baseline_bytes": 13013950464,
+    "disk_max_bytes": 8589934592,
+    "min_free_bytes": 3221225472,
+    "candidate_scope": "new grouped split matched control C20 only; selected J5 not started yet",
+    "test_access": false,
+    "trained_epochs_complete": false,
+    "new_submission_ready": false,
+    "created_epoch": 1791511323.239333
+  }
+}

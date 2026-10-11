@@ -1,0 +1,37 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/graph_stage_receipt.json",
+  "original_sha256": "263ad103f66fdd290c70bbe121a1f9a937aca0b96e84a4ff208585ae53ed767a",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.next-cycle.exclusive-stage.v1",
+    "source_manifest_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+    "input_manifest": "source_manifest.json",
+    "files": {
+      "README.md": "e7a61f3a05a5946da1d9647e12319802f7a1722667e46cf973647bf8026e90e4",
+      "bind_graph_assets.py": "1b7a601a102ca7ed33f3139499e99ba858bbc64432c8ef2cda1e86331664fa96",
+      "freeze_source.py": "076afc7ce05fc97eb4aab2eae7222fa91a1898024b84b962065b49817174dce5",
+      "graph_protocol.json": "f48211db3716faaf45255dcc96e0b614bf42c1673791406bf9d7457c1a50b30d",
+      "p3_budget.py": "32a9488ea0e15cf3819e8ef54637c090931906643480bbe9e2e0eda33918de85",
+      "p3_contract.py": "72d28f3b75302be0a46c194280f6ea2c37009df9db605001b8b1f9dd14054d33",
+      "p3_graph.py": "1e70ac94e08ec5f26ee21cbff5afe6d13bc96be253ff9ea7dabeb9149a317df5",
+      "p3_metrics.py": "0f3194e1c6e2257ec7b6e28dd15e51866cd0fe3f48e68e1bc4bb83f185bf7380",
+      "run_graph.py": "2e3c69ae660c30e99d34ea63ccb4f17d55495d08127f55d79f9fe14fbc587e41",
+      "tests/test_graph.py": "8913347a78a9c861ef484b116cdea8ae3b41216505097a45a80915a6b4357765",
+      "source_manifest.json": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c"
+    },
+    "created_epoch": 1791486425.6601665,
+    "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009",
+    "source_only": true,
+    "gpu_started": false,
+    "prepared": {
+      "created": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009"
+    },
+    "verified": {
+      "verified_files": 11,
+      "source_manifest_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+      "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009",
+      "gpu_started": false
+    }
+  }
+}

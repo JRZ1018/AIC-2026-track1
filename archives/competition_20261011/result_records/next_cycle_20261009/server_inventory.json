@@ -1,0 +1,431 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/server_inventory.json",
+  "original_sha256": "df9bc8eb574cbe80fc703814ce4ff860de5c94ba33b121ced7c438b70caefdc5",
+  "omitted_fields": [
+    "/gpu/stderr",
+    "/gpu/stdout",
+    "/gpu_processes/stderr",
+    "/gpu_processes/stdout",
+    "/memory/stderr",
+    "/memory/stdout"
+  ],
+  "record": {
+    "utc_epoch": 1791478374.3639183,
+    "hostname": "autodl-container-2pzv67kkm9-fb133b83",
+    "cpu_count": 128,
+    "gpu": {
+      "exit_code": 0
+    },
+    "gpu_processes": {
+      "exit_code": 0
+    },
+    "memory": {
+      "exit_code": 0
+    },
+    "disks": {
+      "/root": {
+        "total": 32212254720,
+        "used": 17792425984,
+        "free": 14419828736
+      },
+      "/root/autodl-tmp": {
+        "total": 96636764160,
+        "used": 83622813696,
+        "free": 13013950464
+      }
+    },
+    "roots": [
+      "/root/AICtrack1_attention_diagnostic_20261006",
+      "/root/AICtrack1_attention_diagnostic_v2_20261006",
+      "/root/AICtrack1_attention_exploratory_20261006",
+      "/root/AICtrack1_attention_finish_20261006",
+      "/root/AICtrack1_bootstrap_audit_20261007",
+      "/root/AICtrack1_bootstrap_diagnostic_20261007",
+      "/root/AICtrack1_bootstrap_screen_20261007",
+      "/root/AICtrack1_fullvisual_confirm_20261008",
+      "/root/AICtrack1_fullvisual_confirm_diagnostic_v4_20261008",
+      "/root/AICtrack1_fullvisual_confirm_diagnostic_v6_20261008",
+      "/root/AICtrack1_fullvisual_confirm_v2_20261008",
+      "/root/AICtrack1_fullvisual_confirm_v3_20261008",
+      "/root/AICtrack1_fullvisual_confirm_v4_20261008",
+      "/root/AICtrack1_fullvisual_confirm_v5_20261008",
+      "/root/AICtrack1_fullvisual_delivery_20261008",
+      "/root/AICtrack1_fullvisual_delivery_v2_20261008",
+      "/root/AICtrack1_fullvisual_delivery_v4_20261008",
+      "/root/AICtrack1_fullvisual_delivery_v5_20261008",
+      "/root/AICtrack1_fullvisual_delivery_v6_20261008",
+      "/root/AICtrack1_fullvisual_full_20261008",
+      "/root/AICtrack1_fullvisual_full_v2_20261008",
+      "/root/AICtrack1_fullvisual_full_v3_20261008",
+      "/root/AICtrack1_fullvisual_full_v4_20261008",
+      "/root/AICtrack1_fullvisual_full_v5_20261008",
+      "/root/AICtrack1_grouped_pool_diagnostic_20261007",
+      "/root/AICtrack1_grouped_pool_diagnostic_v2_20261008",
+      "/root/AICtrack1_grouped_pool_diagnostic_v3_20261008",
+      "/root/AICtrack1_grouped_pool_pair_20261007",
+      "/root/AICtrack1_heldout_supervision_audit_20261007",
+      "/root/AICtrack1_local_group_coverage_audit_20261007",
+      "/root/AICtrack1_local_group_support_audit_20261007",
+      "/root/AICtrack1_loss_signal_audit_20261007",
+      "/root/AICtrack1_low_rank_diagnostic_v2_20261008",
+      "/root/AICtrack1_low_rank_diagnostic_v3_20261008",
+      "/root/AICtrack1_low_rank_screen_v2_20261008",
+      "/root/AICtrack1_low_rank_screen_v3_20261008",
+      "/root/AICtrack1_lr1_first15_resources_20261008",
+      "/root/AICtrack1_lr1_v3_first15_resources_20261008",
+      "/root/AICtrack1_mixup_diagnostic_20261007",
+      "/root/AICtrack1_mixup_screen_20261007",
+      "/root/AICtrack1_mixup_signal_audit_20261007",
+      "/root/AICtrack1_mx1_first15_resources_20261007",
+      "/root/AICtrack1_pf1_diagnostic_20261006",
+      "/root/AICtrack1_pf1_screen_20261006",
+      "/root/AICtrack1_pool_pair_first15_resources_20261007",
+      "/root/AICtrack1_sam1_first15_resources_20261007",
+      "/root/AICtrack1_sharpness_diagnostic_20261007",
+      "/root/AICtrack1_sharpness_screen_20261007",
+      "/root/AICtrack1_sharpness_signal_audit_20261007",
+      "/root/AICtrack1_vc1_first15_resources_20261007",
+      "/root/AICtrack1_view_consistency_diagnostic_20261007",
+      "/root/AICtrack1_view_consistency_screen_20261007",
+      "/root/AICtrack1_view_consistency_screen_v2_20261007",
+      "/root/AICtrack1_view_signal_audit_20261007"
+    ],
+    "active_relevant_processes": [],
+    "assets": [
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_20261008/artifacts/experiments/mainline-h1/last.pt",
+        "bytes": 4641410,
+        "modified_epoch": 1791431641.6723619
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_20261008/artifacts/experiments/mainline-h1/h1_receipt.json",
+        "bytes": 981,
+        "modified_epoch": 1791431642.1803706
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_20261008/artifacts/features/mainline336/complete.json",
+        "bytes": 5671,
+        "modified_epoch": 1791038891.1136923
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_20261008/artifacts/features/mainline336/metadata.json",
+        "bytes": 1101,
+        "modified_epoch": 1791038110.681858
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_diagnostic_v6_20261008/artifacts/diagnostics/last8/fused_logits.pt",
+        "bytes": 47052393,
+        "modified_epoch": 1791449110.6439369
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_diagnostic_v6_20261008/artifacts/diagnostics/fullvisual/fused_logits.pt",
+        "bytes": 47052393,
+        "modified_epoch": 1791449355.1440647
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v2_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v2_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v2_20261008/artifacts/experiments/mainline-h1/last.pt",
+        "bytes": 4641410,
+        "modified_epoch": 1791431641.6723619
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v2_20261008/artifacts/experiments/mainline-h1/h1_receipt.json",
+        "bytes": 981,
+        "modified_epoch": 1791431642.1803706
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v2_20261008/artifacts/features/mainline336/complete.json",
+        "bytes": 5671,
+        "modified_epoch": 1791038891.1136923
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v2_20261008/artifacts/features/mainline336/metadata.json",
+        "bytes": 1101,
+        "modified_epoch": 1791038110.681858
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v3_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v3_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v3_20261008/artifacts/experiments/mainline-h1/last.pt",
+        "bytes": 4641410,
+        "modified_epoch": 1791431641.6723619
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v3_20261008/artifacts/experiments/mainline-h1/h1_receipt.json",
+        "bytes": 981,
+        "modified_epoch": 1791431642.1803706
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v3_20261008/artifacts/features/mainline336/complete.json",
+        "bytes": 5671,
+        "modified_epoch": 1791038891.1136923
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v3_20261008/artifacts/features/mainline336/metadata.json",
+        "bytes": 1101,
+        "modified_epoch": 1791038110.681858
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v4_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v4_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v4_20261008/artifacts/experiments/mainline-h1/last.pt",
+        "bytes": 4641410,
+        "modified_epoch": 1791431641.6723619
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v4_20261008/artifacts/experiments/mainline-h1/h1_receipt.json",
+        "bytes": 981,
+        "modified_epoch": 1791431642.1803706
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v4_20261008/artifacts/features/mainline336/complete.json",
+        "bytes": 5671,
+        "modified_epoch": 1791038891.1136923
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v4_20261008/artifacts/features/mainline336/metadata.json",
+        "bytes": 1101,
+        "modified_epoch": 1791038110.681858
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/experiments/mainline-h1/last.pt",
+        "bytes": 4641410,
+        "modified_epoch": 1791431641.6723619
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/experiments/mainline-h1/h1_receipt.json",
+        "bytes": 981,
+        "modified_epoch": 1791431642.1803706
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/experiments/control20/last.pt",
+        "bytes": 914174763,
+        "modified_epoch": 1791440591.9465144
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/experiments/control20/best.pt",
+        "bytes": 226844675,
+        "modified_epoch": 1791440592.1305194
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/experiments/fullvisual20/last.pt",
+        "bytes": 1412596667,
+        "modified_epoch": 1791448788.892643
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/experiments/fullvisual20/best.pt",
+        "bytes": 351447439,
+        "modified_epoch": 1791448789.3646498
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/features/mainline336/complete.json",
+        "bytes": 5671,
+        "modified_epoch": 1791038891.1136923
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_confirm_v5_20261008/artifacts/features/mainline336/metadata.json",
+        "bytes": 1101,
+        "modified_epoch": 1791038110.681858
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_delivery_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_delivery_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_delivery_v2_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_delivery_v2_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_delivery_v4_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_delivery_v4_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_delivery_v5_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_delivery_v5_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_delivery_v6_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_delivery_v6_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v2_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v2_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v3_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v3_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v3_20261008/artifacts/experiments/mainline-h1/last.pt",
+        "bytes": 4641602,
+        "modified_epoch": 1791454147.373949
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v3_20261008/artifacts/experiments/mainline-h1/h1_receipt.json",
+        "bytes": 1237,
+        "modified_epoch": 1791454147.389949
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v3_20261008/artifacts/features/mainline336/metadata.json",
+        "bytes": 1101,
+        "modified_epoch": 1791453356.7263222
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v3_20261008/artifacts/features/mainline336/complete.json",
+        "bytes": 5671,
+        "modified_epoch": 1791453999.2248805
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v4_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v4_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/inputs/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205467.840313
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/inputs/prior/split.csv",
+        "bytes": 10706046,
+        "modified_epoch": 1791205388.0974371
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/artifacts/experiments/mainline-h1/last.pt",
+        "bytes": 4641602,
+        "modified_epoch": 1791454147.373949
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/artifacts/experiments/mainline-h1/h1_receipt.json",
+        "bytes": 1237,
+        "modified_epoch": 1791454147.389949
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/artifacts/experiments/fullvisual20/last.pt",
+        "bytes": 1062278635,
+        "modified_epoch": 1791464467.3543255
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/artifacts/experiments/fullvisual20/final.pt",
+        "bytes": 351448173,
+        "modified_epoch": 1791464467.8743246
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/artifacts/features/mainline336/metadata.json",
+        "bytes": 1101,
+        "modified_epoch": 1791453356.7263222
+      },
+      {
+        "path": "/root/AICtrack1_fullvisual_full_v5_20261008/artifacts/features/mainline336/complete.json",
+        "bytes": 5671,
+        "modified_epoch": 1791453999.2248805
+      }
+    ],
+    "cgroups": {
+      "/sys/fs/cgroup/memory/memory.limit_in_bytes": "66571993088"
+    }
+  }
+}

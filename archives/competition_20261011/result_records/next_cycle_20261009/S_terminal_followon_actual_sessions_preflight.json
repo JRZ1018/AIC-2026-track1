@@ -1,0 +1,51 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/S_terminal_followon_actual_sessions_preflight.json",
+  "original_sha256": "c3fc154629c3745f79d9da1eb7364af351961d84a2f1f9de62da8a758d2f52b8",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.S.terminal_followon.actual_watched_session_preflight.v1",
+    "complete": true,
+    "identities": [
+      {
+        "pid": 230190,
+        "state": "S",
+        "ppid": 1,
+        "pgrp": 230190,
+        "session": 230190,
+        "start_ticks": "307357000",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009"
+      },
+      {
+        "pid": 230195,
+        "state": "R",
+        "ppid": 230190,
+        "pgrp": 230195,
+        "session": 230195,
+        "start_ticks": "307357244",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009"
+      }
+    ],
+    "sources": [
+      {
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "source_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+        "verified_members": 85
+      },
+      {
+        "root": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009",
+        "source_sha256": "b04925892404fc37a0c81f4d044752248f4d30bd1f379fec9f60b73531ddead0",
+        "verified_members": 26
+      }
+    ],
+    "canonical_owner": "20261009-P1-S",
+    "canonical_token": "9aab271ffdf542c787ff95f052d8e0b5",
+    "checkpoint_contents_loaded": false,
+    "checkpoint_hash_computed": false,
+    "GPU_started": false,
+    "stopped_or_restarted_S": false,
+    "lock_modified": false,
+    "test_access": false,
+    "collected_epoch": 1791505379.0946946
+  }
+}

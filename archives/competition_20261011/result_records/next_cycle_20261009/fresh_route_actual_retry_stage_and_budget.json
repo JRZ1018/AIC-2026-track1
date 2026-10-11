@@ -1,0 +1,153 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_retry_stage_and_budget.json",
+  "original_sha256": "3317201a3ad3aa05c6f876f13f9155790f9f1b72c52d1cbf62593f729af55749",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_retry_stage_and_budget.v1",
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009",
+    "source_manifest_sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2",
+    "actual_CPU_entries": [
+      {
+        "args": [
+          "--help"
+        ],
+        "returncode": 0,
+        "stdout_tail": "usage: continue_train.py [-h] [--budget BUDGET]\n                         [--budget-sha256 BUDGET_SHA256] [--run | --preflight]\n\nAn append-only shared-clock operator for the original exact J5 checkpoint\nresume.\n\noptions:\n  -h, --help            show this help message and exit\n  --budget BUDGET\n  --budget-sha256 BUDGET_SHA256\n  --run\n  --preflight\n"
+      },
+      {
+        "args": [],
+        "returncode": 0,
+        "stdout_tail": "{\n  \"schema\": \"aictrack1.fresh_route.continuation.training.plan.v1\",\n  \"training_root\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009\",\n  \"operator_root\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009\",\n  \"source_manifest_sha256\": \"4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482\",\n  \"original_phase_start_unix\": 1791497972.440027,\n  \"original_deadline_unix\": 1791526772.440027,\n  \"maximum_shared_deadline_unix\": 1791533972.440027,\n  \"initial_free_bytes\": 13013950464,\n  \"disk_max_bytes\": 12884901888,\n  \"min_free_bytes\": 3221225472,\n  \"scope\": [\n    \"exact_J5_resume_if_needed\",\n    \"fixed_last20_C_J5_4V_diagnostic\",\n    \"fixed_J5_graph_validation\"\n  ],\n  \"command\": [\n    \"/root/autodl-tmp/venvs/aictrack1/bin/python\",\n    \"scripts/train_n1_peft.py\",\n    \"--config\",\n    \"configs/experiment/p1_J5.yaml\",\n    \"--resume\",\n    \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt\"\n  ],\n  \"root_budget_bound\": false,\n  \"budget\": null,\n  \"test_access\": false,\n  \"new_fresh_training\": false,\n  \"old_source_or_budget_modified\": false,\n  \"old_controllers_called\": false,\n  \"canonical_lock_manually_modified\": false,\n  \"GPU_started\": false,\n  \"retry_after_disk_expansion\": true,\n  \"capacity_increase_bytes\": 32212254720,\n  \"adjusted_initial_free_bytes\": 45226205184,\n  \"actual_disk_expansion_recovery_sha256\": \"ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52\"\n}\n"
+      }
+    ],
+    "shared_retry_budget": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/shared_retry_append_budget.json",
+      "sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571"
+    },
+    "budget": {
+      "checkpoints": {
+        "C": {
+          "epoch": 20,
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_C/last.pt",
+          "sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca"
+        },
+        "J5": {
+          "epoch": 19,
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt",
+          "sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe"
+        }
+      },
+      "configs": {
+        "C": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_C.yaml",
+          "sha256": "4cf0d7d79d81a256848f09347e2a18e400f5bb7c053a1240542850c54df93cd6"
+        },
+        "J5": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_J5.yaml",
+          "sha256": "a65f60e974c04842e2c86975ab3675aad8469bc1b0c0a27a98e8fa145b4b8562"
+        }
+      },
+      "created_at_unix": 1791525764.670445,
+      "deadline_unix": 1791533972.440027,
+      "disk_max_bytes": 12884901888,
+      "initial_free_bytes": 13013950464,
+      "min_free_bytes": 3221225472,
+      "new_fresh_training": false,
+      "original_budget": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/queues/fresh_route_budget.json",
+        "sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941"
+      },
+      "original_deadline_unix": 1791526772.440027,
+      "original_phase_start_unix": 1791497972.440027,
+      "phase_start_unix": 1791526772.440027,
+      "rationale": "Actual stable J5 plannedpause19; remaining original window has insufficient conservative15min reserve for final resume plus both diagnostics. One append-only shared TRAIN and frozenVALIDATION window; old bytes and cumulative baseline unchanged.",
+      "root_authorized": true,
+      "schema": "aictrack1.fresh_route.continuation.retry_training_budget.v1",
+      "scope": [
+        "exact_J5_resume_if_needed",
+        "fixed_last20_C_J5_4V_diagnostic",
+        "fixed_J5_graph_validation"
+      ],
+      "selected_arm": "J5",
+      "selected_route": "J5_GRAPH",
+      "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+      "status": "root_authorized_append_only_budget",
+      "test_access": false,
+      "training_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+      "training_source": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/source_manifest.json",
+        "sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482"
+      },
+      "watched": [
+        {
+          "pgrp": 236091,
+          "pid": 236091,
+          "role": "C_controller",
+          "session": 236091,
+          "start_ticks": "308497119"
+        },
+        {
+          "pgrp": 236098,
+          "pid": 236098,
+          "role": "C_trainer",
+          "session": 236098,
+          "start_ticks": "308497585"
+        },
+        {
+          "pgrp": 239865,
+          "pid": 239865,
+          "role": "J5_controller",
+          "session": 239865,
+          "start_ticks": "309227901"
+        },
+        {
+          "pgrp": 239872,
+          "pid": 239872,
+          "role": "J5_trainer",
+          "session": 239872,
+          "start_ticks": "309228342"
+        },
+        {
+          "pgrp": 243711,
+          "pid": 243711,
+          "role": "failed_append_controller",
+          "session": 243711,
+          "start_ticks": "309965381"
+        },
+        {
+          "pgrp": 244056,
+          "pid": 244056,
+          "role": "failed_append_trainer",
+          "session": 244056,
+          "start_ticks": "310043026"
+        }
+      ],
+      "retry_after_disk_expansion": true,
+      "capacity_increase_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "original_shared_budget": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+        "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+      },
+      "prior_failure": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/FAILURE.json",
+        "sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32"
+      },
+      "disk_expansion_recovery": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+        "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+      }
+    },
+    "GPU_started": false,
+    "observed_unix": 1791528115.1698618,
+    "stage": {
+      "prepare": {
+        "created": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009"
+      },
+      "verify": {
+        "verified_files": 29
+      }
+    }
+  }
+}

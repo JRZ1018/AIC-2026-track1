@@ -1,0 +1,63 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_actual_final_status_r2.json",
+  "original_sha256": "b183a28f75a5e24e140faa0ef94a954208cb2d40b025e596cc6538a021e13a1b",
+  "omitted_fields": [
+    "/stdout"
+  ],
+  "record": {
+    "now": 1791665295.9554248,
+    "controller_group": [],
+    "canonical": null,
+    "log": "{\n  \"csv_path\": \"/root/autodl-tmp/AICtrack1_next_cycle_L35_final_20261010/submissions/final/pred_results.csv\",\n  \"csv_sha256\": \"e02a214cc0ba4476501698b75a546d3d29bc5ee1942f5c91dccf6751a78a7d7f\",\n  \"inference_seconds\": 176.2858895510435,\n  \"manifest_path\": \"/root/autodl-tmp/AICtrack1_next_cycle_L35_final_20261010/submissions/final/submission_manifest.json\",\n  \"record_count\": 37444,\n  \"zip_path\": \"/root/autodl-tmp/AICtrack1_next_cycle_L35_final_20261010/submissions/final/pred_results.zip\",\n  \"zip_sha256\": \"767ace16352bdb35474df443eb3285d35e2ba832622fcfa3424b4ccbe9b922d8\"\n}\n",
+    "result": {
+      "complete": true,
+      "final_sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6",
+      "finished_epoch": 1791664649.3357134,
+      "hashes": {
+        "pred_results.csv": "e02a214cc0ba4476501698b75a546d3d29bc5ee1942f5c91dccf6751a78a7d7f",
+        "pred_results.zip": "767ace16352bdb35474df443eb3285d35e2ba832622fcfa3424b4ccbe9b922d8",
+        "submission_manifest.json": "60966a3e50ea784f0a0400f48612b18c39b5b241314fcaff71fc6e392858da8f"
+      },
+      "no_automatic_retry": true,
+      "return_manifest_sha256": "ad086cc485fe42378835538ed2fb1179038cfb1baf5808f9f0bb93d96c44ded2",
+      "schema": "aictrack1.fresh_route.final_controller_result.v1",
+      "status": "single_model_full20_P7_csv_zip_verified_local_restore_pending",
+      "test_access": true
+    },
+    "files": [
+      {
+        "name": "pred_results.csv",
+        "size": 1572648,
+        "mtime": 1791664640.3424687
+      },
+      {
+        "name": "pred_results.zip",
+        "size": 804874,
+        "mtime": 1791664641.0745223
+      },
+      {
+        "name": "submission_manifest.json",
+        "size": 8596,
+        "mtime": 1791664641.9225845
+      },
+      {
+        "name": "fused_logits.pt",
+        "size": 60661033,
+        "mtime": 1791664642.0465937
+      },
+      {
+        "name": "four_view_features.pt",
+        "size": 81180265,
+        "mtime": 1791664642.2666097
+      },
+      {
+        "name": "inference_artifacts.json",
+        "size": 772,
+        "mtime": 1791664642.3866186
+      }
+    ],
+    "free": 10994900992,
+    "GPU": "1, 0"
+  }
+}

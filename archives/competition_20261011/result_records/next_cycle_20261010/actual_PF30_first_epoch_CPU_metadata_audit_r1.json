@@ -1,0 +1,106 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_first_epoch_CPU_metadata_audit_r1.json",
+  "original_sha256": "d9d7473b8022bed7a2e2605339ba9ab0c84ae128489b75c8c4df7662e8a2ae48",
+  "omitted_fields": [],
+  "record": {
+    "receipt": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010/root_actual_PF30_first_epoch_CPU_metadata_audit_r1.json",
+    "receipt_sha256": "dd95b7ca3df093bb212479931e5efe2ebe0490fe98ff5136eb2f99664d0714bb",
+    "value": {
+      "schema": "aictrack1.PF30.actual_first_epoch_CPU_metadata_audit.v1",
+      "complete": true,
+      "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+      "actual_checkpoint_sha256": "7d0a68665a2c24e6388adb9126fd6f3ca752e44bbd0ac96e8dd32c7ad7976f20",
+      "actual_epoch": 1,
+      "actual_checkpoint_stat": {
+        "bytes": 1420538077,
+        "mtime": 1791587164.1964562
+      },
+      "scope": "stable atomic mmap CPU tensor/head/optimizer/AC and gate restore plus official train metadata binding; no full-model forward or GPU",
+      "trainable_tensor_count": 154,
+      "trainable_parameters": 88233966,
+      "head_actual_update_max_abs": {
+        "classifier.linear.weight": 0.0024566650390625,
+        "classifier.linear.bias": 0.0013650059700012207
+      },
+      "optimizer_groups": [
+        152,
+        2
+      ],
+      "optimizer_successful_steps": 1856.0,
+      "scheduler_T_max": 20,
+      "sampling": {
+        "mode": "natural",
+        "sample_count": 118958,
+        "class_count_min": 4,
+        "class_count_median": 157.0,
+        "class_count_max": 198,
+        "zero_sample_class_count": 0
+      },
+      "actual_supervision_summary": {
+        "mask_role": "actual_epoch_supervision_mask",
+        "mask_source_completed_epoch": 0,
+        "mask_sha256": "da85ca5fb56865c337a9506b5d86b6701ba4d7343a44fcade621431ddf4d5c5f",
+        "observed": 118958,
+        "supervised": 118958,
+        "excluded": 0,
+        "original_AC_mass": 118958.0,
+        "removed_AC_mass": 0.0,
+        "retained_AC_mass": 118958.0,
+        "removed_AC_mass_fraction": 0.0,
+        "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+      },
+      "next_summary": {
+        "epochs_updated": 1,
+        "excluded": 0,
+        "sample_count": 118958,
+        "note": "suspected persistent disagreement, not measured true noise"
+      },
+      "gate_v2_max_ac_weight": 0.3,
+      "actual_AC_ID_label_binding_count": 118958,
+      "actual_train_seconds": 249.81859596120194,
+      "actual_train_samples_per_second": 476.1775221027772,
+      "initial_epoch_all_keep_reference_expected": true,
+      "observed_unix": 1791587322.5195436,
+      "checkpoint_keys": [
+        "best_state",
+        "best_top1",
+        "class_mapping_sha256",
+        "classifier_head_restored_equal",
+        "classifier_head_source",
+        "clip_weight_sha256",
+        "competition_stage",
+        "confidence_observation_protocol",
+        "confidence_observation_sources",
+        "confidence_weighting",
+        "config_sha256",
+        "cuda_rng_state_all",
+        "epoch",
+        "fresh_route_arm",
+        "fresh_route_source_manifest_sha256",
+        "history",
+        "initial_validation",
+        "mode",
+        "num_classes",
+        "numpy_rng_state",
+        "optimizer",
+        "persistent_filter_state",
+        "position_interpolation",
+        "python_rng_state",
+        "scaler",
+        "scheduler",
+        "selected_route",
+        "split_sha256",
+        "token_readout",
+        "torch_rng_state",
+        "train_manifest_sha256",
+        "trainable_state",
+        "training_scope",
+        "visual_input_resolution"
+      ],
+      "operator_repair_note": "Initial audit assumed head prefix; frozen producer defines classifier prefix. Original training source unchanged, first attempt wrote no receipt.",
+      "GPU": false,
+      "test_image_reads": 0
+    }
+  }
+}

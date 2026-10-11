@@ -1,0 +1,28 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B25_frozen_4V_launch_r1.json",
+  "original_sha256": "0abec6151b9a362961e1662fe139e9e0edd80011f5cce16e485d517c44b4c377",
+  "omitted_fields": [
+    "/receipt/process/argv"
+  ],
+  "record": {
+    "receipt": {
+      "mode": "existing_frozen_B25_4V_CLI",
+      "process": {
+        "pid": 30850,
+        "pgrp": 30850,
+        "session": 30850,
+        "start_ticks": "315854508",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010"
+      },
+      "source_sha256": "24aa7656811de9027162a20f8de6c5f4a015123ee41aeafc2602c653bda40013",
+      "checkpoint_sha256": "733641e9197c5b8c9c967f8d69ce2ea20e5c455f28032533cd7131e9909591ed",
+      "launch_unix": 1791584892.4240155,
+      "log": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/root_actual_B25_run_stdout.log",
+      "test_access": false,
+      "new_waiter_or_framework_created": false
+    },
+    "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/root_actual_B25_run_launch.json",
+    "sha256": "c49f23543921a1d52a582b38a722fc83b54d538145636b06f42702bb179c7868"
+  }
+}

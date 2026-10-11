@@ -1,0 +1,58 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_fixed20_launch_r1.json",
+  "original_sha256": "1b13de4d63404598a469dcfeddea926f2d93983f9ac7a2e63912625234c6e683",
+  "omitted_fields": [
+    "/actual_launch/command",
+    "/actual_launch/controller/argv",
+    "/canonical/command",
+    "/trainer/argv"
+  ],
+  "record": {
+    "actual_launch": {
+      "schema": "aictrack1.persistent_filter_joint.actual_launch.v1",
+      "controller": {
+        "pid": 31939,
+        "ppid": 31938,
+        "pgrp": 31939,
+        "session": 31939,
+        "start_ticks": "316040409",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+      "budget_sha256": "ab5edf6db05351732364a8ec6263dc1114d7dcf45ceee341d128a7f7f19a0049",
+      "launch_unix": 1791586751.4260662,
+      "test_access": false,
+      "planned_arms": [
+        "PF30"
+      ],
+      "max_ac_weight": 0.3,
+      "epochs_each": 20,
+      "planned_pause": false,
+      "initialize_from_smoke": false,
+      "new_waiter_or_framework_created": false
+    },
+    "remote_launch_sha256": "2c8c5e30f0ece2b2699160eee94c99840dfc2cb5628bf3391ec59a13802fcc87",
+    "canonical": {
+      "config": "configs/experiment/p1_PF30.yaml",
+      "output_dir": "artifacts/experiments/PF2_PF30",
+      "owner": "20261010-persistent-filter-joint-PF30",
+      "queue_pid": 31939,
+      "schema_version": 1,
+      "started_at": "2026-10-10T06:59:14.205356+08:00",
+      "token": "00391c5551bc4fe8a2ddbd673be71911",
+      "trainer_pid": 31944
+    },
+    "trainer": {
+      "pid": 31944,
+      "ppid": 31939,
+      "pgrp": 31944,
+      "session": 31944,
+      "start_ticks": "316040688",
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+    },
+    "source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+    "test_access": false,
+    "training_started": true
+  }
+}

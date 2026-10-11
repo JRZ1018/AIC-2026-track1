@@ -1,0 +1,110 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_AFA_fixed20_launch_r1.json",
+  "original_sha256": "6c29275119e8b0b7934d48199b9ff470c331d424da5aa8e2dc0faa9ce705a2ff",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.AFA.actual_fixed20_launch.v1",
+    "launch_unix": 1791612514.5822992,
+    "controller": {
+      "pid": 7112,
+      "state": "R",
+      "ppid": 7048,
+      "pgrp": 7112,
+      "session": 7112,
+      "start_ticks": "924231768"
+    },
+    "source_sha256": "8544f9c70cd320699803bad848e95df1c1a36282bb79f40c1a3f7b3f3d77398f",
+    "budget_sha256": "b21140ba952fcdb3095239958e5cb4d0bc25e9e704772b41cec2ab7335785e0c",
+    "smoke": {
+      "schema": "aictrack1.fresh_route.cuda_smoke.v1",
+      "status": "passed",
+      "synthetic_only": true,
+      "candidate": false,
+      "config_sha256": "87a042b667bc82c1d23de876f5ca0e621a2ffbf209c3027e61a33e0c87bedbd0",
+      "full_visual_tensors": 152,
+      "trainable_tensors": 165,
+      "trainable_parameters": 88297579,
+      "head_gradient_norms": {
+        "linear.weight": 0.18277829885482788,
+        "linear.bias": 0.18276458978652954
+      },
+      "head_frozen": false,
+      "base_loss": {
+        "kind": "sce",
+        "alpha": 0.1,
+        "beta": 1.0,
+        "log_zero": -4.0
+      },
+      "first_loss": 5.368046760559082,
+      "uninterrupted_second_loss": 5.049851417541504,
+      "resumed_second_loss": 5.049851417541504,
+      "max_parameter_difference": 5.820766091346741e-11,
+      "scheduler_T_max": 20,
+      "amp_overflow_skips": [
+        {
+          "from_scale": 65536.0,
+          "to_scale": 32768.0
+        },
+        {
+          "from_scale": 32768.0,
+          "to_scale": 16384.0
+        },
+        {
+          "from_scale": 16384.0,
+          "to_scale": 8192.0
+        }
+      ],
+      "successful_update_count": 3,
+      "successful_updates": [
+        {
+          "loss": 5.368046760559082,
+          "scale": 8192.0,
+          "scheduler_epoch": 1
+        },
+        {
+          "loss": 5.049851417541504,
+          "scale": 8192.0,
+          "scheduler_epoch": 2
+        },
+        {
+          "loss": 5.049851417541504,
+          "scale": 8192.0,
+          "scheduler_epoch": 2
+        }
+      ],
+      "checkpoint_sha256": "fdcb47e2a71024a826bb46523a239e6b97658a0a6aef8433ddae27d05c6c281a",
+      "checkpoint_role": "synthetic_resume_only"
+    },
+    "profile": {
+      "schema": "aictrack1.AFA_CLIP_anchored.real_train_profile.v1",
+      "candidate": false,
+      "profile_virtual_epoch_index": 10,
+      "actual_completed_epochs": 0,
+      "successful_updates": 100,
+      "AMP_skips": 2,
+      "config_sha256": "87a042b667bc82c1d23de876f5ca0e621a2ffbf209c3027e61a33e0c87bedbd0",
+      "source_manifest_sha256": "8544f9c70cd320699803bad848e95df1c1a36282bb79f40c1a3f7b3f3d77398f",
+      "afa_protocol_sha256": "e62a818da143862831c18c798bf68728524e013cce20b8e3f7235b2d713edfcf",
+      "wall_seconds": 19.32560431584716,
+      "generated_features": 3264,
+      "peak_cuda_allocated_bytes": 4515396096,
+      "peak_cuda_reserved_bytes": 4842323968,
+      "test_access": false
+    },
+    "cost_review": {
+      "active_profile_train_seconds": 19.32560431584716,
+      "updates": 100,
+      "steps_per_epoch": 1859,
+      "train20_projection_seconds": 7185.259684631974,
+      "reserve_checkpoint_init_validation_seconds": 3600,
+      "budget_deadline_unix": 1791626400.2863238,
+      "candidate_fresh_official_H1": true,
+      "profile_initialization": false
+    },
+    "prior_owned_groups_closed": true,
+    "canonical_before_launch_idle": true,
+    "candidate_initialization": "fresh official CLIP plus legal oldfold H1100",
+    "test_access": false
+  }
+}

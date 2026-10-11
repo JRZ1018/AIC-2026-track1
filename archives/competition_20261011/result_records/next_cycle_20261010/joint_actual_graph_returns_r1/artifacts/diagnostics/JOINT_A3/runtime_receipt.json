@@ -1,0 +1,59 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/diagnostics/JOINT_A3/runtime_receipt.json",
+  "original_sha256": "dfec210cf77dd7047bd3c45861e9180bd7475557d9b6aeef9b47d8d9cc802d1c",
+  "omitted_fields": [
+    "/upstream_receipts/receipt/environment"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.diagnostic_runtime.v1",
+    "arm": "A3",
+    "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+    "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+    "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+    "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+    "selected_route": "J5_GRAPH",
+    "runtime": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "torch_num_threads": 4,
+      "torch_num_interop_threads": 64
+    },
+    "upstream_receipts": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/runtime_receipts/A3_4ea4de6684de4adcac210b5449c0cb01.json",
+        "sha256": "eaa163a70dabc084ab3e950aeae7163d8d629c374e6835a7506e8a8f9b3f75e5",
+        "receipt": {
+          "schema": "aictrack1.fresh_route.runtime.v1",
+          "arm": "A3",
+          "selected_route": "J5_GRAPH",
+          "pid": 9396,
+          "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+          "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+          "collected_at_unix": 1791542856.267359,
+          "test_access": false,
+          "actual_torch_threads": 4,
+          "actual_torch_interop_threads": 64
+        }
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/runtime_receipts/A3_d36e6f62add64adebcc3e1fc514df38c.json",
+        "sha256": "36a68e3f5b8d79ca9352a698c14745ef7e1459b427246d5eba3799b3d9e2de1f",
+        "receipt": {
+          "schema": "aictrack1.fresh_route.runtime.v1",
+          "arm": "A3",
+          "selected_route": "J5_GRAPH",
+          "pid": 9480,
+          "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+          "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+          "collected_at_unix": 1791542923.5742419,
+          "test_access": false,
+          "actual_torch_threads": 4,
+          "actual_torch_interop_threads": 64
+        }
+      }
+    ],
+    "test_access": false
+  }
+}

@@ -2,6 +2,17 @@
 
 本目录为本道赛题的主工作文件夹。
 
+## 2026-10-11 最终作品与恢复
+
+最终作品采用 L35_GRAPH，用户报告复赛最高成绩为 **69.6773848947762**。项目源码、研究配置、台账、技术报告与冻结科学代码归档已整理。
+
+- [从 GitHub 与 F2 恢复项目](docs/恢复与继续工作_20261011.md)
+- [最终 L35 技术报告](reports/20261011_L35_final_technical_report.md)
+- [复赛源码归档](archives/competition_20261011/README.md)
+- [历史技术报告 Word](docs/技术报告.docx)
+
+完整模型、容器镜像、提交 CSV/ZIP 及复现资产保存在独立的最终作品文件夹，按恢复说明与 GitHub 源码配合使用。下文各阶段记录保留其原始日期与实验语境。
+
 - 官方赛道通知：[3629](https://www.aicomp.cn/notice/notice-1/3629.html)
 - 赛题规则：[3714](https://www.aicomp.cn/tracks/tracks-1/3714.html)
 - 资料提取日期：2026-09-09

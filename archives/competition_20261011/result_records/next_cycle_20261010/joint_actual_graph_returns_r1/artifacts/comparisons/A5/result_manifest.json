@@ -1,0 +1,40 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/joint_actual_graph_returns_r1/artifacts/comparisons/A5/result_manifest.json",
+  "original_sha256": "98a9b2c145e36760927e6e1f3b41d8e8255d02d440d95dfb9f9098cb27a70daf",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "files": {
+      "candidate_graph_increment_balanced_supported_unique_predictions.npz": {
+        "bytes": 51276,
+        "sha256": "66d00f9af7bf726f589110d96f9110e0c5e72de03c6ca82aee07df4e4eef169d"
+      },
+      "candidate_graph_increment_natural_unique_images_predictions.npz": {
+        "bytes": 94195,
+        "sha256": "651f9639dd0058adc49d763b1063e7d170e898afd87f8f6e16ec671bbf8b1ee6"
+      },
+      "graph_combo_vs_J5_GRAPH_balanced_supported_unique_predictions.npz": {
+        "bytes": 25512,
+        "sha256": "ccfa4aafa950712e99a7886e54a7169e2cf7c7d56b14c4f43794176fee2051ee"
+      },
+      "graph_combo_vs_J5_GRAPH_natural_unique_images_predictions.npz": {
+        "bytes": 47030,
+        "sha256": "3cda769e005f1869eb1316b88de0bc2260672788a48550db278a1cfbb209fab6"
+      },
+      "raw_model_P7_vs_J5_P7_balanced_supported_unique_predictions.npz": {
+        "bytes": 51329,
+        "sha256": "c48e2ba1325e21a46d2495183336b5cc6c1029f19843b3af869c0533ba44f0df"
+      },
+      "raw_model_P7_vs_J5_P7_natural_unique_images_predictions.npz": {
+        "bytes": 94323,
+        "sha256": "a822058a5d82a70ad787f33399466c772cb1b4c36d5282f47af6b8a452f620ff"
+      },
+      "report.json": {
+        "bytes": 2259003,
+        "sha256": "d7750af8dbeb279588bc2d55459d1c9849df2df674bb5cbe6e738c5474bbe2c7"
+      }
+    },
+    "test_access": false
+  }
+}

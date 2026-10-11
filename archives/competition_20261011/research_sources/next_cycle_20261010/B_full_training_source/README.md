@@ -1,0 +1,11 @@
+# B-only single raw-student FULL20 CPU template
+
+UNBOUND preparation. Generic established FULL source/metadata names are preserved for existing operators, but selection accepts ONLY aictrack1.next_cycle10.B_confirmation.v1 / complete_positive_independent_B_confirmation. B25/B50 combo must beat same-new610 fresh J5_GRAPH, actual primary delta>0 plus actual root risk review. Old A/J5/C/exploration receipts are rejected. Natural and CI are reported without extra positivity gates. Exact future receipt interface is scripts/full_route_contract.py. All actual confirmation/rootreview/budget/newH1/model digests are null in inputs/FUTURE_INPUTS.json.
+
+One selected B starts fresh prescribed official CLIP and the already-existing legal full100 H1 fa462 (all148695/validation0); this pinned all-train dependency is not a future new-query H1. Full recipe uses common confirmation visual seed20261010, fixed20/cos20/last, original J5 alpha.1/beta1/logzero-4/AC/336/clip1/LR plus unchanged0096 auxiliary .25 or.5, EMA.999/successful-step-only/warmup5. Teacher/support remain complete in last for exact recovery; final contains only raw student tensors plus method metadata. No teacher inference or ensemble.
+
+Execution root /root/autodl-tmp/AICtrack1_next_cycle_B_full_20261010. Reviewed queue/owned-GO/exact-last resume/fullH1/atomic tensor-storage guard are reused. Root supplies a new aictrack1.next_cycle10.B_full.budget.v1 actual phase retaining original baseline+actual30GiB capacity and cumulative ledger. No clock/budget is fabricated.
+
+CLI: prepare_full_route.py --target NEW_B_FULL --confirmation REAL_TYPED_B --confirmation-sha256 REAL_SHA --budget REAL_NEW_FULL_BUDGET --budget-sha256 REAL_SHA; run_full.py --smoke; run_full.py; run_full.py --resume. Full smoke is initialization/hard-branch engineering only and never initializes candidate. B numerical/EMA/RNG/disk-nextstep are unchanged from actual reviewed profile. B_soft_checkpoint_audit checks20 hard supports,15 active teacher epochs, exact AMP/AdamW/EMA counts/migrations against actual full-class counts.
+
+No SSH/GPU/active-last/model/image execution here. Independent CPU review and actual server assets/preflight/smoke/teacher/student model acceptance remain required. No FULL/test admitted from an unbound template.

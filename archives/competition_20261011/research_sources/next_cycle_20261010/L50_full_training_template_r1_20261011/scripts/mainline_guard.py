@@ -1,0 +1,69 @@
+"""P1 source/asset/lease checks, keeping the original atomic queue implementation."""
+import json
+import os
+import shutil
+import time
+from pathlib import Path
+from p1_contract import ROOT, assets, sha, verify_files, verify_remote_assets, validate_config
+
+def h1_receipt():
+    return {"full_train_only":True,"validation_count":0}
+
+def entry(root,phase,resume,config=None):
+    import yaml
+    from aictrack1.engine.training_queue import read_training_lock
+    if Path(root).resolve()!=ROOT or phase!="train" or config is None:
+        raise RuntimeError("P1 exact source root/train phase required")
+    if sha(ROOT/"source_manifest.json") != os.environ.get("P1_SOURCE_SHA"):
+        raise RuntimeError("P1 frozen source binding required")
+    manifest=verify_files();payload=verify_remote_assets()
+    if manifest["status"]!="bound": raise RuntimeError("P1 unbound source forbidden")
+    config=Path(config).resolve();relative=config.relative_to(ROOT).as_posix()
+    arm=config.stem.removeprefix("p1_full_")
+    raw=yaml.safe_load(config.read_text())["experiment"]
+    validate_config(raw,arm,payload)
+    for attempt in range(50):
+        record=read_training_lock(payload["canonical_lock"])
+        if (record and record.token==os.environ.get("P1_LEASE_TOKEN")
+                and record.trainer_pid==os.getpid() and record.queue_pid==os.getppid()
+                and record.config==relative): break
+        if attempt==49: raise RuntimeError("exact canonical trainer lease mismatch")
+        time.sleep(.1)
+    output=(config.parent/raw["output_dir"]).resolve()
+    if resume is not None and Path(resume).resolve()!=output/"last.pt":
+        raise RuntimeError("resume must use this arm's unchanged config and exact last.pt")
+    from full_route_runtime import require_runtime
+    require_runtime(ROOT,config)
+    from p1_contract import read,validate_budget
+    bound=validate_budget(read(ROOT/"inputs/full_budget.json"))
+    for key,field in [("P1_DEADLINE","deadline_unix"),("P1_INITIAL_FREE","adjusted_initial_free_bytes"),("P1_DISK_MAX","disk_max_bytes"),("P1_MIN_FREE","min_free_bytes")]:
+        if float(os.environ.get(key,"nan"))!=bound[field]:raise RuntimeError("immutable full budget/environment mismatch "+key)
+    _resource_check(0)
+
+def tensor_storage_bytes(value):
+    import torch
+    seen=set();total=0
+    def visit(item):
+        nonlocal total
+        if isinstance(item,torch.Tensor):
+            storage=item.untyped_storage();key=(storage.data_ptr(),storage.nbytes(),str(item.device))
+            if key not in seen: seen.add(key);total+=storage.nbytes()
+        elif isinstance(item,dict):
+            for child in item.values():visit(child)
+        elif isinstance(item,(tuple,list)):
+            for child in item:visit(child)
+    visit(value)
+    return total
+
+def _resource_check(reserve):
+    from p1_contract import read
+    from capacity_contract import resource_ok
+    bound=read(ROOT/"inputs/full_budget.json")
+    for key,field in [("P1_DEADLINE","deadline_unix"),("P1_INITIAL_FREE","adjusted_initial_free_bytes"),("P1_DISK_MAX","disk_max_bytes"),("P1_MIN_FREE","min_free_bytes")]:
+        if float(os.environ.get(key,"nan"))!=bound[field]:raise RuntimeError("immutable expanded FULL budget/environment mismatch "+key)
+    usage=shutil.disk_usage(ROOT)
+    resource_ok(bound,usage.free,usage.total,reserve=reserve)
+
+
+def reserve_save(payload):
+    _resource_check(tensor_storage_bytes(payload)+64*1024**2)

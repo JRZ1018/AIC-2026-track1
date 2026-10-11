@@ -1,0 +1,34 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_stage_and_CPU_preflight_r1.json",
+  "original_sha256": "9d16f7b5851c8a7fdf435174d5d9ee16ec0d4dd90094158032b1e159b6fc2ec9",
+  "omitted_fields": [
+    "/server_preflight/stderr",
+    "/server_preflight/stdout"
+  ],
+  "record": {
+    "deployment": {
+      "prepare": {
+        "created": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      "verify": {
+        "verified_files": 92
+      }
+    },
+    "server_preflight": {
+      "complete": true,
+      "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+      "actual_budget_sha256": "ab5edf6db05351732364a8ec6263dc1114d7dcf45ceee341d128a7f7f19a0049",
+      "server_CPU_preflight_complete": true,
+      "CPU_preflight_scope": "actual official assets hashes, new PF budget, original legal H1100 head CPU restore; not full visual model CPU recovery",
+      "test_access": false,
+      "GPU_training_started": false,
+      "observed_unix": 1791586487.957141,
+      "preflight_files": [
+        "artifacts/preflight/146369d2671a41588b2a8a7dd0fc592d.json"
+      ],
+      "free": 26131763200
+    },
+    "actual_source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4"
+  }
+}

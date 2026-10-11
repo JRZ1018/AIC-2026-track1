@@ -1,0 +1,20 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_status_independent_CPU_review_r1.json",
+  "original_sha256": "341b9bf4645cbad8312caa1429dbdb4fc2002af3288ec24e53e351080b0d43d1",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.PF30.monitor.actual_independent_CPU_review.v1",
+    "complete": true,
+    "scope": "read-only local source diff, SHA/AST/nested compile and current snapshot identity; no SSH/GPU/weights/launch",
+    "reviewer": "ops_final_cycle_review",
+    "actual_exec_chunk": "eb58eb",
+    "actual_exit_code": 0,
+    "collector_sha256": "19ceaadadf283628c717b725f86d97c02ba8b892d1419b2cf2c3ed102f846c8a",
+    "wrapper_sha256": "0684a8c9022c1be72d808e3229a30ce4ada047ca535b78d3737d2af015e68fd2",
+    "base_R5_source_sha256": "73b8848fdc09a3cb1f616ae4732290b58b91e8c76a9858447111ee09b1ba51fd",
+    "changes": "fixed PF root/local source pin/train-only; added separate actual and next scalar summaries; snapshot filename",
+    "unchanged_verified": "proc birth and scan, bounded logs/stat/receipt, cgroup and nvidia queries; public DNS/HOST/PORT/PIN connector",
+    "limitations": "stdout bounded4MiB/latest4 epochs and stat observation do not replace exact checkpoint recovery or full history audit"
+  }
+}

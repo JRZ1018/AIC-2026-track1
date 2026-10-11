@@ -1,0 +1,98 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_FULL_final_writer_template_stage_CPU_r1.json",
+  "original_sha256": "a5dbc466f880e41629405463c9d8d15687b022da3411e761b81d9111b1a1e1b0",
+  "omitted_fields": [],
+  "record": [
+    {
+      "complete": true,
+      "status": "LOCAL_REVIEWED_UNBOUND_TEMPLATE_CPU_STAGE_PASS",
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_template_20261011",
+      "template_sha256": "4d857a625f8a09b4380ab64940bfbd1144fa60a20cd26d9f8628cc19d4b503e0",
+      "source_files": 88,
+      "all_SHA": true,
+      "CLI": [
+        {
+          "entry": "scripts/prepare_full_route.py",
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        {
+          "entry": "scripts/run_full.py",
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        {
+          "entry": "scripts/train_n1_peft.py",
+          "returncode": 0,
+          "stderr_tail": ""
+        }
+      ],
+      "GPU_used": false,
+      "checkpoint_or_images_loaded": false,
+      "actual_independent_confirmation": false,
+      "future_FULL_last": null,
+      "observed_unix": 1791650656.9226694
+    },
+    {
+      "complete": true,
+      "status": "LOCAL_REVIEWED_UNBOUND_TEMPLATE_CPU_STAGE_PASS",
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_L35_final_template_20261011",
+      "template_sha256": "2ca7846ae0b1fe021ce36ae7177462b6344cab14c6949d916826cf56dfec9bbd",
+      "source_files": 81,
+      "all_SHA": true,
+      "CLI": [
+        {
+          "entry": "scripts/prepare_final_source.py",
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        {
+          "entry": "scripts/audit_full_checkpoint.py",
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        {
+          "entry": "scripts/run_final.py",
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        {
+          "entry": "scripts/infer_and_build_submission.py",
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        {
+          "entry": "scripts/accept_return.py",
+          "returncode": 0,
+          "stderr_tail": ""
+        }
+      ],
+      "GPU_used": false,
+      "checkpoint_or_images_loaded": false,
+      "actual_independent_confirmation": false,
+      "future_FULL_last": null,
+      "observed_unix": 1791650660.4014468
+    },
+    {
+      "complete": true,
+      "status": "LOCAL_REVIEWED_UNBOUND_TEMPLATE_CPU_STAGE_PASS",
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_L35_confirmation_writer_template_20261011",
+      "template_sha256": "cab79ddfbc935c1de2dd788ce7a11c96743fb79162b3a427d61744fd343fdb48",
+      "source_files": 3,
+      "all_SHA": true,
+      "CLI": [
+        {
+          "entry": "scripts/write_confirmation.py",
+          "returncode": 0,
+          "stderr_tail": ""
+        }
+      ],
+      "GPU_used": false,
+      "checkpoint_or_images_loaded": false,
+      "actual_independent_confirmation": false,
+      "future_FULL_last": null,
+      "observed_unix": 1791650660.4766777
+    }
+  ]
+}

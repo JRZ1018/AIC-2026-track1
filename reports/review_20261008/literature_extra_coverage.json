@@ -1,0 +1,582 @@
+{
+  "reader": "literature_audit",
+  "scope": "docs/task_orders/*.md",
+  "file_count": 38,
+  "all_full_text_read": true,
+  "files": [
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260911-B-first-round.md",
+      "relative_path": "docs\\task_orders\\20260911-B-first-round.md",
+      "sha256": "d382101274f9d1c0421abf25442ea811f41d495d49e6eb7957bbda6c3eb4119f",
+      "bytes": 2506,
+      "line_count": 50,
+      "read_ranges": [
+        [
+          1,
+          50
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260911-B-h1init-lora-seed1.md",
+      "relative_path": "docs\\task_orders\\20260911-B-h1init-lora-seed1.md",
+      "sha256": "6bf0c4b8711e02ecd08a45b1d14eed3c13b451c918c4bf659c6b34fedc2b89e9",
+      "bytes": 3170,
+      "line_count": 50,
+      "read_ranges": [
+        [
+          1,
+          50
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260911-b-m0v2-seed2.md",
+      "relative_path": "docs\\task_orders\\20260911-b-m0v2-seed2.md",
+      "sha256": "a83deadd716fc01248818ba1f49f23597c2e18df8b46d7f6f836520e59d05d11",
+      "bytes": 2707,
+      "line_count": 46,
+      "read_ranges": [
+        [
+          1,
+          46
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260911-b-m0v2-seed3.md",
+      "relative_path": "docs\\task_orders\\20260911-b-m0v2-seed3.md",
+      "sha256": "45181804d883b7edccc6e53f7e9197930f75b4bd013cb56047dc6b853a03fe7b",
+      "bytes": 2767,
+      "line_count": 46,
+      "read_ranges": [
+        [
+          1,
+          46
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260911-b-m1-seed2.md",
+      "relative_path": "docs\\task_orders\\20260911-b-m1-seed2.md",
+      "sha256": "d00e80f02681da5c4f3295d110b3ab22639243be1e385161ef368213c09f23e3",
+      "bytes": 2771,
+      "line_count": 46,
+      "read_ranges": [
+        [
+          1,
+          46
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260911-b-m1-seed3.md",
+      "relative_path": "docs\\task_orders\\20260911-b-m1-seed3.md",
+      "sha256": "50dda5e7e929283e4b560880b6716ab3e377607531e8e3918ea32cbe5ff542a8",
+      "bytes": 2759,
+      "line_count": 46,
+      "read_ranges": [
+        [
+          1,
+          46
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260912-A-label-smoothing-seed1.md",
+      "relative_path": "docs\\task_orders\\20260912-A-label-smoothing-seed1.md",
+      "sha256": "909b7c4f409d94be3f0fc8291e8977098df356949b7a74c8452003b2f8c3c8d2",
+      "bytes": 3859,
+      "line_count": 66,
+      "read_ranges": [
+        [
+          1,
+          66
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260912-A-lora-last2-r4-multiseed.md",
+      "relative_path": "docs\\task_orders\\20260912-A-lora-last2-r4-multiseed.md",
+      "sha256": "d781e01a1b360d5f4fddea3e32ab39ee52ae0a059d03f16c2ebe3973ace14abd",
+      "bytes": 1831,
+      "line_count": 28,
+      "read_ranges": [
+        [
+          1,
+          28
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260912-A-lora-last2-r4-seed1.md",
+      "relative_path": "docs\\task_orders\\20260912-A-lora-last2-r4-seed1.md",
+      "sha256": "a947f898a833e028a6b34e88ae0ac0b3dcd08336c683bdf0264d377f4559cc81",
+      "bytes": 1906,
+      "line_count": 30,
+      "read_ranges": [
+        [
+          1,
+          30
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260912-B-final-h1-lora-full-retrain.md",
+      "relative_path": "docs\\task_orders\\20260912-B-final-h1-lora-full-retrain.md",
+      "sha256": "9c69500392061644b673a918bff6865f816bebf9282a8e10f2a7491e6534fa8e",
+      "bytes": 6359,
+      "line_count": 92,
+      "read_ranges": [
+        [
+          1,
+          92
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260912-B-h1init-lora-multiseed.md",
+      "relative_path": "docs\\task_orders\\20260912-B-h1init-lora-multiseed.md",
+      "sha256": "008af235bf3139b225c14f662f499ec97834fcd59a9e694baf3ed6c533479171",
+      "bytes": 2485,
+      "line_count": 48,
+      "read_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260912-B-h1init-lora-seed2.md",
+      "relative_path": "docs\\task_orders\\20260912-B-h1init-lora-seed2.md",
+      "sha256": "337f42c2355977e7feafb9cd4bf83464c02ddc5179e29eaa269510eb965a9e59",
+      "bytes": 1089,
+      "line_count": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260912-B-h1init-lora-seed3.md",
+      "relative_path": "docs\\task_orders\\20260912-B-h1init-lora-seed3.md",
+      "sha256": "e1993e12de129b2df98603a3d427c8066ffeaa8665d19c5893316f8a9f826334",
+      "bytes": 1192,
+      "line_count": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260912-B-m2-visual-prototype-seed1.md",
+      "relative_path": "docs\\task_orders\\20260912-B-m2-visual-prototype-seed1.md",
+      "sha256": "cfd72263a1707816ac739cf0b2fc4b26039a5729c3e6ad2331afae5bb987d524",
+      "bytes": 3852,
+      "line_count": 75,
+      "read_ranges": [
+        [
+          1,
+          75
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260913-A-attention-mlp-lora-seed1.md",
+      "relative_path": "docs\\task_orders\\20260913-A-attention-mlp-lora-seed1.md",
+      "sha256": "6d82ce4de7953b6af22e3722d4ca58e10b7b65f478599a13b4b362655d034b1e",
+      "bytes": 867,
+      "line_count": 9,
+      "read_ranges": [
+        [
+          1,
+          9
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260913-A-rank8-full-retrain.md",
+      "relative_path": "docs\\task_orders\\20260913-A-rank8-full-retrain.md",
+      "sha256": "3807ad92e03afc3b0746f2fda17bc3ba34c4b5b77dfb1ce66e0260574679af40",
+      "bytes": 1154,
+      "line_count": 12,
+      "read_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260913-A-substitute-final-last2-lora.md",
+      "relative_path": "docs\\task_orders\\20260913-A-substitute-final-last2-lora.md",
+      "sha256": "4eb8e440749521e3322669d0fe0af04ed00280b129f2b6a0de3e47d9d91a3131",
+      "bytes": 1711,
+      "line_count": 25,
+      "read_ranges": [
+        [
+          1,
+          25
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260913-B-h1-last-block-medium-seed1.md",
+      "relative_path": "docs\\task_orders\\20260913-B-h1-last-block-medium-seed1.md",
+      "sha256": "48cf2ae54fd8e31bd7ac8e4b0374a4dad3f9defbfa1f75e2acf2b7c6d1b1aa38",
+      "bytes": 4400,
+      "line_count": 67,
+      "read_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260913-B-lora-capacity-four-hour-queue.md",
+      "relative_path": "docs\\task_orders\\20260913-B-lora-capacity-four-hour-queue.md",
+      "sha256": "3257bdebb91121a42b614dbf3ac4924d6e68708b28cfe3a34fd1d0ffcf4a209c",
+      "bytes": 6047,
+      "line_count": 84,
+      "read_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260913-B-lora-coarse-search-seed1-queue.md",
+      "relative_path": "docs\\task_orders\\20260913-B-lora-coarse-search-seed1-queue.md",
+      "sha256": "25d55a69f83060bbd219b712b6c50f2e9433df584e27ff2a5b1bf66c0f40f4e4",
+      "bytes": 9828,
+      "line_count": 110,
+      "read_ranges": [
+        [
+          1,
+          110
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260914-B-rank32-seed3.md",
+      "relative_path": "docs\\task_orders\\20260914-B-rank32-seed3.md",
+      "sha256": "ebc0cf1a2d7cac0bc1a3205c5161dd004a57b6727dfe7fd6c7be290ef1be28eb",
+      "bytes": 5403,
+      "line_count": 75,
+      "read_ranges": [
+        [
+          1,
+          75
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260915-B-hold-and-next-batch-preconditions.md",
+      "relative_path": "docs\\task_orders\\20260915-B-hold-and-next-batch-preconditions.md",
+      "sha256": "f8631765b3b567bc02564cce029c1f904bd086dfa2bf774ffbc72db2ff45d090",
+      "bytes": 4486,
+      "line_count": 51,
+      "read_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260915-B-overnight-8h-peft-search.md",
+      "relative_path": "docs\\task_orders\\20260915-B-overnight-8h-peft-search.md",
+      "sha256": "cb404cb5a530e298720b5357b6adbcb2d1985cc9dc3c69bbe41c99337ade2bf6",
+      "bytes": 6685,
+      "line_count": 93,
+      "read_ranges": [
+        [
+          1,
+          93
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260915-C-overnight-queue-restart.md",
+      "relative_path": "docs\\task_orders\\20260915-C-overnight-queue-restart.md",
+      "sha256": "3b01fd87f8017988aa125148cc6752913c049be98374ce1039df3e50a310e8a1",
+      "bytes": 3584,
+      "line_count": 79,
+      "read_ranges": [
+        [
+          1,
+          79
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260915-C-t2-last4-lr1e6-seed3.md",
+      "relative_path": "docs\\task_orders\\20260915-C-t2-last4-lr1e6-seed3.md",
+      "sha256": "1cdebc78cb95e206f5bcb9a9f726630a37f0485f1bb9bad46114fbd8d0be5927",
+      "bytes": 3990,
+      "line_count": 68,
+      "read_ranges": [
+        [
+          1,
+          68
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260916-ABC-t2-last4-lr-short-screen.md",
+      "relative_path": "docs\\task_orders\\20260916-ABC-t2-last4-lr-short-screen.md",
+      "sha256": "670cf22740e0f56c1317da6d94f5cb2718e65eee9d55cdade801d4cc19c1649f",
+      "bytes": 2012,
+      "line_count": 30,
+      "read_ranges": [
+        [
+          1,
+          30
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260916-batch1-multiseed-confirmation.md",
+      "relative_path": "docs\\task_orders\\20260916-batch1-multiseed-confirmation.md",
+      "sha256": "6c3554dfe073627f811cffea812d4daa2bcaac714375dd072c4899a815663df4",
+      "bytes": 4743,
+      "line_count": 94,
+      "read_ranges": [
+        [
+          1,
+          94
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260916-batch1-seed1-lr-balance-screen.md",
+      "relative_path": "docs\\task_orders\\20260916-batch1-seed1-lr-balance-screen.md",
+      "sha256": "7253fe92ca8554fa88020e8a59239e7cfdf038e497519257478c570edfea0919",
+      "bytes": 4229,
+      "line_count": 77,
+      "read_ranges": [
+        [
+          1,
+          77
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260916-batch2-cwh-attribution.md",
+      "relative_path": "docs\\task_orders\\20260916-batch2-cwh-attribution.md",
+      "sha256": "c258cf5e5327a3fc4ed9e13f546f38c49031e330b1473ed543fa5f26ee578441",
+      "bytes": 3056,
+      "line_count": 63,
+      "read_ranges": [
+        [
+          1,
+          63
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260916-batch3-mw50-and-8epochs.md",
+      "relative_path": "docs\\task_orders\\20260916-batch3-mw50-and-8epochs.md",
+      "sha256": "2ce728e0c3c43d8ff51624a2090e178173a12370222e60b0fcccfac5261482ef",
+      "bytes": 3313,
+      "line_count": 75,
+      "read_ranges": [
+        [
+          1,
+          75
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260916-c-cwh-full-and-inference.md",
+      "relative_path": "docs\\task_orders\\20260916-c-cwh-full-and-inference.md",
+      "sha256": "9c61a1d5d9acef8b8a19873f1bac73ef26b675b699f1168e96044c2544cb40c4",
+      "bytes": 5876,
+      "line_count": 112,
+      "read_ranges": [
+        [
+          1,
+          112
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260917-A-full-lr15e6-gate-passed.md",
+      "relative_path": "docs\\task_orders\\20260917-A-full-lr15e6-gate-passed.md",
+      "sha256": "9f5c4a86f5f68bbd69c4b0ad4f7c676764b6291dc0789f6fc21b92dbbbc89c7e",
+      "bytes": 1879,
+      "line_count": 31,
+      "read_ranges": [
+        [
+          1,
+          31
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260917-B-C-t2-last4-lr15e6-confirmation.md",
+      "relative_path": "docs\\task_orders\\20260917-B-C-t2-last4-lr15e6-confirmation.md",
+      "sha256": "7ebe36f6b8f48abfc37e5c3879fd266f0f07943156d3229b61bcde22499d8a96",
+      "bytes": 2645,
+      "line_count": 48,
+      "read_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260917-B-C-t2-last4-lr175e6-confirmation.md",
+      "relative_path": "docs\\task_orders\\20260917-B-C-t2-last4-lr175e6-confirmation.md",
+      "sha256": "c7904c8b2af565fec007df83291bf2dac7dcd76b1441909b096a79b6f5108f79",
+      "bytes": 963,
+      "line_count": 16,
+      "read_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260917-B-magnitude-mix-reproduction.md",
+      "relative_path": "docs\\task_orders\\20260917-B-magnitude-mix-reproduction.md",
+      "sha256": "8c2066791bcefc544574281ad8d8735215490ed833b432896ed3c65271aface3",
+      "bytes": 3357,
+      "line_count": 65,
+      "read_ranges": [
+        [
+          1,
+          65
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260917-B-message-nocwh.md",
+      "relative_path": "docs\\task_orders\\20260917-B-message-nocwh.md",
+      "sha256": "ba5697876017a396e332509ac314e80b77b021def3c93b7b5d293e2aed639c2f",
+      "bytes": 3996,
+      "line_count": 91,
+      "read_ranges": [
+        [
+          1,
+          91
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260917-B-message-pasteable.md",
+      "relative_path": "docs\\task_orders\\20260917-B-message-pasteable.md",
+      "sha256": "c90341a46c41e2b7a1fa38fbe2972e97c77d907b2c912b45d69e1e8289e16cf5",
+      "bytes": 3421,
+      "line_count": 84,
+      "read_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    },
+    {
+      "path": "D:\\aicomp\\AICtrack1\\docs\\task_orders\\20260917-B-nocwh-control-n1.md",
+      "relative_path": "docs\\task_orders\\20260917-B-nocwh-control-n1.md",
+      "sha256": "f0db760e6056794d726271cd3b482aa805ee32238782b9e97f795294dce635d3",
+      "bytes": 4421,
+      "line_count": 86,
+      "read_ranges": [
+        [
+          1,
+          86
+        ]
+      ],
+      "status": "full_text_read",
+      "reader": "literature_audit"
+    }
+  ],
+  "notes": [
+    "Full text returned in bounded non-truncated reads. Initial batch output clipped files 0 and 1; those two were reread completely.",
+    "Task orders are historical preliminary-stage protocols; instructions were reviewed as evidence, not executed."
+  ]
+}

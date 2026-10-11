@@ -1,0 +1,285 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_positive_root_review_r1.json",
+  "original_sha256": "8bbbc86d4095c584892d2ef2a016df7a542ee4d076e67224cc270e225068df79",
+  "omitted_fields": [
+    "/risks/group_bootstrap/groups"
+  ],
+  "record": {
+    "schema": "aictrack1.next_cycle10.L35_root_review.v1",
+    "root_authorized": true,
+    "admit_independent_confirmation": true,
+    "exploration_paired_sha256": "8e313f97979b086b39c6baa2fa7e18d6eb68ce80bdaf93b421536d7c49734e39",
+    "primary_balanced_net": 98,
+    "natural_net": 238,
+    "primary_delta_pp": 0.6639566395663957,
+    "natural_delta_pp": 0.8003497326562867,
+    "independent_recount_sha256": "397d67387ba43008aed8c65e4b7bb5250e46f9226f646c562abcefb98172b296",
+    "all6_NPZ_query_perclass_PASS": true,
+    "risk_review": "Three HMT strata improve; no newly zero-recall classes. Balanced14 supported class declines10–15pp (2–3images) and natural2 declines remain. Current single-seed and changed hardware versus historical control are exploratory; require new610 matched samehardware/runtime fresh control and candidate. CI is conditional observed labels, not trainingseed stability. Main positive admits confirmation only; no FULL/test or71 claim.",
+    "risks": [
+      {
+        "name": "natural_unique_images",
+        "HMT": {
+          "head": {
+            "evaluated_classes": 150,
+            "query_images": 7184,
+            "candidate_class_mean_recall_pp": 73.91749822223062,
+            "control_class_mean_recall_pp": 72.98542229102556,
+            "delta_class_mean_recall_pp": 0.9320759312050443,
+            "delta_sample_top1_pp": 0.9326280623608019
+          },
+          "mid": {
+            "evaluated_classes": 225,
+            "query_images": 9790,
+            "candidate_class_mean_recall_pp": 76.30415236687566,
+            "control_class_mean_recall_pp": 75.27293308496544,
+            "delta_class_mean_recall_pp": 1.0312192819102155,
+            "delta_sample_top1_pp": 1.052093973442288
+          },
+          "tail": {
+            "evaluated_classes": 375,
+            "query_images": 12763,
+            "candidate_class_mean_recall_pp": 73.95545682913041,
+            "control_class_mean_recall_pp": 73.52344098912315,
+            "delta_class_mean_recall_pp": 0.432015840007234,
+            "delta_sample_top1_pp": 0.5327900963723262
+          }
+        },
+        "supported_large_declines": [
+          {
+            "original_class_index": 38,
+            "stratum": "tail",
+            "unique_group_support": 32,
+            "candidate_recall": 0.7567567567567568,
+            "control_recall": 0.8648648648648649,
+            "candidate_correct": 28,
+            "control_correct": 32,
+            "query_images": 37,
+            "delta_pp": -10.81081081081081
+          },
+          {
+            "original_class_index": 97,
+            "stratum": "tail",
+            "unique_group_support": 29,
+            "candidate_recall": 0.8,
+            "control_recall": 0.9,
+            "candidate_correct": 24,
+            "control_correct": 27,
+            "query_images": 30,
+            "delta_pp": -10.0
+          }
+        ],
+        "new_zero_recall": [],
+        "high_margin_losses": 0,
+        "group_bootstrap": {
+          "draws": 500,
+          "seed": 20261009,
+          "ci95_pp": [
+            0.5676386388134222,
+            1.023189990447857
+          ],
+          "limitation": "conditional fixed-model observed labels; not training-seed variance"
+        }
+      },
+      {
+        "name": "balanced_supported_unique",
+        "HMT": {
+          "head": {
+            "evaluated_classes": 150,
+            "query_images": 3000,
+            "candidate_class_mean_recall_pp": 75.06666666666666,
+            "control_class_mean_recall_pp": 74.26666666666667,
+            "delta_class_mean_recall_pp": 0.8000000000000002,
+            "delta_sample_top1_pp": 0.8
+          },
+          "mid": {
+            "evaluated_classes": 225,
+            "query_images": 4500,
+            "candidate_class_mean_recall_pp": 77.33333333333333,
+            "control_class_mean_recall_pp": 76.2888888888889,
+            "delta_class_mean_recall_pp": 1.0444444444444443,
+            "delta_sample_top1_pp": 1.0444444444444443
+          },
+          "tail": {
+            "evaluated_classes": 363,
+            "query_images": 7260,
+            "candidate_class_mean_recall_pp": 75.16528925619835,
+            "control_class_mean_recall_pp": 74.79338842975206,
+            "delta_class_mean_recall_pp": 0.37190082644628125,
+            "delta_sample_top1_pp": 0.371900826446281
+          }
+        },
+        "supported_large_declines": [
+          {
+            "original_class_index": 49,
+            "stratum": "mid",
+            "unique_group_support": 20,
+            "candidate_recall": 0.55,
+            "control_recall": 0.65,
+            "candidate_correct": 11,
+            "control_correct": 13,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 74,
+            "stratum": "mid",
+            "unique_group_support": 20,
+            "candidate_recall": 0.7,
+            "control_recall": 0.8,
+            "candidate_correct": 14,
+            "control_correct": 16,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 142,
+            "stratum": "head",
+            "unique_group_support": 20,
+            "candidate_recall": 0.6,
+            "control_recall": 0.7,
+            "candidate_correct": 12,
+            "control_correct": 14,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 205,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.75,
+            "control_recall": 0.85,
+            "candidate_correct": 15,
+            "control_correct": 17,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 243,
+            "stratum": "head",
+            "unique_group_support": 20,
+            "candidate_recall": 0.3,
+            "control_recall": 0.45,
+            "candidate_correct": 6,
+            "control_correct": 9,
+            "query_images": 20,
+            "delta_pp": -15.0
+          },
+          {
+            "original_class_index": 270,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.25,
+            "control_recall": 0.35,
+            "candidate_correct": 5,
+            "control_correct": 7,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 292,
+            "stratum": "mid",
+            "unique_group_support": 20,
+            "candidate_recall": 0.6,
+            "control_recall": 0.7,
+            "candidate_correct": 12,
+            "control_correct": 14,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 319,
+            "stratum": "mid",
+            "unique_group_support": 20,
+            "candidate_recall": 0.75,
+            "control_recall": 0.85,
+            "candidate_correct": 15,
+            "control_correct": 17,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 346,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.9,
+            "control_recall": 1.0,
+            "candidate_correct": 18,
+            "control_correct": 20,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 544,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.6,
+            "control_recall": 0.75,
+            "candidate_correct": 12,
+            "control_correct": 15,
+            "query_images": 20,
+            "delta_pp": -15.0
+          },
+          {
+            "original_class_index": 601,
+            "stratum": "head",
+            "unique_group_support": 20,
+            "candidate_recall": 0.65,
+            "control_recall": 0.75,
+            "candidate_correct": 13,
+            "control_correct": 15,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 607,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.7,
+            "control_recall": 0.8,
+            "candidate_correct": 14,
+            "control_correct": 16,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 696,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.55,
+            "control_recall": 0.65,
+            "candidate_correct": 11,
+            "control_correct": 13,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 731,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.9,
+            "control_recall": 1.0,
+            "candidate_correct": 18,
+            "control_correct": 20,
+            "query_images": 20,
+            "delta_pp": -10.0
+          }
+        ],
+        "new_zero_recall": [],
+        "high_margin_losses": 0,
+        "group_bootstrap": {
+          "draws": 500,
+          "seed": 20261009,
+          "ci95_pp": [
+            0.34197154471544716,
+            0.9552845528455284
+          ],
+          "limitation": "conditional fixed-model observed labels; not training-seed variance"
+        }
+      }
+    ],
+    "final_model": "single",
+    "test_access": false
+  }
+}

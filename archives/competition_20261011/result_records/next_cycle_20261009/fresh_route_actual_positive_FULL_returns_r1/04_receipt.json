@@ -1,0 +1,62 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/04_receipt.json",
+  "original_sha256": "c76fad79031c65e79d35a57eb427edfe9586d745dde61d0e900ba3ad641926a4",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.full.cuda_smoke.v1",
+    "status": "passed",
+    "synthetic_only": true,
+    "candidate": false,
+    "config_sha256": "04e13ffde658a7c532e59767d445e3ba58db20b6e7e7d2232282ed3a8c350d75",
+    "full_visual_tensors": 152,
+    "trainable_tensors": 154,
+    "trainable_parameters": 88233966,
+    "head_gradient_norms": {
+      "linear.weight": 0.1055307611823082,
+      "linear.bias": 0.10552094876766205
+    },
+    "head_frozen": false,
+    "base_loss": {
+      "kind": "sce",
+      "alpha": 0.1,
+      "beta": 1.0,
+      "log_zero": -4.0
+    },
+    "first_loss": 4.805048942565918,
+    "uninterrupted_second_loss": 4.6826581954956055,
+    "resumed_second_loss": 4.6826581954956055,
+    "max_parameter_difference": 4.656612873077393e-10,
+    "scheduler_T_max": 20,
+    "amp_overflow_skips": [
+      {
+        "from_scale": 65536.0,
+        "to_scale": 32768.0
+      },
+      {
+        "from_scale": 32768.0,
+        "to_scale": 16384.0
+      }
+    ],
+    "successful_update_count": 3,
+    "successful_updates": [
+      {
+        "loss": 4.805048942565918,
+        "scale": 16384.0,
+        "scheduler_epoch": 1
+      },
+      {
+        "loss": 4.6826581954956055,
+        "scale": 16384.0,
+        "scheduler_epoch": 2
+      },
+      {
+        "loss": 4.6826581954956055,
+        "scale": 16384.0,
+        "scheduler_epoch": 2
+      }
+    ],
+    "checkpoint_sha256": "0805d39e867841b30df0f6a80829dd23d19b2f0e47f04a3e92c6df4aced4f469",
+    "checkpoint_role": "synthetic_resume_only"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_stage_preflight_smoke_launch_operator_r1.json",
+  "original_sha256": "c71ac80bd06c290e213cdff1d9b6ff645444cfd2c500bc5319563e028a38c426",
+  "omitted_fields": [
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "remote_exit": 0
+  }
+}

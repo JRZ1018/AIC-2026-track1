@@ -1,0 +1,460 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_supervision_phase_compact.json",
+  "original_sha256": "e6e4ee24804bf05fd08d13628e165302e6ca95881efef77c35f925eeaa854e2d",
+  "omitted_fields": [
+    "/canonical_lease/record/command"
+  ],
+  "record": {
+    "observed_epoch": 1791503799.1316772,
+    "canonical_lease": {
+      "path": "/root/autodl-tmp/AICtrack1/artifacts/queues/training.lock.json",
+      "exists": true,
+      "record": {
+        "schema_version": 1,
+        "owner": "20261009-P1-S",
+        "token": "9aab271ffdf542c787ff95f052d8e0b5",
+        "queue_pid": 230190,
+        "trainer_pid": 230195,
+        "config": "configs/experiment/p1_S.yaml",
+        "output_dir": "artifacts/experiments/P1_S",
+        "started_at": "2026-10-09T06:51:59.770657+08:00",
+        "command_redacted": false
+      }
+    },
+    "process_count": 18,
+    "processes": [
+      {
+        "pid": 230190,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307357000",
+        "canonical_queue_pid": true,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": [
+          {
+            "stage": null,
+            "state_pid": 230190,
+            "state_start_ticks": "307357000",
+            "observed_start_ticks": "307357000",
+            "start_ticks_equal": true,
+            "cwd_equal": true
+          }
+        ]
+      },
+      {
+        "pid": 230195,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307357244",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": true,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 230216,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307359502",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 230217,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307359504",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 230218,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307359506",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 230219,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307359508",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 230220,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307359524",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 230221,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307359526",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 230222,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307359528",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 230223,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307359530",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 232135,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307715049",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 232136,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307715054",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 232137,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307715058",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 232138,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307715063",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 232139,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307715067",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 232140,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307715072",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 232141,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307715076",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 232142,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "start_ticks": "307715084",
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      }
+    ],
+    "roots": {
+      "p1_old": {
+        "exists": true,
+        "source_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "latest_log_epochs": {},
+        "small_json": {
+          "artifacts/queues/p1_chain_result.json": {
+            "bytes": 201,
+            "modified_epoch": 1791495858.4509916,
+            "schema": "aictrack1.p1.chain.v1",
+            "epoch": 1791495858.4559398
+          },
+          "artifacts/experiments/P1_J20/metrics.json": {
+            "read_error": "ValueError",
+            "bytes": 8138570
+          },
+          "artifacts/experiments/P1_J5/metrics.json": {
+            "read_error": "ValueError",
+            "bytes": 8138816
+          },
+          "p1_launch_receipt.json": {
+            "bytes": 763,
+            "modified_epoch": 1791479615.9811335
+          },
+          "smoke_launch_v2_receipt.json": {
+            "bytes": 578,
+            "modified_epoch": 1791479564.8888862
+          },
+          "smoke_repair_receipt.json": {
+            "bytes": 263,
+            "modified_epoch": 1791479556.6328442
+          },
+          "smoke_launch_receipt.json": {
+            "bytes": 576,
+            "modified_epoch": 1791479428.5921183
+          }
+        },
+        "checkpoint_stats": {
+          "artifacts/experiments/P1_J20/final.pt": {
+            "bytes": 352987755,
+            "modified_epoch": 1791495852.74288,
+            "contents_read": false
+          },
+          "artifacts/experiments/P1_J20/last.pt": {
+            "bytes": 1418755751,
+            "modified_epoch": 1791495850.0868278,
+            "contents_read": false
+          },
+          "artifacts/experiments/P1_J5/final.pt": {
+            "bytes": 352987755,
+            "modified_epoch": 1791487762.1115334,
+            "contents_read": false
+          },
+          "artifacts/experiments/P1_J5/last.pt": {
+            "bytes": 1418755687,
+            "modified_epoch": 1791487758.295627,
+            "contents_read": false
+          }
+        }
+      },
+      "fresh_h1": {
+        "exists": true,
+        "source_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+        "latest_log_epochs": {
+          "artifacts/queues/confirmation_H1/H1.log": {
+            "phase": "H1",
+            "epoch": 100,
+            "train_loss": 0.9761330038231434,
+            "observation_kind": "H1_train_epoch_log_row_before_checkpoint_write"
+          }
+        },
+        "small_json": {
+          "artifacts/experiments/confirmation_H1/metrics.json": {
+            "bytes": 456,
+            "modified_epoch": 1791498084.8711858,
+            "schema": "aictrack1.confirmation.h1.metrics.v1",
+            "epochs_completed": 100,
+            "selected_checkpoint": "last.pt",
+            "last_checkpoint_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+            "config_sha256": "8136351d71831842a9fd02a027ab25df75a13a821b783b7b36364d2a07a9b5fd",
+            "test_access": false
+          },
+          "artifacts/experiments/confirmation_H1/h1_receipt.json": {
+            "bytes": 1410,
+            "modified_epoch": 1791498084.8671858,
+            "complete": true,
+            "train_count": 118958,
+            "validation_count": 29737,
+            "epoch": 100,
+            "checkpoint_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+            "test_access": false
+          },
+          "clone_receipt.json": {
+            "bytes": 9468,
+            "modified_epoch": 1791482928.133408,
+            "schema": "aictrack1.confirmation.clone.v1"
+          }
+        },
+        "checkpoint_stats": {
+          "artifacts/experiments/confirmation_H1/last.pt": {
+            "bytes": 4641602,
+            "modified_epoch": 1791498084.4591868,
+            "contents_read": false
+          }
+        }
+      },
+      "fresh_visual": {
+        "exists": false,
+        "source_sha256": null,
+        "latest_log_epochs": {},
+        "small_json": {},
+        "checkpoint_stats": {}
+      },
+      "old_diagnostic": {
+        "exists": true,
+        "source_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "latest_log_epochs": {},
+        "small_json": {
+          "artifacts/diagnostics/P1_J20/result_manifest.json": {
+            "bytes": 1109,
+            "modified_epoch": 1791497316.417803,
+            "schema": "aictrack1.p1.diagnostic_result.v1",
+            "complete": true,
+            "test_access": false
+          },
+          "artifacts/diagnostics/P1_J20/input_identity.json": {
+            "bytes": 2799,
+            "modified_epoch": 1791497316.2378066,
+            "schema": "aictrack1.p0_frozen_fold_input.v1",
+            "training_scope": "fixed_split_validation",
+            "training_count": 118958,
+            "validation_count": 29737,
+            "checkpoint_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+            "test_access": false
+          },
+          "artifacts/diagnostics/P1_J5/result_manifest.json": {
+            "bytes": 1108,
+            "modified_epoch": 1791497056.433286,
+            "schema": "aictrack1.p1.diagnostic_result.v1",
+            "complete": true,
+            "test_access": false
+          },
+          "artifacts/diagnostics/P1_J5/input_identity.json": {
+            "bytes": 2797,
+            "modified_epoch": 1791497056.2492845,
+            "schema": "aictrack1.p0_frozen_fold_input.v1",
+            "training_scope": "fixed_split_validation",
+            "training_count": 118958,
+            "validation_count": 29737,
+            "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+            "test_access": false
+          },
+          "entry_dependency_receipt.json": {
+            "bytes": 1841,
+            "modified_epoch": 1791482516.961679,
+            "schema": "aictrack1.p1.cpu_entry_dependency_check.v1",
+            "complete": true,
+            "test_access": false
+          }
+        },
+        "checkpoint_stats": {}
+      },
+      "fresh_diagnostic": {
+        "exists": true,
+        "source_sha256": "2e0a600cf953bfa964198f6920edc01b08c77b62639f7d530953a169e6d4df87",
+        "latest_log_epochs": {},
+        "small_json": {},
+        "checkpoint_stats": {}
+      },
+      "full": {
+        "exists": true,
+        "source_sha256": "677578ba379652d8b0277f8fe3055a2dba4dbe914f76f321ff6161f2c5838262",
+        "latest_log_epochs": {},
+        "small_json": {},
+        "checkpoint_stats": {}
+      },
+      "final": {
+        "exists": true,
+        "source_sha256": "27e634fdcb6d6d4c616a48e15f966cd652d2c6300352a35f996d9e65c4da6cf8",
+        "latest_log_epochs": {},
+        "small_json": {},
+        "checkpoint_stats": {}
+      },
+      "graph": {
+        "exists": true,
+        "source_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+        "latest_log_epochs": {},
+        "small_json": {},
+        "checkpoint_stats": {}
+      },
+      "supervision": {
+        "exists": true,
+        "source_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+        "latest_log_epochs": {
+          "artifacts/queues/P1_S/S.log": {
+            "status": "epoch_complete",
+            "epoch": 9,
+            "train_loss": 0.27503887489649753,
+            "observation_kind": "epoch_complete_log_row"
+          }
+        },
+        "small_json": {
+          "artifacts/first_epoch_CPU_audit.json": {
+            "bytes": 3061,
+            "modified_epoch": 1791500517.5762188,
+            "schema": "aictrack1.supervision.first_epoch_cpu_audit.v1",
+            "complete": true,
+            "status": "passed_first_epoch_not_final",
+            "epoch": 1,
+            "checkpoint_sha256": "5153dc1ae495e628422db05ace1ac1892becf9dd3a017665b087f74c54757b06",
+            "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+            "trainable_tensors": 152,
+            "trainable_numel": 87849216,
+            "test_access": false
+          }
+        },
+        "checkpoint_stats": {
+          "artifacts/experiments/P1_S/last.pt": {
+            "bytes": 1411564283,
+            "modified_epoch": 1791503497.2897675,
+            "contents_read": false
+          }
+        }
+      },
+      "supervision_diagnostic": {
+        "exists": true,
+        "source_sha256": "b04925892404fc37a0c81f4d044752248f4d30bd1f379fec9f60b73531ddead0",
+        "latest_log_epochs": {},
+        "small_json": {},
+        "checkpoint_stats": {}
+      }
+    },
+    "disks": {
+      "/root": {
+        "total_bytes": 32212254720,
+        "used_bytes": 21616836608,
+        "free_bytes": 10595418112
+      },
+      "/root/autodl-tmp": {
+        "total_bytes": 96636764160,
+        "used_bytes": 85438025728,
+        "free_bytes": 11198738432
+      }
+    },
+    "memory": {
+      "host_total_bytes": 540662706176,
+      "host_available_bytes": 442473361408,
+      "cgroup": {
+        "kind": "v1",
+        "path": "/sys/fs/cgroup/memory",
+        "current_bytes": 59415322624,
+        "limit_bytes": 66571993088
+      },
+      "effective_available_bytes": 7156670464
+    },
+    "cpu": {
+      "logical_count": 128,
+      "cgroup": {
+        "kind": "v1",
+        "path": "/sys/fs/cgroup/cpu",
+        "quota_us": 1600000,
+        "period_us": 100000,
+        "cpu_equivalent": 16.0
+      }
+    },
+    "gpu": {
+      "return_code": 0,
+      "devices": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 4080 SUPER",
+          "memory_used_mib": 4838.0,
+          "utilization_percent": 0.0
+        }
+      ],
+      "error": null
+    },
+    "decision_made": false
+  }
+}

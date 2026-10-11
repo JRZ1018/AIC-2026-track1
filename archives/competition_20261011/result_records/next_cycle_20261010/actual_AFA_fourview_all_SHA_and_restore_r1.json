@@ -1,0 +1,39 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_AFA_fourview_all_SHA_and_restore_r1.json",
+  "original_sha256": "0a5bd9f83aa0f011cec7d52002e1e01ca7404f9a3994a6c6cc82e414811bc36b",
+  "omitted_fields": [],
+  "record": {
+    "all8_SHA_PASS": [
+      "fused_features.pt",
+      "fused_logits.pt",
+      "input_identity.json",
+      "p1_checkpoint_audit.json",
+      "paired_predictions.csv",
+      "report.json",
+      "rows.csv",
+      "runtime_receipt.json"
+    ],
+    "audit_summary": {
+      "complete": true,
+      "status": "complete_fixed_last20_audit",
+      "trainable_tensors": 165,
+      "trainable_numel": 88297579,
+      "afa_method_restored_equal": true,
+      "afa_parameters_restored_equal": true,
+      "optimizer_parameter_groups": [
+        152,
+        2,
+        10,
+        1
+      ],
+      "afa_successful_original_updates": 37163,
+      "afa_successful_active_updates": 18581,
+      "afa_generated_total": 594790,
+      "afa_eligible_total": 612891,
+      "afa_generation_disabled_at_inference": true,
+      "inference_optimizer_steps": 0,
+      "test_access": false
+    }
+  }
+}

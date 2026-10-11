@@ -1,0 +1,7 @@
+# Pre-result independent confirmation inputs
+
+The new query is frozen before alpha exploration results. Fixed seed20261010; reviewed transitive connected groups on official Stage2train exact hashes/duplicate_group/near_duplicate_group. Any component containing validation from old0c9 or used57189 is excluded in full from new query; these components may enter new train. The union is57,318components, with89,221remaining rows/82,678components. Use the original seeded grouped-stratified .2 allocation and mintrain1, without backfilling excluded components or forcing750x20 support. Reject if either partition lacks a class. Report actual natural/query independent support and deficits.
+
+CPU-only generator: python -B scripts/prepare_new_confirmation.py. It only reads manifest/splits/class mapping and the37 frozen official CLIP336 feature shards; never decodes images or reads alpha predictions. Every shardSHA, finite/normalized feature, actual sample ID/label/index/path is rechecked and bound to the new partitions. Immutable outputs include split/rows/rowbinding/metadata/support report. H1checkpointSHA stays null until actual new-train-only H1100 completes; no fullH1 is admissible. Future matching is fresh J5 alpha.1 plus only one exploration winner, not the old C.
+
+Existing official feature tensor files are reused without copying/extracting them. New H1 training source/remote budget/actual checkpoint are not yet bound or launched; this directory is metadata preparation only. Its query cannot be used for another grid.

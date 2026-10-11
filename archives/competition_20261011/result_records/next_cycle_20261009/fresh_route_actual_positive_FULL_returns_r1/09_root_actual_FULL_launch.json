@@ -1,0 +1,33 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/09_root_actual_FULL_launch.json",
+  "original_sha256": "fc544d3b1156b8648c2cbc5165b336cfcf4f5166e8c2190026e2ea0c822f3e35",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "operation": "fresh_official_FULL20_J5_GRAPH",
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+    "source_manifest_sha256": "be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54",
+    "controller": {
+      "pid": 2818,
+      "pgrp": 2818,
+      "session": 2818,
+      "start_ticks": "310391512"
+    },
+    "actual_launch_unix": 1791530262.458432,
+    "log": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/root_actual_FULL_stdout.log",
+    "candidate_training": true,
+    "test_access": false,
+    "synthetic_smoke_receipt": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/smoke/J5_4e55925291244704b94345f61cd01423/receipt.json",
+      "sha256": "c76fad79031c65e79d35a57eb427edfe9586d745dde61d0e900ba3ad641926a4"
+    },
+    "synthetic_smoke_result": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/queues/full_attempt_4e55925291244704b94345f61cd01423.json",
+      "sha256": "74840612b3b268915e03a79a41b6bf9fa547b6874a623aa8105b5ff6157d950b"
+    },
+    "confirmation_sha256": "dc3232619e394b4528454f155711d9b88366ac7066f594886860e31a340d8e5f",
+    "full_budget_sha256": "62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517"
+  }
+}

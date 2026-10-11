@@ -1,0 +1,23 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/actual_oldfold_J5_GRAPH_admission_r1/PUBLICATION_RECEIPT.json",
+  "original_sha256": "c9a7ed5c2e37c5b073616c26f80e014e2c650a820d346c4afac01112b7a76fdf",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.root.actual_route_admission_publication.v1",
+    "complete": true,
+    "selected_route": "J5_GRAPH",
+    "remote_root": "/root/autodl-tmp/AICtrack1_next_cycle_route_admission_20261009",
+    "admission_path": "/root/autodl-tmp/AICtrack1_next_cycle_route_admission_20261009/admission.json",
+    "admission_sha256": "25391e7f14d38ca39f27d5475ccdd5519389b1e8fe20f88415991de410fe64af",
+    "files": {
+      "admission.json": "25391e7f14d38ca39f27d5475ccdd5519389b1e8fe20f88415991de410fe64af",
+      "combo_report.json": "2aec2e3c1b176c76d0488933ce7b540d23c9cffe75fc7454fef53a7b786fd559",
+      "raw_J5_paired_report.json": "e712cd82b6de831edab53e4432c4ee1fc1a5ac71c1a771e903798a83d2bd8b15",
+      "root_review.json": "463a006bff29f3cf05adb21870c9b4bf54c2c04faf6019ccd2d303c922ed2ba5"
+    },
+    "checkpoint_or_GPU_started": false,
+    "test_access": false,
+    "new_submission_ready": false
+  }
+}

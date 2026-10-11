@@ -1,0 +1,43 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/old_diagnostic_returns/j20_last20_primary/p1_checkpoint_audit.json",
+  "original_sha256": "6292446808c3c480ba9b9c07e9cfe00ab3dfb3e61f257995c1ab3fb4e38b8bb2",
+  "omitted_fields": [],
+  "record": {
+    "checkpoint_role": "last",
+    "checkpoint_epoch": 20,
+    "fixed_last_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+    "train_count": 118958,
+    "validation_count": 29737,
+    "training_seed": 20261008,
+    "h1_initializer_sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753",
+    "test_access": false,
+    "history_epochs": 20,
+    "trainable_tensors": 154,
+    "trainable_numel": 88233966,
+    "visual_tensors": 152,
+    "head_tensors": 2,
+    "head_source": "complete jointly trained classifier state in fixed last.pt",
+    "optimizer_parameter_groups": [
+      152,
+      2
+    ],
+    "optimizer_moments_finite": true,
+    "scheduler_epoch": 20,
+    "ac_observation_epochs": 20,
+    "schema": "aictrack1.p1.fixed_last_diagnostic_audit.v1",
+    "p1_arm": "J20",
+    "classifier_head_source": "joint_fixed_last_state",
+    "classifier_parameters_restored_equal": true,
+    "model_frozen_eval": true,
+    "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+    "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+    "exact_ac_train_id_label_binding": true,
+    "train_validation_group_overlap": 0,
+    "model_initialization_official_clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+    "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/last.pt",
+    "config_path": "/root/AICtrack1_next_cycle_20261009/configs/experiment/p1_J20.yaml",
+    "inference_optimizer_steps": 0,
+    "historical_control_cache_reused": true
+  }
+}

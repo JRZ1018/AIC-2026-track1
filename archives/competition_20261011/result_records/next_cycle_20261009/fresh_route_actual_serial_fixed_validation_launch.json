@@ -1,0 +1,58 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_serial_fixed_validation_launch.json",
+  "original_sha256": "ecf3f3529538145f9911115f3952b380ed6a39853a57a3816f7bd1c0db968287",
+  "omitted_fields": [
+    "/commands/command"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_serial_fixed_validation_launch.v1",
+    "controller": {
+      "pid": 1987,
+      "pgrp": 1987,
+      "session": 1987,
+      "start_ticks": "310260395"
+    },
+    "source_manifest_sha256": "01949375a866775cd141ded72e06afdb0b1922dd5aa60702cb7fea3b5fbc5ec1",
+    "runner": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_run_fixed_validation.py",
+      "sha256": "6d3323c541401630086476f650e7cd42e3af967e17e94e733c03cd4e76dcbfc4"
+    },
+    "plan": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_fixed_validation_plan.json",
+      "sha256": "eb3b1b7e5929fea09126b7e5d5d03374241390f77212ba70fa24edbc92875e1c"
+    },
+    "chain": {
+      "continuation_operator_source": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/source_manifest.json",
+        "sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2"
+      },
+      "partial_restore_audit": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/CPU_CHECKPOINT_AUDIT.json",
+        "sha256": "4ba583041669742a85c98697834069cbe2fe4a56ac05e53ba25ceae63837b11d"
+      },
+      "terminal_restore_audit": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/TERMINAL_CPU_AUDIT.json",
+        "sha256": "205c1b3841daff38a9ff5a102728f6cb041a2d53da6b253dc28daeb74eeca5ee"
+      },
+      "continuation_completion": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/COMPLETE.json",
+        "sha256": "f4790240a236750769aa3f0c44850c19340d364a5ee8b99504321dc26889b79b"
+      }
+    },
+    "commands": [
+      {
+        "stage": "C4V"
+      },
+      {
+        "stage": "J54V_features"
+      },
+      {
+        "stage": "fixed_graph_vs_C"
+      }
+    ],
+    "launched_unix": 1791528951.286706,
+    "test_access": false,
+    "root_selected_full_or_test": false
+  }
+}

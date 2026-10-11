@@ -1,0 +1,41 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_cloud_cleanup_allowlist_r1.json",
+  "original_sha256": "ae8d7745c8c95b7ae53abe2c763fd34ce2d858faad39a0f2af0abac377d2736d",
+  "omitted_fields": [],
+  "record": [
+    {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/experiments/FULL_L35/last.pt",
+      "size": 1066898587,
+      "sha256": "5325982fad83513b11e6f2c9e94537272ae5f7ded295e46b80948bf9fea3532d",
+      "backup": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L35_final_actual_returns_r1\\full\\last.pt",
+      "reason": "completed package; local complete accepted backup SHA rechecked"
+    },
+    {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/experiments/FULL_L35/final.pt",
+      "size": 352988267,
+      "sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6",
+      "backup": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L35_final_actual_returns_r1\\full\\final.pt",
+      "reason": "completed package; local complete accepted backup SHA rechecked"
+    },
+    {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/experiments/FULL_J5/last.pt",
+      "size": 1066898587,
+      "sha256": "2ab642181cdb724902feb4f9de5fda0238b1551395d35e7a5852ecbdec386cdc",
+      "backup": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\final_actual_returns_r1\\full\\last.pt",
+      "reason": "completed package; local complete accepted backup SHA rechecked"
+    },
+    {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/experiments/FULL_J5/final.pt",
+      "size": 352988267,
+      "sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+      "backup": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\final_actual_returns_r1\\full\\final.pt",
+      "reason": "completed package; local complete accepted backup SHA rechecked"
+    },
+    {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt.tmp.failure_20261009_142529",
+      "size": 1346168189,
+      "reason": "obsolete interrupted atomic-write failure file; completed valid last/final preserved"
+    }
+  ]
+}

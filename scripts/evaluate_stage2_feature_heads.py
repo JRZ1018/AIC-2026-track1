@@ -25,7 +25,10 @@ from aictrack1.data.manifest import read_manifest, sha256_file  # noqa: E402
 from aictrack1.evaluation.classification import classification_diagnostics  # noqa: E402
 from aictrack1.evaluation.long_tail import long_tail_diagnostics, stratify_classes  # noqa: E402
 from aictrack1.engine.provenance import CheckpointProvenance  # noqa: E402
-from aictrack1.models.heads import load_classifier_head_checkpoint  # noqa: E402
+from aictrack1.models.heads import (  # noqa: E402
+    load_classifier_head_checkpoint,
+    tau_normalize_linear_classifier,
+)
 
 
 @torch.inference_mode()
@@ -45,9 +48,21 @@ def main() -> int:
     parser.add_argument("--feature-cache", required=True, type=Path)
     parser.add_argument("--expected-peft-checkpoint-sha256", required=True)
     parser.add_argument("--head", required=True, action="append", help="LABEL=CHECKPOINT")
+    parser.add_argument("--weight-tau", action="append", default=[], help="LABEL=TAU; fixed train-only post-hoc linear weight normalization")
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--device", default="cpu")
     args = parser.parse_args()
+    weight_tau: dict[str, float] = {}
+    for specification in args.weight_tau:
+        if "=" not in specification:
+            raise ValueError("--weight-tau must be LABEL=TAU")
+        label, raw_tau = specification.split("=", 1)
+        if not label or label in weight_tau:
+            raise ValueError("weight-tau labels must be non-empty and unique")
+        weight_tau[label] = float(raw_tau)
+    head_labels = [item.split("=", 1)[0] for item in args.head]
+    if set(weight_tau) - set(head_labels):
+        raise ValueError("weight-tau label has no matching --head")
     config = load_dataset_config(args.dataset_config.resolve())
     if config.competition_stage != "stage2":
         raise ValueError("evaluation requires the Stage 2 train-only contract")
@@ -135,6 +150,8 @@ def main() -> int:
         source_sha = checkpoint["feature_cache_metadata"].get("peft_checkpoint_sha256")
         if source_sha is not None and source_sha != cache.metadata.peft_checkpoint_sha256:
             raise ValueError(f"head {label} was trained on another PEFT checkpoint")
+        if label in weight_tau:
+            head = tau_normalize_linear_classifier(head, weight_tau[label])
         predictions = _predict(head, features, device)
         correct = predictions.eq(targets)
         total = torch.bincount(targets, minlength=len(mapping))
@@ -143,6 +160,7 @@ def main() -> int:
         result["heads"][label] = {
             "checkpoint_sha256": sha256_file(checkpoint_path),
             "source_peft_checkpoint_sha256": source_sha,
+            "posthoc_weight_tau": weight_tau.get(label),
             "all": classification_diagnostics(predictions, targets, num_classes=len(mapping)),
             "long_tail": long_tail_diagnostics(predictions, targets, num_classes=len(mapping), stratification=strata),
             "exact_conflict": classification_diagnostics(predictions[conflict_mask], targets[conflict_mask], num_classes=len(mapping)),

@@ -1,4 +1,22 @@
 schema_version: 1
+local_original_group_support_audit_20261007:
+  third_party_code_copied: false
+  additional_data_or_weights: false
+  optimizer_steps: 0
+  fitted_detector: false
+  test_access: false
+  status: actual_train_only_cpu_audit_launched_effect_unknown
+  implementation: src/aictrack1/methods/local_group_support.py
+  evidence: docs/219_训练局部组支持审计预注册_20261007.md
+local_original_curriculum_trial_20261007:
+  concepts: [dividemix, coteaching]
+  third_party_code_copied: false
+  experiment_id: 20261007-bc1-initial-curriculum-last8-20ep-seed20261005
+  mechanism: initial_same_model_train_only_rank_weights_for_epoch1_without_seeding_formal_ac_history
+  status: actual_fresh_training_started_effect_gate_pending
+  evidence: docs/208_BC1首轮可信监督课程预注册_20261007.md
+  implementation: src/aictrack1/methods/bootstrap_curriculum.py
+  tests: tests/test_bootstrap_curriculum.py
 audited_at: "2026-09-09"
 policy:
   local_root: references/upstream
@@ -6,6 +24,47 @@ policy:
   allowed_decisions: [adopted, candidate, concepts_only, excluded]
   no_license_copy_policy: forbidden
 repositories:
+  - id: augmix_consistency
+    repository: google-research/augmix
+    url: https://github.com/google-research/augmix
+    default_branch: master
+    commit: 9b9824c7c19bf7e72df2d085d97b99b3bfb00ba4
+    license: Apache-2.0
+    license_file_verified: true
+    audited_at: "2026-10-07"
+    paper_version: arXiv:1912.02781v2
+    tier: reference_only
+    trigger_stages: [VC0, VC1]
+    deliverable: Bounded train-only view-disagreement audit and independent same-model JS formula; no original AugMix pipeline.
+    copy_policy: concepts_only
+    decision: concepts_only
+    implementation_status: vc0_source_registered_before_implementation_no_formal_training
+    constraints: official_openai_clip_stage2_train_only_single_model_no_teacher_no_ema_no_test
+    evidence: docs/04_上游方案调研与复用登记.md; docs/209_BC1完整止损与损失信号审计_20261007.md
+  - id: sce
+    repository: YisenWang/symmetric_cross_entropy_for_noisy_labels
+    url: https://github.com/YisenWang/symmetric_cross_entropy_for_noisy_labels
+    default_branch: master
+    commit: ec778df4a15192f8ccee2efb0fce8b94b8e00262
+    license: UNCONFIRMED-NO-CODE-COPY
+    license_file_verified: false
+    tier: P5_loss_candidate
+    trigger_stages: [M1, M3, final_retrain]
+    deliverable: Independent hard-label SCE formula, CPU gradient tests, gated Stage2 paired experiment.
+    copy_policy: forbidden
+    decision: excluded
+    audited_at: "2026-09-27"
+    paper_version: arXiv:1908.06112v1
+    implementation_status: p5_local_fold1_8ep_completed_positive_gain_gate_failed
+    implementation_path: src/aictrack1/methods/sce.py; scripts/train_peft.py
+    evidence: tests/test_sce.py; tests/test_p5_loss_pair.py; tests/test_p5_local_queue.py; docs/141_复赛损失优化与75分冲刺计划_20260927.md; docs/142_P5本机4060首折损失配对启动与值守_20260927.md; artifacts/queues/20260927-p5-local-fold1-pair/screen_result.json
+    experiment_decision: excluded_fixed_sce_0.1_1_minus4_with_original_ac_from_promotion
+    experiment_id: 20260927-p5-local-fold1-pair
+    result_delta_top1_pp: 0.01345125601103003
+    result_ci95_pp: [-0.07368023398357436, 0.09610128398066461]
+    exploration_status: user_accepted_relaxed_exploration_policy_fold2_resource_approval_pending
+    exploration_evidence: docs/143_P5探索门槛调整与本机第二折预算_20260927.md
+    exploration_scope: future_matched_fold2_only_not_retrospective_pass_or_formal_adoption
   - id: openai_clip
     repository: openai/CLIP
     url: https://github.com/openai/CLIP
@@ -19,8 +78,8 @@ repositories:
     copy_policy: dependency_or_attributed_copy
     decision: adopted
     implementation_status: p3_full_train_cache_a0_a1_and_peft_m0_complete
-    implementation_path: src/aictrack1/models/clip_vit_b32.py; src/aictrack1/data/feature_cache.py; src/aictrack1/models/peft.py; scripts/train_peft.py
-    evidence: d34c650; 5f13a6a; cab1fc0; tests/test_clip_vit_b32.py; tests/test_peft.py; docs/12_P3_A0_A1_正式基线报告.md; docs/14_P3_PEFT资源与短程筛选报告.md
+    implementation_path: src/aictrack1/models/clip_vit_b32.py; src/aictrack1/models/clip_resolution.py; src/aictrack1/data/feature_cache.py; src/aictrack1/models/peft.py; scripts/train_peft.py
+    evidence: d34c650; 5f13a6a; cab1fc0; tests/test_clip_vit_b32.py; tests/test_clip_resolution.py; tests/test_peft.py; docs/12_P3_A0_A1_正式基线报告.md; docs/14_P3_PEFT资源与短程筛选报告.md; docs/115_复赛C5匹配336分辨率折2试验预注册_20260925.md; THIRD_PARTY_NOTICES.md
   - id: deft
     repository: HotanLee/DeFT
     url: https://github.com/HotanLee/DeFT
@@ -70,13 +129,18 @@ repositories:
     license: MIT
     license_file_verified: true
     tier: P2_optional
-    trigger_stages: [P2, P3]
+    trigger_stages: [P2, P3, P12]
     deliverable: Single-model ELR baseline with measured state memory and no ELR+ path.
     copy_policy: minimal_attributed_reimplementation
-    decision: excluded
-    implementation_status: p2_minimal_complete_p3_skipped_after_a2_a3_no_gain
+    decision: candidate
+    implementation_status: p2_minimal_complete_p3_skipped_after_a2_a3_no_gain; p12_stage2_pair_preregistered
     implementation_path: src/aictrack1/methods/elr.py
     evidence: tests/test_elr.py; tests/test_p2_benchmark.py
+    prior_p3_decision: excluded_after_a2_a3_no_gain; retained_as_historical_evidence
+    stage2_p12_trial:
+      status: preregistered
+      report: docs/157_P12_ELR复赛单折配对短筛预注册_20260929.md
+      queue: artifacts/queues/20260929-p12-local-fold2-elr-pair
   - id: logitclip
     repository: hongxin001/LogitClip
     url: https://github.com/hongxin001/LogitClip
@@ -132,6 +196,54 @@ repositories:
     decision: concepts_only
     review_status: m1_single_model_classwise_history_weighting_complete_two_network_path_excluded
     evidence: src/aictrack1/methods/confidence.py; d0f1dec; docs/15_M1首轮筛选与首次提交选模报告.md
+  - id: mixup_mx0
+    repository: facebookresearch/mixup-cifar10
+    url: https://github.com/facebookresearch/mixup-cifar10
+    default_branch: main
+    commit: eaff31ab397a90fbc0a4aac71fb5311144b3608b
+    license: CC-BY-NC-4.0
+    license_file_verified: true
+    tier: reference_only
+    paper: https://arxiv.org/html/1710.09412v2
+    copy_policy: concepts_only_no_source_copy
+    decision: candidate_train_only_feasibility_audit_pending
+    trigger_stages: [MX0, MX1]
+    deliverable: Independent supervised input mixing; no test, teacher, pseudo-label or extra weights.
+    evidence: docs/212_VC1止损与MX0混合监督可行性_20261007.md
+  - id: sam_sharpness
+    repository: google-research/sam
+    url: https://github.com/google-research/sam
+    default_branch: main
+    commit: dae9904c4cf3a57a304f7b04cecffe371679c702
+    license: Apache-2.0
+    license_file_verified: true
+    tier: reference_only
+    paper: https://arxiv.org/html/2010.01412v3
+    copy_policy: concepts_only_no_source_copy
+    decision: sam0_train_only_signal_complete_sam1_fresh_training_effect_pending
+    trigger_stages: [SAM0, SAM1]
+    deliverable: Independent reversible L2 train-parameter neighborhood probe; no new data, weights, teacher or test.
+    evidence: docs/213_MX1止损与SAM0训练邻域审计_20261007.md
+  - id: lora_lr1
+    repository: microsoft/LoRA
+    url: https://github.com/microsoft/LoRA
+    paper: https://arxiv.org/abs/2106.09685
+    default_branch: main
+    commit: c4593f060e6a368d7bb5af5273b8e42810cdef90
+    license: MIT
+    license_file_verified: true
+    checked_date: '2026-10-08'
+    tier: reference_only
+    trigger_stages: [LR1]
+    copy_policy: concepts_only_no_source_copy
+    decision: new_stage2_recipe_cpu_contract_pass_cuda_pending
+    deliverable: Original repo low-rank visual parameterization; one OpenAI CLIP, Stage2 train only, no downloaded upstream assets.
+    dependencies: existing_pytorch_only
+    training_models: 1
+    inference_models: 1
+    pretrained_weights: OpenAI_official_CLIP_ViT_B32_only
+    data_source: Stage2_official_train_only
+    evidence: docs/224_放宽探索交付与LR1低秩视觉配方冻结_20261008.md
   - id: coteaching
     repository: bhanML/Co-teaching
     url: https://github.com/bhanML/Co-teaching

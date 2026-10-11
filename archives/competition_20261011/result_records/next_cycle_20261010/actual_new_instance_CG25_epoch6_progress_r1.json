@@ -1,0 +1,32 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_new_instance_CG25_epoch6_progress_r1.json",
+  "original_sha256": "0e8af557f9222acae0195aef097bdc6391f6ef20171cb452a0b3adb2f8fa3607",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791605279.8980246,
+    "actual_new_stdout_epochs": [
+      5,
+      6
+    ],
+    "exact_controller_trainer_lease_unchanged": true,
+    "trainer_cpu_seconds": 800.92,
+    "previous_cpu_seconds": 331.42,
+    "GPU": "5038 MiB, 87 %",
+    "actual_epoch6_atomic_last_stat": {
+      "bytes": 1417444263,
+      "mtime": 1791605185.1028945
+    },
+    "checkpoint_loaded": false,
+    "remaining_original_seconds": 4922.241028785706,
+    "remaining_epochs": 14,
+    "throughput_status": "First resumed two epochs include initialization; no adjacent new checkpoint wallclock measured yet. Need next epoch7 stat before definitive completion forecast.",
+    "next_forecast_baseline_epoch": 6,
+    "next_forecast_baseline_mtime": 1791605185.1028945,
+    "original_budget_source_unchanged": true,
+    "no_OOM": true,
+    "datafree": 22228832256,
+    "append_budget_published": false,
+    "restart": false
+  }
+}

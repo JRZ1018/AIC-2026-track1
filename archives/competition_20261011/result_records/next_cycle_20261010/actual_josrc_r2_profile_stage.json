@@ -1,0 +1,14 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_josrc_r2_profile_stage.json",
+  "original_sha256": "c75f632cd7c18dc8fcff6d87ac530dcd39703c08041357e3c0e70281d703ee5f",
+  "omitted_fields": [],
+  "record": {
+    "source_sha256": "8d9c229f645e20a306b11a69bc57a6f4c7141d0c90783bd7d616cb02e580a276",
+    "files": 93,
+    "reused_exact_R3_files": 79,
+    "uploaded_changed_files": 15,
+    "all_SHA_AST_PASS": true,
+    "GPU_started": false
+  }
+}

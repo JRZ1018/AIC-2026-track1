@@ -1,0 +1,32 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_FULL_fresh_fixed20_launch_r1.json",
+  "original_sha256": "5242250958f13ca4e00c380e0f0f3a41076a1fc508526b41b8f3453905b26ba8",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.next_cycle10.L35_FULL.actual_launch.v1",
+    "controller": {
+      "pid": 30426,
+      "pgrp": 30426,
+      "session": 30426,
+      "start_ticks": "928153826"
+    },
+    "source_manifest_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010",
+    "launch_unix": 1791651735.1663492,
+    "budget_sha256": "90ad899b9110e96eb015b79bcdddf505560184215a67b540abfd0cd2aa07832e",
+    "confirmation_sha256": "15fd22f3c36b65dc90250692538ca0e2c3fe8a581f36be660fad05e72a061546",
+    "fresh_official_CLIP": true,
+    "legal_full_H1": true,
+    "train_count": 148695,
+    "validation_count": 0,
+    "epochs": 20,
+    "selection": "fixed_final20",
+    "synthetic_smoke_initialization": false,
+    "planned_pause": false,
+    "test_access": false,
+    "actual_data_free": 12576006144
+  }
+}

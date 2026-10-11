@@ -1,0 +1,6 @@
+# Frozen scientific archives retain exact bytes for SOURCE_INVENTORY checks.
+archives/** -text
+*.docx -text
+*.pdf -text
+*.png -text
+*.jpg -text

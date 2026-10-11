@@ -1,0 +1,58 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_actual_retry_serial_validation.json",
+  "original_sha256": "2e76f6f04edcc0e85d5b8158a1c6d2b21f05ef90810a690fea8774b75225082f",
+  "omitted_fields": [
+    "/stages/0_launch.json/command",
+    "/stages/1_launch.json/command",
+    "/stages/2_launch.json/command"
+  ],
+  "record": {
+    "observed_unix": 1791529586.8797653,
+    "stages": {
+      "0_launch.json": {
+        "stage": "C4V",
+        "actual_child_pid": 1988,
+        "started_unix": 1791528951.3391066
+      },
+      "0_result.json": {
+        "stage": "C4V",
+        "returncode": 0,
+        "finished_unix": 1791529186.7465048
+      },
+      "1_launch.json": {
+        "stage": "J54V_features",
+        "actual_child_pid": 2162,
+        "started_unix": 1791529186.747975
+      },
+      "1_result.json": {
+        "stage": "J54V_features",
+        "returncode": 0,
+        "finished_unix": 1791529435.3105454
+      },
+      "2_launch.json": {
+        "stage": "fixed_graph_vs_C",
+        "actual_child_pid": 2310,
+        "started_unix": 1791529435.3122094
+      },
+      "2_result.json": {
+        "stage": "fixed_graph_vs_C",
+        "returncode": 0,
+        "finished_unix": 1791529476.8412867
+      },
+      "COMPLETE.json": {
+        "complete": true,
+        "completed_unix": 1791529476.8417592,
+        "scope": "frozen_fixedlast20_C_and_J5_4V_then_fixedgraph_only",
+        "test_access": false
+      }
+    },
+    "logs": {
+      "root_serial_controller_stdout.log": "",
+      "root_serial_validation/C4V.log": "   \"zero_recall_classes\": 5,\n    \"tail_class_mean_recall\": 0.7103513479232788,\n    \"tail_sample_accuracy\": 0.7263966202735901\n  },\n  \"delta_tta_minus_center\": {\n    \"top1\": 0.00612032413482666,\n    \"macro_accuracy\": 0.006210982799530029,\n    \"tail_class_mean_recall\": 0.006688833236694336,\n    \"tail_sample_accuracy\": 0.006816565990447998\n  },\n  \"paired_wins\": 511,\n  \"paired_losses\": 329,\n  \"changed_predictions\": 1967,\n  \"checkpoint_role\": \"final\",\n  \"checkpoint_epoch\": 20,\n  \"four_view_protocol\": \"native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged\",\n  \"four_view_resize\": 384,\n  \"four_view\": {\n    \"top1\": 0.7436190843582153,\n    \"macro_accuracy\": 0.734631359577179,\n    \"zero_recall_classes\": 4,\n    \"tail_class_mean_recall\": 0.7161099314689636,\n    \"tail_sample_accuracy\": 0.7322729825973511\n  },\n  \"delta_four_minus_flip_tta\": {\n    \"top1\": 0.0038672685623168945,\n    \"macro_accuracy\": 0.003989696502685547,\n    \"tail_class_mean_recall\": 0.0057585835456848145,\n    \"tail_sample_accuracy\": 0.005876362323760986\n  },\n  \"four_view_changed_predictions\": 1738,\n  \"four_view_paired_wins\": 443,\n  \"four_view_paired_losses\": 328,\n  \"fused_logits\": {\n    \"path\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C/fused_logits.pt\",\n    \"sha256\": \"f719dbf5fbee7283111ab11880991b7d08482d55793e048a78d6ba7d12c8612d\",\n    \"dtype\": \"torch.float16\",\n    \"shape\": [\n      29737,\n      750\n    ],\n    \"weights_only_safe_load_verified\": true\n  }\n}\n{\"complete\": true, \"p1_arm\": \"C\", \"identity\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C/input_identity.json\", \"test_access\": false}\n",
+      "root_serial_validation/J54V_features.log": "    \"zero_recall_classes\": 5,\n    \"tail_class_mean_recall\": 0.7109537720680237,\n    \"tail_sample_accuracy\": 0.7269451022148132\n  },\n  \"delta_tta_minus_center\": {\n    \"top1\": 0.006523847579956055,\n    \"macro_accuracy\": 0.006581008434295654,\n    \"tail_class_mean_recall\": 0.006960034370422363,\n    \"tail_sample_accuracy\": 0.007130026817321777\n  },\n  \"paired_wins\": 517,\n  \"paired_losses\": 323,\n  \"changed_predictions\": 1952,\n  \"checkpoint_role\": \"final\",\n  \"checkpoint_epoch\": 20,\n  \"four_view_protocol\": \"native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged\",\n  \"four_view_resize\": 384,\n  \"four_view\": {\n    \"top1\": 0.7439889907836914,\n    \"macro_accuracy\": 0.7349813580513,\n    \"zero_recall_classes\": 4,\n    \"tail_class_mean_recall\": 0.716582179069519,\n    \"tail_sample_accuracy\": 0.7328214645385742\n  },\n  \"delta_four_minus_flip_tta\": {\n    \"top1\": 0.003934502601623535,\n    \"macro_accuracy\": 0.003984510898590088,\n    \"tail_class_mean_recall\": 0.005628407001495361,\n    \"tail_sample_accuracy\": 0.005876362323760986\n  },\n  \"four_view_changed_predictions\": 1732,\n  \"four_view_paired_wins\": 440,\n  \"four_view_paired_losses\": 323,\n  \"fused_logits\": {\n    \"path\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/fused_logits.pt\",\n    \"sha256\": \"03ac09bf83b534cd70a231084ed3c209ddeee9f494541c2b5efffb7b8c8ca0d0\",\n    \"dtype\": \"torch.float16\",\n    \"shape\": [\n      29737,\n      750\n    ],\n    \"weights_only_safe_load_verified\": true\n  }\n}\n{\"complete\": true, \"p1_arm\": \"J5\", \"identity\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/input_identity.json\", \"test_access\": false}\n",
+      "root_serial_validation/fixed_graph_vs_C.log": "{\"complete\": true, \"report\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/report.json\", \"eligibility\": {\"status\": \"fresh_registered_direction_positive\", \"primary_delta_pp\": 0.1897018970189702, \"natural_p7_delta_pp\": 0.12442411810202779, \"primary_metric\": \"balanced_supported_unique P7 observed-label agreement\", \"registered_rule\": \"preselected route: raw P7 direction reported; S uses this as primary, J5_GRAPH uses direct fixed graph combo versus fresh C as primary\", \"natural_nonnegative_hard_gate\": false, \"ci_lower_bound_positive_hard_gate\": false, \"group_ci95_pp\": [0.04065040650406504, 0.3694105691056909], \"ci_crosses_zero\": false, \"stable_gain_claim\": false, \"formal_test_frozen\": false, \"low_support_classes_do_not_alone_veto\": true}}\n"
+    },
+    "canonical_lock": null
+  }
+}

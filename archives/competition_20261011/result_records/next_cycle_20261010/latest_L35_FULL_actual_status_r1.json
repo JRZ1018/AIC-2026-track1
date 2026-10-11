@@ -1,0 +1,67 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_FULL_actual_status_r1.json",
+  "original_sha256": "3aac96fe362d6710795acdcaaca2de5bcaf4f008f67041ef9195bf861070e569",
+  "omitted_fields": [
+    "/canonical/command",
+    "/starts/value/command",
+    "/stdout"
+  ],
+  "record": {
+    "observed_unix": 1791651757.6839304,
+    "controller_group": [
+      {
+        "pid": 30426,
+        "state": "S",
+        "ppid": 1,
+        "pgrp": 30426,
+        "session": 30426,
+        "start_ticks": "928153826"
+      }
+    ],
+    "canonical": {
+      "schema_version": 1,
+      "token": "db578a13797f4f0189bffdce71ca1105",
+      "owner": "20261010-L35-full-L35",
+      "queue_pid": 30426,
+      "trainer_pid": 30431,
+      "config": "configs/experiment/p1_full_L35.yaml",
+      "output_dir": "artifacts/experiments/FULL_L35",
+      "started_at": "2026-10-11T01:02:17.992503+08:00"
+    },
+    "starts": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/launches/L35_1b3a0ef9c77745659c06955074b3275b/START.json",
+        "value": {
+          "owner": {
+            "pid": 30242,
+            "pgrp": 30242,
+            "session": 30242,
+            "start_ticks": "928148423"
+          },
+          "source_manifest_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+          "config_sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a",
+          "lease_token": "d08f4e5f255b455d8ef462d9b212bff5",
+          "test_access": false
+        }
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/launches/L35_160860d6ffc04c81adfe7e04ded020a4/START.json",
+        "value": {
+          "owner": {
+            "pid": 30431,
+            "pgrp": 30431,
+            "session": 30431,
+            "start_ticks": "928154110"
+          },
+          "source_manifest_sha256": "38f576a625defc10371798e0f8700d86a28e51b0a735692cfcece24021b0e353",
+          "config_sha256": "fb9b6209ef28490257c2840de6918905b27414620da397a966a094ead0b69f5a",
+          "lease_token": "db578a13797f4f0189bffdce71ca1105",
+          "test_access": false
+        }
+      }
+    ],
+    "data_free": 12575440896,
+    "GPU": "3718, 4"
+  }
+}

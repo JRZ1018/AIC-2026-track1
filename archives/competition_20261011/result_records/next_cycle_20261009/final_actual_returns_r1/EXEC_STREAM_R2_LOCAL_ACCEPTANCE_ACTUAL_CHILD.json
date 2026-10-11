@@ -1,0 +1,13 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R2_LOCAL_ACCEPTANCE_ACTUAL_CHILD.json",
+  "original_sha256": "2816e8a17baeb638fdd9983aa3bab03eb8ac737330fefc1b6a1b22c74c857eba",
+  "omitted_fields": [],
+  "record": {
+    "pid": 39676,
+    "start": 1791565021.9852738,
+    "wrapper_sha256": "c7ac11edb8fd4dc150ef5b2e105cd61573127a13143268c5ca92411c7ae7b113",
+    "FETCHED_sha256": "d612c9587f09662f16d3854d2ee0662bb0c71ad89015b6284284b896dbce80a5",
+    "CPU_only": true
+  }
+}

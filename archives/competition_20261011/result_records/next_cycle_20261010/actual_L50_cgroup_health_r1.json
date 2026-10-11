@@ -1,0 +1,14 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_cgroup_health_r1.json",
+  "original_sha256": "ff9c0ad1cade9d994a73d73ec978459cb78f72433d81117ef73d47fb9c9ceadb",
+  "omitted_fields": [],
+  "record": {
+    "memory.current": "61273169920\n",
+    "memory.max": "66571993088\n",
+    "memory.events": "low 0\nhigh 951\nmax 0\noom 0\noom_kill 0\n",
+    "memory.stat": "anon 15051735040\nfile 45869309952\nkernel_stack 8355840\npagetables 108695552\npercpu 4608\nsock 8192\nshmem 2298490880\nfile_mapped 2302062592\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 17349328896\nactive_anon 159744\ninactive_file 3246120960\nactive_file 40324923392\nunevictable 0\nslab_reclaimable 218362312\nslab_unreclaimable 12313888\nslab 230676200\nworkingset_refault_anon 0\nworkingset_refault_file 692116\nworkingset_activate_anon 0\nworkingset_activate_file 118559\nworkingset_restore_anon 0\nworkingset_restore_file 45\nworkingset_nodereclaim 0\npgfault 14449930819\npgmajfault 1668\npgrefill 523820\npgscan 1445819\npgsteal 1445578\npgactivate 6674130677\npgdeactivate 523815\npglazyfree 881\npglazyfreed 799\nthp_fault_alloc 0\nthp_collapse_alloc 0\n",
+    "now_unix": 1791682078.6744857,
+    "trainer_status": "Name:\tpython\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t41809\nNgid:\t31290\nPid:\t41809\nPPid:\t41803\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t512\nGroups:\t0 \nNStgid:\t41809\nNSpid:\t41809\nNSpgid:\t41809\nNSsid:\t41809\nVmPeak:\t22996248 kB\nVmSize:\t22882384 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t 6024184 kB\nVmRSS:\t 5911460 kB\nRssAnon:\t 3134220 kB\nRssFile:\t  532740 kB\nRssShmem:\t 2244500 kB\nVmData:\t 4059704 kB\nVmStk:\t     224 kB\nVmExe:\t    2412 kB\nVmLib:\t 3229060 kB\nVmPTE:\t   13756 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nThreads:\t27\nSigQ:\t8/1545933\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001000\nSigCgt:\t0000000100010002\nCapInh:\t0000000000000000\nCapPrm:\t00000000a80425fb\nCapEff:\t00000000a80425fb\nCapBnd:\t00000000a80425fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tthread vulnerable\nSpeculationIndirectBranch:\tconditional enabled\nCpus_allowed:\tffffffff,ffffffff,ffffffff,ffffffff\nCpus_allowed_list:\t0-127\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000003\nMems_allowed_list:\t0-1\nvoluntary_ctxt_switches:\t450326\nnonvoluntary_ctxt_switches:\t7058\n"
+  }
+}

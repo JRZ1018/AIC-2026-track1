@@ -1,0 +1,19 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/full/launch_receipt.json",
+  "original_sha256": "595eb16ec635944af3ab569e691360d87519334364a48bf65ac130a1db9463eb",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.full.launch_result.v1",
+    "arm": "J5",
+    "selected_route": "J5_GRAPH",
+    "return_code": 0,
+    "source_manifest_sha256": "be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54",
+    "config_sha256": "04e13ffde658a7c532e59767d445e3ba58db20b6e7e7d2232282ed3a8c350d75",
+    "fresh_confirmation_receipt_sha256": "dc3232619e394b4528454f155711d9b88366ac7066f594886860e31a340d8e5f",
+    "full_budget_sha256": "62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517",
+    "synthetic_smoke": false,
+    "resumed": false,
+    "test_access": false
+  }
+}

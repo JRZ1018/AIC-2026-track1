@@ -1,0 +1,98 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/old_diagnostic_returns/j5_last20_primary/FETCH_RECEIPT.json",
+  "original_sha256": "048b7442185eeb96faa42013f4976dfd84cbc547515d616018fb7aeefc000047",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.old_diagnostic_return_receipt.v1",
+    "complete": true,
+    "admitted_for_fixed_p7_cpu_pair": true,
+    "arm": "J5",
+    "remote_root": "/root/AICtrack1_next_cycle_diagnostic_20261009/artifacts/diagnostics/P1_J5",
+    "local_root": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\old_diagnostic_returns\\j5_last20_primary",
+    "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+    "files": {
+      "fused_features.pt": {
+        "bytes": 63342453,
+        "sha256": "2293bef2b06954320da6df6f277dff31711d5a30e1bfc9d5d5b25c78163c0b16"
+      },
+      "fused_logits.pt": {
+        "bytes": 47052393,
+        "sha256": "35764e25ad082dfb621ec3600b29dd53ebaf374c955bb47578ad4af351d96170"
+      },
+      "input_identity.json": {
+        "bytes": 2797,
+        "sha256": "b500ae860f92b9b961c1b9a246733bb2436ef0981c11755e34fcd056ec983cf5"
+      },
+      "p1_checkpoint_audit.json": {
+        "bytes": 1581,
+        "sha256": "639e3b9d93efab51c35dc69f1dcc5dac093c6b7033df22a903419ce576b4c22e"
+      },
+      "paired_predictions.csv": {
+        "bytes": 2391350,
+        "sha256": "49dbfc18d04b65752e6d84fd9468e77e85c26f0c81c0c661484f0fc305bfbd11"
+      },
+      "report.json": {
+        "bytes": 2682,
+        "sha256": "69dec91ca6d6dae0c869be0511c3926fcd96c1e1e5594ef98b17bbb3af6b6396"
+      },
+      "rows.csv": {
+        "bytes": 5604499,
+        "sha256": "7d48a89a73c70158deb0bd4bb1607666b677e5f0ef483035f5f9dc8600cec8f0"
+      },
+      "result_manifest.json": {
+        "bytes": 1108,
+        "sha256": "4be4d2df0b3073065d117725cc59ab825a54a7ec1c00684295ce4c47e168d0e2"
+      }
+    },
+    "remote_manifest_schema": "aictrack1.p1.diagnostic_result.v1",
+    "actual_remote_file_count": 8,
+    "diagnostic_source_manifest_sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+    "training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+    "connector_sha256": "c400d380b23cdb3bc61ae3bde21b5034b1fede32dcd17a3278aaa8e1314afbae",
+    "transfers": {
+      "fused_features.pt": {
+        "resumed_prefix_bytes": 0,
+        "prefix_verified_against_remote_bytes": false,
+        "existing_complete_verified": false
+      },
+      "fused_logits.pt": {
+        "resumed_prefix_bytes": 0,
+        "prefix_verified_against_remote_bytes": false,
+        "existing_complete_verified": false
+      },
+      "input_identity.json": {
+        "resumed_prefix_bytes": 0,
+        "prefix_verified_against_remote_bytes": false,
+        "existing_complete_verified": false
+      },
+      "p1_checkpoint_audit.json": {
+        "resumed_prefix_bytes": 0,
+        "prefix_verified_against_remote_bytes": false,
+        "existing_complete_verified": false
+      },
+      "paired_predictions.csv": {
+        "resumed_prefix_bytes": 0,
+        "prefix_verified_against_remote_bytes": false,
+        "existing_complete_verified": false
+      },
+      "report.json": {
+        "resumed_prefix_bytes": 0,
+        "prefix_verified_against_remote_bytes": false,
+        "existing_complete_verified": false
+      },
+      "rows.csv": {
+        "resumed_prefix_bytes": 0,
+        "prefix_verified_against_remote_bytes": false,
+        "existing_complete_verified": false
+      }
+    },
+    "fetched_epoch": 1791497415.0466921,
+    "payloads_tensor_validated": false,
+    "test_access": false,
+    "gpu_started": false,
+    "model_parameter_updates": false,
+    "remote_executed_commands": 0,
+    "max_aggregate_increment_bytes": 536870912
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B_EMA_two_negative_root_review_r1.json",
+  "original_sha256": "0a22ab80633e005e5551759563dc0e9f956cf3ad629d956c35b948ac7f29003f",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.B_EMA.two_negative.root_review.v1",
+    "complete": true,
+    "recorded_at_local": "2026-10-10T10:49:40.409068+08:00",
+    "selection_scope": "two fixed successful-step EMA single-model shadows with fixed graph/P7 vs actual J5_GRAPH",
+    "B25": {
+      "report_sha256": "22cd2b0ca57899febcc048c242d3b90e9b449318fc3a4c064436b0c5a92f1668",
+      "balanced_net_correct": -13,
+      "natural_net_correct": -3,
+      "balanced_delta_pp": -0.08807588075880758,
+      "natural_delta_pp": -0.010088442008272523,
+      "independent_actual_chunks": [
+        "cf2309"
+      ]
+    },
+    "B50": {
+      "report_sha256": "87a8e93bd89b767d55c973cce0c2ce3dba1524ad17da3f47c528e1675b0a5c75",
+      "balanced_net_correct": -26,
+      "natural_net_correct": -17,
+      "balanced_delta_pp": -0.17615176151761516,
+      "natural_delta_pp": -0.057167838046877625,
+      "independent_actual_chunks": [
+        "7e2650",
+        "0a5f88"
+      ],
+      "new_natural_zero_class": 324,
+      "support": 25
+    },
+    "CPU_role_recovery_and_query_recount_PASS": true,
+    "engineering_failure_R2_preserved": true,
+    "R3_actual_immutable_retry_source": "7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045",
+    "R3_role_contract": {
+      "parent_raw_center_parity_actual": 0.7330934405326843,
+      "observed_EMA_center": 0.7327908277511597,
+      "raw_parity_applicable_to_EMA": false,
+      "EMA_raw_parity_passed": null
+    },
+    "admit_independent_confirmation": false,
+    "admit_full_training": false,
+    "admit_test": false,
+    "risk_decision": "Both complete combinations negative; own graph gains are not an admission metric; no repeat grid,4V or CI",
+    "family_wide_claim": false,
+    "old_source_budget_logs_preserved": true,
+    "new_forward_by_review": 0,
+    "test_access": false
+  }
+}

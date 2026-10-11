@@ -1,0 +1,24 @@
+experiment:
+  competition_stage: stage2
+  run_id: 20260924-stage2-c3-h1-full-seed20260921
+  execution_enabled: true
+  training_scope: full_train_fixed_epochs
+  dataset_config: ../data/stage2.yaml
+  feature_cache: ../../artifacts/features/stage2/train_openai_vit_b32
+  output_dir: ../../artifacts/experiments/20260924-stage2-c3-h1-full-seed20260921
+  device: cuda
+  expected_train_count: 148695
+  num_classes: 750
+  head:
+    kind: linear
+  training:
+    epochs: 100
+    batch_size: 4096
+    learning_rate: 0.01
+    weight_decay: 0.0
+    momentum: 0.9
+    gradient_clip_norm: null
+    seed: 20260921
+    optimizer: adam
+    scheduler: constant
+    amp: false

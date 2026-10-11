@@ -1,0 +1,48 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_append_resource_authorization_r1.json",
+  "original_sha256": "eb21a4f7aec24ea37a24c7e18980f3f013537ae3877f1cc9f8bc6f62c3acea00",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.next_cycle10.CG_append.resource_authorization.v1",
+    "root_authorized": true,
+    "human_authorization": "All server/code/plan modifications/training/frozen validation without further permission; 32h deadline Oct11 17:58:58",
+    "original_source_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+    "original_budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+    "original_phase_start_unix": 1791599402.1390533,
+    "original_deadline_unix": 1791610202.1390533,
+    "phase_start_unix": 1791610202.1390533,
+    "deadline_unix": 1791613802.1390533,
+    "scope": "CG25 exactlast remainder and frozen same-checkpoint4V/graph/P7 only; no new candidate; original scientific config/seed/Cos20 unchanged",
+    "observed_epoch": 7,
+    "adjacent_epoch6_to7_checkpoint_wall_seconds": 395.3275797367096,
+    "projected_fixed20_atomic_wall_unix": 1791610719.6890109,
+    "original_deadline_overrun_projection_seconds": 517.5499575138092,
+    "future_stable_last_sha256": null,
+    "actual_all_groups_closed": false,
+    "actual_resume_admission": false,
+    "operator_CPU_source_sha256": "e33a805cf254f6261e12415ad379c606487ad9bda2a7df685c06e3abb840da15",
+    "operator_CPU_tests": 12,
+    "operator_source_status": "CPU-only prepared; not deployed; no future checkpoint binding",
+    "test_access": false,
+    "no_active_source_or_budget_change": true,
+    "ledger": {
+      "initial_free_bytes": 13013950464,
+      "capacity_increase_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "data_total_bytes": 128849018880,
+      "disk_max_bytes": 32212254720,
+      "min_free_bytes": 3221225472,
+      "atomic_reserve_bytes": 2147483648,
+      "final_gpu_reserve_hours": 4,
+      "final_wall_reserve_hours_min": 8,
+      "human_latest_wall_deadline_unix": 1791712738.0,
+      "remaining32h_plan_sha256": "e2235eacd9417cf3de30786512e6dddaf5a1fd35c1eb7bd58b061d5bd2d4c58a",
+      "capacity_evidence": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+        "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+      }
+    },
+    "created_at": "2026-10-10T12:21:38.296115+08:00"
+  }
+}

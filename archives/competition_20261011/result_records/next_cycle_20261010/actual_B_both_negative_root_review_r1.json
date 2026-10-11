@@ -1,0 +1,275 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B_both_negative_root_review_r1.json",
+  "original_sha256": "752056c05a3b2727aa34da4a96e865051818ac3273f58eed16df199019c02275",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.next_cycle10.B_exploration.root_negative_review.v1",
+    "complete": true,
+    "root_reviewed_at_local": "2026-10-10T06:48:34.892605+08:00",
+    "both_primary_negative": true,
+    "primary_scope": "candidate_fixed_graph_P7_vs_actual_J5_GRAPH_P7",
+    "source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "diagnostic_source_sha256": "24aa7656811de9027162a20f8de6c5f4a015123ee41aeafc2602c653bda40013",
+    "arms": {
+      "B25": {
+        "report_path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\B_actual_exploration_returns_r1\\B25\\report.json",
+        "report_sha256": "5e0548ca3093ba7ec88dbd3361b07542b29a688213d88ff4152ee3067f59ced9",
+        "primary_delta_pp": -0.13550135501355012,
+        "natural_delta_pp": -0.016814070013787537,
+        "protocols": {
+          "natural_unique_images": {
+            "rows": 29737,
+            "delta_pp": -0.016814070013787537,
+            "wrong_to_correct": 93,
+            "correct_to_wrong": 98,
+            "net_correct": -5,
+            "head_mid_tail": {
+              "head": {
+                "evaluated_classes": 150,
+                "query_images": 7184,
+                "candidate_class_mean_recall_pp": 72.89087032037607,
+                "control_class_mean_recall_pp": 72.98542229102556,
+                "delta_class_mean_recall_pp": -0.09455197064949954,
+                "delta_sample_top1_pp": -0.09743875278396437
+              },
+              "mid": {
+                "evaluated_classes": 225,
+                "query_images": 9790,
+                "candidate_class_mean_recall_pp": 75.2238270810566,
+                "control_class_mean_recall_pp": 75.27293308496544,
+                "delta_class_mean_recall_pp": -0.04910600390883502,
+                "delta_sample_top1_pp": -0.04085801838610827
+              },
+              "tail": {
+                "evaluated_classes": 375,
+                "query_images": 12763,
+                "candidate_class_mean_recall_pp": 73.56785513344391,
+                "control_class_mean_recall_pp": 73.52344098912315,
+                "delta_class_mean_recall_pp": 0.04441414432076573,
+                "delta_sample_top1_pp": 0.04701089085638173
+              }
+            },
+            "supported_large_declines": []
+          },
+          "balanced_supported_unique": {
+            "rows": 14760,
+            "delta_pp": -0.13550135501355012,
+            "wrong_to_correct": 32,
+            "correct_to_wrong": 52,
+            "net_correct": -20,
+            "head_mid_tail": {
+              "head": {
+                "evaluated_classes": 150,
+                "query_images": 3000,
+                "candidate_class_mean_recall_pp": 74.0,
+                "control_class_mean_recall_pp": 74.26666666666667,
+                "delta_class_mean_recall_pp": -0.2666666666666666,
+                "delta_sample_top1_pp": -0.26666666666666666
+              },
+              "mid": {
+                "evaluated_classes": 225,
+                "query_images": 4500,
+                "candidate_class_mean_recall_pp": 76.19999999999999,
+                "control_class_mean_recall_pp": 76.2888888888889,
+                "delta_class_mean_recall_pp": -0.08888888888888902,
+                "delta_sample_top1_pp": -0.08888888888888889
+              },
+              "tail": {
+                "evaluated_classes": 363,
+                "query_images": 7260,
+                "candidate_class_mean_recall_pp": 74.68319559228651,
+                "control_class_mean_recall_pp": 74.79338842975206,
+                "delta_class_mean_recall_pp": -0.11019283746556462,
+                "delta_sample_top1_pp": -0.11019283746556473
+              }
+            },
+            "supported_large_declines": [
+              {
+                "original_class_index": 232,
+                "stratum": "mid",
+                "unique_group_support": 20,
+                "candidate_recall": 0.3,
+                "control_recall": 0.4,
+                "candidate_correct": 6,
+                "control_correct": 8,
+                "query_images": 20,
+                "delta_pp": -10.0
+              }
+            ]
+          }
+        },
+        "checkpoint_audit_path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\B_actual_exploration_returns_r1\\B25_diagnostic\\p1_checkpoint_audit.json",
+        "checkpoint_audit_sha256": "31420481f55c4c482bb093fcfb659776906caa8d49c53f54c4699fe8c63d4798",
+        "last_sha256": "733641e9197c5b8c9c967f8d69ce2ea20e5c455f28032533cd7131e9909591ed",
+        "fixed20_full_CPU_audit_complete": true,
+        "independent_small_NPZ_recount_complete": true,
+        "independent_recount_scope": "Exact predictions/query/order/control/perclass/support/HMT re-count; no large model loading and no bootstrap rerun",
+        "test_access": false
+      },
+      "B50": {
+        "report_path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\B_actual_exploration_returns_r1\\B50\\report.json",
+        "report_sha256": "9d8039b07e289338cbe65b49fa02b7f223d88c2ad5cec822691cfc50db22676c",
+        "primary_delta_pp": -0.16937669376693767,
+        "natural_delta_pp": -0.09415879207721022,
+        "protocols": {
+          "natural_unique_images": {
+            "rows": 29737,
+            "delta_pp": -0.09415879207721022,
+            "wrong_to_correct": 140,
+            "correct_to_wrong": 168,
+            "net_correct": -28,
+            "head_mid_tail": {
+              "head": {
+                "evaluated_classes": 150,
+                "query_images": 7184,
+                "candidate_class_mean_recall_pp": 72.79299520054707,
+                "control_class_mean_recall_pp": 72.98542229102556,
+                "delta_class_mean_recall_pp": -0.19242709047849837,
+                "delta_sample_top1_pp": -0.19487750556792874
+              },
+              "mid": {
+                "evaluated_classes": 225,
+                "query_images": 9790,
+                "candidate_class_mean_recall_pp": 75.21223656195008,
+                "control_class_mean_recall_pp": 75.27293308496544,
+                "delta_class_mean_recall_pp": -0.060696523015363595,
+                "delta_sample_top1_pp": -0.05107252298263534
+              },
+              "tail": {
+                "evaluated_classes": 375,
+                "query_images": 12763,
+                "candidate_class_mean_recall_pp": 73.4490770942701,
+                "control_class_mean_recall_pp": 73.52344098912315,
+                "delta_class_mean_recall_pp": -0.07436389485305893,
+                "delta_sample_top1_pp": -0.07051633628457259
+              }
+            },
+            "supported_large_declines": []
+          },
+          "balanced_supported_unique": {
+            "rows": 14760,
+            "delta_pp": -0.16937669376693767,
+            "wrong_to_correct": 64,
+            "correct_to_wrong": 89,
+            "net_correct": -25,
+            "head_mid_tail": {
+              "head": {
+                "evaluated_classes": 150,
+                "query_images": 3000,
+                "candidate_class_mean_recall_pp": 73.86666666666667,
+                "control_class_mean_recall_pp": 74.26666666666667,
+                "delta_class_mean_recall_pp": -0.4000000000000001,
+                "delta_sample_top1_pp": -0.4
+              },
+              "mid": {
+                "evaluated_classes": 225,
+                "query_images": 4500,
+                "candidate_class_mean_recall_pp": 76.13333333333334,
+                "control_class_mean_recall_pp": 76.2888888888889,
+                "delta_class_mean_recall_pp": -0.15555555555555578,
+                "delta_sample_top1_pp": -0.15555555555555556
+              },
+              "tail": {
+                "evaluated_classes": 363,
+                "query_images": 7260,
+                "candidate_class_mean_recall_pp": 74.7107438016529,
+                "control_class_mean_recall_pp": 74.79338842975206,
+                "delta_class_mean_recall_pp": -0.08264462809917332,
+                "delta_sample_top1_pp": -0.08264462809917356
+              }
+            },
+            "supported_large_declines": [
+              {
+                "original_class_index": 74,
+                "stratum": "mid",
+                "unique_group_support": 20,
+                "candidate_recall": 0.7,
+                "control_recall": 0.8,
+                "candidate_correct": 14,
+                "control_correct": 16,
+                "query_images": 20,
+                "delta_pp": -10.0
+              },
+              {
+                "original_class_index": 82,
+                "stratum": "tail",
+                "unique_group_support": 20,
+                "candidate_recall": 0.6,
+                "control_recall": 0.7,
+                "candidate_correct": 12,
+                "control_correct": 14,
+                "query_images": 20,
+                "delta_pp": -10.0
+              },
+              {
+                "original_class_index": 106,
+                "stratum": "head",
+                "unique_group_support": 20,
+                "candidate_recall": 0.55,
+                "control_recall": 0.65,
+                "candidate_correct": 11,
+                "control_correct": 13,
+                "query_images": 20,
+                "delta_pp": -10.0
+              },
+              {
+                "original_class_index": 128,
+                "stratum": "tail",
+                "unique_group_support": 20,
+                "candidate_recall": 0.7,
+                "control_recall": 0.8,
+                "candidate_correct": 14,
+                "control_correct": 16,
+                "query_images": 20,
+                "delta_pp": -10.0
+              },
+              {
+                "original_class_index": 232,
+                "stratum": "mid",
+                "unique_group_support": 20,
+                "candidate_recall": 0.3,
+                "control_recall": 0.4,
+                "candidate_correct": 6,
+                "control_correct": 8,
+                "query_images": 20,
+                "delta_pp": -10.0
+              },
+              {
+                "original_class_index": 607,
+                "stratum": "tail",
+                "unique_group_support": 20,
+                "candidate_recall": 0.7,
+                "control_recall": 0.8,
+                "candidate_correct": 14,
+                "control_correct": 16,
+                "query_images": 20,
+                "delta_pp": -10.0
+              }
+            ]
+          }
+        },
+        "checkpoint_audit_path": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\B_actual_exploration_returns_r1\\B50_diagnostic\\p1_checkpoint_audit.json",
+        "checkpoint_audit_sha256": "fd1eb1b4bb182b993d01f55d7db65d25552588fb8a759e3322ed15013ff0403c",
+        "last_sha256": "5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78",
+        "fixed20_full_CPU_audit_complete": true,
+        "independent_small_NPZ_recount_complete": true,
+        "independent_recount_scope": "Exact predictions/query/order/control/perclass/support/HMT re-count; no large model loading and no bootstrap rerun",
+        "test_access": false
+      }
+    },
+    "decision": "No B admission, new610 H1, confirmation, FULL or test for these two arms. Select independent PF30 filtering mechanism experiment with explicit new budget and source.",
+    "risk_notes": [
+      "Old57189 query reused, exploration only.",
+      "B50 natural class324 new zero recall (25 images/25 groups, 0 vs1) appears after graph; raw1 vs1.",
+      "B25/B50 own graph gains do not replace negative complete combo control comparisons.",
+      "No independent large model CPU reload during NPZ audit; actual original producer CPU audit receipts bind all tensors.",
+      "High-margin zero reported by producer; NPZ has no margin mask so not independently re-counted."
+    ],
+    "independent_auditor": "/root/ops_final_cycle_review",
+    "independent_B50_actual_tool_chunk": "ebfbd7",
+    "future_B_admission": null,
+    "test_access": false,
+    "used_online_score_for_selection": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/EXEC_STREAM_R2_LOCAL_ACCEPTANCE_WAITER_CLOSED.json",
+  "original_sha256": "773bc7f55a8345009993c8c4ac24f2832ea318b9286cc75b95d3c67f2b986c23",
+  "omitted_fields": [],
+  "record": {
+    "pid": 38532,
+    "start": 1791562651.9239316,
+    "download_pid": 29960,
+    "download_birth_unix": 1791562369.087,
+    "manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+    "wrapper_sha256": "c7ac11edb8fd4dc150ef5b2e105cd61573127a13143268c5ca92411c7ae7b113",
+    "deadline_unix": 1791591123.372912,
+    "SSH": false,
+    "GPU": false
+  }
+}

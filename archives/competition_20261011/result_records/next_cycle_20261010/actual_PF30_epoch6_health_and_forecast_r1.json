@@ -1,0 +1,186 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_epoch6_health_and_forecast_r1.json",
+  "original_sha256": "1c125c549cc2942b8a642c2d15d3efdf417b3d51454966610959f3562de2a3c0",
+  "omitted_fields": [
+    "/canonical/command"
+  ],
+  "record": {
+    "schema": "aictrack1.PF30.actual_progress_and_wallclock_forecast.v1",
+    "observed_unix": 1791588810.8483164,
+    "observed_stdout_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+    "principals": [
+      {
+        "pid": 31939,
+        "start_ticks": "316040409",
+        "pgrp": 31939,
+        "session": 31939,
+        "cpu_seconds": 5.71
+      },
+      {
+        "pid": 31944,
+        "start_ticks": "316040688",
+        "pgrp": 31944,
+        "session": 31944,
+        "cpu_seconds": 2066.47
+      }
+    ],
+    "canonical": {
+      "config": "configs/experiment/p1_PF30.yaml",
+      "output_dir": "artifacts/experiments/PF2_PF30",
+      "owner": "20261010-persistent-filter-joint-PF30",
+      "queue_pid": 31939,
+      "schema_version": 1,
+      "started_at": "2026-10-10T06:59:14.205356+08:00",
+      "token": "00391c5551bc4fe8a2ddbd673be71911",
+      "trainer_pid": 31944
+    },
+    "last_stat": {
+      "bytes": 1421601629,
+      "mtime": 1791588786.526022
+    },
+    "checkpoint_read": false,
+    "first_epoch_audit_reused": true,
+    "interval_epoch1_to6_last_wallclock_mean_seconds": 324.4659131526947,
+    "conditional_epoch20_last_forecast_unix": 1791593329.0488062,
+    "forecast_scope": "atomic last wallclock extrapolation, not train_seconds/guaranteed completion or new-package ETA",
+    "actual_budget_deadline_unix": 1791596827.9587169,
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21616996352,
+        "free": 10595258368
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 104139595776,
+        "free": 24709423104
+      }
+    },
+    "gpu": "4838 MiB, 89 %",
+    "cgroup": {
+      "/proc/self/cgroup": "12:perf_event:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n11:devices:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n10:hugetlb:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n9:freezer:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n8:memory:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n7:rdma:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n6:blkio:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n5:net_cls,net_prio:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n4:pids:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n3:cpu,cpuacct:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n2:cpuset:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n1:name=systemd:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n0::/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+      "resolved_mounts": {
+        "perf_event": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/perf_event",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/perf_event"
+        },
+        "devices": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/devices",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/devices"
+        },
+        "hugetlb": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/hugetlb",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/hugetlb"
+        },
+        "freezer": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/freezer",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/freezer"
+        },
+        "memory": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/memory",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/memory"
+        },
+        "rdma": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/rdma",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/rdma"
+        },
+        "blkio": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/blkio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/blkio"
+        },
+        "net_cls": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/net_cls,net_prio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/net_cls,net_prio"
+        },
+        "net_prio": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/net_cls,net_prio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/net_cls,net_prio"
+        },
+        "pids": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/pids",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/pids"
+        },
+        "cpu": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpu,cpuacct",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpu,cpuacct"
+        },
+        "cpuacct": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpu,cpuacct",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpu,cpuacct"
+        },
+        "cpuset": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpuset",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpuset"
+        },
+        "name=systemd": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/systemd",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/systemd"
+        }
+      },
+      "/sys/fs/cgroup/memory/memory.usage_in_bytes": "56642576384",
+      "/sys/fs/cgroup/memory/memory.limit_in_bytes": "66571993088",
+      "/sys/fs/cgroup/memory/memory.max_usage_in_bytes": "64386166784",
+      "/sys/fs/cgroup/memory/memory.failcnt": "0",
+      "/sys/fs/cgroup/memory/memory.stat": "cache 41195089920\nrss 14982471680\nrss_huge 0\nshmem 2384285696\nmapped_file 2374496256\ndirty 1757184\nwriteback 4595712\nswap 0\npgpgin 9362333112\npgpgout 9348617219\npgfault 16423958463\npgmajfault 2244\ninactive_anon 2387742720\nactive_anon 14981885952\ninactive_file 2160390144\nactive_file 36649721856\nunevictable 0\nhierarchical_memory_limit 66571993088\nhierarchical_memsw_limit 66571993088\ntotal_cache 41195089920\ntotal_rss 14982471680\ntotal_rss_huge 0\ntotal_shmem 2384285696\ntotal_mapped_file 2374496256\ntotal_dirty 1757184\ntotal_writeback 4595712\ntotal_swap 0\ntotal_pgpgin 9362333112\ntotal_pgpgout 9348617219\ntotal_pgfault 16423958463\ntotal_pgmajfault 2244\ntotal_inactive_anon 2387742720\ntotal_active_anon 14981885952\ntotal_inactive_file 2160390144\ntotal_active_file 36649721856\ntotal_unevictable 0",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.cfs_quota_us": "1600000",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.cfs_period_us": "100000",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.stat": "nr_periods 615836\nnr_throttled 9\nthrottled_time 34356714724",
+      "/sys/fs/cgroup/cpu,cpuacct/cpuacct.usage": "369089520269736",
+      "/sys/fs/cgroup/pids/pids.current": "284",
+      "/sys/fs/cgroup/pids/pids.max": "20480"
+    },
+    "new_append_budget": null,
+    "training_restarted": false
+  }
+}

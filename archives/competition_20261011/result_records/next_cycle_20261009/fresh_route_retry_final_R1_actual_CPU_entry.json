@@ -1,0 +1,44 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_retry_final_R1_actual_CPU_entry.json",
+  "original_sha256": "0efebb14aba00a150a3d6aa37f5ebcf2619f0eea63d7c873aae995e8e839d5fd",
+  "omitted_fields": [
+    "/receipt/entries/stdout"
+  ],
+  "record": {
+    "receipt": {
+      "GPU_started": false,
+      "actual_full_checkpoint_sha256": null,
+      "actual_full_model_CPU_restore_performed": false,
+      "actual_inference_performed": false,
+      "collected_unix": 1791530291.4691458,
+      "complete": true,
+      "entries": [
+        {
+          "entry": "scripts/prepare_final_source.py",
+          "return_code": 0
+        },
+        {
+          "entry": "scripts/audit_full_checkpoint.py",
+          "return_code": 0
+        },
+        {
+          "entry": "scripts/run_final.py",
+          "return_code": 0
+        },
+        {
+          "entry": "scripts/accept_return.py",
+          "return_code": 0
+        }
+      ],
+      "schema": "aictrack1.fresh_route.retry_final_template.actual_CPU_entry.v1",
+      "template_manifest_sha256": "b2824f319f5fa659b5c9a6d66c5cbd4161bdcf4ba12bcfa38b1972f8f3ca1396",
+      "test_images_opened": false,
+      "unbound": true,
+      "verified_source_members": 95
+    },
+    "receipt_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_final_template_r1_20261009/artifacts/preflight/retry_template_CPU_entry.json",
+    "receipt_sha256": "52536f8563681a5327d3084113e07016bf1a88f700174171ca44f7d0cd4a6d22",
+    "reused_completed_receipt": false
+  }
+}

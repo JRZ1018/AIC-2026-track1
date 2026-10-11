@@ -1,0 +1,36 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/continuation_actual_stage_and_CPU_entry_r2.json",
+  "original_sha256": "ebb9c4e7cf155301742f6437bd3bce4c59fd004487524a6a1dd2e270e8b20f4c",
+  "omitted_fields": [
+    "/entries/command",
+    "/entries/stderr",
+    "/entries/stdout"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.independent_source.actual_stage_and_CPU_entry.v1",
+    "source_name": "continuation",
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009",
+    "source_manifest_sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+    "verified_files": 19,
+    "uploaded_bytes": 170817,
+    "entries": [
+      {
+        "returncode": 0
+      },
+      {
+        "returncode": 0
+      }
+    ],
+    "complete": true,
+    "CPU_entry_only": true,
+    "model_restored": false,
+    "actual_checkpoint_bound": false,
+    "append_budget_bound": false,
+    "CUDA_started": false,
+    "GPU_admitted": false,
+    "canonical_J5_unchanged": true,
+    "created_epoch": 1791522217.6440134,
+    "test_access": false
+  }
+}

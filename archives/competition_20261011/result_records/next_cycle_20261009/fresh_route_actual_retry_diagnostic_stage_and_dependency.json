@@ -1,0 +1,26 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_retry_diagnostic_stage_and_dependency.json",
+  "original_sha256": "59eed1bd7177ad03b0ccafaff05b300c3e773a97c02e3c5d001042a69a2ac0b2",
+  "omitted_fields": [
+    "/command",
+    "/stdout"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_retry_diagnostic_stage_and_dependency.v1",
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009",
+    "source_manifest_sha256": "01949375a866775cd141ded72e06afdb0b1922dd5aa60702cb7fea3b5fbc5ec1",
+    "returncode": 0,
+    "stderr_tail": "",
+    "observed_unix": 1791528856.0729718,
+    "GPU_started": false,
+    "stage": {
+      "prepare": {
+        "created": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009"
+      },
+      "verify": {
+        "verified_files": 60
+      }
+    }
+  }
+}

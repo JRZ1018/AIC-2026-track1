@@ -1,0 +1,175 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_josrc_train_status.json",
+  "original_sha256": "7ddb684561436f632f7a61f6fb46fc4c3fbde9edb762adcef4e9a3113cb77107",
+  "omitted_fields": [
+    "/canonical/command",
+    "/processes/argv",
+    "/receipts/artifacts/launches/B25_48e80f7518724b72b13b2ed3bd54b1cd/START.json/value/command",
+    "/receipts/root_actual_CPU_preflight.json/value/stderr",
+    "/receipts/root_actual_CPU_preflight.json/value/stdout",
+    "/receipts/root_actual_launch.json/value/command",
+    "/receipts/root_actual_launch.json/value/process/argv"
+  ],
+  "record": {
+    "observed_unix": 1791562189.7415369,
+    "mode": "train",
+    "execution_root": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010",
+    "processes": [
+      {
+        "pid": 19633,
+        "ppid": 1,
+        "pgrp": 19633,
+        "session": 19633,
+        "start_ticks": "313580709",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19640,
+        "ppid": 19633,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313580985",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19657,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582534",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19658,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582535",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19659,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582536",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19660,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582537",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19661,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582541",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19662,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582542",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19663,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582542",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19664,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582543",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      }
+    ],
+    "canonical": {
+      "config": "configs/experiment/p1_B25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_B25",
+      "owner": "20261010-josrc-inspired-profile-or-selected20",
+      "queue_pid": 19633,
+      "schema_version": 1,
+      "started_at": "2026-10-10T00:09:17.182364+08:00",
+      "token": "83a0353ce2c442db94a9bbf656fdd8b7",
+      "trainer_pid": 19640
+    },
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21616959488,
+        "free": 10595295232
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 97993633792,
+        "free": 30855385088
+      }
+    },
+    "logs": {
+      "root_stdout.log": "[2026-10-10 00:09:17] 20261010-josrc-inspired-profile-or-selected20 start\n[2026-10-10 00:09:17] B25: starting - JoSRC-inspired B true-data profile100 or selected full20 student\n",
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/chain.log": "[2026-10-10 00:09:17] 20261010-josrc-inspired-profile-or-selected20 start\n[2026-10-10 00:09:17] B25: starting - JoSRC-inspired B true-data profile100 or selected full20 student\n",
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/B25.log": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n"
+    },
+    "checkpoint_stats": {},
+    "receipts": {
+      "root_actual_CPU_preflight.json": {
+        "sha256": "1b000fbf1142472c648a174de22978b85aca80396ef232462585fd44a7af1a73",
+        "value": {
+          "complete": true,
+          "actual_server_CPU_preflight": true,
+          "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "GPU_started": false,
+          "observed_unix": 1791562142.0709138
+        }
+      },
+      "root_actual_launch.json": {
+        "sha256": "00e09eccdd25c854848cd9dbbc817799bb3a913a2137984ce27517b91f76fb19",
+        "value": {
+          "mode": "train",
+          "process": {
+            "pid": 19633,
+            "ppid": 19632,
+            "pgrp": 19633,
+            "session": 19633,
+            "start_ticks": "313580709",
+            "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+          },
+          "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "launch_unix": 1791562154.430007,
+          "test_access": false
+        }
+      },
+      "artifacts/launches/B25_48e80f7518724b72b13b2ed3bd54b1cd/START.json": {
+        "sha256": "d6c14134d2e1ec2b1fc5fcf16344851a1b910486df028d2ad06075661d4977ca",
+        "value": {
+          "owner": {
+            "pid": 19640,
+            "pgrp": 19640,
+            "session": 19640,
+            "start_ticks": "313580985"
+          },
+          "source_manifest_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "config_sha256": "41ee96e1e912e7e8f4cbf73d17518a29eeda91751657da47e075cfb10df3ac41",
+          "lease_token": "83a0353ce2c442db94a9bbf656fdd8b7",
+          "test_access": false
+        }
+      }
+    },
+    "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "gpu": "1482 MiB, 0 %"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/supervision_actual_terminal_returns_r1/diagnostic/supervision_checkpoint_audit.json",
+  "original_sha256": "d29742944303548121376450b3592d9855ad4dbf3b99b9548862333c8f40284e",
+  "omitted_fields": [
+    "/training_runtime_receipts/runtime/environment"
+  ],
+  "record": {
+    "checkpoint_role": "last",
+    "checkpoint_epoch": 20,
+    "epoch": 20,
+    "fixed_last_sha256": "07dad01bcd8da762afef9883286bc9db1edce6390dea51c4c59b350e6f8c3e20",
+    "checkpoint_sha256": "07dad01bcd8da762afef9883286bc9db1edce6390dea51c4c59b350e6f8c3e20",
+    "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+    "split_sha256": "0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c",
+    "h1_sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753",
+    "train_count": 118958,
+    "validation_count": 29737,
+    "training_seed": 20261008,
+    "h1_initializer_sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753",
+    "test_access": false,
+    "history_epochs": 20,
+    "trainable_tensors": 152,
+    "trainable_numel": 87849216,
+    "visual_tensors": 152,
+    "head_tensors": 0,
+    "optimizer_parameter_groups": [
+      152
+    ],
+    "optimizer_moments_finite": true,
+    "scheduler_epoch": 20,
+    "ac_observation_epochs": 20,
+    "schema": "aictrack1.supervision.fixed_last_diagnostic_audit.v1",
+    "complete": true,
+    "status": "complete_fixed_last20_audit",
+    "model_arm": "S",
+    "p1_arm": "S",
+    "classifier_head_source": "old_fold_h1_frozen",
+    "classifier_parameters_restored_equal": true,
+    "model_frozen_eval": true,
+    "training_source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+    "diagnostic_source_manifest_sha256": "b04925892404fc37a0c81f4d044752248f4d30bd1f379fec9f60b73531ddead0",
+    "exact_ac_train_id_label_binding": true,
+    "train_validation_group_overlap": 0,
+    "model_initialization_official_clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+    "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/experiments/P1_S/last.pt",
+    "config_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/configs/experiment/p1_S.yaml",
+    "inference_optimizer_steps": 0,
+    "historical_control_cache_reused": true,
+    "numel": 87849216,
+    "sce_alpha": 0.5,
+    "training_runtime_receipts": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/runtime_receipts/S_239b1703b3a0427cba1e2e8c72cdbf45.json",
+        "sha256": "d6626da50a385b209f55fb6646d6dec8327e9deb180ff90a885422733c13136f",
+        "runtime": {
+          "schema": "aictrack1.supervision.runtime.v1",
+          "arm": "S",
+          "pid": 230023,
+          "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+          "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+          "collected_at_unix": 1791499679.2745595,
+          "test_access": false,
+          "actual_torch_threads": 4,
+          "actual_torch_interop_threads": 64
+        }
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/runtime_receipts/S_f833853d0f9d4e139099ebd5143f2e7d.json",
+        "sha256": "c0e8a266344973b3a336045c49900bb9d2735a276a7a0178f8e266ade5043a49",
+        "runtime": {
+          "schema": "aictrack1.supervision.runtime.v1",
+          "arm": "S",
+          "pid": 230195,
+          "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+          "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+          "collected_at_unix": 1791499924.0620782,
+          "test_access": false,
+          "actual_torch_threads": 4,
+          "actual_torch_interop_threads": 64
+        }
+      }
+    ]
+  }
+}

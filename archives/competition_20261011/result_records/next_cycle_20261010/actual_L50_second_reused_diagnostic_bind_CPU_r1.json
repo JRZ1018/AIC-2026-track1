@@ -1,0 +1,48 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_reused_diagnostic_bind_CPU_r1.json",
+  "original_sha256": "84029fc966c63adb0560797dcd5b82e4d2ea8b9804d412748d1b8b9bd1b0bc66",
+  "omitted_fields": [
+    "/canonical/command"
+  ],
+  "record": {
+    "bind_rc": 0,
+    "bind_stdout": "{\"bound\": true, \"diagnostic_source_sha256\": \"4a92913a982df6b52eb5c138ea7cb18c65c149fb68a007ac116984eaad922bc9\", \"actual_training_source_sha256\": \"7699f9800d9bfff3265e7598c5ef5998e3bab8790ea6392da0fb67856c3365f0\", \"checkpoint_read\": false, \"GPU_started\": false, \"test_access\": false}\n",
+    "bind_stderr": "",
+    "training_source_sha256": "7699f9800d9bfff3265e7598c5ef5998e3bab8790ea6392da0fb67856c3365f0",
+    "actual_launch_sha256": "ad0e88901545cccdabf538e78ddd9cfd8e892c100b3f55772c3c7ead7162f7cb",
+    "dependency_rc": 0,
+    "dependency_stdout": "{\n  \"schema\": \"aictrack1.fresh_route.cpu_entry_dependency_check.v1\",\n  \"complete\": true,\n  \"frozen_training_source_sha256\": \"7699f9800d9bfff3265e7598c5ef5998e3bab8790ea6392da0fb67856c3365f0\",\n  \"static_imports\": {\n    \"__future__\": \"/root/miniconda3/lib/python3.12/__future__.py\",\n    \"pathlib\": \"/root/miniconda3/lib/python3.12/pathlib.py\",\n    \"fresh_diag_contract\": \"/root/autodl-tmp/AICtrack1_next_cycle_L50_second_reused_diagnostic_20261011/fresh_diag_contract.py\",\n    \"diagnostic_resources\": \"/root/autodl-tmp/AICtrack1_next_cycle_L50_second_reused_diagnostic_20261011/diagnostic_resources.py\",\n    \"view_features\": \"/root/autodl-tmp/AICtrack1_next_cycle_L50_second_reused_diagnostic_20261011/view_features.py\",\n    \"phase_guard\": \"/root/autodl-tmp/AICtrack1_next_cycle_L50_second_reused_diagnostic_20261011/phase_guard.py\",\n    \"p1_contract\": \"/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/scripts/p1_contract.py\",\n    \"mainline_h1_contract\": \"/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/scripts/mainline_h1_contract.py\",\n    \"aictrack1.engine.training_queue\": \"/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/src/aictrack1/engine/training_queue.py\",\n    \"aictrack1.models.heads\": \"/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/src/aictrack1/models/heads.py\"\n  },\n  \"real_vendor_cli_help_passed\": true,\n  \"real_vendor_production_argv_parsed\": true,\n  \"imports_and_signatures_verified\": true,\n  \"remote_assets_opened\": false,\n  \"independent_host_memory_snapshot\": {\n    \"platform\": \"linux\",\n    \"total_bytes\": 405371949056,\n    \"host_available_bytes\": 257852387328,\n    \"effective_available_bytes\": 14258843648,\n    \"cgroup\": {\n      \"limit_bytes\": 66571993088,\n      \"used_bytes\": 52313149440,\n      \"available_bytes\": 14258843648,\n      \"source\": \"/sys/fs/cgroup/memory.max\"\n    },\n    \"gpu_probed\": false\n  },\n  \"model_loaded\": false,\n  \"checkpoint_opened\": false,\n  \"gpu_probed\": false,\n  \"images_opened\": false,\n  \"training_steps\": 0,\n  \"test_access\": false,\n  \"diagnostic_source_manifest_sha256\": \"4a92913a982df6b52eb5c138ea7cb18c65c149fb68a007ac116984eaad922bc9\",\n  \"independent_confirmation\": false,\n  \"old_query_reused_for_exploration\": true\n}\n",
+    "dependency_stderr": "",
+    "diagnostic_source_sha256": "4a92913a982df6b52eb5c138ea7cb18c65c149fb68a007ac116984eaad922bc9",
+    "checkpoint_read": false,
+    "test_access": false,
+    "now": 1791685436.9676228,
+    "canonical": {
+      "schema_version": 1,
+      "token": "c0e81e28cca94c759c4a928bdccefb57",
+      "owner": "20261011-reused-query-L50",
+      "queue_pid": 48050,
+      "trainer_pid": 48115,
+      "config": "configs/experiment/p1_L50.yaml",
+      "output_dir": "artifacts/experiments/CONFIRM_L50",
+      "started_at": "2026-10-11T10:23:14.750117+08:00"
+    },
+    "controller_group": [
+      {
+        "pid": 48050,
+        "state": "S",
+        "ppid": 1,
+        "pgrp": 48050,
+        "session": 48050,
+        "start_ticks": "931519498"
+      }
+    ],
+    "disk": {
+      "total": 128849018880,
+      "used": 119990939648,
+      "free": 8858079232
+    },
+    "log": "[2026-10-11 10:23:14] 20261011-reused-query-L50 start\n[2026-10-11 10:23:14] L50: starting - reused610111 query L50 versus actual L35 fixedlast20\n"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_B25_EMA_frozen_4V_status_r1.json",
+  "original_sha256": "42a2601341ebeaa7a06d5f648924c53e845030fd0be0a4ca37c47dbda3da6b7a",
+  "omitted_fields": [
+    "/canonical/command",
+    "/expected_owner/argv",
+    "/owned_rows/argv"
+  ],
+  "record": {
+    "observed_unix": 1791597822.1852036,
+    "expected_owner": {
+      "pid": 37514,
+      "ppid": 37513,
+      "pgrp": 37514,
+      "session": 37514,
+      "start_ticks": "317140462",
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010"
+    },
+    "owned_rows": [
+      {
+        "pid": 37514,
+        "ppid": 1,
+        "pgrp": 37514,
+        "session": 37514,
+        "start_ticks": "317140462",
+        "state": "S",
+        "cpu_ticks": 5754,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010"
+      },
+      {
+        "pid": 37543,
+        "ppid": 37514,
+        "pgrp": 37514,
+        "session": 37514,
+        "start_ticks": "317143471",
+        "state": "S",
+        "cpu_ticks": 3882,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010"
+      },
+      {
+        "pid": 37547,
+        "ppid": 37514,
+        "pgrp": 37514,
+        "session": 37514,
+        "start_ticks": "317143473",
+        "state": "R",
+        "cpu_ticks": 3897,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010"
+      },
+      {
+        "pid": 37551,
+        "ppid": 37514,
+        "pgrp": 37514,
+        "session": 37514,
+        "start_ticks": "317143475",
+        "state": "R",
+        "cpu_ticks": 3845,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010"
+      },
+      {
+        "pid": 37555,
+        "ppid": 37514,
+        "pgrp": 37514,
+        "session": 37514,
+        "start_ticks": "317143476",
+        "state": "R",
+        "cpu_ticks": 3955,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010"
+      }
+    ],
+    "canonical": {
+      "config": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/configs/experiment/p1_B25.yaml",
+      "output_dir": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010/artifacts/diagnostics/B25_EMA",
+      "owner": "stage2-single-checkpoint-tta-diagnostic",
+      "queue_pid": 37514,
+      "schema_version": 1,
+      "started_at": "2026-10-10T10:02:49.781306+08:00",
+      "token": "a9f1d73fe6af4d4c85e4febe3d1d298c",
+      "trainer_pid": null
+    },
+    "output": {
+      "p1_checkpoint_audit.json": {
+        "bytes": 7338,
+        "sha256": "bd01f8d71a1102b524ef088e4ea4a2eeb47b7aa3bf85655a4441566a06e13b66",
+        "summary": {
+          "schema": "aictrack1.fresh_route.fixed_last_diagnostic_audit.v1",
+          "complete": true,
+          "status": "complete_fixed_last20_audit",
+          "trainable_tensors": 154,
+          "trainable_numel": 88233966,
+          "model_role": "successful_step_EMA_shadow_fixed20",
+          "parameter_field": "josrc_teacher.ema.shadow",
+          "origin_arm": "B25",
+          "candidate_id": "B25_EMA",
+          "checkpoint_sha256": "733641e9197c5b8c9c967f8d69ce2ea20e5c455f28032533cd7131e9909591ed",
+          "parent_checkpoint_sha256": "733641e9197c5b8c9c967f8d69ce2ea20e5c455f28032533cd7131e9909591ed",
+          "shadow_tensor_sha256": "1e192a7021aa0ca73525ddacda462cc680176f0ab6827e8a7e4bb9c21f28eb9f",
+          "EMA_successful_updates": 37164,
+          "EMA_skipped_updates": 16,
+          "EMA_parameters_restored_equal": true,
+          "EMA_optimizer_restored": false,
+          "teacher_used_for_inference": true,
+          "raw_student_only": false,
+          "model_updates": 0,
+          "inference_optimizer_steps": 0,
+          "exact_ac_train_id_label_binding": true
+        }
+      }
+    },
+    "log_bytes": 192,
+    "log_tail": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n",
+    "gpu": "1298 MiB, 89 %"
+  }
+}

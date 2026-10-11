@@ -1,0 +1,63 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_H1_actual_CPU_complete.json",
+  "original_sha256": "0e83f79655fa32f3672a51a95c1505802f2a8e476aca0ef20213fac636b08767",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_H1100.actual_CPU_restore.v1",
+    "complete": true,
+    "observed_epoch": 1791498200.394464,
+    "source_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+    "checkpoint_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+    "checkpoint_bytes": 4641602,
+    "producer_receipt_sha256": "06c762c1828915fd579fcc338ade3177f5eff96be742c9650e265845ce6f7d73",
+    "producer_receipt": {
+      "actual_cpu_optimizer_scheduler_scaler_model_rng_restored": true,
+      "checkpoint_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+      "complete": true,
+      "cuda_rng_serialized": true,
+      "epoch": 100,
+      "fresh_feature_extraction": false,
+      "original_feature_identity_sha256": "96f5786e6b75e99d5bbc308d89c769fbc25daf8c7bc636297bda041d05e0c3e9",
+      "row_binding": {
+        "all_rows_sha256": "37b23205175174328fafbcfe18e9893df7eacc36a0580d56064281ce3eda7065",
+        "counts": {
+          "train": 118958,
+          "validation": 29737
+        },
+        "schema": "aictrack1.mainline.h1.rows.v1",
+        "train_rows_sha256": "1196a5653fcacd1f1387f0be84b540dedc2ae4f85b585d118655b73cb206f524",
+        "validation_rows_sha256": "42c7e7fe4931152790e726d866eb758542f21b61c8115769f8f7f78daa57d767",
+        "validation_used_for_optimization_or_selection": false
+      },
+      "runtime": {
+        "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+        "MKL_NUM_THREADS": "4",
+        "OMP_NUM_THREADS": "4",
+        "torch_num_threads": 4
+      },
+      "scope": "fold_train_fixed_final_epochs",
+      "source_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+      "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+      "terminal_cache_parity_top1": 0.6604230403900146,
+      "test_access": false,
+      "train_count": 118958,
+      "training_seed": 20261008,
+      "validation_count": 29737,
+      "validation_selection": false
+    },
+    "head_tensor_count": 2,
+    "numel": 384750,
+    "strict_state_restore": true,
+    "synthetic_cpu_forward": true,
+    "fixed_epoch": 100,
+    "new_split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+    "optimizer_scheduler_scaler_rng_restored": true,
+    "query_validation_selection": false,
+    "actual_torch_threads": 4,
+    "exact_controller_and_trainer_absent": true,
+    "canonical_lock_absent": true,
+    "test_access": false,
+    "new_submission_ready": false
+  }
+}

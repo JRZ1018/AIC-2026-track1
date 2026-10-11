@@ -1,0 +1,14 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_B50_EMA_handoff_r1.json",
+  "original_sha256": "c6bf4f84eab3769d55ed6c18bd9ace16df1adcc3ba31f69c976703d849757a7a",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791598485.2001302,
+    "owned_rows": [],
+    "canonical": null,
+    "run_complete": false,
+    "compare_launched": false,
+    "log_tail": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\nTraceback (most recent call last):\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010/ema_explore.py\", line 93, in <module>\n    if __name__=='__main__':raise SystemExit(main())\n                                             ^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010/ema_explore.py\", line 92, in main\n    return run_fourview(a,ownsha,d,fc,context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_20261010/ema_explore.py\", line 46, in run_fourview\n    if engine.main()!=0:raise RuntimeError('original numerical fourview returned failure')\n       ^^^^^^^^^^^^^\n  File \"<registered EMA metadata adaptation>\", line 254, in main\nRuntimeError: baseline parity with frozen validation metrics failed\n"
+  }
+}

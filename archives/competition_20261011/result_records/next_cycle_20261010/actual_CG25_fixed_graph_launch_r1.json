@@ -1,0 +1,26 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_fixed_graph_launch_r1.json",
+  "original_sha256": "f6f092e4d8b44989cc1984b1694ea6ea1a8888d228b86bad27937d7c7e2fe466",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "controller": {
+      "pid": 6260,
+      "state": "R",
+      "ppid": 6259,
+      "pgrp": 6260,
+      "session": 6260,
+      "start_ticks": "924146648"
+    },
+    "launch_unix": 1791611663.3860495,
+    "actual_fourview_manifest_sha256": "c3720631f9414496900b04d7c3e26bffa2168e768cc0ac7aeba568cca0039992",
+    "actual_fourview_all8_SHA_PASS": true,
+    "original_diagnostic_source_sha256": "6d4e32f82bc727866477f78dc0bc47bebf4c1450130bc0b0c9f86d7dcea6152e",
+    "append_source_sha256": "58eb183cf31a47a34b99eb5a490a93dd724c26db591bda95cbf7628d0c0a7987",
+    "test_access": false,
+    "model_updates": 0,
+    "additional_model_forwards": 0
+  }
+}

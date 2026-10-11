@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/full/runtime_receipts/L50_d44adf792706453f9beb0ed74864a111.json",
+  "original_sha256": "bc98bd6108860dc7601d0e61bbfdf0d983a7e015da27d8c999a73bcf23ecdca6",
+  "omitted_fields": [
+    "/environment"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.full.runtime.v1",
+    "arm": "L50",
+    "selected_route": "L50_GRAPH",
+    "pid": 54234,
+    "config_sha256": "7214f98e096a7e00fbaefced617e8d7261234412c6619d72909d32c10a916431",
+    "source_manifest_sha256": "3ebb8783263d63cead51e26a043d5990de5b9093da03394a5d6a17dbacd97df5",
+    "full_budget_sha256": "1edccb01c54e50a7f83434da6974bf74233c5fab12296968047d559b579ec22e",
+    "fresh_confirmation_receipt_sha256": "1b3a28bb3f55b08506ccc888c62498cc87a7bd1d47d5902186c0bd02022016b7",
+    "collected_at_unix": 1791694756.6073053,
+    "test_access": false,
+    "actual_torch_threads": 4,
+    "actual_torch_interop_threads": 64
+  }
+}

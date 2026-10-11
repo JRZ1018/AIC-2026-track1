@@ -1,0 +1,45 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_FULL_initial_health.json",
+  "original_sha256": "dcda939723e48990b0d09ee0cd84abbf7ac7e6d1f04598838e6c5f8301cb46d2",
+  "omitted_fields": [
+    "/canonical/command",
+    "/processes/argv"
+  ],
+  "record": {
+    "epoch": 1791530483.0544512,
+    "processes": [
+      {
+        "pid": 2818,
+        "start_ticks": "310391512",
+        "pgrp": 2818,
+        "session": 2818,
+        "state": "S",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009"
+      },
+      {
+        "pid": 2825,
+        "start_ticks": "310392174",
+        "pgrp": 2825,
+        "session": 2825,
+        "state": "S",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009"
+      }
+    ],
+    "canonical": {
+      "config": "configs/experiment/p1_full_J5.yaml",
+      "output_dir": "artifacts/experiments/FULL_J5",
+      "owner": "20261009-fresh-route-full-J5",
+      "queue_pid": 2818,
+      "schema_version": 1,
+      "started_at": "2026-10-09T15:17:49.067775+08:00",
+      "token": "2aead879a4194ece88103d64b94c4d4d",
+      "trainer_pid": 2825
+    },
+    "stdout_tail": "[2026-10-09 15:17:49] 20261009-fresh-route-full-J5 start\n[2026-10-09 15:17:49] J5: starting - one positively confirmed fresh official FULL20 fixed final\n",
+    "trainer_tail": "s with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read\n  warnings.warn(str(msg))\n",
+    "checkpoint_stat": {},
+    "gpu": "78 %, 4842 MiB",
+    "data_free_bytes": 37719433216
+  }
+}

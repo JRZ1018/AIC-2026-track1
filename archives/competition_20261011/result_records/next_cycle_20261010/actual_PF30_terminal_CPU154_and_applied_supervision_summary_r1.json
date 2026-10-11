@@ -1,0 +1,631 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_terminal_CPU154_and_applied_supervision_summary_r1.json",
+  "original_sha256": "242a1fe4fc8e403516b65985e4f6092f3d3099bdaf4d866cdd03c06079596bb9",
+  "omitted_fields": [
+    "/files/runtime_receipt.json/value/upstream_receipts/receipt/environment"
+  ],
+  "record": {
+    "observed_unix": 1791595140.9408247,
+    "files": {
+      "p1_checkpoint_audit.json": {
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/artifacts/diagnostics/PF2_PF30/p1_checkpoint_audit.json",
+        "bytes": 2944,
+        "sha256": "3405011ad6e6315712871622ecfa7bc322211226beae865a98fa297621781644",
+        "value": {
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "epoch": 20,
+          "fixed_last_sha256": "ceae8e99870afc29f65657d29cf4411e3f2ef01ec99af591a477800eefb949a9",
+          "checkpoint_sha256": "ceae8e99870afc29f65657d29cf4411e3f2ef01ec99af591a477800eefb949a9",
+          "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+          "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+          "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+          "train_count": 118958,
+          "validation_count": 29737,
+          "training_seed": 20261008,
+          "history_epochs": 20,
+          "trainable_tensors": 154,
+          "trainable_numel": 88233966,
+          "visual_tensors": 152,
+          "head_tensors": 2,
+          "optimizer_parameter_groups": [
+            152,
+            2
+          ],
+          "optimizer_moments_finite": true,
+          "scheduler_epoch": 20,
+          "ac_observation_epochs": 20,
+          "python_rng_private_restore": true,
+          "numpy_safe_list_private_restore": true,
+          "torch_rng_private_CPU_restore": true,
+          "cuda_rng_payloads": 1,
+          "cuda_rng_payload_structurally_checked": true,
+          "cuda_accessed": false,
+          "persistent_filter_audit": {
+            "file": "pf_supervision_audit.json",
+            "sha256": "5dc2eada8a89544da87220ee023b40f34621232a5b9e45ef09c36ac3f29452e4",
+            "protocol": "persistent-supervision-gate-v2",
+            "max_ac_weight": 0.3,
+            "applied_epochs_checked": 20
+          },
+          "schema": "aictrack1.fresh_route.fixed_last_diagnostic_audit.v1",
+          "p1_arm": "PF30",
+          "model_arm": "PF30",
+          "complete": true,
+          "status": "complete_fixed_last20_audit",
+          "classifier_head_source": "joint_fixed_last_state",
+          "classifier_parameters_restored_equal": true,
+          "model_frozen_eval": true,
+          "training_source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "diagnostic_source_manifest_sha256": "56a002e541ef281b17dc478cd129e8ff03b8a132f2743ba872dd89c0ce88d5f5",
+          "exact_ac_train_id_label_binding": true,
+          "train_validation_group_overlap": 0,
+          "model_initialization_official_clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+          "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010/artifacts/experiments/PF2_PF30/last.pt",
+          "config_path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010/configs/experiment/p1_PF30.yaml",
+          "inference_optimizer_steps": 0,
+          "historical_control_cache_reused": false,
+          "test_access": false,
+          "admission_receipt_sha256": null,
+          "source_h1_manifest_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+          "selected_route": "J5_GRAPH",
+          "numel": 88233966,
+          "runtime": {
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+            "torch_num_threads": 4,
+            "torch_num_interop_threads": 64
+          },
+          "runtime_receipt": "runtime_receipt.json",
+          "runtime_receipt_sha256": "a7e247455ec16bdecf955afb7b62ad35a52363185be8266272bf424e7f69bc16"
+        }
+      },
+      "runtime_receipt.json": {
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/artifacts/diagnostics/PF2_PF30/runtime_receipt.json",
+        "bytes": 2542,
+        "sha256": "a7e247455ec16bdecf955afb7b62ad35a52363185be8266272bf424e7f69bc16",
+        "value": {
+          "schema": "aictrack1.fresh_route.diagnostic_runtime.v1",
+          "arm": "PF30",
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+          "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+          "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+          "selected_route": "J5_GRAPH",
+          "runtime": {
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+            "torch_num_threads": 4,
+            "torch_num_interop_threads": 64
+          },
+          "upstream_receipts": [
+            {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010/artifacts/runtime_receipts/PF30_5e743289f7ea47fc9e168f8ba66230b2.json",
+              "sha256": "2649e0af500ad3098f00f6db3e64442aeeb2dbaa50b92d45975f78223705f110",
+              "receipt": {
+                "schema": "aictrack1.fresh_route.runtime.v1",
+                "arm": "PF30",
+                "selected_route": "J5_GRAPH",
+                "pid": 31871,
+                "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+                "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+                "collected_at_unix": 1791586651.8432457,
+                "test_access": false,
+                "actual_torch_threads": 4,
+                "actual_torch_interop_threads": 64
+              }
+            },
+            {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010/artifacts/runtime_receipts/PF30_a5610e2726be47d0b98e4aa96e109b45.json",
+              "sha256": "7b07788b2177ac81454f17b5ca4fe0711b182dad53ff90f0f100fd5b02b9d631",
+              "receipt": {
+                "schema": "aictrack1.fresh_route.runtime.v1",
+                "arm": "PF30",
+                "selected_route": "J5_GRAPH",
+                "pid": 31944,
+                "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+                "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+                "collected_at_unix": 1791586757.7353697,
+                "test_access": false,
+                "actual_torch_threads": 4,
+                "actual_torch_interop_threads": 64
+              }
+            }
+          ],
+          "test_access": false
+        }
+      },
+      "pf_supervision_audit.json": {
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/artifacts/diagnostics/PF2_PF30/pf_supervision_audit.json",
+        "bytes": 8674508,
+        "sha256": "5dc2eada8a89544da87220ee023b40f34621232a5b9e45ef09c36ac3f29452e4"
+      }
+    },
+    "pf_applied_summary": [
+      {
+        "epoch": 1,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 0,
+          "mask_sha256": "da85ca5fb56865c337a9506b5d86b6701ba4d7343a44fcade621431ddf4d5c5f",
+          "observed": 118958,
+          "supervised": 118958,
+          "excluded": 0,
+          "original_AC_mass": 118958.0,
+          "removed_AC_mass": 0.0,
+          "retained_AC_mass": 118958.0,
+          "removed_AC_mass_fraction": 0.0,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 1,
+          "excluded": 0,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 2,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 1,
+          "mask_sha256": "da85ca5fb56865c337a9506b5d86b6701ba4d7343a44fcade621431ddf4d5c5f",
+          "observed": 118958,
+          "supervised": 118958,
+          "excluded": 0,
+          "original_AC_mass": 60668.580263776705,
+          "removed_AC_mass": 0.0,
+          "retained_AC_mass": 60668.580263776705,
+          "removed_AC_mass_fraction": 0.0,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 2,
+          "excluded": 0,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 3,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 2,
+          "mask_sha256": "da85ca5fb56865c337a9506b5d86b6701ba4d7343a44fcade621431ddf4d5c5f",
+          "observed": 118958,
+          "supervised": 118958,
+          "excluded": 0,
+          "original_AC_mass": 60668.580246180296,
+          "removed_AC_mass": 0.0,
+          "retained_AC_mass": 60668.580246180296,
+          "removed_AC_mass_fraction": 0.0,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 3,
+          "excluded": 7847,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 4,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 3,
+          "mask_sha256": "f7d5c7d1c2b78df7cbc4112e6886b69e1ac6e52742972744bf83b8a998914179",
+          "observed": 118958,
+          "supervised": 111111,
+          "excluded": 7847,
+          "original_AC_mass": 60668.58024536632,
+          "removed_AC_mass": 740.5369462296367,
+          "retained_AC_mass": 59928.04329913668,
+          "removed_AC_mass_fraction": 0.012206267943548862,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 4,
+          "excluded": 6304,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 5,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 4,
+          "mask_sha256": "c172abb10fe7394bcacfd392a9f49b6f021e064b61ba5f5c6392f483d698efe7",
+          "observed": 118958,
+          "supervised": 112654,
+          "excluded": 6304,
+          "original_AC_mass": 60668.5802601818,
+          "removed_AC_mass": 582.2889175955206,
+          "retained_AC_mass": 60086.29134258628,
+          "removed_AC_mass_fraction": 0.00959786622825737,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 5,
+          "excluded": 5319,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 6,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 5,
+          "mask_sha256": "452be6cc5b076cdf629dbe186db26a282c080997e60d81dfbb008e0a63c30568",
+          "observed": 118958,
+          "supervised": 113639,
+          "excluded": 5319,
+          "original_AC_mass": 60668.58024874888,
+          "removed_AC_mass": 480.29782325588167,
+          "retained_AC_mass": 60188.282425493,
+          "removed_AC_mass_fraction": 0.007916747372142213,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 6,
+          "excluded": 4681,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 7,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 6,
+          "mask_sha256": "f1ba0e661344b3e4b5d2cb68b25fa21ce09e6f84170a8000b0eb3628543c91ac",
+          "observed": 118958,
+          "supervised": 114277,
+          "excluded": 4681,
+          "original_AC_mass": 60668.58023283817,
+          "removed_AC_mass": 411.7194231748581,
+          "retained_AC_mass": 60256.86080966331,
+          "removed_AC_mass_fraction": 0.006786369840776431,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 7,
+          "excluded": 4241,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 8,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 7,
+          "mask_sha256": "6fd4b1ba00c54fcd9dacf81c4ced77520b79f901cdb1f59e9d5d94ef794d888a",
+          "observed": 118958,
+          "supervised": 114717,
+          "excluded": 4241,
+          "original_AC_mass": 60668.58025790006,
+          "removed_AC_mass": 364.9164360444993,
+          "retained_AC_mass": 60303.66382185556,
+          "removed_AC_mass_fraction": 0.006014916361867247,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 8,
+          "excluded": 4151,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 9,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 8,
+          "mask_sha256": "6b0e234c68949df97c36349989ef51e8d7c29ee1ee3b8dbe2b71585ddae518d6",
+          "observed": 118958,
+          "supervised": 114807,
+          "excluded": 4151,
+          "original_AC_mass": 60668.58025243506,
+          "removed_AC_mass": 342.49649833515286,
+          "retained_AC_mass": 60326.083754099905,
+          "removed_AC_mass_fraction": 0.005645368606123036,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 9,
+          "excluded": 4039,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 10,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 9,
+          "mask_sha256": "bc027acf6b8c2a91330185e5e543d49e15cb9bac20371633fc88bf118491037e",
+          "observed": 118958,
+          "supervised": 114919,
+          "excluded": 4039,
+          "original_AC_mass": 60668.580262122676,
+          "removed_AC_mass": 327.60075699724257,
+          "retained_AC_mass": 60340.97950512543,
+          "removed_AC_mass_fraction": 0.005399842151931387,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 10,
+          "excluded": 3997,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 11,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 10,
+          "mask_sha256": "316c2c5b0bf383fc61453ee884d3718e343da41c92d6f529be1a09f1500e8f13",
+          "observed": 118958,
+          "supervised": 114961,
+          "excluded": 3997,
+          "original_AC_mass": 60668.58024276607,
+          "removed_AC_mass": 313.45223262906075,
+          "retained_AC_mass": 60355.12801013701,
+          "removed_AC_mass_fraction": 0.005166632075034191,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 11,
+          "excluded": 3972,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 12,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 11,
+          "mask_sha256": "4905f1d0b937f9bae3ff508562a2634c42716094fa7469aa9193beac3d4bce0d",
+          "observed": 118958,
+          "supervised": 114986,
+          "excluded": 3972,
+          "original_AC_mass": 60668.58026682399,
+          "removed_AC_mass": 307.8728069830686,
+          "retained_AC_mass": 60360.70745984092,
+          "removed_AC_mass_fraction": 0.00507466641924083,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 12,
+          "excluded": 3951,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 13,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 12,
+          "mask_sha256": "28f80775bd896d796e7570f841cdd028f6b3fde90856fbae292ea9e6292bcb0b",
+          "observed": 118958,
+          "supervised": 115007,
+          "excluded": 3951,
+          "original_AC_mass": 60668.5802429989,
+          "removed_AC_mass": 301.04011758230627,
+          "retained_AC_mass": 60367.54012541659,
+          "removed_AC_mass_fraction": 0.004962043225282926,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 13,
+          "excluded": 3925,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 14,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 13,
+          "mask_sha256": "7e6f5803ed9afacfde84f5341880b5c820f511ea186fe140ba5799b9f41f6e94",
+          "observed": 118958,
+          "supervised": 115033,
+          "excluded": 3925,
+          "original_AC_mass": 60668.580266453326,
+          "removed_AC_mass": 296.8688802793622,
+          "retained_AC_mass": 60371.71138617396,
+          "removed_AC_mass_fraction": 0.004893288733237685,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 14,
+          "excluded": 3905,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 15,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 14,
+          "mask_sha256": "81a757d470b6dadb812575fa5d5753bf062463cc49bece71b1bf763a19b58d7e",
+          "observed": 118958,
+          "supervised": 115053,
+          "excluded": 3905,
+          "original_AC_mass": 60668.58026161045,
+          "removed_AC_mass": 289.9895605891943,
+          "retained_AC_mass": 60378.590701021254,
+          "removed_AC_mass_fraction": 0.004779896930812017,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 15,
+          "excluded": 3911,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 16,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 15,
+          "mask_sha256": "f58214599e52cfb1e922d4b85ab47e52e369a9a52e832c4004a52f8285e3b9b9",
+          "observed": 118958,
+          "supervised": 115047,
+          "excluded": 3911,
+          "original_AC_mass": 60668.580263037235,
+          "removed_AC_mass": 287.7779701501131,
+          "retained_AC_mass": 60380.80229288712,
+          "removed_AC_mass_fraction": 0.004743443293091925,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 16,
+          "excluded": 3934,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 17,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 16,
+          "mask_sha256": "f4142a068cb68736918ae7f6a8a5aa7db8b489f7eaededb63a296e0008930dbf",
+          "observed": 118958,
+          "supervised": 115024,
+          "excluded": 3934,
+          "original_AC_mass": 60668.58025626652,
+          "removed_AC_mass": 285.6727494020015,
+          "retained_AC_mass": 60382.90750686452,
+          "removed_AC_mass_fraction": 0.004708742947260482,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 17,
+          "excluded": 3934,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 18,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 17,
+          "mask_sha256": "ac47ac72a2d81616f592e3a7e93801e92941be7584e4fce64bad57b26a9f86f3",
+          "observed": 118958,
+          "supervised": 115024,
+          "excluded": 3934,
+          "original_AC_mass": 60668.580264283344,
+          "removed_AC_mass": 282.35865847207606,
+          "retained_AC_mass": 60386.22160581127,
+          "removed_AC_mass_fraction": 0.004654116797229645,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 18,
+          "excluded": 3974,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 19,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 18,
+          "mask_sha256": "423e258756ec7c176ceef09ee146c8a72f2dcb4e67cc83f600a98512b38c989d",
+          "observed": 118958,
+          "supervised": 114984,
+          "excluded": 3974,
+          "original_AC_mass": 60668.580249143764,
+          "removed_AC_mass": 282.5726959723979,
+          "retained_AC_mass": 60386.00755317137,
+          "removed_AC_mass_fraction": 0.004657644777774175,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 19,
+          "excluded": 4001,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      },
+      {
+        "epoch": 20,
+        "applied": {
+          "mask_role": "actual_epoch_supervision_mask",
+          "mask_source_completed_epoch": 19,
+          "mask_sha256": "68593d3e5aa11ad38b531ca73e11dc8e12cb5b602ccd8d22929feb349522d36a",
+          "observed": 118958,
+          "supervised": 114957,
+          "excluded": 4001,
+          "original_AC_mass": 60668.58025492914,
+          "removed_AC_mass": 282.07368979789317,
+          "retained_AC_mass": 60386.50656513125,
+          "removed_AC_mass_fraction": 0.004649419660269296,
+          "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+        },
+        "next": {
+          "epochs_updated": 20,
+          "excluded": 4040,
+          "sample_count": 118958,
+          "note": "suspected persistent disagreement, not measured true noise"
+        },
+        "skipped_optimizer_batches": 0
+      }
+    ],
+    "pf_audit_top": {
+      "schema": "aictrack1.persistent_filter_joint.applied_supervision_audit.v1",
+      "complete": true,
+      "protocol": "persistent-supervision-gate-v2",
+      "max_ac_weight": 0.3,
+      "applied_epochs_checked": 20,
+      "training_count": 118958,
+      "num_classes": 750,
+      "gate_AC_weights_equal": true,
+      "successful_optimizer_updates": 37163,
+      "all_masked_batches_accounted": true,
+      "terminal_next_mask_sha256": "244c0f4f77f54ba651d8318540aedab02913a0349a4201ee6116a6c049b34058",
+      "terminal_next_excluded": 4040,
+      "definition": "actual epoch snapshots checked against previous completed NEXT summaries; terminal next mask is not epoch20 supervision",
+      "historical_mask_sample_identities_reconstructed": false,
+      "noise_precision_claim": false,
+      "test_access": false,
+      "checkpoint_sha256": "ceae8e99870afc29f65657d29cf4411e3f2ef01ec99af591a477800eefb949a9",
+      "training_source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+      "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172"
+    }
+  }
+}

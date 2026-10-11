@@ -1,0 +1,18 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_AFA_diagnostic_metadata_bind_CPU_r2.json",
+  "original_sha256": "4417548c53705041ee6cc0262e0521142d5863820a5b27552b2c2c13890955f2",
+  "omitted_fields": [],
+  "record": {
+    "bind_returncode": 0,
+    "bind_stdout": "{\"bound\": true, \"diagnostic_source_sha256\": \"a3d1b2585be72a412fbb83596fb4d599bc7761a8241b1c6fca4fa01cd526f5c4\", \"actual_training_source_sha256\": \"8544f9c70cd320699803bad848e95df1c1a36282bb79f40c1a3f7b3f3d77398f\", \"checkpoint_read\": false, \"model_loaded\": false, \"GPU_started\": false, \"images_opened\": false, \"test_access\": false}\n",
+    "actual_completed_launch_path": "/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_20261010/root_actual_fixed20_launch_completed_r2.json",
+    "launch_sha256": "e4a53046dcc34e20594b03d8986eb295e6d1cec93d5a1068880c766e29ce28c2",
+    "original_launch_retained": true,
+    "dependency_returncode": 0,
+    "dependency_stdout": "{\n  \"schema\": \"aictrack1.fresh_route.cpu_entry_dependency_check.v1\",\n  \"complete\": true,\n  \"frozen_training_source_sha256\": \"8544f9c70cd320699803bad848e95df1c1a36282bb79f40c1a3f7b3f3d77398f\",\n  \"static_imports\": {\n    \"__future__\": \"/root/miniconda3/lib/python3.12/__future__.py\",\n    \"pathlib\": \"/root/miniconda3/lib/python3.12/pathlib.py\",\n    \"fresh_diag_contract\": \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_diagnostic_20261010/fresh_diag_contract.py\",\n    \"diagnostic_resources\": \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_diagnostic_20261010/diagnostic_resources.py\",\n    \"afa_checkpoint\": \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_diagnostic_20261010/afa_checkpoint.py\",\n    \"phase_guard\": \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_diagnostic_20261010/phase_guard.py\",\n    \"p1_contract\": \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_20261010/scripts/p1_contract.py\",\n    \"mainline_h1_contract\": \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_20261010/scripts/mainline_h1_contract.py\",\n    \"aictrack1.engine.training_queue\": \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_20261010/src/aictrack1/engine/training_queue.py\",\n    \"aictrack1.models.afa_compatible\": \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_20261010/src/aictrack1/models/afa_compatible.py\",\n    \"aictrack1.models.heads\": \"/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_20261010/src/aictrack1/models/heads.py\"\n  },\n  \"real_vendor_cli_help_passed\": true,\n  \"real_vendor_production_argv_parsed\": true,\n  \"imports_and_signatures_verified\": true,\n  \"remote_assets_opened\": false,\n  \"independent_host_memory_snapshot\": {\n    \"platform\": \"linux\",\n    \"total_bytes\": 405371949056,\n    \"host_available_bytes\": 254038589440,\n    \"effective_available_bytes\": 9934962688,\n    \"cgroup\": {\n      \"limit_bytes\": 66571993088,\n      \"used_bytes\": 56637030400,\n      \"available_bytes\": 9934962688,\n      \"source\": \"/sys/fs/cgroup/memory.max\"\n    },\n    \"gpu_probed\": false\n  },\n  \"model_loaded\": false,\n  \"checkpoint_opened\": false,\n  \"gpu_probed\": false,\n  \"images_opened\": false,\n  \"training_steps\": 0,\n  \"test_access\": false,\n  \"diagnostic_source_manifest_sha256\": \"a3d1b2585be72a412fbb83596fb4d599bc7761a8241b1c6fca4fa01cd526f5c4\",\n  \"independent_confirmation\": false,\n  \"old_query_reused_for_exploration\": true\n}\n",
+    "source_sha256": "a3d1b2585be72a412fbb83596fb4d599bc7761a8241b1c6fca4fa01cd526f5c4",
+    "checkpoint_read": false,
+    "GPU_started": false
+  }
+}
