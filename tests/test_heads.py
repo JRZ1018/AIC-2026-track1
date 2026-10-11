@@ -8,8 +8,10 @@ from aictrack1.models.heads import (
     CosineClassifier,
     FrozenFeatureImageClassifier,
     LinearClassifier,
+    ResidualMLPClassifier,
     build_classifier_head,
     load_classifier_head_checkpoint,
+    tau_normalize_linear_classifier,
 )
 
 
@@ -22,13 +24,35 @@ def test_frozen_feature_image_classifier_normalizes_visual_features() -> None:
     assert torch.equal(model(images), expected)
 
 
-def test_linear_and_cosine_heads_have_expected_shapes_and_gradients() -> None:
+def test_supported_heads_have_expected_shapes_and_gradients() -> None:
     features = torch.randn(7, 5, requires_grad=True)
-    for head in (LinearClassifier(5, 3), CosineClassifier(5, 3)):
+    for head in (
+        LinearClassifier(5, 3),
+        CosineClassifier(5, 3),
+        ResidualMLPClassifier(5, 3, hidden_dim=4, dropout=0.0),
+    ):
         logits = head(features)
         assert logits.shape == (7, 3)
         logits.sum().backward(retain_graph=True)
         assert all(parameter.grad is not None for parameter in head.parameters())
+
+
+def test_residual_mlp_starts_as_its_linear_path() -> None:
+    head = ResidualMLPClassifier(5, 3, hidden_dim=4, dropout=0.25)
+    features = torch.randn(7, 5)
+    head.train()
+    assert torch.equal(head(features), head.linear(features))
+
+
+@pytest.mark.parametrize(
+    ("hidden_dim", "dropout"),
+    [(0, 0.1), (4, -0.1), (4, 1.0)],
+)
+def test_residual_mlp_rejects_invalid_shape_or_dropout(
+    hidden_dim: int, dropout: float
+) -> None:
+    with pytest.raises(ValueError, match="residual"):
+        ResidualMLPClassifier(5, 3, hidden_dim=hidden_dim, dropout=dropout)
 
 
 def test_cosine_classifier_is_invariant_to_positive_feature_scaling() -> None:
@@ -42,14 +66,44 @@ def test_head_factory_rejects_unknown_kind() -> None:
         build_classifier_head("ensemble", 4, 2)
 
 
-@pytest.mark.parametrize("kind", ["linear", "cosine"])
-def test_classifier_head_checkpoint_loads_both_supported_kinds(tmp_path, kind: str) -> None:
+def test_tau_normalization_is_train_free_and_does_not_mutate_source() -> None:
+    head = LinearClassifier(2, 2)
+    with torch.no_grad():
+        head.linear.weight.copy_(torch.tensor([[3.0, 4.0], [0.0, 2.0]]))
+        head.linear.bias.copy_(torch.tensor([1.0, -1.0]))
+    calibrated = tau_normalize_linear_classifier(head, 1.0)
+    assert torch.allclose(calibrated.linear.weight.norm(dim=1), torch.ones(2))
+    assert torch.equal(calibrated.linear.bias, head.linear.bias)
+    assert torch.equal(head.linear.weight, torch.tensor([[3.0, 4.0], [0.0, 2.0]]))
+    assert torch.equal(tau_normalize_linear_classifier(head, 0.0).linear.weight, head.linear.weight)
+
+
+@pytest.mark.parametrize("tau", [-0.1, 1.1, float("nan")])
+def test_tau_normalization_rejects_invalid_values(tau: float) -> None:
+    with pytest.raises(ValueError, match="tau must"):
+        tau_normalize_linear_classifier(LinearClassifier(2, 2), tau)
+
+
+@pytest.mark.parametrize("kind", ["linear", "cosine", "residual_mlp"])
+def test_classifier_head_checkpoint_loads_supported_kinds(tmp_path, kind: str) -> None:
     torch.manual_seed(13)
-    head = build_classifier_head(kind, 4, 3)
+    head = build_classifier_head(
+        kind,
+        4,
+        3,
+        residual_hidden_dim=5,
+        residual_dropout=0.0,
+    )
     checkpoint = tmp_path / f"{kind}.pt"
     torch.save(
         {
-            "head": {"kind": kind, "initial_scale": 10.0, "learnable_scale": True},
+            "head": {
+                "kind": kind,
+                "initial_scale": 10.0,
+                "learnable_scale": True,
+                "hidden_dim": 5,
+                "dropout": 0.0,
+            },
             "feature_cache_metadata": {
                 "clip_weight_sha256": "clip",
                 "class_mapping_sha256": "mapping",

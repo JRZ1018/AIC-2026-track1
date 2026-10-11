@@ -1,0 +1,24 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/supervision_actual_terminal_returns_r1/paired/result_manifest.json",
+  "original_sha256": "3e148dd1084a884eeafcb4eb9ccfcd683472f11a265ea36161987269649343de",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.supervision.paired_result.v1",
+    "complete": true,
+    "files": {
+      "balanced_supported_unique_predictions.npz": {
+        "bytes": 52242,
+        "sha256": "831526e387c368cff4c06c84069541c4b68efcb0950a69361d08058ddb64d232"
+      },
+      "natural_unique_images_predictions.npz": {
+        "bytes": 95958,
+        "sha256": "407237196a3edec84ce66c98ee62c093ebf0272d7582954b8772911b5e9ab3a8"
+      },
+      "report.json": {
+        "bytes": 821116,
+        "sha256": "776b1120fb75544ae5422b3960347c6a4f87c4881b4b16e0088d8ce86e216d66"
+      }
+    }
+  }
+}

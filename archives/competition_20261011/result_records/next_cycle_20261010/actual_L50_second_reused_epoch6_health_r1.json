@@ -1,0 +1,41 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_reused_epoch6_health_r1.json",
+  "original_sha256": "dddd0aa4b2494ad04a2f7908b19a5183396e5281a3c37aec208c988253b4c1af",
+  "omitted_fields": [],
+  "record": {
+    "now": 1791688197.0903242,
+    "trainer": {
+      "pid": 48115,
+      "state": "R",
+      "ppid": 48050,
+      "pgrp": 48115,
+      "session": 48115,
+      "start_ticks": "931519786"
+    },
+    "trainer_cpu_ticks": 249479,
+    "gpu": "4838 MiB, 93 %",
+    "disk": {
+      "total": 128849018880,
+      "used": 121410072576,
+      "free": 7438946304
+    },
+    "last_stat_only": {
+      "size": 1417440039,
+      "mtime": 1791687827.5916502
+    },
+    "memory.events": "low 0\nhigh 2840\nmax 0\noom 0\noom_kill 0\n",
+    "bounded_stdout_epochs_complete": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "active_checkpoint_read": false,
+    "training_restarted": false,
+    "connection_banner_EOF_transient_resolved": true,
+    "scope": "bounded stdout/process/stat only"
+  }
+}

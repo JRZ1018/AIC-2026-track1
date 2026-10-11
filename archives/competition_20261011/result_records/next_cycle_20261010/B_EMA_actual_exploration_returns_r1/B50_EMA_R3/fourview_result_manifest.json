@@ -1,0 +1,55 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/fourview_result_manifest.json",
+  "original_sha256": "b58e8d72e23bd6bb9221deda20b5f535d984f4420efea264940d22816a5b9be2",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.diagnostic_result.v1",
+    "p1_arm": "B50",
+    "complete": true,
+    "test_access": false,
+    "files": {
+      "fused_features.pt": {
+        "bytes": 63343605,
+        "sha256": "32a81f1667751a49d0f903d226bec90c2c61098e72d570a10331c86648d80312"
+      },
+      "fused_logits.pt": {
+        "bytes": 47053545,
+        "sha256": "7fe9dd1584d6f36711444394516ef631a3af855df8d3ca7a5c0b9ea8bffe7b7c"
+      },
+      "input_identity.json": {
+        "bytes": 15132,
+        "sha256": "f1674312eb310259d06fa62a210bed091401352ae391d0fd4c78329a7c3eac05"
+      },
+      "metadata_adaptations.json": {
+        "bytes": 1821,
+        "sha256": "92eb7e6c18fe9dee8784fa6001391cb23222971ddf1baac8417702e576e5c29b"
+      },
+      "p1_checkpoint_audit.json": {
+        "bytes": 7336,
+        "sha256": "757a70e8bd8bb113edd0fd958338286b8748453795466dcb7145d72ea7c5ffd3"
+      },
+      "paired_predictions.csv": {
+        "bytes": 2390895,
+        "sha256": "6b103a41e135a001075eb7d12d5730c81d0cb340848668461b9debcaad6e12b2"
+      },
+      "report.json": {
+        "bytes": 4848,
+        "sha256": "f37e0454a574a22eec640201444198489d1a376920f01f2f6a730d87afd8a2aa"
+      },
+      "rows.csv": {
+        "bytes": 5434566,
+        "sha256": "9c2ae1fd91962d9dd4b8014476a7a4df3f4826e6bf2735c66bf9f9328659c94e"
+      },
+      "runtime_receipt.json": {
+        "bytes": 1604,
+        "sha256": "21669994e1295c851ccdb2c5983e0ac78824641c7f2214e5359268454d9942db"
+      }
+    },
+    "model_role": "successful_step_EMA_shadow_fixed20",
+    "candidate_id": "B50_EMA",
+    "parent_checkpoint_sha256": "5bc7f05b1d82c8e2a6d63d0e18de6e67a174cb5d0a0fbd634056f09203a99d78",
+    "shadow_tensor_sha256": "1ed8e3024e30180661f009afe5943b43ae85532d32d924aeadd9db8fe1820da5",
+    "source_manifest_sha256": "7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045"
+  }
+}

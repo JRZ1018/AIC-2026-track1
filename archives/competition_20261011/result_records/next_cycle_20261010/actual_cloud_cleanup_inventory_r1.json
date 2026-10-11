@@ -1,0 +1,869 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_cloud_cleanup_inventory_r1.json",
+  "original_sha256": "f39ef38a1ccb188be98b8809512ae7e61ca8a8a8fb5a3d9acf2b9c1b4da32b75",
+  "omitted_fields": [],
+  "record": {
+    "disk": {
+      "total": 128849018880,
+      "used": 122969579520,
+      "free": 5879439360
+    },
+    "large": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/artifacts/experiments/JOINT_B50/last.pt",
+        "size": 1776438893,
+        "allocated": 1776439296,
+        "links": 1,
+        "mtime": 1791584547.5047662
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/artifacts/experiments/JOINT_B25/last.pt",
+        "size": 1776438829,
+        "allocated": 1776439296,
+        "links": 1,
+        "mtime": 1791573490.4566822
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010/artifacts/experiments/PF2_PF30/last.pt",
+        "size": 1424579677,
+        "allocated": 1424580608,
+        "links": 1,
+        "mtime": 1791593314.0796292
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_20261010/artifacts/experiments/JOINT_AFA/last.pt",
+        "size": 1419943087,
+        "allocated": 1419943936,
+        "links": 1,
+        "mtime": 1791620164.7425845
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/experiments/JOINT_CG25/last.pt",
+        "size": 1418769191,
+        "allocated": 1418772480,
+        "links": 1,
+        "mtime": 1791610936.6888123
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt",
+        "size": 1418765031,
+        "allocated": 1418768384,
+        "links": 1,
+        "mtime": 1791528545.1729062
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A3/last.pt",
+        "size": 1418761831,
+        "allocated": 1418764288,
+        "links": 1,
+        "mtime": 1791549624.8005376
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A5/last.pt",
+        "size": 1418761767,
+        "allocated": 1418764288,
+        "links": 1,
+        "mtime": 1791556430.197727
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/experiments/CONFIRM_J5/last.pt",
+        "size": 1418761383,
+        "allocated": 1418764288,
+        "links": 1,
+        "mtime": 1791642230.5230742
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/artifacts/experiments/CONFIRM_L50/last.pt",
+        "size": 1418761063,
+        "allocated": 1418764288,
+        "links": 1,
+        "mtime": 1791693079.191306
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_L50_20261011/artifacts/experiments/JOINT_L50/last.pt",
+        "size": 1418760999,
+        "allocated": 1418764288,
+        "links": 1,
+        "mtime": 1791684199.5556967
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/experiments/CONFIRM_L35/last.pt",
+        "size": 1418760935,
+        "allocated": 1418764288,
+        "links": 1,
+        "mtime": 1791650255.2757065
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_joint_r2_20261010/artifacts/experiments/JOINT_L35/last.pt",
+        "size": 1418760871,
+        "allocated": 1418764288,
+        "links": 1,
+        "mtime": 1791629505.853923
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_profile_20261010/artifacts/profiles/B25_ee99892b7ed043cc935df753b2a83080/restore99.pt",
+        "size": 1416499442,
+        "allocated": 1416503296,
+        "links": 1,
+        "mtime": 1791561890.3443646
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_C/last.pt",
+        "size": 1412602875,
+        "allocated": 1412603904,
+        "links": 1,
+        "mtime": 1791518123.23876
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/experiments/P1_S/last.pt",
+        "size": 1412602235,
+        "allocated": 1412603904,
+        "links": 1,
+        "mtime": 1791507427.6111217
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_fullvisual_screen_20261005/artifacts/experiments/fullvisual/last.pt",
+        "size": 1412596283,
+        "allocated": 1412599808,
+        "links": 1,
+        "mtime": 1791155809.7467942
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_prefix_plasticity_v2_20261006/artifacts/experiments/candidate20/last.pt",
+        "size": 1367869195,
+        "allocated": 1367871488,
+        "links": 1,
+        "mtime": 1791262249.8522425
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p17_ema0999_20261001_w16_v4/artifacts/experiments/20261001-stage2-p17-fold2-sce-ac-ema0999-8ep-4090-w16-v4/last.pt",
+        "size": 1366758763,
+        "allocated": 1366761472,
+        "links": 1,
+        "mtime": 1790827081.2531235
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt.tmp.failure_20261009_142529",
+        "size": 1346168189,
+        "allocated": 1346170880,
+        "links": 1,
+        "mtime": 1791527127.7730381
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p17_ema0999/artifacts/experiments/20260930-stage2-p17-fold2-sce-ac-ema0999-8ep-4090/last.pt",
+        "size": 1139918507,
+        "allocated": 1139920896,
+        "links": 1,
+        "mtime": 1790833461.2987738
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/experiments/FULL_J5/last.pt",
+        "size": 1066898587,
+        "allocated": 1066901504,
+        "links": 1,
+        "mtime": 1791536701.6284425
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/experiments/FULL_L35/last.pt",
+        "size": 1066898587,
+        "allocated": 1066901504,
+        "links": 1,
+        "mtime": 1791659417.4811106
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011/artifacts/experiments/FULL_L50/last.pt",
+        "size": 1066269787,
+        "allocated": 1066270720,
+        "links": 1,
+        "mtime": 1791699600.7774694
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_20261010/artifacts/profile/AFA_a31a23706f694914a65d12bf2f20d042/profile_state.pt",
+        "size": 1064694058,
+        "allocated": 1064697856,
+        "links": 1,
+        "mtime": 1791612118.3796494
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_fullvisual_screen_20261005/artifacts/preflight/fullvisual_smoke.pt",
+        "size": 1054372987,
+        "allocated": 1054375936,
+        "links": 1,
+        "mtime": 1791145662.9392865
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_n4_layerlr_20261003/artifacts/experiments/n4-candidate20/last.pt",
+        "size": 914191787,
+        "allocated": 914194432,
+        "links": 1,
+        "mtime": 1791026775.0421753
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_n4_layerlr_20261003/artifacts/experiments/n4-control20/last.pt",
+        "size": 914188779,
+        "allocated": 914190336,
+        "links": 1,
+        "mtime": 1791020411.507052
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_attention_screen_v2_20261006/artifacts/experiments/mean20/last.pt",
+        "size": 914185559,
+        "allocated": 914186240,
+        "links": 1,
+        "mtime": 1791276963.4236975
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed5_finish_scope_20261006/artifacts/experiments/mainline20/last.pt",
+        "size": 914179307,
+        "allocated": 914182144,
+        "links": 1,
+        "mtime": 1791218657.9039927
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_n1_weakac_20261002/artifacts/experiments/20261002-stage2-n1-fold2-weak-20ep-seed20260921/last.pt",
+        "size": 914175275,
+        "allocated": 914178048,
+        "links": 1,
+        "mtime": 1790956397.8808937
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_fullvisual_screen_20261005/artifacts/experiments/last8/last.pt",
+        "size": 914174059,
+        "allocated": 914178048,
+        "links": 1,
+        "mtime": 1791150606.0527666
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_recovery_v2_20261005/artifacts/experiments/mainline20/last.pt",
+        "size": 914174059,
+        "allocated": 914178048,
+        "links": 1,
+        "mtime": 1791141948.3547492
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed4_20261005/artifacts/experiments/mainline20/last.pt",
+        "size": 914174059,
+        "allocated": 914178048,
+        "links": 1,
+        "mtime": 1791168802.4025834
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_attention_screen_v2_20261006/artifacts/experiments/cls20/last.pt",
+        "size": 914173995,
+        "allocated": 914178048,
+        "links": 1,
+        "mtime": 1791270071.3612397
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_prefix_plasticity_v2_20261006/artifacts/experiments/control20/last.pt",
+        "size": 914173867,
+        "allocated": 914173952,
+        "links": 1,
+        "mtime": 1791254139.1582692
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_n1_weakac_20261002/artifacts/experiments/20261002-stage2-n1-fold2-control-20ep-seed20260921/last.pt",
+        "size": 914173675,
+        "allocated": 914173952,
+        "links": 1,
+        "mtime": 1790945615.8868601
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p21_20ep_20261001/artifacts/experiments/20261001-stage2-p21-fold2-sce-ac-20ep-4090-screen/last.pt",
+        "size": 914173035,
+        "allocated": 914173952,
+        "links": 2,
+        "mtime": 1790840061.4367623
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/experiments/20261001-stage2-p21-fold2-sce-ac-20ep-4090-screen/last.pt",
+        "size": 914173035,
+        "allocated": 914173952,
+        "links": 2,
+        "mtime": 1790840061.4367623
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_attention_screen_v2_20261006/artifacts/experiments/attention20/last.pt",
+        "size": 913997271,
+        "allocated": 913997824,
+        "links": 1,
+        "mtime": 1791284180.5014348
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed5_resume_20261005/artifacts/experiments/mainline20/last.pt",
+        "size": 913894251,
+        "allocated": 913895424,
+        "links": 3,
+        "mtime": 1791214291.3392315
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed5_resume_v2_20261006/artifacts/experiments/mainline20/last.pt",
+        "size": 913894251,
+        "allocated": 913895424,
+        "links": 3,
+        "mtime": 1791214291.3392315
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed5_resume_v3_20261006/artifacts/experiments/mainline20/last.pt",
+        "size": 913894251,
+        "allocated": 913895424,
+        "links": 3,
+        "mtime": 1791214291.3392315
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1/artifacts/experiments/20260929-stage2-p13-fold2-sce-ac-14ep-4090-candidate/last.pt",
+        "size": 913611371,
+        "allocated": 913612800,
+        "links": 1,
+        "mtime": 1790729787.1899529
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed4_20261005/artifacts/experiments/mainline14/last.pt",
+        "size": 913609323,
+        "allocated": 913612800,
+        "links": 1,
+        "mtime": 1791163340.955985
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_recovery_v2_20261005/artifacts/experiments/mainline14/last.pt",
+        "size": 913609195,
+        "allocated": 913612800,
+        "links": 1,
+        "mtime": 1791136910.2965894
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed5_newserver_20261005/artifacts/experiments/mainline14/last.pt",
+        "size": 913609131,
+        "allocated": 913612800,
+        "links": 1,
+        "mtime": 1791208999.1737397
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed5_newserver_20261005/artifacts/experiments/mainline20/last.pt",
+        "size": 913609131,
+        "allocated": 913612800,
+        "links": 1,
+        "mtime": 1791212196.2786677
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p21_fold2_control_20261001/artifacts/experiments/20261001-stage2-p21-fold2-sce-ac-14ep-4090-matched/last.pt",
+        "size": 913608683,
+        "allocated": 913608704,
+        "links": 2,
+        "mtime": 1790847258.875097
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/experiments/20261001-stage2-p21-fold2-sce-ac-14ep-4090-matched/last.pt",
+        "size": 913608683,
+        "allocated": 913608704,
+        "links": 2,
+        "mtime": 1790847258.875097
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p15_ot01/artifacts/experiments/20260930-stage2-p14-fold2-sce-ac-anchor01-8ep-4090/last.pt",
+        "size": 913044331,
+        "allocated": 913047552,
+        "links": 5,
+        "mtime": 1790742314.714576
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p14_anchor01/artifacts/experiments/20260930-stage2-p14-fold2-sce-ac-anchor01-8ep-4090/last.pt",
+        "size": 913044331,
+        "allocated": 913047552,
+        "links": 5,
+        "mtime": 1790742314.714576
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p16_view01/artifacts/experiments/20260930-stage2-p14-fold2-sce-ac-anchor01-8ep-4090/last.pt",
+        "size": 913044331,
+        "allocated": 913047552,
+        "links": 5,
+        "mtime": 1790742314.714576
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p17_ema0999/artifacts/experiments/20260930-stage2-p14-fold2-sce-ac-anchor01-8ep-4090/last.pt",
+        "size": 913044331,
+        "allocated": 913047552,
+        "links": 5,
+        "mtime": 1790742314.714576
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p18_crop095/artifacts/experiments/20260930-stage2-p14-fold2-sce-ac-anchor01-8ep-4090/last.pt",
+        "size": 913044331,
+        "allocated": 913047552,
+        "links": 5,
+        "mtime": 1790742314.714576
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1/artifacts/experiments/20260929-stage2-p13-fold2-sce-ac-8ep-4090-control/last.pt",
+        "size": 913043947,
+        "allocated": 913047552,
+        "links": 1,
+        "mtime": 1790692154.9919906
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p21_fold3_pair_20261001/artifacts/experiments/20261001-stage2-p21-fold3-perf-16w4p-2ep/last.pt",
+        "size": 912479019,
+        "allocated": 912482304,
+        "links": 1,
+        "mtime": 1790862919.7966535
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p21_fold3_pair_20261001/artifacts/experiments/20261001-stage2-p21-fold3-perf-24w2p-2ep/last.pt",
+        "size": 912479019,
+        "allocated": 912482304,
+        "links": 1,
+        "mtime": 1790863705.097171
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_recovery_20261005/artifacts/experiments/mainline14/last.pt",
+        "size": 912385707,
+        "allocated": 912388096,
+        "links": 1,
+        "mtime": 1791131137.4508502
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_full_20261006/artifacts/experiments/mainline20/last.pt",
+        "size": 688458411,
+        "allocated": 688459776,
+        "links": 1,
+        "mtime": 1791227734.0790544
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p21_full20_20261001/artifacts/experiments/20261001-stage2-p21-sce-ac-336-full20-seed20260921-4090/last.pt",
+        "size": 688457707,
+        "allocated": 688459776,
+        "links": 1,
+        "mtime": 1790870786.0497074
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1/artifacts/weights/ViT-B-32.pt",
+        "size": 353976522,
+        "allocated": 353980416,
+        "links": 6,
+        "mtime": 1788942507.0636058
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p15_ot01/artifacts/weights/ViT-B-32.pt",
+        "size": 353976522,
+        "allocated": 353980416,
+        "links": 6,
+        "mtime": 1788942507.0636058
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p14_anchor01/artifacts/weights/ViT-B-32.pt",
+        "size": 353976522,
+        "allocated": 353980416,
+        "links": 6,
+        "mtime": 1788942507.0636058
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p16_view01/artifacts/weights/ViT-B-32.pt",
+        "size": 353976522,
+        "allocated": 353980416,
+        "links": 6,
+        "mtime": 1788942507.0636058
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p17_ema0999/artifacts/weights/ViT-B-32.pt",
+        "size": 353976522,
+        "allocated": 353980416,
+        "links": 6,
+        "mtime": 1788942507.0636058
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p18_crop095/artifacts/weights/ViT-B-32.pt",
+        "size": 353976522,
+        "allocated": 353980416,
+        "links": 6,
+        "mtime": 1788942507.0636058
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_AFA_CLS_anchored_20261010/artifacts/experiments/JOINT_AFA/final.pt",
+        "size": 353276571,
+        "allocated": 353280000,
+        "links": 1,
+        "mtime": 1791620165.4346144
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/artifacts/experiments/JOINT_CG25/final.pt",
+        "size": 352988587,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791610937.4048617
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/experiments/FULL_J5/final.pt",
+        "size": 352988267,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791536702.1004512
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/experiments/FULL_L35/final.pt",
+        "size": 352988267,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791659418.0531394
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791528545.7129004
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/artifacts/experiments/JOINT_B25/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791573491.152688
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/artifacts/experiments/JOINT_B50/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791584548.0007637
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010/artifacts/experiments/PF2_PF30/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791593314.6076303
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A3/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791549625.2885432
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A5/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791556430.9817595
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_joint_r2_20261010/artifacts/experiments/JOINT_L35/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791629506.6659195
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/experiments/CONFIRM_J5/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791642231.2991168
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_r2_20261010/artifacts/experiments/CONFIRM_L35/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791650256.0957348
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_L50_20261011/artifacts/experiments/JOINT_L50/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791684200.0197272
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/artifacts/experiments/CONFIRM_L50/final.pt",
+        "size": 352987755,
+        "allocated": 352989184,
+        "links": 1,
+        "mtime": 1791693079.9953601
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_C/final.pt",
+        "size": 351448173,
+        "allocated": 351449088,
+        "links": 1,
+        "mtime": 1791518123.770757
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/experiments/P1_S/final.pt",
+        "size": 351448173,
+        "allocated": 351449088,
+        "links": 1,
+        "mtime": 1791507428.2871225
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_fullvisual_screen_20261005/artifacts/experiments/fullvisual/best.pt",
+        "size": 351447439,
+        "allocated": 351449088,
+        "links": 1,
+        "mtime": 1791155810.0667892
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_prefix_plasticity_v2_20261006/artifacts/experiments/candidate20/best.pt",
+        "size": 340266079,
+        "allocated": 340267008,
+        "links": 1,
+        "mtime": 1791262250.2562368
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_n2_warm_head_v3_20261003/artifacts/n2-development/train_features.pt",
+        "size": 254810077,
+        "allocated": 254812160,
+        "links": 1,
+        "mtime": 1790999422.019993
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_n2_warm_head_v3_20261003/artifacts/n2-development/reference_train_features.pt",
+        "size": 252430249,
+        "allocated": 252432384,
+        "links": 1,
+        "mtime": 1790999422.3479955
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_n4_layerlr_20261003/artifacts/experiments/n4-candidate20/best.pt",
+        "size": 226849667,
+        "allocated": 226852864,
+        "links": 1,
+        "mtime": 1791026775.326171
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_n4_layerlr_20261003/artifacts/experiments/n4-control20/best.pt",
+        "size": 226849539,
+        "allocated": 226852864,
+        "links": 1,
+        "mtime": 1791020411.7750523
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_attention_screen_v2_20261006/artifacts/experiments/mean20/best.pt",
+        "size": 226847229,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791276963.7157073
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_full_20261006/artifacts/experiments/mainline20/final.pt",
+        "size": 226845353,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791227734.5350535
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p17_ema0999_20261001_w16_v4/artifacts/experiments/20261001-stage2-p17-fold2-sce-ac-ema0999-8ep-4090-w16-v4/raw_best.pt",
+        "size": 226844955,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1790827081.7491279
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_n1_weakac_20261002/artifacts/experiments/20261002-stage2-n1-fold2-weak-20ep-seed20260921/best.pt",
+        "size": 226844739,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1790956398.1728864
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_attention_screen_v2_20261006/artifacts/experiments/cls20/best.pt",
+        "size": 226844675,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791270071.6412468
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_fullvisual_screen_20261005/artifacts/experiments/last8/best.pt",
+        "size": 226844675,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791150606.4287634
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_recovery_v2_20261005/artifacts/experiments/mainline14/best.pt",
+        "size": 226844675,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791136910.5005872
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_recovery_v2_20261005/artifacts/experiments/mainline20/best.pt",
+        "size": 226844675,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791141948.5787487
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed4_20261005/artifacts/experiments/mainline14/best.pt",
+        "size": 226844675,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791163341.2759957
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed4_20261005/artifacts/experiments/mainline20/best.pt",
+        "size": 226844675,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791168802.6225786
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed5_finish_scope_20261006/artifacts/experiments/mainline20/best.pt",
+        "size": 226844675,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791218658.1959956
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_mainline_seed5_newserver_20261005/artifacts/experiments/mainline14/best.pt",
+        "size": 226844675,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791208999.4457407
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_n1_weakac_20261002/artifacts/experiments/20261002-stage2-n1-fold2-control-20ep-seed20260921/best.pt",
+        "size": 226844675,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1790945616.1668575
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_prefix_plasticity_v2_20261006/artifacts/experiments/control20/best.pt",
+        "size": 226844675,
+        "allocated": 226848768,
+        "links": 1,
+        "mtime": 1791254139.3821864
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p21_full20_20261001/artifacts/experiments/20261001-stage2-p21-sce-ac-336-full20-seed20260921-4090/final.pt",
+        "size": 226844649,
+        "allocated": 226844672,
+        "links": 1,
+        "mtime": 1790870786.4217024
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p15_ot01/artifacts/experiments/20260930-stage2-p14-fold2-sce-ac-anchor01-8ep-4090/best.pt",
+        "size": 226844035,
+        "allocated": 226844672,
+        "links": 5,
+        "mtime": 1790742315.0705676
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p14_anchor01/artifacts/experiments/20260930-stage2-p14-fold2-sce-ac-anchor01-8ep-4090/best.pt",
+        "size": 226844035,
+        "allocated": 226844672,
+        "links": 5,
+        "mtime": 1790742315.0705676
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p16_view01/artifacts/experiments/20260930-stage2-p14-fold2-sce-ac-anchor01-8ep-4090/best.pt",
+        "size": 226844035,
+        "allocated": 226844672,
+        "links": 5,
+        "mtime": 1790742315.0705676
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p17_ema0999/artifacts/experiments/20260930-stage2-p14-fold2-sce-ac-anchor01-8ep-4090/best.pt",
+        "size": 226844035,
+        "allocated": 226844672,
+        "links": 5,
+        "mtime": 1790742315.0705676
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p17_ema0999/artifacts/experiments/20260930-stage2-p17-fold2-sce-ac-ema0999-8ep-4090/best.pt",
+        "size": 226844035,
+        "allocated": 226844672,
+        "links": 1,
+        "mtime": 1790833461.62677
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p17_ema0999_20261001_w16_v4/artifacts/experiments/20261001-stage2-p17-fold2-sce-ac-ema0999-8ep-4090-w16-v4/best.pt",
+        "size": 226844035,
+        "allocated": 226844672,
+        "links": 1,
+        "mtime": 1790827081.5771263
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p18_crop095/artifacts/experiments/20260930-stage2-p14-fold2-sce-ac-anchor01-8ep-4090/best.pt",
+        "size": 226844035,
+        "allocated": 226844672,
+        "links": 5,
+        "mtime": 1790742315.0705676
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1/artifacts/experiments/20260928-stage2-p5-fold3-a10-sce-candidate/best.pt",
+        "size": 226843907,
+        "allocated": 226844672,
+        "links": 1,
+        "mtime": 1790610041.7601974
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1/artifacts/experiments/20260929-stage2-p13-fold2-sce-ac-14ep-4090-candidate/best.pt",
+        "size": 226843907,
+        "allocated": 226844672,
+        "links": 2,
+        "mtime": 1790729787.4979591
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1/artifacts/experiments/20260929-stage2-p13-fold2-sce-ac-8ep-4090-control/best.pt",
+        "size": 226843907,
+        "allocated": 226844672,
+        "links": 1,
+        "mtime": 1790692155.2959874
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p15_ot01/artifacts/experiments/20260930-stage2-p15-fold2-sce-ac-visual-ot-8ep-4090/best.pt",
+        "size": 226843907,
+        "allocated": 226844672,
+        "links": 3,
+        "mtime": 1790763243.5192351
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p16_view01/artifacts/experiments/20260929-stage2-p13-fold2-sce-ac-14ep-4090-candidate/best.pt",
+        "size": 226843907,
+        "allocated": 226844672,
+        "links": 2,
+        "mtime": 1790729787.4979591
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p17_ema0999/artifacts/experiments/20260930-stage2-p15-fold2-sce-ac-visual-ot-8ep-4090/best.pt",
+        "size": 226843907,
+        "allocated": 226844672,
+        "links": 3,
+        "mtime": 1790763243.5192351
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p18_crop095/artifacts/experiments/20260930-stage2-p15-fold2-sce-ac-visual-ot-8ep-4090/best.pt",
+        "size": 226843907,
+        "allocated": 226844672,
+        "links": 3,
+        "mtime": 1790763243.5192351
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p21_20ep_20261001/artifacts/experiments/20261001-stage2-p21-fold2-sce-ac-20ep-4090-screen/best.pt",
+        "size": 226843907,
+        "allocated": 226844672,
+        "links": 1,
+        "mtime": 1790840061.7607577
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p21_fold3_pair_20261001/artifacts/experiments/20261001-stage2-p21-fold3-perf-16w4p-2ep/best.pt",
+        "size": 226843907,
+        "allocated": 226844672,
+        "links": 1,
+        "mtime": 1790862920.11265
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_p21_fold3_pair_20261001/artifacts/experiments/20261001-stage2-p21-fold3-perf-24w2p-2ep/best.pt",
+        "size": 226843907,
+        "allocated": 226844672,
+        "links": 1,
+        "mtime": 1790863705.4171681
+      }
+    ]
+  }
+}

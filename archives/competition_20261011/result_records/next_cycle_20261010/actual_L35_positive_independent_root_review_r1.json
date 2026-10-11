@@ -1,0 +1,263 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_positive_independent_root_review_r1.json",
+  "original_sha256": "a0cd476f8bd5691f89765c4b81eab80a8a2d98a2a878792753f65fe90c320104",
+  "omitted_fields": [
+    "/risks/group_bootstrap/groups"
+  ],
+  "record": {
+    "schema": "aictrack1.next_cycle10.L35_root_risk_review.v1",
+    "root_authorized": true,
+    "decision": "allow_single_L35_full_training",
+    "selected_arm": "L35",
+    "paired_report_sha256": "76de092b4faee05e80b97cc556dd0ad29e03faaf49895f7c71e3950f76e8e88f",
+    "independent_numpy_recount_sha256": "943eaf6df1fe75dada7b4da9a8d3f01c21d04a31cf8bca946039ffe71a0e5324",
+    "actual_primary_delta_pp": 1.029810298102981,
+    "actual_natural_delta_pp": 0.9819416888051922,
+    "all_six_NPZ_query_perclass_recount_PASS": true,
+    "risks": [
+      {
+        "protocol": "natural_unique_images",
+        "supported_large_declines": [
+          {
+            "original_class_index": 644,
+            "stratum": "tail",
+            "unique_group_support": 34,
+            "candidate_recall": 0.5294117647058824,
+            "control_recall": 0.6470588235294118,
+            "candidate_correct": 18,
+            "control_correct": 22,
+            "query_images": 34,
+            "delta_pp": -11.764705882352942
+          }
+        ],
+        "HMT": {
+          "head": {
+            "evaluated_classes": 150,
+            "query_images": 7184,
+            "candidate_class_mean_recall_pp": 74.97504999779746,
+            "control_class_mean_recall_pp": 73.81608393588702,
+            "delta_class_mean_recall_pp": 1.1589660619104256,
+            "delta_sample_top1_pp": 1.1553452115812917
+          },
+          "mid": {
+            "evaluated_classes": 225,
+            "query_images": 9790,
+            "candidate_class_mean_recall_pp": 75.98177778231705,
+            "control_class_mean_recall_pp": 75.1654779017435,
+            "delta_class_mean_recall_pp": 0.8162998805735578,
+            "delta_sample_top1_pp": 0.8273748723186927
+          },
+          "tail": {
+            "evaluated_classes": 375,
+            "query_images": 12763,
+            "candidate_class_mean_recall_pp": 74.69815210962942,
+            "control_class_mean_recall_pp": 73.76074198879577,
+            "delta_class_mean_recall_pp": 0.9374101208336358,
+            "delta_sample_top1_pp": 1.0028990049361435
+          }
+        },
+        "group_bootstrap": {
+          "draws": 500,
+          "seed": 20261009,
+          "ci95_pp": [
+            0.777129258576375,
+            1.1931837942807366
+          ],
+          "limitation": "conditional fixed-model observed labels; not training-seed variance"
+        },
+        "high_margin_losses": 0
+      },
+      {
+        "protocol": "balanced_supported_unique",
+        "supported_large_declines": [
+          {
+            "original_class_index": 108,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.8,
+            "control_recall": 0.9,
+            "candidate_correct": 16,
+            "control_correct": 18,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 245,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.85,
+            "control_recall": 0.95,
+            "candidate_correct": 17,
+            "control_correct": 19,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 322,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.7,
+            "control_recall": 0.8,
+            "candidate_correct": 14,
+            "control_correct": 16,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 408,
+            "stratum": "mid",
+            "unique_group_support": 20,
+            "candidate_recall": 0.4,
+            "control_recall": 0.5,
+            "candidate_correct": 8,
+            "control_correct": 10,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 478,
+            "stratum": "mid",
+            "unique_group_support": 20,
+            "candidate_recall": 0.8,
+            "control_recall": 0.9,
+            "candidate_correct": 16,
+            "control_correct": 18,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 501,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.75,
+            "control_recall": 0.85,
+            "candidate_correct": 15,
+            "control_correct": 17,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 527,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.8,
+            "control_recall": 0.9,
+            "candidate_correct": 16,
+            "control_correct": 18,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 539,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.55,
+            "control_recall": 0.65,
+            "candidate_correct": 11,
+            "control_correct": 13,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 551,
+            "stratum": "mid",
+            "unique_group_support": 20,
+            "candidate_recall": 0.7,
+            "control_recall": 0.8,
+            "candidate_correct": 14,
+            "control_correct": 16,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 596,
+            "stratum": "mid",
+            "unique_group_support": 20,
+            "candidate_recall": 0.7,
+            "control_recall": 0.8,
+            "candidate_correct": 14,
+            "control_correct": 16,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 612,
+            "stratum": "mid",
+            "unique_group_support": 20,
+            "candidate_recall": 0.25,
+            "control_recall": 0.35,
+            "candidate_correct": 5,
+            "control_correct": 7,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 644,
+            "stratum": "tail",
+            "unique_group_support": 20,
+            "candidate_recall": 0.45,
+            "control_recall": 0.55,
+            "candidate_correct": 9,
+            "control_correct": 11,
+            "query_images": 20,
+            "delta_pp": -10.0
+          },
+          {
+            "original_class_index": 729,
+            "stratum": "head",
+            "unique_group_support": 20,
+            "candidate_recall": 0.6,
+            "control_recall": 0.7,
+            "candidate_correct": 12,
+            "control_correct": 14,
+            "query_images": 20,
+            "delta_pp": -10.0
+          }
+        ],
+        "HMT": {
+          "head": {
+            "evaluated_classes": 150,
+            "query_images": 3000,
+            "candidate_class_mean_recall_pp": 76.73333333333333,
+            "control_class_mean_recall_pp": 75.9,
+            "delta_class_mean_recall_pp": 0.8333333333333335,
+            "delta_sample_top1_pp": 0.8333333333333334
+          },
+          "mid": {
+            "evaluated_classes": 225,
+            "query_images": 4500,
+            "candidate_class_mean_recall_pp": 77.06666666666668,
+            "control_class_mean_recall_pp": 75.95555555555558,
+            "delta_class_mean_recall_pp": 1.1111111111111112,
+            "delta_sample_top1_pp": 1.1111111111111112
+          },
+          "tail": {
+            "evaluated_classes": 363,
+            "query_images": 7260,
+            "candidate_class_mean_recall_pp": 75.79889807162535,
+            "control_class_mean_recall_pp": 74.73829201101927,
+            "delta_class_mean_recall_pp": 1.06060606060606,
+            "delta_sample_top1_pp": 1.0606060606060608
+          }
+        },
+        "group_bootstrap": {
+          "draws": 500,
+          "seed": 20261009,
+          "ci95_pp": [
+            0.7452574525745257,
+            1.358570460704607
+          ],
+          "limitation": "conditional fixed-model observed labels; not training-seed variance"
+        },
+        "high_margin_losses": 0
+      }
+    ],
+    "reason": "Actual new independent combo positive; net balanced152/natural292; all HMT aggregate positive. Natural class644 loses4/34 and thirteen balanced classes lose2/20; keep disclosed, no tuning. Conditional fixed-model CIs not seed variance or leaderboard guarantee.",
+    "no_extra_natural_or_CI_hard_gate": true,
+    "final_model": "single",
+    "test_access": false,
+    "online_score_used": false,
+    "prior_negative_methods_not_admitted": true
+  }
+}

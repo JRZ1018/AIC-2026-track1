@@ -1,0 +1,102 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/inference/artifacts/final_graph_result.json",
+  "original_sha256": "86c48b2c29660ff8a7e395410585dd293e2e17327c024bf99fe886f519708677",
+  "omitted_fields": [],
+  "record": {
+    "checkpoint_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+    "complete": true,
+    "confirmation_ledger_touched": false,
+    "details": {
+      "additional_model_forwards": 0,
+      "budget_scope": "independent final graph phase; original confirmation ledger untouched",
+      "cpu_threads": 2,
+      "extra_label_anchors": 0,
+      "graph": {
+        "degree_histogram": [
+          2259,
+          3403,
+          3870,
+          3987,
+          3953,
+          3899,
+          3570,
+          3283,
+          3078,
+          2876,
+          3266
+        ],
+        "directed_nonpositive_or_invalid_pruned": 0,
+        "directed_positive_edges": 374440,
+        "k": 10,
+        "max_degree": 10,
+        "mean_degree": 4.966883879927358,
+        "min_degree": 0,
+        "reciprocal_directed_edges": 185980,
+        "reciprocal_weight_asymmetry_before_average": 0.0,
+        "self_edges": 0,
+        "symmetric_adjacency": true,
+        "undirected_edges": 92990,
+        "zero_degree_rows": 2259
+      },
+      "model_updates": 0,
+      "p7": {
+        "actual_iterations": 60,
+        "max_iterations": 60,
+        "median_margin": 3.53125,
+        "name": "P7",
+        "strength": 0.75,
+        "temperature": 0.5,
+        "temperature_scale": 1.765625
+      },
+      "parameter_search": false,
+      "parameters": {
+        "iterations": 3,
+        "k": 10,
+        "lambda": 0.3,
+        "probability_temperature": 1.0,
+        "protection_raw_margin": 1.3862943611198906
+      },
+      "scientific_source_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+      "smoothing": {
+        "final_probability_floor_entries": 0,
+        "final_zero_probability_entries": 0,
+        "initial_zero_probability_entries": 0,
+        "isolated_raw_prediction_changes": 0,
+        "iterations": 3,
+        "lambda_value": 0.3,
+        "margin_change_abs_max_all": 1.293412208557129,
+        "margin_change_abs_max_protected": 0.0,
+        "original_probability_temperature": 1.0,
+        "prediction_changes": 1288,
+        "probability_floor": 1.1754943508222875e-38,
+        "probability_mass_error_max": 7.152557373046875e-07,
+        "protected_logit_rows_exactly_preserved": true,
+        "protected_margin_threshold": 1.3862943611198906,
+        "protected_or_zero_degree_rows": 28503,
+        "protected_raw_prediction_changes": 0,
+        "protected_rows": 27658,
+        "residual_anchor": "original P at every iteration",
+        "unchanged_probability_rows": 28503,
+        "zero_degree_rows": 2259
+      },
+      "test_labels_used": false,
+      "topk": {
+        "dense_N_by_N_allocated": false,
+        "effective_k": 20,
+        "feature_dim": 512,
+        "max_k": 20,
+        "peak_similarity_block_bytes": 38342656,
+        "rows": 37444,
+        "similarity_block_rows": 256,
+        "tie_cutoff_rows": 1,
+        "zero_feature_rows": 0
+      },
+      "upstream_protocol_sha256": "f48211db3716faaf45255dcc96e0b614bf42c1673791406bf9d7457c1a50b30d",
+      "wall_seconds": 20.88406250765547
+    },
+    "spent_wall_seconds": 20.90171974990517,
+    "status": "fixed_graph_complete",
+    "total_wall_seconds": 7200.0
+  }
+}

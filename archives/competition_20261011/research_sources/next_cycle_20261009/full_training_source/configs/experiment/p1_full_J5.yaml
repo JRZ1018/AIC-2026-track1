@@ -1,0 +1,54 @@
+experiment:
+  competition_stage: stage2
+  run_id: 20261009-p1-full-J5-fixed20
+  execution_enabled: true
+  training_scope: full_train_fixed_epochs
+  expected_train_count: 148695
+  selection_rule: fixed_final
+  confidence_observation_view: strong
+  dataset_config: ../data/full336.yaml
+  model_config: ../model/full_clip.yaml
+  manifest: /root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/audits/stage2/train/samples.csv
+  split: /root/AICtrack1_fullvisual_full_v5_20261008/inputs/split.csv
+  label_conflicts: /root/autodl-tmp/AICtrack1_q0_fold2_inputs_20261002/artifacts/audits/stage2/train/label_conflicts.csv
+  head_checkpoint: /root/AICtrack1_fullvisual_full_v5_20261008/artifacts/experiments/mainline-h1/last.pt
+  output_dir: ../../artifacts/experiments/P1_full_J5
+  device: cuda
+  visual_input_resolution: 336
+  position_interpolation: bicubic_7x7_to_10x10
+  initial_top1_tolerance: 0.002
+  base_loss:
+    kind: sce
+    alpha: 0.1
+    beta: 1.0
+    log_zero: -4.0
+  runtime:
+    defer_epoch_metrics: true
+    reuse_validation_loader: true
+    record_gradient_diagnostics: true
+    safe_numpy_rng_checkpoint: true
+  peft:
+    mode: full_visual
+    lora_blocks: 8
+  confidence_weighting:
+    enabled: true
+    warmup_epochs: 1
+    momentum: 0.8
+    history_mix: 0.5
+    min_weight: 0.02
+    magnitude_mix: 0.75
+    stop_on_effective_quality_l2: true
+  training:
+    epochs: 20
+    batch_size: 64
+    workers: 8
+    prefetch_factor: 2
+    persistent_workers: true
+    seed: 20261008
+    visual_learning_rate: 1.75e-06
+    head_learning_rate: 5.0e-06
+    weight_decay: 0.01
+    gradient_clip_norm: 1.0
+  token_readout:
+    mode: none
+    initialization_seed: 20261005

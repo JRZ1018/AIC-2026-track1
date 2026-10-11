@@ -1,0 +1,35 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/josrc_author_CPU_receipt.json",
+  "original_sha256": "982920526b8347146755900d4967c6ca169de0199164dd2408cca297fbb2a624",
+  "omitted_fields": [],
+  "record": {
+    "GPU_started": false,
+    "SSH": false,
+    "actual_profile_not_run": true,
+    "all_Python_AST_pass": true,
+    "complete": true,
+    "future_budget_sha256": null,
+    "future_checkpoint_sha256": null,
+    "log_hash_semantics": "raw captured bytes written with write_bytes",
+    "official_train_image_access": false,
+    "original_hard_AC_literal_preserved": true,
+    "original_stochastic_strong_synthetic_image_tensor_exact": true,
+    "profile_helpers_safe_disk_nextstep_CPU_PASS": true,
+    "provider_scope": "OpenAI clip package deferred until actual CLIP loader; no model weights initialized locally",
+    "real_CPU_CLI_imports": [
+      "train_n1_peft.py --help",
+      "bind_josrc_source.py --help",
+      "run_josrc.py --help"
+    ],
+    "schema": "aictrack1.josrc_inspired.author_CPU.v1",
+    "source_bytes": 726509,
+    "source_files": 91,
+    "source_manifest_sha256": "a8cc48ec8fb3ccf0e7e2214ad0157a6cd30ce3d93e27b1a8c12f22f7c1a86a53",
+    "stderr_sha256": "c709b17711727b7648f9382819d8673fc8c5650c2a35eabc78e644d10272a9e8",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_exit_code": 0,
+    "test_image_access": false,
+    "tests": 11
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/B_profile_actual_budget_r1.json",
+  "original_sha256": "875c68b80733635a222021efe095b3b575029356d34ef49113b27ad9173c9fd5",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.josrc_inspired.budget.v1",
+    "root_authorized": true,
+    "authorization": "human all permissions and approved docs242; bounded profiling after two negative A candidates",
+    "phase_start_unix": 1791560672.0868888,
+    "deadline_unix": 1791564272.0868888,
+    "phase": "real_official_train_B25_profile100_successful_updates_only",
+    "test_access": false,
+    "final_gpu_reserve_hours": 4,
+    "total_GPU_hours": 20,
+    "explore_H1_confirmation_GPU_hours_max": 16,
+    "initial_free_bytes": 13013950464,
+    "capacity_increase_bytes": 32212254720,
+    "adjusted_initial_free_bytes": 45226205184,
+    "data_total_bytes": 128849018880,
+    "disk_max_bytes": 32212254720,
+    "min_free_bytes": 3221225472,
+    "atomic_reserve_bytes": 2147483648,
+    "prior_A_budget_sha256": "f6bc19c3978ef75db18ac61915425bbfb5de77b8d121cb8497477536dfff073b",
+    "disk_cap_change_reason": "Retain complete negative-A evidence plus training-only EMA/checkpoint atomic peaks, independent confirmation and final state on user-expanded data disk. No historical file deletion and no cumulative baseline reset.",
+    "profile_may_initialize_candidate": false,
+    "future_candidate_checkpoint_sha256": null
+  }
+}

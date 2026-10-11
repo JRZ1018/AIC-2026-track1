@@ -1,0 +1,78 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/graph_root_exploratory_review.json",
+  "original_sha256": "783b0a54fd9936b1e14a2a57facc0c509bb65f5e2da109a27f0dbb568aea79ec",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.p3.root_exploratory_review.v1",
+    "collected_epoch": 1791499321.5760112,
+    "source_manifest_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+    "report_sha256": "548d1e7a230585eb5634db959ea5ff7ff341fefbfe3d480d3967e9961bde8a27",
+    "independent_combo_audit_sha256": "2aec2e3c1b176c76d0488933ce7b540d23c9cffe75fc7454fef53a7b786fd559",
+    "selected_graph": {
+      "k": 10,
+      "lambda": 0.3,
+      "iterations": 3
+    },
+    "fixed_P7": [
+      0.5,
+      0.75,
+      60
+    ],
+    "graph_baseline": "J5_fixed_last20_P7",
+    "graph_increment_balanced_net": 27,
+    "graph_increment_balanced_delta_pp": 0.18317503392130258,
+    "combo_vs_C_balanced": {
+      "n": 14740,
+      "net": 37,
+      "wrong_to_right": 96,
+      "right_to_wrong": 59,
+      "delta_pp": 0.25101763907734054,
+      "group_bootstrap_ci_pp": [
+        0.08463365,
+        0.42740841
+      ]
+    },
+    "combo_vs_C_natural": {
+      "n": 29737,
+      "net": 55,
+      "wrong_to_right": 209,
+      "right_to_wrong": 154,
+      "delta_pp": 0.18495477,
+      "group_bootstrap_ci_pp": [
+        0.06387553,
+        0.31951246
+      ]
+    },
+    "risk_review": {
+      "balanced_supported_classes_down_10pp": [
+        16,
+        168,
+        364,
+        500
+      ],
+      "counts_per_declining_class": "two fewer correct of twenty",
+      "high_margin_right_to_wrong": 0,
+      "new_zero_recall_classes_vs_C": 0,
+      "graph_raw_ln4_protection_changes": {
+        "natural": 0,
+        "balanced": 1,
+        "balanced_change_correctness": "wrong_to_wrong"
+      },
+      "conclusion": "limited class regressions, no broad tail collapse; eligible for independent fixed-point confirmation"
+    },
+    "runtime_match": "old J5 and C unmatched; exploration only",
+    "evidence_status": "old noisy train-label agreement; four graph candidates selected on same query; CI omits selection and training-seed variance",
+    "decision": "keep J5 plus fixed k10/lambda.3 as eligible fresh-confirmation route; finish S-on-C exploration first, then choose confirmed route",
+    "graph_budget": {
+      "schema": "aictrack1.p3.aggregate_budget.v1",
+      "source_manifest_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+      "total_wall_seconds": 7200.0,
+      "spent_wall_seconds": 64.37051040213555,
+      "last_run_status": "complete"
+    },
+    "shared_budget_must_not_reset": true,
+    "full_or_test_admitted": false,
+    "submission_ready": false
+  }
+}

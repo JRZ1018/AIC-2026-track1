@@ -1,0 +1,13 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R3_RETRY1_PROBE_CLOSED.json",
+  "original_sha256": "8f45ebdd44dc8fb1ebbacfaf77942702016b3354727da9089363d644441f94d7",
+  "omitted_fields": [],
+  "record": {
+    "pid": 35304,
+    "start": 1791559935.6238668,
+    "manifest_sha256": "a4b229c315298691eafc7d16a06027bba3d4487a5d1fd6be3caf833ecc469d8b",
+    "prefetch": false,
+    "mode": "PROBE"
+  }
+}

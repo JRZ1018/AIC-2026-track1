@@ -1,0 +1,13 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_confirmation_visual_R2_stage_bind_r1.json",
+  "original_sha256": "c9c2e620853cb6e7a122205431c1f0137094a1e7832786ef1ed3d0bb78efcc3d",
+  "omitted_fields": [
+    "/command",
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "returncode": 0
+  }
+}

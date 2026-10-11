@@ -1,0 +1,35 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_AFA_phase_budget_r1.json",
+  "original_sha256": "b21140ba952fcdb3095239958e5cb4d0bc25e9e704772b41cec2ab7335785e0c",
+  "omitted_fields": [],
+  "record": {
+    "initial_free_bytes": 13013950464,
+    "capacity_increase_bytes": 32212254720,
+    "adjusted_initial_free_bytes": 45226205184,
+    "data_total_bytes": 128849018880,
+    "disk_max_bytes": 32212254720,
+    "min_free_bytes": 3221225472,
+    "atomic_reserve_bytes": 2147483648,
+    "final_gpu_reserve_hours": 4,
+    "final_wall_reserve_hours_min": 8,
+    "human_latest_wall_deadline_unix": 1791712738.0,
+    "remaining32h_plan_sha256": "e2235eacd9417cf3de30786512e6dddaf5a1fd35c1eb7bd58b061d5bd2d4c58a",
+    "capacity_evidence": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "schema": "aictrack1.AFA_CLIP_anchored.budget.v1",
+    "root_authorized": true,
+    "test_access": false,
+    "phase_start_unix": 1791612000.2863238,
+    "deadline_unix": 1791626400.2863238,
+    "phase_scope": "single AFA mechanism active100 successful update profile, then only if cost/recovery PASS one fresh20 and frozen4V/fixedgraph/P7 exploration",
+    "template_source_sha256": "d52b0c98e06836fbaa3fa54cb3dbba237162475ab34900ae49c69e6b7a54c1eb",
+    "CG_negative_root_review_sha256": "a89ed2eac08a52445fa7e48291a8d3323cf6a7d4337ee2e9b144dd56b8d12cdf",
+    "old_sources_budgets_clocks_unchanged": true,
+    "profile_not_candidate_initialization": true,
+    "full_candidate_GPU_admission": false,
+    "created_at": "2026-10-10T14:00:00.286452+08:00"
+  }
+}

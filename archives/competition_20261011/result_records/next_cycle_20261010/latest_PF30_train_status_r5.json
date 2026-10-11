@@ -1,0 +1,508 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_PF30_train_status_r5.json",
+  "original_sha256": "74f2116d44a38d7ed8af724d7f10cb860a068448ffbc907a1cdfe76371fbca82",
+  "omitted_fields": [
+    "/receipts/artifacts/launches/PF30_5e743289f7ea47fc9e168f8ba66230b2/START.json/value/command",
+    "/receipts/artifacts/launches/PF30_a5610e2726be47d0b98e4aa96e109b45/START.json/value/command",
+    "/receipts/root_actual_PF30_smoke_launch.json/value/command",
+    "/receipts/root_actual_launch.json/value/command",
+    "/receipts/root_actual_launch.json/value/controller/argv",
+    "/receipts/root_actual_stage_and_CPU_preflight.json/value/stderr",
+    "/receipts/root_actual_stage_and_CPU_preflight.json/value/stdout"
+  ],
+  "record": {
+    "observed_unix": 1791594856.0198112,
+    "execution_root": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010",
+    "bound_source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+    "processes": [],
+    "canonical": null,
+    "logs": {
+      "root_actual_PF30_smoke_stdout.log": "[2026-10-10 06:57:28] 20261010-persistent-filter-joint-PF30 start\n[2026-10-10 06:57:28] PF30: starting - joint J5 PF2 weight-eligibility-only exploration fixedlast20\n[2026-10-10 06:57:38] PF30: finished in 0.2 min; output validated\n[2026-10-10 06:57:38] 20261010-persistent-filter-joint-PF30 finished",
+      "root_actual_train_stdout.log": "[2026-10-10 06:59:14] 20261010-persistent-filter-joint-PF30 start\n[2026-10-10 06:59:14] PF30: starting - joint J5 PF2 weight-eligibility-only exploration fixedlast20\n[2026-10-10 08:48:38] PF30: finished in 109.4 min; output validated\n[2026-10-10 08:48:38] 20261010-persistent-filter-joint-PF30 finished",
+      "artifacts/queues/d237acb24d564db39c4bdedb5e0b74a8/chain.log": "[2026-10-10 06:57:28] 20261010-persistent-filter-joint-PF30 start\n[2026-10-10 06:57:28] PF30: starting - joint J5 PF2 weight-eligibility-only exploration fixedlast20\n[2026-10-10 06:57:38] PF30: finished in 0.2 min; output validated\n[2026-10-10 06:57:38] 20261010-persistent-filter-joint-PF30 finished",
+      "artifacts/queues/d237acb24d564db39c4bdedb5e0b74a8/PF30.log": "{\"schema\": \"aictrack1.fresh_route.cuda_smoke.v1\", \"status\": \"passed\", \"synthetic_only\": true, \"candidate\": false, \"config_sha256\": \"c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172\", \"full_visual_tensors\": 152, \"trainable_tensors\": 154, \"trainable_parameters\": 88233966, \"head_gradient_norms\": {\"linear.weight\": 0.10411300510168076, \"linear.bias\": 0.10410420596599579}, \"head_frozen\": false, \"base_loss\": {\"kind\": \"sce\", \"alpha\": 0.1, \"beta\": 1.0, \"log_zero\": -4.0}, \"first_loss\": 4.786383628845215, \"uninterrupted_second_loss\": 4.676631927490234, \"resumed_second_loss\": 4.676631927490234, \"max_parameter_difference\": 1.1641532182693481e-10, \"scheduler_T_max\": 20, \"amp_overflow_skips\": [{\"from_scale\": 65536.0, \"to_scale\": 32768.0}, {\"from_scale\": 32768.0, \"to_scale\": 16384.0}], \"successful_update_count\": 3, \"successful_updates\": [{\"loss\": 4.786383628845215, \"scale\": 16384.0, \"scheduler_epoch\": 1}, {\"loss\": 4.676631927490234, \"scale\": 16384.0, \"scheduler_epoch\": 2}, {\"loss\": 4.676631927490234, \"scale\":",
+      "artifacts/queues/5994df8ddda64e278faea1821a0797ae/chain.log": "[2026-10-10 06:59:14] 20261010-persistent-filter-joint-PF30 start\n[2026-10-10 06:59:14] PF30: starting - joint J5 PF2 weight-eligibility-only exploration fixedlast20\n[2026-10-10 08:48:38] PF30: finished in 109.4 min; output validated\n[2026-10-10 08:48:38] 20261010-persistent-filter-joint-PF30 finished",
+      "artifacts/queues/5994df8ddda64e278faea1821a0797ae/PF30.log": "  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}"
+    },
+    "epoch_summaries": {
+      "root_actual_PF30_smoke_stdout.log": {
+        "read_full_log": true,
+        "total_bytes": 301,
+        "incomplete_or_nonjson_lines": 4,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "root_actual_train_stdout.log": {
+        "read_full_log": true,
+        "total_bytes": 303,
+        "incomplete_or_nonjson_lines": 4,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/d237acb24d564db39c4bdedb5e0b74a8/chain.log": {
+        "read_full_log": true,
+        "total_bytes": 301,
+        "incomplete_or_nonjson_lines": 4,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/d237acb24d564db39c4bdedb5e0b74a8/PF30.log": {
+        "read_full_log": true,
+        "total_bytes": 1191,
+        "incomplete_or_nonjson_lines": 0,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/5994df8ddda64e278faea1821a0797ae/chain.log": {
+        "read_full_log": true,
+        "total_bytes": 303,
+        "incomplete_or_nonjson_lines": 4,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/5994df8ddda64e278faea1821a0797ae/PF30.log": {
+        "read_full_log": false,
+        "total_bytes": 17442758,
+        "incomplete_or_nonjson_lines": 115864,
+        "observed_epochs": [],
+        "latest": []
+      }
+    },
+    "checkpoint_stats": {
+      "artifacts/experiments/PF2_PF30/last.pt": {
+        "bytes": 1424579677,
+        "mtime": 1791593314.0796292
+      },
+      "artifacts/experiments/PF2_PF30/final.pt": {
+        "bytes": 352987755,
+        "mtime": 1791593314.6076303
+      }
+    },
+    "receipts": {
+      "root_actual_stage_and_CPU_preflight.json": {
+        "sha256": "cbb3f716a080b5ecdde04dea8d05e100702bdc057768ed14a70c60a28581d594",
+        "value": {
+          "complete": true,
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "actual_budget_sha256": "ab5edf6db05351732364a8ec6263dc1114d7dcf45ceee341d128a7f7f19a0049",
+          "server_CPU_preflight_complete": true,
+          "CPU_preflight_scope": "actual official assets hashes, new PF budget, original legal H1100 head CPU restore; not full visual model CPU recovery",
+          "test_access": false,
+          "GPU_training_started": false,
+          "observed_unix": 1791586487.957141,
+          "preflight_files": [
+            "artifacts/preflight/146369d2671a41588b2a8a7dd0fc592d.json"
+          ],
+          "free": 26131763200
+        }
+      },
+      "root_actual_PF30_smoke_launch.json": {
+        "sha256": "8702e0db1184e2da9972ff47fa181f3d23e28c5803be15a52391be02043c2ee4",
+        "value": {
+          "owner": {
+            "pid": 31866,
+            "pgrp": 31866,
+            "session": 31866,
+            "start_ticks": 316029820
+          },
+          "source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "observed_unix": 1791586645.5388582,
+          "candidate_training": false
+        }
+      },
+      "root_actual_PF30_smoke_complete.json": {
+        "sha256": "7ff3a51206db0c702594be3626d984df6d6bf54580d0807a846313cc62cdc263",
+        "value": {
+          "complete": true,
+          "scope": "actual synthetic CUDA full154/learnedhead/three successful updates/disk nextstep recovery; not candidate initialization or official data epoch",
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "owner": {
+            "pid": 31866,
+            "pgrp": 31866,
+            "session": 31866,
+            "start_ticks": 316029820
+          },
+          "return_code": 0,
+          "owned_group_closed": true,
+          "canonical_idle": true,
+          "elapsed_seconds": 13.703367948532104,
+          "receipts": [
+            {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010/artifacts/smoke/PF30_d237acb24d564db39c4bdedb5e0b74a8/receipt.json",
+              "sha256": "c3015320f1900a16f54debc26641d0dee8603ccb840320bdc03610b1ecf0e8fd",
+              "value": {
+                "schema": "aictrack1.fresh_route.cuda_smoke.v1",
+                "status": "passed",
+                "synthetic_only": true,
+                "candidate": false,
+                "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+                "full_visual_tensors": 152,
+                "trainable_tensors": 154,
+                "trainable_parameters": 88233966,
+                "head_gradient_norms": {
+                  "linear.weight": 0.10411300510168076,
+                  "linear.bias": 0.10410420596599579
+                },
+                "head_frozen": false,
+                "base_loss": {
+                  "kind": "sce",
+                  "alpha": 0.1,
+                  "beta": 1.0,
+                  "log_zero": -4.0
+                },
+                "first_loss": 4.786383628845215,
+                "uninterrupted_second_loss": 4.676631927490234,
+                "resumed_second_loss": 4.676631927490234,
+                "max_parameter_difference": 1.1641532182693481e-10,
+                "scheduler_T_max": 20,
+                "amp_overflow_skips": [
+                  {
+                    "from_scale": 65536.0,
+                    "to_scale": 32768.0
+                  },
+                  {
+                    "from_scale": 32768.0,
+                    "to_scale": 16384.0
+                  }
+                ],
+                "successful_update_count": 3,
+                "successful_updates": [
+                  {
+                    "loss": 4.786383628845215,
+                    "scale": 16384.0,
+                    "scheduler_epoch": 1
+                  },
+                  {
+                    "loss": 4.676631927490234,
+                    "scale": 16384.0,
+                    "scheduler_epoch": 2
+                  },
+                  {
+                    "loss": 4.676631927490234,
+                    "scale": 16384.0,
+                    "scheduler_epoch": 2
+                  }
+                ],
+                "checkpoint_sha256": "478993282b57e7df9003f1e89c19347391655a6c0c18e908850e681b041bbfa4",
+                "checkpoint_role": "synthetic_resume_only"
+              }
+            }
+          ],
+          "test_access": false,
+          "candidate_initialized_from_smoke": false
+        }
+      },
+      "root_actual_launch.json": {
+        "sha256": "2c8c5e30f0ece2b2699160eee94c99840dfc2cb5628bf3391ec59a13802fcc87",
+        "value": {
+          "schema": "aictrack1.persistent_filter_joint.actual_launch.v1",
+          "controller": {
+            "pid": 31939,
+            "ppid": 31938,
+            "pgrp": 31939,
+            "session": 31939,
+            "start_ticks": "316040409",
+            "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+          },
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "budget_sha256": "ab5edf6db05351732364a8ec6263dc1114d7dcf45ceee341d128a7f7f19a0049",
+          "launch_unix": 1791586751.4260662,
+          "test_access": false,
+          "planned_arms": [
+            "PF30"
+          ],
+          "max_ac_weight": 0.3,
+          "epochs_each": 20,
+          "planned_pause": false,
+          "initialize_from_smoke": false,
+          "new_waiter_or_framework_created": false
+        }
+      },
+      "root_actual_PF30_first_epoch_CPU_metadata_audit_r1.json": {
+        "sha256": "dd95b7ca3df093bb212479931e5efe2ebe0490fe98ff5136eb2f99664d0714bb",
+        "value": {
+          "schema": "aictrack1.PF30.actual_first_epoch_CPU_metadata_audit.v1",
+          "complete": true,
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "actual_checkpoint_sha256": "7d0a68665a2c24e6388adb9126fd6f3ca752e44bbd0ac96e8dd32c7ad7976f20",
+          "actual_epoch": 1,
+          "actual_checkpoint_stat": {
+            "bytes": 1420538077,
+            "mtime": 1791587164.1964562
+          },
+          "scope": "stable atomic mmap CPU tensor/head/optimizer/AC and gate restore plus official train metadata binding; no full-model forward or GPU",
+          "trainable_tensor_count": 154,
+          "trainable_parameters": 88233966,
+          "head_actual_update_max_abs": {
+            "classifier.linear.weight": 0.0024566650390625,
+            "classifier.linear.bias": 0.0013650059700012207
+          },
+          "optimizer_groups": [
+            152,
+            2
+          ],
+          "optimizer_successful_steps": 1856.0,
+          "scheduler_T_max": 20,
+          "sampling": {
+            "mode": "natural",
+            "sample_count": 118958,
+            "class_count_min": 4,
+            "class_count_median": 157.0,
+            "class_count_max": 198,
+            "zero_sample_class_count": 0
+          },
+          "actual_supervision_summary": {
+            "mask_role": "actual_epoch_supervision_mask",
+            "mask_source_completed_epoch": 0,
+            "mask_sha256": "da85ca5fb56865c337a9506b5d86b6701ba4d7343a44fcade621431ddf4d5c5f",
+            "observed": 118958,
+            "supervised": 118958,
+            "excluded": 0,
+            "original_AC_mass": 118958.0,
+            "removed_AC_mass": 0.0,
+            "retained_AC_mass": 118958.0,
+            "removed_AC_mass_fraction": 0.0,
+            "definition": "weighted mass before retained-weight batch renormalization; AMP skips separate"
+          },
+          "next_summary": {
+            "epochs_updated": 1,
+            "excluded": 0,
+            "sample_count": 118958,
+            "note": "suspected persistent disagreement, not measured true noise"
+          },
+          "gate_v2_max_ac_weight": 0.3,
+          "actual_AC_ID_label_binding_count": 118958,
+          "actual_train_seconds": 249.81859596120194,
+          "actual_train_samples_per_second": 476.1775221027772,
+          "initial_epoch_all_keep_reference_expected": true,
+          "observed_unix": 1791587322.5195436,
+          "checkpoint_keys": [
+            "best_state",
+            "best_top1",
+            "class_mapping_sha256",
+            "classifier_head_restored_equal",
+            "classifier_head_source",
+            "clip_weight_sha256",
+            "competition_stage",
+            "confidence_observation_protocol",
+            "confidence_observation_sources",
+            "confidence_weighting",
+            "config_sha256",
+            "cuda_rng_state_all",
+            "epoch",
+            "fresh_route_arm",
+            "fresh_route_source_manifest_sha256",
+            "history",
+            "initial_validation",
+            "mode",
+            "num_classes",
+            "numpy_rng_state",
+            "optimizer",
+            "persistent_filter_state",
+            "position_interpolation",
+            "python_rng_state",
+            "scaler",
+            "scheduler",
+            "selected_route",
+            "split_sha256",
+            "token_readout",
+            "torch_rng_state",
+            "train_manifest_sha256",
+            "trainable_state",
+            "training_scope",
+            "visual_input_resolution"
+          ],
+          "operator_repair_note": "Initial audit assumed head prefix; frozen producer defines classifier prefix. Original training source unchanged, first attempt wrote no receipt.",
+          "GPU": false,
+          "test_image_reads": 0
+        }
+      },
+      "artifacts/launches/PF30_5e743289f7ea47fc9e168f8ba66230b2/START.json": {
+        "sha256": "a3d1b0284e078c0afe60525e60d6b3c068ea8065acb41fd2753b85985a280922",
+        "value": {
+          "owner": {
+            "pid": 31871,
+            "pgrp": 31871,
+            "session": 31871,
+            "start_ticks": "316030095"
+          },
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+          "lease_token": "162773d6e18549419bfde6f199cee140",
+          "test_access": false
+        }
+      },
+      "artifacts/launches/PF30_a5610e2726be47d0b98e4aa96e109b45/START.json": {
+        "sha256": "d21229e9c079f1d283c3a33c5a3d2ac3030591396e96f0a53d700cf8e8a02aa8",
+        "value": {
+          "owner": {
+            "pid": 31944,
+            "pgrp": 31944,
+            "session": 31944,
+            "start_ticks": "316040688"
+          },
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+          "lease_token": "00391c5551bc4fe8a2ddbd673be71911",
+          "test_access": false
+        }
+      },
+      "artifacts/launches/PF30_5e743289f7ea47fc9e168f8ba66230b2/EXIT.json": {
+        "sha256": "03e2b0e8af72842c2c1bbca41407518132dfa75dcc1005df7227f0223140d136",
+        "value": {
+          "owner": {
+            "pid": 31871,
+            "pgrp": 31871,
+            "session": 31871,
+            "start_ticks": "316030095"
+          },
+          "return_code": 0,
+          "group_closed": true,
+          "test_access": false
+        }
+      },
+      "artifacts/launches/PF30_a5610e2726be47d0b98e4aa96e109b45/EXIT.json": {
+        "sha256": "813f27755f1dd5b3e3ca767e06a5d5e655456902d98a492a8f84701d45e1efaf",
+        "value": {
+          "owner": {
+            "pid": 31944,
+            "pgrp": 31944,
+            "session": 31944,
+            "start_ticks": "316040688"
+          },
+          "return_code": 0,
+          "group_closed": true,
+          "test_access": false
+        }
+      }
+    },
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21617000448,
+        "free": 10595254272
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 104681181184,
+        "free": 24167837696
+      }
+    },
+    "cgroup": {
+      "/proc/self/cgroup": "12:perf_event:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n11:devices:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n10:hugetlb:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n9:freezer:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n8:memory:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n7:rdma:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n6:blkio:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n5:net_cls,net_prio:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n4:pids:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n3:cpu,cpuacct:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n2:cpuset:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n1:name=systemd:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n0::/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+      "resolved_mounts": {
+        "perf_event": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/perf_event",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/perf_event"
+        },
+        "devices": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/devices",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/devices"
+        },
+        "hugetlb": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/hugetlb",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/hugetlb"
+        },
+        "freezer": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/freezer",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/freezer"
+        },
+        "memory": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/memory",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/memory"
+        },
+        "rdma": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/rdma",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/rdma"
+        },
+        "blkio": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/blkio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/blkio"
+        },
+        "net_cls": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/net_cls,net_prio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/net_cls,net_prio"
+        },
+        "net_prio": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/net_cls,net_prio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/net_cls,net_prio"
+        },
+        "pids": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/pids",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/pids"
+        },
+        "cpu": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpu,cpuacct",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpu,cpuacct"
+        },
+        "cpuacct": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpu,cpuacct",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpu,cpuacct"
+        },
+        "cpuset": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpuset",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpuset"
+        },
+        "name=systemd": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/systemd",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/systemd"
+        }
+      },
+      "/sys/fs/cgroup/memory/memory.usage_in_bytes": "40067657728",
+      "/sys/fs/cgroup/memory/memory.limit_in_bytes": "66571993088",
+      "/sys/fs/cgroup/memory/memory.max_usage_in_bytes": "64386166784",
+      "/sys/fs/cgroup/memory/memory.failcnt": "0",
+      "/sys/fs/cgroup/memory/memory.stat": "cache 39388905472\nrss 332492800\nrss_huge 0\nshmem 245760\nmapped_file 5677056\ndirty 1486848\nwriteback 3379200\nswap 0\npgpgin 10122098646\npgpgout 10112402541\npgfault 18076767489\npgmajfault 2244\ninactive_anon 4866048\nactive_anon 328187904\ninactive_file 2550755328\nactive_file 36837064704\nunevictable 0\nhierarchical_memory_limit 66571993088\nhierarchical_memsw_limit 66571993088\ntotal_cache 39388905472\ntotal_rss 332492800\ntotal_rss_huge 0\ntotal_shmem 245760\ntotal_mapped_file 5677056\ntotal_dirty 1486848\ntotal_writeback 3379200\ntotal_swap 0\ntotal_pgpgin 10122098646\ntotal_pgpgout 10112402541\ntotal_pgfault 18076767489\ntotal_pgmajfault 2244\ntotal_inactive_anon 4866048\ntotal_active_anon 328187904\ntotal_inactive_file 2550755328\ntotal_active_file 36837064704\ntotal_unevictable 0",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.cfs_quota_us": "1600000",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.cfs_period_us": "100000",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.stat": "nr_periods 676293\nnr_throttled 9\nthrottled_time 34356714724",
+      "/sys/fs/cgroup/cpu,cpuacct/cpuacct.usage": "404663351388621",
+      "/sys/fs/cgroup/pids/pids.current": "205",
+      "/sys/fs/cgroup/pids/pids.max": "20480"
+    },
+    "gpu": "1 MiB, 0 %"
+  }
+}

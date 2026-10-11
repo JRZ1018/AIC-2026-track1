@@ -1,0 +1,114 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/supervision_actual_smoke_complete.json",
+  "original_sha256": "7705ef1d04e4e4a58ef5333998967643fb7d657e62b772d172d2fd0e676a6d5a",
+  "omitted_fields": [
+    "/runtime/environment"
+  ],
+  "record": {
+    "schema": "aictrack1.supervision.root_actual_smoke_acceptance.v1",
+    "complete": true,
+    "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+    "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+    "smoke_receipt_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/smoke/p1_S_239b1703b3a0427cba1e2e8c72cdbf45/receipt.json",
+    "smoke_receipt_sha256": "eda7c21197191fca6e2b3bde26ef432a0ce57eb50c309fb0e015cb4d765afd42",
+    "smoke": {
+      "schema": "aictrack1.supervision.cuda_smoke.v1",
+      "status": "passed",
+      "synthetic_only": true,
+      "candidate": false,
+      "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+      "full_visual_tensors": 152,
+      "trainable_tensors": 152,
+      "trainable_parameters": 87849216,
+      "head_gradient_norms": {
+        "linear.weight": 0.0,
+        "linear.bias": 0.0
+      },
+      "head_restored_equal": true,
+      "head_frozen": true,
+      "base_loss": {
+        "kind": "sce",
+        "alpha": 0.5,
+        "beta": 1.0,
+        "log_zero": -4.0
+      },
+      "first_loss": 8.328241348266602,
+      "uninterrupted_second_loss": 7.813442707061768,
+      "resumed_second_loss": 7.813442707061768,
+      "max_parameter_difference": 9.313225746154785e-10,
+      "scheduler_T_max": 20,
+      "amp_overflow_skips": [
+        {
+          "from_scale": 65536.0,
+          "to_scale": 32768.0
+        },
+        {
+          "from_scale": 32768.0,
+          "to_scale": 16384.0
+        },
+        {
+          "from_scale": 16384.0,
+          "to_scale": 8192.0
+        },
+        {
+          "from_scale": 8192.0,
+          "to_scale": 4096.0
+        }
+      ],
+      "successful_update_count": 3,
+      "successful_updates": [
+        {
+          "loss": 8.328241348266602,
+          "scale": 4096.0,
+          "scheduler_epoch": 1
+        },
+        {
+          "loss": 7.813442707061768,
+          "scale": 4096.0,
+          "scheduler_epoch": 2
+        },
+        {
+          "loss": 7.813442707061768,
+          "scale": 4096.0,
+          "scheduler_epoch": 2
+        }
+      ],
+      "checkpoint_sha256": "dc710b7ee09346e3cb02eafde84421b89bc7ed3413e0dcf1d0b904d085fa8573",
+      "checkpoint_role": "synthetic_resume_only"
+    },
+    "runtime_receipt_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009/artifacts/runtime_receipts/S_239b1703b3a0427cba1e2e8c72cdbf45.json",
+    "runtime_receipt_sha256": "d6626da50a385b209f55fb6646d6dec8327e9deb180ff90a885422733c13136f",
+    "runtime": {
+      "schema": "aictrack1.supervision.runtime.v1",
+      "arm": "S",
+      "pid": 230023,
+      "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+      "source_manifest_sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+      "collected_at_unix": 1791499679.2745595,
+      "test_access": false,
+      "actual_torch_threads": 4,
+      "actual_torch_interop_threads": 64
+    },
+    "closure": {
+      "owned_leaders": [
+        230016,
+        230023
+      ],
+      "owned_process_groups_empty": true,
+      "canonical_lock_absent": true
+    },
+    "budget": {
+      "schema": "aictrack1.supervision.budget.v1",
+      "phase_start_unix": 1791499672.7301335,
+      "deadline_unix": 1791521272.7301335,
+      "initial_free_bytes": 13013950464,
+      "disk_max_bytes": 6442450944,
+      "min_free_bytes": 3221225472
+    },
+    "chain_log_sha256": "a6ca8cae714f12bff8a6d01032d32b5f9d80a89f467d0a2c9b28cc526abaf309",
+    "synthetic_only": true,
+    "submission_ready": false,
+    "collected_epoch": 1791499799.9498136
+  }
+}

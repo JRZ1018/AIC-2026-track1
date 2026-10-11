@@ -1,0 +1,14 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_confirmation_H1_bind_r1.json",
+  "original_sha256": "1385b1e2dc2852af0114366600791a46a9d6148fb6e4df045b05b25a4308daae",
+  "omitted_fields": [
+    "/command",
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "returncode": 0,
+    "GPU_started": false
+  }
+}

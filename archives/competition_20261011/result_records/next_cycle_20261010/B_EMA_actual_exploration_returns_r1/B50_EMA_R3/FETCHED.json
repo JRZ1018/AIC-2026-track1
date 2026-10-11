@@ -1,0 +1,95 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/FETCHED.json",
+  "original_sha256": "817f951a5e13c723bfb6d7c638d66dc24f58855d268e9f95534c09e4e2ae5178",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.B_EMA.actual_small_returns.v1",
+    "arm": "B50_EMA",
+    "test_images_returned": false,
+    "returned_unix": 1791599504.5977037,
+    "complete": true,
+    "observed_unix": 1791599502.0339518,
+    "owned_rows": [],
+    "canonical": null,
+    "bundle_sha256": "fa7db10eb3ea43ea3451a5080e6d2734c15847bb75620c4b6683db395de010f8",
+    "bundle_bytes": 547873,
+    "files": {
+      "candidate_graph_increment_balanced_supported_unique_predictions.npz": {
+        "bytes": 51295,
+        "sha256": "8ada061c65b56b93e437bf3ff54f7f092bf8e4685751845ff5e8490f5751adc7",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/comparisons/B50_EMA/candidate_graph_increment_balanced_supported_unique_predictions.npz"
+      },
+      "candidate_graph_increment_natural_unique_images_predictions.npz": {
+        "bytes": 94126,
+        "sha256": "c144465f58ad97ea44e4c2428dce87be943fdb5e91a8c150d6e7f92cf1ceba50",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/comparisons/B50_EMA/candidate_graph_increment_natural_unique_images_predictions.npz"
+      },
+      "graph_combo_vs_J5_GRAPH_balanced_supported_unique_predictions.npz": {
+        "bytes": 25588,
+        "sha256": "2d33e92dbc04452c9c09442fdeba720429e63bf3c7418dc654bdb716c6fc263b",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/comparisons/B50_EMA/graph_combo_vs_J5_GRAPH_balanced_supported_unique_predictions.npz"
+      },
+      "graph_combo_vs_J5_GRAPH_natural_unique_images_predictions.npz": {
+        "bytes": 47111,
+        "sha256": "807f9e74e246c8f7f7bb32c83d0522087f95abfe023b0a0209a781a898020186",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/comparisons/B50_EMA/graph_combo_vs_J5_GRAPH_natural_unique_images_predictions.npz"
+      },
+      "raw_model_P7_vs_J5_P7_balanced_supported_unique_predictions.npz": {
+        "bytes": 51328,
+        "sha256": "73624689a5723f64c763e7cd4ea7e1beff883032e7e4aa0ece6472585a321b5a",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/comparisons/B50_EMA/raw_model_P7_vs_J5_P7_balanced_supported_unique_predictions.npz"
+      },
+      "raw_model_P7_vs_J5_P7_natural_unique_images_predictions.npz": {
+        "bytes": 94269,
+        "sha256": "f46b651ba1425c8ca0d90c29ed8ec3523ab7cea0e546d19e377114d2fbc0f126",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/comparisons/B50_EMA/raw_model_P7_vs_J5_P7_natural_unique_images_predictions.npz"
+      },
+      "report.json": {
+        "bytes": 2248889,
+        "sha256": "87a8e93bd89b767d55c973cce0c2ce3dba1524ad17da3f47c528e1675b0a5c75",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/comparisons/B50_EMA/report.json"
+      },
+      "comparison_result_manifest": {
+        "bytes": 1459,
+        "sha256": "a902d918afb777e096bd963066dc1d537477853f1675a521ee1a8682630bb273",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/comparisons/B50_EMA/result_manifest.json"
+      },
+      "fourview_input_identity.json": {
+        "bytes": 15132,
+        "sha256": "f1674312eb310259d06fa62a210bed091401352ae391d0fd4c78329a7c3eac05",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/diagnostics/B50_EMA/input_identity.json"
+      },
+      "fourview_p1_checkpoint_audit.json": {
+        "bytes": 7336,
+        "sha256": "757a70e8bd8bb113edd0fd958338286b8748453795466dcb7145d72ea7c5ffd3",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/diagnostics/B50_EMA/p1_checkpoint_audit.json"
+      },
+      "fourview_result_manifest.json": {
+        "bytes": 1777,
+        "sha256": "b58e8d72e23bd6bb9221deda20b5f535d984f4420efea264940d22816a5b9be2",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/diagnostics/B50_EMA/result_manifest.json"
+      },
+      "query_indices.npz": {
+        "bytes": 72663,
+        "sha256": "215662c1e8712e1d97f46f72c5268065f3ee65ce8f647e066adfd38bf475baf5",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/inputs/frozen_queries/query_indices.npz"
+      },
+      "query_identity.json": {
+        "bytes": 62655,
+        "sha256": "a2c9c49607a5d21911e7d293485c15835eb594c76b1e16bf5da8a24861c2569a",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/inputs/frozen_queries/query_identity.json"
+      },
+      "control_import.json": {
+        "bytes": 1303,
+        "sha256": "edff747523b22bfe6690d85cb5594ccbbf1bc75af3bd71374aaa1a105434ed1a",
+        "remote_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/inputs/control_import.json"
+      }
+    },
+    "report_sha256": "87a8e93bd89b767d55c973cce0c2ce3dba1524ad17da3f47c528e1675b0a5c75",
+    "source_manifest_sha256": "7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045",
+    "primary_delta_pp": -0.17615176151761516,
+    "natural_delta_pp": -0.057167838046877625,
+    "direction": "exploratory_not_positive"
+  }
+}

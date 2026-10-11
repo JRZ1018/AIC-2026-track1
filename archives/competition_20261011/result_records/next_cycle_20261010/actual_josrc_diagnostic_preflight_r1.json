@@ -1,0 +1,87 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_josrc_diagnostic_preflight_r1.json",
+  "original_sha256": "971059a9a334677db97d8f262073bb5126b7142b2953d3acfdc1b851ef652365",
+  "omitted_fields": [
+    "/canonical_after/command",
+    "/canonical_before/command",
+    "/command",
+    "/stderr"
+  ],
+  "record": {
+    "GPU_started": false,
+    "action": "actual_server_CPU_dependency_check",
+    "actual_budget_sha256": "10ceae4fe1a3f435e73db058955f414c3e00ded1dd38ffe52e928f094e541b73",
+    "actual_training_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "bound_diagnostic_source_sha256": "24aa7656811de9027162a20f8de6c5f4a015123ee41aeafc2602c653bda40013",
+    "candidate_checkpoint_opened": false,
+    "canonical_after": {
+      "config": "configs/experiment/p1_B25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_B25",
+      "owner": "20261010-josrc-inspired-profile-or-selected20",
+      "queue_pid": 19633,
+      "schema_version": 1,
+      "started_at": "2026-10-10T00:09:17.182364+08:00",
+      "token": "83a0353ce2c442db94a9bbf656fdd8b7",
+      "trainer_pid": 19640
+    },
+    "canonical_before": {
+      "config": "configs/experiment/p1_B25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_B25",
+      "owner": "20261010-josrc-inspired-profile-or-selected20",
+      "queue_pid": 19633,
+      "schema_version": 1,
+      "started_at": "2026-10-10T00:09:17.182364+08:00",
+      "token": "83a0353ce2c442db94a9bbf656fdd8b7",
+      "trainer_pid": 19640
+    },
+    "complete": true,
+    "entry": {
+      "checkpoint_opened": false,
+      "complete": true,
+      "diagnostic_source_manifest_sha256": "24aa7656811de9027162a20f8de6c5f4a015123ee41aeafc2602c653bda40013",
+      "frozen_training_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+      "gpu_probed": false,
+      "images_opened": false,
+      "imports_and_signatures_verified": true,
+      "independent_confirmation": false,
+      "independent_host_memory_snapshot": {
+        "cgroup": {
+          "available_bytes": 7690575872,
+          "limit_bytes": 66571993088,
+          "source": "/sys/fs/cgroup/memory/memory.limit_in_bytes",
+          "used_bytes": 58881417216
+        },
+        "effective_available_bytes": 7690575872,
+        "gpu_probed": false,
+        "host_available_bytes": 469683703808,
+        "platform": "linux",
+        "total_bytes": 540662706176
+      },
+      "model_loaded": false,
+      "old_query_reused_for_exploration": true,
+      "real_vendor_cli_help_passed": true,
+      "real_vendor_production_argv_parsed": true,
+      "remote_assets_opened": false,
+      "schema": "aictrack1.fresh_route.cpu_entry_dependency_check.v1",
+      "static_imports": {
+        "__future__": "/root/miniconda3/lib/python3.12/__future__.py",
+        "aictrack1.engine.training_queue": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/src/aictrack1/engine/training_queue.py",
+        "aictrack1.models.heads": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/src/aictrack1/models/heads.py",
+        "diagnostic_resources": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/diagnostic_resources.py",
+        "fresh_diag_contract": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/fresh_diag_contract.py",
+        "mainline_h1_contract": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/scripts/mainline_h1_contract.py",
+        "p1_contract": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/scripts/p1_contract.py",
+        "pathlib": "/root/miniconda3/lib/python3.12/pathlib.py",
+        "phase_guard": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/phase_guard.py",
+        "view_features": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010/view_features.py"
+      },
+      "test_access": false,
+      "training_steps": 0
+    },
+    "observed_unix": 1791563704.8315973,
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_diagnostic_20261010",
+    "template_source_sha256": "35c191ef449d141e4a0df9cdac9a99dadcc78378bba29514545419ea4e0af589",
+    "test_access": false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_josrc_r2_profile_bind.json",
+  "original_sha256": "3dbea48927ecde247b3b51ce5c60bb5b674aa118668432a48d390aa2afc2e16d",
+  "omitted_fields": [
+    "/stdout"
+  ],
+  "record": {
+    "bound": true,
+    "mode": "profile",
+    "template_source_sha256": "8d9c229f645e20a306b11a69bc57a6f4c7141d0c90783bd7d616cb02e580a276",
+    "bound_source_sha256": "7f2c25a43df3b80169fc849828bbfab91ac25871642d0524ef69648dcff84710",
+    "budget_sha256": "4f965fe2c3f0182782daf3903167853267a1f1f02f749f4d69bff99afe33c3e0",
+    "GPU_started": false
+  }
+}

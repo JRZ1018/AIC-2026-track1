@@ -1,0 +1,15 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/COMPLETE.json",
+  "original_sha256": "1904ff4bec4962accbc0ee9ef1073175f33577d034772c291de15be32aab3e50",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "manifest_sha256": "4eb23dc2627848f949b026ed5c7c03739436c72e91aa374cbd4f284d7bb781e6",
+    "all_files_SHA": true,
+    "actual_local_model_CPU_recovery": true,
+    "acceptance_sha256": "16eec744cdd5eb12429e256e44d94019a8c77deb60ae8281ed31b2959cb8df4d",
+    "package_already_delivered": true,
+    "automation_deleted": true
+  }
+}

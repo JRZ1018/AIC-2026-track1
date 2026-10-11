@@ -1,0 +1,30 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_expanded_full_template_stage_and_CPU_entry.json",
+  "original_sha256": "9057989b85699cc559b4f68961c729fcc3440b26d4f1d1c672d027e013489ed2",
+  "omitted_fields": [
+    "/members"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_expanded_full_template_stage.v1",
+    "template_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_expanded_template_20261009",
+    "template_manifest_sha256": "578eb15ce02421e16e3476b063c406fdf0322d8cc63233e740c29d9f51ab4d71",
+    "CPU_CLI_checks": [
+      {
+        "entry": "scripts/prepare_full_route.py",
+        "returncode": 0,
+        "stdout_tail": "usage: prepare_full_route.py [-h] --target TARGET --confirmation CONFIRMATION\n                             --confirmation-sha256 CONFIRMATION_SHA256\n                             --budget BUDGET --budget-sha256 BUDGET_SHA256\n\noptions:\n  -h, --help            show this help message and exit\n  --target TARGET\n  --confirmation CONFIRMATION\n  --confirmation-sha256 CONFIRMATION_SHA256\n  --budget BUDGET\n  --budget-sha256 BUDGET_SHA256\n"
+      },
+      {
+        "entry": "scripts/run_full.py",
+        "returncode": 0,
+        "stdout_tail": "usage: run_full.py [-h] [--resume] [--smoke]\n                   [--stop-after-epoch STOP_AFTER_EPOCH]\n\noptions:\n  -h, --help            show this help message and exit\n  --resume\n  --smoke\n  --stop-after-epoch STOP_AFTER_EPOCH\n"
+      }
+    ],
+    "observed_unix": 1791529086.2121081,
+    "actual_positive_confirmation_bound": false,
+    "actual_full_training_started": false,
+    "actual_checkpoint": null,
+    "test_access": false
+  }
+}

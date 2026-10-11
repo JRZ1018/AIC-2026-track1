@@ -1,0 +1,285 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/FETCHED.json",
+  "original_sha256": "d53e55c3738e603f1cb714efbadbc0e24d52f4e50397d0057968bafea4988e27",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "files": 211,
+    "total_bytes": 1985393837,
+    "all_SHA_verified": true,
+    "manifest_sha256": "4eb23dc2627848f949b026ed5c7c03739436c72e91aa374cbd4f284d7bb781e6",
+    "preexisting_or_reused": 173,
+    "new_bytes_received": 1569744566,
+    "seconds": 388.9386751651764,
+    "segments": [
+      {
+        "key": "inference/artifacts/inference.log",
+        "offset": 0,
+        "bytes": 579,
+        "segment_sha256": "2aaa48bcf683c96b4c0c0796f7f6b388910b40397b72a6a8fb561308b769d0bb",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/launch_receipt.json",
+        "offset": 0,
+        "bytes": 585,
+        "segment_sha256": "c101b3a4d22360ff94de5bea0a56997c79acfb836d63135fdeb226278d68aa60",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/resource_policy.json",
+        "offset": 0,
+        "bytes": 613,
+        "segment_sha256": "539e7ff39c3aff4d7d4dfb9e110365dca427f8ed748e0401ff468221e52c5f10",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/runtime_receipts/L50_044277e231f44ef687a4d122ad86fe8a.json",
+        "offset": 0,
+        "bytes": 758,
+        "segment_sha256": "459101c2c062c94e4bad07076c4cfa0e95c061eaff49e05d54fe15088513785b",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/runtime_receipts/L50_d44adf792706453f9beb0ed74864a111.json",
+        "offset": 0,
+        "bytes": 758,
+        "segment_sha256": "bc98bd6108860dc7601d0e61bbfdf0d983a7e015da27d8c999a73bcf23ecdca6",
+        "remote_exit": 0
+      },
+      {
+        "key": "submission/inference_artifacts.json",
+        "offset": 0,
+        "bytes": 772,
+        "segment_sha256": "8ae7110c7b7ba6504dd73303abb95bfcd9953ed2985de57745d48e998c89ffda",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/full_budget.json",
+        "offset": 0,
+        "bytes": 886,
+        "segment_sha256": "1edccb01c54e50a7f83434da6974bf74233c5fab12296968047d559b579ec22e",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/inputs/full_budget.json",
+        "offset": 0,
+        "bytes": 886,
+        "segment_sha256": "1edccb01c54e50a7f83434da6974bf74233c5fab12296968047d559b579ec22e",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/inference_freeze.json",
+        "offset": 0,
+        "bytes": 1219,
+        "segment_sha256": "815ef861fa8ea40d262757a1f431745e4701bcfdaa1d23aee21a3fc4906dc33d",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/final_graph_budget.json",
+        "offset": 0,
+        "bytes": 1417,
+        "segment_sha256": "16c7f948340d8f59da56ced10bc5dadaa9cea85d28e82e053e36933b82e04f23",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/config.yaml",
+        "offset": 0,
+        "bytes": 1675,
+        "segment_sha256": "7214f98e096a7e00fbaefced617e8d7261234412c6619d72909d32c10a916431",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/configs/experiment/p1_full_L50.yaml",
+        "offset": 0,
+        "bytes": 1675,
+        "segment_sha256": "7214f98e096a7e00fbaefced617e8d7261234412c6619d72909d32c10a916431",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/inference_command.json",
+        "offset": 0,
+        "bytes": 1901,
+        "segment_sha256": "0f948fecfbc8bf69ab54fa3955aa32220a9d40b876d1b34972fcf845b938ecb9",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/inputs/actual_full_binding.json",
+        "offset": 0,
+        "bytes": 2421,
+        "segment_sha256": "8c93f87c9563b3de2e92924b100f376a559ba6ec5ccf81301ffa655a84e59344",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/inputs/actual_full_binding.json",
+        "offset": 0,
+        "bytes": 2421,
+        "segment_sha256": "8c93f87c9563b3de2e92924b100f376a559ba6ec5ccf81301ffa655a84e59344",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/inputs/full_assets.json",
+        "offset": 0,
+        "bytes": 2987,
+        "segment_sha256": "56691e97868d87616fe570b45ad195e5693278485d0608e2126cd83e9e03f79f",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/artifacts/final_graph_result.json",
+        "offset": 0,
+        "bytes": 3013,
+        "segment_sha256": "ed6314db4ac1b52e7508c0f8cc96c88ce1d4b1385d67365ddd0873f2fc9d92bb",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/full_route_runtime.py",
+        "offset": 0,
+        "bytes": 4672,
+        "segment_sha256": "62c83b52eebada5eafea93b738265b5fafc83a953521fcf2e08be308e5a2af73",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/selection.json",
+        "offset": 0,
+        "bytes": 5566,
+        "segment_sha256": "1b3a28bb3f55b08506ccc888c62498cc87a7bd1d47d5902186c0bd02022016b7",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/inputs/fresh_confirmation.json",
+        "offset": 0,
+        "bytes": 5566,
+        "segment_sha256": "1b3a28bb3f55b08506ccc888c62498cc87a7bd1d47d5902186c0bd02022016b7",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/run_full.py",
+        "offset": 0,
+        "bytes": 5832,
+        "segment_sha256": "f9edc4fd7f5540ee5f8b95f9467927561c3a860a22e3ab1c928c20dab6ca20c1",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/full_route_contract.py",
+        "offset": 0,
+        "bytes": 6890,
+        "segment_sha256": "b29df204f18b3833e83100f02ebe7ffbdcfc3cc8e09ee4c36de98a567d18781e",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/prepare_final_source.py",
+        "offset": 0,
+        "bytes": 7111,
+        "segment_sha256": "26bcd2a9a7d4f1066116a99785c0deee6a8755ca87ddc2b7361892d2149cfea8",
+        "remote_exit": 0
+      },
+      {
+        "key": "full_source/scripts/L50_two_reused_admission.py",
+        "offset": 0,
+        "bytes": 7293,
+        "segment_sha256": "b664d19405997ef89f7a93b050d6745a6b26fa1b00062e5d4075dd0a962e9050",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference/source_manifest.json",
+        "offset": 0,
+        "bytes": 9772,
+        "segment_sha256": "ad649293d58501840350e6760b1da54166a0e83709715cc8d4408456527cb2fb",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/references/UPSTREAM_FULL_TEMPLATE.json",
+        "offset": 0,
+        "bytes": 10499,
+        "segment_sha256": "dc448025bd930632aca3a0fe45aa5e8486ce8375e73675bf8d91d6022437d885",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/accept_return.py",
+        "offset": 0,
+        "bytes": 10890,
+        "segment_sha256": "83be95e677ab86ce2d7a58fee2e4e1333488af57bf2719a72cb4fccefded398c",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/full_source.json",
+        "offset": 0,
+        "bytes": 11672,
+        "segment_sha256": "3ebb8783263d63cead51e26a043d5990de5b9093da03394a5d6a17dbacd97df5",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/run_final.py",
+        "offset": 0,
+        "bytes": 12922,
+        "segment_sha256": "7f94d4888ba159c611c8ec4d9a9335fe83afbebafa9d5764b6f262f9917050bc",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/audit_full_checkpoint.py",
+        "offset": 0,
+        "bytes": 13229,
+        "segment_sha256": "2d1898cd1e5ac26de5f88924d5d96413fa498544845fd017eef40a19c5e96287",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/tests/test_L35_final_contract.py",
+        "offset": 0,
+        "bytes": 15190,
+        "segment_sha256": "a617fd28c3dd530407713273269029ee77e51b37d9e3d25ac2f8c483843e8627",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/final_contract.py",
+        "offset": 0,
+        "bytes": 18560,
+        "segment_sha256": "e555cd892e27d2f7b635c2dbc04e30ec5a3efd8e99316bff9842a052b6704257",
+        "remote_exit": 0
+      },
+      {
+        "key": "inference_source/scripts/infer_and_build_submission.py",
+        "offset": 0,
+        "bytes": 30946,
+        "segment_sha256": "1a972eda0b04efadf3d8883a9c75844a44f3a2b57ffe65f779ef016a6df4d953",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/metrics.json",
+        "offset": 0,
+        "bytes": 7815238,
+        "segment_sha256": "9e9855663e0cfa408560744becb54c9f19a26a6a3f69a03fd8e6baee9dc73734",
+        "remote_exit": 0
+      },
+      {
+        "key": "submission/fused_logits.pt",
+        "offset": 0,
+        "bytes": 60661033,
+        "segment_sha256": "a7c139748492de3677f5739a5d0da2d3295ba25afe04395220ef07674e733bbd",
+        "remote_exit": 0
+      },
+      {
+        "key": "submission/four_view_features.pt",
+        "offset": 0,
+        "bytes": 81180265,
+        "segment_sha256": "096c271c281a6c01e1a70dbd88d68dfdfda99cea635670ef2301ed24153ab2ba",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/final.pt",
+        "offset": 0,
+        "bytes": 352988267,
+        "segment_sha256": "5a7db0752140e0b73bc923fe62951253dd97b0f6c347a0c8d6b588873d6027e9",
+        "remote_exit": 0
+      },
+      {
+        "key": "full/last.pt",
+        "offset": 0,
+        "bytes": 1066898587,
+        "segment_sha256": "09347bbba10710e81ba1c5665b6dc7edbdf282f97a5c9214b322efec72233f36",
+        "remote_exit": 0
+      }
+    ],
+    "local_CPU_acceptance_pending": true
+  }
+}

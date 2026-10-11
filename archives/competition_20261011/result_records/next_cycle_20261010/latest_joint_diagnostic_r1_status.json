@@ -1,0 +1,876 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_joint_diagnostic_r1_status.json",
+  "original_sha256": "3f1bff1442d7634c80ec1e588d8365d947bcb4a57525ea9481f559e5ed07beaf",
+  "omitted_fields": [
+    "/receipts/artifacts/diagnostics/JOINT_A3/runtime_receipt.json/value/upstream_receipts/receipt/environment",
+    "/receipts/artifacts/diagnostics/JOINT_A5/runtime_receipt.json/value/upstream_receipts/receipt/environment",
+    "/receipts/root_actual_launch_A3.json/command",
+    "/receipts/root_actual_launch_A3.json/process/argv",
+    "/receipts/root_actual_launch_A5.json/command",
+    "/receipts/root_actual_launch_A5.json/process/argv"
+  ],
+  "record": {
+    "observed_unix": 1791558956.1633368,
+    "source_sha256": "ad9902c28f7d32026db335843c7ab365793d6a369c218c8b7c9b852f6b6f705a",
+    "processes": [],
+    "canonical": null,
+    "logs": {
+      "root_stdout_A3.log": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n{\n  \"scope\": \"Stage 2 train-derived fixed validation only; no test access\",\n  \"view_protocol\": \"native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint\",\n  \"visual_input_resolution\": 336,\n  \"smoke_only\": false,\n  \"full_validation_count\": 29737,\n  \"evaluated_count\": 29737,\n  \"experiment_config_sha256\": \"6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6\",\n  \"checkpoint_sha256\": \"f7aaab8b8b71d199048e0a16adac8dd54c8b8b4ac797abbc835578502329545c\",\n  \"split_sha256\": \"57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7\",\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"class_mapping_sha256\": \"811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879\",\n  \"elapsed_seconds\": 211.84118122514337,\n  \"center\": {\n    \"top1\": 0.7335978746414185,\n    \"macro_accuracy\": 0.7246518731117249,\n    \"zero_recall_classes\": 5,\n    \"tail_class_mean_recall\": 0.7055464386940002,\n    \"tail_sample_accuracy\": 0.7213037610054016\n  },\n  \"flip_tta\": {\n    \"top1\": 0.7404580116271973,\n    \"macro_accuracy\": 0.7314675450325012,\n    \"zero_recall_classes\": 5,\n    \"tail_class_mean_recall\": 0.7117086052894592,\n    \"tail_sample_accuracy\": 0.7275719046592712\n  },\n  \"delta_tta_minus_center\": {\n    \"top1\": 0.006860136985778809,\n    \"macro_accuracy\": 0.006815671920776367,\n    \"tail_class_mean_recall\": 0.006162166595458984,\n    \"tail_sample_accuracy\": 0.006268143653869629\n  },\n  \"paired_wins\": 530,\n  \"paired_losses\": 326,\n  \"changed_predictions\": 1991,\n  \"checkpoint_role\": \"final\",\n  \"checkpoint_epoch\": 20,\n  \"four_view_protocol\": \"native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged\",\n  \"four_view_resize\": 384,\n  \"four_view\": {\n    \"top1\": 0.7436527013778687,\n    \"macro_accuracy\": 0.734660804271698,\n    \"zero_recall_classes\": 4,\n    \"tail_class_mean_recall\": 0.7167400121688843,\n    \"tail_sample_accuracy\": 0.7330564856529236\n  },\n  \"delta_four_minus_flip_tta\": {\n    \"top1\": 0.0031946897506713867,\n    \"macro_accuracy\": 0.0031932592391967773,\n    \"tail_class_mean_recall\": 0.005031406879425049,\n    \"tail_sample_accuracy\": 0.005484580993652344\n  },\n  \"four_view_changed_predictions\": 1766,\n  \"four_view_paired_wins\": 438,\n  \"four_view_paired_losses\": 343,\n  \"fused_logits\": {\n    \"path\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/diagnostics/JOINT_A3/fused_logits.pt\",\n    \"sha256\": \"d37fdf625377aa512b4f17896f9ba745bfed5b2d8eea5accfacaa3eb0e900d87\",\n    \"dtype\": \"torch.float16\",\n    \"shape\": [\n      29737,\n      750\n    ],\n    \"weights_only_safe_load_verified\": true\n  }\n}\n{\"complete\": true, \"arm\": \"A3\", \"identity\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/diagnostics/JOINT_A3/input_identity.json\", \"exploration_only\": true, \"test_access\": false}\n",
+      "root_stdout_A5.log": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n{\n  \"scope\": \"Stage 2 train-derived fixed validation only; no test access\",\n  \"view_protocol\": \"native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint\",\n  \"visual_input_resolution\": 336,\n  \"smoke_only\": false,\n  \"full_validation_count\": 29737,\n  \"evaluated_count\": 29737,\n  \"experiment_config_sha256\": \"8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa\",\n  \"checkpoint_sha256\": \"a499ef63f2b103ed01950f8627536b9e3aa8f503ea8e1fa35070d6136e071f97\",\n  \"split_sha256\": \"57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7\",\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"class_mapping_sha256\": \"811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879\",\n  \"elapsed_seconds\": 212.87246677884832,\n  \"center\": {\n    \"top1\": 0.7329925894737244,\n    \"macro_accuracy\": 0.7240270376205444,\n    \"zero_recall_classes\": 5,\n    \"tail_class_mean_recall\": 0.7044851779937744,\n    \"tail_sample_accuracy\": 0.7202068567276001\n  },\n  \"flip_tta\": {\n    \"top1\": 0.7398191094398499,\n    \"macro_accuracy\": 0.7308068871498108,\n    \"zero_recall_classes\": 5,\n    \"tail_class_mean_recall\": 0.7113217115402222,\n    \"tail_sample_accuracy\": 0.7271801233291626\n  },\n  \"delta_tta_minus_center\": {\n    \"top1\": 0.006826519966125488,\n    \"macro_accuracy\": 0.006779849529266357,\n    \"tail_class_mean_recall\": 0.006836533546447754,\n    \"tail_sample_accuracy\": 0.0069732666015625\n  },\n  \"paired_wins\": 545,\n  \"paired_losses\": 342,\n  \"changed_predictions\": 2009,\n  \"checkpoint_role\": \"final\",\n  \"checkpoint_epoch\": 20,\n  \"four_view_protocol\": \"native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged\",\n  \"four_view_resize\": 384,\n  \"four_view\": {\n    \"top1\": 0.7429128885269165,\n    \"macro_accuracy\": 0.7339688539505005,\n    \"zero_recall_classes\": 3,\n    \"tail_class_mean_recall\": 0.7154036164283752,\n    \"tail_sample_accuracy\": 0.7313327789306641\n  },\n  \"delta_four_minus_flip_tta\": {\n    \"top1\": 0.0030937790870666504,\n    \"macro_accuracy\": 0.0031619668006896973,\n    \"tail_class_mean_recall\": 0.004081904888153076,\n    \"tail_sample_accuracy\": 0.004152655601501465\n  },\n  \"four_view_changed_predictions\": 1783,\n  \"four_view_paired_wins\": 437,\n  \"four_view_paired_losses\": 345,\n  \"fused_logits\": {\n    \"path\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/diagnostics/JOINT_A5/fused_logits.pt\",\n    \"sha256\": \"c8857c9429795b2f04fdb6964698ba3217001a16c8315e6229a4a8d99d758296\",\n    \"dtype\": \"torch.float16\",\n    \"shape\": [\n      29737,\n      750\n    ],\n    \"weights_only_safe_load_verified\": true\n  }\n}\n{\"complete\": true, \"arm\": \"A5\", \"identity\": \"/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/diagnostics/JOINT_A5/input_identity.json\", \"exploration_only\": true, \"test_access\": false}\n"
+    },
+    "receipts": {
+      "root_actual_launch_A3.json": {
+        "schema": "aictrack1.joint_diagnostic.actual_launch.v1",
+        "arm": "A3",
+        "process": {
+          "pid": 17327,
+          "ppid": 17326,
+          "pgrp": 17327,
+          "session": 17327,
+          "start_ticks": "313181869",
+          "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010"
+        },
+        "source_sha256": "ad9902c28f7d32026db335843c7ab365793d6a369c218c8b7c9b852f6b6f705a",
+        "training_source_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+        "expected_last_sha256": "f7aaab8b8b71d199048e0a16adac8dd54c8b8b4ac797abbc835578502329545c",
+        "actual_training_launch_sha256": "3de925785738f2944b09b8e4b119e17d526d7e70c835b0814b355e1ca18ed5bd",
+        "launch_unix": 1791558166.0277793,
+        "test_access": false,
+        "model_updates": 0
+      },
+      "root_actual_launch_A5.json": {
+        "schema": "aictrack1.joint_diagnostic.actual_launch.v1",
+        "arm": "A5",
+        "process": {
+          "pid": 17637,
+          "ppid": 17636,
+          "pgrp": 17637,
+          "session": 17637,
+          "start_ticks": "313233853",
+          "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010"
+        },
+        "source_sha256": "ad9902c28f7d32026db335843c7ab365793d6a369c218c8b7c9b852f6b6f705a",
+        "training_source_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+        "expected_last_sha256": "a499ef63f2b103ed01950f8627536b9e3aa8f503ea8e1fa35070d6136e071f97",
+        "actual_training_launch_sha256": "3de925785738f2944b09b8e4b119e17d526d7e70c835b0814b355e1ca18ed5bd",
+        "launch_unix": 1791558685.8683434,
+        "test_access": false,
+        "model_updates": 0
+      },
+      "artifacts/diagnostics/JOINT_A3/runtime_receipt.json": {
+        "sha256": "dfec210cf77dd7047bd3c45861e9180bd7475557d9b6aeef9b47d8d9cc802d1c",
+        "value": {
+          "schema": "aictrack1.fresh_route.diagnostic_runtime.v1",
+          "arm": "A3",
+          "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+          "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+          "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+          "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+          "selected_route": "J5_GRAPH",
+          "runtime": {
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+            "torch_num_threads": 4,
+            "torch_num_interop_threads": 64
+          },
+          "upstream_receipts": [
+            {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/runtime_receipts/A3_4ea4de6684de4adcac210b5449c0cb01.json",
+              "sha256": "eaa163a70dabc084ab3e950aeae7163d8d629c374e6835a7506e8a8f9b3f75e5",
+              "receipt": {
+                "schema": "aictrack1.fresh_route.runtime.v1",
+                "arm": "A3",
+                "selected_route": "J5_GRAPH",
+                "pid": 9396,
+                "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+                "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+                "collected_at_unix": 1791542856.267359,
+                "test_access": false,
+                "actual_torch_threads": 4,
+                "actual_torch_interop_threads": 64
+              }
+            },
+            {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/runtime_receipts/A3_d36e6f62add64adebcc3e1fc514df38c.json",
+              "sha256": "36a68e3f5b8d79ca9352a698c14745ef7e1459b427246d5eba3799b3d9e2de1f",
+              "receipt": {
+                "schema": "aictrack1.fresh_route.runtime.v1",
+                "arm": "A3",
+                "selected_route": "J5_GRAPH",
+                "pid": 9480,
+                "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+                "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+                "collected_at_unix": 1791542923.5742419,
+                "test_access": false,
+                "actual_torch_threads": 4,
+                "actual_torch_interop_threads": 64
+              }
+            }
+          ],
+          "test_access": false
+        }
+      },
+      "artifacts/diagnostics/JOINT_A3/p1_checkpoint_audit.json": {
+        "sha256": "e75a1bfbf4dd58f507e10818d0b8836de1e0c6e007cb29da429be75058edb770",
+        "value": {
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "epoch": 20,
+          "fixed_last_sha256": "f7aaab8b8b71d199048e0a16adac8dd54c8b8b4ac797abbc835578502329545c",
+          "checkpoint_sha256": "f7aaab8b8b71d199048e0a16adac8dd54c8b8b4ac797abbc835578502329545c",
+          "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+          "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+          "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+          "train_count": 118958,
+          "validation_count": 29737,
+          "training_seed": 20261008,
+          "history_epochs": 20,
+          "trainable_tensors": 154,
+          "trainable_numel": 88233966,
+          "visual_tensors": 152,
+          "head_tensors": 2,
+          "optimizer_parameter_groups": [
+            152,
+            2
+          ],
+          "optimizer_moments_finite": true,
+          "scheduler_epoch": 20,
+          "ac_observation_epochs": 20,
+          "python_rng_private_restore": true,
+          "numpy_safe_list_private_restore": true,
+          "torch_rng_private_CPU_restore": true,
+          "cuda_rng_payloads": 1,
+          "cuda_rng_payload_structurally_checked": true,
+          "cuda_accessed": false,
+          "schema": "aictrack1.fresh_route.fixed_last_diagnostic_audit.v1",
+          "p1_arm": "A3",
+          "model_arm": "A3",
+          "complete": true,
+          "status": "complete_fixed_last20_audit",
+          "classifier_head_source": "joint_fixed_last_state",
+          "classifier_parameters_restored_equal": true,
+          "model_frozen_eval": true,
+          "training_source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+          "diagnostic_source_manifest_sha256": "ad9902c28f7d32026db335843c7ab365793d6a369c218c8b7c9b852f6b6f705a",
+          "exact_ac_train_id_label_binding": true,
+          "train_validation_group_overlap": 0,
+          "model_initialization_official_clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+          "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A3/last.pt",
+          "config_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/configs/experiment/p1_A3.yaml",
+          "inference_optimizer_steps": 0,
+          "historical_control_cache_reused": false,
+          "test_access": false,
+          "admission_receipt_sha256": null,
+          "source_h1_manifest_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+          "selected_route": "J5_GRAPH",
+          "numel": 88233966,
+          "runtime": {
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+            "torch_num_threads": 4,
+            "torch_num_interop_threads": 64
+          },
+          "runtime_receipt": "runtime_receipt.json",
+          "runtime_receipt_sha256": "dfec210cf77dd7047bd3c45861e9180bd7475557d9b6aeef9b47d8d9cc802d1c"
+        }
+      },
+      "artifacts/diagnostics/JOINT_A3/report.json": {
+        "sha256": "d0bb1febb7a5dc54b0a3686e789f1b2c501264af2d634605f6ea73354db35668",
+        "value": {
+          "scope": "Stage 2 train-derived fixed validation only; no test access",
+          "view_protocol": "native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint",
+          "visual_input_resolution": 336,
+          "smoke_only": false,
+          "full_validation_count": 29737,
+          "evaluated_count": 29737,
+          "experiment_config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+          "checkpoint_sha256": "f7aaab8b8b71d199048e0a16adac8dd54c8b8b4ac797abbc835578502329545c",
+          "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+          "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+          "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+          "elapsed_seconds": 211.84118122514337,
+          "center": {
+            "top1": 0.7335978746414185,
+            "macro_accuracy": 0.7246518731117249,
+            "zero_recall_classes": 5,
+            "tail_class_mean_recall": 0.7055464386940002,
+            "tail_sample_accuracy": 0.7213037610054016
+          },
+          "flip_tta": {
+            "top1": 0.7404580116271973,
+            "macro_accuracy": 0.7314675450325012,
+            "zero_recall_classes": 5,
+            "tail_class_mean_recall": 0.7117086052894592,
+            "tail_sample_accuracy": 0.7275719046592712
+          },
+          "delta_tta_minus_center": {
+            "top1": 0.006860136985778809,
+            "macro_accuracy": 0.006815671920776367,
+            "tail_class_mean_recall": 0.006162166595458984,
+            "tail_sample_accuracy": 0.006268143653869629
+          },
+          "paired_wins": 530,
+          "paired_losses": 326,
+          "changed_predictions": 1991,
+          "checkpoint_role": "final",
+          "checkpoint_epoch": 20,
+          "four_view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+          "four_view_resize": 384,
+          "four_view": {
+            "top1": 0.7436527013778687,
+            "macro_accuracy": 0.734660804271698,
+            "zero_recall_classes": 4,
+            "tail_class_mean_recall": 0.7167400121688843,
+            "tail_sample_accuracy": 0.7330564856529236
+          },
+          "delta_four_minus_flip_tta": {
+            "top1": 0.0031946897506713867,
+            "macro_accuracy": 0.0031932592391967773,
+            "tail_class_mean_recall": 0.005031406879425049,
+            "tail_sample_accuracy": 0.005484580993652344
+          },
+          "four_view_changed_predictions": 1766,
+          "four_view_paired_wins": 438,
+          "four_view_paired_losses": 343,
+          "fused_logits": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/diagnostics/JOINT_A3/fused_logits.pt",
+            "sha256": "d37fdf625377aa512b4f17896f9ba745bfed5b2d8eea5accfacaa3eb0e900d87",
+            "dtype": "torch.float16",
+            "shape": [
+              29737,
+              750
+            ],
+            "weights_only_safe_load_verified": true
+          }
+        }
+      },
+      "artifacts/diagnostics/JOINT_A3/input_identity.json": {
+        "sha256": "1b2aa34ebfbca7131305961a0de51dc25e7ce8acc4a46eea8b922d97c7e39e38",
+        "value": {
+          "schema": "aictrack1.p0_frozen_fold_input.v1",
+          "stage": 2,
+          "holdout_verified": true,
+          "test_access": false,
+          "training_validation_overlap_rows": 0,
+          "train_validation_exact_group_overlap": 0,
+          "train_validation_near_group_overlap": 0,
+          "checkpoint_role": "last",
+          "upstream_checkpoint_role": "final",
+          "checkpoint_epoch": 20,
+          "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A3/last.pt",
+          "checkpoint_sha256": "f7aaab8b8b71d199048e0a16adac8dd54c8b8b4ac797abbc835578502329545c",
+          "experiment_config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+          "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+          "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+          "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+          "view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+          "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+          "training_count": 118958,
+          "validation_count": 29737,
+          "num_classes": 750,
+          "training_scope": "fixed_split_validation",
+          "bundle_path": "fused_logits.pt",
+          "bundle_sha256": "d37fdf625377aa512b4f17896f9ba745bfed5b2d8eea5accfacaa3eb0e900d87",
+          "logits_dtype": "float16",
+          "row_csv": "rows.csv",
+          "row_csv_sha256": "fb6bc79c7e1dd591517f30cbb2152aa50db16065a7507c92c1635b13973c0e71",
+          "sample_ids_order_sha256": "88fbf1a88145ae0b58e95d1487bd5809c2a943aa1d01d2c1eebd7dfd865f12d1",
+          "source_provenance_receipt": "p1_checkpoint_audit.json",
+          "source_receipt_sha256": "e75a1bfbf4dd58f507e10818d0b8836de1e0c6e007cb29da429be75058edb770",
+          "report_sha256": "d0bb1febb7a5dc54b0a3686e789f1b2c501264af2d634605f6ea73354db35668",
+          "p1_arm": "A3",
+          "model_arm": "A3",
+          "trainable_tensors": 154,
+          "trainable_numel": 88233966,
+          "joint_trainable_tensors": 154,
+          "joint_trainable_numel": 88233966,
+          "classifier_head_source": "joint_fixed_last_state",
+          "selected_arm": "A3",
+          "selected_route": "J5_GRAPH",
+          "admission_receipt_sha256": null,
+          "source_h1_manifest_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+          "training_source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+          "diagnostic_source_manifest_sha256": "ad9902c28f7d32026db335843c7ab365793d6a369c218c8b7c9b852f6b6f705a",
+          "runtime": {
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+            "torch_num_threads": 4,
+            "torch_num_interop_threads": 64
+          },
+          "runtime_receipt": "runtime_receipt.json",
+          "runtime_receipt_sha256": "dfec210cf77dd7047bd3c45861e9180bd7475557d9b6aeef9b47d8d9cc802d1c",
+          "inference_optimizer_steps": 0,
+          "training_seed": 20261008,
+          "group_source": "connected exact SHA/exact-group/near-group union; used57189 query, exploration only",
+          "exploration_phase_context": {
+            "actual": true,
+            "training_source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+            "launch_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/root_actual_launch.json",
+            "launch_sha256": "3de925785738f2944b09b8e4b119e17d526d7e70c835b0814b355e1ca18ed5bd",
+            "controller_owner": {
+              "pid": 9475,
+              "pgrp": 9475,
+              "session": 9475,
+              "start_ticks": "311656925"
+            },
+            "controller_and_all_arm_groups_closed": true,
+            "canonical_idle": true,
+            "checkpoints": {
+              "A3": {
+                "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A3/last.pt",
+                "sha256": "f7aaab8b8b71d199048e0a16adac8dd54c8b8b4ac797abbc835578502329545c",
+                "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A3/metrics.json",
+                "metrics_sha256": "e8a2d95a457df2f0e25c1e6ad0ae1f731f0aca897eec2c14843a3b1e457e7f51",
+                "epoch": 20,
+                "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6"
+              },
+              "A5": {
+                "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A5/last.pt",
+                "sha256": "a499ef63f2b103ed01950f8627536b9e3aa8f503ea8e1fa35070d6136e071f97",
+                "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A5/metrics.json",
+                "metrics_sha256": "a40c0b386d61cfe74e54ad5d7923a05aac5b181848f137ed4c2a89b9d0dd8e70",
+                "epoch": 20,
+                "config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa"
+              }
+            },
+            "arm_closure_evidence": [
+              {
+                "arm": "A3",
+                "launch_attempts": [
+                  {
+                    "start_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/launches/A3_d36e6f62add64adebcc3e1fc514df38c/START.json",
+                    "start_sha256": "0c44e3dd2273d4acf01623814b182e942e0be4f7f0c96270287b993380764a7f",
+                    "exit_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/launches/A3_d36e6f62add64adebcc3e1fc514df38c/EXIT.json",
+                    "exit_sha256": "ec971e35e3f8206a365273623a55f58b9ad821da4fdc11368a54773bb0f31294",
+                    "return_code": 0,
+                    "owner": {
+                      "pid": 9480,
+                      "pgrp": 9480,
+                      "session": 9480,
+                      "start_ticks": "311657197"
+                    }
+                  }
+                ]
+              },
+              {
+                "arm": "A5",
+                "launch_attempts": [
+                  {
+                    "start_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/launches/A5_5a7f6193143445d683c3f270c142e403/START.json",
+                    "start_sha256": "b3ea6ae6d30975bc1b2c7ff035f5554fab5bedae10abbbc4d7039dd6371a2f40",
+                    "exit_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/launches/A5_5a7f6193143445d683c3f270c142e403/EXIT.json",
+                    "exit_sha256": "8ae5685960f64c02b5b379b4561507d92af04436029cdc23c84878b8af5c4bc1",
+                    "return_code": 0,
+                    "owner": {
+                      "pid": 12982,
+                      "pgrp": 12982,
+                      "session": 12982,
+                      "start_ticks": "312328150"
+                    }
+                  }
+                ]
+              }
+            ],
+            "shared_phase_context": {
+              "budget": {
+                "schema": "aictrack1.supervision_joint.budget.v1",
+                "phase_start_unix": 1791541200,
+                "deadline_unix": 1791570000,
+                "initial_free_bytes": 13013950464,
+                "capacity_increase_bytes": 32212254720,
+                "adjusted_initial_free_bytes": 45226205184,
+                "data_total_bytes": 128849018880,
+                "disk_max_bytes": 21474836480,
+                "min_free_bytes": 3221225472,
+                "atomic_reserve_bytes": 2147483648,
+                "final_gpu_reserve_hours": 4,
+                "root_authorized": true,
+                "test_access": false,
+                "capacity_evidence": {
+                  "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+                  "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+                }
+              },
+              "budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/inputs/budget.json",
+              "budget_sha256": "f6bc19c3978ef75db18ac61915425bbfb5de77b8d121cb8497477536dfff073b",
+              "training_source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+              "old_query_reused_for_exploration": true,
+              "independent_confirmation": false
+            },
+            "test_access": false
+          },
+          "independent_confirmation": false,
+          "old_query_reused_for_exploration": true,
+          "save_features": true,
+          "feature_file": "fused_features.pt",
+          "feature_file_sha256": "e145fab884d7e66e9fee431de9853050ec475b0c7c8585a5a7c1605c7d1940d4",
+          "feature_dim": 512,
+          "feature_dtype": "float32",
+          "feature_construction_dtype": "float32",
+          "feature_protocol": "L2_normalize(mean(L2_normalize(raw_visual_each_of_four_views))) in float32 on CPU",
+          "additional_model_forwards": 0
+        }
+      },
+      "artifacts/diagnostics/JOINT_A3/result_manifest.json": {
+        "sha256": "4df10a2f97d842c68c8c96abd90c1301fa1d86fda3d17bf80e973949def4876c",
+        "value": {
+          "schema": "aictrack1.fresh_route.diagnostic_result.v1",
+          "p1_arm": "A3",
+          "complete": true,
+          "test_access": false,
+          "files": {
+            "fused_features.pt": {
+              "bytes": 63342453,
+              "sha256": "e145fab884d7e66e9fee431de9853050ec475b0c7c8585a5a7c1605c7d1940d4"
+            },
+            "fused_logits.pt": {
+              "bytes": 47052393,
+              "sha256": "d37fdf625377aa512b4f17896f9ba745bfed5b2d8eea5accfacaa3eb0e900d87"
+            },
+            "input_identity.json": {
+              "bytes": 8218,
+              "sha256": "1b2aa34ebfbca7131305961a0de51dc25e7ce8acc4a46eea8b922d97c7e39e38"
+            },
+            "p1_checkpoint_audit.json": {
+              "bytes": 2664,
+              "sha256": "e75a1bfbf4dd58f507e10818d0b8836de1e0c6e007cb29da429be75058edb770"
+            },
+            "paired_predictions.csv": {
+              "bytes": 2390925,
+              "sha256": "199511c5f1baf60dcf2752561f07056d88d3df01b2726ee138b96ddb5b7f6bce"
+            },
+            "report.json": {
+              "bytes": 2711,
+              "sha256": "d0bb1febb7a5dc54b0a3686e789f1b2c501264af2d634605f6ea73354db35668"
+            },
+            "rows.csv": {
+              "bytes": 5434571,
+              "sha256": "fb6bc79c7e1dd591517f30cbb2152aa50db16065a7507c92c1635b13973c0e71"
+            },
+            "runtime_receipt.json": {
+              "bytes": 2523,
+              "sha256": "dfec210cf77dd7047bd3c45861e9180bd7475557d9b6aeef9b47d8d9cc802d1c"
+            }
+          }
+        }
+      },
+      "artifacts/diagnostics/JOINT_A5/runtime_receipt.json": {
+        "sha256": "6604a068cf70fea6c542b3db0bc7c8153106ca4af7c3f5099da354a272111106",
+        "value": {
+          "schema": "aictrack1.fresh_route.diagnostic_runtime.v1",
+          "arm": "A5",
+          "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+          "config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa",
+          "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+          "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+          "selected_route": "J5_GRAPH",
+          "runtime": {
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+            "torch_num_threads": 4,
+            "torch_num_interop_threads": 64
+          },
+          "upstream_receipts": [
+            {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/runtime_receipts/A5_5a7f6193143445d683c3f270c142e403.json",
+              "sha256": "a7bf70a1c25cba502aa67658851e8b2399213971b752e2947e1b8884c4239f26",
+              "receipt": {
+                "schema": "aictrack1.fresh_route.runtime.v1",
+                "arm": "A5",
+                "selected_route": "J5_GRAPH",
+                "pid": 12982,
+                "config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa",
+                "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+                "collected_at_unix": 1791549632.475328,
+                "test_access": false,
+                "actual_torch_threads": 4,
+                "actual_torch_interop_threads": 64
+              }
+            },
+            {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/runtime_receipts/A5_7f6db262c6c34c488d9046fd9785b643.json",
+              "sha256": "602e629501920a41fc8c32c0847a2416787bda63506ef5b976e5d10c8991307c",
+              "receipt": {
+                "schema": "aictrack1.fresh_route.runtime.v1",
+                "arm": "A5",
+                "selected_route": "J5_GRAPH",
+                "pid": 9441,
+                "config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa",
+                "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+                "collected_at_unix": 1791542894.62269,
+                "test_access": false,
+                "actual_torch_threads": 4,
+                "actual_torch_interop_threads": 64
+              }
+            }
+          ],
+          "test_access": false
+        }
+      },
+      "artifacts/diagnostics/JOINT_A5/p1_checkpoint_audit.json": {
+        "sha256": "587f0de3554e66d0ad982c0ebe6ae4a1663b1d5227364ffb0903eb8cbd290f11",
+        "value": {
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "epoch": 20,
+          "fixed_last_sha256": "a499ef63f2b103ed01950f8627536b9e3aa8f503ea8e1fa35070d6136e071f97",
+          "checkpoint_sha256": "a499ef63f2b103ed01950f8627536b9e3aa8f503ea8e1fa35070d6136e071f97",
+          "config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa",
+          "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+          "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+          "train_count": 118958,
+          "validation_count": 29737,
+          "training_seed": 20261008,
+          "history_epochs": 20,
+          "trainable_tensors": 154,
+          "trainable_numel": 88233966,
+          "visual_tensors": 152,
+          "head_tensors": 2,
+          "optimizer_parameter_groups": [
+            152,
+            2
+          ],
+          "optimizer_moments_finite": true,
+          "scheduler_epoch": 20,
+          "ac_observation_epochs": 20,
+          "python_rng_private_restore": true,
+          "numpy_safe_list_private_restore": true,
+          "torch_rng_private_CPU_restore": true,
+          "cuda_rng_payloads": 1,
+          "cuda_rng_payload_structurally_checked": true,
+          "cuda_accessed": false,
+          "schema": "aictrack1.fresh_route.fixed_last_diagnostic_audit.v1",
+          "p1_arm": "A5",
+          "model_arm": "A5",
+          "complete": true,
+          "status": "complete_fixed_last20_audit",
+          "classifier_head_source": "joint_fixed_last_state",
+          "classifier_parameters_restored_equal": true,
+          "model_frozen_eval": true,
+          "training_source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+          "diagnostic_source_manifest_sha256": "ad9902c28f7d32026db335843c7ab365793d6a369c218c8b7c9b852f6b6f705a",
+          "exact_ac_train_id_label_binding": true,
+          "train_validation_group_overlap": 0,
+          "model_initialization_official_clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+          "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A5/last.pt",
+          "config_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/configs/experiment/p1_A5.yaml",
+          "inference_optimizer_steps": 0,
+          "historical_control_cache_reused": false,
+          "test_access": false,
+          "admission_receipt_sha256": null,
+          "source_h1_manifest_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+          "selected_route": "J5_GRAPH",
+          "numel": 88233966,
+          "runtime": {
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+            "torch_num_threads": 4,
+            "torch_num_interop_threads": 64
+          },
+          "runtime_receipt": "runtime_receipt.json",
+          "runtime_receipt_sha256": "6604a068cf70fea6c542b3db0bc7c8153106ca4af7c3f5099da354a272111106"
+        }
+      },
+      "artifacts/diagnostics/JOINT_A5/report.json": {
+        "sha256": "fc9ec324022d34b7665a03bc7ed5eaff138731030df277780cc61c340cc891af",
+        "value": {
+          "scope": "Stage 2 train-derived fixed validation only; no test access",
+          "view_protocol": "native 336 center view plus exact horizontal tensor flip; equal mean logits; one frozen checkpoint",
+          "visual_input_resolution": 336,
+          "smoke_only": false,
+          "full_validation_count": 29737,
+          "evaluated_count": 29737,
+          "experiment_config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa",
+          "checkpoint_sha256": "a499ef63f2b103ed01950f8627536b9e3aa8f503ea8e1fa35070d6136e071f97",
+          "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+          "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+          "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+          "elapsed_seconds": 212.87246677884832,
+          "center": {
+            "top1": 0.7329925894737244,
+            "macro_accuracy": 0.7240270376205444,
+            "zero_recall_classes": 5,
+            "tail_class_mean_recall": 0.7044851779937744,
+            "tail_sample_accuracy": 0.7202068567276001
+          },
+          "flip_tta": {
+            "top1": 0.7398191094398499,
+            "macro_accuracy": 0.7308068871498108,
+            "zero_recall_classes": 5,
+            "tail_class_mean_recall": 0.7113217115402222,
+            "tail_sample_accuracy": 0.7271801233291626
+          },
+          "delta_tta_minus_center": {
+            "top1": 0.006826519966125488,
+            "macro_accuracy": 0.006779849529266357,
+            "tail_class_mean_recall": 0.006836533546447754,
+            "tail_sample_accuracy": 0.0069732666015625
+          },
+          "paired_wins": 545,
+          "paired_losses": 342,
+          "changed_predictions": 2009,
+          "checkpoint_role": "final",
+          "checkpoint_epoch": 20,
+          "four_view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+          "four_view_resize": 384,
+          "four_view": {
+            "top1": 0.7429128885269165,
+            "macro_accuracy": 0.7339688539505005,
+            "zero_recall_classes": 3,
+            "tail_class_mean_recall": 0.7154036164283752,
+            "tail_sample_accuracy": 0.7313327789306641
+          },
+          "delta_four_minus_flip_tta": {
+            "top1": 0.0030937790870666504,
+            "macro_accuracy": 0.0031619668006896973,
+            "tail_class_mean_recall": 0.004081904888153076,
+            "tail_sample_accuracy": 0.004152655601501465
+          },
+          "four_view_changed_predictions": 1783,
+          "four_view_paired_wins": 437,
+          "four_view_paired_losses": 345,
+          "fused_logits": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/diagnostics/JOINT_A5/fused_logits.pt",
+            "sha256": "c8857c9429795b2f04fdb6964698ba3217001a16c8315e6229a4a8d99d758296",
+            "dtype": "torch.float16",
+            "shape": [
+              29737,
+              750
+            ],
+            "weights_only_safe_load_verified": true
+          }
+        }
+      },
+      "artifacts/diagnostics/JOINT_A5/input_identity.json": {
+        "sha256": "0590f666275ec58de4707cb1ed612e62829ae7a87d9a71b6c81c0e0617ac19f6",
+        "value": {
+          "schema": "aictrack1.p0_frozen_fold_input.v1",
+          "stage": 2,
+          "holdout_verified": true,
+          "test_access": false,
+          "training_validation_overlap_rows": 0,
+          "train_validation_exact_group_overlap": 0,
+          "train_validation_near_group_overlap": 0,
+          "checkpoint_role": "last",
+          "upstream_checkpoint_role": "final",
+          "checkpoint_epoch": 20,
+          "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A5/last.pt",
+          "checkpoint_sha256": "a499ef63f2b103ed01950f8627536b9e3aa8f503ea8e1fa35070d6136e071f97",
+          "experiment_config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa",
+          "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+          "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+          "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+          "view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+          "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+          "training_count": 118958,
+          "validation_count": 29737,
+          "num_classes": 750,
+          "training_scope": "fixed_split_validation",
+          "bundle_path": "fused_logits.pt",
+          "bundle_sha256": "c8857c9429795b2f04fdb6964698ba3217001a16c8315e6229a4a8d99d758296",
+          "logits_dtype": "float16",
+          "row_csv": "rows.csv",
+          "row_csv_sha256": "dfb32cdfb1e048114d046b26fbd90d0032d81e8afa0d02041943e1529893b7d5",
+          "sample_ids_order_sha256": "88fbf1a88145ae0b58e95d1487bd5809c2a943aa1d01d2c1eebd7dfd865f12d1",
+          "source_provenance_receipt": "p1_checkpoint_audit.json",
+          "source_receipt_sha256": "587f0de3554e66d0ad982c0ebe6ae4a1663b1d5227364ffb0903eb8cbd290f11",
+          "report_sha256": "fc9ec324022d34b7665a03bc7ed5eaff138731030df277780cc61c340cc891af",
+          "p1_arm": "A5",
+          "model_arm": "A5",
+          "trainable_tensors": 154,
+          "trainable_numel": 88233966,
+          "joint_trainable_tensors": 154,
+          "joint_trainable_numel": 88233966,
+          "classifier_head_source": "joint_fixed_last_state",
+          "selected_arm": "A5",
+          "selected_route": "J5_GRAPH",
+          "admission_receipt_sha256": null,
+          "source_h1_manifest_sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+          "training_source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+          "diagnostic_source_manifest_sha256": "ad9902c28f7d32026db335843c7ab365793d6a369c218c8b7c9b852f6b6f705a",
+          "runtime": {
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+            "torch_num_threads": 4,
+            "torch_num_interop_threads": 64
+          },
+          "runtime_receipt": "runtime_receipt.json",
+          "runtime_receipt_sha256": "6604a068cf70fea6c542b3db0bc7c8153106ca4af7c3f5099da354a272111106",
+          "inference_optimizer_steps": 0,
+          "training_seed": 20261008,
+          "group_source": "connected exact SHA/exact-group/near-group union; used57189 query, exploration only",
+          "exploration_phase_context": {
+            "actual": true,
+            "training_source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+            "launch_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/root_actual_launch.json",
+            "launch_sha256": "3de925785738f2944b09b8e4b119e17d526d7e70c835b0814b355e1ca18ed5bd",
+            "controller_owner": {
+              "pid": 9475,
+              "pgrp": 9475,
+              "session": 9475,
+              "start_ticks": "311656925"
+            },
+            "controller_and_all_arm_groups_closed": true,
+            "canonical_idle": true,
+            "checkpoints": {
+              "A3": {
+                "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A3/last.pt",
+                "sha256": "f7aaab8b8b71d199048e0a16adac8dd54c8b8b4ac797abbc835578502329545c",
+                "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A3/metrics.json",
+                "metrics_sha256": "e8a2d95a457df2f0e25c1e6ad0ae1f731f0aca897eec2c14843a3b1e457e7f51",
+                "epoch": 20,
+                "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6"
+              },
+              "A5": {
+                "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A5/last.pt",
+                "sha256": "a499ef63f2b103ed01950f8627536b9e3aa8f503ea8e1fa35070d6136e071f97",
+                "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/experiments/JOINT_A5/metrics.json",
+                "metrics_sha256": "a40c0b386d61cfe74e54ad5d7923a05aac5b181848f137ed4c2a89b9d0dd8e70",
+                "epoch": 20,
+                "config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa"
+              }
+            },
+            "arm_closure_evidence": [
+              {
+                "arm": "A3",
+                "launch_attempts": [
+                  {
+                    "start_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/launches/A3_d36e6f62add64adebcc3e1fc514df38c/START.json",
+                    "start_sha256": "0c44e3dd2273d4acf01623814b182e942e0be4f7f0c96270287b993380764a7f",
+                    "exit_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/launches/A3_d36e6f62add64adebcc3e1fc514df38c/EXIT.json",
+                    "exit_sha256": "ec971e35e3f8206a365273623a55f58b9ad821da4fdc11368a54773bb0f31294",
+                    "return_code": 0,
+                    "owner": {
+                      "pid": 9480,
+                      "pgrp": 9480,
+                      "session": 9480,
+                      "start_ticks": "311657197"
+                    }
+                  }
+                ]
+              },
+              {
+                "arm": "A5",
+                "launch_attempts": [
+                  {
+                    "start_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/launches/A5_5a7f6193143445d683c3f270c142e403/START.json",
+                    "start_sha256": "b3ea6ae6d30975bc1b2c7ff035f5554fab5bedae10abbbc4d7039dd6371a2f40",
+                    "exit_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/artifacts/launches/A5_5a7f6193143445d683c3f270c142e403/EXIT.json",
+                    "exit_sha256": "8ae5685960f64c02b5b379b4561507d92af04436029cdc23c84878b8af5c4bc1",
+                    "return_code": 0,
+                    "owner": {
+                      "pid": 12982,
+                      "pgrp": 12982,
+                      "session": 12982,
+                      "start_ticks": "312328150"
+                    }
+                  }
+                ]
+              }
+            ],
+            "shared_phase_context": {
+              "budget": {
+                "schema": "aictrack1.supervision_joint.budget.v1",
+                "phase_start_unix": 1791541200,
+                "deadline_unix": 1791570000,
+                "initial_free_bytes": 13013950464,
+                "capacity_increase_bytes": 32212254720,
+                "adjusted_initial_free_bytes": 45226205184,
+                "data_total_bytes": 128849018880,
+                "disk_max_bytes": 21474836480,
+                "min_free_bytes": 3221225472,
+                "atomic_reserve_bytes": 2147483648,
+                "final_gpu_reserve_hours": 4,
+                "root_authorized": true,
+                "test_access": false,
+                "capacity_evidence": {
+                  "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+                  "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+                }
+              },
+              "budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/inputs/budget.json",
+              "budget_sha256": "f6bc19c3978ef75db18ac61915425bbfb5de77b8d121cb8497477536dfff073b",
+              "training_source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+              "old_query_reused_for_exploration": true,
+              "independent_confirmation": false
+            },
+            "test_access": false
+          },
+          "independent_confirmation": false,
+          "old_query_reused_for_exploration": true,
+          "save_features": true,
+          "feature_file": "fused_features.pt",
+          "feature_file_sha256": "9ebcc915ff397537824a07cc88ffe72a66be8527c331adadccc5c203a611f206",
+          "feature_dim": 512,
+          "feature_dtype": "float32",
+          "feature_construction_dtype": "float32",
+          "feature_protocol": "L2_normalize(mean(L2_normalize(raw_visual_each_of_four_views))) in float32 on CPU",
+          "additional_model_forwards": 0
+        }
+      },
+      "artifacts/diagnostics/JOINT_A5/result_manifest.json": {
+        "sha256": "65dbaca8594770a34bb5ad035163c85373c1664b99c2dde9e70c2007d905f83a",
+        "value": {
+          "schema": "aictrack1.fresh_route.diagnostic_result.v1",
+          "p1_arm": "A5",
+          "complete": true,
+          "test_access": false,
+          "files": {
+            "fused_features.pt": {
+              "bytes": 63342453,
+              "sha256": "9ebcc915ff397537824a07cc88ffe72a66be8527c331adadccc5c203a611f206"
+            },
+            "fused_logits.pt": {
+              "bytes": 47052393,
+              "sha256": "c8857c9429795b2f04fdb6964698ba3217001a16c8315e6229a4a8d99d758296"
+            },
+            "input_identity.json": {
+              "bytes": 8218,
+              "sha256": "0590f666275ec58de4707cb1ed612e62829ae7a87d9a71b6c81c0e0617ac19f6"
+            },
+            "p1_checkpoint_audit.json": {
+              "bytes": 2664,
+              "sha256": "587f0de3554e66d0ad982c0ebe6ae4a1663b1d5227364ffb0903eb8cbd290f11"
+            },
+            "paired_predictions.csv": {
+              "bytes": 2390967,
+              "sha256": "f36fec7953d4da86b2f0fbfd035104a7e9b46b2102634d6edddfb0a87fe95cd5"
+            },
+            "report.json": {
+              "bytes": 2710,
+              "sha256": "fc9ec324022d34b7665a03bc7ed5eaff138731030df277780cc61c340cc891af"
+            },
+            "rows.csv": {
+              "bytes": 5434577,
+              "sha256": "dfb32cdfb1e048114d046b26fbd90d0032d81e8afa0d02041943e1529893b7d5"
+            },
+            "runtime_receipt.json": {
+              "bytes": 2522,
+              "sha256": "6604a068cf70fea6c542b3db0bc7c8153106ca4af7c3f5099da354a272111106"
+            }
+          }
+        }
+      }
+    },
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21617328128,
+        "free": 10594926592
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 96566669312,
+        "free": 32282349568
+      }
+    },
+    "gpu": "1 MiB, 0 %"
+  }
+}

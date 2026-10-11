@@ -1,0 +1,84 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B50_EMA_R3_new_budget_and_4V_launch_r1.json",
+  "original_sha256": "65b7571eacc782f0eab4d4c547ecd488ff7cd9a21f0f792682d84fe30ba9165e",
+  "omitted_fields": [
+    "/receipt/command",
+    "/receipt/owner/argv"
+  ],
+  "record": {
+    "receipt": {
+      "schema": "aictrack1.B_EMA.actual_frozen_4V_launch.v1",
+      "complete": true,
+      "source_manifest_sha256": "7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045",
+      "owner": {
+        "pid": 38248,
+        "ppid": 38247,
+        "pgrp": 38248,
+        "session": 38248,
+        "start_ticks": "317267333",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010"
+      },
+      "arm": "B50_EMA",
+      "budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/root_actual_EMA_exploration_budget_r1.json",
+      "budget_sha256": "57dd9a03a74155a90e92fa100ac3972fad853cb53f7060da1438c2ae2981870e",
+      "launch_unix": 1791599020.9671268,
+      "log_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/root_B50_EMA_4V_stdout_r1.log",
+      "test_access": false,
+      "training_steps": 0,
+      "actual_teacher_restore_complete": false,
+      "actual_4V_complete": false,
+      "resource_at_launch": {
+        "data_free_bytes": 23917129728,
+        "data_total_bytes": 128849018880
+      }
+    },
+    "remote_receipt_path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/root_actual_B50_EMA_4V_launch_r1.json",
+    "remote_receipt_sha256": "18bd1e182cc157ef539ea21e664d0354001fc7c8bff7c6ab09377a48c75733a5",
+    "budget": {
+      "schema": "aictrack1.B_EMA.exploration.budget.v1",
+      "root_authorized": true,
+      "phase_start_unix": 1791599020.6622107,
+      "deadline_unix": 1791599920.6622107,
+      "original_initial_free_bytes": 13013950464,
+      "capacity_added_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "actual_disk_total_bytes": 128849018880,
+      "disk_max_bytes": 32212254720,
+      "min_free_bytes": 3221225472,
+      "atomic_reserve_bytes": 2147483648,
+      "final_gpu_reserve_hours": 4,
+      "test_access": false,
+      "capacity_evidence": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+        "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+      },
+      "source_sha256": "7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045",
+      "stage_receipt_sha256": "47eb0334406a1faa03efc5b7f70bfb0cec7d7a248bee75bd688c3820f61a9a16",
+      "independent_CPU_evidence": [
+        "413c78",
+        "527723",
+        "ec82d2",
+        "7b2e89"
+      ],
+      "prior_failed_phase": {
+        "source": "ccb80c64efcaad9a85951363cdcb9dfeb16bca5d47dd735e6fa5c04d8c50f34b",
+        "budget_sha256": "c905d9f877527f1878a3e9bb1f25c4585553234586cc9bc3a540be6834b0e60a",
+        "failure": "EMA incorrectly compared with actual parent raw center metric",
+        "process_closed": true
+      },
+      "B25_R2_negative_retained_no_rerun": true,
+      "human_latest_message": "仅剩32小时，加速推进至下一提交包；全部既有服务器和训练测试权限持续有效",
+      "human_latest_deadline_anchor_unix": 1791597538.0,
+      "human_remaining_wall_seconds": 115200,
+      "old_training_clock_or_ledger_modified": false,
+      "model_roles": [
+        "B50_EMA"
+      ],
+      "no_student_teacher_blend": true
+    },
+    "budget_text": "{\n  \"schema\": \"aictrack1.B_EMA.exploration.budget.v1\",\n  \"root_authorized\": true,\n  \"phase_start_unix\": 1791599020.6622107,\n  \"deadline_unix\": 1791599920.6622107,\n  \"original_initial_free_bytes\": 13013950464,\n  \"capacity_added_bytes\": 32212254720,\n  \"adjusted_initial_free_bytes\": 45226205184,\n  \"actual_disk_total_bytes\": 128849018880,\n  \"disk_max_bytes\": 32212254720,\n  \"min_free_bytes\": 3221225472,\n  \"atomic_reserve_bytes\": 2147483648,\n  \"final_gpu_reserve_hours\": 4,\n  \"test_access\": false,\n  \"capacity_evidence\": {\n    \"path\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json\",\n    \"sha256\": \"ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52\"\n  },\n  \"source_sha256\": \"7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045\",\n  \"stage_receipt_sha256\": \"47eb0334406a1faa03efc5b7f70bfb0cec7d7a248bee75bd688c3820f61a9a16\",\n  \"independent_CPU_evidence\": [\n    \"413c78\",\n    \"527723\",\n    \"ec82d2\",\n    \"7b2e89\"\n  ],\n  \"prior_failed_phase\": {\n    \"source\": \"ccb80c64efcaad9a85951363cdcb9dfeb16bca5d47dd735e6fa5c04d8c50f34b\",\n    \"budget_sha256\": \"c905d9f877527f1878a3e9bb1f25c4585553234586cc9bc3a540be6834b0e60a\",\n    \"failure\": \"EMA incorrectly compared with actual parent raw center metric\",\n    \"process_closed\": true\n  },\n  \"B25_R2_negative_retained_no_rerun\": true,\n  \"human_latest_message\": \"仅剩32小时，加速推进至下一提交包；全部既有服务器和训练测试权限持续有效\",\n  \"human_latest_deadline_anchor_unix\": 1791597538.0,\n  \"human_remaining_wall_seconds\": 115200,\n  \"old_training_clock_or_ledger_modified\": false,\n  \"model_roles\": [\n    \"B50_EMA\"\n  ],\n  \"no_student_teacher_blend\": true\n}\n",
+    "budget_sha256": "57dd9a03a74155a90e92fa100ac3972fad853cb53f7060da1438c2ae2981870e",
+    "initial_return_code": null
+  }
+}

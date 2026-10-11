@@ -1,0 +1,146 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_cloud_cleanup_backed_old_models_r1.json",
+  "original_sha256": "4b732b832cbdacb158c22dc7a639548a92c774d904cf2e8ce419c06f3fa34ebe",
+  "omitted_fields": [
+    "/live_python_processes/argv"
+  ],
+  "record": {
+    "schema": "aictrack1.authorized.cloud_cleanup.v1",
+    "time": 1791699757.0608716,
+    "authority": "human explicit delete unused invalid or locally backed files",
+    "items": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/experiments/FULL_L35/last.pt",
+        "size": 1066898587,
+        "sha256": "5325982fad83513b11e6f2c9e94537272ae5f7ded295e46b80948bf9fea3532d",
+        "backup": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L35_final_actual_returns_r1\\full\\last.pt",
+        "reason": "completed package; local complete accepted backup SHA rechecked",
+        "remote_sha256": "5325982fad83513b11e6f2c9e94537272ae5f7ded295e46b80948bf9fea3532d",
+        "allocated_bytes": 1066901504,
+        "inode": 6457969621,
+        "mtime_ns": 1791659417481110580,
+        "deleted": true
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_L35_full_20261010/artifacts/experiments/FULL_L35/final.pt",
+        "size": 352988267,
+        "sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6",
+        "backup": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\L35_final_actual_returns_r1\\full\\final.pt",
+        "reason": "completed package; local complete accepted backup SHA rechecked",
+        "remote_sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6",
+        "allocated_bytes": 352989184,
+        "inode": 6457969601,
+        "mtime_ns": 1791659418053139551,
+        "deleted": true
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/experiments/FULL_J5/last.pt",
+        "size": 1066898587,
+        "sha256": "2ab642181cdb724902feb4f9de5fda0238b1551395d35e7a5852ecbdec386cdc",
+        "backup": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\final_actual_returns_r1\\full\\last.pt",
+        "reason": "completed package; local complete accepted backup SHA rechecked",
+        "remote_sha256": "2ab642181cdb724902feb4f9de5fda0238b1551395d35e7a5852ecbdec386cdc",
+        "allocated_bytes": 1066901504,
+        "inode": 2175444989,
+        "mtime_ns": 1791536701628442454,
+        "deleted": true
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/artifacts/experiments/FULL_J5/final.pt",
+        "size": 352988267,
+        "sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+        "backup": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\final_actual_returns_r1\\full\\final.pt",
+        "reason": "completed package; local complete accepted backup SHA rechecked",
+        "remote_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+        "allocated_bytes": 352989184,
+        "inode": 2175444988,
+        "mtime_ns": 1791536702100451180,
+        "deleted": true
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt.tmp.failure_20261009_142529",
+        "size": 1346168189,
+        "reason": "obsolete interrupted atomic-write failure file; completed valid last/final preserved",
+        "remote_sha256": "d800258448a73c7f5637a8647fe25edbfeeb66c76b45df72d169a14e4ba1bb83",
+        "allocated_bytes": 1346170880,
+        "inode": 20507423234,
+        "mtime_ns": 1791527127773038217,
+        "deleted": true
+      }
+    ],
+    "disk_before": {
+      "total": 128849018880,
+      "used": 122969579520,
+      "free": 5879439360
+    },
+    "active_training_root_preserved": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011",
+    "resource_budget_ledger_reset": false,
+    "live_python_processes": [
+      {
+        "pid": 902,
+        "cwd": "/root"
+      },
+      {
+        "pid": 906,
+        "cwd": "/root"
+      },
+      {
+        "pid": 969,
+        "cwd": "/root"
+      },
+      {
+        "pid": 54349,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011"
+      },
+      {
+        "pid": 54356,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011"
+      },
+      {
+        "pid": 56969,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011"
+      },
+      {
+        "pid": 56970,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011"
+      },
+      {
+        "pid": 56971,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011"
+      },
+      {
+        "pid": 56972,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011"
+      },
+      {
+        "pid": 56973,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011"
+      },
+      {
+        "pid": 56974,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011"
+      },
+      {
+        "pid": 56975,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011"
+      },
+      {
+        "pid": 56976,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_full_20261011"
+      },
+      {
+        "pid": 57081,
+        "cwd": "/root"
+      }
+    ],
+    "disk_after": {
+      "total": 128849018880,
+      "used": 118783631360,
+      "free": 10065387520
+    },
+    "deleted_logical_bytes": 4185941897,
+    "deleted_allocated_bytes": 4185952256,
+    "status": "complete"
+  }
+}

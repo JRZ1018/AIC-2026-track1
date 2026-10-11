@@ -1,0 +1,37 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF_diagnostic_metadata_bind_and_dependency_r1.json",
+  "original_sha256": "48954bd961d607ce0e375a13e8947b2d5faf29f97482085f246ba87ba78bcc12",
+  "omitted_fields": [
+    "/actual_dependency_check/stderr",
+    "/actual_dependency_check/stdout"
+  ],
+  "record": {
+    "complete": true,
+    "metadata_bind": {
+      "bound": true,
+      "diagnostic_source_sha256": "56a002e541ef281b17dc478cd129e8ff03b8a132f2743ba872dd89c0ce88d5f5",
+      "actual_training_source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+      "checkpoint_read": false,
+      "model_loaded": false,
+      "GPU_started": false,
+      "images_opened": false,
+      "test_access": false
+    },
+    "actual_dependency_check": {
+      "return_code": 0
+    },
+    "execution_root": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010",
+    "bound_source_sha256": "56a002e541ef281b17dc478cd129e8ff03b8a132f2743ba872dd89c0ce88d5f5",
+    "bound_member_count": 38,
+    "actual_launch_sha256": "2c8c5e30f0ece2b2699160eee94c99840dfc2cb5628bf3391ec59a13802fcc87",
+    "future_checkpoint_sha256": {
+      "PF30": null
+    },
+    "checkpoint_read": false,
+    "model_loaded": false,
+    "GPU_started": false,
+    "test_access": false,
+    "observed_unix": 1791588916.2644403
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_AutoDL_expiry_shutdown_r1.json",
+  "original_sha256": "6f41709873bfe1c196af8130e41fede042a9056f5bc5917f760dce6375fb2468",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.actual_AutoDL_expiry_shutdown.v1",
+    "observed_at_local": "2026-10-10T11:11:50.401901+08:00",
+    "instance": "2pzv67kkm9-fb133b83",
+    "region_machine": "西北B区/F41",
+    "UI_after_refresh": "已关机/包年包月 已到期",
+    "actual_expiry_local": "2026-10-10T11:00:42+08:00",
+    "balance_CNY": "0.85",
+    "renewal_1day_CNY": "37.19",
+    "renewal_2days_CNY": "74.37",
+    "renewal_draft_2days_expiry_local": "2026-10-12T11:09:42+08:00",
+    "renewal_submitted": false,
+    "payment_submitted": false,
+    "server_started": false,
+    "last_successful_training_collector_unix": 1791601161.259598,
+    "last_observed_epoch": 4,
+    "last_observed_last_mtime": 1791601088.345131,
+    "actual_terminal_or_complete_checkpoint_not_claimed": true,
+    "last_snapshot_was_stat_only": true,
+    "exact_old_process_and_lock_probes_after_boot_required": true,
+    "model_restoration_after_boot_required": true,
+    "original_CG_budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+    "screenshot_path": "[per-image text omitted]",
+    "screenshot_sha256": "cc34fe98384a2dc25182d7b6b2bb29406c4bb1ab1a8e447c9a98a600ccf0a844",
+    "GPU_progress_blocker": "Account recharge and instance renewal required; no funds authorization question asked"
+  }
+}

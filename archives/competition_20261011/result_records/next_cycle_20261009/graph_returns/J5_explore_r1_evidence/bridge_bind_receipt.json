@@ -1,0 +1,36 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/graph_returns/J5_explore_r1_evidence/bridge_bind_receipt.json",
+  "original_sha256": "bff7ebd45f203ac548114d3ac0318b6b18464ce74c3afcc46c3af73c5199b4b0",
+  "omitted_fields": [],
+  "record": {
+    "status": "graph_assets_verified",
+    "path": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009/artifacts/J5_explore_r1/graph_assets.json",
+    "sha256": "830f2b525496c35794781cf39bd2c4578f985167d8938af6332104a26c93cd1a",
+    "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+    "precision": {
+      "cached_logits_dtype": "torch.float16",
+      "feature_dtype": "torch.float32",
+      "computation_dtype": "float32",
+      "fp16_argmax_mismatches_vs_original_fp32": 9,
+      "note": "float32 computation cannot recover any precision discarded by the saved logits"
+    },
+    "verified_sources": {
+      "training": {
+        "path": "/root/AICtrack1_next_cycle_20261009/source_manifest.json",
+        "sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "verified_files": 83
+      },
+      "diagnostic": {
+        "path": "/root/AICtrack1_next_cycle_diagnostic_20261009/source_manifest.json",
+        "sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "verified_files": 29
+      }
+    },
+    "source_manifest_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+    "baseline_arm": "J5",
+    "test_access": false,
+    "shared_budget_ledger": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009/artifacts/graph_budget.json",
+    "automatic_test_or_full_permission": false
+  }
+}

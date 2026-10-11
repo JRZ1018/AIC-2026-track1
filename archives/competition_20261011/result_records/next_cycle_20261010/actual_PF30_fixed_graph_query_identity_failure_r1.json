@@ -1,0 +1,33 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_fixed_graph_query_identity_failure_r1.json",
+  "original_sha256": "c9ebbdf96065cbe9103875abb99c1ec8f0e610f03bbea5b9e468f668510c2564",
+  "omitted_fields": [
+    "/status/groups"
+  ],
+  "record": {
+    "schema": "aictrack1.next_cycle10.PF30.actual_comparison_engineering_failure.v1",
+    "actual_status_sha256": "9853c930940afad416ed94a7a7fdb6c56a8edadba16261dcf22c97a4ca10016f",
+    "status": {
+      "observed_unix": 1791595340.2977574,
+      "logs": {
+        "fixed_compare": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/compare_graph_vs_J5.py\", line 92, in <module>\n    if __name__=='__main__':raise SystemExit(main())\n                                             ^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/compare_graph_vs_J5.py\", line 83, in main\n    features=validate_features(payload,cache,candidate['identity']);queries,query_identity=load_queries(control,ROOT/'inputs/frozen_queries');baseline,import_proof=imported_graph_predictions(queries)\n                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/paired_metrics.py\", line 32, in load_queries\n    raise ValueError('frozen query identity mismatch')\nValueError: frozen query identity mismatch\n"
+      },
+      "canonical": null,
+      "complete": false
+    },
+    "diagnostic_fourview_complete": true,
+    "training_and_CPU_model_recovery_complete": true,
+    "engineering_failure": true,
+    "algorithm_negative_claim": false,
+    "failed_comparison_group_closed": true,
+    "canonical_idle": true,
+    "actual_mismatch": {
+      "old_query_registered_selection_protocol_sha256": "f9a780b957d0325ed7afdf49185f9a4453d76f213cfaea3e52479fd4a08e7397",
+      "current_PF_selection_protocol_sha256": "0728b57a10fe7b7038333e0c9ac4bc3ab18fc68d01f2a2e9507375a2a02bc11e",
+      "control_ids_match": true,
+      "query_indices_SHA_unchanged": true
+    },
+    "fix_scope": "new separately-reviewed comparison metadata adapter; retain old bound source/protocol/query/4V/failed logs; original graph/P7/CI numerical code and actual cached identities; no new model forward or waiting framework"
+  }
+}

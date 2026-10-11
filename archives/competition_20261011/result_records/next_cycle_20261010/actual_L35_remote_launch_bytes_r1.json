@@ -1,0 +1,32 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_remote_launch_bytes_r1.json",
+  "original_sha256": "f115e9ee29fa8e24fcdca1c600562dad05bf9b867992563b9653469dadfa7bd4",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.learning_rate_joint.actual_launch.v1",
+    "source_manifest_sha256": "b2ad95ad6009516412ca1757ab64fd2b8820688da2c31b777ea3cd68d58207a1",
+    "budget_sha256": "d88e856bb5d96cb736c3e205873f961bd1cce0a0a61469339788f1681e7a269e",
+    "controller": {
+      "pid": 12547,
+      "state": "R",
+      "ppid": 12480,
+      "pgrp": 12547,
+      "session": 12547,
+      "start_ticks": "925128854",
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_learning_rate_joint_r2_20261010"
+    },
+    "planned_arms": [
+      "L35"
+    ],
+    "epochs_each": 20,
+    "planned_pause": false,
+    "test_access": false,
+    "initialize_from_smoke": false,
+    "launch_unix": 1791621485.442662,
+    "only_scientific_delta": "visual_learning_rate1.75e-6to3.5e-6",
+    "smoke_max_parameter_difference": 2.3283064365386963e-10
+  }
+}

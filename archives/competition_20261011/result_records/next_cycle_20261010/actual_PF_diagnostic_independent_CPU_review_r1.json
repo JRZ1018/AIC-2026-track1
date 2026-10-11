@@ -1,0 +1,28 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF_diagnostic_independent_CPU_review_r1.json",
+  "original_sha256": "1101aa27435223694547879d8729a4587a36968be0528ced1e889cea799b8a50",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.PF30.diagnostic.actual_independent_CPU_review.v1",
+    "complete": true,
+    "reviewer": "ops_final_cycle_review",
+    "actual_exec_chunk": "1a6c94",
+    "actual_exit_code": 0,
+    "scope": "read-only local source/13 tiny CPU fixtures/vendor CLI/metadata guards; no server/GPU/checkpoint model reload",
+    "source_sha256": "98a804d90fc0f9cb383d5801ba7e1daef038a15233f6b088271cc27dec28b213",
+    "registered_members": 34,
+    "necessary_CPU_tests": 13,
+    "author_receipt_sha256": "1588f5158577d549c12281d29217011f80e39f893abcbdd4c62bdd416a72ef5e",
+    "write_audit_attempts": [],
+    "numerical_reference": "ad990 numerical/query/J5_GRAPH bytes preserved",
+    "actual_metadata_guard_verified": "61f66/ab5/root launch31939+31944, PF30/.30/non-smoke",
+    "necessary_checks": "v2 threshold/current AC;152+2 head;20 history/allID-label;actual versus prior next and terminal next;AMP/all-mask/AdamW step counts",
+    "blocking_findings": [],
+    "limitations": [
+      "Actual fixed20 model restoration/4V/graph still future",
+      "Historical per-sample masks cannot be reconstructed; class summaries/actual mass/hash are checked",
+      "No measured noise truth precision"
+    ]
+  }
+}

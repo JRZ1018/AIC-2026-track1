@@ -1,0 +1,60 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_template_CPU_stage_r1.json",
+  "original_sha256": "486e90476c1ebaabe183c946a79de03b30eb7104f3078a44fabe60f60d6f3e6d",
+  "omitted_fields": [
+    "/CLI_entries/command",
+    "/members"
+  ],
+  "record": {
+    "schema": "aictrack1.CG25.actual_CPU_template_stage.v1",
+    "complete": true,
+    "remote_template_root": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_template_20261010",
+    "source_manifest_sha256": "7175b378a3ff67c907bea49de75cab3429f4f8aa63b072ba562f3bfe527c65d5",
+    "all_source_SHA_AST_PASS": true,
+    "closed_list_PASS": true,
+    "python_AST_count": 79,
+    "reused_same_SHA_members": 81,
+    "uploaded_members": 15,
+    "CLI_entries": [
+      {
+        "returncode": 0,
+        "stdout_sha256": "bf774c2ed6aca7c1ca823fc9ee6eb44a832d2602159ddb23cc59b57fcc19a298",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_tail": "usage: run_center_guard_joint.py [-h] [--check-source]\n                                 [--preflight | --smoke {CG25}]\n                                 [--resume-arms [{CG25} ...]]\n\noptions:\n  -h, --help            show this help message and exit\n  --check-source\n  --preflight\n  --smoke {CG25}\n  --resume-arms [{CG25} ...]\n",
+        "stderr_tail": ""
+      },
+      {
+        "returncode": 0,
+        "stdout_sha256": "990636992671c8281b4426b2617254c9cf86799cd54ffa5fb9dd6a9e5a9bd8cb",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_tail": "usage: prepare_center_guard.py [-h] --budget BUDGET --expected-budget-sha256\n                               EXPECTED_BUDGET_SHA256\n\noptions:\n  -h, --help            show this help message and exit\n  --budget BUDGET\n  --expected-budget-sha256 EXPECTED_BUDGET_SHA256\n",
+        "stderr_tail": ""
+      },
+      {
+        "returncode": 0,
+        "stdout_sha256": "e78a29ca7c748e0319945c54c5607d804feba39fbfc961c20a3873ee11ac17d8",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_tail": "usage: train_n1_peft.py [-h] --config CONFIG [--resume RESUME] [--p1-smoke]\n\noptions:\n  -h, --help       show this help message and exit\n  --config CONFIG\n  --resume RESUME\n  --p1-smoke\n",
+        "stderr_tail": ""
+      }
+    ],
+    "GPU_started": false,
+    "training_started": false,
+    "images_decoded": false,
+    "test_access": false,
+    "actual_future_bind_performed": false,
+    "future_budget_sha256": null,
+    "future_admission_sha256": null,
+    "future_H1_checkpoint_sha256": null,
+    "observed_unix": 1791599344.841834,
+    "disk": {
+      "total": 128849018880,
+      "used": 105051140096,
+      "free": 23797878784
+    },
+    "local_helper_sha256": "a3c8705fd2e0473a1e15de56eddb985e891aa611a0934ca6d79d55c4b17fcb8a",
+    "actual_remote_script_sha256": "7ecf9ba61722f69c2100f98d97088e054f292998b894389f709957469e72615d",
+    "independent_review_actual_chunk": "222e8d"
+  }
+}

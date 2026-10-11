@@ -1,0 +1,29 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_diagnostic_stage_CPU_r1.json",
+  "original_sha256": "d6c2405bfab0cb57a0f973d5a4b97b17fd4c239d3a5681201e6fce66c1ac802b",
+  "omitted_fields": [
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "returncode": 0,
+    "source_sha": "d3be603fdbcf7d1ba9b4101394d781940ff42e503a3e5e5e31059fa91d852557",
+    "reused_files": 25,
+    "uploaded_files": [
+      "compare_graph_vs_J5.py",
+      "fresh_diag_contract.py",
+      "inputs/actual_training_launch_reference.json",
+      "inputs/actual_training_launch_snapshot.json",
+      "inputs/budget.json",
+      "inputs/training_source_manifest.json",
+      "phase_guard.py",
+      "README.md",
+      "run_exploration_diagnostic.py",
+      "tests/test_exploration_contracts.py",
+      "source_manifest.json"
+    ],
+    "bytes_uploaded": 98067,
+    "local_CPU_tests": 16
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_FULL_monitor_summary.json",
+  "original_sha256": "a924f97ac30c797fa8b18f2d0924657ab4a070f6b97fddd10bfdb3bea93ffaad",
+  "omitted_fields": [],
+  "record": {
+    "observed_epoch": 1791530576.8717184,
+    "status": "FULL_first_epoch_in_progress_precise_birth_lease_consistent",
+    "controller": 2818,
+    "trainer": 2825,
+    "canonical_token": "2aead879a4194ece88103d64b94c4d4d",
+    "latest_epoch_complete": null,
+    "checkpoint_contents_read": false,
+    "data_free_bytes": 37719433216,
+    "cgroup_memory_available_bytes": 22542909440,
+    "gpu": {
+      "return_code": 0,
+      "devices": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 4080 SUPER",
+          "memory_used_mib": 4844.0,
+          "utilization_percent": 0.0
+        }
+      ],
+      "error": null
+    },
+    "action": "no_restart_no_recovery; healthy first-epoch training; retain ACTIVE40min monitor"
+  }
+}

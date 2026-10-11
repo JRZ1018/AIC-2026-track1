@@ -1,0 +1,37 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_independent_CPU_review_r1.json",
+  "original_sha256": "aafb03abd5546937efa7a4348895b63ab9a6198f59c72d4c1d29fc3488c4f3e4",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.persistent_filter_joint.independent_CPU_review.v1",
+    "status": "PASS_CPU_SOURCE_ONLY",
+    "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+    "author_CPU_receipt_sha256": "153240443847c677eb0c0d3a87684c51f99fa40859f282619cd36cde5526ca6b",
+    "independent_auditor": "/root/ops_final_cycle_review",
+    "actual_tool_chunk": "7993ea",
+    "registered_SHA_verified": 91,
+    "pure_readonly_author_tests_passed": 13,
+    "disk_fixture_not_repeated": true,
+    "independent_BytesIO_optimizer_gate_RNG_nextstep_equal": true,
+    "additional_750_class_actual_applied_ledger_fixture_passed": true,
+    "file_write_attempts": [],
+    "scientific_contract": {
+      "only_arm": "PF30",
+      "max_ac_weight": 0.3,
+      "hard_alpha": 0.1,
+      "trainable_tensors": 154,
+      "official_clip_and_legal_e88a_H1": true,
+      "fixedlast20": true,
+      "seed": 20261008,
+      "PF50": "registered_not_executable",
+      "original_GO_queue_AC_transforms_unchanged": true,
+      "actual_versus_next_mask_separated": true
+    },
+    "actual_budget_sha256": "ab5edf6db05351732364a8ec6263dc1114d7dcf45ceee341d128a7f7f19a0049",
+    "root_recorded_at": "2026-10-10T06:57:05.108518+08:00",
+    "remote_GPU_proof": false,
+    "model_full_CPU_recovery_claim": false,
+    "test_access": false
+  }
+}

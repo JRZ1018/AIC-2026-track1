@@ -1,0 +1,310 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_actual_retry_execution.json",
+  "original_sha256": "85d04ddac0ed1b343325c1ebfadb76338458268f4b8bdfb364f2204e2ba674fb",
+  "omitted_fields": [
+    "/files/attempt/LAUNCH.json/contents/command",
+    "/groups"
+  ],
+  "record": {
+    "observed_unix": 1791528654.0924938,
+    "files": {
+      "attempt/LAUNCH.json": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/LAUNCH.json",
+        "sha256": "4e9c68e00b4e9c8f01f069c758cd86424027d35fa300a4487d0f242ce1b0935e",
+        "contents": {
+          "GO_policy": "stdin G only after exact identity, lease attach and launch receipt",
+          "adjusted_initial_free_bytes": 45226205184,
+          "attempt_id": "a936682615554db799f374d0bb0753bb",
+          "capacity_increase_bytes": 32212254720,
+          "cpu_checkpoint_audit": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/CPU_CHECKPOINT_AUDIT.json",
+            "sha256": "4ba583041669742a85c98697834069cbe2fe4a56ac05e53ba25ceae63837b11d"
+          },
+          "deadline_unix": 1791533972.440027,
+          "disk_expansion_recovery": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+            "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+          },
+          "disk_expansion_recovery_sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52",
+          "gate_command": [
+            "/root/autodl-tmp/venvs/aictrack1/bin/python",
+            "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/launch_gate.py",
+            "--",
+            "/root/autodl-tmp/venvs/aictrack1/bin/python",
+            "scripts/train_n1_peft.py",
+            "--config",
+            "configs/experiment/p1_J5.yaml",
+            "--resume",
+            "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt"
+          ],
+          "launch_at_unix": 1791528191.0070586,
+          "new_fresh_training": false,
+          "operator_source_manifest_sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2",
+          "original_budget_sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941",
+          "original_data_initial_free_bytes": 13013950464,
+          "original_shared_budget": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+            "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+          },
+          "original_shared_budget_sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed",
+          "owner": {
+            "pgrp": 1524,
+            "pid": 1524,
+            "session": 1524,
+            "start_ticks": "310184367"
+          },
+          "phase_start_unix": 1791526772.440027,
+          "prior_failure": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/FAILURE.json",
+            "sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32"
+          },
+          "prior_failure_sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32",
+          "resume_checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+          "retry_after_disk_expansion": true,
+          "schema": "aictrack1.fresh_route.continuation.training.launch.v1",
+          "shared_budget_sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571",
+          "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+          "test_access": false
+        }
+      },
+      "attempt/TERMINAL_CPU_AUDIT.json": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/TERMINAL_CPU_AUDIT.json",
+        "sha256": "205c1b3841daff38a9ff5a102728f6cb041a2d53da6b253dc28daeb74eeca5ee",
+        "contents": {
+          "C": {
+            "ac_cpu_restored": true,
+            "ac_observation_epochs": 20,
+            "checkpoint_epoch": 20,
+            "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_C/last.pt",
+            "checkpoint_role": "last",
+            "checkpoint_sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca",
+            "checkpoint_stat": {
+              "device": 2304,
+              "inode": 11851175566,
+              "mtime_ns": 1791518123238760024,
+              "size": 1412602875
+            },
+            "classifier_equals_fresh_H1": true,
+            "classifier_head_source": "new_fold_H1_frozen",
+            "classifier_parameters_restored_equal": true,
+            "complete": true,
+            "confidence_observation_binding": true,
+            "config_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_C.yaml",
+            "config_sha256": "4cf0d7d79d81a256848f09347e2a18e400f5bb7c053a1240542850c54df93cd6",
+            "cuda_rng_restored_on_gpu": false,
+            "epoch": 20,
+            "exact_ac_train_id_label_binding": true,
+            "final_checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_C/final.pt",
+            "final_checkpoint_sha256": "ef0c2ff284bd3ef8d14b10097fb7914c1b8032d64341341c1efbcab92fa008fe",
+            "fixed_last_sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca",
+            "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+            "head_tensors": 0,
+            "history_epochs": 20,
+            "metrics_sha256": "a24a675144de727c380e0e9b977781a85f2c00aea91cc6e547c57905db098e6a",
+            "model_forwards": 0,
+            "numpy_rng_restored": true,
+            "optimizer_cpu_restored": true,
+            "optimizer_moments_finite": true,
+            "optimizer_parameter_groups": [
+              152
+            ],
+            "optimizer_steps": 0,
+            "python_rng_restored": true,
+            "saved_cuda_rng_structure_valid": true,
+            "saved_state_resume_bookkeeping_valid": true,
+            "scaler_cpu_restored": true,
+            "scheduler_T_max": 20,
+            "scheduler_cpu_restored": true,
+            "scheduler_epoch": 20,
+            "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+            "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+            "status": "complete_fixed_last20_audit",
+            "strict_cpu_model_restored": true,
+            "terminal_exports_verified": true,
+            "terminal_selection_rule": "fixed final epoch 20; no validation selection",
+            "torch_cpu_rng_restored": true,
+            "train_count": 118958,
+            "trainable_numel": 87849216,
+            "trainable_tensors": 152,
+            "training_seed": 20261008,
+            "validation_count": 29737,
+            "visual_tensors": 152
+          },
+          "J5": {
+            "ac_cpu_restored": true,
+            "ac_observation_epochs": 20,
+            "checkpoint_epoch": 20,
+            "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt",
+            "checkpoint_role": "last",
+            "checkpoint_sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c",
+            "checkpoint_stat": {
+              "device": 2304,
+              "inode": 32259746487,
+              "mtime_ns": 1791528545172906193,
+              "size": 1418765031
+            },
+            "classifier_equals_fresh_H1": false,
+            "classifier_head_source": "joint_fixed_last_state",
+            "classifier_parameters_restored_equal": true,
+            "complete": true,
+            "confidence_observation_binding": true,
+            "config_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_J5.yaml",
+            "config_sha256": "a65f60e974c04842e2c86975ab3675aad8469bc1b0c0a27a98e8fa145b4b8562",
+            "cuda_rng_restored_on_gpu": false,
+            "epoch": 20,
+            "exact_ac_train_id_label_binding": true,
+            "final_checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/final.pt",
+            "final_checkpoint_sha256": "70a962dcf71c7179ca20be9d8c88f6e2beebd86a5608a47537bc5302545c7238",
+            "fixed_last_sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c",
+            "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+            "head_tensors": 2,
+            "history_epochs": 20,
+            "metrics_sha256": "c0d90911c8a678ac5cac4bb692d9e39970b7034c788f03f90856f28508cccea8",
+            "model_forwards": 0,
+            "numpy_rng_restored": true,
+            "optimizer_cpu_restored": true,
+            "optimizer_moments_finite": true,
+            "optimizer_parameter_groups": [
+              152,
+              2
+            ],
+            "optimizer_steps": 0,
+            "python_rng_restored": true,
+            "saved_cuda_rng_structure_valid": true,
+            "saved_state_resume_bookkeeping_valid": true,
+            "scaler_cpu_restored": true,
+            "scheduler_T_max": 20,
+            "scheduler_cpu_restored": true,
+            "scheduler_epoch": 20,
+            "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+            "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+            "status": "complete_fixed_last20_audit",
+            "strict_cpu_model_restored": true,
+            "terminal_exports_verified": true,
+            "terminal_selection_rule": "fixed final epoch 20; no validation selection",
+            "torch_cpu_rng_restored": true,
+            "train_count": 118958,
+            "trainable_numel": 88233966,
+            "trainable_tensors": 154,
+            "training_seed": 20261008,
+            "validation_count": 29737,
+            "visual_tensors": 152
+          },
+          "adjusted_initial_free_bytes": 45226205184,
+          "capacity_increase_bytes": 32212254720,
+          "complete": true,
+          "cuda_used": false,
+          "disk_expansion_recovery": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+            "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+          },
+          "disk_expansion_recovery_sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52",
+          "model_forwards": 0,
+          "new_fresh_training": false,
+          "operator_source_manifest_sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2",
+          "optimizer_steps": 0,
+          "original_budget_sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941",
+          "original_data_initial_free_bytes": 13013950464,
+          "original_diagnostic_source_manifest_sha256": "554d7c8f839d4ab6fee1ce427c5e2b9b73435d4766ac5347794ceecace53fbc2",
+          "original_shared_budget": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+            "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+          },
+          "original_shared_budget_sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed",
+          "prior_failure": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/FAILURE.json",
+            "sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32"
+          },
+          "prior_failure_sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32",
+          "resume_checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+          "retry_after_disk_expansion": true,
+          "schema": "aictrack1.fresh_route.continuation.cpu_checkpoint_audit.v1",
+          "selected_route": "J5_GRAPH",
+          "shared_budget_sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571",
+          "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+          "test_access": false
+        }
+      },
+      "attempt/COMPLETE.json": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/COMPLETE.json",
+        "sha256": "f4790240a236750769aa3f0c44850c19340d364a5ee8b99504321dc26889b79b",
+        "contents": {
+          "actual_runtime_receipts": [
+            {
+              "attempt_id": "a936682615554db799f374d0bb0753bb",
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/runtime_receipts/J5_a936682615554db799f374d0bb0753bb.json",
+              "sha256": "a26ac5a4f6fc5c363fd42fda1aef4e7093ed84e1343a8645902883b8cff3a08d"
+            }
+          ],
+          "adjusted_initial_free_bytes": 45226205184,
+          "capacity_increase_bytes": 32212254720,
+          "complete": true,
+          "completed_at_unix": 1791528564.206582,
+          "completed_epoch": 20,
+          "completed_last_sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c",
+          "cpu_checkpoint_audit": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/CPU_CHECKPOINT_AUDIT.json",
+            "sha256": "4ba583041669742a85c98697834069cbe2fe4a56ac05e53ba25ceae63837b11d"
+          },
+          "deadline_unix": 1791533972.440027,
+          "disk_expansion_recovery": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+            "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+          },
+          "disk_expansion_recovery_sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52",
+          "disk_max_bytes": 12884901888,
+          "initial_free_bytes": 13013950464,
+          "min_free_bytes": 3221225472,
+          "new_fresh_training": false,
+          "operator_source_manifest_sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2",
+          "operator_started_at_unix": 1791528170.4818254,
+          "original_budget_sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941",
+          "original_data_initial_free_bytes": 13013950464,
+          "original_deadline_unix": 1791526772.440027,
+          "original_phase_start_unix": 1791497972.440027,
+          "original_shared_budget": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+            "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+          },
+          "original_shared_budget_sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed",
+          "owner": {
+            "pgrp": 1524,
+            "pid": 1524,
+            "session": 1524,
+            "start_ticks": "310184367"
+          },
+          "phase_start_unix": 1791526772.440027,
+          "prior_failure": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/FAILURE.json",
+            "sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32"
+          },
+          "prior_failure_sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32",
+          "resume_checkpoint_sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe",
+          "retry_after_disk_expansion": true,
+          "schema": "aictrack1.fresh_route.continuation.training.complete.v1",
+          "shared_budget_sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571",
+          "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+          "started_at_unix": 1791528186.7327847,
+          "status": "complete_exact_resume_to_fixed_last20",
+          "terminal_cpu_checkpoint_audit": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/TERMINAL_CPU_AUDIT.json",
+            "sha256": "205c1b3841daff38a9ff5a102728f6cb041a2d53da6b253dc28daeb74eeca5ee"
+          },
+          "test_access": false,
+          "total_elapsed_from_original_phase_start_seconds": 30591.766555070877
+        }
+      }
+    },
+    "disks": {
+      "data": {
+        "total": 128849018880,
+        "used": 90915622912,
+        "free": 37933395968
+      }
+    },
+    "canonical_lock": null,
+    "root_controller_stdout.log": "[2026-10-09 14:43:10] fresh-route-exact-continuation-a936682615554db799f374d0bb0753bb start\n[2026-10-09 14:43:10] C: already complete, skipping (strictly audited completed C20 skip)\n[2026-10-09 14:43:11] J5: starting - root approved exact partial J5 resume to original20 cosine\n[2026-10-09 14:49:09] J5: finished in 6.0 min; output validated\n[2026-10-09 14:49:09] fresh-route-exact-continuation-a936682615554db799f374d0bb0753bb finished\n{\"complete\": true, \"receipt\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/COMPLETE.json\", \"shared_budget_sha256\": \"7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571\"}\n",
+    "attempt/canonical_queue/J5.log": "\n          \"sample_count\": 7184,\n          \"sufficient_support\": true,\n          \"unevaluated_class_count\": 0,\n          \"worst_class_index\": 364,\n          \"worst_class_recall\": 0.08163265138864517,\n          \"worst_class_support\": 49,\n          \"zero_recall_class_count\": 0\n        },\n        \"mid\": {\n          \"accuracy\": 0.6769152283668518,\n          \"class_count\": 225,\n          \"covered_class_count\": 225,\n          \"evaluated_class_count\": 225,\n          \"evaluated_class_mean_accuracy\": 0.6776683330535889,\n          \"recall_median\": 0.7333333492279053,\n          \"recall_p10\": 0.35555556416511536,\n          \"recall_p90\": 0.9111111164093018,\n          \"sample_count\": 9790,\n          \"sufficient_support\": true,\n          \"unevaluated_class_count\": 0,\n          \"worst_class_index\": 265,\n          \"worst_class_recall\": 0.06666667014360428,\n          \"worst_class_support\": 45,\n          \"zero_recall_class_count\": 0\n        },\n        \"tail\": {\n          \"accuracy\": 0.6477317214012146,\n          \"class_count\": 375,\n          \"covered_class_count\": 369,\n          \"evaluated_class_count\": 375,\n          \"evaluated_class_mean_accuracy\": 0.6325241923332214,\n          \"recall_median\": 0.6764705777168274,\n          \"recall_p10\": 0.2777777910232544,\n          \"recall_p90\": 0.8963562846183777,\n          \"sample_count\": 12763,\n          \"sufficient_support\": true,\n          \"unevaluated_class_count\": 0,\n          \"worst_class_index\": 19,\n          \"worst_class_recall\": 0.0,\n          \"worst_class_support\": 6,\n          \"zero_recall_class_count\": 6\n        }\n      },\n      \"top1\": 0.6601876616477966,\n      \"unstable_strata\": [],\n      \"zero_recall_class_count\": 6\n    },\n    \"remaining\": {\n      \"macro_accuracy\": 0.6550626754760742,\n      \"predicted_classes\": 747,\n      \"prediction_count_max\": 71,\n      \"prediction_count_min\": 0,\n      \"present_target_classes\": 750,\n      \"recall_quantiles\": {\n        \"max\": 1.0,\n        \"median\": 0.699999988079071,\n        \"min\": 0.0,\n        \"p10\": 0.3214285671710968,\n        \"p90\": 0.9111111164093018\n      },\n      \"sample_count\": 28908,\n      \"top1\": 0.6716479659080505,\n      \"top_confusions\": [\n        {\n          \"count\": 15,\n          \"prediction\": 739,\n          \"target\": 716\n        },\n        {\n          \"count\": 13,\n          \"prediction\": 446,\n          \"target\": 39\n        },\n        {\n          \"count\": 13,\n          \"prediction\": 491,\n          \"target\": 665\n        },\n        {\n          \"count\": 12,\n          \"prediction\": 57,\n          \"target\": 519\n        },\n        {\n          \"count\": 11,\n          \"prediction\": 568,\n          \"target\": 541\n        },\n        {\n          \"count\": 10,\n          \"prediction\": 120,\n          \"target\": 615\n        },\n        {\n          \"count\": 10,\n          \"prediction\": 737,\n          \"target\": 420\n        },\n        {\n          \"count\": 10,\n          \"prediction\": 715,\n          \"target\": 424\n        },\n        {\n          \"count\": 10,\n          \"prediction\": 665,\n          \"target\": 491\n        },\n        {\n          \"count\": 9,\n          \"prediction\": 270,\n          \"target\": 612\n        },\n        {\n          \"count\": 9,\n          \"prediction\": 519,\n          \"target\": 57\n        },\n        {\n          \"count\": 9,\n          \"prediction\": 202,\n          \"target\": 535\n        },\n        {\n          \"count\": 9,\n          \"prediction\": 424,\n          \"target\": 715\n        },\n        {\n          \"count\": 9,\n          \"prediction\": 580,\n          \"target\": 504\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 439,\n          \"target\": 654\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 229,\n          \"target\": 662\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 460,\n          \"target\": 392\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 441,\n          \"target\": 316\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 253,\n          \"target\": 700\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 271,\n          \"target\": 161\n        }\n      ],\n      \"zero_recall_classes\": 7\n    }\n  },\n  \"label_smoothing\": 0.0,\n  \"last_checkpoint_sha256\": \"456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c\",\n  \"logit_adjustment\": null,\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"peak_vram_mib\": 4010.33935546875,\n  \"peft\": {\n    \"lora_blocks\": 8,\n    \"mode\": \"full_visual\"\n  },\n  \"position_interpolation\": \"bicubic_7x7_to_10x10\",\n  \"run_id\": \"20261009-fresh-route-J5-fixed20\",\n  \"runtime\": {\n    \"defer_epoch_metrics\": true,\n    \"reuse_validation_loader\": true\n  },\n  \"sampling\": {\n    \"mode\": \"natural\"\n  },\n  \"scope\": \"stage2 train/validation PEFT short screening; test data not accessed\",\n  \"selected_checkpoint\": \"final.pt\",\n  \"selected_checkpoint_sha256\": \"70a962dcf71c7179ca20be9d8c88f6e2beebd86a5608a47537bc5302545c7238\",\n  \"selection_rule\": \"fixed final epoch 20; no validation selection\",\n  \"split_sha256\": \"57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7\",\n  \"token_readout\": {\n    \"initialization_seed\": 20261005,\n    \"mode\": \"none\"\n  },\n  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}\n"
+  }
+}

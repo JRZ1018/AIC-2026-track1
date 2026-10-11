@@ -1,0 +1,16 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_comparison_entry_adapter_CPU_r1.json",
+  "original_sha256": "f305eacdcdfc35a749c0bde0f8c73cf3ea4c57246bdfeebdc07342e9c0ffdae2",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.L50.second_reused.comparison_entry_adapter.v1",
+    "complete": true,
+    "scope": "only folder/output assignment moved outside failing SHA guard; unchanged numerical functions AST and frozen original SHA",
+    "original_compare_sha256": "1a95939eee9d033b922a31f91b15e77d8d3a354a005421a19de8d2fa4b778ca2",
+    "adapter_sha256": "b09df1814a1ab610662587cea18a7baca49bb32bd361c87a514d4110e0c966d3",
+    "numerical_functions_AST_equal": true,
+    "actual_graph_started": false,
+    "GPU_forward": false
+  }
+}

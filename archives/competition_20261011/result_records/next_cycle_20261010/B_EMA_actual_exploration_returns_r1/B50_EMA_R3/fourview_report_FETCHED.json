@@ -1,0 +1,11 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B50_EMA_R3/fourview_report_FETCHED.json",
+  "original_sha256": "433f76fefb9020cd4e7abb577374e8d3c9eeeaf4ec23ae95a18f7d786fe3c9fd",
+  "omitted_fields": [],
+  "record": {
+    "sha256": "f37e0454a574a22eec640201444198489d1a376920f01f2f6a730d87afd8a2aa",
+    "bytes": 4848,
+    "path": "/root/autodl-tmp/AICtrack1_next_cycle_B_EMA_single_checkpoint_exploration_r3_20261010/artifacts/diagnostics/B50_EMA/report.json"
+  }
+}

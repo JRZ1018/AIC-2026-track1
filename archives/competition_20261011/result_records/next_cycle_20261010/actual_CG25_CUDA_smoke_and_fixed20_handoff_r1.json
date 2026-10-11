@@ -1,0 +1,115 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_CUDA_smoke_and_fixed20_handoff_r1.json",
+  "original_sha256": "59168ba26f058016e2752fdfc700723aec82cb928c2ce1f5b3960e70090449e1",
+  "omitted_fields": [
+    "/actual_launch/command",
+    "/actual_launch/owner/argv"
+  ],
+  "record": {
+    "observed_unix": 1791599671.776331,
+    "canonical": null,
+    "exit_records": [
+      {
+        "owner": {
+          "pid": 38629,
+          "pgrp": 38629,
+          "session": 38629,
+          "start_ticks": "317324981"
+        },
+        "return_code": 0,
+        "group_closed": true,
+        "test_access": false
+      }
+    ],
+    "owned_rows": [],
+    "formal_launched": true,
+    "smoke_log_tail": "[2026-10-10 10:33:17] 20261010-center-guard-joint-CG25 start\n[2026-10-10 10:33:17] CG25: starting - J5 center-guard .25 only exploration fixedlast20\n[2026-10-10 10:33:33] CG25: finished in 0.3 min; output validated\n[2026-10-10 10:33:33] 20261010-center-guard-joint-CG25 finished\n",
+    "smoke": {
+      "schema": "aictrack1.fresh_route.cuda_smoke.v1",
+      "status": "passed",
+      "synthetic_only": true,
+      "candidate": false,
+      "config_sha256": "8936c051d0dce8df60177393baed8e9a7580f968c4eb7bd080cc73a3b86d0811",
+      "full_visual_tensors": 152,
+      "trainable_tensors": 154,
+      "trainable_parameters": 88233966,
+      "head_gradient_norms": {
+        "linear.weight": 0.10411300510168076,
+        "linear.bias": 0.10410420596599579
+      },
+      "head_frozen": false,
+      "base_loss": {
+        "kind": "sce",
+        "alpha": 0.1,
+        "beta": 1.0,
+        "log_zero": -4.0
+      },
+      "first_loss": 4.786383628845215,
+      "uninterrupted_second_loss": 4.676631927490234,
+      "resumed_second_loss": 4.676631927490234,
+      "max_parameter_difference": 1.1641532182693481e-10,
+      "scheduler_T_max": 20,
+      "amp_overflow_skips": [
+        {
+          "from_scale": 65536.0,
+          "to_scale": 32768.0
+        },
+        {
+          "from_scale": 32768.0,
+          "to_scale": 16384.0
+        }
+      ],
+      "successful_update_count": 3,
+      "successful_updates": [
+        {
+          "loss": 4.786383628845215,
+          "scale": 16384.0,
+          "scheduler_epoch": 1
+        },
+        {
+          "loss": 4.676631927490234,
+          "scale": 16384.0,
+          "scheduler_epoch": 2
+        },
+        {
+          "loss": 4.676631927490234,
+          "scale": 16384.0,
+          "scheduler_epoch": 2
+        }
+      ],
+      "checkpoint_sha256": "394d6774843973b273120b6b4c0248b35d5d32da9e419d18356a5bf5c690aa1e",
+      "checkpoint_role": "synthetic_resume_only"
+    },
+    "smoke_receipt_sha256": "791869b8916422c2766ccc0677ac286183d95b68bb3f3ae86bd7d8cc20167414",
+    "smoke_all_owned_groups_closed": true,
+    "actual_launch": {
+      "schema": "aictrack1.CG25.actual_fixed20_launch.v1",
+      "owner": {
+        "pid": 38683,
+        "pgrp": 38683,
+        "session": 38683,
+        "start_ticks": "317332444",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010"
+      },
+      "source_manifest_sha256": "03381421c2398e6d4d3d510a8be7bafc46e6b8a0d70515f7bf813ccf9e93e605",
+      "template_source_sha256": "7175b378a3ff67c907bea49de75cab3429f4f8aa63b072ba562f3bfe527c65d5",
+      "budget_sha256": "151caf413e7423309ed2b132646a167efea1bb3b4603fe631623113142c25ffb",
+      "launch_unix": 1791599672.0817852,
+      "smoke_receipt_sha256": "791869b8916422c2766ccc0677ac286183d95b68bb3f3ae86bd7d8cc20167414",
+      "smoke_all_owned_groups_closed": true,
+      "canonical_idle_before_launch": true,
+      "initialization": "fresh officialCLIP plus legal e88a oldfold H1100",
+      "smoke_initialized_candidate": false,
+      "training_rows": 118958,
+      "query_rows": 29737,
+      "epochs": 20,
+      "fixed_last": true,
+      "planned_pause": false,
+      "center_guard_fraction": 0.25,
+      "test_access": false,
+      "log_path": "/root/autodl-tmp/AICtrack1_next_cycle_center_guard_joint_20261010/root_actual_CG25_fixed20_stdout_r1.log"
+    },
+    "actual_launch_sha256": "2bbb3a57950d7e65f9cca2d14aef5bcbfe35bca490e6e24655f21740a31540a8"
+  }
+}

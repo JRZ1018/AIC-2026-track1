@@ -1,0 +1,11 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_CUDA_smoke_r1.json",
+  "original_sha256": "e49b8fea77bd7f9c022b6f5bb16195d69cebcb940dc576923ccae46aa29fb55b",
+  "omitted_fields": [],
+  "record": {
+    "returncode": 1,
+    "stdout_tail": "[2026-10-10 16:35:47] 20261010-learning-rate-joint-L35 start\n[2026-10-10 16:35:47] L35: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-10 16:35:51] L35: STOPPED after 0.1 min with return code 1; output status=ready: output directory does not exist; halting queue. Log: /root/autodl-tmp/AICtrack1_next_cycle_learning_rate_joint_20261010/artifacts/queues/8f94d1a794664ac6b82484646c5ad7bc/L35.log\n",
+    "receipts": []
+  }
+}

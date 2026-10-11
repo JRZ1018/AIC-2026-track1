@@ -1,0 +1,15 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_reused_diagnostic_author_CPU_r2.json",
+  "original_sha256": "59547e4a7a2fdec0fd6b384991351d6034cf4709b514467561489220b6cf1260",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "source_sha256": "6a3dfaa8c8bec103609299aebce42535722f7364ab6447a1a3dbc228a6ba2e81",
+    "scope": "CPU AST/source/control SHA and frozen-query order; R1 numerical bytes unchanged",
+    "old_query_reused_for_exploration": true,
+    "independent_confirmation": false,
+    "remote_deployed": false,
+    "future_last_sha256": null
+  }
+}

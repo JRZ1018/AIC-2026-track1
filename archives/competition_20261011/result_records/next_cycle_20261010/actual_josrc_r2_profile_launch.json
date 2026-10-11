@@ -1,0 +1,23 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_josrc_r2_profile_launch.json",
+  "original_sha256": "6cf9f007d58d3d5395fc656bb4070ad350ac0b97df3423e246534aac02f94053",
+  "omitted_fields": [
+    "/command",
+    "/process/argv"
+  ],
+  "record": {
+    "mode": "profile",
+    "process": {
+      "pid": 19371,
+      "ppid": 19370,
+      "pgrp": 19371,
+      "session": 19371,
+      "start_ticks": "313548445",
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_profile_20261010"
+    },
+    "bound_source_sha256": "7f2c25a43df3b80169fc849828bbfab91ac25871642d0524ef69648dcff84710",
+    "launch_unix": 1791561831.797433,
+    "test_access": false
+  }
+}

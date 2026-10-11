@@ -1,0 +1,6 @@
+model:
+  expected_weight_sha256: 0a69923f5f077e6775b6d90c32c7d7115764fd47a89812c4d3b46626457d6365
+  name: ViT-B/32
+  provider: OpenAI
+  runtime_downloads_allowed: false
+  weight_path: D:\aicomp\AICtrack1\artifacts\next_cycle_20261009\supervision_diagnostic_source\artifacts\cpu_fixtures\loader\toy_clip.pt

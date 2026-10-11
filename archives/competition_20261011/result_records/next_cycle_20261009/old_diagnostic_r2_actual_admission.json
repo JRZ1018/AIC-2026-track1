@@ -1,0 +1,127 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/old_diagnostic_r2_actual_admission.json",
+  "original_sha256": "ed4fa02e8b06e2c8251c60d944edd19380b89fdd58fcc80ac43a3cafc4ebd5c6",
+  "omitted_fields": [
+    "/admission/idle/original_controller/argv"
+  ],
+  "record": {
+    "schema": "aictrack1.old_diagnostic_resume.R2_CPU_admission.v1",
+    "status": "passed",
+    "observed_epoch": 1791496783.6299899,
+    "operator_manifest_sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+    "source_sha256": "d9b3cac354958328ae474a4d10410b9e5579c5f2427534cb491417fefea1f06e",
+    "actual_linux_dry_run_passed": true,
+    "actual_R1_state_change_replay_passed": true,
+    "failed_R1_controller_absent": true,
+    "admission": {
+      "schema": "aictrack1.old_diagnostic_resume.admission.v1",
+      "operator": {
+        "path": "/root/AICtrack1_next_cycle_diagnostic_20261009/operator_tools/old_diagnostic_resume_r2/old_diagnostic_resume_manifest.json",
+        "sha256": "31e5b63954cc61797742e40498b73845740950782e9c265d4bc3bebf39a9d074",
+        "script_sha256": "d9b3cac354958328ae474a4d10410b9e5579c5f2427534cb491417fefea1f06e",
+        "verified_files": 4
+      },
+      "training_source": {
+        "path": "/root/AICtrack1_next_cycle_20261009/source_manifest.json",
+        "sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+        "verified_files": 83
+      },
+      "diagnostic_source": {
+        "path": "/root/AICtrack1_next_cycle_diagnostic_20261009/source_manifest.json",
+        "sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+        "verified_files": 29
+      },
+      "original_chain_receipt": {
+        "path": "/root/AICtrack1_next_cycle_20261009/artifacts/queues/p1_chain_result.json",
+        "sha256": "34c54757123ce53c974cebeb4f54f916531efbd16eeea0b4a26b7bf0c176e076"
+      },
+      "idle": {
+        "original_controller": {
+          "pid": 218941,
+          "start_ticks": "305326864",
+          "cwd": "/root/AICtrack1_next_cycle_20261009"
+        },
+        "original_controller_pid_absent": true,
+        "busy_project_process_count": 0,
+        "canonical_lock_absent": true,
+        "observed_process_count": 12,
+        "probe_epoch": 1791496783.3874977
+      },
+      "candidates": {
+        "J5": {
+          "arm": "J5",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/last.pt",
+          "config_sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/metrics.json",
+          "metrics_sha256": "f75079d73c52b7f19958586dea1cc775dd0b866e775e634a2ea698b83ac05636",
+          "checkpoint_stat": {
+            "bytes": 1418755687,
+            "mtime_ns": 1791487758295627162,
+            "inode": 95560680,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        },
+        "J20": {
+          "arm": "J20",
+          "checkpoint_role": "last",
+          "checkpoint_epoch": 20,
+          "checkpoint_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+          "checkpoint_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/last.pt",
+          "config_sha256": "567d12e6a36daf01d5c20ec26bec238fd2aa735b11d6dfdb452fb92d4b33e1db",
+          "history_epochs": 20,
+          "early_stop": null,
+          "train_count": 118958,
+          "validation_count": 29737,
+          "trainable_numel": 88233966,
+          "metrics_path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J20/metrics.json",
+          "metrics_sha256": "9b917ddd5bc93c02fb2070a39b17ff36f85a2a57e0d3c3eb5bb276e77903a2c1",
+          "checkpoint_stat": {
+            "bytes": 1418755751,
+            "mtime_ns": 1791495850086827740,
+            "inode": 8607091682,
+            "device": 59,
+            "admission_action": "stat_only; runner hashes and restores CPU154"
+          }
+        }
+      },
+      "disk": {
+        "original_initial_free_bytes": 14418411520,
+        "observed_free_bytes": 10832351232,
+        "cumulative_used_bytes": 3586060288,
+        "reserve_bytes": 536870912,
+        "minimum_free_bytes": 3221225472,
+        "cumulative_max_bytes": 21474836480,
+        "baseline_reset": false
+      },
+      "memory": {
+        "platform": "linux",
+        "total_bytes": 540662706176,
+        "host_available_bytes": 459339464704,
+        "effective_available_bytes": 28449558528,
+        "cgroup": {
+          "limit_bytes": 66571993088,
+          "used_bytes": 38122434560,
+          "available_bytes": 28449558528,
+          "source": "/sys/fs/cgroup/memory/memory.limit_in_bytes"
+        },
+        "gpu_probed": false
+      },
+      "test_access": false,
+      "checkpoint_loaded": false,
+      "checkpoint_hashed": false
+    },
+    "original_phase_deadline_unix": 1791501451.920797,
+    "GPU_started": false,
+    "new_submission_ready": false
+  }
+}

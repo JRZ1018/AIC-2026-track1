@@ -1,0 +1,60 @@
+{
+  "dependencies": {
+    "numpy": "2.5.2",
+    "python": "3.12.10",
+    "scipy": "1.18.1",
+    "torch": "2.11.0+cu128"
+  },
+  "file_metadata": {
+    "README.md": {
+      "bytes": 6460
+    },
+    "bind_graph_assets.py": {
+      "bytes": 679
+    },
+    "freeze_source.py": {
+      "bytes": 1495
+    },
+    "graph_protocol.json": {
+      "bytes": 2455
+    },
+    "p3_budget.py": {
+      "bytes": 2266
+    },
+    "p3_contract.py": {
+      "bytes": 14022
+    },
+    "p3_graph.py": {
+      "bytes": 8642
+    },
+    "p3_metrics.py": {
+      "bytes": 2343
+    },
+    "run_graph.py": {
+      "bytes": 10384
+    },
+    "tests/test_graph.py": {
+      "bytes": 12760
+    }
+  },
+  "files": {
+    "README.md": "e7a61f3a05a5946da1d9647e12319802f7a1722667e46cf973647bf8026e90e4",
+    "bind_graph_assets.py": "1b7a601a102ca7ed33f3139499e99ba858bbc64432c8ef2cda1e86331664fa96",
+    "freeze_source.py": "076afc7ce05fc97eb4aab2eae7222fa91a1898024b84b962065b49817174dce5",
+    "graph_protocol.json": "f48211db3716faaf45255dcc96e0b614bf42c1673791406bf9d7457c1a50b30d",
+    "p3_budget.py": "32a9488ea0e15cf3819e8ef54637c090931906643480bbe9e2e0eda33918de85",
+    "p3_contract.py": "72d28f3b75302be0a46c194280f6ea2c37009df9db605001b8b1f9dd14054d33",
+    "p3_graph.py": "1e70ac94e08ec5f26ee21cbff5afe6d13bc96be253ff9ea7dabeb9149a317df5",
+    "p3_metrics.py": "0f3194e1c6e2257ec7b6e28dd15e51866cd0fe3f48e68e1bc4bb83f185bf7380",
+    "run_graph.py": "2e3c69ae660c30e99d34ea63ccb4f17d55495d08127f55d79f9fe14fbc587e41",
+    "tests/test_graph.py": "8913347a78a9c861ef484b116cdea8ae3b41216505097a45a80915a6b4357765"
+  },
+  "frozen_utc": "2026-10-08T18:49:41.238118+00:00",
+  "graph_protocol_sha256": "f48211db3716faaf45255dcc96e0b614bf42c1673791406bf9d7457c1a50b30d",
+  "model_updates": 0,
+  "real_graph_executed": false,
+  "schema": "aictrack1.p3.graph_source.v1",
+  "status": "cpu_engineering_only_not_candidate_result",
+  "test_access": false,
+  "third_party_source_copied": false
+}

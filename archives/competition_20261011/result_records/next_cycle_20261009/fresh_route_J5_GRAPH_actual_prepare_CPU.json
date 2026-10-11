@@ -1,0 +1,51 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_J5_GRAPH_actual_prepare_CPU.json",
+  "original_sha256": "1f3f2bcd48263225c7d61af752093036325d28bb1b45cb0eace1d31542c383a4",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_prepare_and_H1_CPU_preflight.v1",
+    "complete": true,
+    "bound": {
+      "status": "bound_C_plus_one_typed_route_not_launched",
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+      "selected_route": "J5_GRAPH",
+      "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482"
+    },
+    "CPU_preflight": {
+      "schema": "aictrack1.fresh_route.actual_bound_assets_H1_CPU_preflight.v1",
+      "complete": true,
+      "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+      "verified_source_members": 91,
+      "selected_route": "J5_GRAPH",
+      "selected_arm": "J5",
+      "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+      "h1_epoch": 100,
+      "h1_row_binding": {
+        "schema": "aictrack1.mainline.h1.rows.v1",
+        "counts": {
+          "train": 118958,
+          "validation": 29737
+        },
+        "all_rows_sha256": "37b23205175174328fafbcfe18e9893df7eacc36a0580d56064281ce3eda7065",
+        "train_rows_sha256": "1196a5653fcacd1f1387f0be84b540dedc2ae4f85b585d118655b73cb206f524",
+        "validation_rows_sha256": "42c7e7fe4931152790e726d866eb758542f21b61c8115769f8f7f78daa57d767",
+        "validation_used_for_optimization_or_selection": false
+      },
+      "actual_torch_threads": 4,
+      "actual_torch_interop_threads": 64,
+      "official_CLIP_weights_file_hash_verified": true,
+      "official_CLIP_model_constructed": false,
+      "full152_or154_model_CPU_restore_performed": false,
+      "cuda_started": false,
+      "test_access": false
+    },
+    "admission_path": "/root/autodl-tmp/AICtrack1_next_cycle_route_admission_20261009/admission.json",
+    "admission_sha256": "25391e7f14d38ca39f27d5475ccdd5519389b1e8fe20f88415991de410fe64af",
+    "template_sha256": "05df2bbd14af808847a430bb4a23ba22483774dad00e6724026ea37dd633bf88",
+    "created_epoch": 1791511101.8528478,
+    "GPU_started": false,
+    "test_access": false,
+    "new_submission_ready": false
+  }
+}

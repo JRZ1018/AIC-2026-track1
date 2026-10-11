@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_fixed_server_banner_failure_r1.json",
+  "original_sha256": "0c49645dfbcbd99b041fc99631968d7bf4fba94739957a8854df69cc0dcc1f9b",
+  "omitted_fields": [
+    "/host",
+    "/port"
+  ],
+  "record": {
+    "schema": "aictrack1.fixed_host_actual_banner_failure.v1",
+    "observed_unix": 1791601593.1629875,
+    "actual_DNS_public_A": "116.172.66.188",
+    "both_DNS_agreed": true,
+    "banner": "empty_EOF",
+    "authentication_started": false,
+    "actual_remote_stage_started": false,
+    "current_training_status": "unknown_since_latest_successful_10:59_collector",
+    "last_successful_observed_unix": 1791601161.259598,
+    "actual_owned_training_restarted": false,
+    "planned_response": "bounded read-only recheck; prepare remaining CPU work; preserve fixed HOST/PORT/PIN and old credentials contract"
+  }
+}

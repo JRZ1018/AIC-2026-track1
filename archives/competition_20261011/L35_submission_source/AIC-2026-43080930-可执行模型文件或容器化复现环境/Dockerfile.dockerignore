@@ -1,0 +1,9 @@
+.git
+**/.venv
+**/venv
+**/__pycache__
+**/*.pyc
+runtime_outputs
+DataSetStage2
+AIC-2026-43080930-可执行模型文件或容器化复现环境/container-image.tar
+AIC-2026-43080930-可执行模型文件或容器化复现环境/container-image.tar.sha256

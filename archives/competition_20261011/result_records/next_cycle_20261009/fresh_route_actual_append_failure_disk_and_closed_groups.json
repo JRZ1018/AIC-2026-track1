@@ -1,0 +1,40 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_append_failure_disk_and_closed_groups.json",
+  "original_sha256": "fd99a38f0d46d17811e5129fa03f317b4de3d769dc03a378533eea8a894d29b9",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791527260.2882183,
+    "processes": [],
+    "stats": {
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt": {
+        "bytes": 1418667303,
+        "mtime": 1791524832.6698565
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/p1_screen_receipt.json": {
+        "bytes": 309,
+        "mtime": 1791524834.413837
+      },
+      "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt.tmp": {
+        "bytes": 1346168189,
+        "mtime": 1791527127.7730381
+      }
+    },
+    "log_tails": {
+      "attempt/canonical_queue/J5.log": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read\n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read\n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 2 bytes but only got 0. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\nTraceback (most recent call last):\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/scripts/train_n1_peft.py\", line 1463, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/scripts/train_n1_peft.py\", line 1232, in main\n    _save_atomic(checkpoint, output / \"last.pt\")\n  File \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/scripts/train_n1_peft.py\", line 190, in _save_atomic\n    torch.save(payload, temporary)\n  File \"/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/torch/serialization.py\", line 1004, in save\n    _save(\n  File \"/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/torch/serialization.py\", line 1313, in _save\n    zip_file.write_record(name, storage, num_bytes)\nKeyboardInterrupt\n",
+      "root_controller_stdout.log": "[2026-10-09 14:19:37] fresh-route-exact-continuation-c36dbb779c5d49ffb7f12df7a6b9e535 start\n[2026-10-09 14:19:37] C: already complete, skipping (strictly audited completed C20 skip)\n[2026-10-09 14:19:37] J5: starting - root approved exact partial J5 resume to original20 cosine\n[2026-10-09 14:25:29] J5: STOPPED after 5.9 min with return code 1; output status=partial: output directory exists without metrics.json; halting queue. Log: /root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/canonical_queue/J5.log\n{\"complete\": false, \"error\": \"original exact resume queue failed ValueError: original cumulative8GiB/min3GiB exceeded\", \"cleanup_error\": null}\n"
+    },
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21616861184,
+        "free": 10595393536
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 90545704960,
+        "free": 38303313920
+      }
+    }
+  }
+}

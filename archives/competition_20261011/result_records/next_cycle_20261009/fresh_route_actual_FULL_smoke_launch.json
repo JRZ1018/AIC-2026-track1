@@ -1,0 +1,23 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_FULL_smoke_launch.json",
+  "original_sha256": "decdce95e8f63c5896abb4559fcd4fd83c44e40cf5b183ad879259bf1c3a8d08",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "operation": "FULL_actual_CUDA_smoke",
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+    "source_manifest_sha256": "be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54",
+    "controller": {
+      "pid": 2745,
+      "pgrp": 2745,
+      "session": 2745,
+      "start_ticks": "310383849"
+    },
+    "actual_launch_unix": 1791530185.8295562,
+    "log": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/root_actual_smoke_stdout.log",
+    "candidate_training": false,
+    "test_access": false
+  }
+}

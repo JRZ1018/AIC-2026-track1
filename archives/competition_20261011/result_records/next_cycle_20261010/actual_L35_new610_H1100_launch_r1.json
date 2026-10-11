@@ -1,0 +1,24 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_new610_H1100_launch_r1.json",
+  "original_sha256": "bf4cde5d01ffc03b72236a357b249ec97e513b1ca27165219d26cb33ceb7b2e9",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "controller": {
+      "pid": 18753,
+      "state": "R",
+      "ppid": 18687,
+      "pgrp": 18753,
+      "session": 18753,
+      "start_ticks": "926334523"
+    },
+    "source_manifest_sha256": "4c5f1cb814765d5e2307012dce8be07b7b9321380a90029327d1c453b8676fdd",
+    "launch_unix": 1791633542.3389993,
+    "test_access": false,
+    "new_train_only_h1": true,
+    "seed": 20261008,
+    "epochs": 100
+  }
+}

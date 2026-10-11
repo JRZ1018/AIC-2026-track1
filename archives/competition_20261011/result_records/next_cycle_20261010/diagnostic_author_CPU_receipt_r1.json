@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/diagnostic_author_CPU_receipt_r1.json",
+  "original_sha256": "472ec30fc12e34a56b457e640ad502b9d5ffcec9b7ac6a40c435aaab1487b12f",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.joint_alpha.exploration_diagnostic.author_CPU.v1",
+    "complete": false,
+    "source_manifest_sha256": "4e882873a6502507ca7f145b89a6cc358c62927d00aff9043543153a707a8350",
+    "return_code": 1,
+    "wall_seconds": 15.193418979644775,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "946278f497bd64a55c18adf8574dd40a15c9d9ec27b08534de71554134705ade",
+    "real_checkpoint_opened": false,
+    "actual_model_loaded": false,
+    "gpu_probed": false,
+    "training_steps": 0,
+    "test_access": false
+  }
+}

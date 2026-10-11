@@ -1,0 +1,67 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_actual_PF30_query_retry_comparison_status.json",
+  "original_sha256": "0d6d2f115eb83311e8fe50b099aab25ecf112b0ae6489406b3d24d023854a66e",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791596183.6674178,
+    "owned_group": [],
+    "canonical": null,
+    "complete": true,
+    "files": {
+      "candidate_graph_increment_balanced_supported_unique_predictions.npz": {
+        "sha256": "e3fd5bdbdccb4826d470df3796de758c14baa3d398fd7a5e16cc6fce15e7303e",
+        "bytes": 51180
+      },
+      "candidate_graph_increment_natural_unique_images_predictions.npz": {
+        "sha256": "f8b6141847e80171f68dc282c58e64d0c4540b15c716039c2f5a5b2776e19cf4",
+        "bytes": 93916
+      },
+      "graph_combo_vs_J5_GRAPH_balanced_supported_unique_predictions.npz": {
+        "sha256": "8fea06184ee9836e445ec93666ac1d433cefd38e10680c5032719ff6066a420e",
+        "bytes": 25553
+      },
+      "graph_combo_vs_J5_GRAPH_natural_unique_images_predictions.npz": {
+        "sha256": "984b4d8cbf9db21c66b3fe992441cf08dc2b365928a4fbd37f18f70626297181",
+        "bytes": 47054
+      },
+      "raw_model_P7_vs_J5_P7_balanced_supported_unique_predictions.npz": {
+        "sha256": "1079ebf2a10fdad7e9e4271f2775ac830b91651bd31ad183a2b3d96702775e98",
+        "bytes": 51254
+      },
+      "raw_model_P7_vs_J5_P7_natural_unique_images_predictions.npz": {
+        "sha256": "86ef8613ff8d43d6d7583d8c42c4a979f0e772d1bf3e6d68063d9616ec2fded5",
+        "bytes": 94204
+      },
+      "report.json": {
+        "sha256": "2d8b9e3d803d2fd04ab07b2460b39b9b265a0a6a3b4a5b1268fe89dfde5b44a0",
+        "bytes": 2250825
+      },
+      "result_manifest.json": {
+        "bytes": 1529,
+        "sha256": "b1f9cb21e416bed0dff25506ba369cac8516b6f40d930edc9b84426feff73541"
+      },
+      "query_identity.json": {
+        "bytes": 67181,
+        "sha256": "02d2c5108617929d498e72d7058034a17d1ad9f0a602edca2b9ef10cc773f897"
+      },
+      "query_indices.npz": {
+        "bytes": 72663,
+        "sha256": "215662c1e8712e1d97f46f72c5268065f3ee65ce8f647e066adfd38bf475baf5"
+      },
+      "input_identity.json": {
+        "bytes": 8131,
+        "sha256": "574b11a1f99fd0a5cf741570ab3b2add24b24eec2b19ee3c2823ee903433bdc1"
+      },
+      "p1_checkpoint_audit.json": {
+        "bytes": 2944,
+        "sha256": "3405011ad6e6315712871622ecfa7bc322211226beae865a98fa297621781644"
+      }
+    },
+    "remote_report": "/root/autodl-tmp/AICtrack1_next_cycle_PF_fixed_graph_query_binding_retry_20261010/artifacts/comparison/report.json",
+    "remote_report_sha256": "2d8b9e3d803d2fd04ab07b2460b39b9b265a0a6a3b4a5b1268fe89dfde5b44a0",
+    "local_return_root": "D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261010\\PF30_actual_exploration_returns_r1",
+    "primary_delta_pp": -0.23035230352303526,
+    "natural_delta_pp": -0.04035376803309009
+  }
+}

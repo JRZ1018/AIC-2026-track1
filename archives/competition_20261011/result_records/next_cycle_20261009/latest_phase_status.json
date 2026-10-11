@@ -1,0 +1,1262 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_phase_status.json",
+  "original_sha256": "72fb98e6a45237c1d2f618964c3ed75294026118a3e2bafc58b5385c09004884",
+  "omitted_fields": [
+    "/canonical_lease/record/command",
+    "/processes/argv",
+    "/state_controller_observations/observed/argv"
+  ],
+  "record": {
+    "schema": "aictrack1.read_only_phase_status.v1",
+    "observed_epoch": 1791536145.0592127,
+    "roots": {
+      "p1_old": {
+        "path": "/root/AICtrack1_next_cycle_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+          "bytes": 9544,
+          "schema": "aictrack1.p1.source.v1",
+          "file_count": 83,
+          "status": "bound",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {
+          "artifacts/queues/P1_J20/chain.log": {
+            "bytes": 812,
+            "modified_epoch": 1791495858.0669842,
+            "scan_bytes": 812,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 01:10:31] 20261009-P1-J20 start\n[2026-10-09 01:10:31] J20: starting - full-visual + task head, original20 cosine\n[2026-10-09 01:10:41] J20: STOPPED after 0.2 min with return code 1; output status=ready: output directory does not exist; halting queue. Log: /root/AICtrack1_next_cycle_20261009/artifacts/queues/P1_J20/J20.log\n[2026-10-09 01:12:47] 20261009-P1-J20 start\n[2026-10-09 01:12:47] J20: starting - full-visual + task head, original20 cosine\n[2026-10-09 01:13:09] J20: finished in 0.4 min; output validated\n[2026-10-09 01:13:09] 20261009-P1-J20 finished\n[2026-10-09 03:29:30] 20261009-P1-J20 start\n[2026-10-09 03:29:30] J20: starting - full-visual + task head, original20 cosine\n[2026-10-09 05:44:18] J20: finished in 134.8 min; output validated\n[2026-10-09 05:44:18] 20261009-P1-J20 finished",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "p1_chain.log": {
+            "bytes": 474,
+            "modified_epoch": 1791495858.0669842,
+            "scan_bytes": 474,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 01:13:38] 20261009-P1-J5 start\n[2026-10-09 01:13:38] J5: starting - full-visual + task head, original20 cosine\n[2026-10-09 03:29:27] J5: finished in 135.8 min; output validated\n[2026-10-09 03:29:27] 20261009-P1-J5 finished\n[2026-10-09 03:29:30] 20261009-P1-J20 start\n[2026-10-09 03:29:30] J20: starting - full-visual + task head, original20 cosine\n[2026-10-09 05:44:18] J20: finished in 134.8 min; output validated\n[2026-10-09 05:44:18] 20261009-P1-J20 finished",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "artifacts/queues/P1_J20/J20.log": {
+            "bytes": 8199168,
+            "modified_epoch": 1791495856.5469546,
+            "scan_bytes": 262144,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 597,
+            "tail": "},\n  \"position_interpolation\": \"bicubic_7x7_to_10x10\",\n  \"run_id\": \"20261009-p1-J20-fullvisual20\",\n  \"runtime\": {\n    \"defer_epoch_metrics\": true,\n    \"reuse_validation_loader\": true\n  },\n  \"sampling\": {\n    \"mode\": \"natural\"\n  },\n  \"scope\": \"stage2 train/validation PEFT short screening; test data not accessed\",\n  \"selected_checkpoint\": \"final.pt\",\n  \"selected_checkpoint_sha256\": \"54323b1526cf808b0ff3483ac68b1da6bc6876d5b790ae68216aeb3ace279474\",\n  \"selection_rule\": \"fixed final epoch 20; no validation selection\",\n  \"split_sha256\": \"0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c\",\n  \"token_readout\": {\n    \"initialization_seed\": 20261005,\n    \"mode\": \"none\"\n  },\n  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "artifacts/queues/P1_J5/chain.log": {
+            "bytes": 235,
+            "modified_epoch": 1791487767.6913974,
+            "scan_bytes": 235,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 01:13:38] 20261009-P1-J5 start\n[2026-10-09 01:13:38] J5: starting - full-visual + task head, original20 cosine\n[2026-10-09 03:29:27] J5: finished in 135.8 min; output validated\n[2026-10-09 03:29:27] 20261009-P1-J5 finished",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "artifacts/queues/P1_J5/J5.log": {
+            "bytes": 8199413,
+            "modified_epoch": 1791487765.9594395,
+            "scan_bytes": 262144,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 597,
+            "tail": " },\n  \"position_interpolation\": \"bicubic_7x7_to_10x10\",\n  \"run_id\": \"20261009-p1-J5-fullvisual20\",\n  \"runtime\": {\n    \"defer_epoch_metrics\": true,\n    \"reuse_validation_loader\": true\n  },\n  \"sampling\": {\n    \"mode\": \"natural\"\n  },\n  \"scope\": \"stage2 train/validation PEFT short screening; test data not accessed\",\n  \"selected_checkpoint\": \"final.pt\",\n  \"selected_checkpoint_sha256\": \"5c2e7a3c511b3f416bf8139cec65b16be142878e5d3854cae0fbe4bba6f10f35\",\n  \"selection_rule\": \"fixed final epoch 20; no validation selection\",\n  \"split_sha256\": \"0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c\",\n  \"token_readout\": {\n    \"initialization_seed\": 20261005,\n    \"mode\": \"none\"\n  },\n  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "cuda_smoke_v2.log": {
+            "bytes": 237,
+            "modified_epoch": 1791479589.5930083,
+            "scan_bytes": 237,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 01:12:47] 20261009-P1-J20 start\n[2026-10-09 01:12:47] J20: starting - full-visual + task head, original20 cosine\n[2026-10-09 01:13:09] J20: finished in 0.4 min; output validated\n[2026-10-09 01:13:09] 20261009-P1-J20 finished",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "cuda_smoke.log": {
+            "bytes": 336,
+            "modified_epoch": 1791479441.3401976,
+            "scan_bytes": 336,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 01:10:31] 20261009-P1-J20 start\n[2026-10-09 01:10:31] J20: starting - full-visual + task head, original20 cosine\n[2026-10-09 01:10:41] J20: STOPPED after 0.2 min with return code 1; output status=ready: output directory does not exist; halting queue. Log: /root/AICtrack1_next_cycle_20261009/artifacts/queues/P1_J20/J20.log",
+            "interpretation": "observed log rows only; never declares phase completion"
+          }
+        },
+        "small_json": {
+          "artifacts/queues/p1_chain_result.json": {
+            "bytes": 201,
+            "modified_epoch": 1791495858.4509916,
+            "schema": "aictrack1.p1.chain.v1",
+            "epoch": 1791495858.4559398
+          },
+          "artifacts/experiments/P1_J20/metrics.json": {
+            "read_error": "ValueError",
+            "bytes": 8138570
+          },
+          "artifacts/experiments/P1_J5/metrics.json": {
+            "read_error": "ValueError",
+            "bytes": 8138816
+          },
+          "p1_launch_receipt.json": {
+            "bytes": 763,
+            "modified_epoch": 1791479615.9811335
+          },
+          "smoke_launch_v2_receipt.json": {
+            "bytes": 578,
+            "modified_epoch": 1791479564.8888862
+          },
+          "smoke_repair_receipt.json": {
+            "bytes": 263,
+            "modified_epoch": 1791479556.6328442
+          },
+          "smoke_launch_receipt.json": {
+            "bytes": 576,
+            "modified_epoch": 1791479428.5921183
+          }
+        },
+        "checkpoint_stats": {
+          "artifacts/experiments/P1_J20/final.pt": {
+            "bytes": 352987755,
+            "modified_epoch": 1791495852.74288,
+            "contents_read": false
+          },
+          "artifacts/experiments/P1_J20/last.pt": {
+            "bytes": 1418755751,
+            "modified_epoch": 1791495850.0868278,
+            "contents_read": false
+          },
+          "artifacts/experiments/P1_J5/final.pt": {
+            "bytes": 352987755,
+            "modified_epoch": 1791487762.1115334,
+            "contents_read": false
+          },
+          "artifacts/experiments/P1_J5/last.pt": {
+            "bytes": 1418755687,
+            "modified_epoch": 1791487758.295627,
+            "contents_read": false
+          }
+        },
+        "cache_stats": {}
+      },
+      "fresh_h1": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c",
+          "bytes": 11323,
+          "schema": "aictrack1.confirmation.h1.source.v1",
+          "file_count": 102,
+          "status": "bound_h1_only",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {
+          "artifacts/queues/confirmation_H1/chain.log": {
+            "bytes": 289,
+            "modified_epoch": 1791498085.5031846,
+            "scan_bytes": 289,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 06:19:35] 20261009-confirmation-H1 start\n[2026-10-09 06:19:35] H1: starting - fresh new-fold train-only H1100 fixedlast; immutable official CLIP336 features\n[2026-10-09 06:21:25] H1: finished in 1.8 min; output validated\n[2026-10-09 06:21:25] 20261009-confirmation-H1 finished",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "artifacts/queues/confirmation_H1/H1.log": {
+            "bytes": 6265,
+            "modified_epoch": 1791498084.451187,
+            "scan_bytes": 6265,
+            "latest_epoch_row": {
+              "phase": "H1",
+              "epoch": 100,
+              "train_loss": 0.9761330038231434,
+              "observation_kind": "H1_train_epoch_log_row_before_checkpoint_write"
+            },
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 100,
+            "malformed_json_lines": 0,
+            "tail": "1.0449287257662065}\n{\"phase\": \"H1\", \"epoch\": 85, \"train_loss\": 1.039931208529115}\n{\"phase\": \"H1\", \"epoch\": 86, \"train_loss\": 1.0360918059815083}\n{\"phase\": \"H1\", \"epoch\": 87, \"train_loss\": 1.0306890358346286}\n{\"phase\": \"H1\", \"epoch\": 88, \"train_loss\": 1.0265290601165444}\n{\"phase\": \"H1\", \"epoch\": 89, \"train_loss\": 1.0222779019887183}\n{\"phase\": \"H1\", \"epoch\": 90, \"train_loss\": 1.0175266354315584}\n{\"phase\": \"H1\", \"epoch\": 91, \"train_loss\": 1.013415979616327}\n{\"phase\": \"H1\", \"epoch\": 92, \"train_loss\": 1.0087613325861864}\n{\"phase\": \"H1\", \"epoch\": 93, \"train_loss\": 1.004724697887213}\n{\"phase\": \"H1\", \"epoch\": 94, \"train_loss\": 1.000019714611801}\n{\"phase\": \"H1\", \"epoch\": 95, \"train_loss\": 0.9965651487011012}\n{\"phase\": \"H1\", \"epoch\": 96, \"train_loss\": 0.9919160555794307}\n{\"phase\": \"H1\", \"epoch\": 97, \"train_loss\": 0.9886257576065395}\n{\"phase\": \"H1\", \"epoch\": 98, \"train_loss\": 0.9842077715475166}\n{\"phase\": \"H1\", \"epoch\": 99, \"train_loss\": 0.9802576839381716}\n{\"phase\": \"H1\", \"epoch\": 100, \"train_loss\": 0.9761330038231434}",
+            "interpretation": "observed log rows only; never declares phase completion"
+          }
+        },
+        "small_json": {
+          "artifacts/experiments/confirmation_H1/metrics.json": {
+            "bytes": 456,
+            "modified_epoch": 1791498084.8711858,
+            "schema": "aictrack1.confirmation.h1.metrics.v1",
+            "epochs_completed": 100,
+            "selected_checkpoint": "last.pt",
+            "last_checkpoint_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+            "config_sha256": "8136351d71831842a9fd02a027ab25df75a13a821b783b7b36364d2a07a9b5fd",
+            "test_access": false
+          },
+          "artifacts/experiments/confirmation_H1/h1_receipt.json": {
+            "bytes": 1410,
+            "modified_epoch": 1791498084.8671858,
+            "complete": true,
+            "train_count": 118958,
+            "validation_count": 29737,
+            "epoch": 100,
+            "checkpoint_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+            "test_access": false
+          },
+          "clone_receipt.json": {
+            "bytes": 9468,
+            "modified_epoch": 1791482928.133408,
+            "schema": "aictrack1.confirmation.clone.v1"
+          }
+        },
+        "checkpoint_stats": {
+          "artifacts/experiments/confirmation_H1/last.pt": {
+            "bytes": 4641602,
+            "modified_epoch": 1791498084.4591868,
+            "contents_read": false
+          }
+        },
+        "cache_stats": {}
+      },
+      "fresh_visual": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009/prepared_visual",
+        "exists": false,
+        "source_manifest": null,
+        "logs": {},
+        "small_json": {},
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "old_diagnostic": {
+        "path": "/root/AICtrack1_next_cycle_diagnostic_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "7bb94f9192a6c02ce0928dd2e94aecb879c661f66097bb66ed625224c7d364f6",
+          "bytes": 5893,
+          "schema": "aictrack1.p1.diagnostic_source.v1",
+          "file_count": 29,
+          "status": null,
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {},
+        "small_json": {
+          "artifacts/diagnostics/P1_J20/result_manifest.json": {
+            "bytes": 1109,
+            "modified_epoch": 1791497316.417803,
+            "schema": "aictrack1.p1.diagnostic_result.v1",
+            "complete": true,
+            "test_access": false
+          },
+          "artifacts/diagnostics/P1_J20/input_identity.json": {
+            "bytes": 2799,
+            "modified_epoch": 1791497316.2378066,
+            "schema": "aictrack1.p0_frozen_fold_input.v1",
+            "training_scope": "fixed_split_validation",
+            "training_count": 118958,
+            "validation_count": 29737,
+            "checkpoint_sha256": "7e28a1f578f2ac020c94fbf1d2069d43e79bcc68581073440c56c82222b5f3da",
+            "test_access": false
+          },
+          "artifacts/diagnostics/P1_J5/result_manifest.json": {
+            "bytes": 1108,
+            "modified_epoch": 1791497056.433286,
+            "schema": "aictrack1.p1.diagnostic_result.v1",
+            "complete": true,
+            "test_access": false
+          },
+          "artifacts/diagnostics/P1_J5/input_identity.json": {
+            "bytes": 2797,
+            "modified_epoch": 1791497056.2492845,
+            "schema": "aictrack1.p0_frozen_fold_input.v1",
+            "training_scope": "fixed_split_validation",
+            "training_count": 118958,
+            "validation_count": 29737,
+            "checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+            "test_access": false
+          },
+          "entry_dependency_receipt.json": {
+            "bytes": 1841,
+            "modified_epoch": 1791482516.961679,
+            "schema": "aictrack1.p1.cpu_entry_dependency_check.v1",
+            "complete": true,
+            "test_access": false
+          }
+        },
+        "checkpoint_stats": {},
+        "cache_stats": {
+          "artifacts/diagnostics/P1_J20/fused_features.pt": {
+            "bytes": 63342453,
+            "modified_epoch": 1791497316.001811,
+            "contents_read": false
+          },
+          "artifacts/diagnostics/P1_J20/fused_logits.pt": {
+            "bytes": 47052393,
+            "modified_epoch": 1791497313.2538638,
+            "contents_read": false
+          },
+          "artifacts/diagnostics/P1_J5/fused_features.pt": {
+            "bytes": 63342453,
+            "modified_epoch": 1791497056.0092826,
+            "contents_read": false
+          },
+          "artifacts/diagnostics/P1_J5/fused_logits.pt": {
+            "bytes": 47052393,
+            "modified_epoch": 1791497053.0412595,
+            "contents_read": false
+          }
+        }
+      },
+      "fresh_diagnostic": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_diagnostic_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "2e0a600cf953bfa964198f6920edc01b08c77b62639f7d530953a169e6d4df87",
+          "bytes": 4772,
+          "schema": "aictrack1.confirmation.diagnostic_source.v1",
+          "file_count": 23,
+          "status": null,
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {},
+        "small_json": {},
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "full": {
+        "path": "/root/AICtrack1_next_cycle_full_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "677578ba379652d8b0277f8fe3055a2dba4dbe914f76f321ff6161f2c5838262",
+          "bytes": 10002,
+          "schema": "aictrack1.p1.full_source.v1",
+          "file_count": 84,
+          "status": "ready_requires_positive_selection",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {},
+        "small_json": {},
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "final": {
+        "path": "/root/AICtrack1_next_cycle_final_inference_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "27e634fdcb6d6d4c616a48e15f966cd652d2c6300352a35f996d9e65c4da6cf8",
+          "bytes": 9633,
+          "schema": "aictrack1.p1.final_inference_source.v1",
+          "file_count": 79,
+          "status": "engineering_ready_actual_full20_checkpoint_cpu_audit_required",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {},
+        "small_json": {},
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "graph": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+          "bytes": 2014,
+          "schema": "aictrack1.p3.graph_source.v1",
+          "file_count": 10,
+          "status": "cpu_engineering_only_not_candidate_result",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {},
+        "small_json": {},
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "supervision": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "f473415f22fad41f3c8f3cb64164a0b777835661cb03a54723e9a80a25366ca9",
+          "bytes": 10163,
+          "schema": "aictrack1.supervision.source.v1",
+          "file_count": 85,
+          "status": "bound",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {
+          "artifacts/queues/P1_S/chain.log": {
+            "bytes": 494,
+            "modified_epoch": 1791507432.6511278,
+            "scan_bytes": 494,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 06:47:55] 20261009-P1-S start\n[2026-10-09 06:47:55] S: starting - S-on-C: only SCE alpha.1 to.5, frozen H1, original20 cosine\n[2026-10-09 06:48:08] S: finished in 0.2 min; output validated\n[2026-10-09 06:48:08] 20261009-P1-S finished\n[2026-10-09 06:51:59] 20261009-P1-S start\n[2026-10-09 06:51:59] S: starting - S-on-C: only SCE alpha.1 to.5, frozen H1, original20 cosine\n[2026-10-09 08:57:12] S: finished in 125.2 min; output validated\n[2026-10-09 08:57:12] 20261009-P1-S finished",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "artifacts/queues/P1_S/S.log": {
+            "bytes": 8216454,
+            "modified_epoch": 1791507431.4031262,
+            "scan_bytes": 262144,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 595,
+            "tail": "position_interpolation\": \"bicubic_7x7_to_10x10\",\n  \"run_id\": \"20261009-P1-S-on-C-alpha05-fixed20\",\n  \"runtime\": {\n    \"defer_epoch_metrics\": true,\n    \"reuse_validation_loader\": true\n  },\n  \"sampling\": {\n    \"mode\": \"natural\"\n  },\n  \"scope\": \"stage2 train/validation PEFT short screening; test data not accessed\",\n  \"selected_checkpoint\": \"final.pt\",\n  \"selected_checkpoint_sha256\": \"7456e21501d6ecf5954751ce87aa8473645df060ae75351145ccdef16d031038\",\n  \"selection_rule\": \"fixed final epoch 20; no validation selection\",\n  \"split_sha256\": \"0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c\",\n  \"token_readout\": {\n    \"initialization_seed\": 20261005,\n    \"mode\": \"none\"\n  },\n  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 87849216,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}",
+            "interpretation": "observed log rows only; never declares phase completion"
+          }
+        },
+        "small_json": {
+          "artifacts/experiments/P1_S/metrics.json": {
+            "read_error": "ValueError",
+            "bytes": 8155865
+          },
+          "artifacts/first_epoch_CPU_audit.json": {
+            "bytes": 3061,
+            "modified_epoch": 1791500517.5762188,
+            "schema": "aictrack1.supervision.first_epoch_cpu_audit.v1",
+            "complete": true,
+            "status": "passed_first_epoch_not_final",
+            "epoch": 1,
+            "checkpoint_sha256": "5153dc1ae495e628422db05ace1ac1892becf9dd3a017665b087f74c54757b06",
+            "config_sha256": "fa1bb186f0037ca00482c3c94daa53c0970fe5dc7fe0b7599d9759097bfee5c9",
+            "trainable_tensors": 152,
+            "trainable_numel": 87849216,
+            "test_access": false
+          }
+        },
+        "checkpoint_stats": {
+          "artifacts/experiments/P1_S/final.pt": {
+            "bytes": 351448173,
+            "modified_epoch": 1791507428.2871225,
+            "contents_read": false
+          },
+          "artifacts/experiments/P1_S/last.pt": {
+            "bytes": 1412602235,
+            "modified_epoch": 1791507427.6111217,
+            "contents_read": false
+          }
+        },
+        "cache_stats": {}
+      },
+      "supervision_diagnostic": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_diagnostic_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "b04925892404fc37a0c81f4d044752248f4d30bd1f379fec9f60b73531ddead0",
+          "bytes": 5352,
+          "schema": "aictrack1.supervision.diagnostic_source.v1",
+          "file_count": 26,
+          "status": "frozen",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {},
+        "small_json": {
+          "artifacts/diagnostics/P1_S/result_manifest.json": {
+            "bytes": 1145,
+            "modified_epoch": 1791507719.2874415,
+            "schema": "aictrack1.supervision.diagnostic_result.v1",
+            "complete": true,
+            "test_access": false
+          },
+          "artifacts/diagnostics/P1_S/input_identity.json": {
+            "bytes": 4848,
+            "modified_epoch": 1791507719.0834415,
+            "schema": "aictrack1.p0_frozen_fold_input.v1",
+            "training_scope": "fixed_split_validation",
+            "training_count": 118958,
+            "validation_count": 29737,
+            "checkpoint_sha256": "07dad01bcd8da762afef9883286bc9db1edce6390dea51c4c59b350e6f8c3e20",
+            "trainable_tensors": 152,
+            "trainable_numel": 87849216,
+            "test_access": false
+          }
+        },
+        "checkpoint_stats": {},
+        "cache_stats": {
+          "artifacts/diagnostics/P1_S/fused_features.pt": {
+            "bytes": 63342453,
+            "modified_epoch": 1791507718.8114412,
+            "contents_read": false
+          },
+          "artifacts/diagnostics/P1_S/fused_logits.pt": {
+            "bytes": 47052393,
+            "modified_epoch": 1791507715.9314384,
+            "contents_read": false
+          }
+        }
+      },
+      "supervision_followon": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_followon_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "9d8c681a4c8052d05c5b26b9242a4990b0596955b2442b292a7165c9abf929dd",
+          "bytes": 2054,
+          "schema": "aictrack1.S.terminal_followon.source.v1",
+          "file_count": 4,
+          "status": "frozen_local_CPU_pass_server_not_run",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {},
+        "small_json": {},
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "fresh_route": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+          "bytes": 10946,
+          "schema": "aictrack1.fresh_route.training.source.v1",
+          "file_count": 91,
+          "status": "bound",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {
+          "artifacts/queues/P1_J5/chain.log": {
+            "bytes": 648,
+            "modified_epoch": 1791524835.8018215,
+            "scan_bytes": 648,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 10:00:37] 20261009-P1-J5 start\n[2026-10-09 10:00:37] J5: starting - fresh matched C plus one typed selected route, original20 cosine\n[2026-10-09 10:00:47] J5: finished in 0.2 min; output validated\n[2026-10-09 10:00:47] 20261009-P1-J5 finished\n[2026-10-09 12:03:50] 20261009-P1-J5 start\n[2026-10-09 12:03:50] J5: starting - fresh matched C plus one typed selected route, original20 cosine\n[2026-10-09 13:47:15] J5: STOPPED after 103.4 min with return code 0; output status=partial: output directory exists without metrics.json; halting queue. Log: /root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/queues/P1_J5/J5.log",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "artifacts/queues/P1_J5/J5.log": {
+            "bytes": 67253,
+            "modified_epoch": 1791524832.7658556,
+            "scan_bytes": 67253,
+            "latest_epoch_row": {
+              "status": "epoch_complete",
+              "epoch": 19,
+              "train_loss": 0.13835977353587148,
+              "observation_kind": "epoch_complete_log_row"
+            },
+            "latest_epoch_complete": {
+              "status": "epoch_complete",
+              "epoch": 19,
+              "train_loss": 0.13835977353587148,
+              "observation_kind": "epoch_complete_log_row"
+            },
+            "epoch_rows_in_bounded_scan": 19,
+            "malformed_json_lines": 0,
+            "tail": "ctrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n{\"early_stop\": null, \"effective_quality_decision\": \"L1\", \"effective_quality_min_ratio\": 0.2265111185514774, \"effective_quality_p10_ratio\": 0.34584564976581983, \"ema_top1\": null, \"epoch\": 19, \"epochs\": 20, \"macro_accuracy\": 0.7245993680920216, \"sampling_zero_class_count\": 0, \"stage\": \"fixed_split_peft\", \"status\": \"epoch_complete\", \"tail_accuracy\": 0.7200501561164856, \"top1\": 0.7337324023246765, \"train_loss\": 0.13835977353587148, \"zero_recall_class_count\": 4}",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "artifacts/queues/P1_C/chain.log": {
+            "bytes": 504,
+            "modified_epoch": 1791518127.6747336,
+            "scan_bytes": 504,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 10:00:21] 20261009-P1-C start\n[2026-10-09 10:00:21] C: starting - fresh matched C plus one typed selected route, original20 cosine\n[2026-10-09 10:00:33] C: finished in 0.2 min; output validated\n[2026-10-09 10:00:33] 20261009-P1-C finished\n[2026-10-09 10:02:03] 20261009-P1-C start\n[2026-10-09 10:02:03] C: starting - fresh matched C plus one typed selected route, original20 cosine\n[2026-10-09 11:55:27] C: finished in 113.4 min; output validated\n[2026-10-09 11:55:27] 20261009-P1-C finished",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "artifacts/queues/P1_C/C.log": {
+            "bytes": 8227427,
+            "modified_epoch": 1791518126.238742,
+            "scan_bytes": 262144,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 596,
+            "tail": "\n  \"position_interpolation\": \"bicubic_7x7_to_10x10\",\n  \"run_id\": \"20261009-fresh-route-C-fixed20\",\n  \"runtime\": {\n    \"defer_epoch_metrics\": true,\n    \"reuse_validation_loader\": true\n  },\n  \"sampling\": {\n    \"mode\": \"natural\"\n  },\n  \"scope\": \"stage2 train/validation PEFT short screening; test data not accessed\",\n  \"selected_checkpoint\": \"final.pt\",\n  \"selected_checkpoint_sha256\": \"ef0c2ff284bd3ef8d14b10097fb7914c1b8032d64341341c1efbcab92fa008fe\",\n  \"selection_rule\": \"fixed final epoch 20; no validation selection\",\n  \"split_sha256\": \"57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7\",\n  \"token_readout\": {\n    \"initialization_seed\": 20261005,\n    \"mode\": \"none\"\n  },\n  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 87849216,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}",
+            "interpretation": "observed log rows only; never declares phase completion"
+          }
+        },
+        "small_json": {
+          "artifacts/experiments/FRESH_J5/metrics.json": {
+            "read_error": "ValueError",
+            "bytes": 8156623
+          },
+          "artifacts/experiments/FRESH_J5/p1_screen_receipt.json": {
+            "bytes": 309,
+            "modified_epoch": 1791524834.413837,
+            "status": "planned_pause_not_complete",
+            "epoch": 19,
+            "config_sha256": "a65f60e974c04842e2c86975ab3675aad8469bc1b0c0a27a98e8fa145b4b8562"
+          },
+          "artifacts/experiments/FRESH_C/metrics.json": {
+            "read_error": "ValueError",
+            "bytes": 8156295
+          }
+        },
+        "checkpoint_stats": {
+          "artifacts/experiments/FRESH_J5/final.pt": {
+            "bytes": 352987755,
+            "modified_epoch": 1791528545.7129004,
+            "contents_read": false
+          },
+          "artifacts/experiments/FRESH_J5/last.pt": {
+            "bytes": 1418765031,
+            "modified_epoch": 1791528545.1729062,
+            "contents_read": false
+          },
+          "artifacts/experiments/FRESH_C/final.pt": {
+            "bytes": 351448173,
+            "modified_epoch": 1791518123.770757,
+            "contents_read": false
+          },
+          "artifacts/experiments/FRESH_C/last.pt": {
+            "bytes": 1412602875,
+            "modified_epoch": 1791518123.23876,
+            "contents_read": false
+          }
+        },
+        "cache_stats": {}
+      },
+      "fresh_route_diagnostic": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_diagnostic_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "554d7c8f839d4ab6fee1ce427c5e2b9b73435d4766ac5347794ceecace53fbc2",
+          "bytes": 4240,
+          "schema": "aictrack1.fresh_route.diagnostic_source.v1",
+          "file_count": 32,
+          "status": "frozen_local_CPU_engineering",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {},
+        "small_json": {},
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "fresh_route_full": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54",
+          "bytes": 13160,
+          "schema": "aictrack1.fresh_route.full.training.source.v1",
+          "file_count": 106,
+          "status": "bound",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {
+          "artifacts/queues/FULL_J5/J5.log": {
+            "bytes": 63476,
+            "modified_epoch": 1791536136.077292,
+            "scan_bytes": 63476,
+            "latest_epoch_row": {
+              "status": "epoch_complete",
+              "epoch": 18,
+              "train_loss": 0.12714464480633647,
+              "observation_kind": "epoch_complete_log_row"
+            },
+            "latest_epoch_complete": {
+              "status": "epoch_complete",
+              "epoch": 18,
+              "train_loss": 0.12714464480633647,
+              "observation_kind": "epoch_complete_log_row"
+            },
+            "epoch_rows_in_bounded_scan": 18,
+            "malformed_json_lines": 0,
+            "tail": "images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read\n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "artifacts/queues/FULL_J5/chain.log": {
+            "bytes": 430,
+            "modified_epoch": 1791530269.0716846,
+            "scan_bytes": 430,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 15:16:31] 20261009-fresh-route-full-J5 start\n[2026-10-09 15:16:31] J5: starting - one positively confirmed fresh official FULL20 fixed final\n[2026-10-09 15:16:43] J5: finished in 0.2 min; output validated\n[2026-10-09 15:16:43] 20261009-fresh-route-full-J5 finished\n[2026-10-09 15:17:49] 20261009-fresh-route-full-J5 start\n[2026-10-09 15:17:49] J5: starting - one positively confirmed fresh official FULL20 fixed final",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "root_actual_FULL_stdout.log": {
+            "bytes": 153,
+            "modified_epoch": 1791530269.0716846,
+            "scan_bytes": 153,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 15:17:49] 20261009-fresh-route-full-J5 start\n[2026-10-09 15:17:49] J5: starting - one positively confirmed fresh official FULL20 fixed final",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "root_actual_smoke_stdout.log": {
+            "bytes": 835,
+            "modified_epoch": 1791530203.4506166,
+            "scan_bytes": 835,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 15:16:31] 20261009-fresh-route-full-J5 start\n[2026-10-09 15:16:31] J5: starting - one positively confirmed fresh official FULL20 fixed final\n[2026-10-09 15:16:43] J5: finished in 0.2 min; output validated\n[2026-10-09 15:16:43] 20261009-fresh-route-full-J5 finished\n{\"schema\": \"aictrack1.fresh_route.full.launch_result.v1\", \"arm\": \"J5\", \"selected_route\": \"J5_GRAPH\", \"return_code\": 0, \"source_manifest_sha256\": \"be1e5056286e2f75adacce9a799e4e03ffc3314cd6ce2582892fd3adac821d54\", \"config_sha256\": \"04e13ffde658a7c532e59767d445e3ba58db20b6e7e7d2232282ed3a8c350d75\", \"fresh_confirmation_receipt_sha256\": \"dc3232619e394b4528454f155711d9b88366ac7066f594886860e31a340d8e5f\", \"full_budget_sha256\": \"62a20991d8c873c966cbccb637ff4927a4e414eaa3f739f303f0a35fee947517\", \"synthetic_smoke\": true, \"resumed\": false, \"test_access\": false}",
+            "interpretation": "observed log rows only; never declares phase completion"
+          }
+        },
+        "small_json": {
+          "artifacts/queues/full_attempt_4e55925291244704b94345f61cd01423.json": {
+            "bytes": 582,
+            "modified_epoch": 1791530203.4506166,
+            "schema": "aictrack1.fresh_route.full.launch_result.v1",
+            "config_sha256": "04e13ffde658a7c532e59767d445e3ba58db20b6e7e7d2232282ed3a8c350d75",
+            "return_code": 0,
+            "arm": "J5",
+            "test_access": false
+          }
+        },
+        "checkpoint_stats": {
+          "artifacts/experiments/FULL_J5/last.pt": {
+            "bytes": 1066718939,
+            "modified_epoch": 1791536049.5195441,
+            "contents_read": false
+          }
+        },
+        "cache_stats": {}
+      },
+      "fresh_route_final": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009",
+        "exists": false,
+        "source_manifest": null,
+        "logs": {},
+        "small_json": {},
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "fresh_route_continuation": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "c5dabc472eee7dd20ba69cb57b3c2b000076eb6b4fca802f39b2861d0918957f",
+          "bytes": 2874,
+          "schema": "aictrack1.fresh_route.continuation.training.source.v1",
+          "file_count": 18,
+          "status": "local_CPU_verified_independent_operator_unbound",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {
+          "root_controller_stdout.log": {
+            "bytes": 681,
+            "modified_epoch": 1791527129.7930088,
+            "scan_bytes": 681,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 14:19:37] fresh-route-exact-continuation-c36dbb779c5d49ffb7f12df7a6b9e535 start\n[2026-10-09 14:19:37] C: already complete, skipping (strictly audited completed C20 skip)\n[2026-10-09 14:19:37] J5: starting - root approved exact partial J5 resume to original20 cosine\n[2026-10-09 14:25:29] J5: STOPPED after 5.9 min with return code 1; output status=partial: output directory exists without metrics.json; halting queue. Log: /root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/canonical_queue/J5.log\n{\"complete\": false, \"error\": \"original exact resume queue failed ValueError: original cumulative8GiB/min3GiB exceeded\", \"cleanup_error\": null}",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "CPU_TEST_OUTPUT.log": {
+            "bytes": 2729,
+            "modified_epoch": 1791522134.4357624,
+            "scan_bytes": 2729,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "est_original_command_recipe_and_runtime_unchanged) ... ok\ntest_pre_attach_cleanup_failure_hard_halts_without_releasing_lease (__main__.Lifecycle.test_pre_attach_cleanup_failure_hard_halts_without_releasing_lease) ... ok\ntest_prior_session_descendant_blocks_closed_and_pid_reuse_refused (__main__.Lifecycle.test_prior_session_descendant_blocks_closed_and_pid_reuse_refused) ... ok\ntest_receipt_failure_closes_child_before_upstream_lease_release (__main__.Lifecycle.test_receipt_failure_closes_child_before_upstream_lease_release) ... [2026-10-09 12:20:41] CPU fixture start\n[2026-10-09 12:20:41] J5: starting - CPU lifecycle fixture\n[2026-10-09 12:20:41] J5: STOPPED after 0.0 min with return code 1; output status=partial: output directory exists without metrics.json; halting queue. Log: D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\operator_tools\\fresh_route_continuation_train_r1\\test_work\\cpu_4untz0dg\\logs\\J5.log\nok\n\n----------------------------------------------------------------------\nRan 10 tests in 1.014s\n\nOK",
+            "interpretation": "observed log rows only; never declares phase completion"
+          }
+        },
+        "small_json": {
+          "root_actual_disk_expansion_recovery_receipt.json": {
+            "bytes": 3087,
+            "modified_epoch": 1791527457.815994,
+            "schema": "aictrack1.fresh_route.actual_disk_expansion_recovery.v1",
+            "test_access": false
+          },
+          "actual_stage_and_CPU_entry_receipt.json": {
+            "bytes": 2921,
+            "modified_epoch": 1791522217.6410863,
+            "schema": "aictrack1.fresh_route.independent_source.actual_stage_and_CPU_entry.v1",
+            "complete": true,
+            "test_access": false
+          }
+        },
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "fresh_route_append_diagnostic": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_append_diagnostic_r1_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "2304b44aa944938677bc8c4ddd96bdc5270c4f65c92019a5a1fc1b99b4a8a714",
+          "bytes": 8983,
+          "schema": "aictrack1.fresh_route.diagnostic_source.v1",
+          "file_count": 44,
+          "status": "frozen_local_CPU_engineering",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {},
+        "small_json": {
+          "actual_stage_and_CPU_entry_receipt.json": {
+            "bytes": 9925,
+            "modified_epoch": 1791522235.205365,
+            "schema": "aictrack1.fresh_route.independent_source.actual_stage_and_CPU_entry.v1",
+            "complete": true,
+            "test_access": false
+          }
+        },
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "fresh_route_retry_continuation": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2",
+          "bytes": 4619,
+          "schema": "aictrack1.fresh_route.continuation.retry_training.source.v1",
+          "file_count": 28,
+          "status": "local_CPU_verified_independent_operator_unbound",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {
+          "root_controller_stdout.log": {
+            "bytes": 665,
+            "modified_epoch": 1791528565.392689,
+            "scan_bytes": 665,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "[2026-10-09 14:43:10] fresh-route-exact-continuation-a936682615554db799f374d0bb0753bb start\n[2026-10-09 14:43:10] C: already complete, skipping (strictly audited completed C20 skip)\n[2026-10-09 14:43:11] J5: starting - root approved exact partial J5 resume to original20 cosine\n[2026-10-09 14:49:09] J5: finished in 6.0 min; output validated\n[2026-10-09 14:49:09] fresh-route-exact-continuation-a936682615554db799f374d0bb0753bb finished\n{\"complete\": true, \"receipt\": \"/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/COMPLETE.json\", \"shared_budget_sha256\": \"7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571\"}",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "CPU_TEST_OUTPUT.log": {
+            "bytes": 3353,
+            "modified_epoch": 1791528107.3766053,
+            "scan_bytes": 3353,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "up_failure_hard_halts_without_releasing_lease) ... ok\ntest_prior_session_descendant_blocks_closed_and_pid_reuse_refused (__main__.Lifecycle.test_prior_session_descendant_blocks_closed_and_pid_reuse_refused) ... ok\ntest_real_free_large_but_original_cumulative_limit_still_enforced (__main__.Lifecycle.test_real_free_large_but_original_cumulative_limit_still_enforced) ... ok\ntest_receipt_failure_closes_child_before_upstream_lease_release (__main__.Lifecycle.test_receipt_failure_closes_child_before_upstream_lease_release) ... [2026-10-09 14:40:47] CPU fixture start\n[2026-10-09 14:40:47] J5: starting - CPU lifecycle fixture\n[2026-10-09 14:40:47] J5: STOPPED after 0.0 min with return code 1; output status=partial: output directory exists without metrics.json; halting queue. Log: D:\\aicomp\\AICtrack1\\artifacts\\next_cycle_20261009\\operator_tools\\fresh_route_retry_continuation_train_r1\\test_work\\cpu_dmkkl3z7\\logs\\J5.log\nok\n\n----------------------------------------------------------------------\nRan 14 tests in 1.160s\n\nOK",
+            "interpretation": "observed log rows only; never declares phase completion"
+          }
+        },
+        "small_json": {
+          "actual_stage_and_budget_receipt.json": {
+            "bytes": 7198,
+            "modified_epoch": 1791528115.168562,
+            "schema": "aictrack1.fresh_route.actual_retry_stage_and_budget.v1"
+          }
+        },
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      },
+      "fresh_route_retry_append_diagnostic": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009",
+        "exists": true,
+        "source_manifest": {
+          "sha256": "01949375a866775cd141ded72e06afdb0b1922dd5aa60702cb7fea3b5fbc5ec1",
+          "bytes": 12514,
+          "schema": "aictrack1.fresh_route.diagnostic_source.v1",
+          "file_count": 59,
+          "status": "frozen_local_CPU_engineering",
+          "source_file_hashes_rechecked": false
+        },
+        "logs": {
+          "root_serial_controller_stdout.log": {
+            "bytes": 0,
+            "modified_epoch": 1791528951.2840908,
+            "scan_bytes": 0,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "CPU_TEST_OUTPUT_R2.log": {
+            "bytes": 5935,
+            "modified_epoch": 1791528783.7861762,
+            "scan_bytes": 5935,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "new_query738_support_only_group_independence) ... ok\ntest_receipt_alias_conflict_and_cli_actual_help (test_fresh_route.Tests.test_receipt_alias_conflict_and_cli_actual_help) ... ok\ntest_terminal_metadata_alpha_head_policy_source_partial_best_rejected (test_fresh_route.Tests.test_terminal_metadata_alpha_head_policy_source_partial_best_rejected) ... ok\ntest_typed_direction_positive_combo_can_pass_negative_rawJ_and_natural (test_fresh_route.Tests.test_typed_direction_positive_combo_can_pass_negative_rawJ_and_natural) ... ok\ntest_full_typed_J5_GRAPH_receipt_cpu2_joint154_directC_vs_negative_rawJ (test_receipt_evidence.ReceiptEvidenceTests.test_full_typed_J5_GRAPH_receipt_cpu2_joint154_directC_vs_negative_rawJ) ... ok\ntest_full_typed_S_receipt_real_files_hashes_and_actual_runtime_corruptions (test_receipt_evidence.ReceiptEvidenceTests.test_full_typed_S_receipt_real_files_hashes_and_actual_runtime_corruptions) ... ok\n\n----------------------------------------------------------------------\nRan 39 tests in 26.389s\n\nOK",
+            "interpretation": "observed log rows only; never declares phase completion"
+          },
+          "CPU_EXACT_CAPACITY_INCREMENTAL.log": {
+            "bytes": 2528,
+            "modified_epoch": 1791528783.646178,
+            "scan_bytes": 2528,
+            "latest_epoch_row": null,
+            "latest_epoch_complete": null,
+            "epoch_rows_in_bounded_scan": 0,
+            "malformed_json_lines": 0,
+            "tail": "d_original_deadline_fails (test_append_contract.Budget.test_resigned_changed_original_deadline_fails) ... ok\ntest_retry_capacity_is_additive_not_new_observed_free_baseline (test_append_contract.Budget.test_retry_capacity_is_additive_not_new_observed_free_baseline) ... ok\ntest_two_cache_contexts_must_match (test_append_contract.Budget.test_two_cache_contexts_must_match) ... ok\ntest_valid_shared_window_baseline_unchanged (test_append_contract.Budget.test_valid_shared_window_baseline_unchanged) ... ok\ntest_different_diagnostic_sources_fail (test_append_contract.Pair.test_different_diagnostic_sources_fail) ... ok\ntest_different_thread_runtime_fails (test_append_contract.Pair.test_different_thread_runtime_fails) ... ok\ntest_different_training_sources_fail (test_append_contract.Pair.test_different_training_sources_fail) ... ok\ntest_same_source_pair_passes (test_append_contract.Pair.test_same_source_pair_passes) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 0.315s\n\nOK",
+            "interpretation": "observed log rows only; never declares phase completion"
+          }
+        },
+        "small_json": {
+          "artifacts/diagnostics/FRESH_J5/result_manifest.json": {
+            "bytes": 1258,
+            "modified_epoch": 1791529433.0096467,
+            "schema": "aictrack1.fresh_route.diagnostic_result.v1",
+            "complete": true,
+            "test_access": false
+          },
+          "artifacts/diagnostics/FRESH_J5/input_identity.json": {
+            "bytes": 9133,
+            "modified_epoch": 1791529432.8336492,
+            "schema": "aictrack1.p0_frozen_fold_input.v1",
+            "training_scope": "fixed_split_validation",
+            "training_count": 118958,
+            "validation_count": 29737,
+            "checkpoint_sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c",
+            "trainable_tensors": 154,
+            "trainable_numel": 88233966,
+            "selected_arm": "J5",
+            "test_access": false
+          },
+          "artifacts/diagnostics/FRESH_C/result_manifest.json": {
+            "bytes": 1115,
+            "modified_epoch": 1791529185.7010176,
+            "schema": "aictrack1.fresh_route.diagnostic_result.v1",
+            "complete": true,
+            "test_access": false
+          },
+          "artifacts/diagnostics/FRESH_C/input_identity.json": {
+            "bytes": 8759,
+            "modified_epoch": 1791529185.6530182,
+            "schema": "aictrack1.p0_frozen_fold_input.v1",
+            "training_scope": "fixed_split_validation",
+            "training_count": 118958,
+            "validation_count": 29737,
+            "checkpoint_sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca",
+            "trainable_tensors": 152,
+            "trainable_numel": 87849216,
+            "selected_arm": "J5",
+            "test_access": false
+          }
+        },
+        "checkpoint_stats": {},
+        "cache_stats": {
+          "artifacts/diagnostics/FRESH_J5/fused_features.pt": {
+            "bytes": 63342453,
+            "modified_epoch": 1791529432.633652,
+            "contents_read": false
+          },
+          "artifacts/diagnostics/FRESH_J5/fused_logits.pt": {
+            "bytes": 47052393,
+            "modified_epoch": 1791529428.361711,
+            "contents_read": false
+          },
+          "artifacts/diagnostics/FRESH_C/fused_logits.pt": {
+            "bytes": 47052393,
+            "modified_epoch": 1791529181.6930711,
+            "contents_read": false
+          }
+        }
+      },
+      "fresh_append_followon": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_append_followon_20261009",
+        "exists": false,
+        "source_manifest": null,
+        "logs": {},
+        "small_json": {},
+        "checkpoint_stats": {},
+        "cache_stats": {}
+      }
+    },
+    "processes": [
+      {
+        "pid": 2818,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python -u -B /root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/scripts/run_full.py",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "start_ticks": "310391512",
+        "ppid": 1,
+        "state": "S",
+        "matched_roots": [
+          "fresh_route_full"
+        ],
+        "canonical_queue_pid": true,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": [
+          {
+            "stage": null,
+            "state_pid": 2818,
+            "state_start_ticks": "310391512",
+            "observed_start_ticks": "310391512",
+            "start_ticks_equal": true,
+            "cwd_equal": null
+          }
+        ]
+      },
+      {
+        "pid": 2825,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_full_J5.yaml",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "start_ticks": "310392174",
+        "ppid": 2818,
+        "state": "S",
+        "matched_roots": [
+          "fresh_route_full"
+        ],
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": true,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 6129,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_full_J5.yaml",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "start_ticks": "310970262",
+        "ppid": 2825,
+        "state": "R",
+        "matched_roots": [
+          "fresh_route_full"
+        ],
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 6130,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_full_J5.yaml",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "start_ticks": "310970264",
+        "ppid": 2825,
+        "state": "R",
+        "matched_roots": [
+          "fresh_route_full"
+        ],
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 6132,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_full_J5.yaml",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "start_ticks": "310970267",
+        "ppid": 2825,
+        "state": "R",
+        "matched_roots": [
+          "fresh_route_full"
+        ],
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 6133,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_full_J5.yaml",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "start_ticks": "310970269",
+        "ppid": 2825,
+        "state": "R",
+        "matched_roots": [
+          "fresh_route_full"
+        ],
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 6134,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_full_J5.yaml",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "start_ticks": "310970271",
+        "ppid": 2825,
+        "state": "R",
+        "matched_roots": [
+          "fresh_route_full"
+        ],
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 6136,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_full_J5.yaml",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "start_ticks": "310970273",
+        "ppid": 2825,
+        "state": "R",
+        "matched_roots": [
+          "fresh_route_full"
+        ],
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 6137,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_full_J5.yaml",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "start_ticks": "310970275",
+        "ppid": 2825,
+        "state": "R",
+        "matched_roots": [
+          "fresh_route_full"
+        ],
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      },
+      {
+        "pid": 6138,
+        "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python scripts/train_n1_peft.py --config configs/experiment/p1_full_J5.yaml",
+        "argv_redacted": false,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+        "start_ticks": "310970277",
+        "ppid": 2825,
+        "state": "R",
+        "matched_roots": [
+          "fresh_route_full"
+        ],
+        "canonical_queue_pid": false,
+        "canonical_trainer_pid": false,
+        "state_controller_matches": []
+      }
+    ],
+    "state_anchors": [
+      {
+        "stage": null,
+        "pid": 2818,
+        "start_ticks": "310391512",
+        "cwd": null
+      }
+    ],
+    "decision_made": false,
+    "lock_actions": null,
+    "checkpoint_contents_loaded": false,
+    "checkpoint_hashes_computed": false,
+    "read_limits": {
+      "small_file_bytes": 1048576,
+      "source_manifest_bytes": 262144,
+      "log_scan_bytes": 262144,
+      "tail_bytes": 1024,
+      "log_count_per_root": 8,
+      "json_count_per_root": 24,
+      "checkpoint_count_per_root": 32,
+      "process_count": 256,
+      "proc_argv_bytes": 16384,
+      "proc_stat_bytes": 8192,
+      "max_stdout_bytes": 2097152
+    },
+    "canonical_lease": {
+      "path": "/root/autodl-tmp/AICtrack1/artifacts/queues/training.lock.json",
+      "exists": true,
+      "record": {
+        "schema_version": 1,
+        "owner": "20261009-fresh-route-full-J5",
+        "token": "2aead879a4194ece88103d64b94c4d4d",
+        "queue_pid": 2818,
+        "trainer_pid": 2825,
+        "config": "configs/experiment/p1_full_J5.yaml",
+        "output_dir": "artifacts/experiments/FULL_J5",
+        "started_at": "2026-10-09T15:17:49.067775+08:00",
+        "command_redacted": false
+      }
+    },
+    "state_controller_observations": [
+      {
+        "stage": null,
+        "pid": 2818,
+        "start_ticks": "310391512",
+        "cwd": null,
+        "observed": {
+          "pid": 2818,
+          "argv_text": "/root/autodl-tmp/venvs/aictrack1/bin/python -u -B /root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/scripts/run_full.py",
+          "argv_redacted": false,
+          "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009",
+          "start_ticks": "310391512",
+          "ppid": 1,
+          "state": "S",
+          "matched_roots": [
+            "fresh_route_full"
+          ],
+          "canonical_queue_pid": true,
+          "canonical_trainer_pid": false,
+          "state_controller_matches": [
+            {
+              "stage": null,
+              "state_pid": 2818,
+              "state_start_ticks": "310391512",
+              "observed_start_ticks": "310391512",
+              "start_ticks_equal": true,
+              "cwd_equal": null
+            }
+          ]
+        },
+        "start_ticks_equal": true
+      }
+    ],
+    "disks": {
+      "/root": {
+        "total_bytes": 32212254720,
+        "used_bytes": 21616865280,
+        "free_bytes": 10595389440
+      },
+      "/root/autodl-tmp": {
+        "total_bytes": 128849018880,
+        "used_bytes": 92196384768,
+        "free_bytes": 36652634112
+      }
+    },
+    "memory": {
+      "host_total_bytes": 540662706176,
+      "host_available_bytes": 495780360192,
+      "cgroup": {
+        "kind": "v1",
+        "path": "/sys/fs/cgroup/memory",
+        "current_bytes": 47412420608,
+        "limit_bytes": 66571993088
+      },
+      "effective_available_bytes": 19159572480
+    },
+    "cpu": {
+      "logical_count": 128,
+      "cgroup": {
+        "kind": "v1",
+        "path": "/sys/fs/cgroup/cpu",
+        "quota_us": 1600000,
+        "period_us": 100000,
+        "cpu_equivalent": 16.0
+      }
+    },
+    "gpu": {
+      "return_code": 0,
+      "devices": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 4080 SUPER",
+          "memory_used_mib": 4844.0,
+          "utilization_percent": 88.0
+        }
+      ],
+      "error": null
+    },
+    "elapsed_seconds": 0.33334922790527344,
+    "local_state_anchor_sha256": "f39e1e0603359c90d49aeb6ce0dd96627b9aff486960bca1acb977a208307937",
+    "phase_status_source_sha256": "71542f9ed6bbefd660b42ce4ff79b04cc626bf4f62081086a390746e64a41528",
+    "connector_sha256": "c400d380b23cdb3bc61ae3bde21b5034b1fede32dcd17a3278aaa8e1314afbae"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/controller_result.json",
+  "original_sha256": "c4c371a4af8c69a68a7420d81f5d5080d53c1939bc4e931d6c2f4c9822d36248",
+  "omitted_fields": [],
+  "record": {
+    "complete": true,
+    "final_sha256": "5a7db0752140e0b73bc923fe62951253dd97b0f6c347a0c8d6b588873d6027e9",
+    "finished_epoch": 1791703534.7283945,
+    "hashes": {
+      "pred_results.csv": "908850887577f16302ce5fabd2656051b25eb0b8446c1fd90f0504d4bd0c8ba9",
+      "pred_results.zip": "6d06027999c68074f8232426c0fbe3e3475b804f35457b9f04561957557b45fe",
+      "submission_manifest.json": "1fa3f729fab410c924e0b6643a5d32ba009a7e411b344f6b25b4e2dae785b59c"
+    },
+    "no_automatic_retry": true,
+    "return_manifest_sha256": "4eb23dc2627848f949b026ed5c7c03739436c72e91aa374cbd4f284d7bb781e6",
+    "schema": "aictrack1.fresh_route.final_controller_result.v1",
+    "status": "single_model_full20_P7_csv_zip_verified_local_restore_pending",
+    "test_access": true
+  }
+}

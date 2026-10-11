@@ -1,0 +1,28 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/B_EMA_actual_exploration_returns_r1/B25_EMA/control_import.json",
+  "original_sha256": "edff747523b22bfe6690d85cb5594ccbbf1bc75af3bd71374aaa1a105434ed1a",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.joint_alpha.legacy_J5_GRAPH.import.v1",
+    "checkpoint_sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c",
+    "training_source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+    "diagnostic_source_manifest_sha256": "01949375a866775cd141ded72e06afdb0b1922dd5aa60702cb7fea3b5fbc5ec1",
+    "cache_bundle": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/fused_logits.pt",
+      "sha256": "03ac09bf83b534cd70a231084ed3c209ddeee9f494541c2b5efffb7b8c8ca0d0"
+    },
+    "cache_identity": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/input_identity.json",
+      "sha256": "1d23b0729dadfbfb37fcf1807601b1e73c22cdf8c5ee270fb74d5306750ba6df"
+    },
+    "local_identity": "inputs/legacy_control/J5/input_identity.json",
+    "graph_report": "inputs/legacy_control/graph/report.json",
+    "graph_result_manifest": "inputs/legacy_control/graph/result_manifest.json",
+    "graph_prediction_field": "candidate_p7",
+    "primary_control": "actual J5_GRAPH output; never plain J5 P7",
+    "model_updates": 0,
+    "additional_model_forwards": 0,
+    "test_access": false
+  }
+}

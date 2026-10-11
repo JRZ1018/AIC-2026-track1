@@ -1,0 +1,767 @@
+{
+  "schema": "aictrack1.colleague-local-sync.v1",
+  "commit": "d10202f09e325a58d84868115b7dec6a28375ded",
+  "branch": "docs/local-results-20261006",
+  "verified_documents": 75,
+  "counts": {
+    "missing": 16,
+    "identical": 54,
+    "different_preserved": 5
+  },
+  "documents_only": true,
+  "private_assets_received": false,
+  "existing_files_overwritten": false,
+  "historical_instructions_executed": false,
+  "files": [
+    {
+      "path": "docs/106_复赛D2_D4头部与表征诊断预注册_20260923.md",
+      "synchronized_sha256": "00111b1731f2c10693212de2e423634a2a8382255475991f33ac93b46f7ac7e0",
+      "archive_sha256": "eccf60c882f45ba830718733eae4bc09322d18103a2c20187dd8bfa91f2708b1",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "00111b1731f2c10693212de2e423634a2a8382255475991f33ac93b46f7ac7e0",
+      "snapshot_path": "docs/colleague_results_20261006/raw/106_复赛D2_D4头部与表征诊断预注册_20260923.md",
+      "verified": true
+    },
+    {
+      "path": "docs/107_复赛V1联合头末六块单变量实验_20260923.md",
+      "synchronized_sha256": "bf0f7e9ee9b111aae052769991a5632f4f5791969f729d558df50e826468188e",
+      "archive_sha256": "48da7c289945f1a694f192a6a3e5bbb144cf1ecfd6577f3d55ac2b390d7e98f9",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "bf0f7e9ee9b111aae052769991a5632f4f5791969f729d558df50e826468188e",
+      "snapshot_path": "docs/colleague_results_20261006/raw/107_复赛V1联合头末六块单变量实验_20260923.md",
+      "verified": true
+    },
+    {
+      "path": "docs/108_复赛V2局部patch读出诊断预注册_20260924.md",
+      "synchronized_sha256": "90bbaf20c83557bb74281d995d3ec3a4c1aa4b3f7e54bcd57275907636a5187c",
+      "archive_sha256": "343d8d6680ba484945b3fc49c55d8e51587e0a1adfc6f99d74db6f5745e6019a",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "90bbaf20c83557bb74281d995d3ec3a4c1aa4b3f7e54bcd57275907636a5187c",
+      "snapshot_path": "docs/colleague_results_20261006/raw/108_复赛V2局部patch读出诊断预注册_20260924.md",
+      "verified": true
+    },
+    {
+      "path": "docs/109_复赛云端实例缺货与迁移记录_20260924.md",
+      "synchronized_sha256": "88c02404f29feee7febd4145cb0f978243344982484aa5a7e3aa1b0f3b484273",
+      "archive_sha256": "aa7048d7f602d1c5d6b62844b82e969fb43137830d19e2b902273e6b1e62742b",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "different_preserved",
+      "local_current_sha256": "b26618c5d2f48db8e21e6da7b3d1a751518bb47543f302beadb48761110d048b",
+      "snapshot_path": "docs/colleague_results_20261006/raw/109_复赛云端实例缺货与迁移记录_20260924.md",
+      "verified": true
+    },
+    {
+      "path": "docs/110_复赛V2输入裁剪单变量诊断预注册_20260924.md",
+      "synchronized_sha256": "85d749f1d5150e2110aba34c974f9e6ab6b1a9ebb902951a1ebad32625543efb",
+      "archive_sha256": "9d32683ee829f095fc4ef6ad735fde4ea8b82bed8d8f262bd6942337afc8753e",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "85d749f1d5150e2110aba34c974f9e6ab6b1a9ebb902951a1ebad32625543efb",
+      "snapshot_path": "docs/colleague_results_20261006/raw/110_复赛V2输入裁剪单变量诊断预注册_20260924.md",
+      "verified": true
+    },
+    {
+      "path": "docs/111_复赛C3末八视觉块短筛预注册_20260924.md",
+      "synchronized_sha256": "e065affff96cc8f4c0b7e3bd3a549ca099ff5d3c86eb3455a753b6f49d8b8c4f",
+      "archive_sha256": "bf24244c2e854b9eb69671964735bdfc59c54930973d797497c19c7d3052a3bf",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "e065affff96cc8f4c0b7e3bd3a549ca099ff5d3c86eb3455a753b6f49d8b8c4f",
+      "snapshot_path": "docs/colleague_results_20261006/raw/111_复赛C3末八视觉块短筛预注册_20260924.md",
+      "verified": true
+    },
+    {
+      "path": "docs/112_复赛C3第二折独立确认预注册_20260924.md",
+      "synchronized_sha256": "a79601b47720ed9dfff46a0c36a6b7647f782211b60ba2db9cd864acf1c1719d",
+      "archive_sha256": "49dcb4fc49f15cfe4732a0373f41afdbd4057a8c945e2e98a83770388bc0e4bd",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "different_preserved",
+      "local_current_sha256": "a3fd82b8241863e832f0f21151d0ff2dcd48cd7d7a4c97deee2ed9691715e26f",
+      "snapshot_path": "docs/colleague_results_20261006/raw/112_复赛C3第二折独立确认预注册_20260924.md",
+      "verified": true
+    },
+    {
+      "path": "docs/113_复赛C4末十二块容量试验预注册_20260924.md",
+      "synchronized_sha256": "73d32202f7c801fa79a80ecda2a7461d0370b11e846496e5b82116fbe6e5d6f7",
+      "archive_sha256": "7ea7c1881acbd3eaa74412f33faff30d60b03b51dd29868eef9dea5961d9b236",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "73d32202f7c801fa79a80ecda2a7461d0370b11e846496e5b82116fbe6e5d6f7",
+      "snapshot_path": "docs/colleague_results_20261006/raw/113_复赛C4末十二块容量试验预注册_20260924.md",
+      "verified": true
+    },
+    {
+      "path": "docs/114_复赛单模型TTA与336输入试验门槛_20260924.md",
+      "synchronized_sha256": "e20f96dfc63c34b2476502fbd4733da06f6db726dfd430720a3c070281f8d3f2",
+      "archive_sha256": "ff9332307eeadeceb657378da8f60ad3e2bd8493c9b217458a783153dd74359e",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "e20f96dfc63c34b2476502fbd4733da06f6db726dfd430720a3c070281f8d3f2",
+      "snapshot_path": "docs/colleague_results_20261006/raw/114_复赛单模型TTA与336输入试验门槛_20260924.md",
+      "verified": true
+    },
+    {
+      "path": "docs/115_复赛C5匹配336分辨率折2试验预注册_20260925.md",
+      "synchronized_sha256": "41a9a11ee4401cf489e63c6a2c749e920dc6aaa3440e1cce18b4609b39a92878",
+      "archive_sha256": "185eb7e8adfc2cceb3fba645609d5f3ad59376e0a38b66d54795431f22474d8e",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "41a9a11ee4401cf489e63c6a2c749e920dc6aaa3440e1cce18b4609b39a92878",
+      "snapshot_path": "docs/colleague_results_20261006/raw/115_复赛C5匹配336分辨率折2试验预注册_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/116_复赛C6匹配336加固定翻转TTA双折验证预注册_20260925.md",
+      "synchronized_sha256": "047aa7d6a3ffd7cc37b091113f2ba8c5e81335d9a089ab83690f35227d7c9bda",
+      "archive_sha256": "551ea9033c3e83f6c1e535c22d0aeea82a03f86b423fe167ee00d76eb6bd9c0b",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "047aa7d6a3ffd7cc37b091113f2ba8c5e81335d9a089ab83690f35227d7c9bda",
+      "snapshot_path": "docs/colleague_results_20261006/raw/116_复赛C6匹配336加固定翻转TTA双折验证预注册_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/117_复赛C3固定翻转TTA回退包冻结_20260925.md",
+      "synchronized_sha256": "73818df26cb85be0a745445ac69b8ce5e0e373923c697821f7ea1c9db032d86b",
+      "archive_sha256": "8cc3e24079595cb68a83aad0725d793d56e8d359e0dcb5ac1e150d5593ee7364",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "73818df26cb85be0a745445ac69b8ce5e0e373923c697821f7ea1c9db032d86b",
+      "snapshot_path": "docs/colleague_results_20261006/raw/117_复赛C3固定翻转TTA回退包冻结_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/118_复赛C7同权重双尺度四视图TTA预注册_20260925.md",
+      "synchronized_sha256": "4cc738bb47b61325a8ced909556242a431f56a33ad59f54c30e0eef5d4876e22",
+      "archive_sha256": "17cf4f53ff4204e4743264152a9e9484d6d08582475651e9d813014fa4ff9692",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "4cc738bb47b61325a8ced909556242a431f56a33ad59f54c30e0eef5d4876e22",
+      "snapshot_path": "docs/colleague_results_20261006/raw/118_复赛C7同权重双尺度四视图TTA预注册_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/119_复赛Top1与零召回取舍复盘及下一轮门槛建议_20260925.md",
+      "synchronized_sha256": "0015ce28d15e8b05d8443332f8e06bf9da3c97c2f1473b51650b6fadc7217aa7",
+      "archive_sha256": "0271a95a987c40d17aa9fc85bfba04414b0bdfa568bd6bf3e60a8f35884c0b5f",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "0015ce28d15e8b05d8443332f8e06bf9da3c97c2f1473b51650b6fadc7217aa7",
+      "snapshot_path": "docs/colleague_results_20261006/raw/119_复赛Top1与零召回取舍复盘及下一轮门槛建议_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/120_复赛Top1优先_336与TTA新折确认及今日出包计划_20260925.md",
+      "synchronized_sha256": "bb8e479d07cb1d9ac176c4958a246a293603b95e6629d54d512426d0db68aef2",
+      "archive_sha256": "392362fba6aa3218a8df1a080685210fdfe3fbfcdf9c1f523b8cfbc5f850c341",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "bb8e479d07cb1d9ac176c4958a246a293603b95e6629d54d512426d0db68aef2",
+      "snapshot_path": "docs/colleague_results_20261006/raw/120_复赛Top1优先_336与TTA新折确认及今日出包计划_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/121_复赛61分后冲分计划_注意力分辨率TTA与损失_20260925.md",
+      "synchronized_sha256": "bb3728067bb9dff1d9c6722248a6b2727c971548df5769a991fc0b98ed732a69",
+      "archive_sha256": "557ef6d53067ecf54680b56c2f01c5c3c3adb9905cb7365183b6cf0340e48a28",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "bb3728067bb9dff1d9c6722248a6b2727c971548df5769a991fc0b98ed732a69",
+      "snapshot_path": "docs/colleague_results_20261006/raw/121_复赛61分后冲分计划_注意力分辨率TTA与损失_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/122_零上下文AI接手复赛完整交接_20260925.md",
+      "synchronized_sha256": "45184a021e2d5a52866a44a79e43871f79e256a654113f91aa895a0eb099bf7d",
+      "archive_sha256": "ce38c884009e7221a293a169a92b947349522c531de126f683cc3b843a7fd958",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "45184a021e2d5a52866a44a79e43871f79e256a654113f91aa895a0eb099bf7d",
+      "snapshot_path": "docs/colleague_results_20261006/raw/122_零上下文AI接手复赛完整交接_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/123_异机接手迁移清单与验收_20260925.md",
+      "synchronized_sha256": "a18c95c3074663221be53a901c59d5c581533af07930acc47f0d44f7b52c5deb",
+      "archive_sha256": "dd96a3eeb84286d7ceac1d14a2250c51e2b95ff5e72c676f75f9730179605303",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "a18c95c3074663221be53a901c59d5c581533af07930acc47f0d44f7b52c5deb",
+      "snapshot_path": "docs/colleague_results_20261006/raw/123_异机接手迁移清单与验收_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/124_复赛P0_C8-336同权重双尺度四视图TTA预注册_20260925.md",
+      "synchronized_sha256": "d237e5d6753e02a404ad351f6a8213152bc296f8be47da2d4120402bbc2c8f35",
+      "archive_sha256": "9cef840b9ac5420aa0e6225f5f36067990a2abb7154d9f5168f03a683114c134",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "d237e5d6753e02a404ad351f6a8213152bc296f8be47da2d4120402bbc2c8f35",
+      "snapshot_path": "docs/colleague_results_20261006/raw/124_复赛P0_C8-336同权重双尺度四视图TTA预注册_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/124_C6_336固定四视图P0预注册与B机任务交接_20260925.md",
+      "synchronized_sha256": "7e492026460d71fd6291b8bdb6515f7aae636752d1ff71f7d87f9817bc470ccb",
+      "archive_sha256": "7ee0f0d31f8cdf73ec7aeaed91cde1e278840097db90900bd0b6fbf2b815e5c6",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "7e492026460d71fd6291b8bdb6515f7aae636752d1ff71f7d87f9817bc470ccb",
+      "snapshot_path": "docs/colleague_results_20261006/raw/124_C6_336固定四视图P0预注册与B机任务交接_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/125_A机C6_336四视图P0预注册与B机任务交接_20260925.md",
+      "synchronized_sha256": "33227e0831eab0c254cda44c1a5a2b0f38a2a223ae8a19aa846e0a8d1269367b",
+      "archive_sha256": "17533c611d63a01ac35ef4bf730b7cd5dc71963a1ff9969b9ffdf86c589a608e",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "33227e0831eab0c254cda44c1a5a2b0f38a2a223ae8a19aa846e0a8d1269367b",
+      "snapshot_path": "docs/colleague_results_20261006/raw/125_A机C6_336四视图P0预注册与B机任务交接_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/125_P0_C6_336四视图通过与新提交包_20260926.md",
+      "synchronized_sha256": "2514b203a65674cfbbbd891c1b457b89bff163c14d5c840b075550341cf47501",
+      "archive_sha256": "33148f792287cee306c90631721dc52e88977cd2954e7128e139c364f4f71d1a",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "2514b203a65674cfbbbd891c1b457b89bff163c14d5c840b075550341cf47501",
+      "snapshot_path": "docs/colleague_results_20261006/raw/125_P0_C6_336四视图通过与新提交包_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/126_B机fold2_C8四视图验证结果与回传_20260925.md",
+      "synchronized_sha256": "54e409338765d091e87b56641e940f6ea4051ed3244ff3385f376dc40d5f4cc6",
+      "archive_sha256": "e62b7cfc0379a11aa2e9e3956d21e388f449550f13e887d100fa8739244f4fac",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "54e409338765d091e87b56641e940f6ea4051ed3244ff3385f376dc40d5f4cc6",
+      "snapshot_path": "docs/colleague_results_20261006/raw/126_B机fold2_C8四视图验证结果与回传_20260925.md",
+      "verified": true
+    },
+    {
+      "path": "docs/126_B机P2-GCE折2任务单_20260926.md",
+      "synchronized_sha256": "f922d152ff55595b69da21f055ce74a5f0630d21eff2fa9c71f03f24c7acf3c5",
+      "archive_sha256": "ceb89d65fae6dc03deccd3b534f4a6be2d620373cc997c35d3dbb4ee23175c6c",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "f922d152ff55595b69da21f055ce74a5f0630d21eff2fa9c71f03f24c7acf3c5",
+      "snapshot_path": "docs/colleague_results_20261006/raw/126_B机P2-GCE折2任务单_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/127_B机P2_GCE折2验签缺件清单_20260926.md",
+      "synchronized_sha256": "3c1e56d736ca21c99a82da9a441fe11f99c3319ea6d2835a2f0236d643ff597a",
+      "archive_sha256": "cb14147f89ed18ec58b83b4e92803b4c22a7ead34f42b0a09e527022d5b9c7b6",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "3c1e56d736ca21c99a82da9a441fe11f99c3319ea6d2835a2f0236d643ff597a",
+      "snapshot_path": "docs/colleague_results_20261006/raw/127_B机P2_GCE折2验签缺件清单_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/127_P1_320分辨率折1筛选止损_20260926.md",
+      "synchronized_sha256": "48ad71a15046ada81e435aaeb95e54bc1f3887155494eaaa9bdb97a629c128fd",
+      "archive_sha256": "c772841fd724ba83aec78a00d18dd4e76d0f7cc5cf5499f7f73a68618201d90e",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "48ad71a15046ada81e435aaeb95e54bc1f3887155494eaaa9bdb97a629c128fd",
+      "snapshot_path": "docs/colleague_results_20261006/raw/127_P1_320分辨率折1筛选止损_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/128_A机P2-GCE折2任务单_20260926.md",
+      "synchronized_sha256": "b38ebf8ed36ae4f15898b84fed623b0e6f56940c14a3e12ef3b3da075ebbbd93",
+      "archive_sha256": "5543afdf1ccaa2873df1b12702bce35c874119c7eea09d54855768005b9a9ee3",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "b38ebf8ed36ae4f15898b84fed623b0e6f56940c14a3e12ef3b3da075ebbbd93",
+      "snapshot_path": "docs/colleague_results_20261006/raw/128_A机P2-GCE折2任务单_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/128_P2_GCE折1首折门禁通过_20260926.md",
+      "synchronized_sha256": "7d44e9eef59701dc28fcd7f0c13bf6239b8736a2e27de51e3939f2cbc12199fe",
+      "archive_sha256": "9d454ede317c733a650062a348b21ea5eaff3acfd81a81027a3c61942a79dfc8",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "7d44e9eef59701dc28fcd7f0c13bf6239b8736a2e27de51e3939f2cbc12199fe",
+      "snapshot_path": "docs/colleague_results_20261006/raw/128_P2_GCE折1首折门禁通过_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/129_A机P1_320分辨率折1筛选止损_20260926.md",
+      "synchronized_sha256": "cb2987b8ba6acf398f6c3d63066b467a966e5e664c74411f9eb8ec1b717620cf",
+      "archive_sha256": "ea69bd4b1ba97aab7b76b00276614529b4ecb0684a5110497a45c558683d2145",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "cb2987b8ba6acf398f6c3d63066b467a966e5e664c74411f9eb8ec1b717620cf",
+      "snapshot_path": "docs/colleague_results_20261006/raw/129_A机P1_320分辨率折1筛选止损_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/129_P2_GCE双折确认通过与全量重训_20260926.md",
+      "synchronized_sha256": "25cbaf588bf9c320acd5de7526c32817fd258826faab239ac7a9afde1983d6ab",
+      "archive_sha256": "380e45dd440da810aaec0f99dcb72e416da1094f0113340c54579d673e8409cb",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "25cbaf588bf9c320acd5de7526c32817fd258826faab239ac7a9afde1983d6ab",
+      "snapshot_path": "docs/colleague_results_20261006/raw/129_P2_GCE双折确认通过与全量重训_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/130_20260926_全天工作交接与B接替清单.md",
+      "synchronized_sha256": "5f0feefd1f4aa51ca2984796698be194bc453d51f3681c6170b7cb8541b86944",
+      "archive_sha256": "721f6342e5e68df85d377df3d60c81b981504ef1953a8709062df3ae988b1572",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "5f0feefd1f4aa51ca2984796698be194bc453d51f3681c6170b7cb8541b86944",
+      "snapshot_path": "docs/colleague_results_20261006/raw/130_20260926_全天工作交接与B接替清单.md",
+      "verified": true
+    },
+    {
+      "path": "docs/130_B机P2-GCE折2同步验签与开跑记录_20260926.md",
+      "synchronized_sha256": "abdea09cdda7b773c2c3121ad9557cdd81ce0c2510a2fecfb3a7e3a95677f056",
+      "archive_sha256": "03f103a3b261ffe4db80a68f9a797aa50b09e00379e590c6c8845ddf60cc5b87",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "abdea09cdda7b773c2c3121ad9557cdd81ce0c2510a2fecfb3a7e3a95677f056",
+      "snapshot_path": "docs/colleague_results_20261006/raw/130_B机P2-GCE折2同步验签与开跑记录_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/131_B机P2-GCE折2完成回传_20260926.md",
+      "synchronized_sha256": "ea9432123baad079b5da29dbc6927bb2d41448e97b01f77df86a50d291faade8",
+      "archive_sha256": "f0affb069200fa55d51560a82bb68dfdc0a1c5bde8edfda9cafa17f49da2b500",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "ea9432123baad079b5da29dbc6927bb2d41448e97b01f77df86a50d291faade8",
+      "snapshot_path": "docs/colleague_results_20261006/raw/131_B机P2-GCE折2完成回传_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/132_本机唯一开发环境同步验收与后续入口_20260926.md",
+      "synchronized_sha256": "614f94c4ed117907fa210139bb177d67d92b09ab83c00af261ce373de49dbc66",
+      "archive_sha256": "b2720a2d944d358a81f1c90e80628c121e645fe7933bf6258cf4e0b74784f644",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "614f94c4ed117907fa210139bb177d67d92b09ab83c00af261ce373de49dbc66",
+      "snapshot_path": "docs/colleague_results_20261006/raw/132_本机唯一开发环境同步验收与后续入口_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/133_新远端3090连接与资源验收_20260926.md",
+      "synchronized_sha256": "f5013b85493e56c699b61caf4f2b9175983c4b223179749bb2325119855f12d8",
+      "archive_sha256": "3991a6658d6bc4e5f40819b67787e201b9ff068ffa0b26eb6215f8982ae2c47a",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "different_preserved",
+      "local_current_sha256": "af1b9d9dd47e2db7b9e1cb981f62c0434604154ca7ec6ad5a69a293ff88fc388",
+      "snapshot_path": "docs/colleague_results_20261006/raw/133_新远端3090连接与资源验收_20260926.md",
+      "verified": true
+    },
+    {
+      "path": "docs/134_3090首批P4_GCE强度单变量预注册_20260927.md",
+      "synchronized_sha256": "f1b42b7dc9a5d1e2e071f6bdecf69fa48f922940f20a15b50106b20d9bb803a7",
+      "archive_sha256": "1604228efb198f993e1982b8e049f283017c5ce16c70b61eef0b267c58356b1c",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "f1b42b7dc9a5d1e2e071f6bdecf69fa48f922940f20a15b50106b20d9bb803a7",
+      "snapshot_path": "docs/colleague_results_20261006/raw/134_3090首批P4_GCE强度单变量预注册_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/135_3090云盘安全清理记录_20260927.md",
+      "synchronized_sha256": "9b3d809743b305ac4a5e85b648c96dbf4d9c6cfdaa3fc0db16fbd9993aae15a8",
+      "archive_sha256": "3d4cffbdc9dc3454dd5fa5e4dc4551bd1ccb25ed96c7c25a0bbecd567b649a14",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "9b3d809743b305ac4a5e85b648c96dbf4d9c6cfdaa3fc0db16fbd9993aae15a8",
+      "snapshot_path": "docs/colleague_results_20261006/raw/135_3090云盘安全清理记录_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/136_3090大批训练与每小时回传及15点交付计划_20260927.md",
+      "synchronized_sha256": "9ddeb7b88a21a4bd094a5c715660cbfdf0a3a235a34c51fd28dc1665081c6125",
+      "archive_sha256": "31e4cff9b7938d64baeb22a2da8ca8f1b5a5d40c2b4b1e39e881139fbee34770",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "9ddeb7b88a21a4bd094a5c715660cbfdf0a3a235a34c51fd28dc1665081c6125",
+      "snapshot_path": "docs/colleague_results_20261006/raw/136_3090大批训练与每小时回传及15点交付计划_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/137_P4折1q05候选验收与回传清理记录_20260927.md",
+      "synchronized_sha256": "50af3fa9716942433fe2f11f1216fbac26c50d27b9e390314f5ee88bfa3c9acb",
+      "archive_sha256": "9da9d1017a0c897e48aeec55785d1caa8d89f22600750b7f507ed71754eb0f72",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "50af3fa9716942433fe2f11f1216fbac26c50d27b9e390314f5ee88bfa3c9acb",
+      "snapshot_path": "docs/colleague_results_20261006/raw/137_P4折1q05候选验收与回传清理记录_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/138_P4_q07固定种子回退折1启动记录_20260927.md",
+      "synchronized_sha256": "18b729ec4b125a53f89187dda0a4d62069173a3df2e873ff9335b27c56f8a906",
+      "archive_sha256": "cc74dfff7eb6ed91d7393b933e46813f4ac0577d04ed17da90272dba4dcf0516",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "18b729ec4b125a53f89187dda0a4d62069173a3df2e873ff9335b27c56f8a906",
+      "snapshot_path": "docs/colleague_results_20261006/raw/138_P4_q07固定种子回退折1启动记录_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/139_P4_q07固定种子回退折2同机配对预注册_20260927.md",
+      "synchronized_sha256": "7aa4cde37ae275a32bc8eb5122d5883784ddb7aa3d4f1369397f1fc70c72e46a",
+      "archive_sha256": "1e9e241927c6bfa85d6b288ef513f6cda03f5d61a719de31d6a7c01de8422acf",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "7aa4cde37ae275a32bc8eb5122d5883784ddb7aa3d4f1369397f1fc70c72e46a",
+      "snapshot_path": "docs/colleague_results_20261006/raw/139_P4_q07固定种子回退折2同机配对预注册_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/140_3090资源180秒采样与训练后性能优化计划_20260927.md",
+      "synchronized_sha256": "37af753b067e07aa50191e32281aa2506f37aa2eb77ae9a3e2c8d440ac66f0f2",
+      "archive_sha256": "2066a4223c768ff0ed8029caee81fa3ae05b9f61bfe3e4063fe5dfb7a3c68a0e",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "37af753b067e07aa50191e32281aa2506f37aa2eb77ae9a3e2c8d440ac66f0f2",
+      "snapshot_path": "docs/colleague_results_20261006/raw/140_3090资源180秒采样与训练后性能优化计划_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/141_复赛损失优化与75分冲刺计划_20260927.md",
+      "synchronized_sha256": "e1e85f4daa7619780e6dafd55e16743421cfc4627587846d9b05a59541e17507",
+      "archive_sha256": "a0eabcf5383e4e4c5a8464879e3ebffac60e62fefcebbe9f905a8bb5c8f5f773",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "e1e85f4daa7619780e6dafd55e16743421cfc4627587846d9b05a59541e17507",
+      "snapshot_path": "docs/colleague_results_20261006/raw/141_复赛损失优化与75分冲刺计划_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/142_P5本机4060首折损失配对启动与值守_20260927.md",
+      "synchronized_sha256": "bf150ea970c00229df625b4f831d9c60e911c536be7c3d151e9525d649ae4eb5",
+      "archive_sha256": "0f6e1fb38105d7e31b343e7ea23d8e30731a04f9e74156539f0a57280848d660",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "bf150ea970c00229df625b4f831d9c60e911c536be7c3d151e9525d649ae4eb5",
+      "snapshot_path": "docs/colleague_results_20261006/raw/142_P5本机4060首折损失配对启动与值守_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/143_P5探索门槛调整与本机第二折预算_20260927.md",
+      "synchronized_sha256": "a8623e9d1596bb0193f481ec802104a0f24f2c129194186189661ec8dda71bb6",
+      "archive_sha256": "73f93b1f791a6872d1338f4089ead5c65d9445d67f978b79a8252d443aabf764",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "a8623e9d1596bb0193f481ec802104a0f24f2c129194186189661ec8dda71bb6",
+      "snapshot_path": "docs/colleague_results_20261006/raw/143_P5探索门槛调整与本机第二折预算_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/144_阿里云新服务器接入与安全迁移_20260927.md",
+      "synchronized_sha256": "a421276c8f6fc6fa06e36d75c5abb706dc0840a67abd7348320cf2b76297ec8a",
+      "archive_sha256": "b22ccbaa26361a7b10bf65b40b1a0127c143c4d17b54267509958c9ace009251",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "different_preserved",
+      "local_current_sha256": "2502a8eecba7cfe75c73362a013f42611b379b2bebcf70fcb1c1f4308c7c690a",
+      "snapshot_path": "docs/colleague_results_20261006/raw/144_阿里云新服务器接入与安全迁移_20260927.md",
+      "verified": true
+    },
+    {
+      "path": "docs/145_A10资源验收与P5折2启动_20260928.md",
+      "synchronized_sha256": "9166c02f644da1b220bd859255093d89387b2c12cd8da63c909592d7aefe76dd",
+      "archive_sha256": "e54ccc749a8d581f92788d74d87e4375b76613d87e61380ebbb8e9a1259a25a0",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "9166c02f644da1b220bd859255093d89387b2c12cd8da63c909592d7aefe76dd",
+      "snapshot_path": "docs/colleague_results_20261006/raw/145_A10资源验收与P5折2启动_20260928.md",
+      "verified": true
+    },
+    {
+      "path": "docs/146_P5_A10全量训练与最终出包验收_20260928.md",
+      "synchronized_sha256": "7a98b48e275d1eeaa3e87298398271f98a66e623aa46faee514a0003c57c1d41",
+      "archive_sha256": "090a94126efd914590ca0eceb2b5d2a6c28c8c81bac573f7f4719ca60e85ed2a",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "7a98b48e275d1eeaa3e87298398271f98a66e623aa46faee514a0003c57c1d41",
+      "snapshot_path": "docs/colleague_results_20261006/raw/146_P5_A10全量训练与最终出包验收_20260928.md",
+      "verified": true
+    },
+    {
+      "path": "docs/147_P5增益瓶颈诊断与70分后续门禁_20260928.md",
+      "synchronized_sha256": "74eeb2149edc7ff36994c50f4bf6021cf69558d73f8747d3c973ead890ac8404",
+      "archive_sha256": "a07622b99bfb237d17bfe874ab969544cf08922e50fc5061ef42cc159d14a2d4",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "74eeb2149edc7ff36994c50f4bf6021cf69558d73f8747d3c973ead890ac8404",
+      "snapshot_path": "docs/colleague_results_20261006/raw/147_P5增益瓶颈诊断与70分后续门禁_20260928.md",
+      "verified": true
+    },
+    {
+      "path": "docs/148_P6_AC单变量验证预注册与资源预算_20260928.md",
+      "synchronized_sha256": "f5ebb598e64e39850744d6982ef776a62d10bba056f68944cc06e09e992e46f6",
+      "archive_sha256": "b412b5915daa25f95f355dc3068e2d334279d60d4f8c7b3da427e0d9ca8ffad2",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "different_preserved",
+      "local_current_sha256": "6d0b1b91368e89174398d1c1dc0de5d095bf0e9b2379cceec868b44713029562",
+      "snapshot_path": "docs/colleague_results_20261006/raw/148_P6_AC单变量验证预注册与资源预算_20260928.md",
+      "verified": true
+    },
+    {
+      "path": "docs/149_主办方测试先验公告影响与后续计划修订_20260928.md",
+      "synchronized_sha256": "8507b84a352a8cd77e3ff61bd3f62e9602062339fa56b15911da0c686bd10031",
+      "archive_sha256": "740ab16ec834a42bc0d3d26a993b15d386b0a06eceff4c50954a7d7c44fe332b",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "8507b84a352a8cd77e3ff61bd3f62e9602062339fa56b15911da0c686bd10031",
+      "snapshot_path": "docs/colleague_results_20261006/raw/149_主办方测试先验公告影响与后续计划修订_20260928.md",
+      "verified": true
+    },
+    {
+      "path": "docs/150_P7类别均衡推理旁路与下一包预注册_20260928.md",
+      "synchronized_sha256": "e2922d0abafdfc2c744ff7b410545ba309064e237315a1802027c952d01cdb7f",
+      "archive_sha256": "c0f451469dc228587b2c6e8682179cc8e7e8cea604ad3136c8ccf8ae45cb9c41",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "e2922d0abafdfc2c744ff7b410545ba309064e237315a1802027c952d01cdb7f",
+      "snapshot_path": "docs/colleague_results_20261006/raw/150_P7类别均衡推理旁路与下一包预注册_20260928.md",
+      "verified": true
+    },
+    {
+      "path": "docs/151_P7类别均衡推理包验收_20260928.md",
+      "synchronized_sha256": "f3cb482bc4484b083def4328cc7ae66f8c41463d73aea0f6a76e7e20936a1657",
+      "archive_sha256": "df42ddf89c946cd4a69fd85d4b67268c0483e502df67b6b8541e65bd706ba029",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "f3cb482bc4484b083def4328cc7ae66f8c41463d73aea0f6a76e7e20936a1657",
+      "snapshot_path": "docs/colleague_results_20261006/raw/151_P7类别均衡推理包验收_20260928.md",
+      "verified": true
+    },
+    {
+      "path": "docs/152_P8残差分类头两折短筛预注册_20260928.md",
+      "synchronized_sha256": "989b6e92e09fd8b9b92d1eb15f52745c762eccf3f20eb8021389e0dfa153ccbe",
+      "archive_sha256": "3063fe66e28904b8faf23ff065e296a34984e53b629a8586ff9129160ec5c251",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "989b6e92e09fd8b9b92d1eb15f52745c762eccf3f20eb8021389e0dfa153ccbe",
+      "snapshot_path": "docs/colleague_results_20261006/raw/152_P8残差分类头两折短筛预注册_20260928.md",
+      "verified": true
+    },
+    {
+      "path": "docs/153_P9梯度裁剪阈值两折筛选与预算_20260928.md",
+      "synchronized_sha256": "20b34db92f6de7fd68de198f638a43e59715dc21428010516a02d6ab6fa20547",
+      "archive_sha256": "571334b7561682f6e3cb5746614c0961bcd171a9c027cce688a0233e63858329",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "20b34db92f6de7fd68de198f638a43e59715dc21428010516a02d6ab6fa20547",
+      "snapshot_path": "docs/colleague_results_20261006/raw/153_P9梯度裁剪阈值两折筛选与预算_20260928.md",
+      "verified": true
+    },
+    {
+      "path": "docs/154_A10产物迁回本机与关机验收_20260928.md",
+      "synchronized_sha256": "c99797feeca3bc22d550e013c715a46cd04d1ee70a82c78b65ef16fc06aa2c9d",
+      "archive_sha256": "2f6f444eb471e25cf34c535bf53c1093d304a2d109d94a0dcb95ad2620ec3557",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "c99797feeca3bc22d550e013c715a46cd04d1ee70a82c78b65ef16fc06aa2c9d",
+      "snapshot_path": "docs/colleague_results_20261006/raw/154_A10产物迁回本机与关机验收_20260928.md",
+      "verified": true
+    },
+    {
+      "path": "docs/155_P10硬类别容量分配旁路预注册_20260929.md",
+      "synchronized_sha256": "52388e3ed5cb2866190c662fdb8806b15a81956f096585012516af6808c595df",
+      "archive_sha256": "c74f1d13b59b5e1692b1de15f9925a6b3286aa7c664263541f4dcab89dc215c6",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "52388e3ed5cb2866190c662fdb8806b15a81956f096585012516af6808c595df",
+      "snapshot_path": "docs/colleague_results_20261006/raw/155_P10硬类别容量分配旁路预注册_20260929.md",
+      "verified": true
+    },
+    {
+      "path": "docs/156_P11_NCE_RCE同折配对预注册_20260929.md",
+      "synchronized_sha256": "71e3cd98d209c3a6b5246f5b672ff6fba66a1066734a22b3efb80d136a506c96",
+      "archive_sha256": "5ff0a55108b776614cb14fee9b47a7fb20fb46431627ffd3137b59a19e0ae476",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "71e3cd98d209c3a6b5246f5b672ff6fba66a1066734a22b3efb80d136a506c96",
+      "snapshot_path": "docs/colleague_results_20261006/raw/156_P11_NCE_RCE同折配对预注册_20260929.md",
+      "verified": true
+    },
+    {
+      "path": "docs/157_P12_ELR复赛单折配对短筛预注册_20260929.md",
+      "synchronized_sha256": "0ad0438ee59acef95515fb31cc193b273d7e215d5e68b615ba10703e2af724f7",
+      "archive_sha256": "a4c13c753c09a0f082e9abcd5266870b160e3fe432b59be828fa53f7eca70875",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "identical",
+      "local_current_sha256": "0ad0438ee59acef95515fb31cc193b273d7e215d5e68b615ba10703e2af724f7",
+      "snapshot_path": "docs/colleague_results_20261006/raw/157_P12_ELR复赛单折配对短筛预注册_20260929.md",
+      "verified": true
+    },
+    {
+      "path": "docs/171_20261001_EMA冻结期间的替代方向审计.md",
+      "synchronized_sha256": "21194aef212a4a8382698ae9131e4120aba0ca542f3b7058621b446d013b3d68",
+      "archive_sha256": "4a600449a7402f48a408982b2c9e361a1c46a06764b1b6104bc7f4bbf2cc9709",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/171_20261001_EMA冻结期间的替代方向审计.md",
+      "verified": true
+    },
+    {
+      "path": "docs/172_P21折2训练侧只读来源审计_20261001.md",
+      "synchronized_sha256": "aabd6e987eb0a94aa30fc457c6368ce229c3c1c8b18b37a2313d2636c88e5a3b",
+      "archive_sha256": "d797406abc8175aae05063da6daa4b5fbd786e04e08d76947abebba41a24596c",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/172_P21折2训练侧只读来源审计_20261001.md",
+      "verified": true
+    },
+    {
+      "path": "docs/173_P21折3同机14对20轮确认观察与验证冻结_20261001.md",
+      "synchronized_sha256": "95db499d2c01e25909e7bc38395972869b28bcfe698471afdb46cb998440c009",
+      "archive_sha256": "192c7f31602cf3563417e86deaa2ff2871e8992f827ea70cf7974f7313872f55",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/173_P21折3同机14对20轮确认观察与验证冻结_20261001.md",
+      "verified": true
+    },
+    {
+      "path": "docs/174_P21数据加载workers16_24_32限时基准_20261001.md",
+      "synchronized_sha256": "5ede2319415ad0a6c5ed73a1c8f0383f8a73f947757d390b391273f469cca1cf",
+      "archive_sha256": "8ee9d506d3b52f57730ee242be1ba8c622dfdf4b496ed27d1613da06d2356f42",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/174_P21数据加载workers16_24_32限时基准_20261001.md",
+      "verified": true
+    },
+    {
+      "path": "docs/175_P21折3workers端到端两轮性能对照_20261001.md",
+      "synchronized_sha256": "7553fb5d739781bb1cec097c95288072efed1f6b7dad489b0c74e04b69e31845",
+      "archive_sha256": "a0772164932bb8531ea01a4c652f56b256d413350e991f134242833270322f7c",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/175_P21折3workers端到端两轮性能对照_20261001.md",
+      "verified": true
+    },
+    {
+      "path": "docs/180_参考179的Q0与N1前瞻方案_20261002.md",
+      "synchronized_sha256": "47e58cd1e3f76e25288e96d2df79f15e84b5b6a853514419b1611827ffa57e7f",
+      "archive_sha256": "af18dd112c85e17fba79f85b2319da27a95d29767ca8f644a377d729667bc327",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/180_参考179的Q0与N1前瞻方案_20261002.md",
+      "verified": true
+    },
+    {
+      "path": "docs/181_N2受约束暖头可行性草案_20261003.md",
+      "synchronized_sha256": "5370e79b4febdff69068e4416ba08d210c537f8dddcfd4b75f1a8d5e9dd3dc1b",
+      "archive_sha256": "9a71bce7a142825ae2aea28d0ca2bf3bcb0798ef23423867dc38eeb0a9a89598",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/181_N2受约束暖头可行性草案_20261003.md",
+      "verified": true
+    },
+    {
+      "path": "docs/182_N2暖头开发预注册与执行_20261003.md",
+      "synchronized_sha256": "a445b5b5bb5fb064c8c122d879c94118769c389d11298e9666fcd7c4ccbd479f",
+      "archive_sha256": "fd6575b5fa328661d7afcd1f53214a0c20fb6d6743d9cd0252d43ed9d285ab8d",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/182_N2暖头开发预注册与执行_20261003.md",
+      "verified": true
+    },
+    {
+      "path": "docs/183_N4层别学习率新试验准备与待授权预算_20261003.md",
+      "synchronized_sha256": "5d0fdec0b8c86bce6f29816a031cb93989d22869b577afe934714845260a5d05",
+      "archive_sha256": "6781f93e75868681c9964db8529142fd81717f0bf2a1608f60c261f1c6702d3f",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/183_N4层别学习率新试验准备与待授权预算_20261003.md",
+      "verified": true
+    },
+    {
+      "path": "docs/184_主线20轮前瞻确认与资源预算_20261003.md",
+      "synchronized_sha256": "dadc59515049610820639c6e093094421d6638da96c25aefe885f0e6796fe094",
+      "archive_sha256": "810f8c95a10f84ecb9191e9b17192feb4bef549128592f46701beb9d63af8a53",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/184_主线20轮前瞻确认与资源预算_20261003.md",
+      "verified": true
+    },
+    {
+      "path": "docs/185_主线工程守卫修复草案与连接阻塞_20261004.md",
+      "synchronized_sha256": "8b92f0055ab92c62a1116b32219e856e90724996b44b13f49869a8caeb373a89",
+      "archive_sha256": "6d0309babad7047f948415f779f793d377eae715aa02b8b635827cc3e5b67c6c",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/185_主线工程守卫修复草案与连接阻塞_20261004.md",
+      "verified": true
+    },
+    {
+      "path": "docs/186_主线本机4060迁移预算_20261004.md",
+      "synchronized_sha256": "9eb6935842f374221ea8c25498e5261dcb62b98ec4456488f3123bdcaf0ca069",
+      "archive_sha256": "eabbe0af1b3652178d3075ebb2941dc5f9db0d45b739d971eb1279d55b5c48d0",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/186_主线本机4060迁移预算_20261004.md",
+      "verified": true
+    },
+    {
+      "path": "docs/187_主线中断恢复与新资源预算待批_20261006.md",
+      "synchronized_sha256": "233b2f38d70dd750efb8d06563b483ae2bfc77d5f77514b22cf83ec4ad311193",
+      "archive_sha256": "8db63d90a9259cef0820ca31a18c7d884c1b4c7520528a057c8d8bcea17de684",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/187_主线中断恢复与新资源预算待批_20261006.md",
+      "verified": true
+    },
+    {
+      "path": "docs/local_snapshots_20261006/166_P17训练权重EMA折2单变量短筛预注册_20260930.md",
+      "synchronized_sha256": "1fb2ead1b5ac8c15e4c91ec5c583e53346523bf44420ee8d1ea4486d9667eb99",
+      "archive_sha256": "a4ae2bc843edc630d07de1b8797ead4e84f69dc2025064913519b55baaa11e9d",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/local_snapshots_20261006/166_P17训练权重EMA折2单变量短筛预注册_20260930.md",
+      "verified": true
+    },
+    {
+      "path": "docs/local_snapshots_20261006/167_P18温和训练裁剪折2短筛预注册_20260930.md",
+      "synchronized_sha256": "f6f8746fc74ca0eaee13f6e5cacdb74b64ae27eb6895bd2e4d53dedca6a9d776",
+      "archive_sha256": "b9411e51f0424fe9c0176687210cac1f4ea40b7acec9b6eaf939b2aac5d3dc82",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/local_snapshots_20261006/167_P18温和训练裁剪折2短筛预注册_20260930.md",
+      "verified": true
+    },
+    {
+      "path": "docs/local_snapshots_20261006/168_20260929_30训练成果与队友交接_20260930.md",
+      "synchronized_sha256": "5fb9e92cde3883cb901b41f939e9dd038918db56850e806b58d5ecce7316f6be",
+      "archive_sha256": "08113b076f06b26f4855e8b3263d3b1c80ed0ec3063b8e975a78cfa02f67bb1a",
+      "normalization": "git_archive_crlf_to_lf",
+      "local_current_status": "missing",
+      "local_current_sha256": null,
+      "snapshot_path": "docs/colleague_results_20261006/raw/local_snapshots_20261006/168_20260929_30训练成果与队友交接_20260930.md",
+      "verified": true
+    }
+  ]
+}

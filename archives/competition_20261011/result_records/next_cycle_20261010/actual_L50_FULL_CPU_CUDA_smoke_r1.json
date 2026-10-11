@@ -1,0 +1,15 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_FULL_CPU_CUDA_smoke_r1.json",
+  "original_sha256": "faee679d5ac34820a9f292b5f97e8ab42362edc17298eb8584c1465f9d3df0e1",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "time": 1791694767.7396734,
+    "return_code": 0,
+    "log_sha256": "adc23727369f798becef559a54dce51427931248d0ee74ae678ec66ff55c1baa",
+    "log_tail": "[2026-10-11 12:59:12] 20261010-L50-full-L50 start\n[2026-10-11 12:59:12] L50: starting - one positively confirmed fresh official FULL20 fixed final\n[2026-10-11 12:59:27] L50: finished in 0.2 min; output validated\n[2026-10-11 12:59:27] 20261010-L50-full-L50 finished\n{\"schema\": \"aictrack1.fresh_route.full.launch_result.v1\", \"arm\": \"L50\", \"selected_route\": \"L50_GRAPH\", \"return_code\": 0, \"source_manifest_sha256\": \"3ebb8783263d63cead51e26a043d5990de5b9093da03394a5d6a17dbacd97df5\", \"config_sha256\": \"7214f98e096a7e00fbaefced617e8d7261234412c6619d72909d32c10a916431\", \"fresh_confirmation_receipt_sha256\": \"1b3a28bb3f55b08506ccc888c62498cc87a7bd1d47d5902186c0bd02022016b7\", \"full_budget_sha256\": \"1edccb01c54e50a7f83434da6974bf74233c5fab12296968047d559b579ec22e\", \"synthetic_smoke\": true, \"resumed\": false, \"test_access\": false}\n",
+    "smoke_not_candidate_initialization": true
+  }
+}

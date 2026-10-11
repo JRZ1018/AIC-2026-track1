@@ -1,0 +1,22 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_fixed_graph_launch_r1.json",
+  "original_sha256": "9e894b33f4ea6745cf2882c96d7de214b4408f9a5bc20c53063bc1598636e419",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "controller": {
+      "pid": 18400,
+      "state": "R",
+      "ppid": 18333,
+      "pgrp": 18400,
+      "session": 18400,
+      "start_ticks": "926285968"
+    },
+    "launch_unix": 1791633056.7841313,
+    "fourview_all_SHA_PASS": true,
+    "fourview_all_groups_closed": true,
+    "test_access": false
+  }
+}

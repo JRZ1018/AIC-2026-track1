@@ -1,0 +1,23 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_AFA_negative_root_review_r1.json",
+  "original_sha256": "1d574a6ca154ed1301dd637393236879accab43446334ae0ca3990c818a3f05e",
+  "omitted_fields": [],
+  "record": {
+    "decision": "negative_not_admitted",
+    "primary_balanced_net": -4,
+    "natural_net": -4,
+    "primary_delta_pp": -0.02710027100271003,
+    "natural_delta_pp": -0.013451256011030031,
+    "balanced_HMT_net": [
+      -2,
+      -2,
+      0
+    ],
+    "risk_review": "主完整组合负向；自身图增量不能替代主负向。无稳定收益结论，610/FULL/test不准入。",
+    "independent_recount_sha256": "c49bbfaea89105cb2a5b9663afe4d3569956473fde819043879cb91ed125d378",
+    "all_owned_groups_closed": true,
+    "no_rerun": true,
+    "test_access": false
+  }
+}

@@ -1,0 +1,15 @@
+# Optional unvalidated CUDA build. Build context is the full submitted work root.
+# Use a supported NVIDIA host driver and Docker GPU access for execution.
+ARG PYTHON_BASE=python:3.12-slim
+FROM ${PYTHON_BASE}
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    OMP_NUM_THREADS=4 \
+    MKL_NUM_THREADS=4 \
+    CUBLAS_WORKSPACE_CONFIG=:4096:8
+WORKDIR /app
+COPY ["AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明/requirements-cuda.txt", "/tmp/requirements-cuda.txt"]
+RUN python -m pip install --no-cache-dir --only-binary=:all: -r /tmp/requirements-cuda.txt
+COPY . /app
+CMD ["python", "-B", "AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明/scripts/infer.py", "--help"]

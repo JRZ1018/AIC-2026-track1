@@ -1,0 +1,39 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L35_final_actual_returns_r1/local_complete_CPU_acceptance_r1.json",
+  "original_sha256": "70dbc7b4920a83e3983c369910896ba89273a6297bae165d2b4f60ffcfb19b26",
+  "omitted_fields": [],
+  "record": {
+    "actual_model_cpu_recovery": true,
+    "complete": true,
+    "csv_zip_verified": true,
+    "final_sha256": "ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6",
+    "full_ac20_restored": true,
+    "gpu_access": false,
+    "head_initializer_max_abs_delta": {
+      "classifier.linear.bias": 0.0058959126472473145,
+      "classifier.linear.weight": 0.022552490234375
+    },
+    "head_source": "joint_fixed_last_state",
+    "last_sha256": "5325982fad83513b11e6f2c9e94537272ae5f7ded295e46b80948bf9fea3532d",
+    "optimizer_parameters_restored": 154,
+    "package_hashes": {
+      "pred_results.csv": "e02a214cc0ba4476501698b75a546d3d29bc5ee1942f5c91dccf6751a78a7d7f",
+      "pred_results.zip": "767ace16352bdb35474df443eb3285d35e2ba832622fcfa3424b4ccbe9b922d8",
+      "submission_manifest.json": "60966a3e50ea784f0a0400f48612b18c39b5b241314fcaff71fc6e392858da8f"
+    },
+    "runtime": {
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "MKL_NUM_THREADS": "4",
+      "OMP_NUM_THREADS": "4",
+      "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+      "torch": "2.12.0+cpu",
+      "torch_num_interop_threads": 16,
+      "torch_num_threads": 4
+    },
+    "schema": "aictrack1.fresh_route.local_final_acceptance.v1",
+    "sha_files": 210,
+    "test_image_reads": 0,
+    "trainable_tensors_restored": 154
+  }
+}

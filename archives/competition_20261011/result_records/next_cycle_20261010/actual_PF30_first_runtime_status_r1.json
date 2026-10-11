@@ -1,0 +1,588 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_first_runtime_status_r1.json",
+  "original_sha256": "d6f61cb5f9807a4b5a9d366ac9a7c40d6197d52be653e3690d6c2ab625a4c120",
+  "omitted_fields": [
+    "/canonical/command",
+    "/processes/argv",
+    "/receipts/artifacts/launches/PF30_5e743289f7ea47fc9e168f8ba66230b2/START.json/value/command",
+    "/receipts/artifacts/launches/PF30_a5610e2726be47d0b98e4aa96e109b45/START.json/value/command",
+    "/receipts/root_actual_PF30_smoke_launch.json/value/command",
+    "/receipts/root_actual_launch.json/value/command",
+    "/receipts/root_actual_launch.json/value/controller/argv",
+    "/receipts/root_actual_stage_and_CPU_preflight.json/value/stderr",
+    "/receipts/root_actual_stage_and_CPU_preflight.json/value/stdout"
+  ],
+  "record": {
+    "observed_unix": 1791586808.9056349,
+    "execution_root": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010",
+    "bound_source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+    "processes": [
+      {
+        "pid": 31939,
+        "ppid": 1,
+        "pgrp": 31939,
+        "session": 31939,
+        "start_ticks": "316040409",
+        "state": "S",
+        "cpu_user_ticks": 274,
+        "cpu_system_ticks": 49,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 3.23,
+        "rss_pages": 132378,
+        "rss_bytes": 542220288,
+        "virtual_bytes": 5041758208,
+        "threads": 4,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      {
+        "pid": 31944,
+        "ppid": 31939,
+        "pgrp": 31944,
+        "session": 31944,
+        "start_ticks": "316040688",
+        "state": "S",
+        "cpu_user_ticks": 2784,
+        "cpu_system_ticks": 1045,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 38.29,
+        "rss_pages": 954857,
+        "rss_bytes": 3911094272,
+        "virtual_bytes": 16207867904,
+        "threads": 17,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      {
+        "pid": 31963,
+        "ppid": 31944,
+        "pgrp": 31944,
+        "session": 31944,
+        "start_ticks": "316042335",
+        "state": "R",
+        "cpu_user_ticks": 2666,
+        "cpu_system_ticks": 227,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 28.93,
+        "rss_pages": 332285,
+        "rss_bytes": 1361039360,
+        "virtual_bytes": 12267008000,
+        "threads": 3,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      {
+        "pid": 31964,
+        "ppid": 31944,
+        "pgrp": 31944,
+        "session": 31944,
+        "start_ticks": "316042336",
+        "state": "R",
+        "cpu_user_ticks": 3159,
+        "cpu_system_ticks": 404,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 35.63,
+        "rss_pages": 332300,
+        "rss_bytes": 1361100800,
+        "virtual_bytes": 12268068864,
+        "threads": 3,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      {
+        "pid": 31965,
+        "ppid": 31944,
+        "pgrp": 31944,
+        "session": 31944,
+        "start_ticks": "316042338",
+        "state": "S",
+        "cpu_user_ticks": 2957,
+        "cpu_system_ticks": 300,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 32.57,
+        "rss_pages": 332285,
+        "rss_bytes": 1361039360,
+        "virtual_bytes": 12267024384,
+        "threads": 3,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      {
+        "pid": 31966,
+        "ppid": 31944,
+        "pgrp": 31944,
+        "session": 31944,
+        "start_ticks": "316042339",
+        "state": "S",
+        "cpu_user_ticks": 3211,
+        "cpu_system_ticks": 376,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 35.87,
+        "rss_pages": 328231,
+        "rss_bytes": 1344434176,
+        "virtual_bytes": 12250271744,
+        "threads": 3,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      {
+        "pid": 31967,
+        "ppid": 31944,
+        "pgrp": 31944,
+        "session": 31944,
+        "start_ticks": "316042341",
+        "state": "S",
+        "cpu_user_ticks": 3006,
+        "cpu_system_ticks": 391,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 33.97,
+        "rss_pages": 328233,
+        "rss_bytes": 1344442368,
+        "virtual_bytes": 12251332608,
+        "threads": 3,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      {
+        "pid": 31968,
+        "ppid": 31944,
+        "pgrp": 31944,
+        "session": 31944,
+        "start_ticks": "316042342",
+        "state": "R",
+        "cpu_user_ticks": 3099,
+        "cpu_system_ticks": 398,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 34.97,
+        "rss_pages": 331906,
+        "rss_bytes": 1359486976,
+        "virtual_bytes": 12266409984,
+        "threads": 3,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      {
+        "pid": 31969,
+        "ppid": 31944,
+        "pgrp": 31944,
+        "session": 31944,
+        "start_ticks": "316042343",
+        "state": "R",
+        "cpu_user_ticks": 3040,
+        "cpu_system_ticks": 302,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 33.42,
+        "rss_pages": 328235,
+        "rss_bytes": 1344450560,
+        "virtual_bytes": 12251357184,
+        "threads": 3,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      },
+      {
+        "pid": 31970,
+        "ppid": 31944,
+        "pgrp": 31944,
+        "session": 31944,
+        "start_ticks": "316042344",
+        "state": "R",
+        "cpu_user_ticks": 2845,
+        "cpu_system_ticks": 297,
+        "child_cpu_user_ticks": 0,
+        "child_cpu_system_ticks": 0,
+        "clock_ticks_per_second": 100,
+        "cpu_seconds": 31.42,
+        "rss_pages": 336404,
+        "rss_bytes": 1377910784,
+        "virtual_bytes": 12284506112,
+        "threads": 3,
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+      }
+    ],
+    "canonical": {
+      "config": "configs/experiment/p1_PF30.yaml",
+      "output_dir": "artifacts/experiments/PF2_PF30",
+      "owner": "20261010-persistent-filter-joint-PF30",
+      "queue_pid": 31939,
+      "schema_version": 1,
+      "started_at": "2026-10-10T06:59:14.205356+08:00",
+      "token": "00391c5551bc4fe8a2ddbd673be71911",
+      "trainer_pid": 31944
+    },
+    "logs": {
+      "root_actual_PF30_smoke_stdout.log": "[2026-10-10 06:57:28] 20261010-persistent-filter-joint-PF30 start\n[2026-10-10 06:57:28] PF30: starting - joint J5 PF2 weight-eligibility-only exploration fixedlast20\n[2026-10-10 06:57:38] PF30: finished in 0.2 min; output validated\n[2026-10-10 06:57:38] 20261010-persistent-filter-joint-PF30 finished",
+      "root_actual_train_stdout.log": "[2026-10-10 06:59:14] 20261010-persistent-filter-joint-PF30 start\n[2026-10-10 06:59:14] PF30: starting - joint J5 PF2 weight-eligibility-only exploration fixedlast20",
+      "artifacts/queues/d237acb24d564db39c4bdedb5e0b74a8/chain.log": "[2026-10-10 06:57:28] 20261010-persistent-filter-joint-PF30 start\n[2026-10-10 06:57:28] PF30: starting - joint J5 PF2 weight-eligibility-only exploration fixedlast20\n[2026-10-10 06:57:38] PF30: finished in 0.2 min; output validated\n[2026-10-10 06:57:38] 20261010-persistent-filter-joint-PF30 finished",
+      "artifacts/queues/d237acb24d564db39c4bdedb5e0b74a8/PF30.log": "{\"schema\": \"aictrack1.fresh_route.cuda_smoke.v1\", \"status\": \"passed\", \"synthetic_only\": true, \"candidate\": false, \"config_sha256\": \"c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172\", \"full_visual_tensors\": 152, \"trainable_tensors\": 154, \"trainable_parameters\": 88233966, \"head_gradient_norms\": {\"linear.weight\": 0.10411300510168076, \"linear.bias\": 0.10410420596599579}, \"head_frozen\": false, \"base_loss\": {\"kind\": \"sce\", \"alpha\": 0.1, \"beta\": 1.0, \"log_zero\": -4.0}, \"first_loss\": 4.786383628845215, \"uninterrupted_second_loss\": 4.676631927490234, \"resumed_second_loss\": 4.676631927490234, \"max_parameter_difference\": 1.1641532182693481e-10, \"scheduler_T_max\": 20, \"amp_overflow_skips\": [{\"from_scale\": 65536.0, \"to_scale\": 32768.0}, {\"from_scale\": 32768.0, \"to_scale\": 16384.0}], \"successful_update_count\": 3, \"successful_updates\": [{\"loss\": 4.786383628845215, \"scale\": 16384.0, \"scheduler_epoch\": 1}, {\"loss\": 4.676631927490234, \"scale\": 16384.0, \"scheduler_epoch\": 2}, {\"loss\": 4.676631927490234, \"scale\":",
+      "artifacts/queues/5994df8ddda64e278faea1821a0797ae/chain.log": "[2026-10-10 06:59:14] 20261010-persistent-filter-joint-PF30 start\n[2026-10-10 06:59:14] PF30: starting - joint J5 PF2 weight-eligibility-only exploration fixedlast20",
+      "artifacts/queues/5994df8ddda64e278faea1821a0797ae/PF30.log": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn("
+    },
+    "epoch_summaries": {
+      "root_actual_PF30_smoke_stdout.log": {
+        "read_full_log": true,
+        "total_bytes": 301,
+        "incomplete_or_nonjson_lines": 4,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "root_actual_train_stdout.log": {
+        "read_full_log": true,
+        "total_bytes": 166,
+        "incomplete_or_nonjson_lines": 2,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/d237acb24d564db39c4bdedb5e0b74a8/chain.log": {
+        "read_full_log": true,
+        "total_bytes": 301,
+        "incomplete_or_nonjson_lines": 4,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/d237acb24d564db39c4bdedb5e0b74a8/PF30.log": {
+        "read_full_log": true,
+        "total_bytes": 1191,
+        "incomplete_or_nonjson_lines": 0,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/5994df8ddda64e278faea1821a0797ae/chain.log": {
+        "read_full_log": true,
+        "total_bytes": 166,
+        "incomplete_or_nonjson_lines": 2,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/5994df8ddda64e278faea1821a0797ae/PF30.log": {
+        "read_full_log": true,
+        "total_bytes": 390,
+        "incomplete_or_nonjson_lines": 4,
+        "observed_epochs": [],
+        "latest": []
+      }
+    },
+    "checkpoint_stats": {},
+    "receipts": {
+      "root_actual_stage_and_CPU_preflight.json": {
+        "sha256": "cbb3f716a080b5ecdde04dea8d05e100702bdc057768ed14a70c60a28581d594",
+        "value": {
+          "complete": true,
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "actual_budget_sha256": "ab5edf6db05351732364a8ec6263dc1114d7dcf45ceee341d128a7f7f19a0049",
+          "server_CPU_preflight_complete": true,
+          "CPU_preflight_scope": "actual official assets hashes, new PF budget, original legal H1100 head CPU restore; not full visual model CPU recovery",
+          "test_access": false,
+          "GPU_training_started": false,
+          "observed_unix": 1791586487.957141,
+          "preflight_files": [
+            "artifacts/preflight/146369d2671a41588b2a8a7dd0fc592d.json"
+          ],
+          "free": 26131763200
+        }
+      },
+      "root_actual_PF30_smoke_launch.json": {
+        "sha256": "8702e0db1184e2da9972ff47fa181f3d23e28c5803be15a52391be02043c2ee4",
+        "value": {
+          "owner": {
+            "pid": 31866,
+            "pgrp": 31866,
+            "session": 31866,
+            "start_ticks": 316029820
+          },
+          "source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "observed_unix": 1791586645.5388582,
+          "candidate_training": false
+        }
+      },
+      "root_actual_PF30_smoke_complete.json": {
+        "sha256": "7ff3a51206db0c702594be3626d984df6d6bf54580d0807a846313cc62cdc263",
+        "value": {
+          "complete": true,
+          "scope": "actual synthetic CUDA full154/learnedhead/three successful updates/disk nextstep recovery; not candidate initialization or official data epoch",
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "owner": {
+            "pid": 31866,
+            "pgrp": 31866,
+            "session": 31866,
+            "start_ticks": 316029820
+          },
+          "return_code": 0,
+          "owned_group_closed": true,
+          "canonical_idle": true,
+          "elapsed_seconds": 13.703367948532104,
+          "receipts": [
+            {
+              "path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010/artifacts/smoke/PF30_d237acb24d564db39c4bdedb5e0b74a8/receipt.json",
+              "sha256": "c3015320f1900a16f54debc26641d0dee8603ccb840320bdc03610b1ecf0e8fd",
+              "value": {
+                "schema": "aictrack1.fresh_route.cuda_smoke.v1",
+                "status": "passed",
+                "synthetic_only": true,
+                "candidate": false,
+                "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+                "full_visual_tensors": 152,
+                "trainable_tensors": 154,
+                "trainable_parameters": 88233966,
+                "head_gradient_norms": {
+                  "linear.weight": 0.10411300510168076,
+                  "linear.bias": 0.10410420596599579
+                },
+                "head_frozen": false,
+                "base_loss": {
+                  "kind": "sce",
+                  "alpha": 0.1,
+                  "beta": 1.0,
+                  "log_zero": -4.0
+                },
+                "first_loss": 4.786383628845215,
+                "uninterrupted_second_loss": 4.676631927490234,
+                "resumed_second_loss": 4.676631927490234,
+                "max_parameter_difference": 1.1641532182693481e-10,
+                "scheduler_T_max": 20,
+                "amp_overflow_skips": [
+                  {
+                    "from_scale": 65536.0,
+                    "to_scale": 32768.0
+                  },
+                  {
+                    "from_scale": 32768.0,
+                    "to_scale": 16384.0
+                  }
+                ],
+                "successful_update_count": 3,
+                "successful_updates": [
+                  {
+                    "loss": 4.786383628845215,
+                    "scale": 16384.0,
+                    "scheduler_epoch": 1
+                  },
+                  {
+                    "loss": 4.676631927490234,
+                    "scale": 16384.0,
+                    "scheduler_epoch": 2
+                  },
+                  {
+                    "loss": 4.676631927490234,
+                    "scale": 16384.0,
+                    "scheduler_epoch": 2
+                  }
+                ],
+                "checkpoint_sha256": "478993282b57e7df9003f1e89c19347391655a6c0c18e908850e681b041bbfa4",
+                "checkpoint_role": "synthetic_resume_only"
+              }
+            }
+          ],
+          "test_access": false,
+          "candidate_initialized_from_smoke": false
+        }
+      },
+      "root_actual_launch.json": {
+        "sha256": "2c8c5e30f0ece2b2699160eee94c99840dfc2cb5628bf3391ec59a13802fcc87",
+        "value": {
+          "schema": "aictrack1.persistent_filter_joint.actual_launch.v1",
+          "controller": {
+            "pid": 31939,
+            "ppid": 31938,
+            "pgrp": 31939,
+            "session": 31939,
+            "start_ticks": "316040409",
+            "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_20261010"
+          },
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "budget_sha256": "ab5edf6db05351732364a8ec6263dc1114d7dcf45ceee341d128a7f7f19a0049",
+          "launch_unix": 1791586751.4260662,
+          "test_access": false,
+          "planned_arms": [
+            "PF30"
+          ],
+          "max_ac_weight": 0.3,
+          "epochs_each": 20,
+          "planned_pause": false,
+          "initialize_from_smoke": false,
+          "new_waiter_or_framework_created": false
+        }
+      },
+      "artifacts/launches/PF30_5e743289f7ea47fc9e168f8ba66230b2/START.json": {
+        "sha256": "a3d1b0284e078c0afe60525e60d6b3c068ea8065acb41fd2753b85985a280922",
+        "value": {
+          "owner": {
+            "pid": 31871,
+            "pgrp": 31871,
+            "session": 31871,
+            "start_ticks": "316030095"
+          },
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+          "lease_token": "162773d6e18549419bfde6f199cee140",
+          "test_access": false
+        }
+      },
+      "artifacts/launches/PF30_a5610e2726be47d0b98e4aa96e109b45/START.json": {
+        "sha256": "d21229e9c079f1d283c3a33c5a3d2ac3030591396e96f0a53d700cf8e8a02aa8",
+        "value": {
+          "owner": {
+            "pid": 31944,
+            "pgrp": 31944,
+            "session": 31944,
+            "start_ticks": "316040688"
+          },
+          "source_manifest_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+          "config_sha256": "c7201bdd8249f98c29b227ebde28799838e7fdf4a2a85da6103e3a6f1aa4c172",
+          "lease_token": "00391c5551bc4fe8a2ddbd673be71911",
+          "test_access": false
+        }
+      },
+      "artifacts/launches/PF30_5e743289f7ea47fc9e168f8ba66230b2/EXIT.json": {
+        "sha256": "03e2b0e8af72842c2c1bbca41407518132dfa75dcc1005df7227f0223140d136",
+        "value": {
+          "owner": {
+            "pid": 31871,
+            "pgrp": 31871,
+            "session": 31871,
+            "start_ticks": "316030095"
+          },
+          "return_code": 0,
+          "group_closed": true,
+          "test_access": false
+        }
+      }
+    },
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21616992256,
+        "free": 10595262464
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 102717947904,
+        "free": 26131070976
+      }
+    },
+    "cgroup": {
+      "/proc/self/cgroup": "12:perf_event:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n11:devices:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n10:hugetlb:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n9:freezer:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n8:memory:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n7:rdma:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n6:blkio:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n5:net_cls,net_prio:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n4:pids:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n3:cpu,cpuacct:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n2:cpuset:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n1:name=systemd:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n0::/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+      "resolved_mounts": {
+        "perf_event": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/perf_event",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/perf_event"
+        },
+        "devices": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/devices",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/devices"
+        },
+        "hugetlb": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/hugetlb",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/hugetlb"
+        },
+        "freezer": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/freezer",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/freezer"
+        },
+        "memory": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/memory",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/memory"
+        },
+        "rdma": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/rdma",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/rdma"
+        },
+        "blkio": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/blkio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/blkio"
+        },
+        "net_cls": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/net_cls,net_prio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/net_cls,net_prio"
+        },
+        "net_prio": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/net_cls,net_prio",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/net_cls,net_prio"
+        },
+        "pids": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/pids",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/pids"
+        },
+        "cpu": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpu,cpuacct",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpu,cpuacct"
+        },
+        "cpuacct": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpu,cpuacct",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpu,cpuacct"
+        },
+        "cpuset": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/cpuset",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/cpuset"
+        },
+        "name=systemd": {
+          "version": 1,
+          "path": "/sys/fs/cgroup/systemd",
+          "membership": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_root": "/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884",
+          "mount_point": "/sys/fs/cgroup/systemd"
+        }
+      },
+      "/sys/fs/cgroup/memory/memory.usage_in_bytes": "46179057664",
+      "/sys/fs/cgroup/memory/memory.limit_in_bytes": "66571993088",
+      "/sys/fs/cgroup/memory/memory.max_usage_in_bytes": "64386166784",
+      "/sys/fs/cgroup/memory/memory.failcnt": "0",
+      "/sys/fs/cgroup/memory/memory.stat": "cache 39562444800\nrss 6224842752\nrss_huge 0\nshmem 2179678208\nmapped_file 2171879424\ndirty 1351680\nwriteback 3649536\nswap 0\npgpgin 8830937709\npgpgout 8819759640\npgfault 15542374023\npgmajfault 2244\ninactive_anon 2168365056\nactive_anon 6238273536\ninactive_file 731934720\nactive_file 36649451520\nunevictable 0\nhierarchical_memory_limit 66571993088\nhierarchical_memsw_limit 66571993088\ntotal_cache 39562076160\ntotal_rss 6224842752\ntotal_rss_huge 0\ntotal_shmem 2179493888\ntotal_mapped_file 2171879424\ntotal_dirty 1351680\ntotal_writeback 3649536\ntotal_swap 0\ntotal_pgpgin 8830937709\ntotal_pgpgout 8819759685\ntotal_pgfault 15542374023\ntotal_pgmajfault 2244\ntotal_inactive_anon 2168365056\ntotal_active_anon 6238138368\ntotal_inactive_file 731934720\ntotal_active_file 36649451520\ntotal_unevictable 0",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.cfs_quota_us": "1600000",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.cfs_period_us": "100000",
+      "/sys/fs/cgroup/cpu,cpuacct/cpu.stat": "nr_periods 595816\nnr_throttled 9\nthrottled_time 34356714724",
+      "/sys/fs/cgroup/cpu,cpuacct/cpuacct.usage": "353216717569859",
+      "/sys/fs/cgroup/pids/pids.current": "250",
+      "/sys/fs/cgroup/pids/pids.max": "20480"
+    },
+    "gpu": "1200 MiB, 46 %"
+  }
+}

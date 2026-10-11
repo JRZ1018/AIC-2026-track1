@@ -1,0 +1,30 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_terminal20_fourview_launch_r1.json",
+  "original_sha256": "988cfb249f5e980b75c083ab711b0893b170dcabf3da2e7cf0588a9909fa669a",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "launch_unix": 1791694165.6497796,
+    "actual_Popen_pid": 53515,
+    "actual_terminal_SHA": {
+      "last.pt": "54e34236afe94ccfbfb1826497e320335e25b19c2c7cc1c2010f39f8f0f807e9",
+      "final.pt": "49a347c27cb4ec7552d7538bfd7f5b40878fac6434ce6f3aecb12f6b0f04dd52",
+      "metrics.json": "a520597321a27c7494a86ffea66e9fa00748e7d8977b1016c42194e8e7e14323"
+    },
+    "history1to20": true,
+    "canonical_idle_before_launch": true,
+    "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_L50_second_reused_diagnostic_20261011",
+    "diagnostic_source_sha256": "4a92913a982df6b52eb5c138ea7cb18c65c149fb68a007ac116984eaad922bc9",
+    "model_restoration_complete": false,
+    "comparison_complete": false,
+    "test_access": false,
+    "controller": {
+      "pid": 53515,
+      "pgrp": 53515,
+      "session": 53515,
+      "start_ticks": "932396875"
+    }
+  }
+}

@@ -1,0 +1,384 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_reused_query_numpy_review_r1.json",
+  "original_sha256": "b8f3502474aee9f2d6d55bf89418ffd1f045ac8480a2dd8a144dd927392e92b2",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.L50.actual_second_reused_query_numpy_review.v1",
+    "complete": true,
+    "all_manifest_SHA_PASS": true,
+    "validation_rows_order_SHA_PASS": true,
+    "report_sha256": "ca57fc1424ffe3595a308af6399cea377e51d96f9d47c7094a44bbf4b164a472",
+    "protocols": [
+      {
+        "protocol_family": "graph_combo_vs_L35_GRAPH",
+        "name": "natural_unique_images",
+        "count": 29737,
+        "wins": 590,
+        "losses": 515,
+        "net": 75,
+        "perclass_all_PASS": true,
+        "HMT_net": {
+          "head": 46,
+          "mid": 41,
+          "tail": -12
+        },
+        "new_zero_recall": [],
+        "worst_declines": [
+          {
+            "class_index": 141,
+            "stratum": "tail",
+            "support": 38,
+            "candidate_correct": 8,
+            "control_correct": 15,
+            "net": -7
+          },
+          {
+            "class_index": 533,
+            "stratum": "tail",
+            "support": 36,
+            "candidate_correct": 23,
+            "control_correct": 29,
+            "net": -6
+          },
+          {
+            "class_index": 438,
+            "stratum": "mid",
+            "support": 46,
+            "candidate_correct": 29,
+            "control_correct": 33,
+            "net": -4
+          },
+          {
+            "class_index": 23,
+            "stratum": "tail",
+            "support": 39,
+            "candidate_correct": 11,
+            "control_correct": 14,
+            "net": -3
+          },
+          {
+            "class_index": 30,
+            "stratum": "tail",
+            "support": 36,
+            "candidate_correct": 20,
+            "control_correct": 23,
+            "net": -3
+          }
+        ],
+        "ci95": [
+          0.040357725820972475,
+          0.5017527557733562
+        ]
+      },
+      {
+        "protocol_family": "graph_combo_vs_L35_GRAPH",
+        "name": "balanced_supported_unique",
+        "count": 14760,
+        "wins": 292,
+        "losses": 263,
+        "net": 29,
+        "perclass_all_PASS": true,
+        "HMT_net": {
+          "head": 21,
+          "mid": 10,
+          "tail": -2
+        },
+        "new_zero_recall": [],
+        "worst_declines": [
+          {
+            "class_index": 533,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 11,
+            "control_correct": 15,
+            "net": -4
+          },
+          {
+            "class_index": 97,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 13,
+            "control_correct": 16,
+            "net": -3
+          },
+          {
+            "class_index": 280,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 16,
+            "control_correct": 19,
+            "net": -3
+          },
+          {
+            "class_index": 139,
+            "stratum": "mid",
+            "support": 20,
+            "candidate_correct": 17,
+            "control_correct": 19,
+            "net": -2
+          },
+          {
+            "class_index": 141,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 3,
+            "control_correct": 5,
+            "net": -2
+          }
+        ],
+        "ci95": [
+          -0.16615853658536583,
+          0.481029810298103
+        ]
+      },
+      {
+        "protocol_family": "raw_model_P7_vs_L35_P7",
+        "name": "natural_unique_images",
+        "count": 29737,
+        "wins": 589,
+        "losses": 540,
+        "net": 49,
+        "perclass_all_PASS": true,
+        "HMT_net": {
+          "head": 43,
+          "mid": 13,
+          "tail": -7
+        },
+        "new_zero_recall": [],
+        "worst_declines": [
+          {
+            "class_index": 533,
+            "stratum": "tail",
+            "support": 36,
+            "candidate_correct": 22,
+            "control_correct": 28,
+            "net": -6
+          },
+          {
+            "class_index": 141,
+            "stratum": "tail",
+            "support": 38,
+            "candidate_correct": 8,
+            "control_correct": 12,
+            "net": -4
+          },
+          {
+            "class_index": 637,
+            "stratum": "tail",
+            "support": 37,
+            "candidate_correct": 18,
+            "control_correct": 22,
+            "net": -4
+          },
+          {
+            "class_index": 737,
+            "stratum": "tail",
+            "support": 35,
+            "candidate_correct": 12,
+            "control_correct": 16,
+            "net": -4
+          },
+          {
+            "class_index": 23,
+            "stratum": "tail",
+            "support": 39,
+            "candidate_correct": 11,
+            "control_correct": 14,
+            "net": -3
+          }
+        ],
+        "ci95": [
+          -0.04889526422426082,
+          0.3915245578202251
+        ]
+      },
+      {
+        "protocol_family": "raw_model_P7_vs_L35_P7",
+        "name": "balanced_supported_unique",
+        "count": 14760,
+        "wins": 297,
+        "losses": 259,
+        "net": 38,
+        "perclass_all_PASS": true,
+        "HMT_net": {
+          "head": 22,
+          "mid": 9,
+          "tail": 7
+        },
+        "new_zero_recall": [],
+        "worst_declines": [
+          {
+            "class_index": 533,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 11,
+            "control_correct": 15,
+            "net": -4
+          },
+          {
+            "class_index": 637,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 10,
+            "control_correct": 13,
+            "net": -3
+          },
+          {
+            "class_index": 5,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 12,
+            "control_correct": 14,
+            "net": -2
+          },
+          {
+            "class_index": 23,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 7,
+            "control_correct": 9,
+            "net": -2
+          },
+          {
+            "class_index": 31,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 9,
+            "control_correct": 11,
+            "net": -2
+          }
+        ],
+        "ci95": [
+          -0.07130758807588075,
+          0.5555555555555556
+        ]
+      },
+      {
+        "protocol_family": "candidate_graph_increment",
+        "name": "natural_unique_images",
+        "count": 29737,
+        "wins": 159,
+        "losses": 123,
+        "net": 36,
+        "perclass_all_PASS": true,
+        "HMT_net": {
+          "head": -5,
+          "mid": 15,
+          "tail": 26
+        },
+        "new_zero_recall": [],
+        "worst_declines": [
+          {
+            "class_index": 69,
+            "stratum": "mid",
+            "support": 44,
+            "candidate_correct": 11,
+            "control_correct": 13,
+            "net": -2
+          },
+          {
+            "class_index": 202,
+            "stratum": "head",
+            "support": 46,
+            "candidate_correct": 24,
+            "control_correct": 26,
+            "net": -2
+          },
+          {
+            "class_index": 315,
+            "stratum": "mid",
+            "support": 39,
+            "candidate_correct": 31,
+            "control_correct": 33,
+            "net": -2
+          },
+          {
+            "class_index": 438,
+            "stratum": "mid",
+            "support": 46,
+            "candidate_correct": 29,
+            "control_correct": 31,
+            "net": -2
+          },
+          {
+            "class_index": 8,
+            "stratum": "head",
+            "support": 50,
+            "candidate_correct": 33,
+            "control_correct": 34,
+            "net": -1
+          }
+        ],
+        "ci95": [
+          0.010082305263702436,
+          0.22824786451056947
+        ]
+      },
+      {
+        "protocol_family": "candidate_graph_increment",
+        "name": "balanced_supported_unique",
+        "count": 14760,
+        "wins": 84,
+        "losses": 69,
+        "net": 15,
+        "perclass_all_PASS": true,
+        "HMT_net": {
+          "head": 2,
+          "mid": 3,
+          "tail": 10
+        },
+        "new_zero_recall": [],
+        "worst_declines": [
+          {
+            "class_index": 179,
+            "stratum": "mid",
+            "support": 20,
+            "candidate_correct": 6,
+            "control_correct": 8,
+            "net": -2
+          },
+          {
+            "class_index": 18,
+            "stratum": "head",
+            "support": 20,
+            "candidate_correct": 9,
+            "control_correct": 10,
+            "net": -1
+          },
+          {
+            "class_index": 26,
+            "stratum": "mid",
+            "support": 20,
+            "candidate_correct": 13,
+            "control_correct": 14,
+            "net": -1
+          },
+          {
+            "class_index": 86,
+            "stratum": "tail",
+            "support": 20,
+            "candidate_correct": 9,
+            "control_correct": 10,
+            "net": -1
+          },
+          {
+            "class_index": 95,
+            "stratum": "head",
+            "support": 20,
+            "candidate_correct": 16,
+            "control_correct": 17,
+            "net": -1
+          }
+        ],
+        "ci95": [
+          -0.06097560975609756,
+          0.2610094850948508
+        ]
+      }
+    ],
+    "new_model_forwards": 0,
+    "time": 1791694664.0790143,
+    "independent_confirmation": false
+  }
+}

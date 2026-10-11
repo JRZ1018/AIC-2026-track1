@@ -1,0 +1,23 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF2_resource_snapshot_r1.json",
+  "original_sha256": "518a282acaf1798ca8da18f8235fae0c3273cfdb53746131adeff4189826e3a7",
+  "omitted_fields": [],
+  "record": {
+    "now": 1791586002.974131,
+    "disk": {
+      "/": {
+        "total": 32212254720,
+        "used": 21616992256,
+        "free": 10595262464
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 102716379136,
+        "free": 26132639744
+      }
+    },
+    "canonical": null,
+    "capacity_receipt_sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_joint_diagnostic_repaired_stage_r1.json",
+  "original_sha256": "496eca845be7a3f3aece8f43d768d342dcdd22118756ed91536fec0990cd0119",
+  "omitted_fields": [],
+  "record": {
+    "prepare": {
+      "preserved_partial": [
+        {
+          "key": "inputs/confirmation_rows.csv",
+          "bytes": 3145728,
+          "sha256": "faa7bcc9253efdd1e1941b05c4663cb8115d810a165d6ef37d5dd2ec54181ee3",
+          "archive": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_diagnostic_20261010/artifacts/deployment_evidence/failed_partial_530daab2aa564af09f63fcf7b4d2ab18/inputs/confirmation_rows.csv"
+        }
+      ],
+      "already_verified": [
+        "README.md",
+        "compare_graph_vs_J5.py",
+        "diagnostic_resources.py",
+        "fixed_graph_protocol.json",
+        "fresh_diag_contract.py",
+        "frozen_postprocess.json",
+        "inputs/actual_training_launch_reference.json",
+        "inputs/actual_training_launch_snapshot.json",
+        "inputs/budget.json"
+      ],
+      "verified_server_copies": [
+        {
+          "key": "inputs/confirmation_rows.csv",
+          "source": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/inputs/confirmation_rows.csv",
+          "sha256": "ba299a60bf7cf7150e050d551d52e1979c5577a15ffd781ae874e7137f396954"
+        },
+        {
+          "key": "inputs/frozen_queries/balanced_supported_unique_queries.csv",
+          "source": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/inputs/frozen_queries/balanced_supported_unique_queries.csv",
+          "sha256": "a337819e713bf179e6220ee21db8a91f87fd11cbd24fc5dbcaa16a70b5d368b9"
+        },
+        {
+          "key": "inputs/frozen_queries/natural_unique_images_queries.csv",
+          "source": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/inputs/frozen_queries/natural_unique_images_queries.csv",
+          "sha256": "8f8921dda034fe5d09860b7d01dd49ecea6e97606f4f0f73e04115e9d4d232e8"
+        },
+        {
+          "key": "inputs/frozen_queries/query_indices.npz",
+          "source": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/inputs/frozen_queries/query_indices.npz",
+          "sha256": "215662c1e8712e1d97f46f72c5268065f3ee65ce8f647e066adfd38bf475baf5"
+        },
+        {
+          "key": "reference/diagnose_stage2_tta.py",
+          "source": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/reference/diagnose_stage2_tta.py",
+          "sha256": "7fd977bb31678bdf1d9e1ef302f232fa99803deb0f4fcb90409e1494da68ad96"
+        },
+        {
+          "key": "reference/fv2_single_model.py",
+          "source": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/reference/fv2_single_model.py",
+          "sha256": "4315a435dd7bdf3b9c3856d1b68120fb3994e0dfec32e33f9168543fb26e3439"
+        },
+        {
+          "key": "reference/p0_core.py",
+          "source": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/reference/p0_core.py",
+          "sha256": "4030dfbb1602859e8787bfe321c42bb68b45e10dafb63cb5929d4ad482b81481"
+        },
+        {
+          "key": "reference/p3_graph.py",
+          "source": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/reference/p3_graph.py",
+          "sha256": "1e70ac94e08ec5f26ee21cbff5afe6d13bc96be253ff9ea7dabeb9149a317df5"
+        },
+        {
+          "key": "view_features.py",
+          "source": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/view_features.py",
+          "sha256": "bab0a6ca1d05f7a9e4406f0f6416f2539a433637c78b160f5d339901a0936e6d"
+        }
+      ],
+      "upload_needed": [
+        "inputs/control_import.json",
+        "inputs/frozen_queries/query_identity.json",
+        "inputs/initial_R2_training_source_manifest.json",
+        "inputs/legacy_control/J5/input_identity.json",
+        "inputs/legacy_control/J5/p1_checkpoint_audit.json",
+        "inputs/legacy_control/J5/runtime_receipt.json",
+        "inputs/legacy_control/graph/combo_vs_C_balanced_supported_unique_predictions.npz",
+        "inputs/legacy_control/graph/combo_vs_C_natural_unique_images_predictions.npz",
+        "inputs/legacy_control/graph/report.json",
+        "inputs/legacy_control/graph/result_manifest.json",
+        "inputs/legacy_diagnostic_source_manifest.json",
+        "inputs/training_source_manifest.json",
+        "paired_metrics.py",
+        "phase_guard.py",
+        "run_exploration_diagnostic.py",
+        "selection_protocol.json",
+        "tests/test_exploration_contracts.py",
+        "source_manifest.json"
+      ],
+      "observed_unix": 1791557942.1998024,
+      "never_model_or_GPU": true
+    },
+    "verification": {
+      "all_files_SHA_AST_verified": true,
+      "files": 36,
+      "source_sha256": "ad9902c28f7d32026db335843c7ab365793d6a369c218c8b7c9b852f6b6f705a",
+      "observed_unix": 1791558006.8192666
+    }
+  }
+}

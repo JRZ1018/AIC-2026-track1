@@ -1,0 +1,67 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/actual_oldfold_J5_GRAPH_admission_r1/admission.json",
+  "original_sha256": "25391e7f14d38ca39f27d5475ccdd5519389b1e8fe20f88415991de410fe64af",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.fresh_route.admission.v1",
+    "status": "selected_recipe_for_fresh_route_confirmation",
+    "selected_route": "J5_GRAPH",
+    "selected_arm": "J5",
+    "primary_scope": "J5_graph_P7_vs_C",
+    "primary_delta_vs_C_pp": 0.25101763907734054,
+    "selection_split_sha256": "0c902ea38c04581eb33ef4b26fac2d37a09abb8a4fad4ae0893b89e989ac584c",
+    "checkpoint_epoch": 20,
+    "checkpoint_role": "last",
+    "training_scope": "fixed_split_validation",
+    "test_access": false,
+    "used_test_or_online_scores": false,
+    "root_reviewed": true,
+    "selected_checkpoint_sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17",
+    "selected_config_sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a",
+    "selected_training_source_manifest_sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe",
+    "selection_protocol_sha256": "b60a39fc5e966b45f97a04bae30e5d2b67fe70b83f96c01c1d97799622cd2a02",
+    "graph_parameters": {
+      "k": 10,
+      "lambda": 0.3,
+      "iterations": 3,
+      "probability_temperature": 1.0,
+      "protection_raw_margin": 1.3862943611198906
+    },
+    "raw_J5_P7_delta_vs_C_pp": 0.06784260515603799,
+    "evidence": {
+      "checkpoint": {
+        "path": "/root/AICtrack1_next_cycle_20261009/artifacts/experiments/P1_J5/last.pt",
+        "sha256": "989af8b1febb467ca89f06af9f2a377c90609fb7b19a7b3f4a2f61054ac95e17"
+      },
+      "config": {
+        "path": "/root/AICtrack1_next_cycle_20261009/configs/experiment/p1_J5.yaml",
+        "sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a"
+      },
+      "training_source": {
+        "path": "/root/AICtrack1_next_cycle_20261009/source_manifest.json",
+        "sha256": "2fee29fc5e5c282a331883de2b3cd4d5865c28e38a8cead89be247ec95a6c9fe"
+      },
+      "paired_report": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_route_admission_20261009/raw_J5_paired_report.json",
+        "sha256": "e712cd82b6de831edab53e4432c4ee1fc1a5ac71c1a771e903798a83d2bd8b15"
+      },
+      "root_review": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_route_admission_20261009/root_review.json",
+        "sha256": "463a006bff29f3cf05adb21870c9b4bf54c2c04faf6019ccd2d303c922ed2ba5"
+      },
+      "combo_report": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_route_admission_20261009/combo_report.json",
+        "sha256": "2aec2e3c1b176c76d0488933ce7b540d23c9cffe75fc7454fef53a7b786fd559"
+      },
+      "graph_result": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009/artifacts/J5_explore_r1/result/report.json",
+        "sha256": "548d1e7a230585eb5634db959ea5ff7ff341fefbfe3d480d3967e9961bde8a27"
+      },
+      "graph_protocol": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009/graph_protocol.json",
+        "sha256": "f48211db3716faaf45255dcc96e0b614bf42c1673791406bf9d7457c1a50b30d"
+      }
+    }
+  }
+}

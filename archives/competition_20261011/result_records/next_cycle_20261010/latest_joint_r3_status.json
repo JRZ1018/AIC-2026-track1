@@ -1,0 +1,134 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_joint_r3_status.json",
+  "original_sha256": "229ac01a37f6aa33190b95bff18222a3ee96aa80a6d80e9a64aa7fb80eaef33c",
+  "omitted_fields": [
+    "/actual_launch_reference/receipt/command",
+    "/actual_launch_reference/receipt/controller/argv",
+    "/runtime_receipts/A3_4ea4de6684de4adcac210b5449c0cb01.json/environment",
+    "/runtime_receipts/A3_d36e6f62add64adebcc3e1fc514df38c.json/environment",
+    "/runtime_receipts/A5_5a7f6193143445d683c3f270c142e403.json/environment",
+    "/runtime_receipts/A5_7f6db262c6c34c488d9046fd9785b643.json/environment"
+  ],
+  "record": {
+    "epoch": 1791556613.4362268,
+    "processes": [],
+    "canonical_lock": null,
+    "epochs": {
+      "artifacts/queues/08960ee34f2c46028044b1f32a868a95/chain.log": [],
+      "artifacts/queues/08960ee34f2c46028044b1f32a868a95/A3.log": [],
+      "artifacts/queues/84a9543eeef04d39b848c95268695974/chain.log": [],
+      "artifacts/queues/84a9543eeef04d39b848c95268695974/A5.log": [],
+      "artifacts/queues/7750c3be443e4afe963c177539605ca6/chain.log": [],
+      "artifacts/queues/7750c3be443e4afe963c177539605ca6/A3.log": [],
+      "artifacts/queues/7750c3be443e4afe963c177539605ca6/A5.log": []
+    },
+    "logs": {
+      "artifacts/queues/08960ee34f2c46028044b1f32a868a95/chain.log": "[2026-10-09 18:47:33] 20261010-supervision-joint-A3-A5 start\n[2026-10-09 18:47:33] A3: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-09 18:47:43] A3: finished in 0.2 min; output validated\n[2026-10-09 18:47:43] 20261010-supervision-joint-A3-A5 finished\n",
+      "artifacts/queues/08960ee34f2c46028044b1f32a868a95/A3.log": "{\"schema\": \"aictrack1.fresh_route.cuda_smoke.v1\", \"status\": \"passed\", \"synthetic_only\": true, \"candidate\": false, \"config_sha256\": \"6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6\", \"full_visual_tensors\": 152, \"trainable_tensors\": 154, \"trainable_parameters\": 88233966, \"head_gradient_norms\": {\"linear.weight\": 0.3030812442302704, \"linear.bias\": 0.30306896567344666}, \"head_frozen\": false, \"base_loss\": {\"kind\": \"sce\", \"alpha\": 0.3, \"beta\": 1.0, \"log_zero\": -4.0}, \"first_loss\": 6.362217426300049, \"uninterrupted_second_loss\": 6.038030624389648, \"resumed_second_loss\": 6.038030624389648, \"max_parameter_difference\": 2.3283064365386963e-10, \"scheduler_T_max\": 20, \"amp_overflow_skips\": [{\"from_scale\": 65536.0, \"to_scale\": 32768.0}, {\"from_scale\": 32768.0, \"to_scale\": 16384.0}, {\"from_scale\": 16384.0, \"to_scale\": 8192.0}, {\"from_scale\": 8192.0, \"to_scale\": 4096.0}], \"successful_update_count\": 3, \"successful_updates\": [{\"loss\": 6.362217426300049, \"scale\": 4096.0, \"scheduler_epoch\": 1}, {\"loss\": 6.038030624389648, \"scale\": 4096.0, \"scheduler_epoch\": 2}, {\"loss\": 6.038030624389648, \"scale\": 4096.0, \"scheduler_epoch\": 2}], \"checkpoint_sha256\": \"dba6a7949e86702d76d99cef659d6644aed178089ad01a3ed5f3bff31da0d37f\", \"checkpoint_role\": \"synthetic_resume_only\"}\n",
+      "artifacts/queues/84a9543eeef04d39b848c95268695974/chain.log": "[2026-10-09 18:48:10] 20261010-supervision-joint-A3-A5 start\n[2026-10-09 18:48:10] A5: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-09 18:48:21] A5: finished in 0.2 min; output validated\n[2026-10-09 18:48:21] 20261010-supervision-joint-A3-A5 finished\n",
+      "artifacts/queues/84a9543eeef04d39b848c95268695974/A5.log": "{\"schema\": \"aictrack1.fresh_route.cuda_smoke.v1\", \"status\": \"passed\", \"synthetic_only\": true, \"candidate\": false, \"config_sha256\": \"8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa\", \"full_visual_tensors\": 152, \"trainable_tensors\": 154, \"trainable_parameters\": 88233966, \"head_gradient_norms\": {\"linear.weight\": 0.501869797706604, \"linear.bias\": 0.5019727945327759}, \"head_frozen\": false, \"base_loss\": {\"kind\": \"sce\", \"alpha\": 0.5, \"beta\": 1.0, \"log_zero\": -4.0}, \"first_loss\": 7.938050270080566, \"uninterrupted_second_loss\": 7.401813983917236, \"resumed_second_loss\": 7.401813983917236, \"max_parameter_difference\": 2.3283064365386963e-10, \"scheduler_T_max\": 20, \"amp_overflow_skips\": [{\"from_scale\": 65536.0, \"to_scale\": 32768.0}, {\"from_scale\": 32768.0, \"to_scale\": 16384.0}, {\"from_scale\": 16384.0, \"to_scale\": 8192.0}, {\"from_scale\": 8192.0, \"to_scale\": 4096.0}, {\"from_scale\": 4096.0, \"to_scale\": 2048.0}], \"successful_update_count\": 3, \"successful_updates\": [{\"loss\": 7.938050270080566, \"scale\": 2048.0, \"scheduler_epoch\": 1}, {\"loss\": 7.401813983917236, \"scale\": 2048.0, \"scheduler_epoch\": 2}, {\"loss\": 7.401813983917236, \"scale\": 2048.0, \"scheduler_epoch\": 2}], \"checkpoint_sha256\": \"9dbf5eff0b5ecdaa1b28cb29eb3ee96400c6e8cb6d6c4411687da3ba407dfed2\", \"checkpoint_role\": \"synthetic_resume_only\"}\n",
+      "artifacts/queues/7750c3be443e4afe963c177539605ca6/chain.log": "[2026-10-09 18:48:39] 20261010-supervision-joint-A3-A5 start\n[2026-10-09 18:48:39] A3: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-09 20:40:28] A3: finished in 111.8 min; output validated\n[2026-10-09 20:40:28] A5: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-09 22:33:55] A5: finished in 113.5 min; output validated\n[2026-10-09 22:33:55] 20261010-supervision-joint-A3-A5 finished\n",
+      "artifacts/queues/7750c3be443e4afe963c177539605ca6/A3.log": "  {\n          \"count\": 8,\n          \"prediction\": 460,\n          \"target\": 392\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 441,\n          \"target\": 316\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 253,\n          \"target\": 700\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 271,\n          \"target\": 161\n        }\n      ],\n      \"zero_recall_classes\": 7\n    }\n  },\n  \"label_smoothing\": 0.0,\n  \"last_checkpoint_sha256\": \"f7aaab8b8b71d199048e0a16adac8dd54c8b8b4ac797abbc835578502329545c\",\n  \"logit_adjustment\": null,\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"peak_vram_mib\": 4014.85009765625,\n  \"peft\": {\n    \"lora_blocks\": 8,\n    \"mode\": \"full_visual\"\n  },\n  \"position_interpolation\": \"bicubic_7x7_to_10x10\",\n  \"run_id\": \"20261010-supervision-joint-A3-fixed20\",\n  \"runtime\": {\n    \"defer_epoch_metrics\": true,\n    \"reuse_validation_loader\": true\n  },\n  \"sampling\": {\n    \"mode\": \"natural\"\n  },\n  \"scope\": \"stage2 train/validation PEFT short screening; test data not accessed\",\n  \"selected_checkpoint\": \"final.pt\",\n  \"selected_checkpoint_sha256\": \"2fd002dd2c130be2cbb7233433671599006d7e6d022a4036bc0c21108f13244e\",\n  \"selection_rule\": \"fixed final epoch 20; no validation selection\",\n  \"split_sha256\": \"57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7\",\n  \"token_readout\": {\n    \"initialization_seed\": 20261005,\n    \"mode\": \"none\"\n  },\n  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}\n",
+      "artifacts/queues/7750c3be443e4afe963c177539605ca6/A5.log": "  {\n          \"count\": 8,\n          \"prediction\": 460,\n          \"target\": 392\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 441,\n          \"target\": 316\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 253,\n          \"target\": 700\n        },\n        {\n          \"count\": 8,\n          \"prediction\": 271,\n          \"target\": 161\n        }\n      ],\n      \"zero_recall_classes\": 7\n    }\n  },\n  \"label_smoothing\": 0.0,\n  \"last_checkpoint_sha256\": \"a499ef63f2b103ed01950f8627536b9e3aa8f503ea8e1fa35070d6136e071f97\",\n  \"logit_adjustment\": null,\n  \"manifest_sha256\": \"1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d\",\n  \"peak_vram_mib\": 4014.85009765625,\n  \"peft\": {\n    \"lora_blocks\": 8,\n    \"mode\": \"full_visual\"\n  },\n  \"position_interpolation\": \"bicubic_7x7_to_10x10\",\n  \"run_id\": \"20261010-supervision-joint-A5-fixed20\",\n  \"runtime\": {\n    \"defer_epoch_metrics\": true,\n    \"reuse_validation_loader\": true\n  },\n  \"sampling\": {\n    \"mode\": \"natural\"\n  },\n  \"scope\": \"stage2 train/validation PEFT short screening; test data not accessed\",\n  \"selected_checkpoint\": \"final.pt\",\n  \"selected_checkpoint_sha256\": \"24355de91f0fe1fe55be6fc0e751652014cda7423e94bceb329bd61e86e95462\",\n  \"selection_rule\": \"fixed final epoch 20; no validation selection\",\n  \"split_sha256\": \"57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7\",\n  \"token_readout\": {\n    \"initialization_seed\": 20261005,\n    \"mode\": \"none\"\n  },\n  \"total_visual_parameters\": 87849216,\n  \"train_count\": 118958,\n  \"trainable_total_parameters\": 88233966,\n  \"trainable_visual_parameters\": 87849216,\n  \"training_scope\": \"fixed_split_validation\",\n  \"validation_count\": 29737,\n  \"visual_input_resolution\": 336,\n  \"visual_prototype_diagnostics\": null,\n  \"visual_prototype_weighting\": null\n}\n"
+    },
+    "checkpoint_stats": {
+      "artifacts/experiments/JOINT_A3/last.pt": {
+        "bytes": 1418761831,
+        "mtime": 1791549624.8005376
+      },
+      "artifacts/experiments/JOINT_A5/last.pt": {
+        "bytes": 1418761767,
+        "mtime": 1791556430.197727
+      }
+    },
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21616873472,
+        "free": 10595381248
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 96290590720,
+        "free": 32558428160
+      }
+    },
+    "actual_launch_reference": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010/root_actual_launch.json",
+      "sha256": "3de925785738f2944b09b8e4b119e17d526d7e70c835b0814b355e1ca18ed5bd",
+      "receipt": {
+        "schema": "aictrack1.supervision_joint.actual_launch.v1",
+        "controller": {
+          "pid": 9475,
+          "ppid": 9474,
+          "pgrp": 9475,
+          "session": 9475,
+          "start_ticks": "311656925",
+          "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_supervision_joint_r3_20261010"
+        },
+        "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+        "launch_unix": 1791542916.5938463,
+        "test_access": false,
+        "planned_arms": [
+          "A3",
+          "A5"
+        ],
+        "epochs_each": 20,
+        "planned_pause": false
+      }
+    },
+    "runtime_receipts": {
+      "A3_4ea4de6684de4adcac210b5449c0cb01.json": {
+        "schema": "aictrack1.fresh_route.runtime.v1",
+        "arm": "A3",
+        "selected_route": "J5_GRAPH",
+        "pid": 9396,
+        "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+        "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+        "collected_at_unix": 1791542856.267359,
+        "test_access": false,
+        "actual_torch_threads": 4,
+        "actual_torch_interop_threads": 64
+      },
+      "A5_7f6db262c6c34c488d9046fd9785b643.json": {
+        "schema": "aictrack1.fresh_route.runtime.v1",
+        "arm": "A5",
+        "selected_route": "J5_GRAPH",
+        "pid": 9441,
+        "config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa",
+        "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+        "collected_at_unix": 1791542894.62269,
+        "test_access": false,
+        "actual_torch_threads": 4,
+        "actual_torch_interop_threads": 64
+      },
+      "A3_d36e6f62add64adebcc3e1fc514df38c.json": {
+        "schema": "aictrack1.fresh_route.runtime.v1",
+        "arm": "A3",
+        "selected_route": "J5_GRAPH",
+        "pid": 9480,
+        "config_sha256": "6355c000a3d755eccb4a114a94e5e3eac0643de164d8fbe32d3343cc8d0789f6",
+        "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+        "collected_at_unix": 1791542923.5742419,
+        "test_access": false,
+        "actual_torch_threads": 4,
+        "actual_torch_interop_threads": 64
+      },
+      "A5_5a7f6193143445d683c3f270c142e403.json": {
+        "schema": "aictrack1.fresh_route.runtime.v1",
+        "arm": "A5",
+        "selected_route": "J5_GRAPH",
+        "pid": 12982,
+        "config_sha256": "8a49a5dfe776a66f95fa973bffa4d7fc2576f63afe45c9a50e70d9e80bac4faa",
+        "source_manifest_sha256": "e94e36cdea559ca8d424e9c1558e8aea37a6fcccd6af634f55e16c64a73bf524",
+        "collected_at_unix": 1791549632.475328,
+        "test_access": false,
+        "actual_torch_threads": 4,
+        "actual_torch_interop_threads": 64
+      }
+    },
+    "controller_log": "[2026-10-09 18:48:39] 20261010-supervision-joint-A3-A5 start\n[2026-10-09 18:48:39] A3: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-09 20:40:28] A3: finished in 111.8 min; output validated\n[2026-10-09 20:40:28] A5: starting - joint J5 alpha-only exploration fixedlast20\n[2026-10-09 22:33:55] A5: finished in 113.5 min; output validated\n[2026-10-09 22:33:55] 20261010-supervision-joint-A3-A5 finished\n",
+    "gpu": "1 MiB, 0 %"
+  }
+}

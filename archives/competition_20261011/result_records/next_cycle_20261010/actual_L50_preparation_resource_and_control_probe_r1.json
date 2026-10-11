@@ -1,0 +1,54 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_preparation_resource_and_control_probe_r1.json",
+  "original_sha256": "669e08ea2dda1891a153e219586ba08aa4b57e50cb823e8bc455bb6348cdb004",
+  "omitted_fields": [],
+  "record": {
+    "now": 1791675132.559335,
+    "disk": {
+      "total": 128849018880,
+      "used": 117854347264,
+      "free": 10994671616
+    },
+    "canonical": null,
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER, 1 MiB, 32760 MiB, 0 %",
+    "old_control_environment": {
+      "accelerator": {
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+      },
+      "dependencies": {
+        "requirements_lock_path": "requirements-lock.txt",
+        "requirements_lock_sha256": "9f62680f30ab48403d46c545e7c7bb42429ca957eaada9a4ef9e0f43faedbb2d"
+      },
+      "model": {
+        "clip_weight_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+        "name": "ViT-B/32",
+        "provider": "OpenAI"
+      },
+      "platform": {
+        "machine": "x86_64",
+        "release": "5.15.0-25-generic",
+        "system": "Linux",
+        "version": "#25-Ubuntu SMP Wed Mar 30 15:54:22 UTC 2022"
+      },
+      "python": {
+        "implementation": "CPython",
+        "version": "3.12.3"
+      },
+      "pytorch": {
+        "cuda_runtime": "12.8",
+        "cudnn": 91900,
+        "cudnn_probe_error": null,
+        "version": "2.11.0+cu128"
+      },
+      "schema": "aictrack1.environment.v1"
+    },
+    "old_control_config_hash": null,
+    "old_control_completed": null,
+    "old_control_runtime": {
+      "defer_epoch_metrics": true,
+      "reuse_validation_loader": true
+    }
+  }
+}

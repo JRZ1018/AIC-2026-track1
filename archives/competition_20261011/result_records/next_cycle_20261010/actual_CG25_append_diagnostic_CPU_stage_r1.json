@@ -1,0 +1,18 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_append_diagnostic_CPU_stage_r1.json",
+  "original_sha256": "12f00ed7e4d4ad945024be863ef6fce3211cb6778cd8a4635d3a0d1418191dbd",
+  "omitted_fields": [
+    "/stderr",
+    "/stdout"
+  ],
+  "record": {
+    "complete": true,
+    "source_sha256": "58eb183cf31a47a34b99eb5a490a93dd724c26db591bda95cbf7628d0c0a7987",
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_CG_append_diagnostic_r1_20261010",
+    "CPU_dependency_PASS": true,
+    "checkpoint_reads": 0,
+    "GPU": false,
+    "test_access": false
+  }
+}

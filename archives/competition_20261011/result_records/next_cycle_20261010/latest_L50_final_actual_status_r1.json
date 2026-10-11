@@ -1,0 +1,17 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L50_final_actual_status_r1.json",
+  "original_sha256": "b81fd0a0c7b600ef8b7c2f4e1955476af716f5bc058647616288d181e95a82c2",
+  "omitted_fields": [],
+  "record": {
+    "now": 1791703394.3667772,
+    "disk": {
+      "total": 128849018880,
+      "used": 119153819648,
+      "free": 9695199232
+    },
+    "root_actual_final_stdout_r1.log": "",
+    "artifacts/inference.log": "",
+    "artifacts/inference_process.json": "{\n  \"pid\": 58828,\n  \"started_epoch\": 1791703365.521403,\n  \"starttime\": \"933316862\"\n}\n"
+  }
+}

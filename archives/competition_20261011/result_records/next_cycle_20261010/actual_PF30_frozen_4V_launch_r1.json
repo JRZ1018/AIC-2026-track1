@@ -1,0 +1,81 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_PF30_frozen_4V_launch_r1.json",
+  "original_sha256": "65bd896896dcaced9c277f2e731e63e1775eda2c68dbe81cb0fbad648ed98d92",
+  "omitted_fields": [
+    "/command",
+    "/owner/argv"
+  ],
+  "record": {
+    "schema": "aictrack1.next_cycle10.PF30.actual_frozen_fourview_launch.v1",
+    "actual": true,
+    "launch_unix": 1791594951.8476555,
+    "owner": {
+      "pid": 36174,
+      "pgrp": 36174,
+      "session": 36174,
+      "start_ticks": "316860451",
+      "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010"
+    },
+    "training_source_sha256": "61f66abb4aae14d8a30e56ab1fe3edeb5321f9937326259abbd9e6928c51f5f4",
+    "diagnostic_source_sha256": "56a002e541ef281b17dc478cd129e8ff03b8a132f2743ba872dd89c0ce88d5f5",
+    "actual_training_launch_sha256": "2c8c5e30f0ece2b2699160eee94c99840dfc2cb5628bf3391ec59a13802fcc87",
+    "budget_sha256": "ab5edf6db05351732364a8ec6263dc1114d7dcf45ceee341d128a7f7f19a0049",
+    "actual_fixed20": {
+      "last_sha256": "ceae8e99870afc29f65657d29cf4411e3f2ef01ec99af591a477800eefb949a9",
+      "last_bytes": 1424579677,
+      "final_sha256": "b1614224b400d3decbb84ada0ab467ddcf75c6762ed0da3fd32c1d013e51cccc",
+      "metrics_sha256": "67ba76e9f404dce359a918627ed86e4cb535153ba6b2bf789305a43a9dab50fb",
+      "metrics_bytes": 17371626,
+      "history_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "selection_rule": "fixed final epoch 20; no validation selection",
+      "duration_seconds": 6477.647834561765,
+      "model_CPU_recovery_done": false
+    },
+    "old_groups_closed": true,
+    "canonical_idle_before_launch": true,
+    "terminal_exit_evidence": [
+      {
+        "start_sha256": "d21229e9c079f1d283c3a33c5a3d2ac3030591396e96f0a53d700cf8e8a02aa8",
+        "exit_sha256": "813f27755f1dd5b3e3ca767e06a5d5e655456902d98a492a8f84701d45e1efaf",
+        "exit": {
+          "owner": {
+            "pid": 31944,
+            "pgrp": 31944,
+            "session": 31944,
+            "start_ticks": "316040688"
+          },
+          "return_code": 0,
+          "group_closed": true,
+          "test_access": false
+        }
+      }
+    ],
+    "test_access": false,
+    "model_updates": 0,
+    "graph_or_confirmation_started": false,
+    "stdout_path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/root_actual_PF30_frozen_4V_stdout_r1.log",
+    "remote_receipt_path": "/root/autodl-tmp/AICtrack1_next_cycle_persistent_filter_joint_diagnostic_20261010/root_actual_PF30_frozen_4V_launch_r1.json"
+  }
+}

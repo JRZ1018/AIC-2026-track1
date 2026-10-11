@@ -1,0 +1,192 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_retry_positive_returns_r1/C/runtime_receipt.json",
+  "original_sha256": "30673762a26e89a27f6b86b25556c6697947fef3301195bd9f235cc170300d91",
+  "omitted_fields": [
+    "/upstream_receipts/receipt/environment"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.diagnostic_runtime.v1",
+    "arm": "C",
+    "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+    "config_sha256": "4cf0d7d79d81a256848f09347e2a18e400f5bb7c053a1240542850c54df93cd6",
+    "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+    "h1_sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be",
+    "selected_route": "J5_GRAPH",
+    "runtime": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "torch_num_threads": 4,
+      "torch_num_interop_threads": 64
+    },
+    "upstream_receipts": [
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/runtime_receipts/C_18cf4c649d02497aa3d13b20d73a3a2c.json",
+        "sha256": "8a2a4901e3a5a3f71dadc98b2e69d05edd0171d77cf89372522917ff2cf21898",
+        "receipt": {
+          "schema": "aictrack1.fresh_route.runtime.v1",
+          "arm": "C",
+          "selected_route": "J5_GRAPH",
+          "pid": 236012,
+          "config_sha256": "4cf0d7d79d81a256848f09347e2a18e400f5bb7c053a1240542850c54df93cd6",
+          "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+          "collected_at_unix": 1791511226.715283,
+          "test_access": false,
+          "actual_torch_threads": 4,
+          "actual_torch_interop_threads": 64
+        }
+      },
+      {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/runtime_receipts/C_e5c81f2420934f498d9dd51d2bbab61a.json",
+        "sha256": "31b68ed74b0335c98c0841dbd1f4d2f482dd6e950dacce46772db7b288228d59",
+        "receipt": {
+          "schema": "aictrack1.fresh_route.runtime.v1",
+          "arm": "C",
+          "selected_route": "J5_GRAPH",
+          "pid": 236098,
+          "config_sha256": "4cf0d7d79d81a256848f09347e2a18e400f5bb7c053a1240542850c54df93cd6",
+          "source_manifest_sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482",
+          "collected_at_unix": 1791511329.194285,
+          "test_access": false,
+          "actual_torch_threads": 4,
+          "actual_torch_interop_threads": 64
+        }
+      }
+    ],
+    "test_access": false,
+    "append_stage_context": {
+      "original_shared_budget": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+        "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+      },
+      "disk_expansion_recovery": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+        "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+      },
+      "prior_failure": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/FAILURE.json",
+        "sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32"
+      },
+      "capacity_increase_bytes": 32212254720,
+      "adjusted_initial_free_bytes": 45226205184,
+      "original_data_initial_free_bytes": 13013950464,
+      "retry_after_disk_expansion": true,
+      "actual_data_total_bytes": 128849018880,
+      "schema": "aictrack1.fresh_route.retry_append_diagnostic_context.v1",
+      "diagnostic_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009",
+      "retry_continuation_root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009",
+      "appended_stage_budget": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/shared_retry_append_budget.json",
+        "sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571"
+      },
+      "original_fresh_budget": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/queues/fresh_route_budget.json",
+        "sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941"
+      },
+      "training_source": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/source_manifest.json",
+        "sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482"
+      },
+      "configs": {
+        "C": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_C.yaml",
+          "sha256": "4cf0d7d79d81a256848f09347e2a18e400f5bb7c053a1240542850c54df93cd6"
+        },
+        "J5": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_J5.yaml",
+          "sha256": "a65f60e974c04842e2c86975ab3675aad8469bc1b0c0a27a98e8fa145b4b8562"
+        }
+      },
+      "checkpoint_origins": {
+        "C": {
+          "epoch": 20,
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_C/last.pt",
+          "sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca"
+        },
+        "J5": {
+          "epoch": 19,
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt",
+          "sha256": "fc0841b69ce0b58389e430e46d592f165e8886c95a18598259b707dc2cfc8ebe"
+        }
+      },
+      "watched": [
+        {
+          "pgrp": 236091,
+          "pid": 236091,
+          "role": "C_controller",
+          "session": 236091,
+          "start_ticks": "308497119"
+        },
+        {
+          "pgrp": 236098,
+          "pid": 236098,
+          "role": "C_trainer",
+          "session": 236098,
+          "start_ticks": "308497585"
+        },
+        {
+          "pgrp": 239865,
+          "pid": 239865,
+          "role": "J5_controller",
+          "session": 239865,
+          "start_ticks": "309227901"
+        },
+        {
+          "pgrp": 239872,
+          "pid": 239872,
+          "role": "J5_trainer",
+          "session": 239872,
+          "start_ticks": "309228342"
+        },
+        {
+          "pgrp": 243711,
+          "pid": 243711,
+          "role": "failed_append_controller",
+          "session": 243711,
+          "start_ticks": "309965381"
+        },
+        {
+          "pgrp": 244056,
+          "pid": 244056,
+          "role": "failed_append_trainer",
+          "session": 244056,
+          "start_ticks": "310043026"
+        }
+      ],
+      "phase_start_unix": 1791526772.440027,
+      "deadline_unix": 1791533972.440027,
+      "original_phase_start_unix": 1791497972.440027,
+      "original_deadline_unix": 1791526772.440027,
+      "original_system_baseline_bytes": 13013950464,
+      "max_cumulative_disk_bytes": 12884901888,
+      "min_actual_disk_free_bytes": 3221225472,
+      "selected_route": "J5_GRAPH",
+      "selected_arm": "J5",
+      "restored_checkpoint_origin": "same_actual_bound_training_source_fixed_last20",
+      "old_deadline_rewritten": false,
+      "training_budget_reset": false,
+      "graph_ledger_reset": false,
+      "test_access": false
+    },
+    "continuation_execution_chain": {
+      "continuation_operator_source": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/source_manifest.json",
+        "sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2"
+      },
+      "partial_restore_audit": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/CPU_CHECKPOINT_AUDIT.json",
+        "sha256": "4ba583041669742a85c98697834069cbe2fe4a56ac05e53ba25ceae63837b11d"
+      },
+      "terminal_restore_audit": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/TERMINAL_CPU_AUDIT.json",
+        "sha256": "205c1b3841daff38a9ff5a102728f6cb041a2d53da6b253dc28daeb74eeca5ee"
+      },
+      "continuation_completion": {
+        "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/COMPLETE.json",
+        "sha256": "f4790240a236750769aa3f0c44850c19340d364a5ee8b99504321dc26889b79b"
+      }
+    },
+    "appended_stage_completed_at_unix": 1791529182.3868809
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B25_terminal20_metrics_summary_r1.json",
+  "original_sha256": "d352d5895aa154427b8fa3204a43c8e69ab22fc5dda00b58cb6d88933cec0989",
+  "omitted_fields": [],
+  "record": {
+    "observed_unix": 1791574544.9312658,
+    "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010/artifacts/experiments/JOINT_B25/metrics.json",
+    "metrics_sha256": "422a0ad072ffdf13ac9c0d58cbbb3486f472438eb8cc0e391fac2f952cddb64e",
+    "metrics_bytes": 8801811,
+    "top_keys": [
+      "base_loss",
+      "best_top1",
+      "checkpoint_provenance",
+      "confidence_observation_protocol",
+      "confidence_observation_sources",
+      "confidence_weighting",
+      "config_sha256",
+      "conflict_diagnostics",
+      "conflict_loss",
+      "data_loader",
+      "dataset_config_sha256",
+      "duration_seconds",
+      "early_stop",
+      "environment",
+      "environment_hash",
+      "final_checkpoint_sha256",
+      "git_commit",
+      "git_commit_source",
+      "head_initializer",
+      "history",
+      "initial_validation",
+      "label_smoothing",
+      "last_checkpoint_sha256",
+      "logit_adjustment",
+      "manifest_sha256",
+      "peak_vram_mib",
+      "peft",
+      "position_interpolation",
+      "run_id",
+      "runtime",
+      "sampling",
+      "scope",
+      "selected_checkpoint",
+      "selected_checkpoint_sha256",
+      "selection_rule",
+      "split_sha256",
+      "token_readout",
+      "total_visual_parameters",
+      "train_count",
+      "trainable_total_parameters",
+      "trainable_visual_parameters",
+      "training_scope",
+      "validation_count",
+      "visual_input_resolution",
+      "visual_prototype_diagnostics",
+      "visual_prototype_weighting"
+    ],
+    "scalar_fields": {
+      "best_top1": null,
+      "config_sha256": "41ee96e1e912e7e8f4cbf73d17518a29eeda91751657da47e075cfb10df3ac41",
+      "conflict_diagnostics": null,
+      "dataset_config_sha256": "f9f89d52b235eabd4eed2ad82da1d2f160e616898de2cb94bd34a8a7a206041f",
+      "duration_seconds": 11246.669638925698,
+      "early_stop": null,
+      "environment_hash": "120e072c6800817a8321ee4bf677523704d1e4096b8acbc9dc08d1411a730179",
+      "final_checkpoint_sha256": "f14a7fc98d29e2a9c7cad6e2081bf6a750e5200e1449f37c34235d29e4e813ff",
+      "git_commit": "unknown_archive",
+      "git_commit_source": "unknown_archive; use per-file source hashes in the queue receipt",
+      "label_smoothing": 0.0,
+      "last_checkpoint_sha256": "733641e9197c5b8c9c967f8d69ce2ea20e5c455f28032533cd7131e9909591ed",
+      "logit_adjustment": null,
+      "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+      "peak_vram_mib": 4354.68798828125,
+      "position_interpolation": "bicubic_7x7_to_10x10",
+      "run_id": "20261010-josrc-inspired-B25-fixed20",
+      "scope": "stage2 train/validation PEFT short screening; test data not accessed",
+      "selected_checkpoint": "final.pt",
+      "selected_checkpoint_sha256": "f14a7fc98d29e2a9c7cad6e2081bf6a750e5200e1449f37c34235d29e4e813ff",
+      "selection_rule": "fixed final epoch 20; no validation selection",
+      "split_sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7",
+      "total_visual_parameters": 87849216,
+      "train_count": 118958,
+      "trainable_total_parameters": 88233966,
+      "trainable_visual_parameters": 87849216,
+      "training_scope": "fixed_split_validation",
+      "validation_count": 29737,
+      "visual_input_resolution": 336,
+      "visual_prototype_diagnostics": null,
+      "visual_prototype_weighting": null
+    },
+    "history_length": 20,
+    "history_rows": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3975038230173642,
+        "train_samples_per_second": 227.46725132431536,
+        "train_seconds": 522.967588993255
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.5157595079887426,
+        "train_samples_per_second": 217.85945636247934,
+        "train_seconds": 546.0309228077531
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.4333590825867418,
+        "train_samples_per_second": 232.71010580685927,
+        "train_seconds": 511.1853633839637
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.3757706475410395,
+        "train_samples_per_second": 246.17571989257024,
+        "train_seconds": 483.2239347239956
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.33147628981633914,
+        "train_samples_per_second": 242.21528384801977,
+        "train_seconds": 491.12507728720084
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.3241038112659,
+        "train_samples_per_second": 248.88468037455976,
+        "train_seconds": 477.96433199895546
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.294592201038332,
+        "train_samples_per_second": 242.83928902332815,
+        "train_seconds": 489.86307149240747
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.2676556169103363,
+        "train_samples_per_second": 250.70944776543644,
+        "train_seconds": 474.4855092628859
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.24725525501619003,
+        "train_samples_per_second": 245.29606220672017,
+        "train_seconds": 484.95682698627934
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.2281987898937481,
+        "train_samples_per_second": 240.7150592318365,
+        "train_seconds": 494.18594906199723
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.21245113064829535,
+        "train_samples_per_second": 248.1123740175668,
+        "train_seconds": 479.4521050029434
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.19911247732694268,
+        "train_samples_per_second": 253.75085249293878,
+        "train_seconds": 468.79842503508553
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.18684674420117686,
+        "train_samples_per_second": 247.46138755531692,
+        "train_seconds": 480.71337987389416
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.17843987336606337,
+        "train_samples_per_second": 241.84731886785548,
+        "train_seconds": 491.87231248570606
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.17084167826876967,
+        "train_samples_per_second": 254.1891600591959,
+        "train_seconds": 467.9900589478202
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.16494614467856306,
+        "train_samples_per_second": 256.5509529601857,
+        "train_seconds": 463.6817701412365
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.16044046002870735,
+        "train_samples_per_second": 254.56483792449103,
+        "train_seconds": 467.2994156219065
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.15751848965717907,
+        "train_samples_per_second": 249.63183738617374,
+        "train_seconds": 476.53376766992733
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.15575460120944132,
+        "train_samples_per_second": 255.73176829451884,
+        "train_seconds": 465.16708030970767
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.15515282470039277,
+        "train_samples_per_second": 251.1960161811676,
+        "train_seconds": 473.56642755912617
+      }
+    ],
+    "last_history_keys": [
+      "bootstrap_curriculum",
+      "confidence_weighting",
+      "epoch",
+      "gradient_diagnostics",
+      "josrc_soft",
+      "learning_rates",
+      "sampling",
+      "train_loss",
+      "train_samples_per_second",
+      "train_seconds",
+      "validation"
+    ],
+    "last_declared_stat": {
+      "last.pt": {
+        "bytes": 1776438829,
+        "mtime": 1791573490.4566822
+      },
+      "final.pt": {
+        "bytes": 352987755,
+        "mtime": 1791573491.152688
+      }
+    },
+    "scope": "terminal B25 metrics/closure summary only; no checkpoint/model restore; B50 active, no diagnostic",
+    "checkpoint_opened": false,
+    "test_access": false
+  }
+}

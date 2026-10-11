@@ -1,0 +1,15 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/FETCH_RESUME_R3_PROBE_FAILED.json",
+  "original_sha256": "d1664bb043c62036b925637b8f1057f1de6f3f56156b782c775cda1bdd480626",
+  "omitted_fields": [],
+  "record": {
+    "error_type": "SSHException",
+    "error": "Error reading SSH protocol banner",
+    "at": 1791559431.3482864,
+    "done": 0,
+    "new_bytes_received": 0,
+    "partials_preserved": true,
+    "prefetch": false
+  }
+}

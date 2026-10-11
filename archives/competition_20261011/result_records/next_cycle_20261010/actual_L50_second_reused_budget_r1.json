@@ -1,0 +1,27 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_reused_budget_r1.json",
+  "original_sha256": "294083ca1b247e3d651324732eaca588362fa1521f8728a1b414546657992ed7",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.next_cycle10.L50_reused_validation.budget.v1",
+    "root_authorized": true,
+    "phase_start_unix": 1791685340.0435975,
+    "deadline_unix": 1791696140.0435975,
+    "original_initial_free_bytes": 13013950464,
+    "capacity_added_bytes": 32212254720,
+    "adjusted_initial_free_bytes": 45226205184,
+    "actual_disk_total_bytes": 128849018880,
+    "disk_max_bytes": 42949672960,
+    "min_free_bytes": 3221225472,
+    "atomic_reserve_bytes": 2147483648,
+    "capacity_evidence": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "competition_deadline_unix": 1791712738,
+    "test_access": false,
+    "prior_budget_unchanged": true,
+    "reason": "Actual first reused fullcombo positive/rootreview, single new610 L50 fresh20 plus frozen validation; same cumulative40GiB ledger"
+  }
+}

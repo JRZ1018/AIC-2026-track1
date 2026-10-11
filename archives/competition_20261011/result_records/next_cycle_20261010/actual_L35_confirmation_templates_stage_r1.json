@@ -1,0 +1,24 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_confirmation_templates_stage_r1.json",
+  "original_sha256": "053f4746d023dba28df8f45899e3861869b04aa55067a6f20f7954f63134e2e3",
+  "omitted_fields": [
+    "/stderr"
+  ],
+  "record": [
+    {
+      "returncode": 0,
+      "source_sha": "93b273ae0c4120b613365f106fb55671a7590625cfe89eb10e0c4f47db375dfd",
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_h1_L35_template_20261010",
+      "reused_files": 83,
+      "uploaded_bytes": 78776
+    },
+    {
+      "returncode": 0,
+      "source_sha": "dbe8e6dbd017d2fc1921f94cf84486d38893bde85117de233d2824fc26961bab",
+      "root": "/root/autodl-tmp/AICtrack1_next_cycle_confirmation_visual_L35_template_20261010",
+      "reused_files": 80,
+      "uploaded_bytes": 202254
+    }
+  ]
+}

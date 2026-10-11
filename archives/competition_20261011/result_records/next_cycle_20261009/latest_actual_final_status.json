@@ -1,0 +1,109 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/latest_actual_final_status.json",
+  "original_sha256": "e6890163c145cea0d25d1085899d03d7804236d988192c55fa2c107df59c52c1",
+  "omitted_fields": [
+    "/canonical/command",
+    "/processes/argv"
+  ],
+  "record": {
+    "observed_unix": 1791536871.8999772,
+    "processes": [
+      {
+        "pid": 6595,
+        "start_ticks": "311045598",
+        "pgrp": 6595,
+        "session": 6595,
+        "state": "S",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009"
+      },
+      {
+        "pid": 6598,
+        "start_ticks": "311045812",
+        "pgrp": 6598,
+        "session": 6598,
+        "state": "R",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009"
+      },
+      {
+        "pid": 6617,
+        "start_ticks": "311047019",
+        "pgrp": 6598,
+        "session": 6598,
+        "state": "R",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009"
+      },
+      {
+        "pid": 6618,
+        "start_ticks": "311047021",
+        "pgrp": 6598,
+        "session": 6598,
+        "state": "R",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009"
+      },
+      {
+        "pid": 6619,
+        "start_ticks": "311047022",
+        "pgrp": 6598,
+        "session": 6598,
+        "state": "R",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009"
+      },
+      {
+        "pid": 6620,
+        "start_ticks": "311047024",
+        "pgrp": 6598,
+        "session": 6598,
+        "state": "R",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009"
+      },
+      {
+        "pid": 6621,
+        "start_ticks": "311047028",
+        "pgrp": 6598,
+        "session": 6598,
+        "state": "R",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009"
+      },
+      {
+        "pid": 6622,
+        "start_ticks": "311047029",
+        "pgrp": 6598,
+        "session": 6598,
+        "state": "R",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009"
+      },
+      {
+        "pid": 6623,
+        "start_ticks": "311047031",
+        "pgrp": 6598,
+        "session": 6598,
+        "state": "R",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009"
+      },
+      {
+        "pid": 6624,
+        "start_ticks": "311047033",
+        "pgrp": 6598,
+        "session": 6598,
+        "state": "S",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009"
+      }
+    ],
+    "small_outputs": {},
+    "canonical": {
+      "config": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_full_20261009/configs/experiment/p1_full_J5.yaml",
+      "output_dir": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/submissions/final",
+      "owner": "stage2-final-single-checkpoint-inference",
+      "queue_pid": 6598,
+      "schema_version": 1,
+      "started_at": "2026-10-09T17:06:51.374523+08:00",
+      "token": "d2a7da6be2664ebc8574cabe275afdc2",
+      "trainer_pid": null
+    },
+    "root_actual_final_stdout.log": "",
+    "artifacts/inference.log": "",
+    "data_free": 36282822656,
+    "gpu": "95 %, 1344 MiB"
+  }
+}

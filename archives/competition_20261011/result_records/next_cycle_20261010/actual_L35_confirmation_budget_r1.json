@@ -1,0 +1,27 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_confirmation_budget_r1.json",
+  "original_sha256": "697a43c1f97aa2e4348f8036b166df9e45e36b695ac71780392c83153304b6d2",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.next_cycle10.confirmation_budget.v1",
+    "root_authorized": true,
+    "phase_start_unix": 1791633418.782312,
+    "deadline_unix": 1791658618.782312,
+    "original_initial_free_bytes": 13013950464,
+    "capacity_added_bytes": 32212254720,
+    "adjusted_initial_free_bytes": 45226205184,
+    "actual_disk_total_bytes": 128849018880,
+    "disk_max_bytes": 38654705664,
+    "min_free_bytes": 3221225472,
+    "atomic_reserve_bytes": 2147483648,
+    "final_gpu_reserve_hours": 4,
+    "final_wall_reserve_hours": 8,
+    "competition_deadline_unix": 1791712738,
+    "capacity_evidence": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "purpose": "new legal610 H1100 plus commonseed20261010 matched freshJ5 and soleL35 each continuous20 and frozen confirmation; original cumulative36GiB no reset"
+  }
+}

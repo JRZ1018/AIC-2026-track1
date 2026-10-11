@@ -1,0 +1,47 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L50_second_reused_epoch10_health_forecast_r1.json",
+  "original_sha256": "9318eaa35c71ceec4ea3805a82ccdb9a3faa548c8276cbd370a76fa771aeef21",
+  "omitted_fields": [],
+  "record": {
+    "now": 1791689377.7735624,
+    "trainer": {
+      "pid": 48115,
+      "state": "S",
+      "ppid": 48050,
+      "pgrp": 48115,
+      "session": 48115,
+      "start_ticks": "931519786"
+    },
+    "trainer_cpu_ticks": 359359,
+    "gpu": "4838 MiB, 13 %",
+    "disk": {
+      "total": 128849018880,
+      "used": 121410461696,
+      "free": 7438557184
+    },
+    "last_stat_only": {
+      "size": 1417817511,
+      "mtime": 1791689314.4770968
+    },
+    "memory.events": "low 0\nhigh 3216\nmax 0\noom 0\noom_kill 0\n",
+    "bounded_stdout_epochs_complete": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "active_checkpoint_read": false,
+    "training_restarted": false,
+    "actual_epoch_complete": 10,
+    "epoch6_to10_atomic_last_wallclock_seconds_per_epoch": 371.7213616371155,
+    "conditional_terminal20_unix": 1791693031.6907132,
+    "forecast_scope": "atomic last wallclock only; not train_seconds or new ZIP ETA",
+    "FULL_started": false
+  }
+}

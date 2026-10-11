@@ -1,0 +1,38 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/full/h1_receipt.json",
+  "original_sha256": "0e46cf54918bc152af34f7b3edb6b84fe7a9c3d2211bc3925f8b994a1dc144cf",
+  "omitted_fields": [],
+  "record": {
+    "actual_cpu_optimizer_scheduler_scaler_model_rng_restored": true,
+    "checkpoint_sha256": "fa4623670a6f48731cf54e62dfb5ce5df44b232f4530f6c13b886efe0579e605",
+    "complete": true,
+    "cuda_rng_serialized": true,
+    "epoch": 100,
+    "feature_complete_sha256": "9225ee58e5d5ce3a0f04f6e11d2709f2a7aea7ad9b95b0953fc9bad28c7d964f",
+    "fresh_feature_extraction": true,
+    "row_binding": {
+      "all_rows_sha256": "5d746ffd5dec45b94f2a8dab27702f4d7c2767a16c58652f7f02ec209b6b8521",
+      "counts": {
+        "train": 148695,
+        "validation": 0
+      },
+      "historical_cache_partition_counts": {
+        "train": 118958,
+        "validation": 29737
+      },
+      "historical_split_used_only_for_cache_provenance": true,
+      "historical_validation_rows_now_part_of_full_official_train": true,
+      "schema": "aictrack1.mainline.h1.rows.v1",
+      "train_rows_sha256": "5d746ffd5dec45b94f2a8dab27702f4d7c2767a16c58652f7f02ec209b6b8521",
+      "validation_used_for_optimization_or_selection": false
+    },
+    "scope": "full_train_fixed_epochs",
+    "source_sha256": "191c4a3eaeacf287c6893bf8949b14c3ba2b7e8b86d21c9f3ff6922d63667724",
+    "test_access": false,
+    "train_count": 148695,
+    "training_seed": 20261008,
+    "validation_count": 0,
+    "validation_selection": false
+  }
+}

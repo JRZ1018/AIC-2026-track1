@@ -1,0 +1,18 @@
+{
+  "CPU_preparation_only": true,
+  "actual_diagnostic_source_sha256": "af65db78d5151a286743ed430b2948fbd1625086ba2f0bdeadba77f528c7fe38",
+  "files": {
+    "README.md": "2a82ec3e6cb7d6511afd2d2ac8131599562e9473dd7c335315fc8dbff3f49d8c",
+    "scripts/L35_full_route_contract.py": "83408f9bb0b9a25703e88d3f2a879ecccac55ce0119a892028437d84692d1329",
+    "scripts/write_confirmation.py": "88c364d736190782b60ba42ac548b2be31871c814b04ffafd67ce7131d0711bc"
+  },
+  "future_budget_sha256": null,
+  "future_checkpoint_sha256": null,
+  "future_confirmation_sha256": null,
+  "method_family": "single_visual_learning_rate_point",
+  "remote_deployed": false,
+  "schema": "aictrack1.next_cycle10.L35_confirmation.writer.template.v1",
+  "status": "unbound_template",
+  "test_access": false,
+  "upstream_full_template_sha256": "4d857a625f8a09b4380ab64940bfbd1144fa60a20cd26d9f8628cc19d4b503e0"
+}

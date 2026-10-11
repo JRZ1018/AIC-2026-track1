@@ -1,0 +1,19 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/official_cache_restore_receipt.json",
+  "original_sha256": "8aa2974836d3dfafe2b38bf88d180bed54c3d3c9c1b6d4ae7384650cad6a1e22",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.confirmation.official-cache-restored.v1",
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009/inputs/official_feature_cache",
+    "verified_files": 39,
+    "bytes": 175675988,
+    "identity_sha256": "96f5786e6b75e99d5bbc308d89c769fbc25daf8c7bc636297bda041d05e0c3e9",
+    "test_access": false,
+    "gpu_started": false,
+    "original_partial_cache_modified": false,
+    "prepared": {
+      "created": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009/inputs/official_feature_cache"
+    }
+  }
+}

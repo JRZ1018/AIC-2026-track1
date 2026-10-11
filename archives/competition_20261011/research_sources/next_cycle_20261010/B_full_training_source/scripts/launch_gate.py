@@ -1,0 +1,16 @@
+"""One-byte GO before unchanged trainer import; exec retains PID/session/parent."""
+import os,sys
+from pathlib import Path
+from p1_contract import ROOT,REMOTE_ROOT,ARMS,require,assets
+
+def main():
+    require(os.name=='posix' and ROOT.resolve()==Path(REMOTE_ROOT).resolve() and Path.cwd().resolve()==ROOT,'dedicated joint root/cwd required')
+    arm=os.environ.get('P1_ARM');require(arm==assets()['selected_arm'],'registered single-candidate arm required')
+    expected=[sys.executable,'scripts/train_n1_peft.py','--config',f'configs/experiment/p1_full_{arm}.yaml']
+    if os.environ.get('P1_RESUME')=='1':expected+=['--resume',str(ROOT/f'artifacts/experiments/FULL_{arm}/last.pt')]
+    if os.environ.get('P1_SMOKE')=='1':expected+=['--p1-smoke']
+    require(sys.argv[1:2]==['--'] and sys.argv[2:]==expected,'only exact unchanged trainer command allowed')
+    if sys.stdin.buffer.read(1)!=b'G':return 73
+    os.execvpe(expected[0],expected,os.environ.copy())
+    raise RuntimeError('exec returned')
+if __name__=='__main__':raise SystemExit(main())

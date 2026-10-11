@@ -1,0 +1,16 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_josrc_r2_train_bind.json",
+  "original_sha256": "d42048582e0c2d38c999975df58d797f5f3f65f81ee8d0b18517d9cf338f1f8f",
+  "omitted_fields": [
+    "/stdout"
+  ],
+  "record": {
+    "bound": true,
+    "mode": "train",
+    "template_source_sha256": "8d9c229f645e20a306b11a69bc57a6f4c7141d0c90783bd7d616cb02e580a276",
+    "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "budget_sha256": "10ceae4fe1a3f435e73db058955f414c3e00ded1dd38ffe52e928f094e541b73",
+    "GPU_started": false
+  }
+}

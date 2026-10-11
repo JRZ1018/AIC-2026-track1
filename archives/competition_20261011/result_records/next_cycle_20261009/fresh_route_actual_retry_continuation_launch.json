@@ -1,0 +1,35 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_retry_continuation_launch.json",
+  "original_sha256": "a450653a3f4517698c5693a194d08507df77f43dab577b68f5562012a6b37032",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "schema": "aictrack1.fresh_route.actual_retry_continuation_launch.v1",
+    "controller": {
+      "pid": 1505,
+      "pgrp": 1505,
+      "session": 1505,
+      "start_ticks": "310182306"
+    },
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009",
+    "source_manifest_sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2",
+    "shared_budget": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/shared_retry_append_budget.json",
+      "sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571"
+    },
+    "prior_whole_groups_closed": true,
+    "canonical_naturally_idle_at_launch": true,
+    "controller_performs_strict_actual_CPU_audit_before_GPU": true,
+    "CPU_audit_and_GPU_started_not_yet_claimed": true,
+    "launched_at_unix": 1791528170.4047396,
+    "deadline_unix": 1791533972.440027,
+    "actual_GPU_started": false,
+    "test_access": false,
+    "launch_receipt": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/root_actual_launch.json",
+      "sha256": "144413ec175115164bf0289545db50f0e2c02cc4c2c6fca4f01eaa45682c33da"
+    }
+  }
+}

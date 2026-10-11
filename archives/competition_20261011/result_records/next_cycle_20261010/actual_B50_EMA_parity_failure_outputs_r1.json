@@ -1,0 +1,21 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B50_EMA_parity_failure_outputs_r1.json",
+  "original_sha256": "b52a11cef19272efbc7e4bef83012cd71c1819e514ddd043f757d69a8f22fff2",
+  "omitted_fields": [],
+  "record": {
+    "files": [
+      {
+        "path": "p1_checkpoint_audit.json",
+        "bytes": 7336,
+        "sha256": "4bace490d132ca53aad027f80c20271969c959662bf1ff6a574e657f7166cc1e"
+      },
+      {
+        "path": "runtime_receipt.json",
+        "bytes": 1604,
+        "sha256": "21669994e1295c851ccdb2c5983e0ac78824641c7f2214e5359268454d9942db"
+      }
+    ],
+    "canonical": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/final_actual_returns_r1/inference/artifacts/final_graph_budget.json",
+  "original_sha256": "da89651c9173539e67fbd5fe9c31f4251d5a1df17bf77b4b5b159cf10b88faa1",
+  "omitted_fields": [],
+  "record": {
+    "checkpoint_sha256": "db3165719db053a0a86fd39166fa69ffbabda1acc25cab8d952e778f70d0e542",
+    "deadline_unix": 1791544003.3146317,
+    "original_confirmation_ledger_untouched": true,
+    "parameters": {
+      "additional_model_forwards": 0,
+      "budget": "new explicit bounded final phase; never create or reset original graph confirmation ledger",
+      "cpu_threads": 2,
+      "feature_protocol": "L2_normalize(mean(L2_normalize(raw_visual_each_of_four_views))) in float32 on CPU",
+      "iterations": 3,
+      "k": 10,
+      "lambda": 0.3,
+      "model_updates": 0,
+      "parameter_search": false,
+      "probability_temperature": 1.0,
+      "protection_raw_margin": 1.3862943611198906,
+      "query": "all37444 unlabeled official test rows in immutable manifest order,750 classes; no extra anchors",
+      "schema": "aictrack1.fresh_route.final.fixed_graph.v1",
+      "scientific_source_sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c",
+      "scores": "FP16 four-view mean storage converted to FP32; reciprocal positive cosine graph; original-P residual3; ln4 and zero-degree original-logit protection; fixed P7 .5/.75/60",
+      "upstream_protocol_sha256": "f48211db3716faaf45255dcc96e0b614bf42c1673791406bf9d7457c1a50b30d"
+    },
+    "schema": "aictrack1.fresh_route.final_graph.budget.v1",
+    "source_manifest_sha256": "f7e3a64ed65631d84d91fe8fbaea3b2830638f9085ad7cce9a8e7b2f0ed39174",
+    "total_wall_seconds": 7200.0
+  }
+}

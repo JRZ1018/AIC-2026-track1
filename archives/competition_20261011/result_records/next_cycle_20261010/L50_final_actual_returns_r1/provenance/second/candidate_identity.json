@@ -1,0 +1,161 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/L50_final_actual_returns_r1/provenance/second/candidate_identity.json",
+  "original_sha256": "f62f100059317af0abe4f29807e4b9e9f718a044337bfe8fff28ee9db1fc26f6",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.p0_frozen_fold_input.v1",
+    "stage": 2,
+    "holdout_verified": true,
+    "test_access": false,
+    "training_validation_overlap_rows": 0,
+    "train_validation_exact_group_overlap": 0,
+    "train_validation_near_group_overlap": 0,
+    "checkpoint_role": "last",
+    "upstream_checkpoint_role": "final",
+    "checkpoint_epoch": 20,
+    "checkpoint_path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/artifacts/experiments/CONFIRM_L50/last.pt",
+    "checkpoint_sha256": "54e34236afe94ccfbfb1826497e320335e25b19c2c7cc1c2010f39f8f0f807e9",
+    "experiment_config_sha256": "a213b1c6051c24c13c25b25002fcf4d91320facd7a0459035364a4ecca5a8333",
+    "split_sha256": "610111665e1055bcda7157add15b16ade353138365e54ee87dc92316e6dfd6f1",
+    "manifest_sha256": "1e912b3a73ffddfa418a885fb1e20c3c15012e6f3fae2203c81dd9dd3c52887d",
+    "class_mapping_sha256": "811b767e5689fbed5ed9ed7f328e2e1458b02b208647f3ec1b3c3e99c7e4e879",
+    "view_protocol": "native336 center and exact flip plus resize_short_side384_center_crop336 and exact flip; one checkpoint; four float logits equally averaged",
+    "h1_sha256": "4073c5b58f5993373f1678f714342d829fdb6c2d092cf60cf1ebfa7aa0083980",
+    "training_count": 118958,
+    "validation_count": 29737,
+    "num_classes": 750,
+    "training_scope": "fixed_split_validation",
+    "bundle_path": "fused_logits.pt",
+    "bundle_sha256": "a4968f072a861cc2293b74e2cf14685c78da527b6a55b70a4ac2d721f26152f6",
+    "logits_dtype": "float16",
+    "row_csv": "rows.csv",
+    "row_csv_sha256": "03ea5bb05d2f7dc911e07f3b24c0fd95ce50c0ace4f05c1385706c105cbdf7d5",
+    "sample_ids_order_sha256": "3942736be798916505babc7427d593718698c400830f66edf48d77b4a6301c54",
+    "source_provenance_receipt": "p1_checkpoint_audit.json",
+    "source_receipt_sha256": "8fec9e8a70ebe0d2e7a67890eb645be0cc673e1bafe52fabf8a9da8bd4b42d34",
+    "report_sha256": "3b66f85eb12797e1b02db5124e9a96d95816d1d237ffd6a6300810cfc227900a",
+    "p1_arm": "L50",
+    "model_arm": "L50",
+    "trainable_tensors": 154,
+    "trainable_numel": 88233966,
+    "joint_trainable_tensors": 154,
+    "joint_trainable_numel": 88233966,
+    "classifier_head_source": "joint_fixed_last_state",
+    "selected_arm": "L50",
+    "selected_route": "L50_GRAPH",
+    "admission_receipt_sha256": null,
+    "source_h1_manifest_sha256": "4c5f1cb814765d5e2307012dce8be07b7b9321380a90029327d1c453b8676fdd",
+    "training_source_manifest_sha256": "7699f9800d9bfff3265e7598c5ef5998e3bab8790ea6392da0fb67856c3365f0",
+    "diagnostic_source_manifest_sha256": "4a92913a982df6b52eb5c138ea7cb18c65c149fb68a007ac116984eaad922bc9",
+    "runtime": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "torch_num_threads": 4,
+      "torch_num_interop_threads": 64
+    },
+    "runtime_receipt": "runtime_receipt.json",
+    "runtime_receipt_sha256": "4a6285c9d9013e87988fe3369a3d1c7fc803e1120505cee27bdf216947a16a96",
+    "inference_optimizer_steps": 0,
+    "training_seed": 20261010,
+    "group_source": "connected exact SHA/exact-group/near-group union; new610 query frozen before original L35; now disclosed and reused",
+    "raw_student_only": true,
+    "teacher_used_for_inference": false,
+    "visual_learning_rate": 5e-06,
+    "head_learning_rate": 5e-06,
+    "confirmation_phase_context": {
+      "actual": true,
+      "training_source_manifest_sha256": "7699f9800d9bfff3265e7598c5ef5998e3bab8790ea6392da0fb67856c3365f0",
+      "launch_path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/root_actual_fixed20_launch_r1.json",
+      "launch_sha256": "ad0e88901545cccdabf538e78ddd9cfd8e892c100b3f55772c3c7ead7162f7cb",
+      "controller_owner": {
+        "pid": 48050,
+        "pgrp": 48050,
+        "session": 48050,
+        "start_ticks": "931519498"
+      },
+      "controller_and_all_arm_groups_closed": true,
+      "canonical_idle": true,
+      "checkpoints": {
+        "L50": {
+          "path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/artifacts/experiments/CONFIRM_L50/last.pt",
+          "sha256": "54e34236afe94ccfbfb1826497e320335e25b19c2c7cc1c2010f39f8f0f807e9",
+          "metrics_path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/artifacts/experiments/CONFIRM_L50/metrics.json",
+          "metrics_sha256": "a520597321a27c7494a86ffea66e9fa00748e7d8977b1016c42194e8e7e14323",
+          "epoch": 20,
+          "config_sha256": "a213b1c6051c24c13c25b25002fcf4d91320facd7a0459035364a4ecca5a8333",
+          "LR_method_audit": {
+            "LR_method_state_complete": true,
+            "visual_learning_rate": 5e-06,
+            "head_learning_rate": 5e-06,
+            "raw_student_only": true,
+            "teacher_used_for_inference": false,
+            "final_model": "single",
+            "successful_updates": 37163,
+            "full_class_support": true
+          }
+        }
+      },
+      "arm_closure_evidence": [
+        {
+          "arm": "L50",
+          "launch_attempts": [
+            {
+              "start_path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/artifacts/launches/L50_98514c643a4e4e39aafee96dda0dc6dc/START.json",
+              "start_sha256": "d4fbd979827951ddfa67b15a0e67647cfe3853c2c90ed1ab2a598088f847f70c",
+              "exit_path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/artifacts/launches/L50_98514c643a4e4e39aafee96dda0dc6dc/EXIT.json",
+              "exit_sha256": "cb042e077b3a1bc941853911bbcdeb5f893db23a4d6d034d7b38c540342e369d",
+              "return_code": 0,
+              "owner": {
+                "pid": 48115,
+                "pgrp": 48115,
+                "session": 48115,
+                "start_ticks": "931519786"
+              }
+            }
+          ]
+        }
+      ],
+      "shared_phase_context": {
+        "budget": {
+          "schema": "aictrack1.next_cycle10.L50_reused_validation.budget.v1",
+          "root_authorized": true,
+          "phase_start_unix": 1791685340.0435975,
+          "deadline_unix": 1791696140.0435975,
+          "original_initial_free_bytes": 13013950464,
+          "capacity_added_bytes": 32212254720,
+          "adjusted_initial_free_bytes": 45226205184,
+          "actual_disk_total_bytes": 128849018880,
+          "disk_max_bytes": 42949672960,
+          "min_free_bytes": 3221225472,
+          "atomic_reserve_bytes": 2147483648,
+          "capacity_evidence": {
+            "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+            "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+          },
+          "competition_deadline_unix": 1791712738,
+          "test_access": false,
+          "prior_budget_unchanged": true,
+          "reason": "Actual first reused fullcombo positive/rootreview, single new610 L50 fresh20 plus frozen validation; same cumulative40GiB ledger"
+        },
+        "budget_path": "/root/autodl-tmp/AICtrack1_next_cycle_L50_new610_reused_validation_20261011/inputs/budget.json",
+        "budget_sha256": "294083ca1b247e3d651324732eaca588362fa1521f8728a1b414546657992ed7",
+        "training_source_manifest_sha256": "7699f9800d9bfff3265e7598c5ef5998e3bab8790ea6392da0fb67856c3365f0",
+        "independent_confirmation": false,
+        "test_access": false
+      },
+      "test_access": false
+    },
+    "independent_confirmation": false,
+    "old_query_reused_for_exploration": true,
+    "save_features": true,
+    "feature_file": "fused_features.pt",
+    "feature_file_sha256": "71b80cd85825697d03b966183977f52d3e40565a03aa117d0026fc37d67cabc2",
+    "feature_dim": 512,
+    "feature_dtype": "float32",
+    "feature_construction_dtype": "float32",
+    "feature_protocol": "L2_normalize(mean(L2_normalize(raw_visual_each_of_four_views))) in float32 on CPU",
+    "additional_model_forwards": 0
+  }
+}

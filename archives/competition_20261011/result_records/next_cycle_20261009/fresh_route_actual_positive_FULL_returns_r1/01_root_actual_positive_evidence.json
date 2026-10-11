@@ -1,0 +1,142 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_positive_FULL_returns_r1/01_root_actual_positive_evidence.json",
+  "original_sha256": "0044006254b4727070f3743cbf0455a5bdecda152eaec3df30b2da5ff535aea4",
+  "omitted_fields": [
+    "/features"
+  ],
+  "record": {
+    "admission_receipt": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/inputs/admission_receipt.json",
+      "sha256": "25391e7f14d38ca39f27d5475ccdd5519389b1e8fe20f88415991de410fe64af"
+    },
+    "appended_stage_budget": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/shared_retry_append_budget.json",
+      "sha256": "7ddd08c02a7f56e34df665e427c3280f3b34dd682d82464b6791fabad2246571"
+    },
+    "checkpoint_C": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_C/last.pt",
+      "sha256": "4277512e9edc7b552c02c76eb5fb0e211d6615a4fdbed9125a6063028b205aca"
+    },
+    "checkpoint_audit_C": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C/p1_checkpoint_audit.json",
+      "sha256": "1779aa21d0692db8bb323845be0724ee96c905514453f7733915ee63029fa8af"
+    },
+    "checkpoint_audit_candidate": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/p1_checkpoint_audit.json",
+      "sha256": "051b0d32b4197ef79d250cdff57fd9d0983a052e9ea39f20c598cdef995183af"
+    },
+    "checkpoint_candidate": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/experiments/FRESH_J5/last.pt",
+      "sha256": "456301b611d579c2be414eb49f28176b4ae942ec6a040c3d9d01baff52f2781c"
+    },
+    "config_C": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_C.yaml",
+      "sha256": "4cf0d7d79d81a256848f09347e2a18e400f5bb7c053a1240542850c54df93cd6"
+    },
+    "config_candidate": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/configs/experiment/p1_J5.yaml",
+      "sha256": "a65f60e974c04842e2c86975ab3675aad8469bc1b0c0a27a98e8fa145b4b8562"
+    },
+    "continuation_completion": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/COMPLETE.json",
+      "sha256": "f4790240a236750769aa3f0c44850c19340d364a5ee8b99504321dc26889b79b"
+    },
+    "continuation_operator_source": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/source_manifest.json",
+      "sha256": "bbc9bf667b323d20b2425550494b253f3dc4d8454cc639bda925dd4bc38aa9b2"
+    },
+    "diagnostic_source": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/source_manifest.json",
+      "sha256": "01949375a866775cd141ded72e06afdb0b1922dd5aa60702cb7fea3b5fbc5ec1"
+    },
+    "disk_expansion_recovery": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "fixed_graph_protocol": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/fixed_graph_protocol.json",
+      "sha256": "1b713d7989d7e9077f81e92768f3fd798f76f21bf14034446170f540981688b3"
+    },
+    "frozen_postprocess": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/frozen_postprocess.json",
+      "sha256": "90f35a5d47276f82d3e547ecd59caec32c00dbf722e326bd1273c68cf9b8b4a7"
+    },
+    "graph_budget": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/graph_budget_snapshot.json",
+      "sha256": "32774e6d6e377d95af10378c99bc6fd39bbeed7e252d420c2198113919262561"
+    },
+    "graph_source": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_graph_20261009/source_manifest.json",
+      "sha256": "5748cf07c01bd8bf3d68bf5b50065303d2c8990260b00400e5511593aaa0834c"
+    },
+    "h1": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009/artifacts/experiments/confirmation_H1/last.pt",
+      "sha256": "e88a1cbbaa8d9ebdbf1c7cf2707ac434cf440fac8bd5b4a5dc57893ba0fe15be"
+    },
+    "h1_receipt": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009/artifacts/experiments/confirmation_H1/h1_receipt.json",
+      "sha256": "06c762c1828915fd579fcc338ade3177f5eff96be742c9650e265845ce6f7d73"
+    },
+    "h1_source": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009/source_manifest.json",
+      "sha256": "448a2b2a293cb3a7a51f7bd9b5fad7afde9f2cae196bc951485dedfa98511d2c"
+    },
+    "identity_C": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C/input_identity.json",
+      "sha256": "cfdd57601bb6d28b00b2343b2dfbe9d341963576f2ddd29c07e81d69ad83834a"
+    },
+    "identity_candidate": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/input_identity.json",
+      "sha256": "1d23b0729dadfbfb37fcf1807601b1e73c22cdf8c5ee270fb74d5306750ba6df"
+    },
+    "original_fresh_budget": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/artifacts/queues/fresh_route_budget.json",
+      "sha256": "dcc939b93c76c7f91d13d3c67f8e1d317aea818864abfae1d1c1f5eac8287941"
+    },
+    "original_shared_budget": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/shared_append_budget.json",
+      "sha256": "ee50f2149b5b08be1a9dcf7abc706fc977345ece3cf455b0ef8f2ed1abf5f9ed"
+    },
+    "paired_report": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/paired/fixed_graph_J5_vs_C/report.json",
+      "sha256": "e59d9972dcdc4f37be8e51882f087c03c660aa744e9b0f947dd88e1412cf8cd8"
+    },
+    "partial_restore_audit": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/CPU_CHECKPOINT_AUDIT.json",
+      "sha256": "4ba583041669742a85c98697834069cbe2fe4a56ac05e53ba25ceae63837b11d"
+    },
+    "prior_failure": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/attempt/FAILURE.json",
+      "sha256": "b47f82f076fe9d9a284160a1e5f9a478b731a25cee19ae55e478b3284fe39a32"
+    },
+    "root_review": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/root_actual_positive_review.json",
+      "sha256": "2f0d386d4bde7cb99b21750eb09d66719417da4fd7f0c42238605e5e2074cde5"
+    },
+    "runtime_C": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_C/runtime_receipt.json",
+      "sha256": "30673762a26e89a27f6b86b25556c6697947fef3301195bd9f235cc170300d91"
+    },
+    "runtime_candidate": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/artifacts/diagnostics/FRESH_J5/runtime_receipt.json",
+      "sha256": "a1a79377ea0e3c6e7eabfe8b1f21a5b0bba87be6325d5ac7f2cf30733af9f3f1"
+    },
+    "selection_protocol": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_append_diagnostic_r1_20261009/selection_protocol.json",
+      "sha256": "7b00f0c7927757d45fe10e3cdee6fc62954d88ea6d0a4e11790a4acf6a53e21d"
+    },
+    "split": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_confirm_20261009/inputs/confirmation_split.csv",
+      "sha256": "57189c0bd5bf195fc9d582663eb1b31282448e82ab99ca068c76c53097a658b7"
+    },
+    "terminal_restore_audit": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_retry_continuation_r1_20261009/attempt/TERMINAL_CPU_AUDIT.json",
+      "sha256": "205c1b3841daff38a9ff5a102728f6cb041a2d53da6b253dc28daeb74eeca5ee"
+    },
+    "training_source": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_20261009/source_manifest.json",
+      "sha256": "4fc8e1420cf9347e79f7a0f607cd49a2f28735900de52477091324c06a0b8482"
+    }
+  }
+}

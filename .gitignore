@@ -76,3 +76,10 @@ access-token*.json
 .idea/
 Thumbs.db
 .DS_Store
+
+# Local read-only scratch directories and competition-image review material
+/.pytest-tmp*/
+/tmpocj363hg/
+/reports/review_20261008/unlabeled_test_12_views.jpg
+/reports/review_20261008/unlabeled_test_12_manifest.json
+/reports/storage_20260927/

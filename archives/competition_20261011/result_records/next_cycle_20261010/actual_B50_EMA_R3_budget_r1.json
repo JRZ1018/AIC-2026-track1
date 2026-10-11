@@ -1,0 +1,48 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_B50_EMA_R3_budget_r1.json",
+  "original_sha256": "57dd9a03a74155a90e92fa100ac3972fad853cb53f7060da1438c2ae2981870e",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.B_EMA.exploration.budget.v1",
+    "root_authorized": true,
+    "phase_start_unix": 1791599020.6622107,
+    "deadline_unix": 1791599920.6622107,
+    "original_initial_free_bytes": 13013950464,
+    "capacity_added_bytes": 32212254720,
+    "adjusted_initial_free_bytes": 45226205184,
+    "actual_disk_total_bytes": 128849018880,
+    "disk_max_bytes": 32212254720,
+    "min_free_bytes": 3221225472,
+    "atomic_reserve_bytes": 2147483648,
+    "final_gpu_reserve_hours": 4,
+    "test_access": false,
+    "capacity_evidence": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_continuation_20261009/root_actual_disk_expansion_recovery_receipt.json",
+      "sha256": "ba819e4b72731e810743deb1b4b4849eb070e8c664187aeaf255ab3840a78e52"
+    },
+    "source_sha256": "7aa82c8b95b15093252b5c3192cfe85a63803a6d5f77b802185d4a92b1216045",
+    "stage_receipt_sha256": "47eb0334406a1faa03efc5b7f70bfb0cec7d7a248bee75bd688c3820f61a9a16",
+    "independent_CPU_evidence": [
+      "413c78",
+      "527723",
+      "ec82d2",
+      "7b2e89"
+    ],
+    "prior_failed_phase": {
+      "source": "ccb80c64efcaad9a85951363cdcb9dfeb16bca5d47dd735e6fa5c04d8c50f34b",
+      "budget_sha256": "c905d9f877527f1878a3e9bb1f25c4585553234586cc9bc3a540be6834b0e60a",
+      "failure": "EMA incorrectly compared with actual parent raw center metric",
+      "process_closed": true
+    },
+    "B25_R2_negative_retained_no_rerun": true,
+    "human_latest_message": "仅剩32小时，加速推进至下一提交包；全部既有服务器和训练测试权限持续有效",
+    "human_latest_deadline_anchor_unix": 1791597538.0,
+    "human_remaining_wall_seconds": 115200,
+    "old_training_clock_or_ledger_modified": false,
+    "model_roles": [
+      "B50_EMA"
+    ],
+    "no_student_teacher_blend": true
+  }
+}

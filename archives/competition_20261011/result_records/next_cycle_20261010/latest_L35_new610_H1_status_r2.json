@@ -1,0 +1,69 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_L35_new610_H1_status_r2.json",
+  "original_sha256": "ac059dde69a9b2c80434811a9f1b7da3c4daac17be7ca1b2e1904633afb0c667",
+  "omitted_fields": [
+    "/stdout"
+  ],
+  "record": {
+    "controller_group": [],
+    "canonical": null,
+    "receipt": {
+      "actual_cpu_optimizer_scheduler_scaler_model_rng_restored": true,
+      "checkpoint_sha256": "4073c5b58f5993373f1678f714342d829fdb6c2d092cf60cf1ebfa7aa0083980",
+      "complete": true,
+      "cuda_rng_serialized": true,
+      "epoch": 100,
+      "fresh_feature_extraction": false,
+      "original_feature_identity_sha256": "5d6cc1924e8f9f521e8dd8a77533a4385e3d30f4ad7c72facfe398af538d1fac",
+      "row_binding": {
+        "all_rows_sha256": "d385a67539bd68eadbd059228fcf323be4253c57743ce04cebca7fa90648da42",
+        "counts": {
+          "train": 118958,
+          "validation": 29737
+        },
+        "schema": "aictrack1.mainline.h1.rows.v1",
+        "train_rows_sha256": "2431db0951a99e2676de51d932055910b35480749a02021efce24cb9045e09b5",
+        "validation_rows_sha256": "6613539d2290df22aa96435d3b2a3c3ab1922dd8f64a28e9eb3b16f46545d9bb",
+        "validation_used_for_optimization_or_selection": false
+      },
+      "runtime": {
+        "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+        "MKL_NUM_THREADS": "4",
+        "OMP_NUM_THREADS": "4",
+        "torch_num_threads": 4
+      },
+      "scope": "fold_train_fixed_final_epochs",
+      "source_sha256": "4c5f1cb814765d5e2307012dce8be07b7b9321380a90029327d1c453b8676fdd",
+      "split_sha256": "610111665e1055bcda7157add15b16ade353138365e54ee87dc92316e6dfd6f1",
+      "terminal_cache_parity_top1": 0.6619362831115723,
+      "test_access": false,
+      "train_count": 118958,
+      "training_seed": 20261008,
+      "validation_count": 29737,
+      "validation_selection": false
+    },
+    "last_actual_sha256": "4073c5b58f5993373f1678f714342d829fdb6c2d092cf60cf1ebfa7aa0083980",
+    "launches": [
+      {
+        "owner": {
+          "pid": 18760,
+          "pgrp": 18760,
+          "session": 18760,
+          "start_ticks": "926334817"
+        },
+        "group": [],
+        "exit": {
+          "owner": {
+            "pid": 18760,
+            "pgrp": 18760,
+            "session": 18760,
+            "start_ticks": "926334817"
+          },
+          "return_code": 0,
+          "group_closed": true
+        }
+      }
+    ]
+  }
+}

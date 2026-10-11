@@ -1,0 +1,25 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_L35_resource_and_scope_decision_r1.json",
+  "original_sha256": "0c80601c803260a94eba538706912e8610c909fb658d5bbecc8a26447063905a",
+  "omitted_fields": [],
+  "record": {
+    "root_authorized": true,
+    "why": "AFA主-4/-4，停止其准入；改一个原J5视觉学习率点，非叠加新机制",
+    "visual_lr_before": 1.75e-06,
+    "visual_lr_candidate": 3.5e-06,
+    "other_science_changes": false,
+    "same_oldfold_exploratory_hardware_migration_disclosed": true,
+    "max_new_remaining_candidate_points": 1,
+    "training_plus_validation_hours": 4,
+    "shared_cumulative_cap_before_GiB": 30,
+    "explicit_cap_after_GiB": 36,
+    "original_adjusted_baseline_bytes": 45226205184,
+    "baseline_reset": false,
+    "confirmation_reserve_hours": 7,
+    "final_wall_reserve_hours": 8,
+    "competition_deadline_unix": 1791712738,
+    "independent_positive_required_for_full": true,
+    "test_access": false
+  }
+}

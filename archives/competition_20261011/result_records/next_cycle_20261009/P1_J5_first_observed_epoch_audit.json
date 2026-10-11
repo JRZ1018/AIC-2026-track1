@@ -1,0 +1,48 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/P1_J5_first_observed_epoch_audit.json",
+  "original_sha256": "bab9479105ea35cec011b5a06218604799fa3177fc5823efa11994a1502712b5",
+  "omitted_fields": [],
+  "record": {
+    "schema": "aictrack1.p1.real_epoch_audit.v1",
+    "status": "passed",
+    "arm": "J5",
+    "checkpoint_sha256": "04fa4e581c5dce59b759c2989d35878dd5be669382cc9e2ea9c583538a56012e",
+    "epoch": 1,
+    "config_sha256": "69b2345a6cd79974ce23bbbcd09429ff60adea6d04ea0a2f68e7cef30dd9ab0a",
+    "head_initializer_sha256": "45266a98329a59f708b12f394775640e032e50be8c44077a1037048f28c88753",
+    "head_max_abs_change_from_initializer": {
+      "classifier.linear.bias": 0.0014429092407226562,
+      "classifier.linear.weight": 0.002361297607421875
+    },
+    "optimizer_param_tensor_counts": [
+      152,
+      2
+    ],
+    "actual_lrs": [
+      1.7392272980207455e-06,
+      4.9692208514878445e-06
+    ],
+    "expected_lrs": [
+      1.7392272980207455e-06,
+      4.9692208514878445e-06
+    ],
+    "scheduler_T_max": 20,
+    "gradient_diagnostics": {
+      "pre_clip_finite_norm_mean": 74.69110870361328,
+      "pre_clip_finite_norm_max": 153.51174926757812,
+      "finite_norm_clip_fraction": 1.0,
+      "all_finite": false,
+      "nonfinite_norm_count": 4,
+      "initial_scaler_scale": 65536.0,
+      "final_scaler_scale": 4096.0,
+      "note": "raw nonfinite gradients may be normal AMP overflow; scaler skips such optimizer steps; inspect separately",
+      "batch_count": 1859,
+      "diagnostic_only": true
+    },
+    "train_seconds": 336.46136675123125,
+    "cpu_only": true,
+    "test_access": false,
+    "audit_source_sha256": "3abac40499eb777db7e351097482600a76fc6a5a8a46d13484d472ae329dfdc8"
+  }
+}

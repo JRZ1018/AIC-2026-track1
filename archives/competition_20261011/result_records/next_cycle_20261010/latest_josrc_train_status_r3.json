@@ -1,0 +1,261 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/latest_josrc_train_status_r3.json",
+  "original_sha256": "91a9d4a01469f740cbc7c5dfad4e613d639cfc5608e47e46a48485f2fc3a8bdf",
+  "omitted_fields": [
+    "/canonical/command",
+    "/processes/argv",
+    "/receipts/artifacts/launches/B25_48e80f7518724b72b13b2ed3bd54b1cd/START.json/value/command",
+    "/receipts/root_actual_CPU_preflight.json/value/stderr",
+    "/receipts/root_actual_CPU_preflight.json/value/stdout",
+    "/receipts/root_actual_launch.json/value/command",
+    "/receipts/root_actual_launch.json/value/process/argv"
+  ],
+  "record": {
+    "observed_unix": 1791562726.0807278,
+    "execution_root": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010",
+    "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+    "processes": [
+      {
+        "pid": 19633,
+        "ppid": 1,
+        "pgrp": 19633,
+        "session": 19633,
+        "start_ticks": "313580709",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19640,
+        "ppid": 19633,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313580985",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19657,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582534",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19658,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582535",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19659,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582536",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19660,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582537",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19661,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582541",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19662,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582542",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19663,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582542",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19664,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313582543",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19738,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313589739",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19739,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313589742",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19740,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313589744",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19741,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313589746",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19742,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313589747",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19743,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313589749",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19744,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313589751",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      },
+      {
+        "pid": 19745,
+        "ppid": 19640,
+        "pgrp": 19640,
+        "session": 19640,
+        "start_ticks": "313589752",
+        "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+      }
+    ],
+    "canonical": {
+      "config": "configs/experiment/p1_B25.yaml",
+      "output_dir": "artifacts/experiments/JOINT_B25",
+      "owner": "20261010-josrc-inspired-profile-or-selected20",
+      "queue_pid": 19633,
+      "schema_version": 1,
+      "started_at": "2026-10-10T00:09:17.182364+08:00",
+      "token": "83a0353ce2c442db94a9bbf656fdd8b7",
+      "trainer_pid": 19640
+    },
+    "logs": {
+      "root_stdout.log": "[2026-10-10 00:09:17] 20261010-josrc-inspired-profile-or-selected20 start\n[2026-10-10 00:09:17] B25: starting - JoSRC-inspired B true-data profile100 or selected full20 student",
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/chain.log": "[2026-10-10 00:09:17] 20261010-josrc-inspired-profile-or-selected20 start\n[2026-10-10 00:09:17] B25: starting - JoSRC-inspired B true-data profile100 or selected full20 student",
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/B25.log": "/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read\n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images\n  warnings.warn(\n/root/autodl-tmp/venvs/aictrack1/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 2. \n  warnings.warn(str(msg))"
+    },
+    "epoch_summaries": {
+      "root_stdout.log": {
+        "read_full_log": true,
+        "total_bytes": 177,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/chain.log": {
+        "read_full_log": true,
+        "total_bytes": 177,
+        "observed_epochs": [],
+        "latest": []
+      },
+      "artifacts/queues/88226846e50f4956ae41a0b4290129b0/B25.log": {
+        "read_full_log": true,
+        "total_bytes": 3610,
+        "observed_epochs": [],
+        "latest": []
+      }
+    },
+    "checkpoint_stats": {},
+    "receipts": {
+      "root_actual_CPU_preflight.json": {
+        "sha256": "1b000fbf1142472c648a174de22978b85aca80396ef232462585fd44a7af1a73",
+        "value": {
+          "complete": true,
+          "actual_server_CPU_preflight": true,
+          "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "GPU_started": false,
+          "observed_unix": 1791562142.0709138
+        }
+      },
+      "root_actual_launch.json": {
+        "sha256": "00e09eccdd25c854848cd9dbbc817799bb3a913a2137984ce27517b91f76fb19",
+        "value": {
+          "mode": "train",
+          "process": {
+            "pid": 19633,
+            "ppid": 19632,
+            "pgrp": 19633,
+            "session": 19633,
+            "start_ticks": "313580709",
+            "cwd": "/root/autodl-tmp/AICtrack1_next_cycle_josrc_soft_20261010"
+          },
+          "bound_source_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "launch_unix": 1791562154.430007,
+          "test_access": false
+        }
+      },
+      "artifacts/launches/B25_48e80f7518724b72b13b2ed3bd54b1cd/START.json": {
+        "sha256": "d6c14134d2e1ec2b1fc5fcf16344851a1b910486df028d2ad06075661d4977ca",
+        "value": {
+          "owner": {
+            "pid": 19640,
+            "pgrp": 19640,
+            "session": 19640,
+            "start_ticks": "313580985"
+          },
+          "source_manifest_sha256": "f5a402ede5f2e83c2948e358e56eeb5359fec8699712aa7ec2caa880a345c7f9",
+          "config_sha256": "41ee96e1e912e7e8f4cbf73d17518a29eeda91751657da47e075cfb10df3ac41",
+          "lease_token": "83a0353ce2c442db94a9bbf656fdd8b7",
+          "test_access": false
+        }
+      }
+    },
+    "disk": {
+      "/root": {
+        "total": 32212254720,
+        "used": 21616975872,
+        "free": 10595278848
+      },
+      "/root/autodl-tmp": {
+        "total": 128849018880,
+        "used": 97993641984,
+        "free": 30855376896
+      }
+    },
+    "cgroup": {
+      "/proc/self/cgroup": "12:perf_event:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n11:devices:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n10:hugetlb:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n9:freezer:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n8:memory:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n7:rdma:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n6:blkio:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n5:net_cls,net_prio:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n4:pids:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n3:cpu,cpuacct:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n2:cpuset:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n1:name=systemd:/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n0::/docker/c2b16cf0e89cb806140db4e333b956dc61dfcd0b510898aaa685662d76db0884\n"
+    },
+    "gpu": "5192 MiB, 89 %"
+  }
+}

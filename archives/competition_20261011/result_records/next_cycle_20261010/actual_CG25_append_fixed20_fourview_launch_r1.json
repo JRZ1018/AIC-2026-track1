@@ -1,0 +1,27 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261010/actual_CG25_append_fixed20_fourview_launch_r1.json",
+  "original_sha256": "9556f2b20c95847348bd71f2f06d02dcbf22acfda15bd8df5518d1af80bd1969",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "controller": {
+      "pid": 5910,
+      "state": "R",
+      "ppid": 5907,
+      "pgrp": 5910,
+      "session": 5910,
+      "start_ticks": "924079451"
+    },
+    "actual_last20_sha256": "afb1d33152e61bff7fbf015d6a87e3a5d835b6bb189aa23daff775bc344ce652",
+    "actual_final20_sha256": "bab3d3f250ae836a2bf8e38af3a412d51f9de3c24a6e94acc57c27bdc2e2f9cf",
+    "actual_metrics_sha256": "f55473580058fab904aed49aef4115b0b77436b704b98937b2018c61e0b32504",
+    "source_manifest_sha256": "58eb183cf31a47a34b99eb5a490a93dd724c26db591bda95cbf7628d0c0a7987",
+    "append_budget_sha256": "5425b5852aa5e61c6b845b5ea43a69f2cdc47cf3d2581213d2bbc30346dd9f97",
+    "launch_unix": 1791610991.423557,
+    "actual_all_train_groups_closed": true,
+    "canonical_idle_before_launch": true,
+    "test_access": false
+  }
+}

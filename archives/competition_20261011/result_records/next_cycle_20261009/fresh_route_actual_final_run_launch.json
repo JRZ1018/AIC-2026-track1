@@ -1,0 +1,30 @@
+{
+  "archive_schema": "aictrack1.sanitized_result_record.v1",
+  "original_relative_path": "artifacts/next_cycle_20261009/fresh_route_actual_final_run_launch.json",
+  "original_sha256": "b320114123befafae6931f2ef1127f7a20871d89e60ee37b9dbbb1abfc7ca4f4",
+  "omitted_fields": [
+    "/command"
+  ],
+  "record": {
+    "root": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009",
+    "source_manifest_sha256": "f7e3a64ed65631d84d91fe8fbaea3b2830638f9085ad7cce9a8e7b2f0ed39174",
+    "actual_CPU_audit": {
+      "path": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/artifacts/full_final_cpu_audit.json",
+      "sha256": "9fa62244fbaf27b5a64ed6869c06e2665c558a21874019eec3d9ce616e00e604"
+    },
+    "controller": {
+      "pid": 6595,
+      "pgrp": 6595,
+      "session": 6595,
+      "start_ticks": "311045598"
+    },
+    "actual_launch_unix": 1791536803.3146317,
+    "deadline_unix": 1791544003.3146317,
+    "log": "/root/autodl-tmp/AICtrack1_next_cycle_fresh_route_final_20261009/root_actual_final_stdout.log",
+    "test_used_for_training": false,
+    "model_parameter_updates": 0,
+    "checkpoint_selection": "fixed FULL20 final",
+    "selected_route": "J5_GRAPH",
+    "source_git_commit": "b278f5bfa370fe3fb121f16e2baca3f24d8ecd62"
+  }
+}
