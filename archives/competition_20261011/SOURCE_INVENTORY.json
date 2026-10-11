@@ -24700,32 +24700,42 @@
     {
       "source": "AIC-2026-43080930-可复现的代码与运行说明文档\\README.md",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-可复现的代码与运行说明文档/README.md",
-      "bytes": 5078,
-      "sha256": "94443c1f5ee32c5f94a0c8d23f666363817c88dfbfa213362e5ff7cb64042e55"
+      "bytes": 5072,
+      "sha256": "dba631700d4d918f4c6262a6ace0ee343feaecefa7415066efb619cc0850a93c",
+      "pre_redaction_sha256": "94443c1f5ee32c5f94a0c8d23f666363817c88dfbfa213362e5ff7cb64042e55",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-可复现的代码与运行说明文档\\THIRD_PARTY_NOTICES.md",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-可复现的代码与运行说明文档/THIRD_PARTY_NOTICES.md",
-      "bytes": 3331,
-      "sha256": "3498d373e8baa1bb9d525435a72d217b2529d8bf91b91fb62438557c4aad4b29"
+      "bytes": 3329,
+      "sha256": "3ec658e3c268a7b773bbcbf1e98d85d8d901f25987f0ea7f5ea4c3c2e35d9120",
+      "pre_redaction_sha256": "3498d373e8baa1bb9d525435a72d217b2529d8bf91b91fb62438557c4aad4b29",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-可复现的代码与运行说明文档\\运行说明.md",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-可复现的代码与运行说明文档/运行说明.md",
-      "bytes": 10970,
-      "sha256": "b07568284b1b810d5d4a9616c9000b9e476795b26efae339b1a9570e3cced7b1"
+      "bytes": 10966,
+      "sha256": "9a682852da54b6eee68bf89c666b0e9b3cd12edb7d6938ae9b051277d5696659",
+      "pre_redaction_sha256": "b07568284b1b810d5d4a9616c9000b9e476795b26efae339b1a9570e3cced7b1",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-可复现的代码与运行说明文档\\运行说明.pdf",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-可复现的代码与运行说明文档/运行说明.pdf",
-      "bytes": 170650,
-      "sha256": "238762a515b55a28f1a7c33eb54ca335da9100215ad551768d907d04d3bc6c38"
+      "bytes": 170894,
+      "sha256": "903c8a38bb0e54fb075ba1a1167a61bdb68b4d82bcc8533b76e49f79ffc08f66",
+      "pre_redaction_sha256": "238762a515b55a28f1a7c33eb54ca335da9100215ad551768d907d04d3bc6c38",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-可执行模型文件或容器化复现环境\\CONTAINER.md",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-可执行模型文件或容器化复现环境/CONTAINER.md",
-      "bytes": 3371,
-      "sha256": "e763e3cc2905ebd591c902f21d3f07d0fac1806ee388bc313ad7c39b3c09dfe2"
+      "bytes": 3369,
+      "sha256": "831658d8672483fcaf3f26b88253ec3d3f20a8d6bd7d25474e4596dc7c33bfe8",
+      "pre_redaction_sha256": "e763e3cc2905ebd591c902f21d3f07d0fac1806ee388bc313ad7c39b3c09dfe2",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-可执行模型文件或容器化复现环境\\Dockerfile",
@@ -24754,14 +24764,18 @@
     {
       "source": "AIC-2026-43080930-可执行模型文件或容器化复现环境\\README.md",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-可执行模型文件或容器化复现环境/README.md",
-      "bytes": 2766,
-      "sha256": "ecd8d4c394944165b723594b0502788c8b22015dfc5a9365c70471c961fe32f6"
+      "bytes": 2764,
+      "sha256": "b459e1172bf3bc016ba55cd0618460ed75b96f22c5fb450d903c0d26edbce92e",
+      "pre_redaction_sha256": "ecd8d4c394944165b723594b0502788c8b22015dfc5a9365c70471c961fe32f6",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明\\README.md",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明/README.md",
-      "bytes": 1976,
-      "sha256": "a2dffb8ef66a776520c965109fdabb77b4d3025b0d29c702d2df2bf1b598be15"
+      "bytes": 1974,
+      "sha256": "410dccfc004343cdc39f1f8ce66b5a93856efc6f61181a149787c1d00ae60d2c",
+      "pre_redaction_sha256": "a2dffb8ef66a776520c965109fdabb77b4d3025b0d29c702d2df2bf1b598be15",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明\\requirements-cpu.txt",
@@ -24778,20 +24792,26 @@
     {
       "source": "AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明\\TRAINING.md",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明/TRAINING.md",
-      "bytes": 8730,
-      "sha256": "242ca8c1d042ddb1ac19db75d9a9b2187f72b26d8517f4d9fcc96ace43c32504"
+      "bytes": 8728,
+      "sha256": "3346b39a3489cc4f247e9818f3b2217c62700968ed7d088223e1e93f8ae29822",
+      "pre_redaction_sha256": "242ca8c1d042ddb1ac19db75d9a9b2187f72b26d8517f4d9fcc96ace43c32504",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明\\环境与来源说明.md",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明/环境与来源说明.md",
-      "bytes": 8918,
-      "sha256": "df0e19ad1830c8f69c699ab70a84955bb8c2a79bf43ca6925d44cf5ba8ba7b47"
+      "bytes": 8916,
+      "sha256": "a931dfc55d61372d39a8cdb7f05416e1582b1d91efddbcec37251365f6adaa29",
+      "pre_redaction_sha256": "df0e19ad1830c8f69c699ab70a84955bb8c2a79bf43ca6925d44cf5ba8ba7b47",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明\\环境与来源说明.pdf",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明/环境与来源说明.pdf",
-      "bytes": 111055,
-      "sha256": "640db406337ad7f98413ebc45feba257881a88c2c792c6b74910fc96fe15dace"
+      "bytes": 110927,
+      "sha256": "9ce065eb0da7521b3c6ade5f15c1e5ba0140aff26313bcc72bcd46bc92865232",
+      "pre_redaction_sha256": "640db406337ad7f98413ebc45feba257881a88c2c792c6b74910fc96fe15dace",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明\\configs\\L35-scientific-protocol.yaml",
@@ -24802,8 +24822,10 @@
     {
       "source": "AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明\\environment\\README.md",
       "archive_path": "archives/competition_20261011/L35_submission_source/AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明/environment/README.md",
-      "bytes": 2643,
-      "sha256": "dffa246fe299152464c14ee7b78f6feb0ede4017cf75e9246cdcdcf2fe5bd4fa"
+      "bytes": 2641,
+      "sha256": "9a2686549fcc244c618b61049df3bf3edbecaeec0d4f26e5197e18f17b7afa10",
+      "pre_redaction_sha256": "dffa246fe299152464c14ee7b78f6feb0ede4017cf75e9246cdcdcf2fe5bd4fa",
+      "privacy_redacted": true
     },
     {
       "source": "AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明\\environment\\requirements-original-lock.txt",
@@ -26401,5 +26423,6 @@
       "bytes": 326,
       "sha256": "1241a9bdf4a2dcd26e2faeb64571c19669d3d6ea0b7b6240715b3d9b7c0e7d45"
     }
-  ]
+  ],
+  "public_identity": "JRZ1018"
 }

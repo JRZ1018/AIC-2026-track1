@@ -3057,6 +3057,8 @@
   {
     "path": "archives/competition_20261011/result_records/next_cycle_20261010/STATE.json",
     "original_sha256": "bcef474c37d27fe037fd9e6b7a99684a46fd4f79b59458ec685ebcbe9056743b",
-    "sha256": "0e9881a820038f1ced9ff545dd8a8de9c96c39177d9a12b32378ed74f07563dd"
+    "sha256": "746e56cc72305c767a1f5139ebc6d97c7475133cb9671ebc92de81a6745ff800",
+    "pre_redaction_archive_sha256": "0e9881a820038f1ced9ff545dd8a8de9c96c39177d9a12b32378ed74f07563dd",
+    "privacy_redacted": true
   }
 ]
