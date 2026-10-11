@@ -1,117 +1,211 @@
-# AIC 算法挑战赛：噪声标签细粒度图像识别鲁棒微调
+# AIC 2026 · 噪声标签细粒度图像识别
 
-本目录为本道赛题的主工作文件夹。
+**L35_GRAPH — Robust Fine-tuning with OpenAI CLIP ViT-B/32**
 
-## 2026-10-11 最终作品与恢复
+面向第八届全球校园人工智能算法精英大赛复赛的图像识别项目。以 OpenAI 官方 CLIP ViT-B/32 为骨干，通过鲁棒损失、训练历史置信度加权与视觉编码器联合微调学习细粒度类别，再以同一模型的固定四视图预测、特征图传播和类别均衡后处理生成结果。
 
-最终作品采用 L35_GRAPH，用户报告复赛最高成绩为 **69.6773848947762**。项目源码、研究配置、台账、技术报告与冻结科学代码归档已整理。
+本仓库保存完整研发代码、实验配置、验证记录与最终 L35 复现源码；配套作品提供模型权重、运行环境、冻结推理缓存和对应提交结果。
 
-- [从 GitHub 与 F2 恢复项目](docs/恢复与继续工作_20261011.md)
-- [最终 L35 技术报告](reports/20261011_L35_final_technical_report.md)
-- [复赛源码归档](archives/competition_20261011/README.md)
-- [历史技术报告 Word](docs/技术报告.docx)
+| 项目 | 内容 |
+| :--- | :--- |
+| 参赛团队 | 两股王霸之气 |
+| 团队编号 | AIC-2026-43080930 |
+| 提交人 | 张延瑞 |
+| 最终方案 | **L35_GRAPH**，单模型、固定第 20 轮参数 |
+| 复赛最高 Top-1 | **69.6773848947762**（参赛者提供的排行榜成绩） |
+| 数据规模 | 148,695 张训练图片 · 750 类 · 37,444 张测试图片 |
 
-完整模型、容器镜像、提交 CSV/ZIP 及复现资产保存在独立的最终作品文件夹，按恢复说明与 GitHub 源码配合使用。下文各阶段记录保留其原始日期与实验语境。
+[方法](#方法概览) · [结果](#验证结果) · [下载](#代码数据与完整作品) · [快速复现](#快速复现) · [训练与验证](#训练与验证) · [文档](#文档与研究记录)
 
-- 官方赛道通知：[3629](https://www.aicomp.cn/notice/notice-1/3629.html)
-- 赛题规则：[3714](https://www.aicomp.cn/tracks/tracks-1/3714.html)
-- 资料提取日期：2026-09-09
+## 方法概览
 
-## 开始工作前
+最终方案围绕一条可复现的训练与推理链组织：
 
-1. 阅读根目录 [`AGENTS.md`](AGENTS.md)。
-2. 阅读 [`docs/HANDOFF.md`](docs/HANDOFF.md)。
-3. 阅读两份规则摘要与 [`docs/赛题规则.pdf`](docs/赛题规则.pdf)。
-4. 按 [`docs/00_获奖导向总体工作计划.md`](docs/00_获奖导向总体工作计划.md) 的门禁顺序执行。
-5. 对规则有疑问时，先登记到 [`docs/compliance_questions.md`](docs/compliance_questions.md)，未经确认采用保守解释。
-6. 开始 P3 或 M1-M5 前，检查 [`docs/04_上游方案调研与复用登记.md`](docs/04_上游方案调研与复用登记.md) 和 [`docs/upstream_registry.yaml`](docs/upstream_registry.yaml)。
-7. 换机开发按 [`docs/16_换机迁移与恢复指南.md`](docs/16_换机迁移与恢复指南.md) 分离 GitHub 源码和 U 盘私有状态，并逐文件校验 SHA-256。
-8. 两台电脑并行开发按 [`docs/17_双人协作与训练执行交接手册.md`](docs/17_双人协作与训练执行交接手册.md) 执行：A 负责核心研发与提交，B 只执行冻结训练任务单。
-
-## 当前状态
-
-- 初赛官方数据已取得，保存在本地 `DataSetStage1/`；该目录整体由 Git 忽略，训练集和测试集必须严格隔离。
-- 已验证 OpenAI CLIP ViT-B/32 权重及 RTX 4060 Laptop GPU CUDA 环境。
-- P0/P0.5 治理以及 P1/P2 合成工程验收已完成。
-- 初赛数据只读审计、固定划分、冻结特征基线、模拟提交闭环和 A2/A3 鲁棒损失对照均已完成。
-- P3 全量训练特征与 A0/A1 已完成；A1 余弦头以 67.909% noisy-validation Top-1 成为后续统一基线，详见 [`docs/12_P3_A0_A1_正式基线报告.md`](docs/12_P3_A0_A1_正式基线报告.md)。
-- PEFT/M0 已完成：冻结 A1 分类头、只训练最后视觉注意力 rank-4 LoRA 三轮，固定验证集 Top-1 为 68.4282%、macro 为 68.4163%；下一工作包为 M1 类内可信度，详见 [`docs/14_P3_PEFT资源与短程筛选报告.md`](docs/14_P3_PEFT资源与短程筛选报告.md)。
-- 严格冻结头的 M0 v2 为 68.3894%；M1 类内历史软权重单种子最佳为 68.4427%，暂选为首次真实提交模型，详见 [`docs/15_M1首轮筛选与首次提交选模报告.md`](docs/15_M1首轮筛选与首次提交选模报告.md)。该微小增益仍需多种子确认。
-- 首份真实提交包已生成在 `submissions/20260911_m1_first/`，24,967 行并通过严格本地校验；尚未上传，记录见 `submissions/ledger.csv`。
-- 正式训练、全量特征提取或其他大量占用系统资源的过程，必须先报告预计高占用时间和资源，再等待用户批准。
-
-## 治理检查
-
-使用项目 Python 运行：
-
-```powershell
-D:\aicomp\python312\python.exe scripts\check_governance.py
+```mermaid
+flowchart LR
+    A[官方 CLIP ViT-B/32] --> B[训练集特征与 H1 分类头]
+    A --> C[视觉编码器与分类头联合微调]
+    B --> C
+    C --> D[固定 epoch 20 单模型]
+    D --> E[四视图 logits 与特征]
+    E --> F[固定图传播与 P7 后处理]
+    F --> G[pred_results.csv]
 ```
 
-检查器会验证上游候选的固定 commit、许可证边界、触发阶段和交付物字段，并阻止数据、权重、密钥或大文件进入 Git 候选集。
+- **鲁棒训练**：SCE 损失与 AC 训练历史置信度加权结合，在保留全部训练样本的基础上调整其学习贡献。
+- **联合微调**：视觉学习率为 `3.5e-6`，分类头学习率为 `5e-6`。L35 与 J5 对照配方的主要差异是视觉学习率由 `1.75e-6` 提高至 `3.5e-6`。
+- **固定模型导出**：从官方视觉权重与同阶段 H1 分类头开始，连续训练 20 轮，导出第 20 轮参数用于推理。
+- **单模型四视图**：同一 checkpoint 执行固定四视图，logits 与特征在同次前向中收集。
+- **冻结后处理**：图传播采用 `k=10`、`λ=0.3`、3 轮、`T=1` 与 `ln4` 保护；P7 参数为 `(0.5, 0.75, 60)`。参数在训练派生验证集上确定，正式测试执行固定推理流程。
 
-只读同步上游参考源码：
+## 验证结果
 
-```powershell
-D:\aicomp\python312\python.exe scripts\manage_upstream_references.py sync
-D:\aicomp\python312\python.exe scripts\manage_upstream_references.py check
+L35_GRAPH 与 J5_GRAPH 使用相同的四视图、图传播和 P7 后处理进行完整流程比较。探索后，在事先冻结的第二份查询上，以相同环境与共同训练种子重新训练两份对照模型进行确认。
+
+| 验证阶段 | 均衡查询净新增正确数 | 均衡提升 / 百分点 | 自然查询净新增正确数 | 自然提升 / 百分点 |
+| :--- | ---: | ---: | ---: | ---: |
+| 第一划分：探索 | +98 / 14,760 | +0.663957 | +238 / 29,737 | +0.800350 |
+| 第二划分：独立确认 | +152 / 14,760 | **+1.029810** | +292 / 29,737 | **+0.981942** |
+
+自然查询保留划分中的全部验证样本；均衡查询由 738 类各 20 张图片构成，其余 12 类因样本不足单独披露。两份查询的样本组互不交叉。第二划分的头部、中部和尾部类别分组收益均为正，逐类结果、配对统计与模型恢复记录随作品保存。
+
+表中数值是训练派生持出数据上的观测标签一致率差值；排行榜成绩来自另一个正式测试集，分别记录于[提交台账](submissions/ledger.csv)和[最终技术报告](reports/20261011_L35_final_technical_report.md)。
+
+## 代码、数据与完整作品
+
+| 资源 | 下载入口 | 提取码 | 内容 |
+| :--- | :--- | :---: | :--- |
+| 项目源码 | [GitHub 仓库](https://github.com/JRZ1018/AIC-2026-track1) | — | 核心实现、配置、研究记录、技术报告、最终源码归档 |
+| 复赛数据集 | [百度网盘](https://pan.baidu.com/s/1C_kRqGXTqDOD8tL_3xQFTg?pwd=5h48) | `5h48` | Stage2 数据集 |
+| 最终 L35 完整作品 · F2 | [百度网盘](https://pan.baidu.com/s/1LCwU24Ger1vaHVbHjQ7adA?pwd=6657) | `6657` | 模型、容器、脚本、元数据、冻结缓存与最高分提交结果 |
+
+完整作品按以下三个目录组织，复现命令均以作品根目录为工作目录：
+
+```text
+AIC-2026-43080930-两股王霸之气-复赛-张延瑞/
+├── AIC-2026-43080930-可复现的代码与运行说明文档/
+│   ├── src/、vendor/、archived/、licenses/
+│   ├── 运行说明.md
+│   └── 提交结果/
+├── AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明/
+│   ├── scripts/、portable_training/、configs/
+│   ├── data/、environment/、evidence/、reproduction_cache/
+│   ├── TRAINING.md
+│   └── requirements-cpu.txt、requirements-cuda.txt
+└── AIC-2026-43080930-可执行模型文件或容器化复现环境/
+    ├── final.pt、last.pt、h1_full100.pt、openai_clip_ViT-B-32.pt
+    ├── container-image.tar
+    ├── Dockerfile、Dockerfile.cuda
+    └── CONTAINER.md
 ```
 
-源码保存在 `references/upstream/` 并被主项目 Git 忽略。同步只检出注册表锁定的 commit，不初始化子模块、不下载 Git LFS 对象，也不安装或运行上游代码。
+GitHub 中的 [L35 源码归档](archives/competition_20261011/L35_submission_source/)保留上述结构中的代码与文档。执行下面的完整复现流程时，下载 F2 作品以取得对应模型、元数据和缓存，并将赛事图片放入作品根下的 `DataSetStage2/`。
 
-## 新电脑恢复
+## 快速复现
 
-公开源码从 GitHub 克隆，官方数据从比赛官方渠道重新获取；权重、checkpoint、审计划分、真实提交包和可选特征缓存通过 U 盘迁移。不要复制旧 Python 环境。完整命令见 [`docs/16_换机迁移与恢复指南.md`](docs/16_换机迁移与恢复指南.md)，依赖版本锁定在 [`requirements-lock.txt`](requirements-lock.txt)。
+### 1. 使用预构建 Docker 镜像
 
-新电脑作为第二训练节点长期协作时，不按两名自由开发者处理。A 统一负责代码、配置、实验决策和测试提交；B 使用任务单指定的 commit 和命令执行长训练、多 seed 与固定消融。权限、Git 流程、产物回传和近期排期见 [`docs/17_双人协作与训练执行交接手册.md`](docs/17_双人协作与训练执行交接手册.md)。
+推荐从完整作品提供的 Linux amd64 CPU 镜像开始。镜像自带代码、模型与冻结缓存，可先验证文件身份，再复现提交 CSV，无需配置宿主机 Python 环境。
 
-## P1/P2 数据与噪声夹具
+以下为 Bash 命令，在下载后的作品根执行：
 
-官方配置模板是 `configs/data/template.yaml`。它只定义显式契约，不代表官方压缩包的真实结构。
+```bash
+MODEL_DIR="AIC-2026-43080930-可执行模型文件或容器化复现环境"
+docker load --input "$MODEL_DIR/container-image.tar"
+docker run --rm aic-l35-cpu python -B scripts/verify_release.py
 
-```powershell
-# 生成完全程序化的细粒度、长尾、噪声标签夹具
-D:\aicomp\python312\python.exe scripts\generate_synthetic_fixture.py --config configs\data\synthetic_smoke.yaml
-
-# 只读审计并检测坏图、精确重复和近重复
-D:\aicomp\python312\python.exe scripts\audit_dataset.py --config configs\data\synthetic_smoke.yaml --source train
-
-# 以重复簇为不可拆分单元创建验证划分
-D:\aicomp\python312\python.exe scripts\build_split.py --config configs\data\synthetic_smoke.yaml --manifest artifacts\audits\p1p2_smoke\train\samples.csv --output artifacts\audits\p1p2_smoke\train\split.csv
-
-# 运行 CE、LogitClip、ELR 和类内可信度的已知噪声行为验收
-D:\aicomp\python312\python.exe scripts\run_p2_benchmark.py --config configs\experiment\p2_closeout.yaml --output artifacts\audits\p2_closeout\results.json
-
-# 运行全部 CPU/CUDA 测试
-D:\aicomp\python312\python.exe -m pytest
+mkdir -p runtime_outputs
+docker run --rm \
+  --mount "type=bind,source=$PWD/runtime_outputs,target=/outputs" \
+  aic-l35-cpu python -B scripts/postprocess.py \
+  --output /outputs/cache_replay
 ```
 
-生成器拒绝覆盖非空目录。正式阶段默认对坏图和同内容异标签严格失败；合成配置显式允许记录并排除注入的坏图。合成图片、审计结果和 pytest 临时文件位于 `artifacts/`，不会进入 Git。
+`runtime_outputs/cache_replay/` 中生成 `pred_results.csv`、ZIP 和复现校验记录。该入口从冻结 logits 与特征重放完整后处理，并自动比对最终提交 CSV 的 SHA-256。
 
-## P3 冻结 CLIP 基线
+检查模型加载与四视图前向：
 
-正式命令、续跑方式和执行前预算维护在 [`docs/11_P3_冻结特征基线实施与资源门禁.md`](docs/11_P3_冻结特征基线实施与资源门禁.md)，结果和诊断维护在 [`docs/12_P3_A0_A1_正式基线报告.md`](docs/12_P3_A0_A1_正式基线报告.md)。模型入口固定为 `configs/model/openai_clip_vit_b32.yaml`；脚本拒绝隐式下载权重，训练脚本也拒绝加载测试特征缓存。
-
-## P3 PEFT / M0
-
-当前 M0 复现命令：
-
-```powershell
-D:\aicomp\python312\python.exe scripts\train_peft.py --config configs\experiment\p3_stage1_peft_b3_lora_only_3ep.yaml
+```bash
+docker run --rm \
+  --mount "type=bind,source=$PWD/runtime_outputs,target=/outputs" \
+  aic-l35-cpu python -B scripts/infer.py \
+  --synthetic-smoke --device cpu --workers 0 --output /outputs/cpu_smoke
 ```
 
-该配置只训练最后视觉注意力的 LoRA，分类头冻结；完整消融、资源与 checkpoint 哈希见 [`docs/14_P3_PEFT资源与短程筛选报告.md`](docs/14_P3_PEFT资源与短程筛选报告.md)。
+预构建镜像内工作目录为 `/app`，入口为 `scripts/`。从 Dockerfile 重建的镜像保留作品的三目录结构；相应入口与 CPU 图片推理、CUDA 构建命令见[容器说明](archives/competition_20261011/L35_submission_source/AIC-2026-43080930-可执行模型文件或容器化复现环境/CONTAINER.md)。每次运行使用新的输出目录。
 
-## 复赛迁移：长尾压力与分层诊断
+### 2. 从测试图片执行 CUDA 推理
 
-协议与门禁见 [`docs/41_复赛迁移长尾压力与分层诊断预注册.md`](docs/41_复赛迁移长尾压力与分层诊断预注册.md)，实测证据见 [`docs/42_复赛迁移长尾压力与分层诊断验收.md`](docs/42_复赛迁移长尾压力与分层诊断验收.md)。全程只使用当前阶段训练部分，不访问 `DataSetStage1/test`。
+正式训练与推理记录环境为 Linux x86_64、Python `3.12.3`、PyTorch `2.11.0+cu128`、CUDA `12.8`、RTX 4080 SUPER。完整作品提供对应依赖锁与环境身份记录。
 
-```powershell
-# 1) 由固定 train 划分生成确定性长尾压力划分（只读官方数据，写 artifacts/）
-D:\aicomp\python312\python.exe scripts\build_long_tail_split.py --config configs\data\long_tail_stress.yaml
+以下命令同样在作品根执行：
 
-# 2) 对已锁定 checkpoint 做一次只读分层诊断（head/mid/tail、最差类召回、每类保留率）
-D:\aicomp\python312\python.exe scripts\diagnose_long_tail.py --experiment-config configs\experiment\p3_stage1_h1init_peft_lora_last2_r32a64_3ep_full_seed1_a_planned.yaml --checkpoint artifacts\experiments\20260914-a-final-h1init-lora-last2-r32a64-full-3ep-seed1\final.pt --long-tail-config configs\data\long_tail_stress.yaml --output-dir artifacts\reports\20260915-long-tail-diagnostics --batch-size 256 --workers 0
+```bash
+CODE_DIR="AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明"
+python3.12 -m venv runtime_outputs/venv
+source runtime_outputs/venv/bin/activate
+python -m pip install -r "$CODE_DIR/requirements-cuda.txt"
+
+export OMP_NUM_THREADS=4
+export MKL_NUM_THREADS=4
+export CUBLAS_WORKSPACE_CONFIG=:4096:8
+
+python "$CODE_DIR/scripts/verify_release.py"
+python "$CODE_DIR/scripts/infer.py" \
+  --test-root DataSetStage2/test \
+  --device cuda --batch-size 64 --workers 4 \
+  --output runtime_outputs/predictions
 ```
 
-诊断结果只作工程口径与失效模式证据，不替代固定 noisy-validation 选模，也不得据其改动已锁定的训练样本、阈值或提交后处理。
+推理入口完成模型恢复、四视图预测、特征收集、固定后处理及结果生成。输出 CSV 覆盖 37,444 个唯一图片文件名，使用 750 类的官方四位 ID；ZIP 根目录仅包含 `pred_results.csv`。
+
+## 训练与验证
+
+### 最终全量训练配方
+
+| 参数 | 最终配置 |
+| :--- | :--- |
+| 骨干与预训练 | OpenAI 官方 CLIP ViT-B/32 |
+| 分类头初始化 | 同阶段全部训练集的 H1，固定 100 轮 |
+| 联合训练数据 | 全部 148,695 张官方训练图片 |
+| 联合训练 / 导出 | 20 轮 / 固定第 20 轮 |
+| 输入分辨率 / batch | 336 × 336 / 64 |
+| 视觉 / 分类头学习率 | `3.5e-6` / `5e-6` |
+| 优化器 / 日程 | AdamW / Cosine，`T_max=20` |
+| 损失 | SCE：`α=0.1`、`β=1`，结合 AC |
+| 随机种子 | `20261010` |
+
+安装 CUDA 环境后，可从官方视觉权重与作品提供的全量 H1 分类头开始重新训练：
+
+```bash
+python "$CODE_DIR/scripts/train.py" full \
+  --data-root DataSetStage2 \
+  --work-dir runtime_outputs/full_retrain \
+  --device cuda --workers 8
+```
+
+完整流程也提供 `features → h1 → full` 入口，可重新提取训练集特征、训练分类头并完成联合微调。持出验证使用 `features → h1 → heldout → validate` 路线，分别支持 `first` 与 `second` 固定划分；分类头与视觉微调均限定在对应训练子集。参数、恢复方法与完整命令见[训练说明](archives/competition_20261011/L35_submission_source/AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明/TRAINING.md)。
+
+`final.pt` 用于预测；`last.pt` 保存优化器、余弦日程、scaler、AC 和随机状态，支持训练恢复。模型、配置、划分、类别映射及结果文件均有 SHA-256 身份记录。
+
+## 仓库结构
+
+```text
+AIC-2026-track1/
+├── src/aictrack1/          # 数据、模型、鲁棒方法、训练与评估核心
+├── scripts/               # 各阶段实验与结果生成入口
+├── configs/               # 数据、模型、方法和实验配置
+├── tests/                 # 工程与科学实现测试
+├── docs/                  # 方法研究、实验分析与运行说明
+├── reports/               # 技术报告与结果总结
+├── experiments/           # 实验索引
+├── submissions/           # 提交台账
+└── archives/competition_20261011/
+    ├── L35_submission_source/  # 最终作品源码与便携入口
+    ├── research_sources/       # 冻结研究源码与配置
+    ├── result_records/         # 实际结果与审查记录
+    └── SOURCE_INVENTORY.json   # 归档文件身份
+```
+
+## 文档与研究记录
+
+- [最终 L35 技术报告](reports/20261011_L35_final_technical_report.md)：训练配方、对照验证、推理流程与结果身份。
+- [作品运行说明](archives/competition_20261011/L35_submission_source/AIC-2026-43080930-可复现的代码与运行说明文档/运行说明.md)：文件校验、环境检查、训练及推理命令。
+- [环境与来源说明](archives/competition_20261011/L35_submission_source/AIC-2026-43080930-完整的训练、验证、推理脚本及环境配置说明/环境与来源说明.md)：依赖版本、模型角色、数据身份与许可。
+- [复赛研究归档](archives/competition_20261011/README.md)：最终源码、候选研究与实际回执的组织方式。
+- [实验索引](experiments/index.csv)与[提交台账](submissions/ledger.csv)：实验和线上结果记录。
+- [历史技术报告 Word](docs/技术报告.docx)：此前阶段的研究材料。
+
+### 最终文件身份
+
+| 文件 | SHA-256 |
+| :--- | :--- |
+| `final.pt` | `ebc130838f898e3f5bc5ad50c9b4d05966a7ce0afbe9bc4f08511b4c2f21d9f6` |
+| `pred_results.csv` | `e02a214cc0ba4476501698b75a546d3d29bc5ee1942f5c91dccf6751a78a7d7f` |
+| `pred_results.zip` | `767ace16352bdb35474df443eb3285d35e2ba832622fcfa3424b4ccbe9b922d8` |
+
+冻结缓存重放用于验证提交 CSV 的字节一致性；重新训练与图片推理的环境信息随运行输出保存，便于比较跨硬件和依赖版本的数值差异。
+
+## 来源与致谢
+
+本项目使用 [OpenAI CLIP](https://github.com/openai/CLIP) 官方实现与 ViT-B/32 预训练权重。最终作品归档的 CLIP 源码版本为 `d05afc436d78f1c48dc0dbf8e5980a9d471f35f6`，保留其 MIT 许可及其他第三方依赖的许可原文。详细来源见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 与作品中的 `licenses/`。
